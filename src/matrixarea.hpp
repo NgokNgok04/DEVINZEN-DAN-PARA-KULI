@@ -17,7 +17,7 @@ class MatrixArea {
         MatrixArea& operator=(const MatrixArea&);
         void setElement(int,int,string);
         string getElement(int,int);
-        void displayMatrix();
+        virtual void displayMatrix();
 };
 
 #endif

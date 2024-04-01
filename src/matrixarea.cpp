@@ -37,14 +37,19 @@ string MatrixArea::getElement(int row,int col){
 }
 
 void MatrixArea::displayMatrix(){
-    
-    string grid ="+";
-    for (int i = 0; i < this->cols;i++){
+    cout << "    ";
+    for (int i = 0; i < this->cols; i++){
+        cout << "  "<<static_cast<char>(static_cast<int>('A') + i) << "   ";
+    }
+    cout << endl;
+    string grid ="   +";
+    for (int i = 0; i < this->cols; i++){
         grid += "-----+";
     }
 
     for(int i = 0; i < this->rows; i++){
         cout << grid << endl;
+        cout << "0" << i + 1 << " ";
         cout << "|";
         for(int j = 0; j < this->cols; j++){
             if (this->matrix[i][j].length() == 3){
