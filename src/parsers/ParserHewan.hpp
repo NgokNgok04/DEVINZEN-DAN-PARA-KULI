@@ -2,7 +2,7 @@
 #include "BaseParser.hpp"
 using namespace std;
 //Parser khusus untuk membaca file konfigurasi hewan.
-class ParserHewan public BaseParser{
+class ParserHewan : public BaseParser{
     private:
         vector<int> animalID;
         vector<string> animalCode;

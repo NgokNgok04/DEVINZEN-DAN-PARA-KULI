@@ -2,7 +2,7 @@
 #include "BaseParser.hpp"
 using namespace std;
 //Parser khusus untuk membaca file konfigurasi produk.
-class ParserProduk public BaseParser{
+class ParserProduk : public BaseParser{
     private:
         vector<int> productID;
         vector<string> productCode;

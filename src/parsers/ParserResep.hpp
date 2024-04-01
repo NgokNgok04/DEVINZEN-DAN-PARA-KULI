@@ -2,7 +2,7 @@
 #include "BaseParser.hpp"
 using namespace std;
 //Parser khusus untuk membaca file konfigurasi resep.
-class ParserResep public BaseParser{
+class ParserResep : public BaseParser{
     private:
         vector<int> recipeID;
         vector<string> recipeCode;

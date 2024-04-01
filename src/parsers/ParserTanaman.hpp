@@ -2,7 +2,7 @@
 #include "BaseParser.hpp"
 using namespace std;
 //Parser khusus untuk membaca file konfigurasi tanaman.
-class ParserTanaman public BaseParser {
+class ParserTanaman : public BaseParser {
     private:
         vector<int> plantID;
         vector<string> plantCode;
