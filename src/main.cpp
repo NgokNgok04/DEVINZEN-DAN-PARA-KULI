@@ -1,11 +1,12 @@
 #include <iostream>
-#include "../parsers/BaseParser.hpp"
-#include "../parsers/ParserMisc.hpp"
-#include "../parsers/ParserProduk.hpp"
-#include "../parsers/ParserResep.hpp"
-#include "../parsers/ParserTanaman.hpp"
+#include "parsers/ParserHewan.hpp"
+#include "parsers/ParserMisc.hpp"
 using namespace std;
 int main(){
-    cout << "hello world";
+    ParserHewan PH;
+    ParserMisc PM;
+    string animalConfigDirectory = "../config/animal.txt";
+    PH.ParseFile(animalConfigDirectory);
+    PM.ParseFile(animalConfigDirectory);
     return 0;
 }

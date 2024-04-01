@@ -10,11 +10,7 @@ class ParserResep : public BaseParser{
         vector<int> recipePrice;
         vector< vector<pair<string,int> > > recipeMaterials;
     public:
-        ParserResep(){
-            
-        }
-        ~ParserResep(){
-
-        }
-        virtual void ParseFile(string fileDirectory);
+        ParserResep(){}
+        ~ParserResep(){}
+        void ParseFile(string fileDirectory);
 };

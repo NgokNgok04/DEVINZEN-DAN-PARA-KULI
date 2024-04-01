@@ -1,15 +1,11 @@
+#pragma once
 #include <bits/stdc++.h>
-#include "../singleton/Singleton.hpp"
 using namespace std;
 //Parent class untuk semua parser
-class BaseParser : public Singleton{
+class BaseParser{
     public:
-        BaseParser(){
-
-        }
-        ~BaseParser(){
-
-        }
+        BaseParser(){}
+        ~BaseParser(){}
         virtual void ParseFile(string fileDirectory) = 0;
-        virtual void PrintValues() = 0;
+        // virtual void PrintValues() = 0;
 };

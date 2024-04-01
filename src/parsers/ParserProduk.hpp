@@ -16,12 +16,8 @@ class ParserProduk : public BaseParser{
         vector<string> validProductTypes;
         vector<string> validProductOrigins;
     public:
-        ParserProduk(){
-            
-        }
-        ~ParserProduk(){
-
-        }
-        virtual void ParseFile(string fileDirectory);
+        ParserProduk(){}
+        ~ParserProduk(){}
+        void ParseFile(string fileDirectory);
         
 };

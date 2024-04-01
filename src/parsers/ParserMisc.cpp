@@ -2,5 +2,5 @@
 #include <bits/stdc++.h>
 void ParserMisc::ParseFile(string fileDirectory)
 {
-    
+    cout<<"kesalahan file";
 }

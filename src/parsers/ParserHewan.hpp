@@ -14,11 +14,7 @@ class ParserHewan : public BaseParser{
         vector<string> validAnimalCodes;
         vector<string> validAnimalTypes;
     public:
-        ParserHewan(){
-
-        }
-        ~ParserHewan(){
-            
-        }
-        virtual void ParseFile(string fileDirectory);
+        ParserHewan(){}
+        ~ParserHewan(){}
+        void ParseFile(string fileDirectory);
 };
