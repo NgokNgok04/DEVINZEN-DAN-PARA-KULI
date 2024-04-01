@@ -14,8 +14,12 @@ class ParserTanaman : public BaseParser {
         vector<string> validPlantCodes;
         vector<string> validPlantTypes;
     public:
-        ParserTanaman();
-        ~ParserTanaman();
-        virtual void ParseFile();
+        ParserTanaman(){
+
+        }
+        ~ParserTanaman(){
+
+        }
+        virtual void ParseFile(string fileDirectory);
     
 };

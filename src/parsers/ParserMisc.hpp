@@ -10,7 +10,11 @@ class ParserMisc : public BaseParser{
         pair<int,int> fieldSize;
         pair<int,int> farmSize;
     public:
-        ParserMisc();
-        ~ParserMisc();
-        virtual void ParseFile();
+        ParserMisc(){
+
+        }
+        ~ParserMisc(){
+
+        }
+        virtual void ParseFile(string fileDirectory);
 };
