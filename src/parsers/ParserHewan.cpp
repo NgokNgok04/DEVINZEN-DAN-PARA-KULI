@@ -1,4 +1,5 @@
 #include "ParserHewan.hpp"
+#include "../exceptions/Exceptions.hpp"
 #include <bits/stdc++.h>
 void ParserHewan::ParseFile(string fileDirectory)
 {
@@ -6,10 +7,8 @@ void ParserHewan::ParseFile(string fileDirectory)
     InputFile.open(fileDirectory); //buka file
 
     if(!InputFile.is_open()){ //jika gagal dibuka lempar exception
-        string HewanError;
-        HewanError = "File animal.txt hilang di folder config!";
-        throw HewanError;
+        throw AnimalConfigMissingException();
         return;
     }
-    cout<<"file kebaca\n";
+    cout<<"file animal kebaca\n";
 }
