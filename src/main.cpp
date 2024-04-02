@@ -25,26 +25,50 @@ int main(){
         PR.ParseFile(recipeConfigDirectory);
     } catch (AnimalConfigMissingException AE){
         cout<<AE.what()<<"\n";
+        return 0;
     } catch (MiscConfigMissingException ME){
         cout<<ME.what()<<"\n";
+        return 0;
     } catch (PlantConfigMissingException TE){
         cout<<TE.what()<<"\n";
+        return 0;
     } catch (ProductConfigMissingException PE){
         cout<<PE.what()<<"\n";
+        return 0;
     } catch (RecipeConfigMissingException RE){
         cout<<RE.what()<<"\n";
+        return 0;
     } catch (InvalidAnimalIDConfigException IAIC){
         cout<<IAIC.what()<<"\n";
+        return 0;
     } catch (InvalidAnimalWeightConfigException IAWC){
         cout<<IAWC.what()<<"\n";
+        return 0;
     } catch(InvalidAnimalPriceConfigException IAPC){
         cout<<IAPC.what()<<"\n";
+        return 0;
     } catch(InvalidAnimalTypeConfigException IATC){
         cout<<IATC.what()<<"\n";
+        return 0;
+    } catch(InvalidMiscMoneyConfigException IMMC){
+        cout<<IMMC.what()<<"\n";
+        return 0;
+    } catch(InvalidMiscWeightConfigException IMWC){
+        cout<<IMWC.what()<<"\n";
+        return 0;
+    } catch(InvalidStorageDimensionConfigException ISDC){
+        cout<<ISDC.what()<<"\n";
+        return 0;
+    } catch(InvalidFieldDimensionConfigException IFiDC){
+        cout<<IFiDC.what()<<"\n";
+        return 0;
+    } catch(InvalidFarmDimensionConfigException IFaDC){
+        cout<<IFaDC.what()<<"\n";
+        return 0;
     }
     
     cout<<"test fileconfig\n";
     cout<<PH;
-    
+    cout<<PM;
     return 0;
 }

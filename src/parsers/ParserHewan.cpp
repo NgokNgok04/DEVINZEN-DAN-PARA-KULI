@@ -12,9 +12,6 @@ void ParserHewan::ParseFile(string fileDirectory)
         throw AnimalConfigMissingException();
         return;
     }
-    cout<<"file animal kebaca\n";
-
-    
     vector<string> SpaceStrippedLine;
     string LineFile;
     int numValue;
@@ -63,6 +60,7 @@ void ParserHewan::ParseFile(string fileDirectory)
         }
         this->price.push_back(numValue);
     }
+    cout<<"Konfigurasi animal.txt berhasil!\n";
 }
 
 void ParserHewan::ClearParserData()

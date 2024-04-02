@@ -90,3 +90,48 @@ class InvalidAnimalTypeConfigException : public BaseException{
             return "Ada tipe hewan yang tidak valid di file config animal.txt!";
         }
 };
+
+class InvalidMiscMoneyConfigException : public BaseException{
+    public:
+        InvalidMiscMoneyConfigException(){};
+        ~InvalidMiscMoneyConfigException(){};
+        string what(){
+            return "Nilai uang yang dibutuhkan untuk memenangkan permainan di misc.txt tidak valid!";
+        }
+};
+
+class InvalidMiscWeightConfigException : public BaseException{
+    public:
+        InvalidMiscWeightConfigException(){};
+        ~InvalidMiscWeightConfigException(){};
+        string what(){
+            return "Nilai berat badan yang dibutuhkan untuk memenangkan permainan di misc.txt tidak valid!";
+        }
+};
+
+class InvalidStorageDimensionConfigException : public BaseException{
+    public:
+        InvalidStorageDimensionConfigException(){};
+        ~InvalidStorageDimensionConfigException(){};
+        string what(){
+            return "Dimensi ukuran penyimpanan di misc.txt tidak valid!";
+        }
+};
+
+class InvalidFarmDimensionConfigException : public BaseException{
+    public:
+        InvalidFarmDimensionConfigException(){};
+        ~InvalidFarmDimensionConfigException(){};
+        string what(){
+            return "Dimensi ukuran peternakan di misc.txt tidak valid!";
+        }
+};
+
+class InvalidFieldDimensionConfigException : public BaseException{
+    public:
+        InvalidFieldDimensionConfigException(){};
+        ~InvalidFieldDimensionConfigException(){};
+        string what(){
+            return "Dimensi ukuran lahan di misc.txt tidak valid!";
+        }
+};

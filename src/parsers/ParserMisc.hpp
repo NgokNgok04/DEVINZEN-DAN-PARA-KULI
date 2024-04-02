@@ -14,4 +14,5 @@ class ParserMisc : public BaseParser{
         ~ParserMisc(){}
         void ParseFile(string fileDirectory);
         void ClearParserData();
+        friend ostream &operator<<(ostream &os, ParserMisc &PM); //untuk debugging, pake aja
 };
