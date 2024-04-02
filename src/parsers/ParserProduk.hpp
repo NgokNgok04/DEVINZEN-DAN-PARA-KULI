@@ -7,15 +7,18 @@ class ParserProduk : public BaseParser{
         vector<int> productID;
         vector<string> productCode;
         vector<string> productName;
-        vector<string> productTypes;
+        vector<string> productType;
         vector<string> productOrigin;
         vector<int> addedWeight;
-        vector<int> productPrice;
+        vector<int> price;
         
         vector<string> validProductTypes;
     public:
-        ParserProduk(){}
+        ParserProduk(){
+            validProductTypes = {"PRODUCT_MATERIAL_PLANT", "PRODUCT_FRUIT_PLANT", "PRODUCT_ANIMAL"};
+        }
         ~ParserProduk(){}
         void ParseFile(string fileDirectory);
         void ClearParserData();
+        friend ostream &operator<<(ostream &os, ParserProduk &PP); //untuk debugging, pake aja
 };

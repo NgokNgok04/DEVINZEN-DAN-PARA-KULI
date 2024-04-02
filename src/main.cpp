@@ -77,11 +77,24 @@ int main(){
     } catch(InvalidPlantPriceConfigException IPPC){
         cout<<IPPC.what()<<"\n";
         return 0;
+    } catch(InvalidProductIDConfigException IPrIC){
+        cout<<IPrIC.what()<<"\n";
+        return 0;
+    } catch(InvalidProductPriceConfigException IPrPC){
+        cout<<IPrPC.what()<<"\n";
+        return 0;
+    } catch(InvalidProductTypeConfigException IPrTC){
+        cout<<IPrTC.what()<<"\n";
+        return 0;
+    } catch(InvalidProductWeightConfigException IPrWC){
+        cout<<IPrWC.what()<<"\n";
+        return 0;
     }
     
     cout<<"test fileconfig\n";
     cout<<PH;
     cout<<PM;
     cout<<PT;
+    cout<<PP;
     return 0;
 }

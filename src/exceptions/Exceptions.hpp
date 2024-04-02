@@ -171,3 +171,39 @@ class InvalidPlantDurationConfigException : public BaseException{
             return "Ada durasi tanaman yang tidak valid di file config plant.txt!";
         }
 };
+
+class InvalidProductIDConfigException : public BaseException{
+    public:
+        InvalidProductIDConfigException(){};
+        ~InvalidProductIDConfigException(){};
+        string what(){
+            return "Ada ID produk yang tidak valid di file config animal.txt!";
+        }
+};
+
+class InvalidProductWeightConfigException : public BaseException{
+    public:
+        InvalidProductWeightConfigException(){};
+        ~InvalidProductWeightConfigException(){};
+        string what(){
+            return "Ada berat produk yang tidak valid di file config animal.txt!";
+        }
+};
+
+class InvalidProductTypeConfigException : public BaseException{
+    public:
+        InvalidProductTypeConfigException(){};
+        ~InvalidProductTypeConfigException(){};
+        string what(){
+            return "Ada tipe produk yang tidak valid di file config animal.txt!";
+        }
+};
+
+class InvalidProductPriceConfigException : public BaseException{
+    public:
+        InvalidProductPriceConfigException(){};
+        ~InvalidProductPriceConfigException(){};
+        string what(){
+            return "Ada harga produk yang tidak valid di file config plant.txt!";
+        }
+};

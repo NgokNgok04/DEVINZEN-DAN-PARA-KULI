@@ -8,7 +8,7 @@ class ParserResep : public BaseParser{
         vector<string> recipeCode;
         vector<string> recipeName;
         vector<int> recipePrice;
-        vector< vector<pair<string,int> > > recipeMaterials;
+        map<string,int> recipeMaterials;
     public:
         ParserResep(){}
         ~ParserResep(){}
