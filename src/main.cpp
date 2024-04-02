@@ -33,8 +33,16 @@ int main(){
         cout<<PE.what()<<"\n";
     } catch (RecipeConfigMissingException RE){
         cout<<RE.what()<<"\n";
+    } catch (InvalidAnimalIDConfigException IAIC){
+        cout<<IAIC.what()<<"\n";
+    } catch (InvalidAnimalWeightConfigException IAWC){
+        cout<<IAWC.what()<<"\n";
+    } catch(InvalidAnimalPriceConfigException IAPC){
+        cout<<IAPC.what()<<"\n";
     }
     
+    cout<<"test fileconfig\n";
+    cout<<PH;
     
     return 0;
 }

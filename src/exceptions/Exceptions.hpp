@@ -54,3 +54,31 @@ class RecipeConfigMissingException : public BaseException{
             return "File config recipe.txt hilang di folder config!";
         }
 };
+
+class InvalidAnimalPriceConfigException : public BaseException{
+    public:
+        InvalidAnimalPriceConfigException(){};
+        ~InvalidAnimalPriceConfigException(){};
+        string what(){
+            return "Ada harga hewan yang tidak valid di file config animal.txt!";
+        }
+};
+
+class InvalidAnimalIDConfigException : public BaseException{
+    public:
+        InvalidAnimalIDConfigException(){};
+        ~InvalidAnimalIDConfigException(){};
+        string what(){
+            return "Ada ID hewan yang tidak valid di file config animal.txt!";
+        }
+};
+
+class InvalidAnimalWeightConfigException : public BaseException{
+    public:
+        InvalidAnimalWeightConfigException(){};
+        ~InvalidAnimalWeightConfigException(){};
+        string what(){
+            return "Ada berat hewan yang tidak valid di file config animal.txt!";
+        }
+};
+

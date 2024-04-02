@@ -10,11 +10,11 @@ class ParserHewan : public BaseParser{
         vector<string> animalType;
         vector<int> harvestWeight;
         vector<int> price;
-        vector<string> validAnimalNames;
-        vector<string> validAnimalCodes;
         vector<string> validAnimalTypes;
     public:
         ParserHewan(){}
         ~ParserHewan(){}
         void ParseFile(string fileDirectory);
+
+        friend ostream &operator<<(ostream &os, ParserHewan &PH); //untuk debugging, pake aja
 };

@@ -7,32 +7,16 @@ vector<string> StringToStringList(string inputString){
     tempString = "";
 
     for(int i = 0; i<inputString.length(); i++){
-
-        if(i == 0){
-            if(inputString[i] != ' '){
-                tempString = tempString + inputString[i];
-                if(inputString.length() == 1){
-                    StringList.push_back(tempString);
-                }
-            }
-            
+        if(i == inputString.length()-1){
+            tempString = tempString + inputString[i];
+            StringList.push_back(tempString);
+            tempString = "";
+        }
+        else if(inputString[i] !=' '){
+            tempString = tempString + inputString[i];
         } else {
-            if(i == inputString.length()-1){
-                if(inputString[i] != ' '){
-                    tempString = tempString + inputString[i];
-                }
-                StringList.push_back(tempString);
-                tempString = "";
-            } else {
-                if(inputString[i] == ' '){
-                    if(inputString[i-1] !=' '){
-                        StringList.push_back(tempString);
-                        tempString = "";
-                    }
-                } else {
-                    tempString = tempString + inputString[i];
-                }
-            }
+            StringList.push_back(tempString);
+            tempString = "";
         }
     }
     return StringList;
