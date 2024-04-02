@@ -65,10 +65,23 @@ int main(){
     } catch(InvalidFarmDimensionConfigException IFaDC){
         cout<<IFaDC.what()<<"\n";
         return 0;
+    } catch(InvalidPlantIDConfigException IPIC){
+        cout<<IPIC.what()<<"\n";
+        return 0;
+    } catch(InvalidPlantTypeConfigException IPTC){
+        cout<<IPTC.what()<<"\n";
+        return 0;
+    } catch(InvalidPlantDurationConfigException IPDC){
+        cout<<IPDC.what()<<"\n";
+        return 0;
+    } catch(InvalidPlantPriceConfigException IPPC){
+        cout<<IPPC.what()<<"\n";
+        return 0;
     }
     
     cout<<"test fileconfig\n";
     cout<<PH;
     cout<<PM;
+    cout<<PT;
     return 0;
 }

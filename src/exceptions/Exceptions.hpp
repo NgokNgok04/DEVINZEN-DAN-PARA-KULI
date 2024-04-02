@@ -135,3 +135,39 @@ class InvalidFieldDimensionConfigException : public BaseException{
             return "Dimensi ukuran lahan di misc.txt tidak valid!";
         }
 };
+
+class InvalidPlantIDConfigException : public BaseException{
+    public:
+        InvalidPlantIDConfigException(){};
+        ~InvalidPlantIDConfigException(){};
+        string what(){
+            return "Ada ID tanaman yang tidak valid di file config plant.txt!";
+        }
+};
+
+class InvalidPlantTypeConfigException : public BaseException{
+    public:
+        InvalidPlantTypeConfigException(){};
+        ~InvalidPlantTypeConfigException(){};
+        string what(){
+            return "Ada tipe tanaman yang tidak valid di file config plant.txt!";
+        }
+};
+
+class InvalidPlantPriceConfigException : public BaseException{
+    public:
+        InvalidPlantPriceConfigException(){};
+        ~InvalidPlantPriceConfigException(){};
+        string what(){
+            return "Ada harga tanaman yang tidak valid di file config plant.txt!";
+        }
+};
+
+class InvalidPlantDurationConfigException : public BaseException{
+    public:
+        InvalidPlantDurationConfigException(){};
+        ~InvalidPlantDurationConfigException(){};
+        string what(){
+            return "Ada durasi tanaman yang tidak valid di file config plant.txt!";
+        }
+};
