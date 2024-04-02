@@ -12,3 +12,14 @@ void ParserProduk::ParseFile(string fileDirectory)
     }
     cout<<"file product kebaca\n";
 }
+
+void ParserProduk::ClearParserData()
+{
+    this->productID.clear();
+    this->productCode.clear();
+    this->productName.clear();
+    this->productTypes.clear();
+    this->productOrigin.clear();
+    this->addedWeight.clear();
+    this->productPrice.clear();
+}

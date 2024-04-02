@@ -11,13 +11,11 @@ class ParserProduk : public BaseParser{
         vector<string> productOrigin;
         vector<int> addedWeight;
         vector<int> productPrice;
-        vector<string> validProductCodes;
-        vector<string> validProductNames;
+        
         vector<string> validProductTypes;
-        vector<string> validProductOrigins;
     public:
         ParserProduk(){}
         ~ParserProduk(){}
         void ParseFile(string fileDirectory);
-        
+        void ClearParserData();
 };

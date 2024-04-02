@@ -12,3 +12,12 @@ void ParserResep::ParseFile(string fileDirectory)
     }
     cout<<"file recipe kebaca\n";
 }
+
+void ParserResep::ClearParserData()
+{
+        this->recipeID.clear();
+        this->recipeCode.clear();
+        this->recipeName.clear();
+        this->recipePrice.clear();
+        this->recipeMaterials.clear();
+}

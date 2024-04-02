@@ -82,3 +82,11 @@ class InvalidAnimalWeightConfigException : public BaseException{
         }
 };
 
+class InvalidAnimalTypeConfigException : public BaseException{
+    public:
+        InvalidAnimalTypeConfigException(){};
+        ~InvalidAnimalTypeConfigException(){};
+        string what(){
+            return "Ada tipe hewan yang tidak valid di file config animal.txt!";
+        }
+};

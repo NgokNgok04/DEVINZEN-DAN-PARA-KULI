@@ -13,4 +13,5 @@ class ParserMisc : public BaseParser{
         ParserMisc(){}
         ~ParserMisc(){}
         void ParseFile(string fileDirectory);
+        void ClearParserData();
 };

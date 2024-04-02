@@ -10,12 +10,10 @@ class ParserTanaman : public BaseParser {
         vector<string> plantType;
         vector<int> harvestDuration;
         vector<int> price;
-        vector<string> validPlantNames;
-        vector<string> validPlantCodes;
         vector<string> validPlantTypes;
     public:
         ParserTanaman(){}
         ~ParserTanaman(){}
         void ParseFile(string fileDirectory);
-    
+        void ClearParserData();
 };

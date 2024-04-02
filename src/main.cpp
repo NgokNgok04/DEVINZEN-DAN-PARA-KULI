@@ -39,6 +39,8 @@ int main(){
         cout<<IAWC.what()<<"\n";
     } catch(InvalidAnimalPriceConfigException IAPC){
         cout<<IAPC.what()<<"\n";
+    } catch(InvalidAnimalTypeConfigException IATC){
+        cout<<IATC.what()<<"\n";
     }
     
     cout<<"test fileconfig\n";

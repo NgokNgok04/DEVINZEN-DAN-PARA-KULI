@@ -13,4 +13,5 @@ class ParserResep : public BaseParser{
         ParserResep(){}
         ~ParserResep(){}
         void ParseFile(string fileDirectory);
+        void ClearParserData();
 };

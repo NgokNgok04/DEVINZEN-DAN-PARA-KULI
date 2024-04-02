@@ -12,3 +12,12 @@ void ParserMisc::ParseFile(string fileDirectory)
     }
     cout<<"file misc kebaca\n";
 }
+
+void ParserMisc::ClearParserData()
+{
+    this->winningMoney = 0;
+    this->winningWeight = 0;
+    this->storageSize = {0,0};
+    this->fieldSize = {0,0};
+    this->farmSize = {0,0};
+}

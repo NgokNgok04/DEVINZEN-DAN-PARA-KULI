@@ -7,5 +7,6 @@ class BaseParser{
         BaseParser(){}
         ~BaseParser(){}
         virtual void ParseFile(string fileDirectory) = 0;
+        virtual void ClearParserData() = 0;
         // virtual void PrintValues() = 0;
 };

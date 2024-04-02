@@ -12,3 +12,13 @@ void ParserTanaman::ParseFile(string fileDirectory)
     }
     cout<<"file plant kebaca\n";
 }
+
+void ParserTanaman::ClearParserData()
+{
+        this->plantID.clear();
+        this->plantCode.clear();
+        this->plantName.clear();
+        this->plantType.clear();
+        this->harvestDuration.clear();
+        this->price.clear();
+}
