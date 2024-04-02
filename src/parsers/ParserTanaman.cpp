@@ -20,7 +20,7 @@ void ParserTanaman::ParseFile(string fileDirectory)
         SpaceStrippedLine = StringToStringList(LineFile); //parse spasi
         //validasi dan input data id tanaman
         numValue = stoi(SpaceStrippedLine[0]);
-        if(numValue <0){ //ID tidak boleh negatif
+        if(numValue <=0){ //ID tidak boleh negatif
             this->ClearParserData();
             throw InvalidPlantIDConfigException();
             return;
@@ -52,7 +52,7 @@ void ParserTanaman::ParseFile(string fileDirectory)
         this->harvestDuration.push_back(numValue);
         //VALIDASI DAN INPUT HARGA TANAMAN
         numValue = stoi(SpaceStrippedLine[5]);
-        if(numValue <0){ //harga tidak boleh negatif
+        if(numValue <=0){ //harga tidak boleh negatif
             this->ClearParserData();
             throw InvalidPlantPriceConfigException();
             return;

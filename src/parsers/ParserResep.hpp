@@ -8,10 +8,11 @@ class ParserResep : public BaseParser{
         vector<string> recipeCode;
         vector<string> recipeName;
         vector<int> recipePrice;
-        map<string,int> recipeMaterials;
+        vector<vector<pair<string,int> > > recipeMaterialQuantity;
     public:
         ParserResep(){}
         ~ParserResep(){}
         void ParseFile(string fileDirectory);
         void ClearParserData();
+        friend ostream &operator<<(ostream &os, ParserResep &PR); //untuk debugging, pake aja
 };

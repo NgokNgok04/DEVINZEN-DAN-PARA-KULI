@@ -21,7 +21,7 @@ void ParserHewan::ParseFile(string fileDirectory)
         SpaceStrippedLine = StringToStringList(LineFile); //parse spasi
         //validasi dan input data id hewan
         numValue = stoi(SpaceStrippedLine[0]);
-        if(numValue <0){ //ID tidak boleh negatif
+        if(numValue <=0){ //ID tidak boleh negatif
             this->ClearParserData();
             throw InvalidAnimalIDConfigException();
             return;
@@ -53,7 +53,7 @@ void ParserHewan::ParseFile(string fileDirectory)
         this->harvestWeight.push_back(numValue);
         //VALIDASI DAN INPUT HARGA HEWAN
         numValue = stoi(SpaceStrippedLine[5]);
-        if(numValue <0){ //harga tidak boleh negatif
+        if(numValue <=0){ //harga tidak boleh negatif
             this->ClearParserData();
             throw InvalidAnimalPriceConfigException();
             return;

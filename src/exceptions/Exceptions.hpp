@@ -177,7 +177,7 @@ class InvalidProductIDConfigException : public BaseException{
         InvalidProductIDConfigException(){};
         ~InvalidProductIDConfigException(){};
         string what(){
-            return "Ada ID produk yang tidak valid di file config animal.txt!";
+            return "Ada ID produk yang tidak valid di file config product.txt!";
         }
 };
 
@@ -186,7 +186,7 @@ class InvalidProductWeightConfigException : public BaseException{
         InvalidProductWeightConfigException(){};
         ~InvalidProductWeightConfigException(){};
         string what(){
-            return "Ada berat produk yang tidak valid di file config animal.txt!";
+            return "Ada berat produk yang tidak valid di file config product.txt!";
         }
 };
 
@@ -195,7 +195,7 @@ class InvalidProductTypeConfigException : public BaseException{
         InvalidProductTypeConfigException(){};
         ~InvalidProductTypeConfigException(){};
         string what(){
-            return "Ada tipe produk yang tidak valid di file config animal.txt!";
+            return "Ada tipe produk yang tidak valid di file config product.txt!";
         }
 };
 
@@ -204,6 +204,33 @@ class InvalidProductPriceConfigException : public BaseException{
         InvalidProductPriceConfigException(){};
         ~InvalidProductPriceConfigException(){};
         string what(){
-            return "Ada harga produk yang tidak valid di file config plant.txt!";
+            return "Ada harga produk yang tidak valid di file config product.txt!";
+        }
+};
+
+class InvalidRecipeIDConfigException : public BaseException{
+    public:
+        InvalidRecipeIDConfigException(){};
+        ~InvalidRecipeIDConfigException(){};
+        string what(){
+            return "Ada ID resep yang tidak valid di file config recipe.txt!";
+        }
+};
+
+class InvalidRecipePriceConfigException : public BaseException{
+    public:
+        InvalidRecipePriceConfigException(){};
+        ~InvalidRecipePriceConfigException(){};
+        string what(){
+            return "Ada harga resep yang tidak valid di file config recipe.txt!";
+        }
+};
+
+class InvalidRecipeQuantityConfigException : public BaseException{
+    public:
+        InvalidRecipeQuantityConfigException(){};
+        ~InvalidRecipeQuantityConfigException(){};
+        string what(){
+            return "Ada kuantitas bahan resep yang tidak valid di file config recipe.txt!";
         }
 };

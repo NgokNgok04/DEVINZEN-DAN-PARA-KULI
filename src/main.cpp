@@ -89,6 +89,15 @@ int main(){
     } catch(InvalidProductWeightConfigException IPrWC){
         cout<<IPrWC.what()<<"\n";
         return 0;
+    } catch(InvalidRecipeIDConfigException IRIC){
+        cout<<IRIC.what()<<"\n";
+        return 0;
+    } catch(InvalidRecipePriceConfigException IRPC){
+        cout<<IRPC.what()<<"\n";
+        return 0;
+    } catch(InvalidRecipeQuantityConfigException IRQC){
+        cout<<IRQC.what()<<"\n";
+        return 0;
     }
     
     cout<<"test fileconfig\n";
@@ -96,5 +105,6 @@ int main(){
     cout<<PM;
     cout<<PT;
     cout<<PP;
+    cout<<PR;
     return 0;
 }

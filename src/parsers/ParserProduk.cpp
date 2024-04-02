@@ -21,7 +21,7 @@ void ParserProduk::ParseFile(string fileDirectory)
         SpaceStrippedLine = StringToStringList(LineFile); //parse spasi
         //validasi dan input data id produk
         numValue = stoi(SpaceStrippedLine[0]);
-        if(numValue <0){ //ID tidak boleh negatif
+        if(numValue <=0){ //ID tidak boleh negatif
             this->ClearParserData();
             throw InvalidProductIDConfigException();
             return;
@@ -55,7 +55,7 @@ void ParserProduk::ParseFile(string fileDirectory)
         this->addedWeight.push_back(numValue);
         //VALIDASI DAN INPUT HARGA produk
         numValue = stoi(SpaceStrippedLine[6]);
-        if(numValue <0){ //harga tidak boleh negatif
+        if(numValue <=0){ //harga tidak boleh negatif
             this->ClearParserData();
             throw InvalidProductPriceConfigException();
             return;
