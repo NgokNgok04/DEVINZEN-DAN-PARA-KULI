@@ -3,21 +3,25 @@
 
 #include <iostream>
 #include <vector>
-#include <string>
+#include "hewan.hpp"
+#include "tumbuhan.hpp"
 using namespace std;
+template <class T>
 class MatrixArea {
-    protected:
+    private:
         int rows;
         int cols;
-        vector<vector<string>> matrix;
+        vector<vector<T>> matrix;
     public:
         MatrixArea(int, int);
         ~MatrixArea();
-        MatrixArea(const MatrixArea&);
-        MatrixArea& operator=(const MatrixArea&);
-        void setElement(int,int,string);
-        string getElement(int,int);
-        virtual void displayMatrix();
+        MatrixArea(const MatrixArea<T>&);
+        MatrixArea<T>& operator=(const MatrixArea<T>&);
+        void setElement(int,int,T);
+        T getElement(int,int);
+        void displayMatrix();
+        void displayObject();
+
 };
 
 #endif
