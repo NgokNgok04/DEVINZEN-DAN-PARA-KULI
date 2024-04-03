@@ -1,11 +1,13 @@
 #include <iostream>
+#include <string>
+#include <vector>
 #include "matrixarea.hpp"
 using namespace std;
 template<class T>
 MatrixArea<T>::MatrixArea(int rows, int cols){
     this->rows = rows;
     this->cols = cols;
-    this->matrix.resize(this->rows, vector<T>(this->cols,""));
+    this->matrix.resize(this->rows, vector<T>(this->cols,T()));
 }
 template<class T>
 MatrixArea<T>::~MatrixArea(){
@@ -57,8 +59,9 @@ void MatrixArea<T>::displayMatrix(){
         cout << "0" << i + 1 << " ";
         cout << "|";
         for(int j = 0; j < this->cols; j++){
-            if (this->matrix[i][j].length() == 3){
-                cout << " " << this->matrix[i][j].kode_huruf << " ";
+            string kode_huruf = this->matrix[i][j].getKodeHuruf();
+            if (kode_huruf.length() == 3){
+                cout << " " << kode_huruf << " ";
             } else {
                 cout << "     ";
             }
