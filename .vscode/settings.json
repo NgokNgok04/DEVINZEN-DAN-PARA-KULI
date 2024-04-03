@@ -1,9 +1,10 @@
 {
-    "files.associations": {
-        "iostream": "cpp",
-        "xstring": "cpp",
-        "memory": "cpp",
-        "xmemory": "cpp",
-        "ostream": "cpp"
-    }
+  "files.associations": {
+    "iostream": "cpp",
+    "xstring": "cpp",
+    "memory": "cpp",
+    "xmemory": "cpp",
+    "ostream": "cpp",
+    "vector": "cpp"
+  }
 }
