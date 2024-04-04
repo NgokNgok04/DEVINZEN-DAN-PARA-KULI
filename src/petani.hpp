@@ -9,7 +9,7 @@ class Petani : public Pemain<T>
 public:
     Petani();
     Petani(int cols, int rows, int guld, int bb);
-    Petani(const Petani &);
+    Petani(const Petani<T> &);
     ~Petani();
     cetakLadang();
     tanam(int, int, int, int); // coords tanaman yg ingin ditanam, coords letak menanam dlm ladang

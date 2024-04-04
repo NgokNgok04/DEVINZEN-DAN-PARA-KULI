@@ -17,7 +17,7 @@ protected:
 public:
     Pemain();
     Pemain(int rows, int cols, int guld, int bb); // : MatrixArea(rows, cols)
-    Pemain(const Pemain &);
+    Pemain(const Pemain<T> &);
     ~Pemain();
 
     // specifics

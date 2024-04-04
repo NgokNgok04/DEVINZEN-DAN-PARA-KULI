@@ -3,8 +3,8 @@
 
 #include <iostream>
 #include <vector>
-#include "hewan.hpp"
-#include "tumbuhan.hpp"
+// #include "hewan.hpp"
+// #include "tumbuhan.hpp"
 using namespace std;
 template <class T>
 class MatrixArea
