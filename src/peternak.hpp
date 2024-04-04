@@ -8,8 +8,8 @@ class Peternak : public Pemain<T>
 {
 public:
     Peternak();
-    Peternak(int cols, int rows, int guld, int bb);
-    Peternak(const Peternak &);
+    Peternak(int rows, int cols, int guld, int bb);
+    Peternak(const Peternak<T> &);
     ~Peternak();
     cetakTernak();
     ternak(int, int, int, int);     // coords hewan yg ingin diternak, coords letak ternakan

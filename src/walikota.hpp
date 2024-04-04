@@ -7,10 +7,10 @@ template <class T>
 class WaliKota : public Pemain<T>
 {
 public:
-    Walikota();
-    Walikota(int cols, int rows, int guld, int bb);
-    Walikota(const WaliKota &);
-    ~Walikota();
+    WaliKota();
+    WaliKota(int rows, int cols, int guld, int bb);
+    WaliKota(const WaliKota<T> &);
+    ~WaliKota();
     pungutPajak();
     bangunBangunan(int); // int tipe 1: small, 2 medium, 3 large, 4 hotel
 };
