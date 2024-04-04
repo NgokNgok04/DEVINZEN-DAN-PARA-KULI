@@ -21,6 +21,8 @@ class MatrixArea {
         T getElement(int,int);
         void displayMatrix();
         void displayObject();
+        void displayDetail();
+        void displayRemainderSlot();
 };
 
 #endif
