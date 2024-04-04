@@ -5,11 +5,6 @@
 #include "hewan.hpp"
 #include "tumbuhan.hpp"
 using namespace std;
-<<<<<<< Updated upstream
-int main()
-{
-    cout << "hello world";
-=======
 int main(){
     MatrixArea<Hewan> matrix(4,2);
     Hewan anjing("ANJ","anjing");
@@ -21,6 +16,5 @@ int main(){
     matrix.setElement(3,2,anjing);
     matrix.displayMatrix();
     matrix.displayDetail();
->>>>>>> Stashed changes
     return 0;
 }
