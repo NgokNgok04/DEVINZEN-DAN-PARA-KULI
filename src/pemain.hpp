@@ -11,6 +11,8 @@ class Pemain
 {
 protected:
     MatrixArea<T> inventory;
+    int gulden;
+    int berat_badan;
 
 public:
     Pemain();
