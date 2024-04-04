@@ -1,0 +1,61 @@
+#include "GameObject.hpp"
+#include "Exception.hpp"
+using namespace std;
+
+int Hewan::totalHewan = 0;
+int Tanaman::totalTanaman = 0;
+int Product::totalProduct = 0;
+int Bangunan::totalBangunan = 0;
+
+GameObject::GameObject(int id, string kode_huruf, float price, string name){
+    this->id = id;
+    this->kode_huruf = kode_huruf;
+    this->price = price;
+    this->name = name;
+}
+
+int GameObject::getID(){
+    return id;
+}
+
+string GameObject::getKode(){
+    return kode_huruf;
+}
+
+float GameObject::getPrice(){
+    return price;
+}
+
+string GameObject::getName(){
+    return name;
+}
+
+Hewan::Hewan(int id,string kode_huruf,float price,string name,string type,int weightHarvest):GameObject(id,kode_huruf,price,name){
+    this->weightHarvest = weightHarvest;
+    this->type = type;
+    weight = 0;
+    totalHewan++;
+}
+
+void Hewan::makan(Product makanan){
+    bool status = (type=="HERBIVORE" && !makanan.fromHewan())||(type=="CARNIVORE"&&makanan.fromHewan());
+    if(!status){
+        throw MakananTidakSesuai();
+    }
+    weight += makanan.getAddedWeight();
+}
+
+bool Hewan::isHarvestable(){
+    return weight>=weightHarvest;
+}
+
+Tanaman::Tanaman(int id,string kode_huruf,float price,string name,string type,int durationHarvest):GameObject(id,kode_huruf,price,name){
+    this->durationHarvest = durationHarvest;
+    this->type = type;
+    this->age = 0;
+    totalTanaman++;
+}
+
+bool Tanaman::isHarvestable(){
+    return age>=durationHarvest;
+}
