@@ -8,7 +8,7 @@ class Petani : public Pemain<T>
 {
 public:
     Petani();
-    Petani(int cols, int rows);
+    Petani(int cols, int rows, int guld, int bb);
     Petani(const Petani &);
     ~Petani();
     cetakLadang();

@@ -3,3 +3,7 @@
 using namespace std;
 
 template <class T>
+Pemain::Pemain()
+{
+    inventory =
+}

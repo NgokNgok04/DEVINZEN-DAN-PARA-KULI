@@ -8,7 +8,7 @@ class WaliKota : public Pemain<T>
 {
 public:
     Walikota();
-    Walikota(int cols, int rows);
+    Walikota(int cols, int rows, int guld, int bb);
     Walikota(const WaliKota &);
     ~Walikota();
     pungutPajak();

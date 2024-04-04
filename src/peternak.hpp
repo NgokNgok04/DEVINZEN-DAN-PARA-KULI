@@ -8,7 +8,7 @@ class Peternak : public Pemain<T>
 {
 public:
     Peternak();
-    Peternak(int cols, int rows);
+    Peternak(int cols, int rows, int guld, int bb);
     Peternak(const Peternak &);
     ~Peternak();
     cetakTernak();
