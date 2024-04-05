@@ -7,6 +7,7 @@ int Tanaman::totalTanaman = 0;
 int Product::totalProduct = 0;
 int Bangunan::totalBangunan = 0;
 
+// gameobject
 GameObject::GameObject(int id, string kode_huruf, float price, string name){
     this->id = id;
     this->kode_huruf = kode_huruf;
@@ -30,7 +31,30 @@ string GameObject::getName(){
     return name;
 }
 
-Hewan::Hewan(int id,string kode_huruf,float price,string name,string type,int weightHarvest):GameObject(id,kode_huruf,price,name){
+// product
+Product::Product(int id, string kodeHuruf, string name, string type, string origin, int addedWeight, float price) : GameObject(id, kodeHuruf, price, name){
+    this->type = type;
+    this->isFromHewan = (type == "PRODUCT_ANIMAL");
+    this->addedWeight = addedWeight;
+    this->origin = origin;
+    totalProduct++;
+}
+
+bool Product::fromHewan(){
+    return isFromHewan;
+}
+
+int Product::getAddedWeight(){
+    return addedWeight;
+}
+
+// makhluk hidup
+MakhlukHidup::MakhlukHidup(int id, string kodeHuruf, float price, string name, string type) : GameObject(id, kodeHuruf, price, name){
+    this->type = type;
+}
+
+// hewan
+Hewan::Hewan(int id,string kode_huruf,float price,string name,string type,int weightHarvest): MakhlukHidup(id,kode_huruf,price,name,type){
     this->weightHarvest = weightHarvest;
     this->type = type;
     weight = 0;
@@ -49,7 +73,8 @@ bool Hewan::isHarvestable(){
     return weight>=weightHarvest;
 }
 
-Tanaman::Tanaman(int id,string kode_huruf,float price,string name,string type,int durationHarvest):GameObject(id,kode_huruf,price,name){
+// tanaman
+Tanaman::Tanaman(int id,string kode_huruf,float price,string name,string type,int durationHarvest): MakhlukHidup(id,kode_huruf,price,name,type){
     this->durationHarvest = durationHarvest;
     this->type = type;
     this->age = 0;
@@ -58,4 +83,9 @@ Tanaman::Tanaman(int id,string kode_huruf,float price,string name,string type,in
 
 bool Tanaman::isHarvestable(){
     return age>=durationHarvest;
+}
+
+// bangunan
+Bangunan::Bangunan(int id, string kodeHuruf, float price, string name, string pemilik) : GameObject(id, kodeHuruf, price, name){
+    this->pemilik = pemilik;
 }

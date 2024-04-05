@@ -20,10 +20,24 @@ class GameObject{
         string getName();
 };
 
-class MakhlukHidup:virtual public GameObject{
+class Product:public GameObject{
+    private:
+        string type;
+        bool isFromHewan;
+        int addedWeight;
+        string origin;
+        static int totalProduct;
+    public:
+        Product(int, string, string, string, string, int, float);
+        bool fromHewan();
+        int getAddedWeight();
+};
+
+class MakhlukHidup: public GameObject{
     protected:
         string type;
     public:
+        MakhlukHidup(int, string, float, string, string);
         virtual bool isHarvestable() = 0;
 };
 
@@ -46,20 +60,6 @@ class Tanaman: public MakhlukHidup{
     public:
         Tanaman(int,string,float,string,string,int);
         bool isHarvestable();
-};
-
-class Product:public GameObject{
-    private:
-        string type;
-        bool isFromHewan;
-        int addedWeight;
-        string origin;
-        static int totalProduct;
-    public:
-        Product(Hewan);
-        Product(Tanaman);
-        bool fromHewan();
-        int getAddedWeight();
 };
 
 class Bangunan:public GameObject{
