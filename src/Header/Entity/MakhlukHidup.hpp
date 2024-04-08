@@ -31,6 +31,7 @@ class Tanaman: public MakhlukHidup{
     public:
         Tanaman(int,string,float,string,string,int);
         bool isHarvestable();
+        void incrementAge();
 };
 
 #endif
