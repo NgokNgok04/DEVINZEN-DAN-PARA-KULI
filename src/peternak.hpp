@@ -8,9 +8,10 @@ class Peternak : public Pemain<T>
 {
 protected:
     MatrixArea<T> ternakan;
+
 public:
     Peternak();
-    Peternak(int rows, int cols, int guld, int bb);
+    Peternak(int rows, int cols, int guld, int bb, int terrows, int tercols);
     Peternak(const Peternak<T> &);
     ~Peternak();
     cetakTernak();
