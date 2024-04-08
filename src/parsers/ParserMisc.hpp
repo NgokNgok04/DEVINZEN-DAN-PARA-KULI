@@ -14,5 +14,10 @@ class ParserMisc : public BaseParser{
         ~ParserMisc(){}
         void ParseFile(string fileDirectory);
         void ClearParserData();
+        int getWinningMoney();
+        int getWinningWeight();
+        pair<int,int> getStorageSize();
+        pair<int,int> getFieldSize();
+        pair<int,int> getFarmSize();
         friend ostream &operator<<(ostream &os, ParserMisc &PM); //untuk debugging, pake aja
 };

@@ -75,6 +75,38 @@ void ParserProduk::ClearParserData()
     this->addedWeight.clear();
     this->price.clear();
 }
+int ParserProduk::getID(int i)
+{
+    return this->productID[i];
+}
+string ParserProduk::getCode(int i)
+{
+    return this->productCode[i];
+}
+string ParserProduk::getName(int i)
+{
+    return this->productName[i];
+}
+string ParserProduk::getType(int i)
+{
+    return this->productType[i];
+}
+string ParserProduk::getOrigin(int i)
+{
+    return this->productOrigin[i];
+}
+int ParserProduk::getAddedWeight(int i)
+{
+    return this->addedWeight[i];
+}
+int ParserProduk::getPrice(int i)
+{
+    return this->price[i];
+}
+int ParserProduk::getConfigSize()
+{
+    return this->productID.size();
+}
 ostream &operator<<(ostream &os, ParserProduk &PP)
 {
     for(int i = 0; i<PP.productID.size(); i++){

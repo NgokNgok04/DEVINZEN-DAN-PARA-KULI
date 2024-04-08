@@ -72,6 +72,41 @@ void ParserTanaman::ClearParserData()
         this->price.clear();
 }
 
+int ParserTanaman::getID(int i)
+{
+    return this->plantID[i];
+}
+
+string ParserTanaman::getCode(int i)
+{
+    return this->plantCode[i];
+}
+
+string ParserTanaman::getName(int i)
+{
+    return this->plantName[i];
+}
+
+string ParserTanaman::getType(int i)
+{
+    return this->plantType[i];
+}
+
+int ParserTanaman::getHarvestDuration(int i)
+{
+    return this->harvestDuration[i];
+}
+
+int ParserTanaman::getPrice(int i)
+{
+    return this->price[i];
+}
+
+int ParserTanaman::getConfigSize()
+{
+    return this->plantID.size();
+}
+
 ostream &operator<<(ostream &os, ParserTanaman &PT)
 {
     for(int i = 0; i<PT.plantID.size(); i++){

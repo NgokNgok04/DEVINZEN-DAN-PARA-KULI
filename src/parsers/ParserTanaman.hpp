@@ -18,5 +18,12 @@ class ParserTanaman : public BaseParser {
         ~ParserTanaman(){}
         void ParseFile(string fileDirectory);
         void ClearParserData();
+        int getID(int);
+        string getCode(int);
+        string getName(int);
+        string getType(int);
+        int getHarvestDuration(int);
+        int getPrice(int);
+        int getConfigSize();
         friend ostream &operator<<(ostream &os, ParserTanaman &PT); //untuk debugging, pake aja
 };

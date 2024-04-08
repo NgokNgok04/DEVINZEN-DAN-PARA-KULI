@@ -96,10 +96,9 @@ int main(){
         return 0;
     }
     
-    GameManager gameManager;
-    gameManager.getAnimalData(PH);
+    GameManager gameManager(PH,PT,PP,PR,PM);
 
-    cout<<"KEY          TUPLE\n";
+    gameManager.Debug();
 
     return 0;
 }

@@ -74,6 +74,31 @@ void ParserMisc::ClearParserData()
     this->farmSize = {0,0};
 }
 
+int ParserMisc::getWinningMoney()
+{
+    return this->winningMoney;
+}
+
+int ParserMisc::getWinningWeight()
+{
+    return this->winningWeight;
+}
+
+pair<int, int> ParserMisc::getStorageSize()
+{
+    return this->storageSize;
+}
+
+pair<int, int> ParserMisc::getFieldSize()
+{
+    return this->fieldSize;
+}
+
+pair<int, int> ParserMisc::getFarmSize()
+{
+    return this->farmSize;
+}
+
 ostream &operator<<(ostream &os, ParserMisc &PM)
 {
     os<<PM.winningMoney<<"\n";

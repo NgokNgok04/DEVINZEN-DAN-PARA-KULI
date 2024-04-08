@@ -20,5 +20,13 @@ class ParserProduk : public BaseParser{
         ~ParserProduk(){}
         void ParseFile(string fileDirectory);
         void ClearParserData();
+        int getID(int);
+        string getCode(int);
+        string getName(int);
+        string getType(int);
+        string getOrigin(int);
+        int getAddedWeight(int);
+        int getPrice(int);
+        int getConfigSize();
         friend ostream &operator<<(ostream &os, ParserProduk &PP); //untuk debugging, pake aja
 };

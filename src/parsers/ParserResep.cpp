@@ -63,6 +63,36 @@ void ParserResep::ClearParserData()
         this->recipeMaterialQuantity.clear();
 }
 
+int ParserResep::getID(int i)
+{
+    return this->recipeID[i];
+}
+
+string ParserResep::getCode(int i)
+{
+    return this->recipeCode[i];
+}
+
+string ParserResep::getName(int i)
+{
+    return this->recipeName[i];
+}
+
+int ParserResep::getPrice(int i)
+{
+    return this->recipePrice[i];
+}
+
+vector<pair<string, int>> ParserResep::getRecipeMaterialQuantity(int i)
+{
+    return this->recipeMaterialQuantity[i];
+}
+
+int ParserResep::getConfigSize()
+{
+    return this->recipeID.size();
+}
+
 ostream &operator<<(ostream &os, ParserResep &PR)
 {
     for(int i = 0; i<PR.recipeID.size(); i++){

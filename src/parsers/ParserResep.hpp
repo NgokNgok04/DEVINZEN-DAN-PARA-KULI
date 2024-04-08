@@ -14,5 +14,11 @@ class ParserResep : public BaseParser{
         ~ParserResep(){}
         void ParseFile(string fileDirectory);
         void ClearParserData();
+        int getID(int);
+        string getCode(int);
+        string getName(int);
+        int getPrice(int);
+        vector<pair<string,int> > getRecipeMaterialQuantity(int);
+        int getConfigSize();
         friend ostream &operator<<(ostream &os, ParserResep &PR); //untuk debugging, pake aja
 };
