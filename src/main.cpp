@@ -1,10 +1,6 @@
 #include <iostream>
-#include "parsers/ParserHewan.hpp"
-#include "parsers/ParserMisc.hpp"
-#include "parsers/ParserTanaman.hpp"
-#include "parsers/ParserProduk.hpp"
-#include "parsers/ParserResep.hpp"
 #include "exceptions/Exceptions.hpp"
+#include "gamemanager/GameManager.hpp"
 using namespace std;
 int main(){
     ParserHewan PH;
@@ -100,11 +96,10 @@ int main(){
         return 0;
     }
     
-    cout<<"test fileconfig\n";
-    cout<<PH;
-    cout<<PM;
-    cout<<PT;
-    cout<<PP;
-    cout<<PR;
+    GameManager gameManager;
+    gameManager.getAnimalData(PH);
+
+    cout<<"KEY          TUPLE\n";
+
     return 0;
 }

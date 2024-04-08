@@ -18,5 +18,12 @@ class ParserHewan : public BaseParser{
         ~ParserHewan(){}
         void ParseFile(string fileDirectory);
         void ClearParserData();
+        int getID(int);
+        string getCode(int);
+        string getName(int);
+        string getType(int);
+        int getHarvestWeight(int);
+        int getPrice(int);
+        int getConfigSize();
         friend ostream &operator<<(ostream &os, ParserHewan &PH); //untuk debugging, pake aja
 };

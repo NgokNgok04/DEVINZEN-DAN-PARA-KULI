@@ -73,6 +73,41 @@ void ParserHewan::ClearParserData()
     this->price.clear();
 }
 
+int ParserHewan::getID(int i)
+{
+    return this->animalID[i];
+}
+
+string ParserHewan::getCode(int i)
+{
+    return this->animalCode[i];
+}
+
+string ParserHewan::getName(int i)
+{
+    return this->animalName[i];
+}
+
+string ParserHewan::getType(int i)
+{
+    return this->animalType[i];
+}
+
+int ParserHewan::getHarvestWeight(int i)
+{
+    return this->harvestWeight[i];
+}
+
+int ParserHewan::getPrice(int i)
+{
+    return this->price[i];
+}
+
+int ParserHewan::getConfigSize()
+{
+    return this->animalID.size();
+}
+
 ostream &operator<<(ostream &os, ParserHewan &PH)
 {
     for(int i = 0; i<PH.animalID.size(); i++){
