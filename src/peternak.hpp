@@ -6,6 +6,8 @@
 template <class T>
 class Peternak : public Pemain<T>
 {
+protected:
+    MatrixArea<T> ternakan;
 public:
     Peternak();
     Peternak(int rows, int cols, int guld, int bb);
