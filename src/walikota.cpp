@@ -6,17 +6,15 @@ using namespace std;
 
 WaliKota::WaliKota() : Pemain()
 {
+    this->tipe = "walikota";
 }
 
 WaliKota::WaliKota(int cols, int rows, int guld, int bb) : Pemain(cols, rows, guld, bb)
 {
 }
 
-WaliKota::WaliKota(const WaliKota &other) : Pemain()
+WaliKota::WaliKota(const WaliKota &other) : Pemain(other)
 {
-    this->gulden = other.gulden;
-    this->berat_badan = other.berat_badan;
-    this->inventory = other.inventory;
 }
 
 WaliKota::~WaliKota()
@@ -36,8 +34,10 @@ void WaliKota::bangunBangunan(int)
 
 void WaliKota::beli(int buyr, int buyc, int saver, int savec)
 {
+    //
 }
 
 void WaliKota::jual(int sellr, int ellc)
 {
+    //
 }

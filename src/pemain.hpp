@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 #include "matrixarea.hpp"
 #include "GameObject.hpp"
 using namespace std;
@@ -13,6 +14,7 @@ protected:
     MatrixArea<GameObject> inventory;
     int gulden;
     int berat_badan;
+    string tipe; // walikota, peternak, petani, pemain
 
 public:
     Pemain();
@@ -22,9 +24,9 @@ public:
 
     // specifics
     void cetakPenyimpanan();
-    void makan(int row, int col);              // loc item yg dimakan
-    virtual void beli(int, int, int, int) = 0; // letak and quant item, loc item akan disimpan
-    virtual void jual(int, int) = 0;           // loc item yg akan dijual
+    void makan(int row, int col);          // loc item yg dimakan
+    virtual void beli(int, int, int, int); // letak and quant item, loc item akan disimpan
+    virtual void jual(int, int);           // loc item yg akan dijual
 };
 
 #endif

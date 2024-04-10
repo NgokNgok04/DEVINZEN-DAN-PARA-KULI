@@ -6,6 +6,7 @@ using namespace std;
 
 Peternak::Peternak() : Pemain(), ternakan(10, 10)
 {
+    this->tipe = "peternak";
     // MatrixArea<GameObject> *inv = new MatrixArea<GameObject>(10, 10);
     // this->ternakan = *inv;
 }

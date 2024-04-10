@@ -6,6 +6,7 @@ using namespace std;
 
 Petani::Petani() : Pemain(), ladang(10, 10)
 {
+    this->tipe = "petani";
 }
 
 Petani::Petani(int rows, int cols, int guld, int bb, int ladrows, int ladcols) : Pemain(rows, cols, guld, bb), ladang(ladrows, ladcols)
