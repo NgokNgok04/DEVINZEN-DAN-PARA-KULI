@@ -3,16 +3,17 @@
 
 #include "pemain.hpp"
 
-template <class T>
-class WaliKota : public Pemain<T>
+class WaliKota : public Pemain
 {
 public:
     WaliKota();
     WaliKota(int rows, int cols, int guld, int bb);
-    WaliKota(const WaliKota<T> &);
+    WaliKota(const WaliKota &);
     ~WaliKota();
-    pungutPajak();
-    bangunBangunan(int); // int tipe 1: small, 2 medium, 3 large, 4 hotel
+    void pungutPajak();
+    void bangunBangunan(int); // int tipe 1: small, 2 medium, 3 large, 4 hotel
+    void beli(int, int, int, int);
+    void jual(int, int);
 };
 
 #endif

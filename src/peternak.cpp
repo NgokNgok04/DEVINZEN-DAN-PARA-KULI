@@ -4,27 +4,58 @@
 #include "peternak.hpp"
 using namespace std;
 
-template <class T>
-Peternak<T>::Peternak() : Pemain<T>()
+Peternak::Peternak() : Pemain(), ternakan(10, 10)
 {
-    this->ternakan->MatrixArea(10, 10);
+    // MatrixArea<GameObject> *inv = new MatrixArea<GameObject>(10, 10);
+    // this->ternakan = *inv;
 }
 
-template <class T>
-Peternak<T>::Peternak(int rows, int cols, int guld, int bb, int terrows, int colrows) : Pemain<T>(rows, cols, guld, bb)
+Peternak::Peternak(int rows, int cols, int guld, int bb, int terrows, int tercols) : Pemain(rows, cols, guld, bb), ternakan(terrows, tercols)
 {
-    this->ternakan->MatrixArea(terrows, colrows);
 }
 
-template <class T>
-Peternak<T>::Peternak(const Peternak<T> &other) : Pemain<T>()
+Peternak::Peternak(const Peternak &other) : Pemain(), ternakan(other.ternakan)
 {
-    this->ternakan = other.ternakan;
 }
 
-template <class T>
-Peternak<T>::~Peternak()
+Peternak::~Peternak()
 {
     this->inventory.~MatrixArea();
     this->ternakan.~MatrixArea();
+}
+
+void Peternak::beli(int buyr, int buyc, int saver, int savec)
+{
+    // Need toko
+}
+
+void Peternak::jual(int sellr, int ellc)
+{
+    //
+}
+
+void Peternak::cetakTernak()
+{
+    this->ternakan.displayObject();
+    this->ternakan.displayRemainderSlot();
+}
+
+void Peternak::ternak(int invr, int invc, int terr, int terc)
+{
+    // if invr, invcol is hewan
+    // if terr, terc kosong
+    // put in
+    // else
+    // cancel
+    // else
+    // cancel
+}
+
+void Peternak::kasihMakan(int terr, int terc, int invr, int invc)
+{
+    // if
+}
+
+void Peternak::panenTernak()
+{
 }

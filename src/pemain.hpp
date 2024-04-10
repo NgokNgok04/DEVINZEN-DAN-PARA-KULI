@@ -4,27 +4,27 @@
 #include <iostream>
 #include <vector>
 #include "matrixarea.hpp"
+#include "GameObject.hpp"
 using namespace std;
 
-template <class T>
 class Pemain
 {
 protected:
-    MatrixArea<T> inventory;
+    MatrixArea<GameObject> inventory;
     int gulden;
     int berat_badan;
 
 public:
     Pemain();
     Pemain(int rows, int cols, int guld, int bb); // : MatrixArea(rows, cols)
-    Pemain(const Pemain<T> &);
+    Pemain(const Pemain &);
     ~Pemain();
 
     // specifics
-    cetakPenyimpanan();
-    makan(int, int);          // loc item yg dimakan
-    beli(int, int, int, int); // loc item yang dibeli, loc item akan disimpan
-    jual(int, int);           // loc item yg akan dijual
+    void cetakPenyimpanan();
+    void makan(int row, int col);              // loc item yg dimakan
+    virtual void beli(int, int, int, int) = 0; // letak and quant item, loc item akan disimpan
+    virtual void jual(int, int) = 0;           // loc item yg akan dijual
 };
 
 #endif
