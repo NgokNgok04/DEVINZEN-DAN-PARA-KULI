@@ -27,6 +27,11 @@ Pemain::~Pemain()
     this->inventory.~MatrixArea();
 }
 
+string Pemain::getTipe()
+{
+    return this->tipe;
+}
+
 void Pemain::cetakPenyimpanan()
 {
     this->inventory.displayObject();
