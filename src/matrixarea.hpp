@@ -16,6 +16,7 @@ private:
     vector<vector<T>> matrix;
 
 public:
+    MatrixArea();
     MatrixArea(int, int);
     ~MatrixArea();
     MatrixArea(const MatrixArea<T> &);

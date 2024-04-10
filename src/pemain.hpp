@@ -7,7 +7,6 @@
 #include "GameObject.hpp"
 using namespace std;
 
-template <class T>
 class Pemain
 {
 protected:
@@ -18,7 +17,7 @@ protected:
 public:
     Pemain();
     Pemain(int rows, int cols, int guld, int bb); // : MatrixArea(rows, cols)
-    Pemain(const Pemain<T> &);
+    Pemain(const Pemain&);
     ~Pemain();
 
     // specifics

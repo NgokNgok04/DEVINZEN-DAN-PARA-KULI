@@ -2,21 +2,20 @@
 #define PETANI_HPP
 
 #include "pemain.hpp"
-
-template <class T>
-class Petani : public Pemain<T>
+#include "tumbuhan.hpp"
+class Petani : public Pemain
 {
 protected:
-    MatrixArea<T> ladang;
+    MatrixArea<Tumbuhan> ladang;
 
 public:
     Petani();
     Petani(int rows, int cols, int guld, int bb, int ladrows, int ladcols);
-    Petani(const Petani<T> &);
+    Petani(const Petani &);
     ~Petani();
-    cetakLadang();
-    tanam(int, int, int, int); // coords tanaman yg ingin ditanam, coords letak menanam dlm ladang
-    panenTani();
+    void cetakLadang();
+    void tanam(int, int, int, int); // coords tanaman yg ingin ditanam, coords letak menanam dlm ladang
+    void panenTani();
 };
 
 #endif

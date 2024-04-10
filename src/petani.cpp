@@ -4,26 +4,22 @@
 #include "petani.hpp"
 using namespace std;
 
-template <class T>
-Petani<T>::Petani() : Pemain<T>()
+Petani::Petani() : Pemain(), ladang(10,10)
 {
-    this->ladang->MatrixArea(10, 10);
+    // this->ladang->MatrixArea(10, 10);
 }
 
-template <class T>
-Petani<T>::Petani(int rows, int cols, int guld, int bb, int ladrows, int ladcols) : Pemain<T>(rows, cols, guld, bb)
+Petani::Petani(int rows, int cols, int guld, int bb, int ladrows, int ladcols) : Pemain(rows, cols, guld, bb), ladang(10,10)
 {
-    this->ladang->MatrixArea(ladrows, ladcols);
+    // this->ladang->MatrixArea(ladrows, ladcols);
 }
 
-template <class T>
-Petani<T>::Petani(const Petani<T> &other) : Pemain<T>()
+Petani::Petani(const Petani &other) : Pemain()
 {
     this->ladang = other.ladang;
 }
 
-template <class T>
-Petani<T>::~Petani()
+Petani::~Petani()
 {
     this->inventory.~MatrixArea();
     this->ladang.~MatrixArea();

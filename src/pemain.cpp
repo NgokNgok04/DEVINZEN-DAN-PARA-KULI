@@ -4,8 +4,7 @@
 #include "pemain.hpp"
 using namespace std;
 
-template <class T>
-Pemain<T>::Pemain() : inventory(10, 10)
+Pemain::Pemain() : inventory(10, 10)
 {
     this->gulden = 50;
     this->berat_badan = 0;
@@ -14,46 +13,42 @@ Pemain<T>::Pemain() : inventory(10, 10)
     // this->inventory = inv;
 }
 
-template <class T>
-Pemain<T>::Pemain(int rows, int cols, int guld, int bb) : inventory(rows, cols)
+Pemain::Pemain(int rows, int cols, int guld, int bb) : inventory(rows, cols)
 {
     this->gulden = guld;
-    this->bb = berat_badan;
+    this->berat_badan = bb;
     // MatrixArea<T> inv;
     // inv.MatrixArea(rows, cols);
     // this->inventory = inv;
 }
 
-template <class T>
-Pemain<T>::Pemain(const Pemain<T> &other)
+Pemain::Pemain(const Pemain &other)
 {
     this->gulden = other.gulden;
     this->berat_badan = other.berat_badan;
     this->inventory = other.inventory;
 }
 
-template <class T>
-Pemain<T>::~Pemain()
+Pemain::~Pemain()
 {
     this->inventory.~MatrixArea();
 }
 
-template <class T>
-Pemain<T>::cetakPenyimpanan(){
+void Pemain::cetakPenyimpanan(){
     this->inventory.displayObject();
     this->inventory.displayRemainderSlot();
 }
 
-template <class T>
-Pemain<T>::makan(int row, int col){
+void Pemain::makan(int row, int col){
     cout << "Pilih makanan dari penyimpanan" << endl;
     this->inventory.displayObject();
     cout << endl;
     bool isValid = false;
-    char[3] slot;
+    string slot;
     while(!isValid){
         cout << "Slot: ";
         cin >> slot;
+        cout << endl;
     }
     
     cout << endl << endl;

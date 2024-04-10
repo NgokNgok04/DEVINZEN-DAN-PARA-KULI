@@ -4,26 +4,22 @@
 #include "peternak.hpp"
 using namespace std;
 
-template <class T>
-Peternak<T>::Peternak() : Pemain<T>()
+Peternak::Peternak() : Pemain(), ternakan(10,10)
 {
-    this->ternakan->MatrixArea(10, 10);
+    // this->ternakan->MatrixArea(10, 10);
 }
 
-template <class T>
-Peternak<T>::Peternak(int rows, int cols, int guld, int bb, int terrows, int colrows) : Pemain<T>(rows, cols, guld, bb)
+Peternak::Peternak(int rows, int cols, int guld, int bb, int terrows, int colrows) : Pemain(rows, cols, guld, bb), ternakan(10,10)
 {
-    this->ternakan->MatrixArea(terrows, colrows);
+    // this->ternakan->MatrixArea(terrows, colrows);
 }
 
-template <class T>
-Peternak<T>::Peternak(const Peternak<T> &other) : Pemain<T>()
+Peternak::Peternak(const Peternak &other) : Pemain()
 {
     this->ternakan = other.ternakan;
 }
 
-template <class T>
-Peternak<T>::~Peternak()
+Peternak::~Peternak()
 {
     this->inventory.~MatrixArea();
     this->ternakan.~MatrixArea();

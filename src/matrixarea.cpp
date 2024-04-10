@@ -4,6 +4,13 @@
 #include "matrixarea.hpp"
 using namespace std;
 template <class T>
+MatrixArea<T>::MatrixArea(){
+    this->rows = 0;
+    this->cols = 0;
+    this->matrix.resize(this->rows,vector<T>(this->cols,T()));
+}
+
+template <class T>
 MatrixArea<T>::MatrixArea(int rows, int cols)
 {
     this->rows = rows;
