@@ -93,6 +93,28 @@ int ParserResep::getConfigSize()
     return this->recipeID.size();
 }
 
+int ParserResep::convertCodeToID(string Code)
+{
+    for(int i = 0; i<this->getConfigSize(); i++){
+        if(this->recipeCode[i] == Code){
+            return this->recipeID[i];
+        }
+    }
+
+    return -1;
+}
+
+int ParserResep::convertNameToID(string Name)
+{
+    for(int i = 0; i<this->getConfigSize(); i++){
+        if(this->recipeName[i] == Name){
+            return this->recipeID[i];
+        }
+    }
+
+    return -1;
+}
+
 ostream &operator<<(ostream &os, ParserResep &PR)
 {
     for(int i = 0; i<PR.recipeID.size(); i++){

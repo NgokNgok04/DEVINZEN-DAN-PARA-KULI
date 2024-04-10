@@ -1,3 +1,5 @@
+#ifndef PARSERMISC_HPP
+#define PARSERMISC_HPP
 #include <bits/stdc++.h>
 #include "BaseParser.hpp"
 using namespace std;
@@ -21,3 +23,4 @@ class ParserMisc : public BaseParser{
         pair<int,int> getFarmSize();
         friend ostream &operator<<(ostream &os, ParserMisc &PM); //untuk debugging, pake aja
 };
+#endif

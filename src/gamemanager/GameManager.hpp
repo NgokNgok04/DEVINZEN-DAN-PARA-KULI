@@ -1,3 +1,5 @@
+#ifndef GAMEMANAGER_HPP
+#define GAMEMANAGER_HPP
 #include <bits/stdc++.h>
 #include "../parsers/ParserHewan.hpp"
 #include "../parsers/ParserMisc.hpp"
@@ -38,3 +40,4 @@ class GameManager{
         //Pemain getCurrentPlayer();
         //string getWinnerName();
 };
+#endif

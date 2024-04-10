@@ -1,3 +1,5 @@
+#ifndef PARSERHEWAN_HPP
+#define PARSERHEWAN_HPP
 #include <bits/stdc++.h>
 #include "BaseParser.hpp"
 using namespace std;
@@ -25,5 +27,8 @@ class ParserHewan : public BaseParser{
         int getHarvestWeight(int);
         int getPrice(int);
         int getConfigSize();
+        int convertCodeToID(string Code);
+        int convertNameToID(string Name);
         friend ostream &operator<<(ostream &os, ParserHewan &PH); //untuk debugging, pake aja
 };
+#endif

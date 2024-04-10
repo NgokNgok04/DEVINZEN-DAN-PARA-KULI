@@ -108,6 +108,28 @@ int ParserHewan::getConfigSize()
     return this->animalID.size();
 }
 
+int ParserHewan::convertCodeToID(string Code)
+{
+    for(int i = 0; i<this->getConfigSize(); i++){
+        if(this->animalCode[i] == Code){
+            return this->animalID[i];
+        }
+    }
+
+    return -1;
+}
+
+int ParserHewan::convertNameToID(string Name)
+{
+    for(int i = 0; i<this->getConfigSize(); i++){
+        if(this->animalName[i] == Name){
+            return this->animalID[i];
+        }
+    }
+
+    return -1;
+}
+
 ostream &operator<<(ostream &os, ParserHewan &PH)
 {
     for(int i = 0; i<PH.animalID.size(); i++){

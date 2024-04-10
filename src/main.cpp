@@ -181,7 +181,7 @@ int main(){
         } else if(command == "SIMPAN"){
             //gameManager.save();
         } else if(command == "TAMBAH_PEMAIN"){
-             //Periksa apakah pemain yang sekarang bermain walikota atau bukan
+            //Periksa apakah pemain yang sekarang bermain walikota atau bukan
             //kalau walikota
             //gameManager.getCurrentPlayer().TambahPemain();
             //kalau bukan walikota
