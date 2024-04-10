@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include "pemain.hpp"
+#include "Toko.hpp"
 using namespace std;
 
 Pemain::Pemain() : inventory(10, 10)
@@ -56,4 +57,11 @@ void Pemain::makan(int row, int col){
     cout << endl << endl;
     cout << "Dengan lahapnya, kamu memakan hidangan itu" << endl;
     cout << "Alhasil, berat badan kamu naik menjadi ";
+}
+
+void Pemain::beli(){
+    tokoGlobal.displayAvailableItemToBuy();
+    cout << endl << endl;
+    cout << "Uang Anda : " << this->gulden;
+    this->inventory.displayRemainderSlot();
 }
