@@ -57,6 +57,29 @@ T MatrixArea<T>::getElement(int row, int col)
 }
 
 template <class T>
+void MatrixArea<T>::deleteElement(int row, int col){
+    this->matrix[row - 1][col - 1] = T();
+}
+
+template <class T>
+pair<int,int> MatrixArea<T>::getPositionFromKodeHuruf(string kode_huruf){
+    for(int i = 0; i < this->rows; i++){
+        for(int j = 0; j < this->cols; j++){
+            if (this->getElement(i + 1, j + 1) == kode_huruf){
+                return make_pair(i+1,j+1); // i n j mulai dari 1
+            }
+        }
+    }
+}
+
+template <class T>
+pair<int,int> MatrixArea<T>::getPositionFromSlot(string slot){
+   int posCol = slot[0] - 'A' + 1;
+   int posRow =  stoi(slot[1] + slot[2]);
+   return make_pair(posRow, posCol);
+}
+
+template <class T>
 void MatrixArea<T>::displayMatrix()
 {
     cout << "    ";
@@ -236,6 +259,7 @@ void MatrixArea<T>::displayDetail()
         }
     }
 }
+
 template <class T>
 void MatrixArea<T>::displayRemainderSlot()
 {

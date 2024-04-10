@@ -1,5 +1,5 @@
-#include "GameObject.hpp"
-#include "Exception.hpp"
+#include "../Header/Entity/GameObject.hpp"
+#include "../Header/Entity/Exception.hpp"
 using namespace std;
 
 int Hewan::totalHewan = 0;

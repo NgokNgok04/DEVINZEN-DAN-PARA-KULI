@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <utility>
 #include "hewan.hpp"
 #include "tumbuhan.hpp"
 #include "GameObject.hpp"
@@ -22,7 +23,10 @@ public:
     MatrixArea(const MatrixArea<T> &);
     MatrixArea<T> &operator=(const MatrixArea<T> &);
     void setElement(int, int, T);
+    void deleteElement(int,int);
     T getElement(int, int);
+    pair<int,int> getPositionFromKodeHuruf(string kode_huruf);
+    pair<int,int> getPositionFromSlot(string slot);
     void displayMatrix();
     void displayObject();
     void displayDetail();

@@ -50,7 +50,9 @@ void Pemain::makan(int row, int col){
         cin >> slot;
         cout << endl;
     }
-    
+    pair<int,int> pos = this->inventory.getPositionFromSlot(slot);
+    // this->berat_badan += this->inventory.getElement(pos.first,pos.second).getAddedWeight();
+    this->inventory.deleteElement(pos.first,pos.second);
     cout << endl << endl;
     cout << "Dengan lahapnya, kamu memakan hidangan itu" << endl;
     cout << "Alhasil, berat badan kamu naik menjadi ";
