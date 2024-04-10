@@ -85,6 +85,10 @@ bool Tanaman::isHarvestable(){
     return age>=durationHarvest;
 }
 
+void Tanaman::incrementAge(){
+    age++;
+}
+
 // bangunan
 Bangunan::Bangunan(int id, string kodeHuruf, float price, string name, string pemilik) : GameObject(id, kodeHuruf, price, name){
     this->pemilik = pemilik;
