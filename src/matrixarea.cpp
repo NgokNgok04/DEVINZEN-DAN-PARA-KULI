@@ -205,26 +205,33 @@ void MatrixArea<Tumbuhan>::displayObject()
 }
 
 template <class T>
-void MatrixArea<T>::displayDetail(){
+void MatrixArea<T>::displayDetail()
+{
     cout << endl;
     vector<string> foundList;
     bool found;
-    for (int i = 0; i < this->rows; i++){
+    for (int i = 0; i < this->rows; i++)
+    {
         found = false;
-        for(int j = 0; j < this->rows; j++){
-            for(const string itr: foundList) {
-                if (itr == this->matrix[i][j].getKodeHuruf()){
+        for (int j = 0; j < this->rows; j++)
+        {
+            for (const string itr : foundList)
+            {
+                if (itr == this->matrix[i][j].getKodeHuruf())
+                {
                     found = true;
                 };
             };
-            if (!found){
+            if (!found)
+            {
                 cout << "- " << this->matrix[i][j].getKodeHuruf() << ": " << this->matrix[i][j].getName() << endl;
             }
         }
     }
 }
 template <class T>
-void MatrixArea<T>::displayRemainderSlot(){
+void MatrixArea<T>::displayRemainderSlot()
+{
     cout << endl;
     int remainderSlot = this->rows * this->cols;
     for (int i = 0; i < this->rows; i++){
