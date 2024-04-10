@@ -5,6 +5,7 @@
 #include <vector>
 #include "hewan.hpp"
 #include "tumbuhan.hpp"
+#include "GameObject.hpp"
 using namespace std;
 template <class T>
 class MatrixArea {

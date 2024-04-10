@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <string>
 #include "pemain.hpp"
 using namespace std;
 
@@ -35,4 +36,27 @@ template <class T>
 Pemain<T>::~Pemain()
 {
     this->inventory.~MatrixArea();
+}
+
+template <class T>
+Pemain<T>::cetakPenyimpanan(){
+    this->inventory.displayObject();
+    this->inventory.displayRemainderSlot();
+}
+
+template <class T>
+Pemain<T>::makan(int row, int col){
+    cout << "Pilih makanan dari penyimpanan" << endl;
+    this->inventory.displayObject();
+    cout << endl;
+    bool isValid = false;
+    char[3] slot;
+    while(!isValid){
+        cout << "Slot: ";
+        cin >> slot;
+    }
+    
+    cout << endl << endl;
+    cout << "Dengan lahapnya, kamu memakan hidangan itu" << endl;
+    cout << "Alhasil, berat badan kamu naik menjadi ";
 }

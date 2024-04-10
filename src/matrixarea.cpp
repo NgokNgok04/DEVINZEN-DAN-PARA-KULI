@@ -71,7 +71,7 @@ void MatrixArea<T>::displayMatrix()
         cout << "|";
         for(int j = 0; j < this->cols; j++){
             if (this->matrix[i][j].length() == 3){
-                cout << " " << this->matrix[i][j].kode_huruf << " ";
+                cout << " " << this->matrix[i][j].getKodeHuruf() << " ";
             } else {
                 cout << "     ";
             }
@@ -82,8 +82,8 @@ void MatrixArea<T>::displayMatrix()
     cout << grid << endl;
 }
 
-template <class T>
-void MatrixArea<T>::displayObject()
+template <>
+void MatrixArea<GameObject>::displayObject()
 {
     int title = (this->cols * 6) + 4;
     cout << "   ";
@@ -119,7 +119,7 @@ void MatrixArea<T>::displayObject()
     {
         cout << "[ Penyimpanan ]" << endl;
     }
-    MatrixArea<Hewan>::displayMatrix();
+    MatrixArea<GameObject>::displayMatrix(); 
 }
 
 template <>
@@ -160,6 +160,7 @@ void MatrixArea<Hewan>::displayObject()
         cout << "[ Peternakan ]" << endl;
     }
     MatrixArea<Hewan>::displayMatrix();
+    // dummy Class di local mahew (ga dipush)
 }
 
 template <>
@@ -200,6 +201,7 @@ void MatrixArea<Tumbuhan>::displayObject()
         cout << "[ Ladang ]" << endl;
     }
     MatrixArea<Tumbuhan>::displayMatrix();
+    // dummy Class di local mahew (ga dipush)
 }
 
 template <class T>
@@ -224,12 +226,13 @@ void MatrixArea<T>::displayDetail(){
 template <class T>
 void MatrixArea<T>::displayRemainderSlot(){
     cout << endl;
-    int RemainderSlot = this->rows * this->cols;
+    int remainderSlot = this->rows * this->cols;
     for (int i = 0; i < this->rows; i++){
         for (int j = 0; j < this->cols; j++){
             if ((this->matrix[i][j].getKodeHuruf()).length() == 3){
-                this->cols = 
+                remainderSlot --;
             }
         }
     }
+    cout << "Total slot kosong: " << remainderSlot << endl;
 }

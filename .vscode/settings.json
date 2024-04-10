@@ -6,5 +6,7 @@
     "xmemory": "cpp",
     "ostream": "cpp",
     "vector": "cpp"
-  }
+  },
+  "C_Cpp.errorSquiggles": "disabled",
+  "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\g++.exe"
 }
