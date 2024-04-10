@@ -100,7 +100,25 @@ int main(){
 
     gameManager.Debug();
 
+    cout<<"Selamat datang di permainan Mengelola Kerajaan! Silakan input pilihan angka di bawah ini untuk mulai bermain:\n";
+    cout<<"1. Mulai dari permainan baru\n";
+    cout<<"2. Mulai dari memuat file save\n";
+
     
+    int choice;
+    while(true){
+        cout<<">";
+        cin>>choice;
+        if(choice == 1){
+            cout<<"Membuat game baru\n";
+            break;
+        } else if(choice == 2){
+            cout<<"Membuka Save file\n";
+            break;
+        }
+    }
+
+    cout<<"Setup permainan selesai, permainan dimulai!\n";
     string command;
     while(true){
         //cout<<"Sekarang giliran "<<gameManager.getCurrentPlayerName()<<"!\n";
@@ -173,7 +191,7 @@ int main(){
             continue;
         }
         /*if(gameManager.isThereAWinner()){
-            //akhiri permainan
+            cout<<"Selamat, "<<gameManager.getWinnerName()<<"! Anda yang telah memenangkan permainan ini!\n Permainan berakhir.\n";
             return 0;
         }*/
     }

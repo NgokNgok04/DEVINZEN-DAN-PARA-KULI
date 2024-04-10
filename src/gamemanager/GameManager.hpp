@@ -36,4 +36,5 @@ class GameManager{
         //Pemain getWinner();
         //string getCurrentPlayerName();
         //Pemain getCurrentPlayer();
+        //string getWinnerName();
 };
