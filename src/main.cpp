@@ -100,5 +100,82 @@ int main(){
 
     gameManager.Debug();
 
+    
+    string command;
+    while(true){
+        //cout<<"Sekarang giliran "<<gameManager.getCurrentPlayerName()<<"!\n";
+
+        cout<<">";
+        cin>>command;
+        if(command == "NEXT"){
+            cout<<"Ini command Next. Yang harus dilakukan adalah: 1. Ganti ke pemain berikutnya 2. Tambah umur SEMUA tanaman menjadi 1 satuan lebih tua\n";
+            //gameManager.Next();
+        } else if(command == "CETAK_PENYIMPANAN"){
+            //gamaManager.getCurrentPlayer().cetakPenyimpanan();
+        } else if(command == "PUNGUT_PAJAK"){
+            //Periksa apakah pemain yang sekarang bermain walikota atau bukan
+            //kalau walikota
+            //gameManager.getCurrentPlayer().pungutPajak();
+            //kalau bukan walikota
+            //throw exception "Anda bukan walikota, tidak bisa memungut pajak!"
+        } else if(command == "CETAK_LADANG"){
+            //Periksa apakah pemain yang sekarang bermain petani atau bukan
+            //kalau petani
+            //gameManager.getCurrentPlayer().cetakLadang();
+            //kalau bukan petani
+            //throw exception kayak "Anda bukan petani, tidak bisa cetak ladang!"
+        } else if(command == "CETAK_PETERNAKAN"){
+            //Periksa apakah pemain yang sekarang bermain peternak atau bukan
+            //kalau peternak
+            //gameManager.getCurrentPlayer().cetakPeternak();
+            //kalau bukan peternak
+            //throw exception kayak "Anda bukan peternak, tidak bisa cetak peternakan!"
+        } else if(command == "TANAM"){
+            //Periksa apakah pemain yang sekarang bermain petani atau bukan
+            //kalau petani
+            //gameManager.getCurrentPlayer().Tanam();
+            //kalau bukan petani
+            //throw exception kayak "Anda bukan petani, tidak bisa menanam!"
+        } else if(command == "TERNAK"){
+            //Periksa apakah pemain yang sekarang bermain peternak atau bukan
+            //kalau peternak
+            //gameManager.getCurrentPlayer().Ternak();
+            //kalau bukan peternak
+            //throw exception kayak "Anda bukan peternak, tidak bisa beternak!"
+        } else if(command == "BANGUN_BANGUNAN"){
+            //Periksa apakah pemain yang sekarang bermain walikota atau bukan
+            //kalau walikota
+            //gameManager.getCurrentPlayer().BangunBangunan();
+            //kalau bukan walikota
+            //throw exception "Anda bukan walikota, tidak bisa membangun bangunan!"
+        } else if(command == "MAKAN"){
+            //gameManager.getCurrentPlayer().Makan();
+        } else if(command == "KASIH_MAKAN"){
+            //Periksa apakah pemain yang sekarang bermain peternak atau bukan
+            //kalau peternak
+            //gameManager.getCurrentPlayer().KasihMakan();
+            //kalau bukan peternak
+            //throw exception kayak "Anda bukan peternak, tidak bisa kasih makan!"
+        } else if(command == "BELI"){
+            //gameManager.getCurrentPlayer().Beli();
+        } else if(command == "JUAL"){
+            //gameManager.getCurrentPlayer().Jual();
+        } else if(command == "SIMPAN"){
+            //gameManager.save();
+        } else if(command == "TAMBAH_PEMAIN"){
+             //Periksa apakah pemain yang sekarang bermain walikota atau bukan
+            //kalau walikota
+            //gameManager.getCurrentPlayer().TambahPemain();
+            //kalau bukan walikota
+            //throw exception "Anda bukan walikota, tidak bisa meNAMBAH PEMAIN!"
+        } else {
+            cout<<"Perintah tidak valid! Silakan input ulang. \n";
+            continue;
+        }
+        /*if(gameManager.isThereAWinner()){
+            //akhiri permainan
+            return 0;
+        }*/
+    }
     return 0;
 }

@@ -17,10 +17,10 @@ class GameManager{
         pair<int,int> storageSize;
         pair<int,int> fieldSize;
         pair<int,int> farmSize;
-        map<string,string> productOriginConversion; //konversi tanaman/hewan menjadi produk
-        //queue<player> TurnQueue;
-        //vector<player> playerList;
-        //player Winner;
+        map<string, vector<string> > productOriginConversion; //konversi tanaman/hewan menjadi produk
+        //queue<Pemain> TurnQueue;
+        //vector<Pemain> playerList;
+        //Pemain Winner;
         //
         //TODO:
         //1. QUEUE PEMAIN (giliran)
@@ -32,4 +32,8 @@ class GameManager{
         ~GameManager(){}
         void Debug();
         //void Next();
+        //bool isThereAWinner();
+        //Pemain getWinner();
+        //string getCurrentPlayerName();
+        //Pemain getCurrentPlayer();
 };
