@@ -97,5 +97,6 @@ int main(){
         return 0;
     }
     cout<<PH.convertNameToID("SNAKE")<<"\n";
+    cout<<PP.convertCodeToID("GAP")<<"\n";
     return 0;
 }

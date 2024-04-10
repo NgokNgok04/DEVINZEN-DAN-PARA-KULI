@@ -96,7 +96,7 @@ int main(){
         return 0;
     }
     
-    GameManager gameManager(PH,PT,PP,PR,PM);
+    GameManager gameManager(PM);
 
     gameManager.Debug();
 
