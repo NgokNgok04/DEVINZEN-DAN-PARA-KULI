@@ -14,12 +14,12 @@ public:
     Peternak(const Peternak &);
     ~Peternak();
     void cetakTernak();
-    void ternak(int, int, int, int);     // coords hewan yg ingin diternak, coords letak ternakan
-    void kasihMakan(int, int, int, int); // coords letak hewan, coords letak makanan yg ingin diberikan
+    void ternak();     // coords hewan yg ingin diternak, coords letak ternakan
+    void kasihMakan(); // coords letak hewan, coords letak makanan yg ingin diberikan
     void panenTernak();
-    void beli(int, int, int, int);
-    void jual(int, int);
-    int calculateTax();
+    void beli();
+    void jual();
+    int calculateKKP();
 };
 
 #endif

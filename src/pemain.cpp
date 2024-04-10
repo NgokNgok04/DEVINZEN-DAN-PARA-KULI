@@ -42,7 +42,7 @@ void Pemain::cetakPenyimpanan()
     this->inventory.displayRemainderSlot();
 }
 
-void Pemain::makan(int row, int col)
+void Pemain::makan()
 {
     cout << "Pilih makanan dari penyimpanan" << endl;
     this->inventory.displayObject();

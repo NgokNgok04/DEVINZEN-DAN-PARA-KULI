@@ -27,12 +27,12 @@ Peternak::~Peternak()
     this->ternakan.~MatrixArea();
 }
 
-void Peternak::beli(int buyr, int buyc, int saver, int savec)
+void Peternak::beli()
 {
     // Need toko
 }
 
-void Peternak::jual(int sellr, int ellc)
+void Peternak::jual()
 {
     //
 }
@@ -43,11 +43,11 @@ void Peternak::cetakTernak()
     this->ternakan.displayRemainderSlot();
 }
 
-void Peternak::ternak(int invr, int invc, int terr, int terc)
+void Peternak::ternak()
 {
 }
 
-void Peternak::kasihMakan(int terr, int terc, int invr, int invc)
+void Peternak::kasihMakan()
 {
     // if
 }
@@ -56,7 +56,6 @@ void Peternak::panenTernak()
 {
 }
 
-int Peternak::calculateTax()
+int Peternak::calculateKKP()
 {
-    return 0;
 }

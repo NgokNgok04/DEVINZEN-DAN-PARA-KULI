@@ -34,17 +34,12 @@ void WaliKota::bangunBangunan(int)
     // Butuh config bangunan
 }
 
-void WaliKota::beli(int buyr, int buyc, int saver, int savec)
+void WaliKota::beli()
 {
     //
 }
 
-void WaliKota::jual(int sellr, int ellc)
+void WaliKota::jual()
 {
     //
-}
-
-int WaliKota::calculateTax()
-{
-    return 0;
 }

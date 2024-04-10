@@ -14,11 +14,11 @@ public:
     Petani(const Petani &);
     ~Petani();
     void cetakLadang();
-    void tanam(int, int, int, int); // coords tanaman yg ingin ditanam, coords letak menanam dlm ladang
+    void tanam(); // coords tanaman yg ingin ditanam, coords letak menanam dlm ladang
     void panenTani();
-    void beli(int, int, int, int);
-    void jual(int, int);
-    int calculateTax();
+    void beli();
+    void jual();
+    int calculateKKP();
 };
 
 #endif

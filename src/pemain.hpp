@@ -26,9 +26,9 @@ public:
 
     // specifics
     void cetakPenyimpanan();
-    void makan(int row, int col);              // loc item yg dimakan
-    virtual void beli(int, int, int, int) = 0; // letak and quant item, loc item akan disimpan
-    virtual void jual(int, int) = 0;           // loc item yg akan dijual
+    void makan();            // loc item yg dimakan
+    virtual void beli() = 0; // letak and quant item, loc item akan disimpan
+    virtual void jual() = 0; // loc item yg akan dijual
     virtual int calculateTax() = 0;
 };
 

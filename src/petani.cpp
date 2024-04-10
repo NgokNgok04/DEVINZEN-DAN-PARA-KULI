@@ -25,12 +25,12 @@ Petani::~Petani()
     this->ladang.~MatrixArea();
 }
 
-void Petani::beli(int buyr, int buyc, int saver, int savec)
+void Petani::beli()
 {
     // Need toko
 }
 
-void Petani::jual(int sellr, int ellc)
+void Petani::jual()
 {
     //
 }
@@ -41,7 +41,7 @@ void Petani::cetakLadang()
     this->ladang.displayRemainderSlot();
 }
 
-void Petani::tanam(int invr, int invc, int ladr, int ladc)
+void Petani::tanam()
 {
 }
 
@@ -49,7 +49,6 @@ void Petani::panenTani()
 {
 }
 
-int Petani::calculateTax()
+int Petani::calculateKKP()
 {
-    return 0;
 }
