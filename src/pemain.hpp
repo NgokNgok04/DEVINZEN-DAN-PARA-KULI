@@ -29,7 +29,7 @@ public:
     void makan(int row, int col);              // loc item yg dimakan
     virtual void beli(int, int, int, int) = 0; // letak and quant item, loc item akan disimpan
     virtual void jual(int, int) = 0;           // loc item yg akan dijual
-    virtual void calculateTax() = 0;
+    virtual int calculateTax() = 0;
 };
 
 #endif

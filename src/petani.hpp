@@ -18,6 +18,7 @@ public:
     void panenTani();
     void beli(int, int, int, int);
     void jual(int, int);
+    int calculateTax();
 };
 
 #endif

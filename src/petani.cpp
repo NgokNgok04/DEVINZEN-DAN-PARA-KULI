@@ -11,10 +11,12 @@ Petani::Petani() : Pemain(), ladang(10, 10)
 
 Petani::Petani(int rows, int cols, int guld, int bb, int ladrows, int ladcols) : Pemain(rows, cols, guld, bb), ladang(ladrows, ladcols)
 {
+    this->tipe = "petani";
 }
 
 Petani::Petani(const Petani &other) : Pemain(), ladang(other.ladang)
 {
+    this->tipe = "petani";
 }
 
 Petani::~Petani()
@@ -41,15 +43,13 @@ void Petani::cetakLadang()
 
 void Petani::tanam(int invr, int invc, int ladr, int ladc)
 {
-    // if invr, invcol is hewan
-    // if terr, terc kosong
-    // put in
-    // else
-    // cancel
-    // else
-    // cancel
 }
 
 void Petani::panenTani()
 {
+}
+
+int Petani::calculateTax()
+{
+    return 0;
 }

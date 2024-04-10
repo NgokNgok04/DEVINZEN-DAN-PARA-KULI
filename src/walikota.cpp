@@ -11,10 +11,12 @@ WaliKota::WaliKota() : Pemain()
 
 WaliKota::WaliKota(int cols, int rows, int guld, int bb) : Pemain(cols, rows, guld, bb)
 {
+    this->tipe = "walikota";
 }
 
 WaliKota::WaliKota(const WaliKota &other) : Pemain(other)
 {
+    this->tipe = "walikota";
 }
 
 WaliKota::~WaliKota()
@@ -40,4 +42,9 @@ void WaliKota::beli(int buyr, int buyc, int saver, int savec)
 void WaliKota::jual(int sellr, int ellc)
 {
     //
+}
+
+int WaliKota::calculateTax()
+{
+    return 0;
 }

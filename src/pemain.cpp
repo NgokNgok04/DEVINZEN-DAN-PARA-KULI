@@ -4,16 +4,20 @@
 #include "pemain.hpp"
 using namespace std;
 
-Pemain::Pemain() : inventory(10, 10) // not sure
+Pemain::Pemain() : inventory(8, 8)
 {
     this->gulden = 50;
     this->berat_badan = 40;
+    // MatrixArea<GameObject> *inv = new MatrixArea<GameObject>(8, 8);
+    // this->inventory = *inv;
 }
 
-Pemain::Pemain(int rows, int cols, int guld, int bb) : inventory(rows, cols) // not sure
+Pemain::Pemain(int rows, int cols, int guld, int bb) : inventory(8, 8)
 {
     this->gulden = guld;
     this->berat_badan = bb;
+    // MatrixArea<GameObject> *inv = new MatrixArea<GameObject>(rows, cols);
+    // this->inventory = *inv;
 }
 
 Pemain::Pemain(const Pemain &other) : inventory(other.inventory) // not sure
