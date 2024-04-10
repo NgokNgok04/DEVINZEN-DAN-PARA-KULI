@@ -2,6 +2,7 @@
 #define PRODUCT_HPP
 
 #include "GameObject.hpp"
+#include "./Parser/ParserProduk.hpp"
 
 class Product:public GameObject{
     private:
@@ -9,11 +10,13 @@ class Product:public GameObject{
         bool isFromHewan;
         int addedWeight;
         string origin;
-        static int totalProduct;
+        static ParserProduk konfig;
     public:
-        Product(int, string, string, string, string, int, float);
+        Product();
+        Product(int);
         bool fromHewan();
         int getAddedWeight();
+        ParserProduk getKonfig();
 };
 
 #endif
