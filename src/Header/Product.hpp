@@ -10,13 +10,12 @@ class Product:public GameObject{
         bool isFromHewan;
         int addedWeight;
         string origin;
-        static ParserProduk konfig;
     public:
-        Product();
-        Product(int);
+        Product(int,bool);
         bool fromHewan();
         int getAddedWeight();
-        ParserProduk getKonfig();
+        string getOrigin();
+        string getType();
 };
 
 #endif

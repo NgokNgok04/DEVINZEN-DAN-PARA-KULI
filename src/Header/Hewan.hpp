@@ -4,18 +4,21 @@
 #include "GameObject.hpp"
 #include "Product.hpp"
 #include "../Header/Parser/ParserHewan.hpp"
+#include <vector>
 
 class Hewan: public GameObject{
     private:
         string type;
         int weightHarvest;
         int weight;
-        static ParserHewan konfig;
     public:
         Hewan(int);
         void makan(Product);
-        Product hasilPanen();
+        vector<Product*> hasilPanen();
         bool isHarvestable();
+        string getType();
+        int getWeightHarvest();
+        int getCurWeight();
 };
 
 #endif
