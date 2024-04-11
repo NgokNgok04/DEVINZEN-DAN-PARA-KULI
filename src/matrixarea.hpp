@@ -4,9 +4,9 @@
 #include <iostream>
 #include <vector>
 #include <utility>
-#include "hewan.hpp"
-#include "tumbuhan.hpp"
-#include "GameObject.hpp"
+#include "./Header/Tanaman.hpp"
+#include "./Header/Hewan.hpp"
+#include "./Header/GameObject.hpp"
 using namespace std;
 template <class T>
 class MatrixArea
@@ -25,7 +25,6 @@ public:
     void setElement(int, int, T*);
     void deleteElement(int,int);
     T* getElement(int, int);
-    pair<int,int> getPositionFromKodeHuruf(string kode_huruf);
     pair<int,int> getPositionFromSlot(string slot);
     void displayMatrix();
     void displayObject();

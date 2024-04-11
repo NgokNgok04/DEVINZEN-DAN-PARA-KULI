@@ -7,7 +7,8 @@ template <class T>
 MatrixArea<T>::MatrixArea(){
     this->rows = 0;
     this->cols = 0;
-    this->matrix.resize(this->rows,vector<T*>(this->cols,T*()));
+    this->matrix.resize(this->rows,vector<T*>(this->cols,nullptr));
+    cout << "success default ctor" << endl;
 }
 
 template <class T>
@@ -15,12 +16,14 @@ MatrixArea<T>::MatrixArea(int rows, int cols)
 {
     this->rows = rows;
     this->cols = cols;
-    this->matrix.resize(this->rows, vector<T*>(this->cols,T*()));
+    this->matrix.resize(this->rows, vector<T*>(this->cols,nullptr));
+    cout << "success user defined ctor" << endl;
 }
 template <class T>
 MatrixArea<T>::~MatrixArea()
 {
     this->matrix.clear();
+    cout << "dtor success" << endl;
 }
 template <class T>
 MatrixArea<T>::MatrixArea(const MatrixArea<T*> &matrix)
@@ -28,6 +31,7 @@ MatrixArea<T>::MatrixArea(const MatrixArea<T*> &matrix)
     this->rows = matrix.rows;
     this->cols = matrix.cols;
     this->matrix = matrix.matrix;
+    cout << "cctor success" << endl;
 }
 
 template <class T>
@@ -47,35 +51,27 @@ void MatrixArea<T>::setElement(int row, int col, T* object)
 {
     // asumsi row n col selalu benar
     this->matrix[row - 1][col - 1] = object;
+    cout << "set Element success" << endl;
 }
 
 template <class T>
 T* MatrixArea<T>::getElement(int row, int col)
 {
     // asumsi row n col selalu benar
+    cout << "get Element success" << endl;
     return this->matrix[row - 1][col - 1];
 }
 
 template <class T>
 void MatrixArea<T>::deleteElement(int row, int col){
-    this->matrix[row - 1][col - 1] = T*();
-}
-
-template <class T>
-pair<int,int> MatrixArea<T>::getPositionFromKodeHuruf(string kode_huruf){
-    for(int i = 0; i < this->rows; i++){
-        for(int j = 0; j < this->cols; j++){
-            if (this->getElement(i + 1, j + 1) == kode_huruf){
-                return make_pair(i+1,j+1); // i n j mulai dari 1
-            }
-        }
-    }
+    this->matrix[row - 1][col - 1] = nullptr;
+    cout << "delete Element success" << endl;
 }
 
 template <class T>
 pair<int,int> MatrixArea<T>::getPositionFromSlot(string slot){
    int posCol = slot[0] - 'A' + 1;
-   int posRow =  stoi(slot[1] + slot[2]);
+   int posRow =  stoi(string(1,slot[1]) + string(1,slot[2]));
    return make_pair(posRow, posCol);
 }
 
@@ -100,10 +96,11 @@ void MatrixArea<T>::displayMatrix()
         cout << "0" << i + 1 << " ";
         cout << "|";
         for(int j = 0; j < this->cols; j++){
-            if (this->matrix[i][j].length() == 3){
-                cout << " " << this->matrix[i][j].getKodeHuruf() << " ";
-            } else {
+            if (this->matrix[i][j] == nullptr){
                 cout << "     ";
+            } 
+            else{
+                cout << " " << this->matrix[i][j]->getKode() << " ";
             }
             cout << "|";
         }
@@ -194,7 +191,7 @@ void MatrixArea<Hewan>::displayObject()
 }
 
 template <>
-void MatrixArea<Tumbuhan>::displayObject()
+void MatrixArea<Tanaman>::displayObject()
 {
     int title = (this->cols * 6) + 4;
     cout << "   ";
@@ -230,7 +227,7 @@ void MatrixArea<Tumbuhan>::displayObject()
     {
         cout << "[ Ladang ]" << endl;
     }
-    MatrixArea<Tumbuhan>::displayMatrix();
+    MatrixArea<Tanaman>::displayMatrix();
     // dummy Class di local mahew (ga dipush)
 }
 
