@@ -4,10 +4,17 @@
 #include <utility>
 #include "GameObject.hpp"
 #include "helper.hpp"
+#include "./Header/GameObject.hpp"
+#include "./Header/Parser/ParserHewan.hpp"
+#include "./Header/Parser/ParserTanaman.hpp"
+#include "./Header/Parser/ParserProduk.hpp"
+#include "./Header/Parser/ParserResep.hpp"
+// #include "./"
 extern Toko tokoGlobal;
+
 class Toko {
     private:
-        vector<pair<string,int>> availableItem;
+        vector<pair<GameObject,int>> availableGameObject;
     public:
         Toko();
         void displayAvailableItemToBuy();

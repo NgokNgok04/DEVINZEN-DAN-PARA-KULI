@@ -10,6 +10,11 @@ MatrixArea<T>::MatrixArea(){
     this->matrix.resize(this->rows,vector<T*>(this->cols,nullptr));
     cout << "success default ctor" << endl;
 }
+// template <>
+// MatrixArea<GameObject>::MatrixArea(){
+//     pair<int,int> = ParserMis
+//     this->rows = ParserMisc::getStorageSize().
+// }
 
 template <class T>
 MatrixArea<T>::MatrixArea(int rows, int cols)

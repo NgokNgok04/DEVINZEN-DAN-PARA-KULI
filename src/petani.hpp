@@ -2,11 +2,11 @@
 #define PETANI_HPP
 
 #include "pemain.hpp"
-#include "tumbuhan.hpp"
+#include "../Header/Tanaman.hpp"
 class Petani : public Pemain
 {
 protected:
-    MatrixArea<Tumbuhan> ladang;
+    MatrixArea<Tanaman> ladang;
 
 public:
     Petani();

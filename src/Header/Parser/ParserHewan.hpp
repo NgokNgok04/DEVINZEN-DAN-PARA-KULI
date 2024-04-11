@@ -4,6 +4,7 @@
 #include "BaseParser.hpp"
 using namespace std;
 //Parser khusus untuk membaca file konfigurasi hewan.
+extern ParserHewan PHGlobal;
 class ParserHewan : public BaseParser{
     private:
         vector<int> animalID;
@@ -20,13 +21,13 @@ class ParserHewan : public BaseParser{
         ~ParserHewan(){}
         void ParseFile(string fileDirectory);
         void ClearParserData();
-        int getID(int);
-        string getCode(int);
-        string getName(int);
-        string getType(int);
-        int getHarvestWeight(int);
-        int getPrice(int);
-        int getConfigSize();
+        static int getID(int);
+        static string getCode(int);
+        static string getName(int);
+        static string getType(int);
+        static int getHarvestWeight(int);
+        static int getPrice(int);
+        static int getConfigSize();
         int convertCodeToID(string Code);
         int convertNameToID(string Name);
         friend ostream &operator<<(ostream &os, ParserHewan &PH); //untuk debugging, pake aja
