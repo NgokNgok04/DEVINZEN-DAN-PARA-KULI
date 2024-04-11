@@ -14,7 +14,7 @@ class Hewan: public GameObject{
     public:
         Hewan(int);
         void makan(Product);
-        Product hasilPanen();
+        Product* hasilPanen();
         bool isHarvestable();
 };
 

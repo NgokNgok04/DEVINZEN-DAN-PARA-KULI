@@ -7,7 +7,7 @@ template <class T>
 MatrixArea<T>::MatrixArea(){
     this->rows = 0;
     this->cols = 0;
-    this->matrix.resize(this->rows,vector<T>(this->cols,T()));
+    this->matrix.resize(this->rows,vector<T*>(this->cols,T*()));
 }
 
 template <class T>
@@ -15,7 +15,7 @@ MatrixArea<T>::MatrixArea(int rows, int cols)
 {
     this->rows = rows;
     this->cols = cols;
-    this->matrix.resize(this->rows, vector<T>(this->cols,T()));
+    this->matrix.resize(this->rows, vector<T*>(this->cols,T*()));
 }
 template <class T>
 MatrixArea<T>::~MatrixArea()
@@ -23,7 +23,7 @@ MatrixArea<T>::~MatrixArea()
     this->matrix.clear();
 }
 template <class T>
-MatrixArea<T>::MatrixArea(const MatrixArea<T> &matrix)
+MatrixArea<T>::MatrixArea(const MatrixArea<T*> &matrix)
 {
     this->rows = matrix.rows;
     this->cols = matrix.cols;
@@ -31,7 +31,7 @@ MatrixArea<T>::MatrixArea(const MatrixArea<T> &matrix)
 }
 
 template <class T>
-MatrixArea<T> &MatrixArea<T>::operator=(const MatrixArea<T> &matrix)
+MatrixArea<T*> &MatrixArea<T>::operator=(const MatrixArea<T*> &matrix)
 {
     if (this != &matrix)
     {
@@ -43,14 +43,14 @@ MatrixArea<T> &MatrixArea<T>::operator=(const MatrixArea<T> &matrix)
 }
 
 template <class T>
-void MatrixArea<T>::setElement(int row, int col, T object)
+void MatrixArea<T>::setElement(int row, int col, T* object)
 {
     // asumsi row n col selalu benar
     this->matrix[row - 1][col - 1] = object;
 }
 
 template <class T>
-T MatrixArea<T>::getElement(int row, int col)
+T* MatrixArea<T>::getElement(int row, int col)
 {
     // asumsi row n col selalu benar
     return this->matrix[row - 1][col - 1];
@@ -58,7 +58,7 @@ T MatrixArea<T>::getElement(int row, int col)
 
 template <class T>
 void MatrixArea<T>::deleteElement(int row, int col){
-    this->matrix[row - 1][col - 1] = T();
+    this->matrix[row - 1][col - 1] = T*();
 }
 
 template <class T>
