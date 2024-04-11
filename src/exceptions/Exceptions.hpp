@@ -234,3 +234,30 @@ class InvalidRecipeQuantityConfigException : public BaseException{
             return "Ada kuantitas bahan resep yang tidak valid di file config recipe.txt!";
         }
 };
+
+class InvalidSlotIndexException : public BaseException{
+    public:
+        InvalidSlotIndexException(){};
+        ~InvalidSlotIndexException(){};
+        string what(){
+            return "Slot yang dipilih tidak valid!";
+        }
+};
+
+class InventoryEmptySlotException : public BaseException{
+    public:
+        InventoryEmptySlotException(){};
+        ~InventoryEmptySlotException(){};
+        string what(){
+            return "Slot inventori yang dipilih kosong!";
+        }
+};
+
+class InventoryInedibleSlotException : public BaseException{
+    public:
+        InventoryInedibleSlotException(){};
+        ~InventoryInedibleSlotException(){};
+        string what(){
+            return "Barang di slot inventori yang dipilih tidak bisa dimakan!";
+        }
+};
