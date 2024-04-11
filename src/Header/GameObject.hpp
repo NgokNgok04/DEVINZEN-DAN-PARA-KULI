@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "Exception.hpp"
 using namespace std;
 
 class GameObject{
@@ -12,12 +13,18 @@ class GameObject{
         string kode_huruf;
         float price;
         string name;
+        string tipeObject;
     public:
-        GameObject(int);
         int getID();
         string getKode();
         float getPrice();
         string getName();
+        string getTipeObject();
+        void setID(int);
+        void setKode(string);
+        void setPrice(float);
+        void setName(string);
+        void setTipeObject(string);
 };
 
 #endif
