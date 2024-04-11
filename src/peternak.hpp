@@ -2,21 +2,25 @@
 #define PETERNAK_HPP
 
 #include "pemain.hpp"
-#include "hewan.hpp"
+
 class Peternak : public Pemain
 {
 protected:
-    MatrixArea<Hewan> ternakan;
+    MatrixArea<GameObject> ternakan;
 
 public:
     Peternak();
-    Peternak(int rows, int cols, int guld, int bb, int terrows, int tercols);
+    Peternak(int guld, int bb, int smol, int med, int big, int terrows, int tercols);
     Peternak(const Peternak &);
     ~Peternak();
     void cetakTernak();
-    void ternak(int, int, int, int);     // coords hewan yg ingin diternak, coords letak ternakan
-    void kasihMakan(int, int, int, int); // coords letak hewan, coords letak makanan yg ingin diberikan
+    void ternak();     // coords hewan yg ingin diternak, coords letak ternakan
+    void kasihMakan(); // coords letak hewan, coords letak makanan yg ingin diberikan
     void panenTernak();
+    void beli();
+    void jual();
+    int calculateKKP();
+    int calculateTax();
 };
 
 #endif

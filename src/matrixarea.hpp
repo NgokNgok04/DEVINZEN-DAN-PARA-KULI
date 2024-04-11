@@ -15,22 +15,22 @@ class MatrixArea
 private:
     int rows;
     int cols;
-    vector<vector<T*>> matrix;
+    vector<vector<T *>> matrix;
 
 public:
     MatrixArea();
     MatrixArea(int, int);
     ~MatrixArea();
-    MatrixArea(const MatrixArea<T*> &);
-    MatrixArea<T*> &operator=(const MatrixArea<T*> &);
-    void setElement(int, int, T*);
-    void deleteElement(int,int);
-    T* getElement(int, int);
-    pair<int,int> getPositionFromSlot(string slot);
+    MatrixArea(const MatrixArea<T *> &);
+    MatrixArea<T *> &operator=(const MatrixArea<T *> &);
+    void setElement(int, int, T *);
+    void deleteElement(int, int);
+    T *getElement(int, int);
+    pair<int, int> getPositionFromSlot(string slot);
     void displayMatrix();
     void displayObject();
     void displayDetail();
-    void displayRemainderSlot();
+    // void displayRemainderSlot();
 };
 
 #endif

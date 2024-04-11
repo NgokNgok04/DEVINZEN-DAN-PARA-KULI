@@ -1,30 +1,40 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "matrixarea.hpp"
-#include "matrixarea.cpp"
-// #include "Hewan.cpp"
+#include "pemain.cpp"
+#include "petani.cpp"
+#include "peternak.cpp"
+#include "walikota.cpp"
+#include "./Implementation/Hewan.cpp"
 using namespace std;
 int main()
 {
-    MatrixArea<Hewan> testaja;
-    MatrixArea<Hewan> matrix(4, 2);
-    MatrixArea<Hewan> matrixcctor(matrix);
-    testaja = matrix;
-    cout << "test" << endl;
+    // MatrixArea<Hewan> testaja;
+    // MatrixArea<GameObject> matrix(4, 2);
+    // MatrixArea<Hewan> matrixcctor(matrix);
+    // testaja = matrix;
+    // cout << "test" << endl;
     Hewan anjing(1);
-    Hewan kucing(2);
-    Hewan monyet(3);
-    matrix.setElement(1, 1, &anjing);
-    matrix.setElement(1, 2, &kucing);
-    matrix.setElement(2, 1, &monyet);
-    matrix.displayMatrix();
-    matrix.deleteElement(1,1);
-    // Hewan coba = matrix.getElement(1,1);
-    // matrix.setElement(1, 2, monyet);
-    // matrix.setElement(3, 1, kucing);
-    // matrix.setElement(3, 2, anjing);
+    // Hewan kucing(2);
+    // Hewan monyet(3);
+    // matrix.setElement(1, 1, &anjing);
+    // matrix.setElement(1, 2, &kucing);
+    // matrix.setElement(2, 1, &monyet);
     // matrix.displayMatrix();
-    // matrix.displayDetail();
+    // matrix.deleteElement(2, 1);
+    // matrix.displayMatrix();
+
+    Petani P1;
+    P1.cetakLadang();
+    // P1.cetakPenyimpanan();
+
+    P1.ladang.setElement(5, 5, &anjing);
+
+    P1.cetakLadang();
+    // Petani P2(P1);
+    // P2.cetakLadang();
+
+    cout << P1.getTipe() << endl;
+    // p1cetakLadang();
     return 0;
 }
