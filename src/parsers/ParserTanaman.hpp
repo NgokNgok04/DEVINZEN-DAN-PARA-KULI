@@ -1,3 +1,5 @@
+#ifndef PARSERTANAMAN_HPP
+#define PARSERTANAMAN_HPP
 #include <bits/stdc++.h>
 #include "BaseParser.hpp"
 using namespace std;
@@ -25,5 +27,8 @@ class ParserTanaman : public BaseParser {
         int getHarvestDuration(int);
         int getPrice(int);
         int getConfigSize();
+        int convertCodeToID(string Code);
+        int convertNameToID(string Name);
         friend ostream &operator<<(ostream &os, ParserTanaman &PT); //untuk debugging, pake aja
 };
+#endif

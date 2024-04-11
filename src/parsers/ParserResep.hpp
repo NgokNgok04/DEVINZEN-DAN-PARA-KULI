@@ -1,3 +1,5 @@
+#ifndef PARSERRESEP_HPP
+#define PARSERRESEP_HPP
 #include <bits/stdc++.h>
 #include "BaseParser.hpp"
 using namespace std;
@@ -20,5 +22,8 @@ class ParserResep : public BaseParser{
         int getPrice(int);
         vector<pair<string,int> > getRecipeMaterialQuantity(int);
         int getConfigSize();
+        int convertCodeToID(string Code);
+        int convertNameToID(string Name);
         friend ostream &operator<<(ostream &os, ParserResep &PR); //untuk debugging, pake aja
 };
+#endif

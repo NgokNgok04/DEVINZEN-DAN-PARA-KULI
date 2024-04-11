@@ -107,6 +107,26 @@ int ParserProduk::getConfigSize()
 {
     return this->productID.size();
 }
+int ParserProduk::convertCodeToID(string Code)
+{
+    for(int i = 0; i<this->getConfigSize(); i++){
+        if(this->productCode[i] == Code){
+            return this->productID[i];
+        }
+    }
+
+    return -1;
+}
+int ParserProduk::convertNameToID(string Name)
+{
+    for(int i = 0; i<this->getConfigSize(); i++){
+        if(this->productName[i] == Name){
+            return this->productID[i];
+        }
+    }
+
+    return -1;
+}
 ostream &operator<<(ostream &os, ParserProduk &PP)
 {
     for(int i = 0; i<PP.productID.size(); i++){

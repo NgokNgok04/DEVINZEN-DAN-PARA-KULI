@@ -1,3 +1,5 @@
+#ifndef GAMEMANAGER_HPP
+#define GAMEMANAGER_HPP
 #include <bits/stdc++.h>
 #include "../parsers/ParserHewan.hpp"
 #include "../parsers/ParserMisc.hpp"
@@ -8,10 +10,7 @@ using namespace std;
 
 class GameManager{
     private:
-        vector< tuple<string,string,string,int,int> > AnimalConfig;
-        vector< tuple<string,string,string,int,int> > PlantConfig;
-        vector< tuple<string,string,string,string,int,int> > ProductConfig;
-        vector< tuple<string,string,int,vector<pair<string,int> > > > RecipeConfig;
+
         int winningMoney;
         int winningWeight;
         pair<int,int> storageSize;
@@ -28,7 +27,7 @@ class GameManager{
         //3. VOID UNTUK MENENTUKAN PEMENANG
         //4. LIST PEMAIN
     public:
-        GameManager(ParserHewan,ParserTanaman,ParserProduk,ParserResep,ParserMisc);
+        GameManager(ParserMisc);
         ~GameManager(){}
         void Debug();
         //void Next();
@@ -36,4 +35,6 @@ class GameManager{
         //Pemain getWinner();
         //string getCurrentPlayerName();
         //Pemain getCurrentPlayer();
+        //string getWinnerName();
 };
+#endif

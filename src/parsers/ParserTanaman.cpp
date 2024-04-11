@@ -107,6 +107,28 @@ int ParserTanaman::getConfigSize()
     return this->plantID.size();
 }
 
+int ParserTanaman::convertCodeToID(string Code)
+{
+    for(int i = 0; i<this->getConfigSize(); i++){
+        if(this->plantCode[i] == Code){
+            return this->plantID[i];
+        }
+    }
+
+    return -1;
+}
+
+int ParserTanaman::convertNameToID(string Name)
+{
+    for(int i = 0; i<this->getConfigSize(); i++){
+        if(this->plantName[i] == Name){
+            return this->plantID[i];
+        }
+    }
+
+    return -1;
+}
+
 ostream &operator<<(ostream &os, ParserTanaman &PT)
 {
     for(int i = 0; i<PT.plantID.size(); i++){

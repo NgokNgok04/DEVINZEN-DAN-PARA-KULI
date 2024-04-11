@@ -1,3 +1,5 @@
+#ifndef PARSERPRODUK_HPP
+#define PARSERPRODUK_HPP
 #include <bits/stdc++.h>
 #include "BaseParser.hpp"
 using namespace std;
@@ -28,5 +30,8 @@ class ParserProduk : public BaseParser{
         int getAddedWeight(int);
         int getPrice(int);
         int getConfigSize();
+        int convertCodeToID(string Code);
+        int convertNameToID(string Name);
         friend ostream &operator<<(ostream &os, ParserProduk &PP); //untuk debugging, pake aja
 };
+#endif
