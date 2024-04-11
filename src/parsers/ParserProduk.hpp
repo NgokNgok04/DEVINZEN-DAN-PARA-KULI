@@ -6,15 +6,14 @@ using namespace std;
 //Parser khusus untuk membaca file konfigurasi produk.
 class ParserProduk : public BaseParser{
     private:
-        vector<int> productID;
-        vector<string> productCode;
-        vector<string> productName;
-        vector<string> productType;
-        vector<string> productOrigin;
-        vector<int> addedWeight;
-        vector<int> price;
-        
-        vector<string> validProductTypes;
+        static vector<int> productID;
+        static vector<string> productCode;
+        static vector<string> productName;
+        static vector<string> productType;
+        static vector<string> productOrigin;
+        static vector<int> addedWeight;
+        static vector<int> price;
+        static vector<string> validProductTypes;
     public:
         ParserProduk(){
             validProductTypes = {"PRODUCT_MATERIAL_PLANT", "PRODUCT_FRUIT_PLANT", "PRODUCT_ANIMAL"};
@@ -22,14 +21,14 @@ class ParserProduk : public BaseParser{
         ~ParserProduk(){}
         void ParseFile(string fileDirectory);
         void ClearParserData();
-        int getID(int);
-        string getCode(int);
-        string getName(int);
-        string getType(int);
-        string getOrigin(int);
-        int getAddedWeight(int);
-        int getPrice(int);
-        int getConfigSize();
+        static int getID(int);
+        static string getCode(int);
+        static string getName(int);
+        static string getType(int);
+        static string getOrigin(int);
+        static int getAddedWeight(int);
+        static int getPrice(int);
+        static int getConfigSize();
         int convertCodeToID(string Code);
         int convertNameToID(string Name);
         friend ostream &operator<<(ostream &os, ParserProduk &PP); //untuk debugging, pake aja

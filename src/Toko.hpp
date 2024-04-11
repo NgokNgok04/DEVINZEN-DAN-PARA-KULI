@@ -3,23 +3,34 @@
 #include <vector>
 #include <utility>
 #include "GameObject.hpp"
-#include "helper.hpp"
+#include "./misc/helper.hpp"
 #include "./Header/GameObject.hpp"
-#include "./Header/Parser/ParserHewan.hpp"
-#include "./Header/Parser/ParserTanaman.hpp"
-#include "./Header/Parser/ParserProduk.hpp"
-#include "./Header/Parser/ParserResep.hpp"
-// #include "./"
-extern Toko tokoGlobal;
+#include "./Header/Hewan.hpp"
+#include "./Header/Tanaman.hpp"
+#include "./Header/Product.hpp"
+#include "./Header/Bangunan.hpp"
+#include "./parsers/ParserHewan.hpp"
+#include "./parsers/ParserTanaman.hpp"
+#include "./parsers/ParserProduk.hpp"
+#include "./parsers/ParserResep.hpp"
 
 class Toko {
     private:
-        vector<pair<GameObject,int>> availableGameObject;
+        static vector<Hewan> availableHewan;
+        static vector<Tanaman> availableTanaman;
+        static vector<pair<Product,int>> availableProduct;
+        static vector<pair<Bangunan,int>> availableBangunan;
     public:
         Toko();
-        void displayAvailableItemToBuy();
-        void itemDibeli(); //handle keadaan toko setelah player membeli item
-        void itemDijual(); //handle keadaan toko setelah player menjual item
-
+        static void buyProcess();
+        static void itemDibeli(); //handle keadaan toko setelah player membeli item
+        static void itemDijual(); //handle keadaan toko setelah player menjual item
+        bool isProductEmptyStock();
+        bool isBangunanEmptyStock();
+        void displayAvailableHewan();
+        void displayAvailableTanaman();
+        void displayAvailableProduct();
+        void displayAvailableBangunan();
+        static void displayResepBangunan();
 };
 #endif

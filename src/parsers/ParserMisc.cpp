@@ -76,27 +76,27 @@ void ParserMisc::ClearParserData()
 
 int ParserMisc::getWinningMoney()
 {
-    return this->winningMoney;
+    return winningMoney;
 }
 
 int ParserMisc::getWinningWeight()
 {
-    return this->winningWeight;
+    return winningWeight;
 }
 
 pair<int, int> ParserMisc::getStorageSize()
 {
-    return this->storageSize;
+    return storageSize;
 }
 
 pair<int, int> ParserMisc::getFieldSize()
 {
-    return this->fieldSize;
+    return fieldSize;
 }
 
 pair<int, int> ParserMisc::getFarmSize()
 {
-    return this->farmSize;
+    return farmSize;
 }
 
 ostream &operator<<(ostream &os, ParserMisc &PM)

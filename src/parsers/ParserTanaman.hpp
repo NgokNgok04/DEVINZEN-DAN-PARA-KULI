@@ -6,13 +6,13 @@ using namespace std;
 //Parser khusus untuk membaca file konfigurasi tanaman.
 class ParserTanaman : public BaseParser {
     private:
-        vector<int> plantID;
-        vector<string> plantCode;
-        vector<string> plantName;
-        vector<string> plantType;
-        vector<int> harvestDuration;
-        vector<int> price;
-        vector<string> validPlantTypes;
+        static vector<int> plantID;
+        static vector<string> plantCode;
+        static vector<string> plantName;
+        static vector<string> plantType;
+        static vector<int> harvestDuration;
+        static vector<int> price;
+        static vector<string> validPlantTypes;
     public:
         ParserTanaman(){
             this->validPlantTypes = {"MATERIAL_PLANT","FRUIT_PLANT"};
@@ -20,13 +20,13 @@ class ParserTanaman : public BaseParser {
         ~ParserTanaman(){}
         void ParseFile(string fileDirectory);
         void ClearParserData();
-        int getID(int);
-        string getCode(int);
-        string getName(int);
-        string getType(int);
-        int getHarvestDuration(int);
-        int getPrice(int);
-        int getConfigSize();
+        static int getID(int);
+        static string getCode(int);
+        static string getName(int);
+        static string getType(int);
+        static int getHarvestDuration(int);
+        static int getPrice(int);
+        static int getConfigSize();
         int convertCodeToID(string Code);
         int convertNameToID(string Name);
         friend ostream &operator<<(ostream &os, ParserTanaman &PT); //untuk debugging, pake aja

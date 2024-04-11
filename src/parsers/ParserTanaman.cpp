@@ -74,37 +74,37 @@ void ParserTanaman::ClearParserData()
 
 int ParserTanaman::getID(int i)
 {
-    return this->plantID[i];
+    return plantID[i];
 }
 
 string ParserTanaman::getCode(int i)
 {
-    return this->plantCode[i];
+    return plantCode[i];
 }
 
 string ParserTanaman::getName(int i)
 {
-    return this->plantName[i];
+    return plantName[i];
 }
 
 string ParserTanaman::getType(int i)
 {
-    return this->plantType[i];
+    return plantType[i];
 }
 
 int ParserTanaman::getHarvestDuration(int i)
 {
-    return this->harvestDuration[i];
+    return harvestDuration[i];
 }
 
 int ParserTanaman::getPrice(int i)
 {
-    return this->price[i];
+    return price[i];
 }
 
 int ParserTanaman::getConfigSize()
 {
-    return this->plantID.size();
+    return plantID.size();
 }
 
 int ParserTanaman::convertCodeToID(string Code)

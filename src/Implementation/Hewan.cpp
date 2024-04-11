@@ -1,14 +1,15 @@
 #include "../Header/Hewan.hpp"
 
+Hewan::Hewan(){}
 Hewan::Hewan(int idKonfig){
-    // setID(idKonfig);
-    // setKode(konfig.getCode(idKonfig));
-    // setName(konfig.getName(idKonfig));
-    // setPrice(konfig.getPrice(idKonfig));
-    // setTipeObject("HEWAN");
-    // type = konfig.getType(idKonfig);
-    // weightHarvest = konfig.getHarvestWeight(idKonfig);
-    // weight = 0;
+    setID(idKonfig);
+    setKode(konfig.getCode(idKonfig));
+    setName(konfig.getName(idKonfig));
+    setPrice(konfig.getPrice(idKonfig));
+    setTipeObject("HEWAN");
+    type = konfig.getType(idKonfig);
+    weightHarvest = konfig.getHarvestWeight(idKonfig);
+    weight = 0;
 }
 
 // void Hewan::makan(Product makanan){

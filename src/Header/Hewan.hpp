@@ -12,6 +12,7 @@ class Hewan: public GameObject{
         int weight;
         static ParserHewan konfig;
     public:
+        Hewan();
         Hewan(int);
         void makan(Product);
         Product* hasilPanen();

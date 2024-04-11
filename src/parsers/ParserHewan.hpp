@@ -6,13 +6,13 @@ using namespace std;
 //Parser khusus untuk membaca file konfigurasi hewan.
 class ParserHewan : public BaseParser{
     private:
-        vector<int> animalID;
-        vector<string> animalCode;
-        vector<string> animalName;
-        vector<string> animalType;
-        vector<int> harvestWeight;
-        vector<int> price;
-        vector<string> validAnimalTypes;
+        static vector<int> animalID;
+        static vector<string> animalCode;
+        static vector<string> animalName;
+        static vector<string> animalType;
+        static vector<int> harvestWeight;
+        static vector<int> price;
+        static vector<string> validAnimalTypes;
     public:
         ParserHewan(){
             this->validAnimalTypes = {"HERBIVORE","CARNIVORE","OMNIVORE"};
@@ -20,13 +20,13 @@ class ParserHewan : public BaseParser{
         ~ParserHewan(){}
         void ParseFile(string fileDirectory);
         void ClearParserData();
-        int getID(int);
-        string getCode(int);
-        string getName(int);
-        string getType(int);
-        int getHarvestWeight(int);
-        int getPrice(int);
-        int getConfigSize();
+        static int getID(int);
+        static string getCode(int);
+        static string getName(int);
+        static string getType(int);
+        static int getHarvestWeight(int);
+        static int getPrice(int);
+        static int getConfigSize();
         int convertCodeToID(string Code);
         int convertNameToID(string Name);
         friend ostream &operator<<(ostream &os, ParserHewan &PH); //untuk debugging, pake aja

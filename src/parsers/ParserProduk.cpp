@@ -77,35 +77,35 @@ void ParserProduk::ClearParserData()
 }
 int ParserProduk::getID(int i)
 {
-    return this->productID[i];
+    return productID[i];
 }
 string ParserProduk::getCode(int i)
 {
-    return this->productCode[i];
+    return productCode[i];
 }
 string ParserProduk::getName(int i)
 {
-    return this->productName[i];
+    return productName[i];
 }
 string ParserProduk::getType(int i)
 {
-    return this->productType[i];
+    return productType[i];
 }
 string ParserProduk::getOrigin(int i)
 {
-    return this->productOrigin[i];
+    return productOrigin[i];
 }
 int ParserProduk::getAddedWeight(int i)
 {
-    return this->addedWeight[i];
+    return addedWeight[i];
 }
 int ParserProduk::getPrice(int i)
 {
-    return this->price[i];
+    return price[i];
 }
 int ParserProduk::getConfigSize()
 {
-    return this->productID.size();
+    return productID.size();
 }
 int ParserProduk::convertCodeToID(string Code)
 {

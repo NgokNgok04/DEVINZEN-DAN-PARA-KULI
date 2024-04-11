@@ -65,32 +65,32 @@ void ParserResep::ClearParserData()
 
 int ParserResep::getID(int i)
 {
-    return this->recipeID[i];
+    return recipeID[i];
 }
 
 string ParserResep::getCode(int i)
 {
-    return this->recipeCode[i];
+    return recipeCode[i];
 }
 
 string ParserResep::getName(int i)
 {
-    return this->recipeName[i];
+    return recipeName[i];
 }
 
 int ParserResep::getPrice(int i)
 {
-    return this->recipePrice[i];
+    return recipePrice[i];
 }
 
 vector<pair<string, int>> ParserResep::getRecipeMaterialQuantity(int i)
 {
-    return this->recipeMaterialQuantity[i];
+    return recipeMaterialQuantity[i];
 }
 
 int ParserResep::getConfigSize()
 {
-    return this->recipeID.size();
+    return recipeID.size();
 }
 
 int ParserResep::convertCodeToID(string Code)

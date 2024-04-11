@@ -6,21 +6,21 @@ using namespace std;
 //Parser khusus untuk membaca file konfigurasi misc.
 class ParserMisc : public BaseParser{
     private:
-        int winningMoney;
-        int winningWeight;
-        pair<int,int> storageSize;
-        pair<int,int> fieldSize;
-        pair<int,int> farmSize;
+        static int winningMoney;
+        static int winningWeight;
+        static pair<int,int> storageSize;
+        static pair<int,int> fieldSize;
+        static pair<int,int> farmSize;
     public:
         ParserMisc(){}
         ~ParserMisc(){}
         void ParseFile(string fileDirectory);
         void ClearParserData();
-        int getWinningMoney();
-        int getWinningWeight();
-        pair<int,int> getStorageSize();
-        pair<int,int> getFieldSize();
-        pair<int,int> getFarmSize();
+        static int getWinningMoney();
+        static int getWinningWeight();
+        static pair<int,int> getStorageSize();
+        static pair<int,int> getFieldSize();
+        static pair<int,int> getFarmSize();
         friend ostream &operator<<(ostream &os, ParserMisc &PM); //untuk debugging, pake aja
 };
 #endif

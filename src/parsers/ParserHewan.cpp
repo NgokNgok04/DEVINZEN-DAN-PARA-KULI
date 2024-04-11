@@ -75,37 +75,37 @@ void ParserHewan::ClearParserData()
 
 int ParserHewan::getID(int i)
 {
-    return this->animalID[i];
+    return animalID[i];
 }
 
 string ParserHewan::getCode(int i)
 {
-    return this->animalCode[i];
+    return animalCode[i];
 }
 
 string ParserHewan::getName(int i)
 {
-    return this->animalName[i];
+    return animalName[i];
 }
 
 string ParserHewan::getType(int i)
 {
-    return this->animalType[i];
+    return animalType[i];
 }
 
 int ParserHewan::getHarvestWeight(int i)
 {
-    return this->harvestWeight[i];
+    return harvestWeight[i];
 }
 
 int ParserHewan::getPrice(int i)
 {
-    return this->price[i];
+    return price[i];
 }
 
 int ParserHewan::getConfigSize()
 {
-    return this->animalID.size();
+    return animalID.size();
 }
 
 int ParserHewan::convertCodeToID(string Code)

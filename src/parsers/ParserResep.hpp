@@ -6,22 +6,22 @@ using namespace std;
 //Parser khusus untuk membaca file konfigurasi resep.
 class ParserResep : public BaseParser{
     private:
-        vector<int> recipeID;
-        vector<string> recipeCode;
-        vector<string> recipeName;
-        vector<int> recipePrice;
-        vector<vector<pair<string,int> > > recipeMaterialQuantity;
+        static vector<int> recipeID;
+        static vector<string> recipeCode;
+        static vector<string> recipeName;
+        static vector<int> recipePrice;
+        static vector<vector<pair<string,int> > > recipeMaterialQuantity;
     public:
         ParserResep(){}
         ~ParserResep(){}
         void ParseFile(string fileDirectory);
         void ClearParserData();
-        int getID(int);
-        string getCode(int);
-        string getName(int);
-        int getPrice(int);
-        vector<pair<string,int> > getRecipeMaterialQuantity(int);
-        int getConfigSize();
+        static int getID(int);
+        static string getCode(int);
+        static string getName(int);
+        static int getPrice(int);
+        static vector<pair<string,int> > getRecipeMaterialQuantity(int);
+        static int getConfigSize();
         int convertCodeToID(string Code);
         int convertNameToID(string Name);
         friend ostream &operator<<(ostream &os, ParserResep &PR); //untuk debugging, pake aja

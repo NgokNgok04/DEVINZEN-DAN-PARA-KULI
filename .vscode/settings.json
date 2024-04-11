@@ -71,5 +71,6 @@
         "xstring": "cpp",
         "xmemory": "cpp",
     },
-    "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\g++.exe"
+    "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\g++.exe",
+    "C_Cpp.errorSquiggles": "disabled"
 }
