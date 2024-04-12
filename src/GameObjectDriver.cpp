@@ -142,6 +142,7 @@ int main(){
         cout<<IRQC.what()<<"\n";
         return 0;
     }
+    //Hewan
     Hewan H1(3);
     cout<<H1.getID()<<"\n";
     cout<<H1.getKode()<<"\n";
@@ -153,5 +154,16 @@ int main(){
     cout<<H1.getCurWeight()<<"\n";
     cout<<H1.isHarvestable()<<"\n";
     //lanjutin sendiri drivernya
+    //Tanaman
+    Tanaman T1(6);
+    cout<<T1.getID()<<"\n";
+    cout<<T1.getDurationHarvest()<<"\n";
+    cout<<T1.getKode()<<"\n";
+    cout<<T1.getName()<<"\n";
+    cout<<T1.getPrice()<<"\n";
+    cout<<T1.getTipeObject()<<"\n";
+    cout<<T1.getCurAge()<<"\n";
+    cout<<T1.getType()<<"\n";
+    cout<<T1.isHarvestable()<<"\n";
     return 0;
 }
