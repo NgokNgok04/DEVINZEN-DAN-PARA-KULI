@@ -2,6 +2,7 @@
 #include "../Header/Exception.hpp"
 #include <bits/stdc++.h>
 #include "../Header/helper.hpp"
+#include "ParserProduk.hpp"
 void ParserProduk::ParseFile(string fileDirectory)
 {
     ifstream InputFile;
@@ -122,6 +123,16 @@ int ParserProduk::IDToIndex(int ID)
 {
     return IDToIndexMap[ID];
 }
+vector<int> ParserProduk::findOrigin(string OriginName)
+{
+    vector<int> out;
+    for(int i = 0; i<getConfigSize(); i++){
+        if(productOrigin[i] == OriginName){
+            out.push_back(productID[i]);
+        }
+    }
+    return out;
+}
 int ParserProduk::convertCodeToID(string Code)
 {
     for(int i = 0; i<getConfigSize(); i++){
@@ -146,9 +157,10 @@ int ParserProduk::indexToID(int index)
 {
     return IndexToIDMap[index];
 }
-bool ParserProduk::isAnAnimalProduct(int i)
+bool ParserProduk::isAnAnimalProduct(int ID)
 {
-    if (productType[i].find("ANIMAL") != string::npos){
+    int index = IDToIndex(ID);
+    if (productType[index].find("ANIMAL") != string::npos){
         return true;
     } else {
         return false;

@@ -2,6 +2,8 @@
 #define PARSERPRODUK_HPP
 #include <bits/stdc++.h>
 #include "BaseParser.hpp"
+#include "ParserHewan.hpp"
+#include "ParserTanaman.hpp"
 using namespace std;
 //Parser khusus untuk membaca file konfigurasi produk.
 class ParserProduk : public BaseParser{
@@ -36,6 +38,7 @@ class ParserProduk : public BaseParser{
         static bool isAnAnimalProduct(int);
         static int indexToID(int);
         static int IDToIndex(int);
+        static vector<int> findOrigin(string ProductName);
         friend ostream &operator<<(ostream &os, ParserProduk &PP); //untuk debugging, pake aja
 };
 #endif
