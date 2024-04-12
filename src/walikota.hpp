@@ -7,11 +7,14 @@ class WaliKota : public Pemain
 {
 public:
     WaliKota();
-    WaliKota(int rows, int cols, int guld, int bb);
+    WaliKota(int guld, int bb, int smol, int med, int big);
     WaliKota(const WaliKota &);
     ~WaliKota();
     void pungutPajak();
     void bangunBangunan(int); // int tipe 1: small, 2 medium, 3 large, 4 hotel
+    void beli();
+    void jual();
+    int calculateKKP();
 };
 
 #endif

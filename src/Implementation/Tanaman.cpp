@@ -1,17 +1,24 @@
 #include "../Header/Tanaman.hpp"
 
-Tanaman::Tanaman(int idKonfig){
+Tanaman::Tanaman(int idKonfig)
+{
     setID(idKonfig);
+    setKode(ParserTanaman::getCode(idKonfig));
+    setName(ParserTanaman::getName(idKonfig));
+    setPrice(ParserTanaman::getPrice(idKonfig));
     setKode(ParserTanaman::getCode(idKonfig));
     setName(ParserTanaman::getName(idKonfig));
     setPrice(ParserTanaman::getPrice(idKonfig));
     setTipeObject("TANAMAN");
     type = ParserTanaman::getType(idKonfig);
     durationHarvest = ParserTanaman::getHarvestDuration(idKonfig);
+    type = ParserTanaman::getType(idKonfig);
+    durationHarvest = ParserTanaman::getHarvestDuration(idKonfig);
     age = 0;
 }
 
-void Tanaman::tambahUmur(){
+void Tanaman::tambahUmur()
+{
     age++;
 }
 

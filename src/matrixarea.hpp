@@ -15,7 +15,7 @@ class MatrixArea
 private:
     int rows;
     int cols;
-    vector<vector<T*>> matrix;
+    vector<vector<T *>> matrix;
 
 public:
     MatrixArea();
@@ -32,6 +32,8 @@ public:
     void displayObject();
     void displayDetail();
     void displayRemainderSlot();
+    bool isEmpty();
+    int getEmptySlot();
 };
 
 #endif
