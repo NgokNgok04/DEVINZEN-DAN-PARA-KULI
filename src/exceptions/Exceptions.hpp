@@ -261,3 +261,39 @@ class InventoryInedibleSlotException : public BaseException{
             return "Barang di slot inventori yang dipilih tidak bisa dimakan!";
         }
 };
+
+class NotEnoughShopStockException : public BaseException{
+    public:
+        NotEnoughShopStockException(){};
+        ~NotEnoughShopStockException(){};
+        string what(){
+            return "Barang di toko stoknya tidak sebanyak itu!";
+        }
+};
+
+class NotEnoughInventorySlotException : public BaseException{
+    public:
+        NotEnoughInventorySlotException(){};
+        ~NotEnoughInventorySlotException(){};
+        string what(){
+            return "Slot inventori anda tidak cukup!";
+        }
+};
+
+class InvalidShopRequestException : public BaseException{
+    public:
+        InvalidShopRequestException(){};
+        ~InvalidShopRequestException(){};
+        string what(){
+            return "Pilihan tidak sesuai!";
+        }
+};
+
+class NotEnoughGuldenException : public BaseException{
+    public:
+        NotEnoughGuldenException(){};
+        ~NotEnoughGuldenException(){};
+        string what(){
+            return "Gulden anda tidak cukup untuk membeli barang itu!";
+        }
+};
