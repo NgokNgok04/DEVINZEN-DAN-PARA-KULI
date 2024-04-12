@@ -302,22 +302,22 @@ bool MatrixArea<T>::isEmpty()
     return true;
 }
 
+int getEmptySlot();
+
+// matrixarea.cpp
 template <class T>
 int MatrixArea<T>::getEmptySlot()
 {
     int count = 0;
-        for (int i = 0; i < this->rows; i++)
+    for (int i = 0; i < this->rows; i++)
     {
-                for (int j = 0; j < this->cols; j++)
+        for (int j = 0; j < this->cols; j++)
         {
-                        if (this->matrix[i][j] == nullptr)
+            if (this->matrix[i][j] == nullptr)
             {
-                                count++;
-                           
+                count++;
             }
-                   
         }
-           
     }
     return count;
 }

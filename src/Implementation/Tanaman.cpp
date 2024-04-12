@@ -19,8 +19,8 @@ void Tanaman::tambahUmur()
 
 Product *Tanaman::hasilPanen()
 {
-    int idProduct = ParserProduk::findOrigin(getName());
-    Product *temp = new Product(idProduct, false);
+    vector<int> idProduct = ParserProduk::findOrigin(getName());
+    Product *temp = new Product(idProduct.front(), false);
     return temp;
 }
 bool Tanaman::isHarvestable()

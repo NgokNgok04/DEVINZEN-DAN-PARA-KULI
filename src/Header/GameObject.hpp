@@ -27,6 +27,8 @@ public:
     void setPrice(float);
     void setName(string);
     void setTipeObject(string);
+    GameObject &operator=(const GameObject &);
+    bool operator==(const GameObject &);
 };
 
 #endif

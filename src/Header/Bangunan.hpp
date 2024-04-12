@@ -2,11 +2,14 @@
 #define BANGUNAN_HPP
 
 #include "GameObject.hpp"
+#include "ParserResep.hpp"
 
 class Bangunan : public GameObject
 {
 public:
     Bangunan(int);
+    Bangunan &operator=(const Bangunan &);
+    bool operator==(const Bangunan &);
 };
 
 #endif
