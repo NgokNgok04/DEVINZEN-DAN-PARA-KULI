@@ -4,6 +4,7 @@
 #include "BaseParser.hpp"
 using namespace std;
 // Parser khusus untuk membaca file konfigurasi hewan.
+// extern ParserHewan PHGlobal;
 class ParserHewan : public BaseParser
 {
 private:

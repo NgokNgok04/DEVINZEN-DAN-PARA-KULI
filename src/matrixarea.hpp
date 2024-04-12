@@ -30,7 +30,9 @@ public:
     void displayMatrix();
     void displayObject();
     void displayDetail();
-    // void displayRemainderSlot();
+    void displayRemainderSlot();
+    bool isEmpty();
+    int getEmptySlot();
 };
 
 #endif

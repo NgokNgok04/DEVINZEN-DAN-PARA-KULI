@@ -268,20 +268,56 @@ void MatrixArea<T>::displayDetail()
     }
 }
 
-// template <class T>
-// void MatrixArea<T>::displayRemainderSlot()
-// {
-//     cout << endl;
-//     int remainderSlot = this->rows * this->cols;
-//     for (int i = 0; i < this->rows; i++)
-//     {
-//         for (int j = 0; j < this->cols; j++)
-//         {
-//             if ((this->matrix[i][j].getKodeHuruf()).length() == 3)
-//             {
-//                 remainderSlot--;
-//             }
-//         }
-//     }
-//     cout << "Total slot kosong: " << remainderSlot << endl;
-// }
+template <class T>
+void MatrixArea<T>::displayRemainderSlot()
+{
+    cout << endl;
+    int remainderSlot = this->rows * this->cols;
+    for (int i = 0; i < this->rows; i++)
+    {
+        for (int j = 0; j < this->cols; j++)
+        {
+            if ((this->matrix[i][j]->getKode()).length() == 3)
+            {
+                remainderSlot--;
+            }
+        }
+    }
+    cout << "Total slot kosong: " << remainderSlot << endl;
+}
+
+template <class T>
+bool MatrixArea<T>::isEmpty()
+{
+    for (int i = 0; i < this->rows; i++)
+    {
+        for (int j = 0; j < this->cols; j++)
+        {
+            if (this->matrix[i][j] != nullptr)
+            {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+template <class T>
+int MatrixArea<T>::getEmptySlot()
+{
+    int count = 0;
+        for (int i = 0; i < this->rows; i++)
+    {
+                for (int j = 0; j < this->cols; j++)
+        {
+                        if (this->matrix[i][j] == nullptr)
+            {
+                                count++;
+                           
+            }
+                   
+        }
+           
+    }
+    return count;
+}

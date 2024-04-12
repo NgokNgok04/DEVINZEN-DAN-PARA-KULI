@@ -6,7 +6,7 @@
 class Peternak : public Pemain
 {
 protected:
-    MatrixArea<GameObject> ternakan;
+    MatrixArea<Hewan> ternakan;
 
 public:
     Peternak();

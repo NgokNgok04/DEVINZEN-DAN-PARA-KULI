@@ -7,7 +7,7 @@ class Petani : public Pemain
 {
 protected:
 public:
-    MatrixArea<GameObject> ladang;
+    MatrixArea<Tanaman> ladang;
 
     Petani();
     Petani(int guld, int bb, int smol, int med, int big, int ladrows, int ladcols);

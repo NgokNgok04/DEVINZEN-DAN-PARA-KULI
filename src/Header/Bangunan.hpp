@@ -3,9 +3,10 @@
 
 #include "GameObject.hpp"
 
-class Bangunan:public GameObject{
-    public:
-        Bangunan(int);
+class Bangunan : public GameObject
+{
+public:
+    Bangunan(int);
 };
 
 #endif

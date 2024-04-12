@@ -24,17 +24,26 @@ int main()
     // matrix.deleteElement(2, 1);
     // matrix.displayMatrix();
 
-    Petani P1;
-    P1.cetakLadang();
-    // P1.cetakPenyimpanan();
+    // Petani P1;
+    // cout << "helo222" << endl;
 
-    P1.ladang.setElement(5, 5, &anjing);
+    // P1.cetakLadang();
+    // cout << "helo" << endl;
 
-    P1.cetakLadang();
-    // Petani P2(P1);
-    // P2.cetakLadang();
+    // cout << "hi" << endl;
 
-    cout << P1.getTipe() << endl;
-    // p1cetakLadang();
+    // P1.cetakLadang();
+    // P1.tanam();
+    // cout << P1.getTipe() << endl;
+
+    // std::string str = "B07";
+
+    // int idx1 = str[0] - 'A' + 1;
+
+    // int idx2 = std::stoi(str.substr(1));
+
+    // std::cout << "Index 1: " << idx1 << std::endl;
+    // std::cout << "Index 2: " << idx2 << std::endl;
+
     return 0;
 }
