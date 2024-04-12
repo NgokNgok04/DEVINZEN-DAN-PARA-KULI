@@ -79,13 +79,13 @@ int main()
     // matrix.displayMatrix();
 
     Petani P1;
-    Hewan kiel;
-    // cout << "helo222" << endl;
+    Tanaman kiel;
+    cout << "helo222" << endl;
     P1.setInv(2, 2, kiel);
     P1.cetakPenyimpanan();
 
     // P1.cetakLadang();
-    // cout << "helo" << endl;
+    cout << "helo" << endl;
 
     // cout << "hi" << endl;
 

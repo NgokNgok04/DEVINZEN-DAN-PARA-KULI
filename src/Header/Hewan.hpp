@@ -17,6 +17,7 @@ public:
     Hewan()
     {
         this->setKode("MET");
+        this->setTipeObject("HEWAN");
     }
     Hewan(int);
     void makan(Product);

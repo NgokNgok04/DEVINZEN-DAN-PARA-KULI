@@ -13,6 +13,11 @@ private:
     int age;
 
 public:
+    Tanaman()
+    {
+        this->setKode("KIL");
+        this->setTipeObject("TANAMAN");
+    }
     Tanaman(int);
     void tambahUmur();
     Product *hasilPanen();

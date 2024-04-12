@@ -44,7 +44,7 @@ string Pemain::getTipe()
 void Pemain::cetakPenyimpanan()
 {
     this->inventory.displayObject();
-    // this->inventory.displayRemainderSlot();
+    this->inventory.displayRemainderSlot();
 }
 
 void Pemain::makan()

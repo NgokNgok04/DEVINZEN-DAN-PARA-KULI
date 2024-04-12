@@ -272,14 +272,14 @@ template <class T>
 void MatrixArea<T>::displayRemainderSlot()
 {
     cout << endl;
-    int remainderSlot = this->rows * this->cols;
+    int remainderSlot = 0;
     for (int i = 0; i < this->rows; i++)
     {
         for (int j = 0; j < this->cols; j++)
         {
-            if ((this->matrix[i][j]->getKode()).length() == 3)
+            if (this->matrix[i][j] == nullptr)
             {
-                remainderSlot--;
+                remainderSlot++;
             }
         }
     }
