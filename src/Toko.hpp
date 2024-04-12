@@ -15,15 +15,13 @@
 #include "./parsers/ParserResep.hpp"
 using namespace std;
 class Toko {
-    private:
+    public:
         static vector<Hewan> availableHewan;
         static vector<Tanaman> availableTanaman;
         static vector<pair<Product,int>> availableProduct;
         static vector<pair<Bangunan,int>> availableBangunan;
-    public:
         Toko();
         static int buyProcess();
-        
         static void itemDibeli(); //handle keadaan toko setelah player membeli item
         static void itemDijual(); //handle keadaan toko setelah player menjual item
         static bool isProductEmptyStock();
