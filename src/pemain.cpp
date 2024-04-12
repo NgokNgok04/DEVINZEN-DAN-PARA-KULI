@@ -184,7 +184,7 @@ void Pemain::beli(){
     }
     cout << itemToBuy->getName() << "berhasil disimpan dalam penyimpanan!" << endl;
     
-    Toko::itemDibeli(itemToBuy);
+    Toko::itemDibeli(itemToBuy,quantity);
 }
 
 void Pemain::jual(){
@@ -208,5 +208,5 @@ void Pemain::jual(){
     }
     this->gulden += profit;
     cout << "Barang Anda berhasil dijual! Uang Anda bertambah " << profit << " gulden!" << endl;
-    Toko::itemDijual(itemToSell);
+    Toko::itemDijual(itemToSell,quantity);
 }

@@ -52,6 +52,20 @@ MatrixArea<T*> &MatrixArea<T>::operator=(const MatrixArea<T*> &matrix)
 }
 
 template <class T>
+MatrixArea<T*> &MatrixArea<T>::operator+(const T* &object){
+    bool found = false;
+    for (int i = 0; i < this->rows; i++){
+        for(int j = 0; j < this->cols; j++){
+            if (this->matrix[i][j] == nullptr && !found){
+                this->matrix[i][j] = object;
+                found = true;
+            }
+        }
+    }
+    return *this;
+}
+
+template <class T>
 void MatrixArea<T>::setElement(int row, int col, T* object)
 {
     // asumsi row n col selalu benar
