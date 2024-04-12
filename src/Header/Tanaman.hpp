@@ -10,12 +10,14 @@ class Tanaman: public GameObject{
         string type;
         int durationHarvest;
         int age;
-        static ParserTanaman konfig;
     public:
         Tanaman(int);
         void tambahUmur();
-        Product hasilPanen();
+        Product* hasilPanen();
         bool isHarvestable();
+        string getType();
+        int getDurationHarvest();
+        int getCurAge();
 };
 
 #endif
