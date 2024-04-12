@@ -1,7 +1,13 @@
 #include <iostream>
-#include "Header/Exception.hpp"
-#include "Header/GameManager.hpp"
+#include "./Header/GameManager.hpp"
+#include "./Header/GameObject.hpp"
+#include "./Header/Hewan.hpp"
+#include "./Header/Tanaman.hpp"
+#include "./Header/Product.hpp"
+#include "./Header/Bangunan.hpp"
+
 using namespace std;
+
 //inisialisasi atribut static di semua parser
 vector<string> ParserHewan::validAnimalTypes = {"HERBIVORE","CARNIVORE","OMNIVORE"};
 vector<int> ParserHewan::animalID = vector<int>();
@@ -136,6 +142,16 @@ int main(){
         cout<<IRQC.what()<<"\n";
         return 0;
     }
-    
+    Hewan H1(3);
+    cout<<H1.getID()<<"\n";
+    cout<<H1.getKode()<<"\n";
+    cout<<H1.getName()<<"\n";
+    cout<<H1.getPrice()<<"\n";
+    cout<<H1.getTipeObject()<<"\n";
+    cout<<H1.getType()<<"\n";
+    cout<<H1.getWeightHarvest()<<"\n";
+    cout<<H1.getCurWeight()<<"\n";
+    cout<<H1.isHarvestable()<<"\n";
+    //lanjutin sendiri drivernya
     return 0;
 }

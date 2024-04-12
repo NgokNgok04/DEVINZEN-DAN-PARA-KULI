@@ -22,43 +22,43 @@ void ParserMisc::ParseFile(string fileDirectory)
         if(curLine == 1){
             numValue = stoi(SpaceStrippedLine[0]);
             if(numValue < 0){
-                this->ClearParserData();
+                ParserMisc::ClearParserData();
                 throw InvalidMiscMoneyConfigException();
                 return;
             }
-            this->winningMoney = numValue;
+            ParserMisc::winningMoney = numValue;
         } else if(curLine ==2){
             numValue = stoi(SpaceStrippedLine[0]);
             if(numValue < 0){
-                this->ClearParserData();
+                ParserMisc::ClearParserData();
                 throw InvalidMiscWeightConfigException();
                 return;
             }
-            this->winningWeight = numValue;
+            ParserMisc::winningWeight = numValue;
         }else if(curLine == 3){
             numValuePair = {stoi(SpaceStrippedLine[0]),stoi(SpaceStrippedLine[1])};
             if(numValuePair.first <=0 || numValuePair.second<=0){
-                this->ClearParserData();
+                ParserMisc::ClearParserData();
                 throw InvalidStorageDimensionConfigException();
                 return;
             }
-            this->storageSize = numValuePair;
+            ParserMisc::storageSize = numValuePair;
         }else if(curLine ==4){
             numValuePair = {stoi(SpaceStrippedLine[0]),stoi(SpaceStrippedLine[1])};
             if(numValuePair.first <=0 || numValuePair.second<=0){
-                this->ClearParserData();
+                ParserMisc::ClearParserData();
                 throw InvalidFieldDimensionConfigException();
                 return;
             }
-            this->fieldSize = numValuePair;
+            ParserMisc::fieldSize = numValuePair;
         } else if(curLine == 5){
             numValuePair = {stoi(SpaceStrippedLine[0]),stoi(SpaceStrippedLine[1])};
             if(numValuePair.first <=0 || numValuePair.second<=0){
-                this->ClearParserData();
+                ParserMisc::ClearParserData();
                 throw InvalidFarmDimensionConfigException();
                 return;
             }
-            this->farmSize = numValuePair;
+            ParserMisc::farmSize = numValuePair;
         }
         curLine++;
     }
@@ -68,36 +68,36 @@ void ParserMisc::ParseFile(string fileDirectory)
 
 void ParserMisc::ClearParserData()
 {
-    this->winningMoney = 0;
-    this->winningWeight = 0;
-    this->storageSize = {0,0};
-    this->fieldSize = {0,0};
-    this->farmSize = {0,0};
+    ParserMisc::winningMoney = 0;
+    ParserMisc::winningWeight = 0;
+    ParserMisc::storageSize = {0,0};
+    ParserMisc::fieldSize = {0,0};
+    ParserMisc::farmSize = {0,0};
 }
 
 int ParserMisc::getWinningMoney()
 {
-    return winningMoney;
+    return ParserMisc::winningMoney;
 }
 
 int ParserMisc::getWinningWeight()
 {
-    return winningWeight;
+    return ParserMisc::winningWeight;
 }
 
 pair<int, int> ParserMisc::getStorageSize()
 {
-    return storageSize;
+    return ParserMisc::storageSize;
 }
 
 pair<int, int> ParserMisc::getFieldSize()
 {
-    return fieldSize;
+    return ParserMisc::fieldSize;
 }
 
 pair<int, int> ParserMisc::getFarmSize()
 {
-    return farmSize;
+    return ParserMisc::farmSize;
 }
 
 ostream &operator<<(ostream &os, ParserMisc &PM)

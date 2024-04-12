@@ -1,8 +1,5 @@
 #include "../Header/ParserHewan.hpp"
-#include "../Header/Exception.hpp"
-#include "../Header/helper.hpp"
-#include <bits/stdc++.h>
-#include "ParserHewan.hpp"
+
 
 void ParserHewan::ParseFile(string fileDirectory)
 {

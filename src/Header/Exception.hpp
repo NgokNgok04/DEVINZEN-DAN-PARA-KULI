@@ -1,3 +1,5 @@
+#ifndef EXCEPTION_HPP
+#define EXCEPTION_HPP
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -234,3 +236,5 @@ class InvalidRecipeQuantityConfigException : public BaseException{
             return "Ada kuantitas bahan resep yang tidak valid di file config recipe.txt!";
         }
 };
+
+#endif
