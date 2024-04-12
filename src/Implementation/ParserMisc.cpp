@@ -62,6 +62,7 @@ void ParserMisc::ParseFile(string fileDirectory)
         }
         curLine++;
     }
+
     cout<<"Konfigurasi misc.txt berhasil!\n";
 }
 

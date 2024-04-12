@@ -13,6 +13,7 @@ class ParserTanaman : public BaseParser {
         static vector<int> harvestDuration;
         static vector<int> price;
         static vector<string> validPlantTypes;
+        static map<int,int> IndexToIDMap;
     public:
         ParserTanaman(){
             this->validPlantTypes = {"MATERIAL_PLANT","FRUIT_PLANT"};
@@ -29,6 +30,7 @@ class ParserTanaman : public BaseParser {
         static int getConfigSize();
         static int convertCodeToID(string Code);
         static int convertNameToID(string Name);
+        static int indexToID(int);
         friend ostream &operator<<(ostream &os, ParserTanaman &PT); //untuk debugging, pake aja
 };
 #endif

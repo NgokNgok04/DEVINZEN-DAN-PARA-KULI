@@ -2,6 +2,7 @@
 #include "../Header/Exception.hpp"
 #include "../Header/helper.hpp"
 #include <bits/stdc++.h>
+#include "ParserHewan.hpp"
 
 void ParserHewan::ParseFile(string fileDirectory)
 {
@@ -60,6 +61,10 @@ void ParserHewan::ParseFile(string fileDirectory)
         }
         this->price.push_back(numValue);
     }
+
+    for(int i = 0; i<animalID.size(); i++){
+        IndexToIDMap.insert({i,animalID[i]});
+    }
     cout<<"Konfigurasi animal.txt berhasil!\n";
 }
 
@@ -73,34 +78,34 @@ void ParserHewan::ClearParserData()
     this->price.clear();
 }
 
-int ParserHewan::getID(int i)
+int ParserHewan::getID(int index)
 {
-    return animalID[i];
+    return animalID[index];
 }
 
-string ParserHewan::getCode(int i)
+string ParserHewan::getCode(int index)
 {
-    return animalCode[i];
+    return animalCode[index];
 }
 
-string ParserHewan::getName(int i)
+string ParserHewan::getName(int index)
 {
-    return animalName[i];
+    return animalName[index];
 }
 
-string ParserHewan::getType(int i)
+string ParserHewan::getType(int index)
 {
-    return animalType[i];
+    return animalType[index];
 }
 
-int ParserHewan::getHarvestWeight(int i)
+int ParserHewan::getHarvestWeight(int index)
 {
-    return harvestWeight[i];
+    return harvestWeight[index];
 }
 
-int ParserHewan::getPrice(int i)
+int ParserHewan::getPrice(int index)
 {
-    return price[i];
+    return price[index];
 }
 
 int ParserHewan::getConfigSize()
@@ -130,6 +135,10 @@ int ParserHewan::convertNameToID(string Name)
     return -1;
 }
 
+int ParserHewan::indexToID(int index)
+{
+    return IndexToIDMap[index];
+}
 ostream &operator<<(ostream &os, ParserHewan &PH)
 {
     for(int i = 0; i<PH.animalID.size(); i++){

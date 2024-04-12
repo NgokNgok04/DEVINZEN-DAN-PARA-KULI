@@ -14,6 +14,7 @@ class ParserProduk : public BaseParser{
         static vector<int> addedWeight;
         static vector<int> price;
         static vector<string> validProductTypes;
+        static map<int,int> IndexToIDMap;
     public:
         ParserProduk(){
             validProductTypes = {"PRODUCT_MATERIAL_PLANT", "PRODUCT_FRUIT_PLANT", "PRODUCT_ANIMAL"};
@@ -32,6 +33,7 @@ class ParserProduk : public BaseParser{
         static int convertCodeToID(string Code);
         static int convertNameToID(string Name);
         static bool isAnAnimalProduct(int);
+        static int indexToID(int);
         friend ostream &operator<<(ostream &os, ParserProduk &PP); //untuk debugging, pake aja
 };
 #endif

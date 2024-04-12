@@ -11,6 +11,7 @@ class ParserResep : public BaseParser{
         static vector<string> recipeName;
         static vector<int> recipePrice;
         static vector<vector<pair<string,int> > > recipeMaterialQuantity;
+        static map<int,int> IndexToIDMap;
     public:
         ParserResep(){}
         ~ParserResep(){}
@@ -24,6 +25,7 @@ class ParserResep : public BaseParser{
         static int getConfigSize();
         static int convertCodeToID(string Code);
         static int convertNameToID(string Name);
+        static int indexToID(int);
         friend ostream &operator<<(ostream &os, ParserResep &PR); //untuk debugging, pake aja
 };
 #endif

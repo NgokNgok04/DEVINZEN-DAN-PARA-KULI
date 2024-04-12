@@ -51,6 +51,9 @@ void ParserResep::ParseFile(string fileDirectory)
 
         this->recipeMaterialQuantity.push_back(MaterialQuantityPairList);
     }
+    for(int i = 0; i<recipeID.size(); i++){
+        IndexToIDMap.insert({i,recipeID[i]});
+    }
     cout<<"Konfigurasi recipe.txt berhasil!\n";
 }
 
@@ -63,24 +66,24 @@ void ParserResep::ClearParserData()
         this->recipeMaterialQuantity.clear();
 }
 
-int ParserResep::getID(int i)
+int ParserResep::getID(int index)
 {
-    return recipeID[i];
+    return recipeID[index];
 }
 
-string ParserResep::getCode(int i)
+string ParserResep::getCode(int index)
 {
-    return recipeCode[i];
+    return recipeCode[index];
 }
 
-string ParserResep::getName(int i)
+string ParserResep::getName(int index)
 {
-    return recipeName[i];
+    return recipeName[index];
 }
 
-int ParserResep::getPrice(int i)
+int ParserResep::getPrice(int index)
 {
-    return recipePrice[i];
+    return recipePrice[index];
 }
 
 vector<pair<string, int>> ParserResep::getRecipeMaterialQuantity(int i)
@@ -114,7 +117,10 @@ int ParserResep::convertNameToID(string Name)
 
     return -1;
 }
-
+int ParserResep::indexToID(int index)
+{
+    return IndexToIDMap[index];
+}
 ostream &operator<<(ostream &os, ParserResep &PR)
 {
     for(int i = 0; i<PR.recipeID.size(); i++){

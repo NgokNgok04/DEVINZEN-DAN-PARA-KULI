@@ -11,6 +11,7 @@ class ParserMisc : public BaseParser{
         static pair<int,int> storageSize;
         static pair<int,int> fieldSize;
         static pair<int,int> farmSize;
+
     public:
         ParserMisc(){}
         ~ParserMisc(){}

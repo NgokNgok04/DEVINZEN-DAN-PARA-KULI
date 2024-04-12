@@ -62,6 +62,10 @@ void ParserProduk::ParseFile(string fileDirectory)
         }
         this->price.push_back(numValue);
     }
+
+    for(int i = 0; i<productID.size(); i++){
+        IndexToIDMap.insert({i,productID[i]});
+    }
     cout<<"Konfigurasi product.txt berhasil!\n";
 }
 
@@ -75,33 +79,33 @@ void ParserProduk::ClearParserData()
     this->addedWeight.clear();
     this->price.clear();
 }
-int ParserProduk::getID(int i)
+int ParserProduk::getID(int index)
 {
-    return productID[i];
+    return productID[index];
 }
-string ParserProduk::getCode(int i)
+string ParserProduk::getCode(int index)
 {
-    return productCode[i];
+    return productCode[index];
 }
-string ParserProduk::getName(int i)
+string ParserProduk::getName(int index)
 {
-    return productName[i];
+    return productName[index];
 }
-string ParserProduk::getType(int i)
+string ParserProduk::getType(int index)
 {
-    return productType[i];
+    return productType[index];
 }
-string ParserProduk::getOrigin(int i)
+string ParserProduk::getOrigin(int index)
 {
-    return productOrigin[i];
+    return productOrigin[index];
 }
-int ParserProduk::getAddedWeight(int i)
+int ParserProduk::getAddedWeight(int index)
 {
-    return addedWeight[i];
+    return addedWeight[index];
 }
-int ParserProduk::getPrice(int i)
+int ParserProduk::getPrice(int index)
 {
-    return price[i];
+    return price[index];
 }
 int ParserProduk::getConfigSize()
 {
@@ -126,6 +130,10 @@ int ParserProduk::convertNameToID(string Name)
     }
 
     return -1;
+}
+int ParserProduk::indexToID(int index)
+{
+    return IndexToIDMap[index];
 }
 bool ParserProduk::isAnAnimalProduct(int i)
 {
