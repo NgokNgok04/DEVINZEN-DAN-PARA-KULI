@@ -14,6 +14,7 @@ class ParserHewan : public BaseParser{
         static vector<int> price;
         static vector<string> validAnimalTypes;
         static map<int,int> IndexToIDMap;
+        static map<int,int> IDToIndexMap;
     public:
         ParserHewan(){
             this->validAnimalTypes = {"HERBIVORE","CARNIVORE","OMNIVORE"};
@@ -31,6 +32,7 @@ class ParserHewan : public BaseParser{
         static int convertCodeToID(string Code);
         static int convertNameToID(string Name);
         static int indexToID(int);
+        static int IDToIndex(int);
         friend ostream &operator<<(ostream &os, ParserHewan &PH); //untuk debugging, pake aja
 };
 #endif

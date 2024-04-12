@@ -65,6 +65,7 @@ void ParserProduk::ParseFile(string fileDirectory)
 
     for(int i = 0; i<productID.size(); i++){
         IndexToIDMap.insert({i,productID[i]});
+        IDToIndexMap.insert({productID[i],i});
     }
     cout<<"Konfigurasi product.txt berhasil!\n";
 }
@@ -83,33 +84,43 @@ int ParserProduk::getID(int index)
 {
     return productID[index];
 }
-string ParserProduk::getCode(int index)
+string ParserProduk::getCode(int ID)
 {
+    int index = IDToIndex(ID);
     return productCode[index];
 }
-string ParserProduk::getName(int index)
+string ParserProduk::getName(int ID)
 {
+    int index = IDToIndex(ID);
     return productName[index];
 }
-string ParserProduk::getType(int index)
+string ParserProduk::getType(int ID)
 {
+    int index = IDToIndex(ID);
     return productType[index];
 }
-string ParserProduk::getOrigin(int index)
+string ParserProduk::getOrigin(int ID)
 {
+    int index = IDToIndex(ID);
     return productOrigin[index];
 }
-int ParserProduk::getAddedWeight(int index)
+int ParserProduk::getAddedWeight(int ID)
 {
+    int index = IDToIndex(ID);
     return addedWeight[index];
 }
-int ParserProduk::getPrice(int index)
+int ParserProduk::getPrice(int ID)
 {
+    int index = IDToIndex(ID);
     return price[index];
 }
 int ParserProduk::getConfigSize()
 {
     return productID.size();
+}
+int ParserProduk::IDToIndex(int ID)
+{
+    return IDToIndexMap[ID];
 }
 int ParserProduk::convertCodeToID(string Code)
 {

@@ -64,6 +64,7 @@ void ParserHewan::ParseFile(string fileDirectory)
 
     for(int i = 0; i<animalID.size(); i++){
         IndexToIDMap.insert({i,animalID[i]});
+        IDToIndexMap.insert({animalID[i],i});
     }
     cout<<"Konfigurasi animal.txt berhasil!\n";
 }
@@ -83,28 +84,33 @@ int ParserHewan::getID(int index)
     return animalID[index];
 }
 
-string ParserHewan::getCode(int index)
+string ParserHewan::getCode(int ID)
 {
+    int index = IDToIndex(ID);
     return animalCode[index];
 }
 
-string ParserHewan::getName(int index)
+string ParserHewan::getName(int ID)
 {
+    int index = IDToIndex(ID);
     return animalName[index];
 }
 
-string ParserHewan::getType(int index)
+string ParserHewan::getType(int ID)
 {
+    int index = IDToIndex(ID);
     return animalType[index];
 }
 
-int ParserHewan::getHarvestWeight(int index)
+int ParserHewan::getHarvestWeight(int ID)
 {
+    int index = IDToIndex(ID);
     return harvestWeight[index];
 }
 
-int ParserHewan::getPrice(int index)
+int ParserHewan::getPrice(int ID)
 {
+    int index = IDToIndex(ID);
     return price[index];
 }
 
@@ -138,6 +144,10 @@ int ParserHewan::convertNameToID(string Name)
 int ParserHewan::indexToID(int index)
 {
     return IndexToIDMap[index];
+}
+int ParserHewan::IDToIndex(int ID)
+{
+    return IDToIndexMap[ID];
 }
 ostream &operator<<(ostream &os, ParserHewan &PH)
 {

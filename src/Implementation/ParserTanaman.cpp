@@ -61,6 +61,7 @@ void ParserTanaman::ParseFile(string fileDirectory)
     }
     for(int i = 0; i<plantID.size(); i++){
         IndexToIDMap.insert({i,plantID[i]});
+        IDToIndexMap.insert({plantID[i],i});
     }
     cout<<"Konfigurasi plant.txt berhasil!\n";
 }
@@ -80,28 +81,33 @@ int ParserTanaman::getID(int index)
     return plantID[index];
 }
 
-string ParserTanaman::getCode(int index)
+string ParserTanaman::getCode(int ID)
 {
+    int index = IDToIndex(ID);
     return plantCode[index];
 }
 
-string ParserTanaman::getName(int index)
+string ParserTanaman::getName(int ID)
 {
+    int index = IDToIndex(ID);
     return plantName[index];
 }
 
-string ParserTanaman::getType(int index)
+string ParserTanaman::getType(int ID)
 {
+    int index = IDToIndex(ID);
     return plantType[index];
 }
 
-int ParserTanaman::getHarvestDuration(int index)
+int ParserTanaman::getHarvestDuration(int ID)
 {
+    int index = IDToIndex(ID);
     return harvestDuration[index];
 }
 
-int ParserTanaman::getPrice(int index)
+int ParserTanaman::getPrice(int ID)
 {
+    int index = IDToIndex(ID);
     return price[index];
 }
 
@@ -134,6 +140,10 @@ int ParserTanaman::convertNameToID(string Name)
 int ParserTanaman::indexToID(int index)
 {
     return IndexToIDMap[index];
+}
+int ParserTanaman::IDToIndex(int ID)
+{
+    return IDToIndexMap[ID];
 }
 ostream &operator<<(ostream &os, ParserTanaman &PT)
 {
