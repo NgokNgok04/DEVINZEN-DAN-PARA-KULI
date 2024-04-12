@@ -135,7 +135,7 @@ void MatrixArea<T>::displayMatrix()
 }
 
 template <>
-void MatrixArea<GameObject>::displayObject()
+void MatrixArea<GameObject*>::displayObject()
 {
     int title = (this->cols * 6) + 4;
     cout << "   ";
@@ -171,7 +171,7 @@ void MatrixArea<GameObject>::displayObject()
     {
         cout << "[ Penyimpanan ]" << endl;
     }
-    MatrixArea<GameObject>::displayMatrix();
+    MatrixArea<GameObject*>::displayMatrix();
 }
 
 // template <>
@@ -320,18 +320,12 @@ template <class T>
 int MatrixArea<T>::getEmptySlot()
 {
     int count = 0;
-        for (int i = 0; i < this->rows; i++)
-    {
-                for (int j = 0; j < this->cols; j++)
-        {
-                        if (this->matrix[i][j] == nullptr)
-            {
-                                count++;
-                           
+    for (int i = 0; i < this->rows; i++){
+        for (int j = 0; j < this->cols; j++){
+            if (this->matrix[i][j] == nullptr){
+                count++;
             }
-                   
         }
-           
     }
     return count;
 }

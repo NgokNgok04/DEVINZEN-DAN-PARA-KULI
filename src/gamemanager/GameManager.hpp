@@ -1,11 +1,11 @@
 #ifndef GAMEMANAGER_HPP
 #define GAMEMANAGER_HPP
 #include <bits/stdc++.h>
-#include "../parsers/ParserHewan.hpp"
-#include "../parsers/ParserMisc.hpp"
-#include "../parsers/ParserTanaman.hpp"
-#include "../parsers/ParserProduk.hpp"
-#include "../parsers/ParserResep.hpp"
+#include "ParserHewan.hpp"
+#include "ParserMisc.hpp"
+#include "ParserTanaman.hpp"
+#include "ParserProduk.hpp"
+#include "ParserResep.hpp"
 using namespace std;
 
 class GameManager{

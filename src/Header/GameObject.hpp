@@ -25,8 +25,8 @@ class GameObject{
         void setPrice(float);
         void setName(string);
         void setTipeObject(string);
-        virtual GameObject& operator=(const GameObject&);
-        virtual bool operator==(const GameObject&);
+        GameObject& operator=(const GameObject&);
+        bool operator==(const GameObject&);
 };
 
 #endif
