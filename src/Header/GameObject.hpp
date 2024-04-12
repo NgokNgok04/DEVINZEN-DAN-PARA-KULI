@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "Exception.hpp"
+#include "../exceptions/Exceptions.hpp"
 using namespace std;
 
 class GameObject{

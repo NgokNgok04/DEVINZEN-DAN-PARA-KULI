@@ -25,7 +25,7 @@ public:
     void cetakPenyimpanan();
     void makan(int row, int col);          // loc item yg dimakan
     void beli(); // loc item yang dibeli, loc item akan disimpan
-    void jual(int, int);           // loc item yg akan dijual
+    void jual();           // loc item yg akan dijual
 };
 
 #endif

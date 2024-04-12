@@ -2,7 +2,7 @@
 #define PRODUCT_HPP
 
 #include "GameObject.hpp"
-#include "./Parser/ParserProduk.hpp"
+#include "../parsers/ParserProduk.hpp"
 
 class Product:public GameObject{
     private:

@@ -9,22 +9,22 @@ Toko::Toko(){
     for(int i = 0; i < ParserHewan::getConfigSize(); i++){
         idDummyToko = ParserHewan::getID(i);
         Hewan hewanDummyToko(i);
-        availableHewan.push_back(make_pair(hewanDummyToko,-1));
+        availableHewan.push_back(hewanDummyToko);
     }
 
     for(int i = 0; i < ParserTanaman::getConfigSize(); i++){
         idDummyToko = ParserTanaman::getID(i);
         Tanaman tanamanDummyToko(i);
-        availableTanaman.push_back(make_pair(tanamanDummyToko,-1));
+        availableTanaman.push_back(tanamanDummyToko);
     }
 
     for(int i = 0; i < ParserProduk::getConfigSize(); i++){
-        idDummyToko = ParserProduk::getID(i);
-        Product productDummyToko(i);
-        availableProduct.push_back(make_pair(productDummyToko,0));
+        // idDummyToko = ParserProduk::getID(i);
+        // Product productDummyToko(i,ParserProduk::getOrigin(i) =); //nuggu akbar
+        // availableProduct.push_back(make_pair(productDummyToko,0));
     }
 
-    for(int i = 0; i < ParserResep::getConfigSize.; i++){
+    for(int i = 0; i < ParserResep::getConfigSize(); i++){
         idDummyToko = ParserResep::getID(i);
         Bangunan bangunanDummyToko(i);
         availableBangunan.push_back(make_pair(bangunanDummyToko,0));
@@ -51,12 +51,50 @@ int Toko::buyProcess(){
     cout << "Masukklah pilihan (1-4) :";
     cin >> response;
     if (response == i){
-        return 0
+        return 0;
     } else if (response >= 1 && response < i) {
         return response;
     } else {
         //thhrow exception
         cout << "Input tidak valid" << endl;
+    }
+}
+
+void Toko::itemDibeli(GameObject* gameObject, int quantity){
+    bool found = false;
+    for(int i = 0; i < availableProduct.size(); i++){
+        // if (gameObject == availableProduct[i].first){
+            //nunggu operator== selesai
+            availableProduct[i].second -= quantity;
+            found = true;
+        // };
+    };
+    if (!found){
+        for (int i = 0; i < availableBangunan.size(); i++){
+            // if (gameObject == availableBangunan[i].first){
+                //nunggu operator== selesai
+                availableBangunan[i].second -= quantity;
+            // }
+        }
+    }
+}
+
+void Toko::itemDijual(GameObject* gameObject, int quantity){
+    bool found = false;
+    for(int i = 0; i < availableProduct.size(); i++){
+        // if (gameObject == availableProduct[i].first){
+            //nunggu operator== selesai
+            availableProduct[i].second += quantity;
+            found = true;
+        // };
+    };
+    if (!found){
+        for (int i = 0; i < availableBangunan.size(); i++){
+            // if (gameObject == availableBangunan[i].first){
+            //nunggu operator== selesai
+                availableBangunan[i].second += quantity;
+            // }
+        }
     }
 }
 

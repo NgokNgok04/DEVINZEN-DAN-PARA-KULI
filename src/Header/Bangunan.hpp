@@ -2,7 +2,7 @@
 #define BANGUNAN_HPP
 
 #include "GameObject.hpp"
-#include "./Parser/ParserResep.hpp"
+#include "../parsers/ParserResep.hpp"
 
 class Bangunan:public GameObject{
     public:

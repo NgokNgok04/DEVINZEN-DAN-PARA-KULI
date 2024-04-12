@@ -7,7 +7,7 @@
 #include "./Header/Tanaman.hpp"
 #include "./Header/Hewan.hpp"
 #include "./Header/GameObject.hpp"
-#include "./Header/Parser/ParserMisc.hpp"
+#include "../parsers/ParserMisc.hpp"
 using namespace std;
 template <class T>
 class MatrixArea

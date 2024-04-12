@@ -22,8 +22,8 @@ class Toko {
         static vector<pair<Bangunan,int>> availableBangunan;
         Toko();
         static int buyProcess();
-        static void itemDibeli(); //handle keadaan toko setelah player membeli item
-        static void itemDijual(); //handle keadaan toko setelah player menjual item
+        static void itemDibeli(GameObject*, int); //handle keadaan toko setelah player membeli item
+        static void itemDijual(GameObject*, int); //handle keadaan toko setelah player menjual item
         static bool isProductEmptyStock();
         static bool isBangunanEmptyStock();
         static void displayAvailableHewan();

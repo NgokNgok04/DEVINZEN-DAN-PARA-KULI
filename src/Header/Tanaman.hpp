@@ -3,7 +3,7 @@
 
 #include "GameObject.hpp"
 #include "Product.hpp"
-#include "../Header/Parser/ParserTanaman.hpp"
+#include "../parsers/ParserTanaman.hpp"
 
 class Tanaman: public GameObject{
     private:

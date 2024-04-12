@@ -3,7 +3,7 @@
 
 #include "GameObject.hpp"
 #include "Product.hpp"
-#include "../Header/Parser/ParserHewan.hpp"
+#include "../parsers/ParserHewan.hpp"
 #include <vector>
 
 class Hewan: public GameObject{
