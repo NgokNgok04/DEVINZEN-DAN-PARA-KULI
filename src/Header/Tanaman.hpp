@@ -18,6 +18,8 @@ class Tanaman: public GameObject{
         string getType();
         int getDurationHarvest();
         int getCurAge();
+        Tanaman& operator=(const Tanaman&);
+        bool operator==(const Tanaman&);
 };
 
 #endif

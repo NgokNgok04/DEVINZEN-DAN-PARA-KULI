@@ -19,6 +19,8 @@ class Hewan: public GameObject{
         string getType();
         int getWeightHarvest();
         int getCurWeight();
+        Hewan& operator=(const Hewan&);
+        bool operator==(const Hewan&);
 };
 
 #endif

@@ -16,6 +16,8 @@ class Product:public GameObject{
         int getAddedWeight();
         string getOrigin();
         string getType();
+        Product& operator=(const Product&);
+        bool operator==(const Product&);
 };
 
 #endif
