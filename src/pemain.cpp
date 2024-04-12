@@ -69,11 +69,7 @@ void Pemain::makan()
     cout << "Alhasil, berat badan kamu naik menjadi ";
 }
 
-// void Pemain::beli()
-// {
-//     tokoGlobal.displayAvailableItemToBuy();
-//     cout << endl
-//          << endl;
-//     cout << "Uang Anda : " << this->gulden;
-//     this->inventory.displayRemainderSlot();
-// }
+void Pemain::setInv(int rows, int cols, GameObject a)
+{
+    this->inventory.setElement(rows, cols, &a);
+}

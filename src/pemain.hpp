@@ -6,7 +6,7 @@
 #include "matrixarea.cpp"
 // #include "./Header/GameObject.hpp"
 #include "./Implementation/GameObject.cpp"
-#include "Toko.hpp"
+// #include "Toko.hpp"
 using namespace std;
 
 class Pemain
@@ -19,6 +19,8 @@ protected:
     vector<int> ownedBuild;
 
 public:
+    // MatrixArea<GameObject> inventory;
+
     Pemain();
     Pemain(int guld, int bb, int smol, int med, int big); // : MatrixArea(rows, cols)
     Pemain(const Pemain &);
@@ -27,10 +29,11 @@ public:
     string getTipe();
 
     // specifics
+    void setInv(int, int, GameObject);
     void cetakPenyimpanan();
-    void makan();            // loc item yg dimakan
-    virtual void beli() = 0; // letak and quant item, loc item akan disimpan
-    virtual void jual() = 0; // loc item yg akan dijual
+    void makan(); // loc item yg dimakan
+    // virtual void beli() = 0; // letak and quant item, loc item akan disimpan
+    // virtual void jual() = 0; // loc item yg akan dijual
     virtual int calculateTax() = 0;
 };
 

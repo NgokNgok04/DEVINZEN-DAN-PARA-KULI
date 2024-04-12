@@ -3,7 +3,7 @@
 
 #include "GameObject.hpp"
 #include "Product.hpp"
-#include "../Header/Parser/ParserHewan.hpp"
+#include "ParserHewan.hpp"
 #include <vector>
 
 class Hewan : public GameObject
@@ -14,6 +14,10 @@ private:
     int weight;
 
 public:
+    Hewan()
+    {
+        this->setKode("MET");
+    }
     Hewan(int);
     void makan(Product);
     void setWeight(int);
