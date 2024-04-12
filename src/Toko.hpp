@@ -13,7 +13,7 @@
 #include "./parsers/ParserTanaman.hpp"
 #include "./parsers/ParserProduk.hpp"
 #include "./parsers/ParserResep.hpp"
-
+using namespace std;
 class Toko {
     private:
         static vector<Hewan> availableHewan;
@@ -22,15 +22,16 @@ class Toko {
         static vector<pair<Bangunan,int>> availableBangunan;
     public:
         Toko();
-        static void buyProcess();
+        static int buyProcess();
+        
         static void itemDibeli(); //handle keadaan toko setelah player membeli item
         static void itemDijual(); //handle keadaan toko setelah player menjual item
-        bool isProductEmptyStock();
-        bool isBangunanEmptyStock();
-        void displayAvailableHewan();
-        void displayAvailableTanaman();
-        void displayAvailableProduct();
-        void displayAvailableBangunan();
+        static bool isProductEmptyStock();
+        static bool isBangunanEmptyStock();
+        static void displayAvailableHewan();
+        static void displayAvailableTanaman();
+        static int displayAvailableProduct();
+        static int displayAvailableBangunan();
         static void displayResepBangunan();
 };
 #endif

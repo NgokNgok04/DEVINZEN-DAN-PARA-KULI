@@ -31,45 +31,33 @@ Toko::Toko(){
     }
 };
 
-void Toko::buyProcess(){
+int Toko::buyProcess(){
     cout << "Selamat datang di toko!!" << endl;
-    cout << "Berikut merupakan hal yang dapat anda Beli :" << endl;
     int response;
-    bool isBuying = false;
+    cout << "Berikut merupakan hal yang dapat anda Beli :" << endl;
+    cout << "1. Hewan" << endl;
+    cout << "2. Tanaman" << endl;
     int i = 2;
-    while(!isBuying){
-        cout << "1. Hewan" << endl;
-        cout << "2. Tanaman" << endl;
-        if (!isProductEmptyStock()){
-            i++;
-            cout << i << ". Product" << endl;
-        }
-        if (!isBangunanEmptyStock()){
-            i++;
-            cout << i << ". Bangunan" << endl;
-        }
+    if (!isProductEmptyStock()){
         i++;
-        cout << i << ". Cancel Buy" << endl;
-        cout << "Masukklah pilihan (1-4) :";
-        cin >> response;
-        if (response == 1){
-            displayAvailableHewan();
-        } else if (response == 2){
-            displayAvailableTanaman();
-        } else if (response == 3 && i >= 3 && !isProductEmptyStock()){
-            displayAvailableProduct();
-        } else if (response == 3 && i >= 3 && !isBangunanEmptyStock() && isProductEmptyStock()){
-            displayAvailableBangunan();
-        } else if (response == 4 && !isBangunanEmptyStock){
-            displayAvailableBangunan();
-        } else if (response == i){
-            isBuying = true;
-        } else {
-            //throw exception
-            cout << "Input tidak valid" << endl; //sementara
-        }
+        cout << i << ". Product" << endl;
     }
-
+    if (!isBangunanEmptyStock()){
+        i++;
+        cout << i << ". Bangunan" << endl;
+    }
+    i++;
+    cout << i << ". Cancel Buy" << endl;
+    cout << "Masukklah pilihan (1-4) :";
+    cin >> response;
+    if (response == i){
+        return 0
+    } else if (response >= 1 && response < i) {
+        return response;
+    } else {
+        //thhrow exception
+        cout << "Input tidak valid" << endl;
+    }
 }
 
 bool Toko::isProductEmptyStock(){
@@ -107,9 +95,10 @@ void Toko::displayAvailableTanaman(){
         cout << " - " << availableTanaman[i].getPrice() << endl;
         idx++;
     }
+    cout << idx << ". Cancel" << endl;
 }
 
-void Toko::displayAvailableProduct(){
+int Toko::displayAvailableProduct(){
     int idx = 1;
     for (int i = 0; i < ParserProduk::getConfigSize(); i++){
         if (availableProduct[i].second != 0){
@@ -118,9 +107,11 @@ void Toko::displayAvailableProduct(){
             idx++;
         }
     }
+    cout << idx << ". Cancel" << endl;
+    return idx - 1;
 }
 
-void Toko::displayAvailableBangunan(){
+int Toko::displayAvailableBangunan(){
     int idx = 1;
     for (int i = 0; i < ParserResep::getConfigSize(); i++){
         if (availableBangunan[i].second != 0){
@@ -130,6 +121,8 @@ void Toko::displayAvailableBangunan(){
             idx++;
         }
     }
+    cout << idx << ". Cancel" << endl;
+    return idx - 1;
 }
 void Toko::displayResepBangunan(){
     int idx = 1;
@@ -140,3 +133,87 @@ void Toko::displayResepBangunan(){
         idx++;
     }
 }
+
+        // int subResponse;
+        // int counterAvailableItem;
+        // cout << "Masukkan pilihan: ";
+        // if (response == 1){
+        //     displayAvailableHewan();
+        //     cin >> subResponse;
+        //     if (subResponse != availableHewan.size() + 1){
+        //         if (subResponse >= 1 && subResponse <= availableHewan.size()){
+        //             return availableHewan[subResponse - 1];
+        //         } else {
+        //             // throw exception
+        //             cout << "Input tidak valid" << endl; //sementara
+        //         }
+        //     }
+        // } else if (response == 2){
+        //     displayAvailableTanaman();
+        //     cin >> subResponse;
+        //     if (subResponse != availableTanaman.size() + 1){
+        //         if (subResponse >= 1 && subResponse <= availableTanaman.size()){
+        //             return availableTanaman[subResponse - 1];
+        //         } else {
+        //             // throw exception
+        //             cout << "Input tidak valid" << endl; //sementara
+        //         }
+        //     }
+        // } else if (response == 3 && i >= 3 && !isProductEmptyStock()){
+        //     counterAvailableItem = displayAvailableProduct();
+        //     cin >> subResponse;
+        //     if (subResponse != counterAvailableItem + 1){
+        //         if (subResponse >= 1 && subResponse <= counterAvailableItem){
+        //             int count = 0;
+        //             for(int i = 0; i < availableProduct.size(); i++){
+        //                 if (availableProduct[i].second != 0){
+        //                     count++;
+        //                 }
+        //                 if (subResponse == count){
+        //                     return availableProduct[count].first;
+        //                 }
+        //             }
+        //         } else {
+        //             // throw exception
+        //             cout << "Input tidak valid" << endl; //sementara
+        //         }
+        //     }
+        // } else if (response == 3 && i >= 3 && !isBangunanEmptyStock() && isProductEmptyStock()){
+        //     counterAvailableItem = displayAvailableBangunan();
+        //     cin >> subResponse;
+        //     if (subResponse != counterAvailableItem + 1){
+        //         if (subResponse >= 1 && subResponse <= counterAvailableItem){
+        //             int count = 0;
+        //             for(int i = 0; i < availableBangunan.size(); i++){
+        //                 if (availableBangunan[i].second != 0){
+        //                     count++;
+        //                 }
+        //                 if (subResponse == count){
+        //                     return availableBangunan[count].first;
+        //                 }
+        //             }
+        //         } else {
+        //             // throw exception
+        //             cout << "Input tidak valid" << endl; //sementara
+        //         }
+        //     }
+
+        // } else if (response == 4 && !isBangunanEmptyStock){
+        //     counterAvailableItem = displayAvailableBangunan();
+        //     cin >> subResponse;
+        //     if (subResponse != counterAvailableItem + 1){
+        //         if (subResponse >= 1 && subResponse <= counterAvailableItem){
+        //             int count = 0;
+        //             for(int i = 0; i < availableBangunan.size(); i++){
+        //                 if (availableBangunan[i].second != 0){
+        //                     count++;
+        //                 }
+        //                 if (subResponse == count){
+        //                     return availableBangunan[count].first;
+        //                 }
+        //             }
+        //         } else {
+        //             // throw exception
+        //             cout << "Input tidak valid" << endl; //sementara
+        //         }
+        //     }

@@ -60,8 +60,153 @@ void Pemain::makan(int row, int col){
 }
 
 void Pemain::beli(){
-    tokoGlobal.displayAvailableItemToBuy();
     cout << endl << endl;
-    cout << "Uang Anda : " << this->gulden;
+    int wantToBuy = Toko::buyProcess();
+    int subResponse;
+    int counterAvailableItem;
+    if (wantToBuy == 1){
+        Toko::displayAvailableHewan();
+        cout << "Barang yang ingin dibeli : ";
+        cin >> subResponse;
+        if (subResponse != availableHewan.size() + 1){
+            if (subResponse >= 1 && subResponse <= availableHewan.size()){
+                Hewan itemToBuy = availableHewan[subResponse - 1];
+            } else {
+                // throw exception
+                cout << "Input tidak valid" << endl; //sementara
+            }
+        }
+    } else if (wantToBuy == 2){
+        Toko::displayAvailableTanaman();
+        cout << "Barang yang ingin dibeli : ";
+        cin >> subResponse;
+        if (subResponse != availableTanaman.size() + 1){
+            if (subResponse >= 1 && subResponse <= availableTanaman.size()){
+                Tanaman itemToBuy = availableTanaman[subResponse - 1];
+            } else {
+                // throw exception
+                cout << "Input tidak valid" << endl; //sementara
+            }
+        }
+    } else if (wantToBuy == 3 && i >= 3 && !Toko::isProductEmptyStock()){
+        counterAvailableItem = Toko::displayAvailableProduct();
+        cout << "Barang yang ingin dibeli : ";
+        cin >> subResponse;
+        if (subResponse != counterAvailableItem + 1){
+            if (subResponse >= 1 && subResponse <= counterAvailableItem){
+                int count = 0;
+                for(int i = 0; i < availableProduct.size(); i++){
+                    if (availableProduct[i].second != 0){
+                        count++;
+                    }
+                    if (subResponse == count){
+                        Product itemToBuy = availableProduct[count].first;
+                    }
+                }
+            } else {
+                // throw exception
+                cout << "Input tidak valid" << endl; //sementara
+            }
+        }
+    } else if (wantToBuy == 3 && i >= 3 && !Toko::isBangunanEmptyStock() && Toko::isProductEmptyStock()){
+        counterAvailableItem = Toko::displayAvailableBangunan();
+        cout << "Barang yang ingin dibeli : ";
+        cin >> subResponse;
+        if (subResponse != counterAvailableItem + 1){
+            if (subResponse >= 1 && subResponse <= counterAvailableItem){
+                int count = 0;
+                for(int i = 0; i < availableBangunan.size(); i++){
+                    if (availableBangunan[i].second != 0){
+                        count++;
+                    }
+                    if (subResponse == count){
+                        Bangunan itemToBuy = availableBangunan[count].first;
+                    }
+                }
+            } else {
+                // throw exception
+                cout << "Input tidak valid" << endl; //sementara
+            }
+        }
+    } else if (wantToBuy == 4 && !Toko::isBangunanEmptyStock){
+        counterAvailableItem = Toko::displayAvailableBangunan();
+        cout << "Barang yang ingin dibeli : ";
+        cin >> subResponse;
+        if (subResponse != counterAvailableItem + 1){
+            if (subResponse >= 1 && subResponse <= counterAvailableItem){
+                int count = 0;
+                for(int i = 0; i < availableBangunan.size(); i++){
+                    if (availableBangunan[i].second != 0){
+                        count++;
+                    }
+                    if (subResponse == count){
+                        Bangunan itemToBuy = availableBangunan[count].first;
+                    }
+                }
+            } else {
+                // throw exception
+                cout << "Input tidak valid" << endl; //sementara
+            }
+        }
+    }
+    cout << endl;
+    cout << "Uang Anda : " << this->gulden << endl;
     this->inventory.displayRemainderSlot();
+    cout << endl;
+
+    int quantity;
+    cout << "Kuantitas : "; //asumsi valid (nanti exception)
+    cin >> quantity;
+    
+    this->gulden -= itemToBuy.getPrice()*quantity; 
+    //pembelian tidak valid
+        //stock toko ga cukup
+        //inventory pemain ga cukup
+        //duit pemain ga cukup
+    //pembelian valid
+    cout << endl;
+    cout << "Selamat Anda berhasil membeli " << quantity <<" " << itemToBuy.getName();
+    cout << ". Uang yang tersisa " << this->gulden << "." << endl << endl;
+    
+    cout << "Pilih slot untuk menyimpan barang yang anda beli!" << endl;
+    this->inventory.displayObject();
+    string slot;
+    vector<string> availSlot;
+    for(int i = 0; i < quantity; i++){
+        cout << "Petak slot " << i + 1 <": ";
+        cin >> slot; //validasi dulu
+        availSlot.push_back(slot);
+    }
+    pair<int,int> position;
+    for (int i = 0; i < availSlot.size(); i++){
+        position = this->inventory.getPositionFromSlot(availSlot[i]);
+        this->inventory.setElement(position.first, position.second, &itemToBuy);
+    }
+    cout << itemToBuy.getName() << "berhasil disimpan dalam penyimpanan!" << endl;
+    
+    Toko::itemDibeli(itemToBuy);
+}
+
+void Pemain::jual(){
+    cout << "Berikut merupakan penyimpanan anda" << endl;
+    this->inventory.displayObject();
+    int quantity;
+    cout << "Masukkan kuantitas barang yang ingin dijual :";
+    cin >> quantity;
+    cout << endl <<"Silahkan pilih petak yang ingin anda jual!";
+    string slot;
+    pair<int,int> position;
+    int profit = 0;
+    GameObject* itemToSell;
+    for(int i = 0; i < quantity; i++){
+        cout << "Petak slot " << i + 1 <": ";
+        cin >> slot; //validasi dulu
+        position = this->inventory.getPositionFromSlot(slot);
+        itemToSell = this->inventory.getElement(position.first,position.second);
+        profit += itemToSell->getPrice();
+        this->inventory.deleteElement(position.first,position.second);
+    }
+    this->gulden += profit;
+    cout << "Barang Anda berhasil dijual! Uang Anda bertambah " << profit << " gulden!" << endl;
+    Toko::itemDijual(itemToSell);
 }

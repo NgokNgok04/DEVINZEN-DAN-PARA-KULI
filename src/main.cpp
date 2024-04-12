@@ -1,16 +1,18 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "matrixarea.hpp"
-#include "matrixarea.cpp"
+// #include "matrixarea.hpp"
+// #include "matrixarea.cpp"
 // #include "./Implementation/Hewan.cpp"
 using namespace std;
+int Ayam(){
+    cout << "halo halo halo";
+    return 10;
+}
 int main()
 {
-    for(int i = 0; i < 5; i++){
-        MatrixArea<Hewan>* testaja;
-        cout << "Call" << i + 1;
-    }
+    // int i = Ayam();
+    cout << "Angka : " <<endl << Ayam();
     // MatrixArea<Hewan> matrix(4, 2);
     // MatrixArea<Hewan> matrixcctor(matrix);
     // testaja = matrix;
