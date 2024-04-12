@@ -16,8 +16,8 @@ void Tanaman::tambahUmur(){
 }
 
 Product* Tanaman::hasilPanen(){
-    int idProduct = ParserProduk::findOrigin(getName());
-    Product* temp = new Product(idProduct);
+    vector<int> idProduct = ParserProduk::findOrigin(getName());
+    Product* temp = new Product(idProduct.front(),false);
     return temp;
 }
 bool Tanaman::isHarvestable(){
@@ -34,4 +34,15 @@ int Tanaman::getDurationHarvest(){
 
 int Tanaman::getCurAge(){
     return age;
+}
+
+Tanaman& Tanaman::operator=(const Tanaman& other){
+    GameObject::operator=(other);
+    type = other.type;
+    durationHarvest = other.durationHarvest;
+    age = other.age;
+    return *this;
+}
+bool Tanaman::operator==(const Tanaman& other){
+    return GameObject::operator==(other) && age==other.age;
 }

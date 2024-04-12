@@ -27,3 +27,16 @@ string Product::getOrigin(){
 string Product::getType(){
     return type;
 }
+
+Product& Product::operator=(const Product& other){
+    GameObject::operator=(other);
+    type = other.type;
+    isFromHewan = other.isFromHewan;
+    addedWeight = other.addedWeight;
+    origin = other.origin;
+    return *this;
+}
+
+bool Product::operator==(const Product& other){
+    return GameObject::operator==(other);
+}

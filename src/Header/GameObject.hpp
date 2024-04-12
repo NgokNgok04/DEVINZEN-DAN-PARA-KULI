@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "../exceptions/Exceptions.hpp"
+#include "Exception.hpp"
 using namespace std;
 
 class GameObject{
@@ -25,6 +25,8 @@ class GameObject{
         void setPrice(float);
         void setName(string);
         void setTipeObject(string);
+        virtual GameObject& operator=(const GameObject&);
+        virtual bool operator==(const GameObject&);
 };
 
 #endif

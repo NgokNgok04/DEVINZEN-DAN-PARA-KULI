@@ -3,7 +3,7 @@
 
 #include "GameObject.hpp"
 #include "Product.hpp"
-#include "../parsers/ParserTanaman.hpp"
+#include "ParserTanaman.hpp"
 
 class Tanaman: public GameObject{
     private:
@@ -18,6 +18,8 @@ class Tanaman: public GameObject{
         string getType();
         int getDurationHarvest();
         int getCurAge();
+        Tanaman& operator=(const Tanaman&);
+        bool operator==(const Tanaman&);
 };
 
 #endif

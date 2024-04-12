@@ -3,7 +3,7 @@
 
 #include "GameObject.hpp"
 #include "Product.hpp"
-#include "../parsers/ParserHewan.hpp"
+#include "ParserHewan.hpp"
 #include <vector>
 
 class Hewan: public GameObject{
@@ -12,7 +12,6 @@ class Hewan: public GameObject{
         int weightHarvest;
         int weight;
     public:
-        Hewan();
         Hewan(int);
         void makan(Product);
         vector<Product*> hasilPanen();
@@ -20,6 +19,8 @@ class Hewan: public GameObject{
         string getType();
         int getWeightHarvest();
         int getCurWeight();
+        Hewan& operator=(const Hewan&);
+        bool operator==(const Hewan&);
 };
 
 #endif
