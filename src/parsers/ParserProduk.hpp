@@ -32,6 +32,7 @@ class ParserProduk : public BaseParser{
         int getConfigSize();
         int convertCodeToID(string Code);
         int convertNameToID(string Name);
+        bool isAnAnimalProduct(int);
         friend ostream &operator<<(ostream &os, ParserProduk &PP); //untuk debugging, pake aja
 };
 #endif

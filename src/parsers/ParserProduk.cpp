@@ -127,6 +127,14 @@ int ParserProduk::convertNameToID(string Name)
 
     return -1;
 }
+bool ParserProduk::isAnAnimalProduct(int i)
+{
+    if (this->productType[i].find("ANIMAL") != string::npos){
+        return true;
+    } else {
+        return false;
+    }
+}
 ostream &operator<<(ostream &os, ParserProduk &PP)
 {
     for(int i = 0; i<PP.productID.size(); i++){
