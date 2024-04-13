@@ -49,11 +49,11 @@ int main(){
     ParserTanaman PT;
     ParserProduk PP;
     ParserResep PR;
-    string animalConfigDirectory = "../config/animal.txt";
-    string miscConfigDirectory = "../config/misc.txt";
-    string plantConfigDirectory = "../config/plant.txt";
-    string productConfigDirectory = "../config/product.txt";
-    string recipeConfigDirectory = "../config/recipe.txt";
+    string animalConfigDirectory = "./config/animal.txt";
+    string miscConfigDirectory = "./config/misc.txt";
+    string plantConfigDirectory = "./config/plant.txt";
+    string productConfigDirectory = "./config/product.txt";
+    string recipeConfigDirectory = "./config/recipe.txt";
     try{
         PH.ParseFile(animalConfigDirectory);
         PM.ParseFile(miscConfigDirectory);
@@ -137,5 +137,10 @@ int main(){
         return 0;
     }
     
+    cout<<PH;
+    cout<<PP;
+    cout<<PM;
+    cout<<PT;
+    cout<<PR;
     return 0;
 }
