@@ -47,7 +47,8 @@ void GameObject::setTipeObject(string tipe)
     this->tipeObject = tipe;
 }
 
-GameObject& GameObject::operator=(const GameObject& other){
+GameObject &GameObject::operator=(const GameObject &other)
+{
     this->id = other.id;
     this->kode_huruf = other.kode_huruf;
     this->price = other.price;
@@ -55,6 +56,7 @@ GameObject& GameObject::operator=(const GameObject& other){
     this->tipeObject = other.tipeObject;
     return *this;
 }
-bool GameObject::operator==(const GameObject& other){
-    return this->id == other.id && this->tipeObject==other.tipeObject;
+bool GameObject::operator==(const GameObject &other)
+{
+    return this->id == other.id && this->tipeObject == other.tipeObject;
 }

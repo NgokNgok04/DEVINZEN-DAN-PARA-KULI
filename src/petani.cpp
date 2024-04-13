@@ -62,20 +62,26 @@ void Petani::tanam()
         // Validasi
         int idx1 = slot[0] - 'A' + 1;
         int idx2 = std::stoi(slot.substr(1));
+        // cout << idx1 << idx2 << endl;
         if (slot.length() < 3 || slot.length() > 3)
         {
             cout << "Pilihan slot tidak valid!" << endl;
         }
         else
         {
-            if (this->ladang.getElement(idx1 - 1, idx2 - 1) != nullptr)
+            if (this->inventory.getElement(idx1, idx2) != nullptr)
             {
-                if (this->inventory.getElement(idx1 - 1, idx2 - 1)->getTipeObject() != "tanaman")
+                cout << "1" << endl;
+                if (this->inventory.getElement(idx1, idx2)->getTipeObject() != "TANAMAN")
                 {
+                    cout << "2" << endl;
+
                     cout << "Pilihan itu bukanlah tanaman" << endl;
                 }
                 else
                 {
+                    cout << "3" << endl;
+
                     isValid = true;
                 }
             }
@@ -90,7 +96,7 @@ void Petani::tanam()
     int idx1 = slot[0] - 'A' + 1;
     int idx2 = std::stoi(slot.substr(1));
 
-    cout << "Kamu memilih " << this->inventory.getElement(idx1 - 1, idx2 - 1)->getName() << endl; // Nama Objeknya
+    cout << "Kamu memilih " << this->inventory.getElement(idx1, idx2)->getName() << endl; // Nama Objeknya
     cout << "Pilih petak tanah yang akan ditanami" << endl;
     this->cetakLadang();
 
@@ -149,7 +155,7 @@ void Petani::panenTani()
     {
         for (int j = 0; j < 8; j++)
         {
-            if (this->ladang.getElement(i, j)->getTipeObject() == "tanaman")
+            if (this->ladang.getElement(i, j)->getTipeObject() == "TANAMAN")
             {
                 auto it = find(ownedTan.begin(), ownedTan.end(), this->ladang.getElement(i, j)->getKode());
 

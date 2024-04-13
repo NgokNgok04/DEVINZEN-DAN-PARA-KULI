@@ -6,9 +6,9 @@
 class Petani : public Pemain
 {
 protected:
-public:
     MatrixArea<Tanaman> ladang;
 
+public:
     Petani();
     Petani(int guld, int bb, int smol, int med, int big, int ladrows, int ladcols);
     Petani(const Petani &);

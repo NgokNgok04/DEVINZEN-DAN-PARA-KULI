@@ -72,7 +72,7 @@ void Peternak::ternak()
         {
             if (this->ternakan.getElement(idx1 - 1, idx2 - 1) != nullptr)
             {
-                if (this->inventory.getElement(idx1 - 1, idx2 - 1)->getTipeObject() != "tanaman")
+                if (this->inventory.getElement(idx1 - 1, idx2 - 1)->getTipeObject() != "HEWAN")
                 {
                     cout << "Pilihan itu bukanlah hewan" << endl;
                 }
@@ -218,7 +218,7 @@ void Peternak::panenTernak()
     {
         for (int j = 0; j < 8; j++)
         {
-            if (this->ternakan.getElement(i, j)->getTipeObject() == "hewan")
+            if (this->ternakan.getElement(i, j)->getTipeObject() == "HEWAN")
             {
                 auto it = find(ownedHew.begin(), ownedHew.end(), this->ternakan.getElement(i, j)->getKode());
 

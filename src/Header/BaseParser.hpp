@@ -1,5 +1,6 @@
 #pragma once
 #include <bits/stdc++.h>
+#include "Exception.hpp"
 using namespace std;
 // Parent class untuk semua parser
 class BaseParser

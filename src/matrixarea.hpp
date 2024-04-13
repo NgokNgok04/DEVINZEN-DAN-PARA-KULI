@@ -7,7 +7,7 @@
 #include "./Header/Tanaman.hpp"
 #include "./Header/Hewan.hpp"
 #include "./Header/GameObject.hpp"
-#include "../parsers/ParserMisc.hpp"
+#include "./Header/ParserMisc.hpp"
 using namespace std;
 template <class T>
 class MatrixArea
@@ -21,13 +21,12 @@ public:
     MatrixArea();
     MatrixArea(int, int);
     ~MatrixArea();
-    MatrixArea(const MatrixArea<T*> &);
-    MatrixArea<T*> &operator=(const MatrixArea<T*> &);
-    MatrixArea<T*> &operator+(const T* &);
-    void setElement(int, int, T*);
-    void deleteElement(int,int);
-    T* getElement(int, int);
-    pair<int,int> getPositionFromSlot(string slot);
+    MatrixArea(const MatrixArea<T *> &);
+    MatrixArea<T *> &operator=(const MatrixArea<T *> &);
+    void setElement(int, int, T *);
+    void deleteElement(int, int);
+    T *getElement(int, int);
+    pair<int, int> getPositionFromSlot(string slot);
     void displayMatrix();
     void displayObject();
     void displayDetail();

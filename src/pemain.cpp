@@ -44,7 +44,7 @@ string Pemain::getTipe()
 void Pemain::cetakPenyimpanan()
 {
     this->inventory.displayObject();
-    // this->inventory.displayRemainderSlot();
+    this->inventory.displayRemainderSlot();
 }
 
 void Pemain::makan()
@@ -220,4 +220,7 @@ void Pemain::jual(){
     this->gulden += profit;
     cout << "Barang Anda berhasil dijual! Uang Anda bertambah " << profit << " gulden!" << endl;
     Toko::itemDijual(itemToSell,quantity);
+void Pemain::setInv(int rows, int cols, GameObject a)
+{
+    this->inventory.setElement(rows, cols, &a);
 }

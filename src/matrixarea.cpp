@@ -135,7 +135,7 @@ void MatrixArea<T>::displayMatrix()
 }
 
 template <>
-void MatrixArea<GameObject*>::displayObject()
+void MatrixArea<GameObject>::displayObject()
 {
     int title = (this->cols * 6) + 4;
     cout << "   ";
@@ -171,90 +171,90 @@ void MatrixArea<GameObject*>::displayObject()
     {
         cout << "[ Penyimpanan ]" << endl;
     }
-    MatrixArea<GameObject*>::displayMatrix();
+    MatrixArea<GameObject>::displayMatrix();
 }
 
-// template <>
-// void MatrixArea<Hewan>::displayObject()
-// {
-//     int title = (this->cols * 6) + 4;
-//     cout << "   ";
-//     if (title > 14)
-//     {
-//         if ((title - 14) % 2 == 0)
-//         {
-//             for (int i = 0; i < (title - 14) / 2; i++)
-//             {
-//                 cout << "=";
-//             };
-//             cout << "[ Peternakan ]";
-//             for (int i = 0; i < (title - 14) / 2; i++)
-//             {
-//                 cout << "=";
-//             };
-//         }
-//         else
-//         {
-//             for (int i = 0; i < (title - 14) / 2 - 1; i++)
-//             {
-//                 cout << "=";
-//             };
-//             cout << "[ Peternakan ]";
-//             for (int i = 0; i < (title - 14) / 2 - 1; i++)
-//             {
-//                 cout << "=";
-//             };
-//         }
-//         cout << endl;
-//     }
-//     else
-//     {
-//         cout << "[ Peternakan ]" << endl;
-//     }
-//     MatrixArea<Hewan>::displayMatrix();
-//     // dummy Class di local mahew (ga dipush)
-// }
+template <>
+void MatrixArea<Hewan>::displayObject()
+{
+    int title = (this->cols * 6) + 4;
+    cout << "   ";
+    if (title > 14)
+    {
+        if ((title - 14) % 2 == 0)
+        {
+            for (int i = 0; i < (title - 14) / 2; i++)
+            {
+                cout << "=";
+            };
+            cout << "[ Peternakan ]";
+            for (int i = 0; i < (title - 14) / 2; i++)
+            {
+                cout << "=";
+            };
+        }
+        else
+        {
+            for (int i = 0; i < (title - 14) / 2 - 1; i++)
+            {
+                cout << "=";
+            };
+            cout << "[ Peternakan ]";
+            for (int i = 0; i < (title - 14) / 2 - 1; i++)
+            {
+                cout << "=";
+            };
+        }
+        cout << endl;
+    }
+    else
+    {
+        cout << "[ Peternakan ]" << endl;
+    }
+    MatrixArea<Hewan>::displayMatrix();
+    // dummy Class di local mahew (ga dipush)
+}
 
-// template <>
-// void MatrixArea<Tanaman>::displayObject()
-// {
-//     int title = (this->cols * 6) + 4;
-//     cout << "   ";
-//     if (title > 10)
-//     {
-//         if ((title - 10) % 2 == 0)
-//         {
-//             for (int i = 0; i < (title - 10) / 2; i++)
-//             {
-//                 cout << "=";
-//             };
-//             cout << "[ Ladang ]";
-//             for (int i = 0; i < (title - 10) / 2; i++)
-//             {
-//                 cout << "=";
-//             };
-//         }
-//         else
-//         {
-//             for (int i = 0; i < (title - 10) / 2 - 1; i++)
-//             {
-//                 cout << "=";
-//             };
-//             cout << "[ Ladang ]";
-//             for (int i = 0; i < (title - 10) / 2 - 1; i++)
-//             {
-//                 cout << "=";
-//             };
-//         }
-//         cout << endl;
-//     }
-//     else
-//     {
-//         cout << "[ Ladang ]" << endl;
-//     }
-//     MatrixArea<Tanaman>::displayMatrix();
-//     // dummy Class di local mahew (ga dipush)
-// }
+template <>
+void MatrixArea<Tanaman>::displayObject()
+{
+    int title = (this->cols * 6) + 4;
+    cout << "   ";
+    if (title > 10)
+    {
+        if ((title - 10) % 2 == 0)
+        {
+            for (int i = 0; i < (title - 10) / 2; i++)
+            {
+                cout << "=";
+            };
+            cout << "[ Ladang ]";
+            for (int i = 0; i < (title - 10) / 2; i++)
+            {
+                cout << "=";
+            };
+        }
+        else
+        {
+            for (int i = 0; i < (title - 10) / 2 - 1; i++)
+            {
+                cout << "=";
+            };
+            cout << "[ Ladang ]";
+            for (int i = 0; i < (title - 10) / 2 - 1; i++)
+            {
+                cout << "=";
+            };
+        }
+        cout << endl;
+    }
+    else
+    {
+        cout << "[ Ladang ]" << endl;
+    }
+    MatrixArea<Tanaman>::displayMatrix();
+    // dummy Class di local mahew (ga dipush)
+}
 
 template <class T>
 void MatrixArea<T>::displayDetail()
@@ -286,14 +286,14 @@ template <class T>
 void MatrixArea<T>::displayRemainderSlot()
 {
     cout << endl;
-    int remainderSlot = this->rows * this->cols;
+    int remainderSlot = 0;
     for (int i = 0; i < this->rows; i++)
     {
         for (int j = 0; j < this->cols; j++)
         {
-            if ((this->matrix[i][j]->getKode()).length() == 3)
+            if (this->matrix[i][j] == nullptr)
             {
-                remainderSlot--;
+                remainderSlot++;
             }
         }
     }
@@ -320,9 +320,12 @@ template <class T>
 int MatrixArea<T>::getEmptySlot()
 {
     int count = 0;
-    for (int i = 0; i < this->rows; i++){
-        for (int j = 0; j < this->cols; j++){
-            if (this->matrix[i][j] == nullptr){
+    for (int i = 0; i < this->rows; i++)
+    {
+        for (int j = 0; j < this->cols; j++)
+        {
+            if (this->matrix[i][j] == nullptr)
+            {
                 count++;
             }
         }
