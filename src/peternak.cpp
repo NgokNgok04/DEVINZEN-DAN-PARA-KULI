@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include "pemain.hpp"
 #include "peternak.hpp"
 #include "./Header/Product.hpp"
 using namespace std;
@@ -64,35 +63,47 @@ void Peternak::ternak()
         // if tidak valid print output
         int idx1 = slot[0] - 'A' + 1;
         int idx2 = std::stoi(slot.substr(1));
-        if (slot.length() < 3 || slot.length() > 3)
+        try
         {
-            cout << "Pilihan slot tidak valid!" << endl;
-        }
-        else
-        {
-            if (this->ternakan.getElement(idx1 - 1, idx2 - 1) != nullptr)
+            if (slot.length() < 3 || slot.length() > 3)
             {
-                if (this->inventory.getElement(idx1 - 1, idx2 - 1)->getTipeObject() != "HEWAN")
-                {
-                    cout << "Pilihan itu bukanlah hewan" << endl;
-                }
-                else
-                {
-                    isValid = true;
-                }
+                throw InvalidIndexMatrixArea();
+            }
+            else if (idx1 > this->inventory.getRows() || idx2 > this->inventory.getCols())
+            {
+                throw InvalidIndexMatrixArea();
             }
             else
             {
-                cout << "Pilihan itu bukanlah hewan" << endl;
+                if (this->inventory.getElement(idx2, idx1) != nullptr)
+                {
+                    cout << "here2" << endl;
+
+                    if (this->inventory.getElement(idx2, idx1)->getTipeObject() != "HEWAN")
+                    {
+                        throw InvalidNotHewan();
+                    }
+                    else
+                    {
+                        isValid = true;
+                    }
+                }
+                else
+                {
+                    throw InvalidEmptySlot();
+                }
             }
+        }
+        catch (BaseException &e)
+        {
+            cout << e.what() << endl;
         }
     }
 
-    // Entah kenapa butuh ini
     int idx1 = slot[0] - 'A' + 1;
     int idx2 = std::stoi(slot.substr(1));
 
-    cout << "Kamu memilih " << this->inventory.getElement(idx1 - 1, idx2 - 1)->getName() << endl; // Nama Objeknya
+    cout << "Kamu memilih " << this->inventory.getElement(idx2, idx1)->getName() << endl; // Nama Objeknya
     cout << "Pilih petak tanah yang akan ditinggali" << endl;
     this->cetakTernak();
 
@@ -104,42 +115,44 @@ void Peternak::ternak()
         cin >> petak;
         cout << endl;
         // Validasi
-        // if tidak valid print output
         int idx3 = petak[0] - 'A' + 1;
         int idx4 = std::stoi(petak.substr(1));
-        if (petak.length() < 3 || petak.length() > 3)
+        try
         {
-            cout << "Pilihan petak tidak valid!" << endl;
-        }
-        else
-        {
-            if (this->ternakan.getElement(idx3 - 1, idx4 - 1) != nullptr)
+            if (petak.length() < 3 || petak.length() > 3)
             {
-                if (this->ternakan.getElement(idx3 - 1, idx4 - 1) != nullptr)
-                {
-                    cout << "Pilihan itu bukanlah petak kosong" << endl;
-                }
-                else
-                {
-                    isValid = true;
-                }
+                throw InvalidIndexMatrixArea();
+            }
+            else if (idx3 > this->ternakan.getRows() || idx4 > this->ternakan.getCols())
+            {
+                throw InvalidIndexMatrixArea();
             }
             else
             {
-                cout << "pilihan itu bukanlah petak kosong" << endl;
+                if (this->ternakan.getElement(idx4, idx3) == nullptr)
+                {
+
+                    isValid = true;
+                }
+                else
+                {
+                    InvalidFilledSlot();
+                }
             }
+        }
+        catch (BaseException &e)
+        {
+            cout << e.what() << endl;
         }
     }
 
-    // Hapus dari Inv, Pindahkan ke ternakan
-    // Entah kenapa butuh ini
     int idx3 = petak[0] - 'A' + 1;
     int idx4 = std::stoi(petak.substr(1));
 
-    Hewan *temp = static_cast<Hewan *>(this->inventory.getElement(idx1 - 1, idx2 - 1));
-    this->ternakan.setElement(idx3 - 1, idx4 - 1, temp);
-    this->inventory.deleteElement(idx1 - 1, idx2 - 1);
-    cout << "berhasil diternakkan" << endl;
+    Hewan *temp = static_cast<Hewan *>(this->inventory.getElement(idx2, idx1));
+    this->ternakan.setElement(idx4, idx3, temp);
+    this->inventory.deleteElement(idx2, idx1);
+    cout << "Berhasil diternakkan" << endl;
 }
 
 void Peternak::kasihMakan()

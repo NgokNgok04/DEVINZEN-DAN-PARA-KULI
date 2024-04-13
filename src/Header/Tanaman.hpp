@@ -17,6 +17,9 @@ public:
     {
         this->setKode("KIL");
         this->setTipeObject("TANAMAN");
+        this->setName("METIU");
+        this->durationHarvest = 10;
+        this->age = 100;
     }
     Tanaman(int);
     void tambahUmur();

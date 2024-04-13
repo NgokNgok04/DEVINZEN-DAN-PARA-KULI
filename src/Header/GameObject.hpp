@@ -17,6 +17,7 @@ private:
     string tipeObject;
 
 public:
+    virtual ~GameObject(){};
     int getID();
     string getKode();
     float getPrice();

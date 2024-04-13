@@ -23,7 +23,8 @@ void Hewan::makan(Product makanan)
 
 vector<Product *> Hewan::hasilPanen()
 {
-    int *arr = ParserProduk::findOrigin(getName()), n = (type == "OMNIVORE") ? 2 : 1;
+    vector<int> arr = ParserProduk::findOrigin(getName());
+    int n = (type == "OMNIVORE") ? 2 : 1;
     vector<Product *> prodArr;
     for (int i = 0; i < n; i++)
     {

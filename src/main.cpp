@@ -3,7 +3,9 @@
 // #include <string>
 #include "pemain.cpp"
 #include "petani.cpp"
+#include "peternak.cpp"
 #include "./Implementation/Tanaman.cpp"
+#include "./Implementation/Hewan.cpp"
 #include "./Implementation/Product.cpp"
 #include "./Implementation/ParserTanaman.cpp"
 #include "./Implementation/ParserProduk.cpp"
@@ -11,7 +13,6 @@
 #include "./Implementation/ParserResep.cpp"
 // #include "./Implementation/ParserMisc.cpp"
 #include "./misc/helper.cpp"
-// #include "peternak.cpp"
 // #include "walikota.cpp"
 // #include "./Implementation/Hewan.cpp"
 #include <iostream>
@@ -78,29 +79,61 @@ int main()
     // matrix.deleteElement(2, 1);
     // matrix.displayMatrix();
 
-    Petani P1;
+    Petani P2;
+    Hewan met;
     Tanaman kiel;
-    cout << "helo222" << endl;
-    P1.setInv(2, 2, kiel);
-    P1.cetakPenyimpanan();
+    cout << typeid(kiel).name() << endl;
 
-    // P1.cetakLadang();
-    cout << "helo" << endl;
+    // GameObject *kielObj = kiel;
+    // cout << typeid(kielObj).name() << endl;
+    // cout << typeid(*kielObj).name() << endl;
 
-    // cout << "hi" << endl;
+    P2.setInv(2, 2, kiel);
+    P2.setInv(5, 2, met);
 
-    // P1.cetakLadang();
-    P1.tanam();
-    // cout << P1.getTipe() << endl;
+    cout << "BEFORE" << endl;
+    cout << met.getName() << endl;
+    cout << met.getKode() << endl;
+    cout << met.getTipeObject() << endl;
+    cout << met.getType() << endl;
+    cout << met.getWeightHarvest() << endl;
+    cout << met.getCurWeight() << endl;
 
-    // std::string str = "B07";
+    // Tanaman *temp = dynamic_cast<Tanaman *>(P2.inventory.getElement(2, 2));
+    Hewan *temp = dynamic_cast<Hewan *>(P2.inventory.getElement(5, 2));
+    if (temp)
+    {
+        cout << "Sukses" << endl;
+    }
+    else
+    {
+        cout << "Gagal" << endl;
+    }
 
-    // int idx1 = str[0] - 'A' + 1;
+    cout << "AFTER" << endl;
+    cout << temp->getName() << endl;
+    cout << temp->getKode() << endl;
+    cout << temp->getTipeObject() << endl;
+    cout << temp->getType() << endl;
+    cout << temp->getWeightHarvest() << endl;
+    cout << temp->getCurWeight() << endl;
 
-    // int idx2 = std::stoi(str.substr(1));
+    // P2.cetakPenyimpanan();
+    // P2.tanam();
+    // P2.cetakPenyimpanan();
+    // P2.cetakLadang();
+    // P2.panenTani();
 
-    // std::cout << "Index 1: " << idx1 << std::endl;
-    // std::cout << "Index 2: " << idx2 << std::endl;
+    // Peternak P2;
+    // Hewan met;
+    // Tanaman kiel;
+    // cout << "helo222" << endl;
+    // P2.setInv(2, 2, kiel);
+    // P2.setInv(5, 2, met);
+    // P2.cetakPenyimpanan();
+    // P2.ternak();
+    // P2.cetakPenyimpanan();
+    // P2.cetakTernak();
 
     return 0;
 }

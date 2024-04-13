@@ -12,13 +12,14 @@ using namespace std;
 class Pemain
 {
 protected:
-    MatrixArea<GameObject> inventory;
     int gulden;
     int berat_badan;
     string tipe; // walikota, peternak, petani, pemain
     vector<int> ownedBuild;
 
 public:
+    MatrixArea<GameObject> inventory;
+
     // MatrixArea<GameObject> inventory;
 
     Pemain();

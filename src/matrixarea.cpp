@@ -31,6 +31,7 @@ MatrixArea<T>::~MatrixArea()
     this->matrix.clear();
     cout << "dtor success" << endl;
 }
+
 template <class T>
 MatrixArea<T>::MatrixArea(const MatrixArea<T *> &matrix)
 {
@@ -38,6 +39,18 @@ MatrixArea<T>::MatrixArea(const MatrixArea<T *> &matrix)
     this->cols = matrix.cols;
     this->matrix = matrix.matrix;
     cout << "cctor success" << endl;
+}
+
+template <class T>
+int MatrixArea<T>::getRows()
+{
+    return this->rows;
+}
+
+template <class T>
+int MatrixArea<T>::getCols()
+{
+    return this->cols;
 }
 
 template <class T>

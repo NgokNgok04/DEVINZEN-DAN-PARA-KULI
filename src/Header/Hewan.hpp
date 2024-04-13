@@ -18,6 +18,10 @@ public:
     {
         this->setKode("MET");
         this->setTipeObject("HEWAN");
+        this->setName("NGOK");
+        this->type = "CARNIVORE";
+        this->weightHarvest = 10;
+        this->weight = 100;
     }
     Hewan(int);
     void makan(Product);
