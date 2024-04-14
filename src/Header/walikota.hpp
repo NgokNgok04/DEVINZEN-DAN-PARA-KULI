@@ -15,6 +15,7 @@ public:
     void beli();
     void jual();
     int calculateKKP();
+    int calculateTax();
 };
 
 #endif

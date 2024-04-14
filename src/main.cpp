@@ -5,9 +5,6 @@
 #include "./Header/Tanaman.hpp"
 #include "./Header/Product.hpp"
 #include "./Header/Bangunan.hpp"
-#include "./Header/petani.hpp"
-#include "./Header/peternak.hpp"
-#include "./Header/walikota.hpp"
 #include "./Header/Toko.hpp"
 using namespace std;
 //inisialisasi atribut static di semua parser
@@ -159,14 +156,26 @@ int main(){
         cout<<">";
         cin>>choice;
         if(choice == 1){
-            cout<<"Membuat game baru\n";
+            cout<<"Membuat game baru...\n";
+            //Inisialisasi pemain default
+            Petani* petani1 = new Petani();
+            Peternak* peternak1 = new Peternak();
+            WaliKota* walikota = new WaliKota();
+            Pemain* newPlayer1 = petani1;
+            Pemain* newPlayer2 = peternak1;
+            Pemain* newPlayer3 = walikota;
+            gameManager.insertNewPlayer(newPlayer1);
+            gameManager.insertNewPlayer(newPlayer2);
+            gameManager.insertNewPlayer(newPlayer3);
             break;
         } else if(choice == 2){
             cout<<"Membuka Save file\n";
             break;
+        } else {
+            cout<<"Pilihan tidak valid! Silakan input ulang.\n";
         }
     }
-
+    gameManager.PlayerDebug(); //untuk debug pemain
     cout<<"Setup permainan selesai, permainan dimulai!\n";
     string command;
     while(true){

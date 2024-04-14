@@ -1,5 +1,6 @@
 #include "../Header/GameManager.hpp"
 
+
 GameManager::GameManager(ParserMisc PM)
 { 
     this->winningMoney = PM.getWinningMoney();
@@ -17,4 +18,16 @@ void GameManager::Debug()
     cout<<this->storageSize.first<<" "<<this->storageSize.second<<"\n";
     cout<<this->farmSize.first<<" "<<this->farmSize.second<<"\n";
     cout<<this->fieldSize.first<<" "<<this->fieldSize.second<<"\n";
+}
+
+void GameManager::insertNewPlayer(Pemain * newPlayer)
+{
+    this->playerList.push_back(newPlayer);
+}
+
+void GameManager::PlayerDebug()
+{
+    for(int i = 0; i<this->playerList.size(); i++){
+        cout<<this->playerList[i]->getTipe()<<"\n";
+    }
 }

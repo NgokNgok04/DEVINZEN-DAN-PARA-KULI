@@ -6,6 +6,9 @@
 #include "ParserTanaman.hpp"
 #include "ParserProduk.hpp"
 #include "ParserResep.hpp"
+#include "petani.hpp"
+#include "peternak.hpp"
+#include "walikota.hpp"
 using namespace std;
 
 class GameManager{
@@ -16,9 +19,10 @@ class GameManager{
         pair<int,int> storageSize;
         pair<int,int> fieldSize;
         pair<int,int> farmSize;
-        map<string, vector<string> > productOriginConversion; //konversi tanaman/hewan menjadi produk
+        map<string, vector<string> > productOriginConversion; //konversi tanaman/hewan menjadi produk        
+        vector<Pemain*> playerList;
         //queue<Pemain*> TurnQueue;
-        //vector<Pemain*> playerList;
+
         //Pemain* Winner;
         //Pemain* CurrentPlayer
         //TODO:
@@ -30,6 +34,8 @@ class GameManager{
         GameManager(ParserMisc);
         ~GameManager(){}
         void Debug();
+        void insertNewPlayer(Pemain*);
+        void PlayerDebug();
         //void Next();
         //bool isThereAWinner();
         //Pemain* getWinner();

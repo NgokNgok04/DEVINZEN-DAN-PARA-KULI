@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "../Header/walikota.hpp"
+
 using namespace std;
 
 WaliKota::WaliKota() : Pemain()
@@ -41,4 +42,8 @@ void WaliKota::beli()
 void WaliKota::jual()
 {
     //
+}
+int WaliKota::calculateTax()
+{
+    return 0;
 }
