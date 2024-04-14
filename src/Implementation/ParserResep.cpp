@@ -2,6 +2,13 @@
 #include "../Header/Exception.hpp"
 #include "../Header/helper.hpp"
 #include <bits/stdc++.h>
+vector<int> ParserResep::recipeID = vector<int>() ;
+vector<string> ParserResep::recipeCode= vector<string>();
+vector<string> ParserResep::recipeName= vector<string>();
+vector<int> ParserResep::recipePrice = vector<int>();
+vector<vector<pair<string,int> > > ParserResep::recipeMaterialQuantity = vector<vector<pair<string,int> > > ();
+map<int,int> ParserResep::IndexToIDMap = map<int,int>();
+map<int,int> ParserResep::IDToIndexMap= map<int,int>();
 void ParserResep::ParseFile(string fileDirectory)
 {
     ifstream InputFile;

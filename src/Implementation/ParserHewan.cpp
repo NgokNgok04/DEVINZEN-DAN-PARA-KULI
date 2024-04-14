@@ -1,6 +1,14 @@
 #include "../Header/ParserHewan.hpp"
 
-
+vector<string> ParserHewan::validAnimalTypes = {"HERBIVORE","CARNIVORE","OMNIVORE"};
+vector<int> ParserHewan::animalID = vector<int>();
+vector<string> ParserHewan::animalCode = vector<string>();
+vector<string> ParserHewan::animalName = vector<string>();
+vector<string> ParserHewan::animalType = vector<string>();
+vector<int> ParserHewan::harvestWeight = vector<int>();
+vector<int> ParserHewan::price = vector<int>();
+map<int,int> ParserHewan::IndexToIDMap = map<int,int>();
+map<int,int> ParserHewan::IDToIndexMap = map<int,int>();
 void ParserHewan::ParseFile(string fileDirectory)
 {
     ifstream InputFile;

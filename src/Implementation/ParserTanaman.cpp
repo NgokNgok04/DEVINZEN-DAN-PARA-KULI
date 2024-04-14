@@ -2,6 +2,15 @@
 #include "../Header/helper.hpp"
 #include <bits/stdc++.h>
 #include "../Header/Exception.hpp"
+vector<int> ParserTanaman::plantID = vector<int>();
+vector<string> ParserTanaman::plantCode = vector<string>();
+vector<string> ParserTanaman::plantName= vector<string>();
+vector<string> ParserTanaman::plantType= vector<string>();
+vector<int> ParserTanaman::harvestDuration = vector<int>();
+vector<int> ParserTanaman::price = vector<int>();
+vector<string> ParserTanaman::validPlantTypes= vector<string>();
+map<int,int> ParserTanaman::IndexToIDMap = map<int,int>();
+map<int,int> ParserTanaman::IDToIndexMap = map<int,int>();
 void ParserTanaman::ParseFile(string fileDirectory)
 {
     ifstream InputFile;

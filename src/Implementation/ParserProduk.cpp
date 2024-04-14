@@ -2,7 +2,16 @@
 #include "../Header/Exception.hpp"
 #include <bits/stdc++.h>
 #include "../Header/helper.hpp"
-
+vector<int> ParserProduk::productID = vector<int>();
+vector<string> ParserProduk::productCode = vector<string>();
+vector<string> ParserProduk::productName = vector<string>();
+vector<string> ParserProduk::productType = vector<string>();
+vector<string> ParserProduk::productOrigin = vector<string>();
+vector<int> ParserProduk::addedWeight= vector<int>();
+vector<int> ParserProduk::price= vector<int>();
+vector<string> ParserProduk::validProductTypes = vector<string>();
+map<int,int> ParserProduk::IndexToIDMap = map<int,int>();
+map<int,int> ParserProduk::IDToIndexMap = map<int,int>();
 void ParserProduk::ParseFile(string fileDirectory)
 {
     ifstream InputFile;

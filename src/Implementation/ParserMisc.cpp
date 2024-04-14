@@ -2,6 +2,11 @@
 #include "../Header/Exception.hpp"
 #include "../Header/helper.hpp"
 #include <bits/stdc++.h>
+int ParserMisc::winningMoney = 0;
+int ParserMisc::winningWeight = 0;
+pair<int,int> ParserMisc::storageSize = pair<int,int>();
+pair<int,int> ParserMisc::fieldSize= pair<int,int>();
+pair<int,int> ParserMisc::farmSize= pair<int,int>();
 void ParserMisc::ParseFile(string fileDirectory)
 {
     ifstream InputFile;
