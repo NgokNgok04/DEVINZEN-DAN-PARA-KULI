@@ -2,6 +2,9 @@ CXX = g++
 SRC = src
 IMP = Implementation
 
+final: Bangunan.o GameManager.o GameObject.o helper.o Hewan.o ParserHewan.o ParserMisc.o ParserProduk.o ParserResep.o ParserTanaman.o Product.o Tanaman.o main.o
+	g++ Bangunan.o GameManager.o GameObject.o helper.o Hewan.o ParserHewan.o ParserMisc.o ParserProduk.o ParserResep.o ParserTanaman.o Product.o Tanaman.o main.o -o final
+	del *.o
 GODriver: Bangunan.o GameManager.o GameObject.o helper.o Hewan.o ParserHewan.o ParserMisc.o ParserProduk.o ParserResep.o ParserTanaman.o Product.o Tanaman.o GameObjectDriver.o
 	g++ Bangunan.o GameManager.o GameObject.o helper.o Hewan.o ParserHewan.o ParserMisc.o ParserProduk.o ParserResep.o ParserTanaman.o Product.o Tanaman.o GameObjectDriver.o -o GODriver
 	del *.o
@@ -49,3 +52,6 @@ Tanaman.o: $(SRC)/$(IMP)/Tanaman.cpp
 
 parserdriver.o: $(SRC)/parserdriver.cpp
 	g++ -c $(SRC)/parserdriver.cpp
+
+main.o: $(SRC)/main.cpp
+	g++ -c $(SRC)/main.cpp

@@ -1,6 +1,11 @@
 #include <iostream>
 #include "./Header/Exception.hpp"
 #include "./Header/GameManager.hpp"
+#include "./Header/GameObject.hpp"
+#include "./Header/Hewan.hpp"
+#include "./Header/Tanaman.hpp"
+#include "./Header/Product.hpp"
+#include "./Header/Bangunan.hpp"
 using namespace std;
 //inisialisasi atribut static di semua parser
 vector<string> ParserHewan::validAnimalTypes = {"HERBIVORE","CARNIVORE","OMNIVORE"};
@@ -49,11 +54,11 @@ int main(){
     ParserTanaman PT;
     ParserProduk PP;
     ParserResep PR;
-    string animalConfigDirectory = "../config/animal.txt";
-    string miscConfigDirectory = "../config/misc.txt";
-    string plantConfigDirectory = "../config/plant.txt";
-    string productConfigDirectory = "../config/product.txt";
-    string recipeConfigDirectory = "../config/recipe.txt";
+    string animalConfigDirectory = "./config/animal.txt";
+    string miscConfigDirectory = "./config/misc.txt";
+    string plantConfigDirectory = "./config/plant.txt";
+    string productConfigDirectory = "./config/product.txt";
+    string recipeConfigDirectory = "./config/recipe.txt";
     try{
         PH.ParseFile(animalConfigDirectory);
         PM.ParseFile(miscConfigDirectory);
