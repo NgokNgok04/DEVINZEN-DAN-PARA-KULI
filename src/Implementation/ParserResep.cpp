@@ -133,10 +133,11 @@ int ParserResep::IDToIndex(int ID)
 ostream &operator<<(ostream &os, ParserResep &PR)
 {
     for(int i = 0; i<PR.recipeID.size(); i++){
-        cout<<PR.recipeID[i]<<" "<<PR.recipeCode[i]<<" "<<PR.recipeName[i]<<" "<<PR.recipePrice[i]<<" ";
+        os<<PR.recipeID[i]<<" "<<PR.recipeCode[i]<<" "<<PR.recipeName[i]<<" "<<PR.recipePrice[i]<<" ";
         for(int j = 0; j<PR.recipeMaterialQuantity[i].size(); j++){
-            cout<<PR.recipeMaterialQuantity[i][j].first<<" "<<PR.recipeMaterialQuantity[i][j].second<<" ";
+            os<<PR.recipeMaterialQuantity[i][j].first<<" "<<PR.recipeMaterialQuantity[i][j].second<<" ";
         }
-        cout<<"\n";
+        os<<"\n";
     }
+    return os;
 }
