@@ -1,5 +1,15 @@
 #include "../Header/Hewan.hpp"
 
+map<string,pair<string,string>> Hewan::konversiPanen = {
+    {"COW",{"COW_MEAT",""}},
+    {"SHEEP",{"SHEEP_MEAT",""}},
+    {"HORSE",{"HORSE_MEAT",""}},
+    {"RABBIT",{"RABBIT_MEAT",""}},
+    {"SNAKE",{"SNAKE_MEAT",""}},
+    {"DUCK",{"DUCK_MEAT","DUCK_EGG"}},
+    {"CHICKEN",{"CHICKEN_MEAT","CHICKEN_EGG"}}
+};
+
 Hewan::Hewan(int idKonfig)
 {
     setID(idKonfig);
@@ -23,13 +33,11 @@ void Hewan::makan(Product makanan)
 
 vector<Product *> Hewan::hasilPanen()
 {
-    vector<int> arr = ParserProduk::findOrigin(getName());
-    int n = (type == "OMNIVORE") ? 2 : 1;
+    pair<string,string> productPanen = konversiPanen[getName()];
     vector<Product *> prodArr;
-    for (int i = 0; i < n; i++)
-    {
-        Product *temp = new Product(arr[i], true);
-        prodArr.push_back(temp);
+    prodArr.push_back(new Product(ParserHewan::convertNameToID(productPanen.first),true));
+    if(productPanen.second!=""){
+        prodArr.push_back(new Product(ParserHewan::convertNameToID(productPanen.second),true));
     }
     return prodArr;
 }

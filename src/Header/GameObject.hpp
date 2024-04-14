@@ -2,7 +2,6 @@
 #define GAMEOBJECT_HPP
 
 #include <iostream>
-#include <vector>
 #include <string>
 // #include "Exception.hpp"
 using namespace std;

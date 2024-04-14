@@ -88,8 +88,8 @@ int main()
     // cout << typeid(kielObj).name() << endl;
     // cout << typeid(*kielObj).name() << endl;
 
-    P2.setInv(2, 2, kiel);
-    P2.setInv(5, 2, met);
+    P2.setInv(2, 2, &kiel);
+    P2.setInv(5, 2, &met);
 
     cout << "BEFORE" << endl;
     cout << met.getName() << endl;
@@ -100,10 +100,11 @@ int main()
     cout << met.getCurWeight() << endl;
 
     // Tanaman *temp = dynamic_cast<Tanaman *>(P2.inventory.getElement(2, 2));
-    Hewan *temp = dynamic_cast<Hewan *>(P2.inventory.getElement(5, 2));
-    if (temp)
+    Hewan *temp = dynamic_cast<Hewan*>(P2.inventory.getElement(5, 2));
+    if (P2.inventory.getElement(5, 2))
     {
         cout << "Sukses" << endl;
+        cout<<typeid(*(P2.inventory.getElement(5, 2))).name()<<endl;
     }
     else
     {

@@ -5,6 +5,9 @@
 #include "Product.hpp"
 #include "ParserHewan.hpp"
 #include <vector>
+#include <map>
+#include <tuple>
+using namespace std;
 
 class Hewan : public GameObject
 {
@@ -12,6 +15,7 @@ private:
     string type;
     int weightHarvest;
     int weight;
+    static map<string,pair<string,string>> konversiPanen;
 
 public:
     Hewan()
