@@ -7,6 +7,7 @@ class Peternak : public Pemain
 {
 protected:
     MatrixArea<Hewan> ternakan;
+    vector<Bangunan> ownedBangunan;
 
 public:
     Peternak();

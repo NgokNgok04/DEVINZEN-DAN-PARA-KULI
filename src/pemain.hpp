@@ -6,7 +6,7 @@
 #include "matrixarea.cpp"
 // #include "./Header/GameObject.hpp"
 #include "./Implementation/GameObject.cpp"
-// #include "Toko.hpp"
+#include "Toko.hpp"
 using namespace std;
 
 class Pemain

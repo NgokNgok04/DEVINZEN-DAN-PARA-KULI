@@ -1,5 +1,4 @@
 #include "helper.hpp"
-#include <bits/stdc++.h>
 using namespace std;
 vector<string> StringToStringList(string inputString){
     vector<string> StringList;

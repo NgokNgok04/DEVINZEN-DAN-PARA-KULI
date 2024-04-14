@@ -1,5 +1,10 @@
 #pragma once
 #include <bits/stdc++.h>
+#include <iostream>
+#include <fstream>
+#include <map>
+#include <vector>
+#include <string>
 #include "Exception.hpp"
 using namespace std;
 // Parent class untuk semua parser
