@@ -4,13 +4,13 @@ IMP = Implementation
 
 final: Bangunan.o GameManager.o GameObject.o helper.o Hewan.o ParserHewan.o ParserMisc.o ParserProduk.o ParserResep.o ParserTanaman.o Product.o Tanaman.o  pemain.o petani.o peternak.o walikota.o Toko.o main.o
 	g++ Bangunan.o GameManager.o GameObject.o helper.o Hewan.o ParserHewan.o ParserMisc.o ParserProduk.o ParserResep.o ParserTanaman.o Product.o Tanaman.o pemain.o petani.o peternak.o walikota.o Toko.o  main.o -o final
-	del *.o
+	rm *.o
 GODriver: Bangunan.o GameManager.o GameObject.o helper.o Hewan.o ParserHewan.o ParserMisc.o ParserProduk.o ParserResep.o ParserTanaman.o Product.o Tanaman.o GameObjectDriver.o
 	g++ Bangunan.o GameManager.o GameObject.o helper.o Hewan.o ParserHewan.o ParserMisc.o ParserProduk.o ParserResep.o ParserTanaman.o Product.o Tanaman.o GameObjectDriver.o -o GODriver
-	del *.o
+	rm *.o
 ParserDriver:Bangunan.o GameManager.o GameObject.o helper.o Hewan.o ParserHewan.o ParserMisc.o ParserProduk.o ParserResep.o ParserTanaman.o Product.o Tanaman.o parserdriver.o
 	g++ Bangunan.o GameManager.o GameObject.o helper.o Hewan.o ParserHewan.o ParserMisc.o ParserProduk.o ParserResep.o ParserTanaman.o Product.o Tanaman.o parserdriver.o -o ParserDriver
-	del *.o
+	rm *.o
 Bangunan.o: $(SRC)/$(IMP)/Bangunan.cpp
 	g++ -c $(SRC)/$(IMP)/Bangunan.cpp
 
