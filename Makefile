@@ -2,8 +2,8 @@ CXX = g++
 SRC = src
 IMP = Implementation
 
-final: Bangunan.o GameManager.o GameObject.o helper.o Hewan.o ParserHewan.o ParserMisc.o ParserProduk.o ParserResep.o ParserTanaman.o Product.o Tanaman.o main.o
-	g++ Bangunan.o GameManager.o GameObject.o helper.o Hewan.o ParserHewan.o ParserMisc.o ParserProduk.o ParserResep.o ParserTanaman.o Product.o Tanaman.o main.o -o final
+final: Bangunan.o GameManager.o GameObject.o helper.o Hewan.o ParserHewan.o ParserMisc.o ParserProduk.o ParserResep.o ParserTanaman.o Product.o Tanaman.o  pemain.o petani.o peternak.o walikota.o Toko.o main.o
+	g++ Bangunan.o GameManager.o GameObject.o helper.o Hewan.o ParserHewan.o ParserMisc.o ParserProduk.o ParserResep.o ParserTanaman.o Product.o Tanaman.o pemain.o petani.o peternak.o walikota.o Toko.o  main.o -o final
 	del *.o
 GODriver: Bangunan.o GameManager.o GameObject.o helper.o Hewan.o ParserHewan.o ParserMisc.o ParserProduk.o ParserResep.o ParserTanaman.o Product.o Tanaman.o GameObjectDriver.o
 	g++ Bangunan.o GameManager.o GameObject.o helper.o Hewan.o ParserHewan.o ParserMisc.o ParserProduk.o ParserResep.o ParserTanaman.o Product.o Tanaman.o GameObjectDriver.o -o GODriver
@@ -50,8 +50,26 @@ Product.o: $(SRC)/$(IMP)/Product.cpp
 Tanaman.o: $(SRC)/$(IMP)/Tanaman.cpp
 	g++ -c $(SRC)/$(IMP)/Tanaman.cpp
 
+matrixarea.o: $(SRC)/$(IMP)/matrixarea.cpp
+	g++ -c $(SRC)/$(IMP)/matrixarea.cpp
+
+pemain.o: $(SRC)/$(IMP)/pemain.cpp
+	g++ -c $(SRC)/$(IMP)/pemain.cpp
+
+petani.o: $(SRC)/$(IMP)/petani.cpp
+	g++ -c $(SRC)/$(IMP)/petani.cpp
+
+peternak.o: $(SRC)/$(IMP)/peternak.cpp
+	g++ -c $(SRC)/$(IMP)/peternak.cpp
+
+walikota.o: $(SRC)/$(IMP)/walikota.cpp
+	g++ -c $(SRC)/$(IMP)/walikota.cpp
+
+Toko.o: $(SRC)/$(IMP)/Toko.cpp
+	g++ -c $(SRC)/$(IMP)/Toko.cpp
 parserdriver.o: $(SRC)/parserdriver.cpp
 	g++ -c $(SRC)/parserdriver.cpp
 
 main.o: $(SRC)/main.cpp
 	g++ -c $(SRC)/main.cpp
+
