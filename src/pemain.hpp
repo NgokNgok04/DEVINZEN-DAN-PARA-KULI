@@ -30,7 +30,7 @@ public:
     string getTipe();
 
     // specifics
-    void setInv(int, int, GameObject);
+    void setInv(int, int, GameObject*);
     void cetakPenyimpanan();
     void makan(); // loc item yg dimakan
     // virtual void beli() = 0; // letak and quant item, loc item akan disimpan

@@ -69,7 +69,7 @@ void Pemain::makan()
     cout << "Alhasil, berat badan kamu naik menjadi ";
 }
 
-void Pemain::setInv(int rows, int cols, GameObject a)
+void Pemain::setInv(int rows, int cols, GameObject* a)
 {
-    this->inventory.setElement(rows, cols, &a);
+    this->inventory.setElement(rows, cols, a);
 }
