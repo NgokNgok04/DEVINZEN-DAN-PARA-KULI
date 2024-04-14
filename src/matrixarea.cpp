@@ -11,11 +11,6 @@ MatrixArea<T>::MatrixArea()
     this->matrix.resize(this->rows, vector<T *>(this->cols, nullptr));
     cout << "success default ctor" << endl;
 }
-// template <>
-// MatrixArea<GameObject>::MatrixArea(){
-//     pair<int,int> = ParserMis
-//     this->rows = ParserMisc::getStorageSize().
-// }
 
 template <class T>
 MatrixArea<T>::MatrixArea(int rows, int cols)
@@ -83,6 +78,16 @@ T *MatrixArea<T>::getElement(int row, int col)
 }
 
 template <class T>
+int MatrixArea<T>::getRows(){
+    return this->rows;
+}
+
+template <class T>
+int MatrixArea<T>::getCols(){
+    return this->cols;
+}
+
+template <class T>
 void MatrixArea<T>::deleteElement(int row, int col)
 {
     this->matrix[row - 1][col - 1] = nullptr;
@@ -93,7 +98,15 @@ template <class T>
 pair<int, int> MatrixArea<T>::getPositionFromSlot(string slot)
 {
     int posCol = slot[0] - 'A' + 1;
+    if (posCol < 0 || posCol >= this->cols){
+        throw InvalidPositionMatrixArea();
+        return;
+    }
     int posRow = stoi(string(1, slot[1]) + string(1, slot[2]));
+    if (posRow < 0 || posRow >= this->rows){
+        throw InvalidPositionMatrixArea();
+        return;
+    }
     return make_pair(posRow, posCol);
 }
 

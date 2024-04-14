@@ -27,6 +27,8 @@ public:
     void setElement(int, int, T *);
     void deleteElement(int, int);
     T *getElement(int, int);
+    int getRows();
+    int getCols();
     pair<int, int> getPositionFromSlot(string slot);
     void displayMatrix();
     void displayObject();

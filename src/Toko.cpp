@@ -49,32 +49,36 @@ int Toko::buyProcess(){
     i++;
     cout << i << ". Cancel Buy" << endl;
     cout << "Masukklah pilihan (1-4) :";
-    cin >> response;
-    if (response == i){
-        return 0;
-    } else if (response >= 1 && response < i) {
-        return response;
-    } else {
-        //thhrow exception
-        cout << "Input tidak valid" << endl;
+    try{
+        cin >> response;
+
+        if (response == i){
+            return 0;
+        } else if (response >= 1 && response < i) {
+            return response;
+        } else {
+            InvalidResponseToko invalidResponse;
+            throw invalidResponse;
+        }
+    } catch (InvalidResponseToko err) {
+        err.what();
+        cout << endl;
     }
 }
 
 void Toko::itemDibeli(GameObject* gameObject, int quantity){
     bool found = false;
     for(int i = 0; i < availableProduct.size(); i++){
-        // if (gameObject == availableProduct[i].first){
-            //nunggu operator== selesai
+        if (gameObject == &availableProduct[i].first){
             availableProduct[i].second -= quantity;
             found = true;
-        // };
+        };
     };
     if (!found){
         for (int i = 0; i < availableBangunan.size(); i++){
-            // if (gameObject == availableBangunan[i].first){
-                //nunggu operator== selesai
+            if (gameObject == &availableBangunan[i].first){
                 availableBangunan[i].second -= quantity;
-            // }
+            }
         }
     }
 }
@@ -82,18 +86,16 @@ void Toko::itemDibeli(GameObject* gameObject, int quantity){
 void Toko::itemDijual(GameObject* gameObject, int quantity){
     bool found = false;
     for(int i = 0; i < availableProduct.size(); i++){
-        // if (gameObject == availableProduct[i].first){
-            //nunggu operator== selesai
+        if (gameObject == &availableProduct[i].first){
             availableProduct[i].second += quantity;
             found = true;
-        // };
+        };
     };
     if (!found){
         for (int i = 0; i < availableBangunan.size(); i++){
-            // if (gameObject == availableBangunan[i].first){
-            //nunggu operator== selesai
+            if (gameObject == &availableBangunan[i].first){
                 availableBangunan[i].second += quantity;
-            // }
+            }
         }
     }
 }

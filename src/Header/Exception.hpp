@@ -285,3 +285,69 @@ public:
         return "Ada kuantitas bahan resep yang tidak valid di file config recipe.txt!";
     }
 };
+
+class InvalidPositionMatrixArea : public BaseException
+{
+public:
+    InvalidPositionMatrixArea(){};
+    ~InvalidPositionMatrixArea(){};
+    string what()
+    {
+        return "Slot Matrix tidak valid";
+    }
+};
+
+class InvalidResponseToko : public BaseException
+{
+public:
+    InvalidResponseToko(){};
+    ~InvalidResponseToko(){};
+    string what()
+    {
+        return "Response tidak valid.";
+    }
+};
+
+class NotEatableSlot : public BaseException
+{
+public:
+    NotEatableSlot(){};
+    ~NotEatableSlot(){};
+    string what()
+    {
+        return "Slot yang dipilih bukan Makanan";
+    }
+};
+
+class EmptyFoodSlot : public BaseException
+{
+public:
+    EmptyFoodSlot(){};
+    ~EmptyFoodSlot(){};
+    string what()
+    {
+        return "Slot yang dipilih tidak mempunyai Makanan";
+    }
+};
+
+class EmptyInventory : public BaseException
+{
+public:
+    EmptyInventory(){};
+    ~EmptyInventory(){};
+    string what()
+    {
+        return "Inventory Kosong. Tidak dapat makan!";
+    }
+};
+
+class NoFoodInInventory : public BaseException
+{
+public:
+    NoFoodInInventory(){};
+    ~NoFoodInInventory(){};
+    string what()
+    {
+        return "Tidak ada Makanan di Inventory!";
+    }
+};
