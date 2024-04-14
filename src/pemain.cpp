@@ -47,7 +47,7 @@ void Pemain::cetakPenyimpanan()
     this->inventory.displayRemainderSlot();
 }
 
-void Pemain::makan()
+void Pemain::makan() //butuh Catch EmptyInventory n NoFoodInInventory
 {   
     if (this->inventory.isEmpty()){
         throw EmptyInventory();

@@ -345,3 +345,16 @@ int MatrixArea<T>::getEmptySlot()
     }
     return count;
 }
+
+template <class T>
+int MatrixArea<T>::countSameName(string name){
+    int count = 0;
+    for (int i = 0; i < this->rows; i++){
+        for (int j = 0; j < this->cols; j++){
+            if (this->matrix[i][j] != nullptr && this->matrix[i][j]->getName() == name){
+                count ++;
+            }
+        }
+    }
+    return count;
+}

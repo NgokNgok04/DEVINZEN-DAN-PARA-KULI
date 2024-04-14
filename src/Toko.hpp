@@ -2,17 +2,16 @@
 #define TOKO_HPP
 #include <vector>
 #include <utility>
-#include "GameObject.hpp"
 #include "./misc/helper.hpp"
 #include "./Header/GameObject.hpp"
 #include "./Header/Hewan.hpp"
 #include "./Header/Tanaman.hpp"
 #include "./Header/Product.hpp"
 #include "./Header/Bangunan.hpp"
-#include "./parsers/ParserHewan.hpp"
-#include "./parsers/ParserTanaman.hpp"
-#include "./parsers/ParserProduk.hpp"
-#include "./parsers/ParserResep.hpp"
+#include "./Header/ParserHewan.hpp"
+#include "./Header/ParserTanaman.hpp"
+#include "./Header/ParserProduk.hpp"
+#include "./Header/ParserResep.hpp"
 using namespace std;
 class Toko {
     public:
@@ -31,5 +30,6 @@ class Toko {
         static int displayAvailableProduct();
         static int displayAvailableBangunan();
         static void displayResepBangunan();
+        static int getStock(string);
 };
 #endif

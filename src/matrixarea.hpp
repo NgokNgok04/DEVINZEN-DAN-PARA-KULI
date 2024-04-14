@@ -36,6 +36,7 @@ public:
     void displayRemainderSlot();
     bool isEmpty();
     int getEmptySlot();
+    int countSameName(string);
 };
 
 #endif

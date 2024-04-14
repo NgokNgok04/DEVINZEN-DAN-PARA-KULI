@@ -19,9 +19,9 @@ Toko::Toko(){
     }
 
     for(int i = 0; i < ParserProduk::getConfigSize(); i++){
-        // idDummyToko = ParserProduk::getID(i);
-        // Product productDummyToko(i,ParserProduk::getOrigin(i) =); //nuggu akbar
-        // availableProduct.push_back(make_pair(productDummyToko,0));
+        idDummyToko = ParserProduk::getID(i);
+        Product productDummyToko(i,ParserProduk::isAnAnimalProduct(i));
+        availableProduct.push_back(make_pair(productDummyToko,0));
     }
 
     for(int i = 0; i < ParserResep::getConfigSize(); i++){
@@ -171,5 +171,28 @@ void Toko::displayResepBangunan(){
         cout << " - " << availableBangunan[i].first.getPrice();
         cout << " (" << availableBangunan[i].second << ")" << endl;
         idx++;
+    }
+}
+
+int Toko::getStock(string name){
+    for(int i = 0; i < availableHewan.size(); i++){
+        if (name == availableHewan[i].getName()){
+            return -1;
+        }
+    }
+    for(int i = 0; i < availableTanaman.size(); i++){
+        if (name == availableTanaman[i].getName()){
+            return -1;
+        }
+    }
+    for(int i = 0; i < availableProduct.size(); i++){
+        if (name == availableProduct[i].first.getName()){
+            return availableProduct[i].second;
+        }
+    }
+    for(int i = 0; i < availableBangunan.size(); i++){
+        if (name == availableBangunan[i].first.getName()){
+            return availableBangunan[i].second;
+        }
     }
 }
