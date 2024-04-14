@@ -35,9 +35,9 @@ vector<Product *> Hewan::hasilPanen()
 {
     pair<string,string> productPanen = konversiPanen[getName()];
     vector<Product *> prodArr;
-    prodArr.push_back(new Product(ParserHewan::convertNameToID(productPanen.first),true));
+    prodArr.push_back(new Product(ParserProduk::convertNameToID(productPanen.first),true));
     if(productPanen.second!=""){
-        prodArr.push_back(new Product(ParserHewan::convertNameToID(productPanen.second),true));
+        prodArr.push_back(new Product(ParserProduk::convertNameToID(productPanen.second),true));
     }
     return prodArr;
 }
