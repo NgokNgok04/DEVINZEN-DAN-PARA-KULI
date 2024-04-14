@@ -473,10 +473,15 @@ void Petani::panenTani()
                         {
                             if (this->inventory.getElement(j, k) == nullptr)
                             {
-                                cout << this->ladang.getElement(idx2, idx1)->hasilPanen()->getName() << endl;
+                                // cout << this->ladang.getElement(idx2, idx1)->hasilPanen()->getName() << endl;
+                                // cout<<"PEPEK"<<endl;
+                                // cout << this->ladang.getElement(idx2, idx1)->hasilPanen()->getName() << endl;
                                 this->inventory.setElement(j, k, this->ladang.getElement(idx2, idx1)->hasilPanen());
                                 // this->setInv(j, k, this->ladang.getElement(idx2, idx1)->hasilPanen());
                                 cout << this->inventory.getElement(j, k)->getName() << endl;
+                                cout<<"KONTOL"<<endl;
+                                cout << this->inventory.getElement(1, 1)->getName() << endl;
+
                                 this->ladang.deleteElement(idx2, idx1);
                                 foundslot = true;
                                 break;
@@ -484,6 +489,7 @@ void Petani::panenTani()
                         }
                         if (foundslot)
                         {
+                            cout<<"TESKTN"<<endl;
                             break;
                         }
                     }

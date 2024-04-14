@@ -85,11 +85,14 @@ int main()
     Petani P2;
     Hewan *met = new Hewan();
     Tanaman *kiel = new Tanaman();
+    Tanaman *dan = new Tanaman();
 
     P2.setInv(2, 2, kiel);
     P2.setInv(5, 2, met);
+    P2.setInv(5, 3, dan);
     // P2.panenTani();
     P2.cetakPenyimpanan();
+    P2.tanam();
     P2.tanam();
     P2.cetakPenyimpanan();
     P2.cetakLadang();
@@ -97,15 +100,16 @@ int main()
     P2.panenTani();
     P2.cetakPenyimpanan();
     cout << "==========" << endl;
-    try
-    {
-        P2.panenTani();
-    }
-    catch (BaseException &e)
-    {
-        cout << "HAHA" << endl;
-        cout << e.what() << endl;
-    }
+    // try
+    // {
+    //     P2.panenTani();
+    // }
+    // catch (BaseException &e)
+    // {
+    //     cout << "HAHA" << endl;
+    //     cout << e.what() << endl;
+    // }
+    P2.cetakLadang();
     P2.cetakPenyimpanan();
 
     return 0;
