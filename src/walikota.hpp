@@ -14,7 +14,6 @@ public:
     void bangunBangunan(int); // int tipe 1: small, 2 medium, 3 large, 4 hotel
     void beli();
     void jual();
-    int calculateKKP();
 };
 
 #endif

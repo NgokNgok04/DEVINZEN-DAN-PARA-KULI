@@ -78,3 +78,30 @@ void Pemain::setInv(int rows, int cols, GameObject *a)
 {
     this->inventory.setElement(rows, cols, a);
 }
+
+int Pemain::countKekayaanInven(){
+    int sum=0;
+    for(int i=1;i<=inventory.getRows();i++){
+        for(int j=1;j<=inventory.getCols();j++){
+            GameObject* ptr = inventory.getElement(i,j);
+            if(ptr!=nullptr){
+                sum+=ptr->getPrice();
+            }
+        }
+    }
+    return sum;
+}
+
+float Pemain::getTaxRate(int KKP){
+    if(KKP<=6){
+        return 0.05;
+    }else if(KKP<=25){
+        return 0.15;
+    }else if(KKP<=50){
+        return 0.25;
+    }else if(KKP<=500){
+        return 0.3;
+    }else{
+        return 0.35;
+    }
+}

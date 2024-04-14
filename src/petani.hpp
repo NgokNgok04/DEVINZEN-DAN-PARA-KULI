@@ -3,6 +3,8 @@
 
 #include "pemain.hpp"
 
+#define KTKP_PETANI 13
+
 class Petani : public Pemain
 {
 protected:
@@ -19,8 +21,8 @@ public:
     void panenTani();
     void beli();
     void jual();
-    int calculateKKP();
-    int calculateTax();
+    int countKekayaanLadang();
+    float calculateTax();
 };
 
 #endif
