@@ -17,6 +17,7 @@ protected:
     int berat_badan;
     string tipe; // walikota, peternak, petani, pemain
     vector<int> ownedBuild;
+    vector<Bangunan> ownedBangunan;
 
 public:
     // MatrixArea<GameObject> inventory;

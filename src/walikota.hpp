@@ -5,8 +5,6 @@
 
 class WaliKota : public Pemain
 {
-protected:
-    vector<Bangunan> ownedBangunan;
 public:
     WaliKota();
     WaliKota(int guld, int bb, int smol, int med, int big);
