@@ -1,3 +1,5 @@
+#ifndef MATRIXAREA_CPP
+#define MATRIXAREA_CPP
 #include <iostream>
 #include <string>
 #include <vector>
@@ -134,7 +136,7 @@ void MatrixArea<T>::displayMatrix()
     cout << grid << endl;
 }
 
-template <>
+template <> inline
 void MatrixArea<GameObject>::displayObject()
 {
     int title = (this->cols * 6) + 4;
@@ -174,7 +176,7 @@ void MatrixArea<GameObject>::displayObject()
     MatrixArea<GameObject>::displayMatrix();
 }
 
-template <>
+template <> inline
 void MatrixArea<Hewan>::displayObject()
 {
     int title = (this->cols * 6) + 4;
@@ -215,7 +217,7 @@ void MatrixArea<Hewan>::displayObject()
     // dummy Class di local mahew (ga dipush)
 }
 
-template <>
+template <> inline
 void MatrixArea<Tanaman>::displayObject()
 {
     int title = (this->cols * 6) + 4;
@@ -335,3 +337,4 @@ int MatrixArea<T>::getEmptySlot()
     }
     return count;
 }
+#endif

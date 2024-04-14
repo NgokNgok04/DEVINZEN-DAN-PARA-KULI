@@ -5,7 +5,10 @@
 #include "./Header/Tanaman.hpp"
 #include "./Header/Product.hpp"
 #include "./Header/Bangunan.hpp"
-
+#include "./Header/petani.hpp"
+#include "./Header/peternak.hpp"
+#include "./Header/walikota.hpp"
+#include "./Header/Toko.hpp"
 using namespace std;
 //inisialisasi atribut static di semua parser
 vector<string> ParserHewan::validAnimalTypes = {"HERBIVORE","CARNIVORE","OMNIVORE"};
