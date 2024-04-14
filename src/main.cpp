@@ -12,6 +12,7 @@
 #include "./Implementation/ParserHewan.cpp"
 #include "./Implementation/ParserResep.cpp"
 // #include "./Implementation/ParserMisc.cpp"
+// #include "./Implementation/ParserMisc.cpp"
 #include "./misc/helper.cpp"
 // #include "walikota.cpp"
 // #include "./Implementation/Hewan.cpp"
@@ -64,77 +65,48 @@ map<int, int> ParserTanaman::IDToIndexMap = map<int, int>();
 
 int main()
 {
-    // MatrixArea<Hewan> testaja;
-    // MatrixArea<GameObject> matrix(4, 2);
-    // MatrixArea<Hewan> matrixcctor(matrix);
-    // testaja = matrix;
-    // cout << "test" << endl;
-    // Hewan anjing(1);
-    // Hewan kucing(2);
-    // Hewan monyet(3);
-    // matrix.setElement(1, 1, &anjing);
-    // matrix.setElement(1, 2, &kucing);
-    // matrix.setElement(2, 1, &monyet);
-    // matrix.displayMatrix();
-    // matrix.deleteElement(2, 1);
-    // matrix.displayMatrix();
+    ParserHewan PH;
+    // ParserMisc PM;
+    ParserTanaman PT;
+    ParserProduk PP;
+    ParserResep PR;
+    string animalConfigDirectory = "../config/animal.txt";
+    string miscConfigDirectory = "../config/misc.txt";
+    string plantConfigDirectory = "../config/plant.txt";
+    string productConfigDirectory = "../config/product.txt";
+    string recipeConfigDirectory = "../config/recipe.txt";
+
+    PH.ParseFile(animalConfigDirectory);
+    // PM.ParseFile(miscConfigDirectory);
+    PT.ParseFile(plantConfigDirectory);
+    PP.ParseFile(productConfigDirectory);
+    PR.ParseFile(recipeConfigDirectory);
 
     Petani P2;
-    Hewan met;
-    Tanaman kiel;
-    cout << typeid(kiel).name() << endl;
+    Hewan *met = new Hewan();
+    Tanaman *kiel = new Tanaman();
 
-    // GameObject *kielObj = kiel;
-    // cout << typeid(kielObj).name() << endl;
-    // cout << typeid(*kielObj).name() << endl;
-
-    P2.setInv(2, 2, &kiel);
-    P2.setInv(5, 2, &met);
-
-    cout << "BEFORE" << endl;
-    cout << met.getName() << endl;
-    cout << met.getKode() << endl;
-    cout << met.getTipeObject() << endl;
-    cout << met.getType() << endl;
-    cout << met.getWeightHarvest() << endl;
-    cout << met.getCurWeight() << endl;
-
-    // Tanaman *temp = dynamic_cast<Tanaman *>(P2.inventory.getElement(2, 2));
-    Hewan *temp = dynamic_cast<Hewan*>(P2.inventory.getElement(5, 2));
-    if (P2.inventory.getElement(5, 2))
-    {
-        cout << "Sukses" << endl;
-        cout<<typeid(*(P2.inventory.getElement(5, 2))).name()<<endl;
-    }
-    else
-    {
-        cout << "Gagal" << endl;
-    }
-
-    cout << "AFTER" << endl;
-    cout << temp->getName() << endl;
-    cout << temp->getKode() << endl;
-    cout << temp->getTipeObject() << endl;
-    cout << temp->getType() << endl;
-    cout << temp->getWeightHarvest() << endl;
-    cout << temp->getCurWeight() << endl;
-
-    // P2.cetakPenyimpanan();
-    // P2.tanam();
-    // P2.cetakPenyimpanan();
-    // P2.cetakLadang();
+    P2.setInv(2, 2, kiel);
+    P2.setInv(5, 2, met);
     // P2.panenTani();
+    P2.cetakPenyimpanan();
+    P2.tanam();
+    P2.cetakPenyimpanan();
+    P2.cetakLadang();
 
-    // Peternak P2;
-    // Hewan met;
-    // Tanaman kiel;
-    // cout << "helo222" << endl;
-    // P2.setInv(2, 2, kiel);
-    // P2.setInv(5, 2, met);
-    // P2.cetakPenyimpanan();
-    // P2.ternak();
-    // P2.cetakPenyimpanan();
-    // P2.cetakTernak();
+    P2.panenTani();
+    P2.cetakPenyimpanan();
+    cout << "==========" << endl;
+    try
+    {
+        P2.panenTani();
+    }
+    catch (BaseException &e)
+    {
+        cout << "HAHA" << endl;
+        cout << e.what() << endl;
+    }
+    P2.cetakPenyimpanan();
 
     return 0;
 }

@@ -11,14 +11,14 @@ private:
     string type;
     int durationHarvest;
     int age;
-    static map<string,string> konversiPanen;
+    static map<string, string> konversiPanen;
 
 public:
     Tanaman()
     {
         this->setKode("KIL");
         this->setTipeObject("TANAMAN");
-        this->setName("METIU");
+        this->setName("ORANGE_TREE");
         this->durationHarvest = 10;
         this->age = 100;
     }

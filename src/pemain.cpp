@@ -41,6 +41,11 @@ string Pemain::getTipe()
     return this->tipe;
 }
 
+MatrixArea<GameObject> Pemain::getInventory()
+{
+    return this->inventory;
+}
+
 void Pemain::cetakPenyimpanan()
 {
     this->inventory.displayObject();
@@ -69,7 +74,7 @@ void Pemain::makan()
     cout << "Alhasil, berat badan kamu naik menjadi ";
 }
 
-void Pemain::setInv(int rows, int cols, GameObject* a)
+void Pemain::setInv(int rows, int cols, GameObject *a)
 {
     this->inventory.setElement(rows, cols, a);
 }

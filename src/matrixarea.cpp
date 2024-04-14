@@ -74,7 +74,7 @@ void MatrixArea<T>::setElement(int row, int col, T *object)
 }
 
 template <class T>
-T* MatrixArea<T>::getElement(int row, int col)
+T *MatrixArea<T>::getElement(int row, int col)
 {
     // asumsi row n col selalu benar
     cout << "get Element success" << endl;
@@ -84,7 +84,7 @@ T* MatrixArea<T>::getElement(int row, int col)
 template <class T>
 void MatrixArea<T>::deleteElement(int row, int col)
 {
-    delete this->matrix[row-1][col-1];
+    delete this->matrix[row - 1][col - 1];
     this->matrix[row - 1][col - 1] = nullptr;
     cout << "delete Element success" << endl;
 }
@@ -334,4 +334,18 @@ int MatrixArea<T>::getEmptySlot()
         }
     }
     return count;
+}
+
+template <>
+Tanaman *MatrixArea<GameObject>::convertTanaman(int row, int col)
+{
+    Tanaman *temp = dynamic_cast<Tanaman *>(this->getElement(row, col));
+    return temp;
+}
+
+template <>
+Hewan *MatrixArea<GameObject>::convertHewan(int row, int col)
+{
+    Hewan *temp = dynamic_cast<Hewan *>(this->getElement(row, col));
+    return temp;
 }

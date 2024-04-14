@@ -35,6 +35,8 @@ public:
     void displayRemainderSlot();
     bool isEmpty();
     int getEmptySlot();
+    Tanaman *convertTanaman(int, int);
+    Hewan *convertHewan(int, int);
 };
 
 #endif

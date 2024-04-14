@@ -13,6 +13,7 @@ public:
     Petani(int guld, int bb, int smol, int med, int big, int ladrows, int ladcols);
     Petani(const Petani &);
     ~Petani();
+    MatrixArea<Tanaman> getLadang();
     void cetakLadang();
     void tanam(); // coords tanaman yg ingin ditanam, coords letak menanam dlm ladang
     void panenTani();

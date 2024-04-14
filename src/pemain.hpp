@@ -16,10 +16,9 @@ protected:
     int berat_badan;
     string tipe; // walikota, peternak, petani, pemain
     vector<int> ownedBuild;
-
-public:
     MatrixArea<GameObject> inventory;
 
+public:
     // MatrixArea<GameObject> inventory;
 
     Pemain();
@@ -28,9 +27,10 @@ public:
     ~Pemain();
 
     string getTipe();
+    MatrixArea<GameObject> getInventory();
 
     // specifics
-    void setInv(int, int, GameObject*);
+    void setInv(int, int, GameObject *);
     void cetakPenyimpanan();
     void makan(); // loc item yg dimakan
     // virtual void beli() = 0; // letak and quant item, loc item akan disimpan
