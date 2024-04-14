@@ -1,14 +1,13 @@
 #include "../Header/Hewan.hpp"
 
-map<string,pair<string,string>> Hewan::konversiPanen = {
-    {"COW",{"COW_MEAT",""}},
-    {"SHEEP",{"SHEEP_MEAT",""}},
-    {"HORSE",{"HORSE_MEAT",""}},
-    {"RABBIT",{"RABBIT_MEAT",""}},
-    {"SNAKE",{"SNAKE_MEAT",""}},
-    {"DUCK",{"DUCK_MEAT","DUCK_EGG"}},
-    {"CHICKEN",{"CHICKEN_MEAT","CHICKEN_EGG"}}
-};
+map<string, pair<string, string>> Hewan::konversiPanen = {
+    {"COW", {"COW_MEAT", ""}},
+    {"SHEEP", {"SHEEP_MEAT", ""}},
+    {"HORSE", {"HORSE_MEAT", ""}},
+    {"RABBIT", {"RABBIT_MEAT", ""}},
+    {"SNAKE", {"SNAKE_MEAT", ""}},
+    {"DUCK", {"DUCK_MEAT", "DUCK_EGG"}},
+    {"CHICKEN", {"CHICKEN_MEAT", "CHICKEN_EGG"}}};
 
 Hewan::Hewan(int idKonfig)
 {
@@ -33,11 +32,12 @@ void Hewan::makan(Product makanan)
 
 vector<Product *> Hewan::hasilPanen()
 {
-    pair<string,string> productPanen = konversiPanen[getName()];
+    pair<string, string> productPanen = konversiPanen[getName()];
     vector<Product *> prodArr;
-    prodArr.push_back(new Product(ParserProduk::convertNameToID(productPanen.first),true));
-    if(productPanen.second!=""){
-        prodArr.push_back(new Product(ParserProduk::convertNameToID(productPanen.second),true));
+    prodArr.push_back(new Product(ParserProduk::convertNameToID(productPanen.first), true));
+    if (productPanen.second != "")
+    {
+        prodArr.push_back(new Product(ParserProduk::convertNameToID(productPanen.second), true));
     }
     return prodArr;
 }

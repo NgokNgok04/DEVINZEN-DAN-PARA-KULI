@@ -84,7 +84,9 @@ T *MatrixArea<T>::getElement(int row, int col)
 template <class T>
 void MatrixArea<T>::deleteElement(int row, int col)
 {
-    delete this->matrix[row - 1][col - 1];
+    cout << "AAA" << endl;
+    // delete matrix[row - 1][col - 1];
+    cout << "BBB" << endl;
     this->matrix[row - 1][col - 1] = nullptr;
     cout << "delete Element success" << endl;
 }

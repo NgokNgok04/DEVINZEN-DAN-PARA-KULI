@@ -461,3 +461,14 @@ public:
         return "Bukan bahan pangan untuk binatang herbivora!";
     }
 };
+
+class InvalidNotProduct : public BaseException
+{
+public:
+    InvalidNotProduct(){};
+    ~InvalidNotProduct(){};
+    string what()
+    {
+        return "Barang pada slot tersebut bukanlah produk!";
+    }
+};

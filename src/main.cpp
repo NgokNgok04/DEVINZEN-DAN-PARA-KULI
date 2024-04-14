@@ -82,24 +82,34 @@ int main()
     PP.ParseFile(productConfigDirectory);
     PR.ParseFile(recipeConfigDirectory);
 
-    Petani P2;
+    // Petani P2;
+    Peternak P2;
     Hewan *met = new Hewan();
+    Hewan *met2 = new Hewan();
+    Hewan *met3 = new Hewan();
+    Hewan *met4 = new Hewan();
     Tanaman *kiel = new Tanaman();
     Tanaman *dan = new Tanaman();
+    Tanaman *akb = new Tanaman();
 
-    P2.setInv(2, 2, kiel);
-    P2.setInv(5, 2, met);
-    P2.setInv(5, 3, dan);
+    // P2.setInv(2, 2, kiel);
+    // P2.setInv(5, 3, dan);
+    // P2.setInv(6, 3, dan);
+    // P2.setInv(5, 2, met);
+    // P2.setInv(7, 1, met2);
+    // P2.setInv(5, 7, met3);
+
+    // // P2.panenTani();
+    // P2.cetakPenyimpanan();
+    // P2.tanam();
+    // P2.tanam();
+    // P2.tanam();
+    // P2.cetakPenyimpanan();
+    // P2.cetakLadang();
+
     // P2.panenTani();
-    P2.cetakPenyimpanan();
-    P2.tanam();
-    P2.tanam();
-    P2.cetakPenyimpanan();
-    P2.cetakLadang();
-
-    P2.panenTani();
-    P2.cetakPenyimpanan();
-    cout << "==========" << endl;
+    // P2.cetakPenyimpanan();
+    // cout << "==========" << endl;
     // try
     // {
     //     P2.panenTani();
@@ -109,8 +119,41 @@ int main()
     //     cout << "HAHA" << endl;
     //     cout << e.what() << endl;
     // }
-    P2.cetakLadang();
+    // P2.cetakLadang();
+    // P2.cetakPenyimpanan();
+
+    P2.setInv(2, 2, kiel);
+    P2.setInv(5, 3, dan);
+    P2.setInv(6, 3, dan);
+    P2.setInv(5, 2, met);
+    P2.setInv(7, 1, met2);
+    P2.setInv(5, 7, met3);
+    P2.setInv(5, 6, met4);
+
+    // P2.panenTani();
     P2.cetakPenyimpanan();
+    P2.ternak();
+    P2.ternak();
+    P2.ternak();
+    P2.ternak();
+    // P2.cetakPenyimpanan();
+    // P2.cetakTernak();
+    P2.panenTernak();
+    P2.cetakPenyimpanan();
+    cout << "==========" << endl;
+    // try
+    // {
+    //     P2.panenTernak();
+    // }
+    // catch (BaseException &e)
+    // {
+    //     cout << "HAHA" << endl;
+    //     cout << e.what() << endl;
+    // }
+    P2.cetakTernak();
+    P2.cetakPenyimpanan();
+
+    P2.kasihMakan();
 
     return 0;
 }

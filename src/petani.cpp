@@ -68,6 +68,7 @@ void Petani::tanam()
 {
     cout << "Pilih Tanaman dari penyimpanan" << endl;
     this->cetakPenyimpanan();
+    this->cetakLadang();
 
     bool isValid = false;
     string slot;
@@ -82,6 +83,8 @@ void Petani::tanam()
         int idx2 = std::stoi(slot.substr(1));
         try
         {
+            this->cetakLadang();
+
             if (slot.length() < 3 || slot.length() > 3)
             {
                 throw InvalidIndexMatrixArea();
@@ -159,17 +162,11 @@ void Petani::tanam()
             cout << e.what() << endl;
         }
     }
-    // Entah kenapa butuh ini
     int idx3 = petak[0] - 'A' + 1;
     int idx4 = std::stoi(petak.substr(1));
 
-    Tanaman *temp = new Tanaman;
-    temp = dynamic_cast<Tanaman *>(this->inventory.getElement(idx2, idx1));
-    // Hewan *temp2 = static_cast<Hewan *>(this->inventory.getElement(5, 2));
-    // cout << typeid(this->inventory.getElement(idx2, idx1)).name() << endl;
-    // cout << typeid(temp).name() << endl;
-    // cout << typeid(temp2).name() << endl;
-    // Tanaman *temp = (Tanaman *)this->inventory.getElement(idx2, idx1);
+    Tanaman *temp = dynamic_cast<Tanaman *>(this->inventory.getElement(idx2, idx1));
+
     if (temp)
     {
         cout << "SUCCC" << endl;
@@ -179,19 +176,10 @@ void Petani::tanam()
     {
         cout << "GAGGG" << endl;
     }
-    // if (temp2)
-    // {
-    //     cout << " AAAAAAAAWDDDDDDDDDDDDDDDDDDDD" << endl;
-    // }
-    // else
-    // {
-    //     cout << "kok" << endl;
-    // }
 
     this->ladang.setElement(idx4, idx3, temp); // karna tanaman
     this->inventory.deleteElement(idx2, idx1);
     cout << this->ladang.getElement(idx4, idx3)->getKode() << endl;
-
     cout << "Berhasil ditanam" << endl;
     // this->cetakPenyimpanan();
     // this->cetakLadang();
@@ -206,7 +194,6 @@ void Petani::panenTani()
     cout << "AWDAWD" << endl;
     try
     {
-
         if (!this->ladang.isEmpty())
         {
             this->cetakLadang();
@@ -221,11 +208,9 @@ void Petani::panenTani()
                 {
                     if (this->ladang.getElement(i, j) != nullptr)
                     {
-
                         cout << this->ladang.getElement(i, j)->getKode() << endl;
                         if (this->ladang.getElement(i, j)->getTipeObject() == "TANAMAN")
                         {
-
                             bool found = false;
                             int it = 0;
                             while (it < ownedTan.size())
@@ -256,7 +241,7 @@ void Petani::panenTani()
             }
             cout << " BATAS " << endl;
             // this->cetakLadang();
-            cout << this->ladang.getElement(5, 4)->getKode() << endl;
+            // cout << this->ladang.getElement(5, 4)->getKode() << endl;
 
             // Output tanaman yang ada
             for (size_t i = 0; i < ownedTan.size(); ++i)
@@ -276,6 +261,7 @@ void Petani::panenTani()
                     {
                         if (this->ladang.getElement(j, k) != nullptr)
                         {
+                            cout << j << k << endl;
                             cout << this->ladang.getElement(j, k)->getKode() << endl;
                             if (this->ladang.getElement(j, k)->getKode() == ownedTan[i])
                             {
@@ -284,10 +270,14 @@ void Petani::panenTani()
                                     count += 1;
                                     bool found = false;
                                     size_t it = 0;
-
+                                    cout << "1" << endl;
                                     while (it < readyPanen.size())
                                     {
-                                        if (readyPanen[it] == this->ladang.getElement(i, j)->getKode())
+                                        cout << "2" << endl;
+                                        // readyPanen[it] == this->ladang.getElement(i, j)->getKode();
+                                        cout << "3" << endl;
+
+                                        if (readyPanen[it] == this->ladang.getElement(j, k)->getKode())
                                         {
                                             found = true;
                                             it = readyPanen.size() + 1;
@@ -296,13 +286,10 @@ void Petani::panenTani()
                                     }
                                     if (!found)
                                     {
-                                        cout << this->ladang.getElement(j, k)->getKode() << endl;
-                                        cout << "-----------------" << endl;
                                         string temp = this->ladang.getElement(j, k)->getKode();
                                         readyPanen.push_back(temp);
-                                        cout << this->ladang.getElement(j, k)->getKode() << endl;
                                     }
-                                    cout << "-------adwada----------" << endl;
+                                    cout << "-----------------" << endl;
                                 }
                             }
                         }
@@ -326,7 +313,7 @@ void Petani::panenTani()
 
             if (readyPanen.size() > 0)
             {
-                cout << this->ladang.getElement(5, 4)->getKode() << endl;
+                // cout << this->ladang.getElement(5, 4)->getKode() << endl;
 
                 while (!isValid)
                 {
@@ -473,13 +460,14 @@ void Petani::panenTani()
                         {
                             if (this->inventory.getElement(j, k) == nullptr)
                             {
+                                cout << j << k << endl;
+                                cout << idx2 << idx1 << endl;
                                 // cout << this->ladang.getElement(idx2, idx1)->hasilPanen()->getName() << endl;
                                 // cout<<"PEPEK"<<endl;
                                 // cout << this->ladang.getElement(idx2, idx1)->hasilPanen()->getName() << endl;
                                 this->inventory.setElement(j, k, this->ladang.getElement(idx2, idx1)->hasilPanen());
                                 // this->setInv(j, k, this->ladang.getElement(idx2, idx1)->hasilPanen());
                                 cout << this->inventory.getElement(j, k)->getName() << endl;
-                                cout<<"KONTOL"<<endl;
                                 cout << this->inventory.getElement(1, 1)->getName() << endl;
 
                                 this->ladang.deleteElement(idx2, idx1);
@@ -489,10 +477,10 @@ void Petani::panenTani()
                         }
                         if (foundslot)
                         {
-                            cout<<"TESKTN"<<endl;
                             break;
                         }
                     }
+                    this->cetakPenyimpanan();
                 }
                 cout << this->inventory.getElement(1, 1)->getName() << endl;
                 cout << "Panen Berhasil" << endl;

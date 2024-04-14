@@ -15,14 +15,14 @@ private:
     string type;
     int weightHarvest;
     int weight;
-    static map<string,pair<string,string>> konversiPanen;
+    static map<string, pair<string, string>> konversiPanen;
 
 public:
     Hewan()
     {
         this->setKode("MET");
         this->setTipeObject("HEWAN");
-        this->setName("NGOK");
+        this->setName("DUCK");
         this->type = "CARNIVORE";
         this->weightHarvest = 10;
         this->weight = 100;
