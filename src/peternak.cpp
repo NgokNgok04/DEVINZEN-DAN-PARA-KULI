@@ -7,9 +7,11 @@ using namespace std;
 Peternak::Peternak() : Pemain()
 {
     this->tipe = "peternak";
-    MatrixArea<Hewan> n(8, 8);
+    int farmRow = ParserMisc::getFarmSize().first;
+    int farmCol = ParserMisc::getFarmSize().second;
+    MatrixArea<Hewan> n(farmRow, farmCol);
     this->ternakan = n;
-    this->username = "Petani1";
+    this->username = "Peternak1";
 }
 
 Peternak::Peternak(string usn, float guld, int bb, int smol, int med, int big, int terrows, int tercols) : Pemain(usn, guld, bb, smol, med, big)

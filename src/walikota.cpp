@@ -41,8 +41,7 @@ void WaliKota::pungutPajak(vector<Pemain *> allPlayers)
 
 void WaliKota::beli()
 {
-    cout << endl
-         << endl;
+    cout << endl;
     int wantToBuy = Toko::buyProcess();
     int subResponse;
     int counterAvailableItem;

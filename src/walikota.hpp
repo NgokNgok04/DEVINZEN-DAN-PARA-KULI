@@ -5,6 +5,8 @@
 
 class WaliKota : public Pemain
 {
+private:
+    map<string,int> daftarMaterial;
 public:
     WaliKota();
     WaliKota(string usn, float guld, int bb, int smol, int med, int big);

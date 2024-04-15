@@ -4,7 +4,7 @@
 #include "Toko.hpp"
 using namespace std;
 
-Toko::Toko(){
+void Toko::initialize(){
     int idDummyToko;
     for(int i = 0; i < ParserHewan::getConfigSize(); i++){
         idDummyToko = ParserHewan::getID(i);
@@ -48,7 +48,7 @@ int Toko::buyProcess(){
     }
     i++;
     cout << i << ". Cancel Buy" << endl;
-    cout << "Masukklah pilihan (1-4) :";
+    cout << "Masukkanlah pilihan (1-" << i << ") :";
     try{
         cin >> response;
 
@@ -85,17 +85,19 @@ void Toko::itemDibeli(GameObject* gameObject, int quantity){
 }
 
 void Toko::itemDijual(GameObject* gameObject, int quantity){
-    bool found = false;
-    for(int i = 0; i < availableProduct.size(); i++){
-        if (gameObject == &availableProduct[i].first){
-            availableProduct[i].second += quantity;
-            found = true;
-        };
-    };
-    if (!found){
+    if(gameObject->getTipeObject()=="PRODUCT"){
+        for(int i = 0; i < availableProduct.size(); i++){
+            if (gameObject == &availableProduct[i].first){
+                availableProduct[i].second += quantity;
+                return;
+            }
+        }
+    }
+    else{
         for (int i = 0; i < availableBangunan.size(); i++){
             if (gameObject == &availableBangunan[i].first){
                 availableBangunan[i].second += quantity;
+                return;
             }
         }
     }
@@ -197,4 +199,8 @@ int Toko::getStock(string name){
         }
     }
     return 0;
+}
+
+Bangunan Toko::getBangunan(int idx){
+    return availableBangunan[idx].first;
 }

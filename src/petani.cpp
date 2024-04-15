@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "petani.hpp"
+
 using namespace std;
 
 // EXTRA FUNCTIONS
@@ -19,9 +20,11 @@ bool isAllDigits(const string &str)
 Petani::Petani() : Pemain()
 {
     this->tipe = "petani";
-    MatrixArea<Tanaman> n(8, 8);
+    int FieldRow = ParserMisc::getFieldSize().first;
+    int FieldCol = ParserMisc::getFieldSize().second;
+    MatrixArea<Tanaman> n(FieldRow, FieldCol);
     this->ladang = n;
-    this->username = "petani1";
+    this->username = "Petani1";
 }
 
 Petani::Petani(string usn, float guld, int bb, int smol, int med, int big, int ladrows, int ladcols) : Pemain(usn, guld, bb, smol, med, big)

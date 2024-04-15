@@ -22,8 +22,8 @@ public:
     MatrixArea(int, int);
     ~MatrixArea();
     MatrixArea(const MatrixArea<T *> &);
-    MatrixArea<T *> &operator=(const MatrixArea<T *> &);
-    MatrixArea<T *> &operator+(const T* &);
+    MatrixArea<T *> operator=(const MatrixArea<T *> &);
+    void operator+(T* &);
     void setElement(int, int, T *);
     void deleteElement(int, int);
     T *getElement(int, int);

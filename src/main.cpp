@@ -23,11 +23,6 @@ vector<int> ParserHewan::harvestWeight = vector<int>();
 vector<int> ParserHewan::price = vector<int>();
 map<int, int> ParserHewan::IndexToIDMap = map<int, int>();
 map<int, int> ParserHewan::IDToIndexMap = map<int, int>();
-int ParserMisc::winningMoney = 0;
-int ParserMisc::winningWeight = 0;
-pair<int, int> ParserMisc::storageSize = pair<int, int>();
-pair<int, int> ParserMisc::fieldSize = pair<int, int>();
-pair<int, int> ParserMisc::farmSize = pair<int, int>();
 vector<int> ParserProduk::productID = vector<int>();
 vector<string> ParserProduk::productCode = vector<string>();
 vector<string> ParserProduk::productName = vector<string>();
@@ -62,7 +57,7 @@ vector<pair<Bangunan, int>> Toko::availableBangunan = vector<pair<Bangunan, int>
 int main()
 {
     ParserHewan PH;
-    // ParserMisc PM;
+    ParserMisc PM;
     ParserTanaman PT;
     ParserProduk PP;
     ParserResep PR;
@@ -73,21 +68,36 @@ int main()
     string recipeConfigDirectory = "../config/recipe.txt";
 
     PH.ParseFile(animalConfigDirectory);
-    // PM.ParseFile(miscConfigDirectory);
+    PM.ParseFile(miscConfigDirectory);
     PT.ParseFile(plantConfigDirectory);
     PP.ParseFile(productConfigDirectory);
     PR.ParseFile(recipeConfigDirectory);
+    Toko::initialize();
+    WaliKota w;
+    Product *teak = new Product(1, false);
+    Product *sandal = new Product(2, false);
+    Product *aloe = new Product(3, false);
+    Product *iron = new Product(4, false);
+    w.setInv(1, 1, teak);
+    for (int i = 2; i <= 10; i++)
+    {
+        w.setInv(1, i, teak);
+    }
 
-    Peternak p;
-    Product *pr = new Product();
-    cout << p.getGulden() << "KONTOL" << endl;
-    Hewan h(1);
-    Bangunan *b = new Bangunan();
-    p.setInv(1, 1, &h);
-    p.setInv(2, 1, b);
-    p.setInv(3, 1, pr);
-    p.panenTernak();
-    p.jual();
-    p.makan();
+    for (int i = 2; i <= 10; i++)
+    {
+        for (int j = 1; j <= 9; j++)
+        {
+            w.setInv(i, j, sandal);
+        }
+    }
+    cout << w.getGulden() << "\n";
+    w.cetakPenyimpanan();
+    w.bangunBangunan();
+    cout << w.getGulden() << "\n";
+    w.cetakPenyimpanan();
+    w.jual();
+    w.cetakPenyimpanan();
+    // w.beli();
     return 0;
 }

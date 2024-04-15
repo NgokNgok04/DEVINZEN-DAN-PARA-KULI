@@ -13,7 +13,14 @@ private:
     string origin;
 
 public:
-    Product(){};
+    Product()
+    {
+        this->setKode("SNM");
+        this->setTipeObject("PRODUCT");
+        this->setName("SNAKE_MEAT");
+        this->isFromHewan = true;
+        this->addedWeight = 1000000;
+    };
     Product(int, bool);
     bool fromHewan();
     int getAddedWeight();
