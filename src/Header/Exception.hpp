@@ -648,3 +648,53 @@ public:
         return "Tidak terdapat hewan dalam ternakan!";
     }
 };
+
+class CannotPrintFieldException : public BaseException{
+public:
+    CannotPrintFieldException(){};
+    ~CannotPrintFieldException(){};
+    string what()
+    {
+        return "Anda bukan petani, tidak bisa cetak ladang!";
+    }
+};
+
+class CannotPrintFarmException : public BaseException{
+public:
+    CannotPrintFarmException(){};
+    ~CannotPrintFarmException(){};
+    string what()
+    {
+        return "Anda bukan peternak, tidak bisa cetak peternakan!";
+    }
+};
+
+class CannotPlantException : public BaseException{
+public:
+    CannotPlantException(){};
+    ~CannotPlantException(){};
+    string what()
+    {
+        return "Anda bukan petani, tidak bisa menanam!";
+    }
+};
+
+class CannotFarmException : public BaseException{
+public:
+    CannotFarmException(){};
+    ~CannotFarmException(){};
+    string what()
+    {
+        return "Anda bukan peternak, tidak bisa beternak!";
+    }
+};
+
+class CannotFeedException : public BaseException{
+public:
+    CannotFeedException(){};
+    ~CannotFeedException(){};
+    string what()
+    {
+        return "Anda bukan peternak, tidak bisa kasih makan!";
+    }
+};
