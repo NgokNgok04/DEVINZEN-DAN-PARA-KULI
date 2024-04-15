@@ -461,3 +461,159 @@ public:
         return "Bukan bahan pangan untuk binatang herbivora!";
     }
 };
+
+class InvalidPositionMatrixArea : public BaseException
+{
+public:
+    InvalidPositionMatrixArea(){};
+    ~InvalidPositionMatrixArea(){};
+    string what()
+    {
+        return "Slot Matrix tidak valid";
+    }
+};
+
+class InvalidResponseToko : public BaseException
+{
+public:
+    InvalidResponseToko(){};
+    ~InvalidResponseToko(){};
+    string what()
+    {
+        return "Response tidak valid.";
+    }
+};
+
+class NotEatableSlot : public BaseException
+{
+public:
+    NotEatableSlot(){};
+    ~NotEatableSlot(){};
+    string what()
+    {
+        return "Slot yang dipilih bukan Makanan";
+    }
+};
+
+class EmptyFoodSlot : public BaseException
+{
+public:
+    EmptyFoodSlot(){};
+    ~EmptyFoodSlot(){};
+    string what()
+    {
+        return "Slot yang dipilih tidak mempunyai Makanan";
+    }
+};
+
+class EmptyInventory : public BaseException
+{
+public:
+    EmptyInventory(){};
+    ~EmptyInventory(){};
+    string what()
+    {
+        return "Inventory Kosong. Tidak dapat makan!";
+    }
+};
+
+class NoFoodInInventory : public BaseException
+{
+public:
+    NoFoodInInventory(){};
+    ~NoFoodInInventory(){};
+    string what()
+    {
+        return "Tidak ada Makanan di Inventory!";
+    }
+};
+
+class CantSellBangunan : public BaseException
+{
+public:
+    CantSellBangunan(){};
+    ~CantSellBangunan(){};
+    string what(){
+        return "Tidak bisa Menjual Bangunan!";
+    }
+};
+
+class ItemQuantityToSellNotEnough: public BaseException
+{
+public:
+  ItemQuantityToSellNotEnough(){};  
+  ~ItemQuantityToSellNotEnough(){};
+  string what(){
+    return "Tidak bisa Menjual. Kuantitas barang tidak cukup!";
+  }
+};
+
+class CantFindNamaBangunan : public BaseException
+{
+public:
+    CantFindNamaBangunan(){};
+    ~CantFindNamaBangunan(){};
+    string what(){
+        return "Tidak ada Bangunan dengan nama tersebut!";
+    }
+};
+
+class MaterialNotEnough : public BaseException
+{
+public:
+    MaterialNotEnough(){};
+    ~MaterialNotEnough(){};
+    string what(){
+        return "Material tidak cukup!";
+    }
+};
+
+class InvalidSubResponse : public BaseException
+{
+public:
+    InvalidSubResponse(){};
+    ~InvalidSubResponse(){};
+    string what(){
+        return "Input tidak valid!";
+    }
+};
+
+class InventoryNotEnough : public BaseException
+{
+public:
+    InventoryNotEnough(){};
+    ~InventoryNotEnough(){};
+    string what(){
+        return "Inventory yang tersisa tidak cukup!";
+    }
+};
+
+class StockTokoNotEnough : public BaseException
+{
+public:
+    StockTokoNotEnough(){};
+    ~StockTokoNotEnough(){};
+    string what(){
+        return "Stock Toko tidak cukup!";
+    }
+};
+
+class NotEnoughGulden : public BaseException
+{
+public:
+    NotEnoughGulden(){};
+    ~NotEnoughGulden(){};
+    string what(){
+        return "Gulden pemain tidak cukup!";
+    }
+};
+
+class SlotFilled : public BaseException
+{
+public:
+    SlotFilled(){};
+    ~SlotFilled(){};
+    string what(){
+        return "Slot Sudah diisi! Silahkan pilih slot lain!";
+    }
+};

@@ -5,6 +5,7 @@
 #include <vector>
 #include "matrixarea.cpp"
 #include "Toko.hpp"
+#include "./Header/Exception.hpp"
 // #include "./Header/GameObject.hpp"
 #include "./Implementation/GameObject.cpp"
 // #include "Toko.hpp"

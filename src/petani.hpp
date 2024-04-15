@@ -2,7 +2,7 @@
 #define PETANI_HPP
 
 #include "pemain.hpp"
-
+#include "./Header/Exception.hpp"
 #define KTKP_PETANI 13
 
 class Petani : public Pemain

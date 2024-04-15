@@ -4,6 +4,11 @@
 #include "Toko.hpp"
 using namespace std;
 
+vector<Hewan> Toko::availableHewan;
+vector<Tanaman> Toko::availableTanaman;
+vector<pair<Product,int>> Toko::availableProduct;
+vector<pair<Bangunan,int>> Toko::availableBangunan;
+
 Toko::Toko(){
     int idDummyToko;
     for(int i = 0; i < ParserHewan::getConfigSize(); i++){
