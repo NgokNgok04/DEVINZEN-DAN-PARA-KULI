@@ -76,7 +76,6 @@ int main()
     PT.ParseFile(plantConfigDirectory);
     PP.ParseFile(productConfigDirectory);
     PR.ParseFile(recipeConfigDirectory);
-    cout<<PR<<endl;
     Toko::initialize();
     WaliKota w;
     Product *teak = new Product(1,false);
@@ -85,6 +84,6 @@ int main()
     w.setInv(1,2,sandal);
     w.bangunBangunan();
     w.cetakPenyimpanan();
-
+    // w.beli();
     return 0;
 }

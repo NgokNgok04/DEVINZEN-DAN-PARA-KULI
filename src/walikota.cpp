@@ -110,6 +110,14 @@ void WaliKota::beli()
             cout << endl;
             cout << "Selamat Anda berhasil membeli " << quantity <<" " << itemToBuy->getName();
             cout << ". Uang yang tersisa " << this->gulden << "." << endl << endl;
+            
+            Product* temp = dynamic_cast<Product*>(itemToBuy);
+            if(temp){
+                if(temp->getType()=="PRODUCT_MATERIAL_PLANT"){
+                    int curVal = daftarMaterial[temp->getName()];
+                    daftarMaterial[temp->getName()] = curVal+1;
+                }
+            }
 
             cout << "Pilih slot untuk menyimpan barang yang anda beli!" << endl;
             this->inventory.displayObject();
@@ -188,63 +196,65 @@ void WaliKota::jual()
 
 void WaliKota::bangunBangunan(){
     cout << "Resep Bangunan yang ada sebagai berikut: " << endl;
-    for(int i = 0; i < Toko::availableBangunan.size(); i++){
+    for(int i = 0; i < ParserResep::getTotalRecipe(); i++){
         cout << "    ";
-        cout << i + 1 << ". " <<Toko::availableBangunan[i].first.getName();
+        cout << i + 1 << ". " <<Toko::getBangunan(i).getName();
         cout << " (";
-        cout << Toko::availableBangunan[i].first.getPrice() << " gulden, ";
-        for(int j = 0; j < ParserResep::getRecipeMaterialQuantity(i+1).size();j++){
-            cout << ParserResep::getRecipeMaterialQuantity(i+1)[j].first;
+        cout << Toko::getBangunan(i).getPrice() << " gulden, ";
+        int idBangunan = Toko::getBangunan(i).getID();
+        for(int j = 0; j < ParserResep::getRecipeMaterialQuantity(idBangunan).size();j++){
+            cout << ParserResep::getRecipeMaterialQuantity(idBangunan)[j].first;
             cout << " ";
             cout << ParserResep::getRecipeMaterialQuantity(i+1)[j].second;
-            if (j != ParserResep::getRecipeMaterialQuantity(i+1).size() - 1){
+            if (j != ParserResep::getRecipeMaterialQuantity(idBangunan).size() - 1){
                 cout << ",";
             }
             cout << " ";
         }
         cout << ")" << endl;
-        
+        cout<<ParserResep::getRecipeMaterialQuantity(idBangunan).size()<<endl;
     }
     string bangunanToBuy;
-    cout << "Bangunan yang ingin dibangun: ";
-    cin >> bangunanToBuy;
-
-    int idxToBuy = 0;
-    bool found = false;
-    for(int i = 0; i < Toko::availableBangunan.size(); i++){
-        if (Toko::availableBangunan[i].first.getName() == bangunanToBuy){
-            idxToBuy = i;
-            found = true;
-        }
-    }
-
-    try{
-        if (!found){
-            throw CantFindNamaBangunan();
-        }
-        int idRecipe = ParserResep::convertNameToID(Toko::availableBangunan[idxToBuy].first.getName());
-        vector<pair<string,int>> materialToBuild = ParserResep::getRecipeMaterialQuantity(idRecipe);
-        string materialToFind;
-        int counterMaterial;
-        for(int i = 0; i < materialToBuild.size(); i++){
-            materialToFind = materialToBuild[i].first;
-            counterMaterial = this->inventory.countSameName(materialToFind);
-            if (counterMaterial < materialToBuild[i].second){
-                throw MaterialNotEnough();
+    bool valid = false;
+    int idRecipe,idxToBuy=0;
+    while(!valid){
+        try{
+            cout << "Bangunan yang ingin dibangun: ";
+            cin >> bangunanToBuy;
+            bool found = false;
+            for(int i = 0; i < Toko::availableBangunan.size(); i++){
+                if (Toko::availableBangunan[i].first.getName() == bangunanToBuy){
+                    idxToBuy = i;
+                    found = true;
+                }
             }
+
+            if (!found){
+                throw CantFindNamaBangunan();
+            }
+            idRecipe = ParserResep::convertNameToID(Toko::availableBangunan[idxToBuy].first.getName());
+            vector<pair<string,int>> materialToBuild = ParserResep::getRecipeMaterialQuantity(idRecipe);
+            for(int i = 0; i < materialToBuild.size(); i++){
+                string materialToFind = materialToBuild[i].first;
+                // int counterMaterial = daftarMaterial[materialToFind];
+                cout<<materialToFind<<endl;
+                int counterMaterial = inventory.countSameName(materialToFind);
+                cout<<counterMaterial<<" "<<materialToBuild[i].second<<endl;
+                if (counterMaterial < materialToBuild[i].second){
+                    throw MaterialNotEnough();
+                }
+            }
+            valid = true;
+        }catch (BaseException& err){
+            cout<<err.what()<<endl;
         }
-
-    } catch (CantFindNamaBangunan err){
-        err.what();
-        cout << endl;
-    } catch (MaterialNotEnough err){
-        err.what();
-        cout << endl;
     }
-
+    GameObject* temp = dynamic_cast<GameObject*>(new Bangunan(idRecipe));
+    inventory+temp;
     this->ownedBangunan.push_back(Toko::availableBangunan[idxToBuy].first);
-    cout << Toko::availableBangunan[idxToBuy].first.getName() << " berhasil dibangun dan telah menjadi hak milik walikota!" << endl; 
+    cout << Toko::availableBangunan[idxToBuy].first.getName() << " berhasil dibangun dan telah menjadi hak milik walikota!" << endl;
 }
+
 
 float WaliKota::calculateTax(){
     return 0;

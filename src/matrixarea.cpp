@@ -37,7 +37,7 @@ MatrixArea<T>::MatrixArea(const MatrixArea<T *> &matrix)
 }
 
 template <class T>
-MatrixArea<T *> &MatrixArea<T>::operator=(const MatrixArea<T *> &matrix)
+MatrixArea<T *> MatrixArea<T>::operator=(const MatrixArea<T *> &matrix)
 {
     if (this != &matrix)
     {
@@ -49,7 +49,7 @@ MatrixArea<T *> &MatrixArea<T>::operator=(const MatrixArea<T *> &matrix)
 }
 
 template <class T>
-MatrixArea<T*> &MatrixArea<T>::operator+(const T* &object){
+void MatrixArea<T>::operator+(T* &object){
     bool found = false;
     for (int i = 0; i < this->rows; i++){
         for(int j = 0; j < this->cols; j++){
@@ -59,7 +59,6 @@ MatrixArea<T*> &MatrixArea<T>::operator+(const T* &object){
             }
         }
     }
-    return *this;
 }
 
 template <class T>

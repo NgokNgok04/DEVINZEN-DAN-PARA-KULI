@@ -12,6 +12,7 @@ vector<vector<pair<string, int>>> recipeMaterialQuantity = {
 };
 map<int, int> IndexToIDMap = {{0, 0}};
 map<int, int> IDToIndexMap = {{0, 0}};
+int ParserResep::totalRecipe = 0;
 
 void ParserResep::ParseFile(string fileDirectory)
 {
@@ -25,7 +26,6 @@ void ParserResep::ParseFile(string fileDirectory)
     }
 
     vector<string> SpaceStrippedLine;
-    vector<pair<string, int>> MaterialQuantityPairList;
     pair<string, int> pairTemp;
     string LineFile;
     int numValue;
@@ -52,6 +52,7 @@ void ParserResep::ParseFile(string fileDirectory)
         }
         this->recipePrice.push_back(numValue);
 
+        vector<pair<string, int>> MaterialQuantityPairList;
         for (int i = 4; i < SpaceStrippedLine.size(); i += 2)
         {
             pairTemp.first = SpaceStrippedLine[i];
@@ -73,6 +74,7 @@ void ParserResep::ParseFile(string fileDirectory)
         IndexToIDMap.insert({i, recipeID[i]});
         IDToIndexMap.insert({recipeID[i], i});
     }
+    totalRecipe = recipeID.size();
     cout << "Konfigurasi recipe.txt berhasil!\n";
 }
 
@@ -165,3 +167,8 @@ ostream &operator<<(ostream &os, ParserResep &PR)
     }
     return os;
 }
+
+int ParserResep::getTotalRecipe(){
+    return totalRecipe;
+}
+
