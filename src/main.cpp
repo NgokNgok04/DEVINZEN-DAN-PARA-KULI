@@ -1,22 +1,12 @@
 // #include <iostream>
 // #include <vector>
 // #include <string>
-#include "pemain.cpp"
 #include "petani.cpp"
 #include "peternak.cpp"
 #include "walikota.cpp"
-#include "./Implementation/Tanaman.cpp"
-#include "./Implementation/Hewan.cpp"
-#include "./Implementation/Product.cpp"
-#include "./Implementation/ParserTanaman.cpp"
-#include "./Implementation/ParserProduk.cpp"
-#include "./Implementation/ParserHewan.cpp"
-#include "./Implementation/ParserResep.cpp"
+#include "pemain.cpp"
+#include "Toko.cpp"
 // #include "./Implementation/ParserMisc.cpp"
-// #include "./Implementation/ParserMisc.cpp"
-#include "./misc/helper.cpp"
-// #include "walikota.cpp"
-// #include "./Implementation/Hewan.cpp"
 #include <iostream>
 // #include "./Header/Exception.hpp"
 // #include "./Header/GameManager.hpp"
@@ -63,6 +53,10 @@ vector<int> ParserTanaman::price = vector<int>();
 vector<string> ParserTanaman::validPlantTypes = vector<string>();
 map<int, int> ParserTanaman::IndexToIDMap = map<int, int>();
 map<int, int> ParserTanaman::IDToIndexMap = map<int, int>();
+vector<Hewan> Toko::availableHewan = vector<Hewan>();
+vector<Tanaman> Toko::availableTanaman = vector<Tanaman>();
+vector<pair<Product,int>> Toko::availableProduct = vector<pair<Product,int>>();
+vector<pair<Bangunan,int>> Toko::availableBangunan = vector<pair<Bangunan,int>>();
 
 int main()
 {
@@ -83,93 +77,6 @@ int main()
     PP.ParseFile(productConfigDirectory);
     PR.ParseFile(recipeConfigDirectory);
 
-    // Petani P1("Jawir",69,69,69,69,69,69,69);
-    Peternak P2;
-    // WaliKota P3("jAwir",69,69,69,69,69);
-    Hewan *met = new Hewan();
-    Hewan *met2 = new Hewan();
-    Hewan *met3 = new Hewan();
-    Hewan *met4 = new Hewan();
-    Tanaman *kiel = new Tanaman();
-    Tanaman *dan = new Tanaman();
-    Tanaman *akb = new Tanaman();
-
-    // P2.setInv(2, 2, kiel);
-    // P2.setInv(5, 3, dan);
-    // P2.setInv(6, 3, dan);
-    // P2.setInv(5, 2, met);
-    // P2.setInv(7, 1, met2);
-    // P2.setInv(5, 7, met3);
-
-    // // P2.panenTani();
-    // P2.cetakPenyimpanan();
-    // P2.tanam();
-    // P2.tanam();
-    // P2.tanam();
-    // P2.cetakPenyimpanan();
-    // P2.cetakLadang();
-
-    // P2.panenTani();
-    // P2.cetakPenyimpanan();
-    // cout << "==========" << endl;
-    // try
-    // {
-    //     P2.panenTani();
-    // }
-    // catch (BaseException &e)
-    // {
-    //     cout << "HAHA" << endl;
-    //     cout << e.what() << endl;
-    // }
-    // P2.cetakLadang();
-    // P2.cetakPenyimpanan();
-    // cout<<P1.getUsername()<<"\n";
-    // cout<<P2.getUsername()<<"\n";
-    // cout<<P3.getUsername()<<"\n";
-
-    // if(P1<P2){
-    //     cout<<"nama P1 lebih awal dari P2\n";
-    // } else {
-    //     cout<<"nama P2 lebih akhir atau sama dengan P2\n";
-    // }
-
-    // if(P1 == P2){
-    //     cout<<"Pemain sama\n";
-    // } else {
-    //     cout<<"Pemain beda\n";
-    // }
-    P2.setInv(2, 2, kiel);
-    P2.setInv(5, 3, dan);
-    P2.setInv(6, 3, dan);
-    P2.setInv(5, 2, met);
-    P2.setInv(7, 1, met2);
-    P2.setInv(5, 7, met3);
-    P2.setInv(5, 6, met4);
-
-    // P2.panenTani();
-    P2.cetakPenyimpanan();
-    P2.ternak();
-    P2.ternak();
-    P2.ternak();
-    P2.ternak();
-    // P2.cetakPenyimpanan();
-    // P2.cetakTernak();
-    P2.panenTernak();
-    P2.cetakPenyimpanan();
-    cout << "==========" << endl;
-    // try
-    // {
-    //     P2.panenTernak();
-    // }
-    // catch (BaseException &e)
-    // {
-    //     cout << "HAHA" << endl;
-    //     cout << e.what() << endl;
-    // }
-    P2.cetakTernak();
-    P2.cetakPenyimpanan();
-
-    P2.kasihMakan();
 
     return 0;
 }

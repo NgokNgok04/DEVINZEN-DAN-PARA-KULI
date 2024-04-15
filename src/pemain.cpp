@@ -125,7 +125,7 @@ void Pemain::makan() //butuh Catch EmptyInventory n NoFoodInInventory
         } catch (EmptyFoodSlot err){
             cout << endl << "Kamu mengambil harapan kosong dari penyimpanan." << endl;
         } catch (NotEatableSlot err){
-            cout << endl << "Apa yang kamu lakukan??!! Kamu mencoba untuk memakan itu?!!" << endl;
+            cout << endl << "Apa yang kamu lakukan?! Kamu mencoba untuk memakan itu?!" << endl;
         }
     }
 }
