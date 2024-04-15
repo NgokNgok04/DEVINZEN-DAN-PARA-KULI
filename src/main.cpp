@@ -78,12 +78,14 @@ int main()
     PR.ParseFile(recipeConfigDirectory);
 
     Peternak p;
+    Product *pr = new Product();
     cout << p.getGulden() << "KONTOL" << endl;
     Hewan h(1);
     Bangunan *b = new Bangunan();
     p.setInv(1, 1, &h);
     p.setInv(2, 1, b);
+    p.setInv(3, 1, pr);
     p.jual();
-    cout << p.getGulden() << endl;
+    p.makan();
     return 0;
 }
