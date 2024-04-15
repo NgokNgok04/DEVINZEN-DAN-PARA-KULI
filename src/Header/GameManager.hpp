@@ -47,9 +47,9 @@
 #include "ParserTanaman.hpp"
 #include "ParserProduk.hpp"
 #include "ParserResep.hpp"
-#include "petani.hpp"
-#include "peternak.hpp"
-#include "walikota.hpp"
+#include "../petani.hpp"
+#include "../peternak.hpp"
+#include "../walikota.hpp"
 using namespace std;
 
 class GameManager

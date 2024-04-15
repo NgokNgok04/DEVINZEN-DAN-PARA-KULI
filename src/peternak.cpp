@@ -339,12 +339,12 @@ void Peternak::jual()
             int idx2 = std::stoi(slot.substr(1));
             profit += this->inventory.getElement(idx2, idx1)->getPrice();
             cout << this->inventory.getElement(idx2, idx1)->getPrice() << endl;
+            Toko::itemDijual(inventory.getElement(idx2, idx1), quantityint);
             this->inventory.deleteElement(idx2, idx1);
         }
         this->gulden += profit;
         cout << this->gulden << ' ' << profit << endl;
         cout << "Barang Anda berhasil dijual! Uang Anda bertambah " << profit << " gulden!" << endl;
-        Toko::itemDijual(itemToSell, quantityint);
     }
     catch (BaseException &e)
     {

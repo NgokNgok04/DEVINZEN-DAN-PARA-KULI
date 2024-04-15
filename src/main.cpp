@@ -72,32 +72,43 @@ int main()
     PT.ParseFile(plantConfigDirectory);
     PP.ParseFile(productConfigDirectory);
     PR.ParseFile(recipeConfigDirectory);
-    Toko::initialize();
-    WaliKota w;
-    Product *teak = new Product(1, false);
-    Product *sandal = new Product(2, false);
-    Product *aloe = new Product(3, false);
-    Product *iron = new Product(4, false);
-    w.setInv(1, 1, teak);
-    for (int i = 2; i <= 10; i++)
-    {
-        w.setInv(1, i, teak);
-    }
+    // Toko::initialize();
+    // WaliKota w;
+    // Product *teak = new Product(1, false);
+    // Product *sandal = new Product(2, false);
+    // Product *aloe = new Product(3, false);
+    // Product *iron = new Product(4, false);
+    // w.setInv(1, 1, teak);
+    // for (int i = 2; i <= 10; i++)
+    // {
+    //     w.setInv(1, i, teak);
+    // }
 
-    for (int i = 2; i <= 10; i++)
-    {
-        for (int j = 1; j <= 9; j++)
-        {
-            w.setInv(i, j, sandal);
-        }
-    }
-    cout << w.getGulden() << "\n";
-    w.cetakPenyimpanan();
-    w.bangunBangunan();
-    cout << w.getGulden() << "\n";
-    w.cetakPenyimpanan();
-    w.jual();
-    w.cetakPenyimpanan();
+    // for (int i = 2; i <= 10; i++)
+    // {
+    //     for (int j = 1; j <= 9; j++)
+    //     {
+    //         w.setInv(i, j, sandal);
+    //     }
+    // }
+    // cout << w.getGulden() << "\n";
+    // w.cetakPenyimpanan();
+    // w.bangunBangunan();
+    // cout << w.getGulden() << "\n";
+    // w.cetakPenyimpanan();
+    // w.jual();
+    // w.cetakPenyimpanan();
     // w.beli();
+
+    WaliKota p;
+    Product *pr = new Product();
+    Hewan h(1);
+    Bangunan *b = new Bangunan();
+    p.setInv(1, 1, &h);
+    p.setInv(2, 1, b);
+    p.setInv(3, 1, pr);
+    p.jual();
+    p.makan();
+
     return 0;
 }

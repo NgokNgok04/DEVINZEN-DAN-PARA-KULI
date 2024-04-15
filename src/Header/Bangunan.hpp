@@ -12,6 +12,7 @@ public:
         this->setKode("BGN");
         this->setTipeObject("BANGUNAN");
         this->setName("SMALL_HOUSE");
+        this->setPrice(10000000);
     }
     Bangunan(int);
     Bangunan &operator=(const Bangunan &);
