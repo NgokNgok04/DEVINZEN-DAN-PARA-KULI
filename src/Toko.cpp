@@ -48,7 +48,7 @@ int Toko::buyProcess(){
     }
     i++;
     cout << i << ". Cancel Buy" << endl;
-    cout << "Masukklah pilihan (1-4) :";
+    cout << "Masukkanlah pilihan (1-" << i << ") :";
     try{
         cin >> response;
 
