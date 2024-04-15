@@ -2,7 +2,7 @@
 #define PETERNAK_HPP
 
 #include "pemain.hpp"
-
+#define KTKP_PETERNAK 11
 class Peternak : public Pemain
 {
 protected:
@@ -22,7 +22,7 @@ public:
     void beli();
     void jual();
     int countKekayaanTernakan();
-    int calculateTax();
+    float calculateTax();
 };
 
 #endif

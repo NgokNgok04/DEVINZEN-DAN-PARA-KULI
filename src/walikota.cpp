@@ -245,3 +245,7 @@ void WaliKota::bangunBangunan(){
     this->ownedBangunan.push_back(Toko::availableBangunan[idxToBuy].first);
     cout << Toko::availableBangunan[idxToBuy].first.getName() << "berhasil dibangun dan telah menjadi hak milik walikota!" << endl; 
 }
+
+float WaliKota::calculateTax(){
+    return 0;
+}

@@ -77,6 +77,11 @@ int main()
     PP.ParseFile(productConfigDirectory);
     PR.ParseFile(recipeConfigDirectory);
 
-
+    Petani p;
+    cout<<p.getGulden()<<"KONTOL"<<endl;
+    Hewan h(1);
+    p.setInv(1,1,&h);
+    p.jual();
+    cout<<p.getGulden()<<endl;
     return 0;
 }

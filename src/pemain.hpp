@@ -38,11 +38,12 @@ public:
     virtual void jual() = 0; // loc item yg akan dijual
     string getUsername();
     int getBeratBadan();
-    virtual int calculateTax() = 0;
+    int getGulden();
+    virtual float calculateTax() = 0;
     bool operator<(Pemain &other);
     bool operator==(Pemain &other);
-    float getTaxRate();
-    int countKekayaanInven(int);
+    float getTaxRate(int KKP);
+    int countKekayaanInven();
 };
 
 #endif

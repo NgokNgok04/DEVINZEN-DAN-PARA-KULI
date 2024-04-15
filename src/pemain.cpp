@@ -194,3 +194,7 @@ float Pemain::getTaxRate(int KKP){
         return 0.35;
     }
 }
+
+int Pemain::getGulden(){
+    return this->gulden;
+}

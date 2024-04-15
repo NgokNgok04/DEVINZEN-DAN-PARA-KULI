@@ -717,5 +717,4 @@ float Petani::calculateTax()
     int KKP = countKekayaanInven()+countKekayaanLadang()-KTKP_PETANI;
     cout<<KKP<<endl;
     return getTaxRate(KKP)*KKP;
-}eturn 0;
 }

@@ -64,6 +64,7 @@ int Toko::buyProcess(){
         err.what();
         cout << endl;
     }
+    return 0;
 }
 
 void Toko::itemDibeli(GameObject* gameObject, int quantity){
@@ -195,4 +196,5 @@ int Toko::getStock(string name){
             return availableBangunan[i].second;
         }
     }
+    return 0;
 }
