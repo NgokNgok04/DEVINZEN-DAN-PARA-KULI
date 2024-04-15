@@ -1,6 +1,7 @@
 // #include <iostream>
 // #include <vector>
 // #include <string>
+#include "./Implementation/GameManager.cpp"
 #include "petani.cpp"
 #include "peternak.cpp"
 #include "walikota.cpp"
@@ -22,11 +23,6 @@ vector<int> ParserHewan::harvestWeight = vector<int>();
 vector<int> ParserHewan::price = vector<int>();
 map<int, int> ParserHewan::IndexToIDMap = map<int, int>();
 map<int, int> ParserHewan::IDToIndexMap = map<int, int>();
-int ParserMisc::winningMoney = 0;
-int ParserMisc::winningWeight = 0;
-pair<int, int> ParserMisc::storageSize = pair<int, int>();
-pair<int, int> ParserMisc::fieldSize = pair<int, int>();
-pair<int, int> ParserMisc::farmSize = pair<int, int>();
 vector<int> ParserProduk::productID = vector<int>();
 vector<string> ParserProduk::productCode = vector<string>();
 vector<string> ParserProduk::productName = vector<string>();
@@ -61,7 +57,7 @@ vector<pair<Bangunan, int>> Toko::availableBangunan = vector<pair<Bangunan, int>
 int main()
 {
     ParserHewan PH;
-    // ParserMisc PM;
+    ParserMisc PM;
     ParserTanaman PT;
     ParserProduk PP;
     ParserResep PR;
@@ -72,7 +68,7 @@ int main()
     string recipeConfigDirectory = "../config/recipe.txt";
 
     PH.ParseFile(animalConfigDirectory);
-    // PM.ParseFile(miscConfigDirectory);
+    PM.ParseFile(miscConfigDirectory);
     PT.ParseFile(plantConfigDirectory);
     PP.ParseFile(productConfigDirectory);
     PR.ParseFile(recipeConfigDirectory);

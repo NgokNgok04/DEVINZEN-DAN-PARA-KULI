@@ -5,12 +5,14 @@
 
 class WaliKota : public Pemain
 {
+private:
+    map<string,int> daftarMaterial;
 public:
     WaliKota();
-    WaliKota(string usn, int guld, int bb, int smol, int med, int big);
+    WaliKota(string usn, float guld, int bb, int smol, int med, int big);
     WaliKota(const WaliKota &);
     ~WaliKota();
-    void pungutPajak();
+    void pungutPajak(vector<Pemain *>);
     void beli();
     void jual();
     void bangunBangunan();
