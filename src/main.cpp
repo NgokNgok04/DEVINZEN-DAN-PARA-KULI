@@ -1,6 +1,7 @@
 // #include <iostream>
 // #include <vector>
 // #include <string>
+#include "./Implementation/GameManager.cpp"
 #include "petani.cpp"
 #include "peternak.cpp"
 #include "walikota.cpp"
@@ -85,6 +86,7 @@ int main()
     p.setInv(1, 1, &h);
     p.setInv(2, 1, b);
     p.setInv(3, 1, pr);
+    p.panenTernak();
     p.jual();
     p.makan();
     return 0;

@@ -11,19 +11,19 @@ using namespace std;
 class Pemain
 {
 protected:
-    int gulden;
+    float gulden;
     int berat_badan;
     string tipe; // walikota, peternak, petani, pemain
     vector<int> ownedBuild;
     vector<Bangunan> ownedBangunan;
     MatrixArea<GameObject> inventory;
-    string username; //nama pemain
+    string username; // nama pemain
 
 public:
     // MatrixArea<GameObject> inventory;
 
     Pemain();
-    Pemain(string usn, int guld, int bb, int smol, int med, int big); // : MatrixArea(rows, cols)
+    Pemain(string usn, float guld, int bb, int smol, int med, int big); // : MatrixArea(rows, cols)
     Pemain(const Pemain &);
     ~Pemain();
 
@@ -33,7 +33,7 @@ public:
     // specifics
     void setInv(int, int, GameObject *);
     void cetakPenyimpanan();
-    void makan(); // loc item yg dimakan
+    void makan();            // loc item yg dimakan
     virtual void beli() = 0; // letak and quant item, loc item akan disimpan
     virtual void jual() = 0; // loc item yg akan dijual
     string getUsername();

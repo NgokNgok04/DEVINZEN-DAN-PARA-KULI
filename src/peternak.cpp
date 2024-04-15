@@ -12,7 +12,7 @@ Peternak::Peternak() : Pemain()
     this->username = "Petani1";
 }
 
-Peternak::Peternak(string usn, int guld, int bb, int smol, int med, int big, int terrows, int tercols) : Pemain(usn, guld, bb, smol, med, big)
+Peternak::Peternak(string usn, float guld, int bb, int smol, int med, int big, int terrows, int tercols) : Pemain(usn, guld, bb, smol, med, big)
 {
     this->tipe = "peternak";
     MatrixArea<Hewan> n(terrows, tercols);

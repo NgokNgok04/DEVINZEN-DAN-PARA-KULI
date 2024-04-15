@@ -10,7 +10,7 @@ protected:
 
 public:
     Peternak();
-    Peternak(string usn, int guld, int bb, int smol, int med, int big, int terrows, int tercols);
+    Peternak(string usn, float guld, int bb, int smol, int med, int big, int terrows, int tercols);
     Peternak(const Peternak &);
     ~Peternak();
 

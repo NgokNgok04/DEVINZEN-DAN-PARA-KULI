@@ -10,7 +10,7 @@ WaliKota::WaliKota() : Pemain()
     this->username = "Walikota";
 }
 
-WaliKota::WaliKota(string usn, int guld, int bb, int smol, int med, int big) : Pemain(usn, guld, bb, smol, med, big)
+WaliKota::WaliKota(string usn, float guld, int bb, int smol, int med, int big) : Pemain(usn, guld, bb, smol, med, big)
 {
     this->tipe = "walikota";
 }
@@ -25,9 +25,18 @@ WaliKota::~WaliKota()
     this->inventory.~MatrixArea();
 }
 
-void WaliKota::pungutPajak()
+void WaliKota::pungutPajak(vector<Pemain *> allPlayers)
 {
     // Butuh track semua player
+    float gained = 0;
+    for (int i = 0; i < allPlayers.size(); i++)
+    {
+        if (allPlayers[i]->getTipe() == "petani" || allPlayers[i]->getTipe() == "peternak")
+        {
+            gained += allPlayers[i]->calculateTax();
+        }
+    }
+    this->gulden += gained;
 }
 
 void WaliKota::beli()
@@ -188,6 +197,7 @@ void WaliKota::beli()
         }
     }
 }
+
 void WaliKota::jual()
 {
     try

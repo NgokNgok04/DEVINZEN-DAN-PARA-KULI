@@ -13,7 +13,7 @@ Pemain::Pemain()
     this->ownedBuild = {0, 0, 0};
 }
 
-Pemain::Pemain(string usn, int guld, int bb, int smol, int med, int big)
+Pemain::Pemain(string usn, float guld, int bb, int smol, int med, int big)
 {
     this->gulden = guld;
     this->berat_badan = bb;
