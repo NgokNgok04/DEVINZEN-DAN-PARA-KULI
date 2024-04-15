@@ -41,6 +41,8 @@ public:
     virtual int calculateTax() = 0;
     bool operator<(Pemain &other);
     bool operator==(Pemain &other);
+    float getTaxRate();
+    int countKekayaanInven(int);
 };
 
 #endif

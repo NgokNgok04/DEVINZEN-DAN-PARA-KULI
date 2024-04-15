@@ -699,12 +699,23 @@ void Petani::panenTani()
     }
 }
 
-int Petani::calculateKKP()
-{
-    return 0;
+int Petani::countKekayaanLadang(){
+    int sum=0;
+    for(int i=1;i<ladang.getRows();i++){
+        for(int j=1;j<ladang.getCols();j++){
+            Tanaman* ptr = ladang.getElement(i,j);
+            if(ptr!=nullptr){
+                sum+=ptr->getPrice();
+            }
+        }
+    }
+    return sum;
 }
 
-int Petani::calculateTax()
-{
-    return 0;
+float Petani::calculateTax()
+{   
+    int KKP = countKekayaanInven()+countKekayaanLadang()-KTKP_PETANI;
+    cout<<KKP<<endl;
+    return getTaxRate(KKP)*KKP;
+}eturn 0;
 }

@@ -21,7 +21,7 @@ public:
     void panenTernak();
     void beli();
     void jual();
-    int calculateKKP();
+    int countKekayaanTernakan();
     int calculateTax();
 };
 

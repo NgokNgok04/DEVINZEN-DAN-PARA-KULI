@@ -19,8 +19,8 @@ public:
     void panenTani();
     void beli();
     void jual();
-    int calculateKKP();
     int calculateTax();
+    int countKekayaanLadang();
 };
 
 #endif

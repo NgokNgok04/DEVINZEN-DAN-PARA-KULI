@@ -815,12 +815,20 @@ void Peternak::panenTernak()
     }
 }
 
-int Peternak::calculateKKP()
-{
-    return 0;
+float Peternak::calculateTax()
+{   
+    int KKP = countKekayaanInven()+countKekayaanTernakan()-KTKP_PETERNAK;
+    return getTaxRate(KKP)*KKP;
 }
 
-int Peternak::calculateTax()
-{
-    return 0;
+int Peternak::countKekayaanTernakan(){
+    int sum=0;
+    for(int i=0;i<ternakan.getRows();i++){
+        for(int j=0;j<ternakan.getCols();i++){
+            if(ternakan.getElement(i,j)!=0){
+                sum+=ternakan.getElement(i,j)->getPrice();
+            }
+        }
+    }
+    return sum;
 }
