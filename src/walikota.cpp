@@ -151,26 +151,29 @@ void WaliKota::jual()
     cout << "Berikut merupakan penyimpanan Anda" << endl;
     this->inventory.displayObject();
     int quantity;
-    cout << "Masukkan kuantitas barang yang ingin dijual :";
+    cout << "Masukkan kuantitas barang yang ingin dijual : ";
     cin >> quantity;
 
     if (quantity > ((this->inventory.getCols() * this->inventory.getRows()) - this->inventory.getEmptySlot())){
         throw ItemQuantityToSellNotEnough();
     }
 
-    cout << endl << "Silahkan pilih petak yang ingin anda jual!";
+    cout << endl << "Silahkan pilih petak yang ingin anda jual!" << endl;
     string slot;
     pair<int,int> position;
     int profit = 0;
     GameObject* itemToSell;
-
+    vector<GameObject *> validItemToSell;
     bool isValid;
     for(int i = 0; i < quantity; i++){
+        isValid = false;
+        
         cout << "Petak slot " << i + 1 << ": ";
         cin >> slot;
 
         try{
             position = this->inventory.getPositionFromSlot(slot);
+            
             itemToSell = this->inventory.getElement(position.first, position.second);
             isValid = true;
         } catch (InvalidPositionMatrixArea err){

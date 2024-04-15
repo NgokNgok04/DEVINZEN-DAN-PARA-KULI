@@ -25,7 +25,6 @@ void ParserResep::ParseFile(string fileDirectory)
     }
 
     vector<string> SpaceStrippedLine;
-    vector<pair<string, int>> MaterialQuantityPairList;
     pair<string, int> pairTemp;
     string LineFile;
     int numValue;
@@ -52,6 +51,7 @@ void ParserResep::ParseFile(string fileDirectory)
         }
         this->recipePrice.push_back(numValue);
 
+        vector<pair<string, int>> MaterialQuantityPairList;
         for (int i = 4; i < SpaceStrippedLine.size(); i += 2)
         {
             pairTemp.first = SpaceStrippedLine[i];
