@@ -201,13 +201,13 @@ void WaliKota::jual()
 {
     try
     {
-        cout << "Berikut merupakan penyimpanan Anda" << endl;
+        std::cout << "Berikut merupakan penyimpanan Anda" << endl;
         this->inventory.displayObject();
         string quantity;
         int quantityint;
-        cout << "Masukkan kuantitas barang yang ingin dijual :";
-        cin >> quantity;
-        cout << endl;
+        std::cout << "Masukkan kuantitas barang yang ingin dijual : ";
+        std::cin >> quantity;
+        std::cout << endl;
         if (!isAllDigits(quantity))
         {
             throw InvalidPanenIdx();
@@ -221,22 +221,22 @@ void WaliKota::jual()
             }
         }
 
-        cout << endl
-             << "Silahkan pilih petak yang ingin anda jual!";
+        std::cout << endl
+                  << "Silahkan pilih petak yang ingin anda jual!"
+                  << endl;
         string slot;
         pair<int, int> position;
         int profit = 0;
         GameObject *itemToSell;
-
         bool isValid;
         for (int i = 0; i < quantityint; i++)
         {
             isValid = false;
             while (!isValid)
             {
-                cout << "Petak slot " << i + 1 << ": ";
-                cin >> slot;
-                cout << endl;
+                std::cout << "Petak slot " << i + 1 << ": ";
+                std::cin >> slot;
+                std::cout << endl;
 
                 int idx1 = slot[0] - 'A' + 1;
                 int idx2 = std::stoi(slot.substr(1));
@@ -264,23 +264,23 @@ void WaliKota::jual()
                 }
                 catch (BaseException &e)
                 {
-                    cout << e.what() << endl;
+                    std::cout << e.what() << endl;
                 }
             }
             int idx1 = slot[0] - 'A' + 1;
             int idx2 = std::stoi(slot.substr(1));
-            profit += itemToSell->getPrice();
+            profit += this->inventory.getElement(idx2, idx1)->getPrice();
             cout << this->inventory.getElement(idx2, idx1)->getPrice() << endl;
-            this->inventory.deleteElement(position.first, position.second);
+            Toko::itemDijual(this->inventory.getElement(idx2, idx1), 1);
+            this->inventory.deleteElement(idx2, idx1);
         }
         this->gulden += profit;
         cout << this->gulden << ' ' << profit << endl;
         cout << "Barang Anda berhasil dijual! Uang Anda bertambah " << profit << " gulden!" << endl;
-        Toko::itemDijual(itemToSell, quantityint);
     }
     catch (BaseException &e)
     {
-        cout << e.what() << endl;
+        std::cout << e.what() << endl;
     }
 }
 

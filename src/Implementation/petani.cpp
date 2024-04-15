@@ -6,7 +6,6 @@ using namespace std;
 
 // EXTRA FUNCTIONS
 
-
 Petani::Petani() : Pemain()
 {
     this->tipe = "petani";
@@ -40,121 +39,170 @@ Petani::~Petani()
 void Petani::beli()
 {
     std::cout << endl
-         << endl;
-    
+              << endl;
 
     GameObject *itemToBuy = nullptr;
     bool isSubMenuCancelled = false;
     int wantToBuy;
-    while(!isSubMenuCancelled){
+    while (!isSubMenuCancelled)
+    {
         wantToBuy = Toko::buyProcess();
         std::cout << endl;
-        try {
-            if (wantToBuy == 0){
+        try
+        {
+            if (wantToBuy == 0)
+            {
                 std::cout << "Ditunggu Kedatangan Selanjutnya!!" << endl;
                 isSubMenuCancelled = true;
-            } else if (wantToBuy == -1){
+            }
+            else if (wantToBuy == -1)
+            {
                 isSubMenuCancelled = true;
-            } else {
+            }
+            else
+            {
                 string subResponse;
                 int validSubResponse;
                 int counterAvailableItem;
-                if (wantToBuy == 1){
+                if (wantToBuy == 1)
+                {
                     Toko::displayAvailableHewan();
                     std::cout << "Barang yang ingin dibeli : ";
                     std::cin >> subResponse;
 
-                    if (isAllDigits(subResponse)){
+                    if (isAllDigits(subResponse))
+                    {
                         validSubResponse = stoi(subResponse);
-                    } else {
+                    }
+                    else
+                    {
                         throw InvalidSubResponse();
                     }
 
-                    if (validSubResponse != Toko::availableHewan.size() + 1){
-                        if (validSubResponse >= 1 && validSubResponse <= Toko::availableHewan.size()){
+                    if (validSubResponse != Toko::availableHewan.size() + 1)
+                    {
+                        if (validSubResponse >= 1 && validSubResponse <= Toko::availableHewan.size())
+                        {
                             itemToBuy = &Toko::availableHewan[validSubResponse - 1];
                             isSubMenuCancelled = true;
-                        } else {
+                        }
+                        else
+                        {
                             throw InvalidSubResponse();
                         }
-                    } else {
-                        std::cout << endl; //cancel
                     }
-
-                } else if (wantToBuy == 2){
+                    else
+                    {
+                        std::cout << endl; // cancel
+                    }
+                }
+                else if (wantToBuy == 2)
+                {
                     Toko::displayAvailableTanaman();
                     std::cout << "Barang yang ingin dibeli : ";
                     std::cin >> subResponse;
 
-                    if (isAllDigits(subResponse)){
+                    if (isAllDigits(subResponse))
+                    {
                         validSubResponse = stoi(subResponse);
-                    } else {
+                    }
+                    else
+                    {
                         throw InvalidSubResponse();
                     }
 
-                    if (validSubResponse != Toko::availableTanaman.size() + 1){
-                        if (validSubResponse >= 1 && validSubResponse <= Toko::availableTanaman.size()){
+                    if (validSubResponse != Toko::availableTanaman.size() + 1)
+                    {
+                        if (validSubResponse >= 1 && validSubResponse <= Toko::availableTanaman.size())
+                        {
                             itemToBuy = &Toko::availableTanaman[validSubResponse - 1];
                             isSubMenuCancelled = true;
-                        } else {
+                        }
+                        else
+                        {
                             throw InvalidSubResponse();
                         }
-
-                    } else {
-                        std::cout << endl; //cancel
                     }
-                } else if (wantToBuy == 3 && !Toko::isProductEmptyStock()){
+                    else
+                    {
+                        std::cout << endl; // cancel
+                    }
+                }
+                else if (wantToBuy == 3 && !Toko::isProductEmptyStock())
+                {
                     counterAvailableItem = Toko::displayAvailableProduct();
                     std::cout << "Barang yang ingin dibeli : ";
                     std::cin >> subResponse;
 
-                    if (isAllDigits(subResponse)){
+                    if (isAllDigits(subResponse))
+                    {
                         validSubResponse = stoi(subResponse);
-                    } else {
+                    }
+                    else
+                    {
                         throw InvalidSubResponse();
                     }
 
-                    if (validSubResponse != counterAvailableItem + 1){
-                        if (validSubResponse >= 1 && validSubResponse <= counterAvailableItem){
+                    if (validSubResponse != counterAvailableItem + 1)
+                    {
+                        if (validSubResponse >= 1 && validSubResponse <= counterAvailableItem)
+                        {
                             int count = 0;
                             bool found = false;
-                            for (int i = 0; i < Toko::availableProduct.size(); i++){
-                                if (Toko::availableProduct[i].second != 0){
+                            for (int i = 0; i < Toko::availableProduct.size(); i++)
+                            {
+                                if (Toko::availableProduct[i].second != 0)
+                                {
                                     count++;
                                 }
-                                if (validSubResponse == count && !found){
+                                if (validSubResponse == count && !found)
+                                {
                                     itemToBuy = &Toko::availableProduct[i].first;
                                     // itemToBuy = &Toko::availableProduct[count].first;
                                     found = true;
                                     isSubMenuCancelled = true;
                                 }
                             }
-                        } else{
-                            throw InvalidSubResponse(); //response < 0 atau > seharusnya
                         }
-                    } else {
-                        std::cout << endl; //cancel
+                        else
+                        {
+                            throw InvalidSubResponse(); // response < 0 atau > seharusnya
+                        }
                     }
-                } else if (((wantToBuy == 3 && Toko::isProductEmptyStock()) || (wantToBuy == 4)) && !Toko::isBangunanEmptyStock()){
+                    else
+                    {
+                        std::cout << endl; // cancel
+                    }
+                }
+                else if (((wantToBuy == 3 && Toko::isProductEmptyStock()) || (wantToBuy == 4)) && !Toko::isBangunanEmptyStock())
+                {
                     counterAvailableItem = Toko::displayAvailableBangunan();
                     std::cout << "Barang yang ingin dibeli : ";
                     std::cin >> subResponse;
 
-                    if (isAllDigits(subResponse)){
+                    if (isAllDigits(subResponse))
+                    {
                         validSubResponse = stoi(subResponse);
-                    } else {
+                    }
+                    else
+                    {
                         throw InvalidSubResponse();
                     }
 
-                    if (validSubResponse != counterAvailableItem + 1){
-                        if (validSubResponse >= 1 && validSubResponse <= counterAvailableItem){
+                    if (validSubResponse != counterAvailableItem + 1)
+                    {
+                        if (validSubResponse >= 1 && validSubResponse <= counterAvailableItem)
+                        {
                             int count = 0;
                             bool found = false;
-                            for (int i = 0; i < Toko::availableBangunan.size(); i++){
-                                if (Toko::availableBangunan[i].second != 0){
+                            for (int i = 0; i < Toko::availableBangunan.size(); i++)
+                            {
+                                if (Toko::availableBangunan[i].second != 0)
+                                {
                                     count++;
                                 }
-                                if (validSubResponse == count && !found){
+                                if (validSubResponse == count && !found)
+                                {
                                     itemToBuy = &Toko::availableBangunan[i].first;
                                     // itemToBuy = &Toko::availableBangunan[count].first;
                                     this->ownedBangunan.push_back(Toko::availableBangunan[count].first);
@@ -162,21 +210,29 @@ void Petani::beli()
                                     isSubMenuCancelled = true;
                                 }
                             }
-                        } else{
+                        }
+                        else
+                        {
                             throw InvalidSubResponse();
                         }
-                    } else {
-                        std::cout << endl; //cancel
+                    }
+                    else
+                    {
+                        std::cout << endl; // cancel
                     }
                 }
             }
-        } catch (BaseException& err){
+        }
+        catch (BaseException &err)
+        {
             cout << err.what();
-            std::cout << endl << endl;
+            std::cout << endl
+                      << endl;
         }
     }
 
-    if (itemToBuy != nullptr){
+    if (itemToBuy != nullptr)
+    {
         std::cout << endl
                   << "Uang Anda : " << this->gulden << endl;
         this->inventory.displayRemainderSlot();
@@ -185,56 +241,70 @@ void Petani::beli()
         string quantity;
         int validQuantity;
 
-        try{
+        try
+        {
             std::cout << "Kuantitas : ";
             cin >> quantity;
-            if (isAllDigits(quantity)){
+            if (isAllDigits(quantity))
+            {
                 validQuantity = stoi(quantity);
-                if (validQuantity == 0) {
+                if (validQuantity == 0)
+                {
                     throw InvalidSubResponse();
                 }
-            } else {
+            }
+            else
+            {
                 throw InvalidSubResponse();
             }
 
             this->gulden -= itemToBuy->getPrice() * validQuantity;
-            if (validQuantity > this->inventory.getEmptySlot()){
+            if (validQuantity > this->inventory.getEmptySlot())
+            {
                 this->gulden += itemToBuy->getPrice() * validQuantity;
                 throw InventoryNotEnough();
             }
             int stock = Toko::getStock(itemToBuy->getName());
-            if (stock != -1 && stock < validQuantity){
+            if (stock != -1 && stock < validQuantity)
+            {
                 this->gulden += itemToBuy->getPrice() * validQuantity;
                 throw StockTokoNotEnough();
             }
-            if (this->gulden < 0){
+            if (this->gulden < 0)
+            {
                 this->gulden += itemToBuy->getPrice() * validQuantity;
                 throw NotEnoughGulden();
             }
             std::cout << endl;
             std::cout << "Selamat Anda berhasil membeli " << validQuantity << " " << itemToBuy->getName();
             std::cout << ". Uang yang tersisa " << this->gulden << "." << endl
-                << endl;
-                
+                      << endl;
+
             std::cout << "Pilih slot untuk menyimpan barang yang anda beli!" << endl;
             this->inventory.displayObject();
             string slot;
             bool isValid = false;
-            for (int i = 0; i < validQuantity; i++){
+            for (int i = 0; i < validQuantity; i++)
+            {
                 isValid = false;
-                while(!isValid){
-                    try {
+                while (!isValid)
+                {
+                    try
+                    {
                         std::cout << "Petak slot " << i + 1 << ": ";
                         std::cin >> slot;
                         pair<int, int> position;
                         position = this->inventory.getPositionFromSlot(slot);
-                        if (this->inventory.getElement(position.first,position.second) != nullptr){
+                        if (this->inventory.getElement(position.first, position.second) != nullptr)
+                        {
                             throw SlotFilled();
                         }
 
                         this->inventory.setElement(position.first, position.second, itemToBuy);
                         isValid = true;
-                    } catch (BaseException& err){
+                    }
+                    catch (BaseException &err)
+                    {
                         cout << err.what();
                         cout << endl;
                     }
@@ -243,14 +313,12 @@ void Petani::beli()
             std::cout << itemToBuy->getName() << " berhasil disimpan dalam penyimpanan!" << endl;
             Toko::itemDibeli(itemToBuy, validQuantity);
         }
-        catch (BaseException& err)
+        catch (BaseException &err)
         {
             std::cout << err.what();
             std::cout << endl;
         }
-     }
-        
-    
+    }
 }
 
 void Petani::jual() // perlu catch ItemQuantityToSellNotEnough
@@ -278,8 +346,8 @@ void Petani::jual() // perlu catch ItemQuantityToSellNotEnough
         }
 
         std::cout << endl
-             << "Silahkan pilih petak yang ingin anda jual!"
-             << endl;
+                  << "Silahkan pilih petak yang ingin anda jual!"
+                  << endl;
         string slot;
         pair<int, int> position;
         int profit = 0;
@@ -336,13 +404,13 @@ void Petani::jual() // perlu catch ItemQuantityToSellNotEnough
             int idx1 = slot[0] - 'A' + 1;
             int idx2 = std::stoi(slot.substr(1));
             profit += this->inventory.getElement(idx2, idx1)->getPrice();
-            std::cout << this->inventory.getElement(idx2, idx1)->getPrice() << endl;
+            cout << this->inventory.getElement(idx2, idx1)->getPrice() << endl;
+            Toko::itemDijual(this->inventory.getElement(idx2, idx1), 1);
             this->inventory.deleteElement(idx2, idx1);
         }
         this->gulden += profit;
-        std::cout << this->gulden << ' ' << profit << endl;
-        std::cout << "Barang Anda berhasil dijual! Uang Anda bertambah " << profit << " gulden!" << endl;
-        Toko::itemDijual(itemToSell, quantityint);
+        cout << this->gulden << ' ' << profit << endl;
+        cout << "Barang Anda berhasil dijual! Uang Anda bertambah " << profit << " gulden!" << endl;
     }
     catch (BaseException &e)
     {
@@ -350,7 +418,7 @@ void Petani::jual() // perlu catch ItemQuantityToSellNotEnough
     }
 }
 
-MatrixArea<Tanaman>& Petani::getLadang()
+MatrixArea<Tanaman> &Petani::getLadang()
 {
     return this->ladang;
 }
