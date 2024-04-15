@@ -473,7 +473,6 @@ public:
     }
 };
 
-
 class InvalidPositionMatrixArea : public BaseException
 {
 public:
@@ -545,19 +544,21 @@ class CantSellBangunan : public BaseException
 public:
     CantSellBangunan(){};
     ~CantSellBangunan(){};
-    string what(){
+    string what()
+    {
         return "Tidak bisa Menjual Bangunan!";
     }
 };
 
-class ItemQuantityToSellNotEnough: public BaseException
+class ItemQuantityToSellNotEnough : public BaseException
 {
 public:
-  ItemQuantityToSellNotEnough(){};  
-  ~ItemQuantityToSellNotEnough(){};
-  string what(){
-    return "Tidak bisa Menjual. Kuantitas barang tidak cukup!";
-  }
+    ItemQuantityToSellNotEnough(){};
+    ~ItemQuantityToSellNotEnough(){};
+    string what()
+    {
+        return "Tidak bisa Menjual. Kuantitas barang tidak cukup!";
+    }
 };
 
 class CantFindNamaBangunan : public BaseException
@@ -565,7 +566,8 @@ class CantFindNamaBangunan : public BaseException
 public:
     CantFindNamaBangunan(){};
     ~CantFindNamaBangunan(){};
-    string what(){
+    string what()
+    {
         return "Tidak ada Bangunan dengan nama tersebut!";
     }
 };
@@ -575,7 +577,8 @@ class MaterialNotEnough : public BaseException
 public:
     MaterialNotEnough(){};
     ~MaterialNotEnough(){};
-    string what(){
+    string what()
+    {
         return "Material tidak cukup!";
     }
 };
@@ -585,7 +588,8 @@ class InvalidSubResponse : public BaseException
 public:
     InvalidSubResponse(){};
     ~InvalidSubResponse(){};
-    string what(){
+    string what()
+    {
         return "Input tidak valid!";
     }
 };
@@ -595,7 +599,8 @@ class InventoryNotEnough : public BaseException
 public:
     InventoryNotEnough(){};
     ~InventoryNotEnough(){};
-    string what(){
+    string what()
+    {
         return "Inventory yang tersisa tidak cukup!";
     }
 };
@@ -605,7 +610,8 @@ class StockTokoNotEnough : public BaseException
 public:
     StockTokoNotEnough(){};
     ~StockTokoNotEnough(){};
-    string what(){
+    string what()
+    {
         return "Stock Toko tidak cukup!";
     }
 };
@@ -615,7 +621,8 @@ class NotEnoughGulden : public BaseException
 public:
     NotEnoughGulden(){};
     ~NotEnoughGulden(){};
-    string what(){
+    string what()
+    {
         return "Gulden pemain tidak cukup!";
     }
 };
@@ -625,7 +632,19 @@ class SlotFilled : public BaseException
 public:
     SlotFilled(){};
     ~SlotFilled(){};
-    string what(){
+    string what()
+    {
         return "Slot Sudah diisi! Silahkan pilih slot lain!";
+    }
+};
+
+class NoAnimalInCage : public BaseException
+{
+public:
+    NoAnimalInCage(){};
+    ~NoAnimalInCage(){};
+    string what()
+    {
+        return "Tidak terdapat hewan dalam ternakan!";
     }
 };
