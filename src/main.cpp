@@ -93,55 +93,124 @@ int main(){
         if(command == "NEXT"){
             gameManager.Next();
         } else if(command == "CETAK_PENYIMPANAN"){
-            //gamaManager.getCurrentPlayer().cetakPenyimpanan();
+            //currentPlayer->cetakPenyimpanan();
         } else if(command == "PUNGUT_PAJAK"){
             //Periksa apakah pemain yang sekarang bermain walikota atau bukan
-            //kalau walikota
-            //gameManager.getCurrentPlayer().pungutPajak();
+            //kalau walikota, pungut pajak
             //kalau bukan walikota
             //throw exception "Anda bukan walikota, tidak bisa memungut pajak!"
+            //TODO: UNCOMMENT THIS BLOCK BELOW AFTER MERGING!
+            // try{
+            //     if(currentPlayer->getTipe() != "walikota"){
+            //         throw CannotCollectTaxException();
+            //     }
+            // } catch(BaseException &e){
+            //     cout<<e.what()<<"\n";
+            //     continue;
+            // }
+            // currentWalikota->calculateTax();
         } else if(command == "CETAK_LADANG"){
             //Periksa apakah pemain yang sekarang bermain petani atau bukan
             //kalau petani
             //gameManager.getCurrentPlayer().cetakLadang();
             //kalau bukan petani
             //throw exception kayak "Anda bukan petani, tidak bisa cetak ladang!"
+            //TODO: UNCOMMENT THIS BLOCK BELOW AFTER MERGING!
+            // try{
+            //     if(currentPlayer->getTipe() != "petani"){
+            //         throw CannotPrintFieldException();
+            //     }
+            // } catch(BaseException &e){
+            //     cout<<e.what()<<"\n";
+            //     continue;
+            // }
+            //currentPetani->cetakLadang();
         } else if(command == "CETAK_PETERNAKAN"){
             //Periksa apakah pemain yang sekarang bermain peternak atau bukan
             //kalau peternak
             //gameManager.getCurrentPlayer().cetakPeternak();
             //kalau bukan peternak
             //throw exception kayak "Anda bukan peternak, tidak bisa cetak peternakan!"
+            //TODO: UNCOMMENT THIS BLOCK BELOW AFTER MERGING!
+            // try{
+            //     if(currentPlayer->getTipe() != "peternak"){
+            //         throw CannotPrintFarmException();
+            //     }
+            // } catch(BaseException &e){
+            //     cout<<e.what()<<"\n";
+            //     continue;
+            // }
+            //currentPeternak->cetakTernak();
         } else if(command == "TANAM"){
             //Periksa apakah pemain yang sekarang bermain petani atau bukan
             //kalau petani
             //gameManager.getCurrentPlayer().Tanam();
             //kalau bukan petani
             //throw exception kayak "Anda bukan petani, tidak bisa menanam!"
+            //TODO: UNCOMMENT THIS BLOCK BELOW AFTER MERGING!
+            // try{
+            //     if(currentPlayer->getTipe() != "petani"){
+            //         throw CannotPlantException();
+            //     }
+            // } catch(BaseException &e){
+            //     cout<<e.what()<<"\n";
+            //     continue;
+            // }
+            //currentPetani->Tanam();
         } else if(command == "TERNAK"){
             //Periksa apakah pemain yang sekarang bermain peternak atau bukan
             //kalau peternak
             //gameManager.getCurrentPlayer().Ternak();
             //kalau bukan peternak
             //throw exception kayak "Anda bukan peternak, tidak bisa beternak!"
+            //TODO: UNCOMMENT THIS BLOCK BELOW AFTER MERGING!
+            // try{
+            //     if(currentPlayer->getTipe() != "peternak"){
+            //         throw CannotFarmException();
+            //     }
+            // } catch(BaseException &e){
+            //     cout<<e.what()<<"\n";
+            //     continue;
+            // }
+            //currentPeternak->Ternak();
         } else if(command == "BANGUN_BANGUNAN"){
             //Periksa apakah pemain yang sekarang bermain walikota atau bukan
             //kalau walikota
             //gameManager.getCurrentPlayer().BangunBangunan();
             //kalau bukan walikota
             //throw exception "Anda bukan walikota, tidak bisa membangun bangunan!"
+            //TODO: UNCOMMENT THIS BLOCK BELOW AFTER MERGING!
+            // try{
+            //     if(currentPlayer->getTipe() != "walikota"){
+            //         throw CannotBuildException();
+            //     }
+            // } catch(BaseException &e){
+            //     cout<<e.what()<<"\n";
+            //     continue;
+            // }
+            //currentWalikota->Bangun();
         } else if(command == "MAKAN"){
-            //gameManager.getCurrentPlayer().Makan();
+            //currentPlayer->Makan();
         } else if(command == "KASIH_MAKAN"){
             //Periksa apakah pemain yang sekarang bermain peternak atau bukan
             //kalau peternak
             //gameManager.getCurrentPlayer().KasihMakan();
             //kalau bukan peternak
             //throw exception kayak "Anda bukan peternak, tidak bisa kasih makan!"
+            //TODO: UNCOMMENT THIS BLOCK BELOW AFTER MERGING!
+            // try{
+            //     if(currentPlayer->getTipe() != "peternak"){
+            //         throw CannotFeedException();
+            //     }
+            // } catch(BaseException &e){
+            //     cout<<e.what()<<"\n";
+            //     continue;
+            // }
+            //currentPeternak->KasihMakan();
         } else if(command == "BELI"){
-            //gameManager.getCurrentPlayer().Beli();
+            //currentPlayer->Beli();
         } else if(command == "JUAL"){
-            //gameManager.getCurrentPlayer().Jual();
+            //currentPlayer->Jual();
         } else if(command == "SIMPAN"){
             //gameManager.save();
         } else if(command == "TAMBAH_PEMAIN"){
@@ -150,6 +219,16 @@ int main(){
             //gameManager.getCurrentPlayer().TambahPemain();
             //kalau bukan walikota
             //throw exception "Anda bukan walikota, tidak bisa meNAMBAH PEMAIN!"
+            //TODO: UNCOMMENT THIS BLOCK BELOW AFTER MERGING!
+            // try{
+            //     if(currentPlayer->getTipe() != "walikota"){
+            //         throw CannotAddPlayerException();
+            //     }
+            // } catch(BaseException &e){
+            //     cout<<e.what()<<"\n";
+            //     continue;
+            // }
+            //currentWalikota->TambahPemain();
         } else {
             cout<<"Perintah tidak valid! Silakan input ulang. \n";
             continue;
