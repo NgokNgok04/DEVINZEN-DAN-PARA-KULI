@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include "matrixarea.cpp"
+#include "Toko.hpp"
 // #include "./Header/GameObject.hpp"
 #include "./Implementation/GameObject.cpp"
 // #include "Toko.hpp"
@@ -16,6 +17,7 @@ protected:
     int berat_badan;
     string tipe; // walikota, peternak, petani, pemain
     vector<int> ownedBuild;
+    vector<Bangunan> ownedBangunan;
     MatrixArea<GameObject> inventory;
 
 public:
@@ -33,8 +35,8 @@ public:
     void setInv(int, int, GameObject *);
     void cetakPenyimpanan();
     void makan(); // loc item yg dimakan
-    // virtual void beli() = 0; // letak and quant item, loc item akan disimpan
-    // virtual void jual() = 0; // loc item yg akan dijual
+    virtual void beli() = 0; // letak and quant item, loc item akan disimpan
+    virtual void jual() = 0; // loc item yg akan dijual
     int countKekayaanInven();
     float getTaxRate(int);
     virtual float calculateTax() = 0;
