@@ -1,4 +1,5 @@
 #include "../Header/GameManager.hpp"
+#include "GameManager.hpp"
 
 
 
@@ -115,4 +116,9 @@ void GameManager::clearPlayerList()
         delete *it;
     }
     this->playerList.clear();
+}
+
+vector<Pemain *> GameManager::getPlayerList()
+{
+    return this->playerList;
 }

@@ -34,14 +34,15 @@ class GameManager{
         GameManager(ParserMisc);
         ~GameManager(){}
         void Debug();
-        void insertNewPlayer(Pemain*);
+        void insertNewPlayer(Pemain*);//masukkan pemain baru
         void PlayerDebug();
-        void Next();
-        // bool checkWinner(); //TODO:UNCOMMENT THIS METHOD
-        Pemain* getWinner();
-        string getWinnerName();
-        Pemain* getCurrentPlayer();
-        string getCurrentPlayerName();
-        void clearPlayerList();
+        void Next(); //giliram selanjutnya
+        // bool checkWinner(); //TODO:UNCOMMENT THIS METHOD AFTER MERGING
+        Pemain* getWinner(); //dapatkan pemenang
+        string getWinnerName(); //dapatkan nama pemenang
+        Pemain* getCurrentPlayer(); //dapatkan pemain yang bermain sekarang
+        string getCurrentPlayerName(); //dapatkan nama pemain yang bermain sekarang
+        void clearPlayerList(); //membebaskan semua pointer pemain di playerlist
+        vector<Pemain *> getPlayerList(); //mendapatkan list pemain
 };
 #endif
