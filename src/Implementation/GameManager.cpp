@@ -1,6 +1,8 @@
 #include "../Header/GameManager.hpp"
 
 
+
+
 void GameManager::rotatePlayer()
 {
     if(this->currentPlayerIndex == this->playerAmount-1){ //kembali ke awal jika sudah di ujung akhir
@@ -66,9 +68,35 @@ void GameManager::PlayerDebug()
 void GameManager::Next()
 {
     this->rotatePlayer();
-    //TODO:
-    //aging semua tanaman
+    //TODO: aging semua tanaman
 }
+
+Pemain *GameManager::getWinner()
+{
+    return this->Winner;
+}
+
+string GameManager::getWinnerName()
+{
+    Pemain* winner = this->getWinner();
+    return winner->getUsername();
+}
+
+//TODO: UNCOMMENT THIS METHOD BELOW AFTER MERGING
+// bool GameManager::checkWinner()
+// {
+
+//     Pemain* currentPlayer = this->getCurrentPlayer();
+//     if(currentPlayer->getWeight() >= this->winningWeight && currentPlayer->getGulden() >= this->winningMoney){
+        //SYARAT MENANG: BERAT PEMAIN >= BERAT MINIMUM UNTUK MENANG DAN BANYAK GULDEN >= GULDEN UNTUK MENANG
+//         this->Winner = currentPlayer;
+//         return true;
+//     }
+//     return false;
+// }
+
+//TODO: UNCOMMENT THIS METHOD ABOVE AFTER MERGING
+
 
 Pemain *GameManager::getCurrentPlayer()
 {
@@ -79,4 +107,12 @@ string GameManager::getCurrentPlayerName()
 {
     Pemain* P = this->getCurrentPlayer();
     return P->getUsername();
+}
+
+void GameManager::clearPlayerList()
+{
+    for(auto it = this->playerList.begin(); it != this->playerList.end(); it++){
+        delete *it;
+    }
+    this->playerList.clear();
 }

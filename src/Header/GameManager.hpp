@@ -37,11 +37,11 @@ class GameManager{
         void insertNewPlayer(Pemain*);
         void PlayerDebug();
         void Next();
-        //bool isThereAWinner();
-        //Pemain* getWinner();
+        // bool checkWinner(); //TODO:UNCOMMENT THIS METHOD
+        Pemain* getWinner();
+        string getWinnerName();
         Pemain* getCurrentPlayer();
         string getCurrentPlayerName();
-        
-        //string getWinnerName();
+        void clearPlayerList();
 };
 #endif

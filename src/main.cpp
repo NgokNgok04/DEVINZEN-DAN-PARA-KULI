@@ -154,8 +154,10 @@ int main(){
             cout<<"Perintah tidak valid! Silakan input ulang. \n";
             continue;
         }
-        /*if(gameManager.isThereAWinner()){
-            cout<<"Selamat, "<<gameManager.getWinnerName()<<"! Anda yang telah memenangkan permainan ini!\n Permainan berakhir.\n";
+        //TODO: UNCOMMENT THESE COMMANDS BELOW AFTER MERGING
+        /*if(gameManager.checkWinner()){
+            cout<<"Selamat, "<<gameManager.getWinnerName()<<"! Anda yang telah memenangkan Bangun Kerajaan Bersama Labpro!\n Permainan berakhir.\n";
+            gameManager.clearPlayerList();
             return 0;
         }*/
     }
