@@ -2,16 +2,16 @@
 #define TOKO_HPP
 #include <vector>
 #include <utility>
-#include "./misc/helper.hpp"
-#include "./Header/GameObject.hpp"
-#include "./Header/Hewan.hpp"
-#include "./Header/Tanaman.hpp"
-#include "./Header/Product.hpp"
-#include "./Header/Bangunan.hpp"
-#include "./Header/ParserHewan.hpp"
-#include "./Header/ParserTanaman.hpp"
-#include "./Header/ParserProduk.hpp"
-#include "./Header/ParserResep.hpp"
+#include "./misc/helper.cpp"
+#include "./Implementation/GameObject.cpp"
+#include "./Implementation/Hewan.cpp"
+#include "./Implementation/Tanaman.cpp"
+#include "./Implementation/Product.cpp"
+#include "./Implementation/Bangunan.cpp"
+#include "./Implementation/ParserHewan.cpp"
+#include "./Implementation/ParserTanaman.cpp"
+#include "./Implementation/ParserProduk.cpp"
+#include "./Implementation/ParserResep.cpp"
 using namespace std;
 class Toko {
     public:

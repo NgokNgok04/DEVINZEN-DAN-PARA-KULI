@@ -37,18 +37,6 @@ MatrixArea<T>::MatrixArea(const MatrixArea<T *> &matrix)
 }
 
 template <class T>
-int MatrixArea<T>::getRows()
-{
-    return this->rows;
-}
-
-template <class T>
-int MatrixArea<T>::getCols()
-{
-    return this->cols;
-}
-
-template <class T>
 MatrixArea<T *> &MatrixArea<T>::operator=(const MatrixArea<T *> &matrix)
 {
     if (this != &matrix)
@@ -116,13 +104,12 @@ pair<int, int> MatrixArea<T>::getPositionFromSlot(string slot)
     int posCol = slot[0] - 'A' + 1;
     if (posCol < 0 || posCol >= this->cols){
         throw InvalidPositionMatrixArea();
-        return;
     }
     int posRow = stoi(string(1, slot[1]) + string(1, slot[2]));
     if (posRow < 0 || posRow >= this->rows){
         throw InvalidPositionMatrixArea();
-        return;
     }
+    
     return make_pair(posRow, posCol);
 }
 
