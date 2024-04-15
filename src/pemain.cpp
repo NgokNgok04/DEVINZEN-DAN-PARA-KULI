@@ -53,80 +53,105 @@ void Pemain::cetakPenyimpanan()
     this->inventory.displayRemainderSlot();
 }
 
-void Pemain::makan() //butuh Catch EmptyInventory n NoFoodInInventory
-{   
-    if (this->inventory.isEmpty()){
-        throw EmptyInventory();
-    }
+void Pemain::makan() // butuh Catch EmptyInventory n NoFoodInInventory
+{
+    try
+    {
+        if (this->inventory.isEmpty())
+        {
+            throw EmptyInventory();
+        }
 
-    bool foundEatable = false;
-    Product * itemInSearch;
-    for(int i = 0; i < this->inventory.getRows(); i++){
-        for(int j = 0; j < this->inventory.getCols(); j++){
-            if (this->inventory.getElement(i+1,j+1) != nullptr && this->inventory.getElement(i+1,j+1)->getTipeObject() == "PRODUCT"){
-                itemInSearch = dynamic_cast<Product*>(this->inventory.getElement(i+1,j+1));
-                if (itemInSearch->getAddedWeight() != 0){
-                    foundEatable = true;
-                    break;
+        bool foundEatable = false;
+        Product *itemInSearch;
+        for (int i = 0; i < this->inventory.getRows(); i++)
+        {
+            for (int j = 0; j < this->inventory.getCols(); j++)
+            {
+                if (this->inventory.getElement(i + 1, j + 1) != nullptr && this->inventory.getElement(i + 1, j + 1)->getTipeObject() == "PRODUCT")
+                {
+                    itemInSearch = dynamic_cast<Product *>(this->inventory.getElement(i + 1, j + 1));
+                    if (itemInSearch->getAddedWeight() != 0)
+                    {
+                        foundEatable = true;
+                        break;
+                    }
                 }
             }
-
-        }
-        if (foundEatable){
-            break;
-        }
-    }
-    if (!foundEatable){
-        throw NoFoodInInventory();
-    }
-    cout << "Pilih makanan dari penyimpanan" << endl;
-    this->inventory.displayObject();
-    cout << endl;
-
-    string slot;
-    cout << "Slot: ";
-    cin >> slot;
-    pair<int, int> pos;
-    bool isValid = false;
-    while (!isValid){
-        try{
-            pos = this->inventory.getPositionFromSlot(slot);
-            if (this->inventory.getElement(pos.first,pos.second) == nullptr){
-                throw EmptyFoodSlot();
+            if (foundEatable)
+            {
+                break;
             }
-            bool found = false;
-            for(int i = 0; i < Toko::availableProduct.size();i++){
-                if (*this->inventory.getElement(pos.first,pos.second) == Toko::availableProduct[i].first){
-                    found = true;
+        }
+        if (!foundEatable)
+        {
+            throw NoFoodInInventory();
+        }
+        cout << "Pilih makanan dari penyimpanan" << endl;
+        this->inventory.displayObject();
+        cout << endl;
+
+        string slot;
+        // cout << "Slot: ";
+        // cin >> slot;
+        pair<int, int> pos;
+        bool isValid = false;
+        while (!isValid)
+        {
+            cout << "Slot: ";
+            cin >> slot;
+            try
+            {
+
+                pos = this->inventory.getPositionFromSlot(slot);
+                if (this->inventory.getElement(pos.first, pos.second) == nullptr)
+                {
+                    throw EmptyFoodSlot();
                 }
-            }
-            if (!found){
-                throw NotEatableSlot();
-            }
 
-            if (this->inventory.getElement(pos.first,pos.second)->getTipeObject() != "PRODUCT"){
-                throw NotEatableSlot();
-            } else {
-                Product* itemToEat = dynamic_cast<Product*>(this->inventory.getElement(pos.first, pos.second));
-                if (itemToEat->getAddedWeight() == 0){
+                if (this->inventory.getElement(pos.first, pos.second)->getTipeObject() != "PRODUCT")
+                {
                     throw NotEatableSlot();
                 }
+                else
+                {
+                    Product *itemToEat = dynamic_cast<Product *>(this->inventory.getElement(pos.first, pos.second));
+                    if (itemToEat->getAddedWeight() == 0)
+                    {
+                        throw NotEatableSlot();
+                    }
+                    else
+                    {
+                        this->berat_badan += itemToEat->getAddedWeight();
+                        this->inventory.deleteElement(pos.first, pos.second);
+
+                        cout << endl;
+                        cout << "Dengan lahapnya, kamu memakan hidangan itu" << endl;
+                        cout << "Alhasil, berat badan kamu naik menjadi " << this->berat_badan << endl;
+
+                        isValid = true;
+                    }
+                }
             }
-
-            this->inventory.deleteElement(pos.first, pos.second);
-            cout << endl
-                 << endl;
-            cout << "Dengan lahapnya, kamu memakan hidangan itu" << endl;
-            cout << "Alhasil, berat badan kamu naik menjadi ";
-            isValid = true;
-
-        } catch (InvalidResponseToko err){
-            err.what();
-        } catch (EmptyFoodSlot err){
-            cout << endl << "Kamu mengambil harapan kosong dari penyimpanan." << endl;
-        } catch (NotEatableSlot err){
-            cout << endl << "Apa yang kamu lakukan?! Kamu mencoba untuk memakan itu?!" << endl;
+            catch (InvalidResponseToko err)
+            {
+                err.what();
+            }
+            catch (EmptyFoodSlot err)
+            {
+                cout << endl
+                     << "Kamu mengambil harapan kosong dari penyimpanan." << endl;
+            }
+            catch (NotEatableSlot err)
+            {
+                cout << endl
+                     << "Apa yang kamu lakukan?! Kamu mencoba untuk memakan itu?!" << endl;
+            }
         }
+    }
+    catch (BaseException &e)
+    {
+        cout << e.what() << endl;
     }
 }
 
@@ -135,7 +160,8 @@ string Pemain::getUsername()
     return this->username;
 }
 
-int Pemain::getBeratBadan(){
+int Pemain::getBeratBadan()
+{
     return this->berat_badan;
 }
 
@@ -145,16 +171,21 @@ bool Pemain::operator<(Pemain &other)
     string actualUsername2 = other.getUsername();
     string lowerUsername1 = actualUsername1;
     string lowerUsername2 = actualUsername2;
-    for (auto& x : lowerUsername1) { 
-        x = tolower(x); 
-    } 
-    for (auto& x : lowerUsername2) { 
-        x = tolower(x); 
+    for (auto &x : lowerUsername1)
+    {
+        x = tolower(x);
     }
-    if(lowerUsername1 == lowerUsername2){
-        return actualUsername1<actualUsername2;
-    } else {
-        return lowerUsername1<lowerUsername2;
+    for (auto &x : lowerUsername2)
+    {
+        x = tolower(x);
+    }
+    if (lowerUsername1 == lowerUsername2)
+    {
+        return actualUsername1 < actualUsername2;
+    }
+    else
+    {
+        return lowerUsername1 < lowerUsername2;
     }
 }
 
@@ -168,33 +199,48 @@ void Pemain::setInv(int rows, int cols, GameObject *a)
     this->inventory.setElement(rows, cols, a);
 }
 
-int Pemain::countKekayaanInven(){
-    int sum=0;
-    for(int i=1;i<=inventory.getRows();i++){
-        for(int j=1;j<=inventory.getCols();j++){
-            GameObject* ptr = inventory.getElement(i,j);
-            if(ptr!=nullptr){
-                sum+=ptr->getPrice();
+int Pemain::countKekayaanInven()
+{
+    int sum = 0;
+    for (int i = 1; i <= inventory.getRows(); i++)
+    {
+        for (int j = 1; j <= inventory.getCols(); j++)
+        {
+            GameObject *ptr = inventory.getElement(i, j);
+            if (ptr != nullptr)
+            {
+                sum += ptr->getPrice();
             }
         }
     }
     return sum;
 }
 
-float Pemain::getTaxRate(int KKP){
-    if(KKP<=6){
+float Pemain::getTaxRate(int KKP)
+{
+    if (KKP <= 6)
+    {
         return 0.05;
-    }else if(KKP<=25){
+    }
+    else if (KKP <= 25)
+    {
         return 0.15;
-    }else if(KKP<=50){
+    }
+    else if (KKP <= 50)
+    {
         return 0.25;
-    }else if(KKP<=500){
+    }
+    else if (KKP <= 500)
+    {
         return 0.3;
-    }else{
+    }
+    else
+    {
         return 0.35;
     }
 }
 
-int Pemain::getGulden(){
+int Pemain::getGulden()
+{
     return this->gulden;
 }
