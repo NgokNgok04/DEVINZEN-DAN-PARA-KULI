@@ -22,11 +22,6 @@ vector<int> ParserHewan::harvestWeight = vector<int>();
 vector<int> ParserHewan::price = vector<int>();
 map<int, int> ParserHewan::IndexToIDMap = map<int, int>();
 map<int, int> ParserHewan::IDToIndexMap = map<int, int>();
-int ParserMisc::winningMoney = 0;
-int ParserMisc::winningWeight = 0;
-pair<int, int> ParserMisc::storageSize = pair<int, int>();
-pair<int, int> ParserMisc::fieldSize = pair<int, int>();
-pair<int, int> ParserMisc::farmSize = pair<int, int>();
 vector<int> ParserProduk::productID = vector<int>();
 vector<string> ParserProduk::productCode = vector<string>();
 vector<string> ParserProduk::productName = vector<string>();
@@ -61,7 +56,7 @@ vector<pair<Bangunan, int>> Toko::availableBangunan = vector<pair<Bangunan, int>
 int main()
 {
     ParserHewan PH;
-    // ParserMisc PM;
+    ParserMisc PM;
     ParserTanaman PT;
     ParserProduk PP;
     ParserResep PR;
@@ -72,7 +67,7 @@ int main()
     string recipeConfigDirectory = "../config/recipe.txt";
 
     PH.ParseFile(animalConfigDirectory);
-    // PM.ParseFile(miscConfigDirectory);
+    PM.ParseFile(miscConfigDirectory);
     PT.ParseFile(plantConfigDirectory);
     PP.ParseFile(productConfigDirectory);
     PR.ParseFile(recipeConfigDirectory);
@@ -80,10 +75,22 @@ int main()
     WaliKota w;
     Product *teak = new Product(1,false);
     Product *sandal = new Product(2,false);
+    Product *aloe = new Product(3,false);
+    Product* iron = new Product(4,false);
     w.setInv(1,1,teak);
-    w.setInv(1,2,sandal);
+    for(int i = 2; i<=10; i++){
+        w.setInv(1,i,teak);
+    }
+
+    for(int i = 2; i<=10; i++){
+        for(int j = 1; j<=10; j++){
+            w.setInv(i,j,sandal);
+        }
+    }
+    w.cetakPenyimpanan();
     w.bangunBangunan();
     w.cetakPenyimpanan();
+    
     // w.beli();
     return 0;
 }

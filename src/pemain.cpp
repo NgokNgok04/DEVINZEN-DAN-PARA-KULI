@@ -2,13 +2,16 @@
 #include <vector>
 #include <string>
 #include "pemain.hpp"
+#include "./Implementation/ParserMisc.cpp"
 using namespace std;
 
 Pemain::Pemain()
 {
+    int inventoryRows = ParserMisc::getStorageSize().first;
+    int inventoryCols = ParserMisc::getStorageSize().second;
     this->gulden = 50;
     this->berat_badan = 40;
-    MatrixArea<GameObject> inv(8, 8);
+    MatrixArea<GameObject> inv(inventoryRows, inventoryCols);
     this->inventory = inv;
     this->ownedBuild = {0, 0, 0};
 }
