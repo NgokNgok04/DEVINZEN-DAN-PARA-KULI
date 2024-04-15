@@ -18,6 +18,7 @@ class Tanaman: public GameObject{
         string getType();
         int getDurationHarvest();
         int getCurAge();
+        void setAge(int);
         Tanaman& operator=(const Tanaman&);
         bool operator==(const Tanaman&);
 };

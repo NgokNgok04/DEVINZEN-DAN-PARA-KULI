@@ -25,6 +25,7 @@ public:
     int getRows();
     int getCols();
     MatrixArea<T *> &operator=(const MatrixArea<T *> &);
+    void operator+(T* &);
     void setElement(int, int, T *);
     void deleteElement(int, int);
     T *getElement(int, int);

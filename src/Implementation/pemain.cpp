@@ -42,7 +42,7 @@ string Pemain::getTipe()
     return this->tipe;
 }
 
-MatrixArea<GameObject> Pemain::getInventory()
+MatrixArea<GameObject>& Pemain::getInventory()
 {
     return this->inventory;
 }

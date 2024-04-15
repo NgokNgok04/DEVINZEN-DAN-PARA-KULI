@@ -9,6 +9,8 @@
 #include "petani.hpp"
 #include "peternak.hpp"
 #include "walikota.hpp"
+#include "Bangunan.hpp"
+#include "Toko.hpp"
 using namespace std;
 
 class GameManager{
@@ -19,12 +21,12 @@ class GameManager{
         pair<int,int> storageSize;
         pair<int,int> fieldSize;
         pair<int,int> farmSize;
-        map<string, vector<string> > productOriginConversion; //konversi tanaman/hewan menjadi produk        
         vector<Pemain*> playerList;
         int currentPlayerIndex;
         int playerAmount;
         Pemain* Winner;
         void rotatePlayer();
+        Toko toko;
         //TODO:
         //1. ROTASI PEMAIN (done)
         //2. VOID NEXT
@@ -44,5 +46,7 @@ class GameManager{
         string getCurrentPlayerName(); //dapatkan nama pemain yang bermain sekarang
         void clearPlayerList(); //membebaskan semua pointer pemain di playerlist
         vector<Pemain *> getPlayerList(); //mendapatkan list pemain
+        void simpan();
+        void muat();
 };
 #endif

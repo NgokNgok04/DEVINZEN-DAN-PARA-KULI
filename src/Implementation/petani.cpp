@@ -41,7 +41,7 @@ void Petani::jual()
     // Need toko
 }
 
-MatrixArea<Tanaman> Petani::getLadang()
+MatrixArea<Tanaman>& Petani::getLadang()
 {
     return this->ladang;
 }

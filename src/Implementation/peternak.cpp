@@ -32,7 +32,7 @@ Peternak::~Peternak()
     this->ternakan.~MatrixArea();
 }
 
-MatrixArea<Hewan> Peternak::getTernakan()
+MatrixArea<Hewan>& Peternak::getTernakan()
 {
     return this->ternakan;
 }

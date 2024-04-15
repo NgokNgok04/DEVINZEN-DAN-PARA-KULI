@@ -28,7 +28,7 @@ public:
     ~Pemain();
 
     string getTipe();
-    MatrixArea<GameObject> getInventory();
+    MatrixArea<GameObject>& getInventory();
 
     // specifics
     void setInv(int, int, GameObject *);
@@ -37,6 +37,8 @@ public:
     // virtual void beli() = 0; // letak and quant item, loc item akan disimpan
     // virtual void jual() = 0; // loc item yg akan dijual
     string getUsername();
+    int getBeratBadan();
+    int getGulden();
     virtual int calculateTax() = 0;
     bool operator<(Pemain const &other) const;
     bool operator==(Pemain const &other) const;

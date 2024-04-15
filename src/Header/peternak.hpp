@@ -14,7 +14,7 @@ public:
     Peternak(const Peternak &);
     ~Peternak();
 
-    MatrixArea<Hewan> getTernakan();
+    MatrixArea<Hewan>& getTernakan();
     void cetakTernak();
     void ternak();     // coords hewan yg ingin diternak, coords letak ternakan
     void kasihMakan(); // coords letak hewan, coords letak makanan yg ingin diberikan
