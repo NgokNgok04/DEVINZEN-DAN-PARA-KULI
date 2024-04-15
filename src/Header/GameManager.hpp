@@ -21,12 +21,12 @@ class GameManager{
         pair<int,int> farmSize;
         map<string, vector<string> > productOriginConversion; //konversi tanaman/hewan menjadi produk        
         vector<Pemain*> playerList;
-        //queue<Pemain*> TurnQueue;
-
-        //Pemain* Winner;
-        //Pemain* CurrentPlayer
+        int currentPlayerIndex;
+        int playerAmount;
+        Pemain* Winner;
+        void rotatePlayer();
         //TODO:
-        //1. QUEUE PEMAIN (giliran)
+        //1. ROTASI PEMAIN (done)
         //2. VOID NEXT
         //3. VOID UNTUK MENENTUKAN PEMENANG
         //4. LIST PEMAIN
@@ -36,11 +36,12 @@ class GameManager{
         void Debug();
         void insertNewPlayer(Pemain*);
         void PlayerDebug();
-        //void Next();
+        void Next();
         //bool isThereAWinner();
         //Pemain* getWinner();
-        //string getCurrentPlayerName();
-        //Pemain* getCurrentPlayer();
+        Pemain* getCurrentPlayer();
+        string getCurrentPlayerName();
+        
         //string getWinnerName();
 };
 #endif

@@ -9,9 +9,10 @@ Peternak::Peternak() : Pemain()
     this->tipe = "peternak";
     MatrixArea<Hewan> n(8, 8);
     this->ternakan = n;
+    this->username = "Peternak1";
 }
 
-Peternak::Peternak(int guld, int bb, int smol, int med, int big, int terrows, int tercols) : Pemain(guld, bb, smol, med, big)
+Peternak::Peternak(string usn,int guld, int bb, int smol, int med, int big, int terrows, int tercols) : Pemain(usn,guld, bb, smol, med, big)
 {
     this->tipe = "peternak";
     MatrixArea<Hewan> n(terrows, tercols);
@@ -29,6 +30,11 @@ Peternak::~Peternak()
 {
     this->inventory.~MatrixArea();
     this->ternakan.~MatrixArea();
+}
+
+MatrixArea<Hewan> Peternak::getTernakan()
+{
+    return this->ternakan;
 }
 
 void Peternak::beli()
@@ -51,6 +57,7 @@ void Peternak::ternak()
 {
     cout << "Pilih hewan dari penyimpanan" << endl;
     this->cetakPenyimpanan();
+    this->cetakTernak();
 
     bool isValid = false;
     string slot;
@@ -60,16 +67,17 @@ void Peternak::ternak()
         cin >> slot;
         cout << endl;
         // Validasi
-        // if tidak valid print output
         int idx1 = slot[0] - 'A' + 1;
         int idx2 = std::stoi(slot.substr(1));
         try
         {
+            this->cetakTernak();
+
             if (slot.length() < 3 || slot.length() > 3)
             {
                 throw InvalidIndexMatrixArea();
             }
-            else if (idx1 > this->inventory.getRows() || idx2 > this->inventory.getCols())
+            else if (idx2 > this->inventory.getRows() || idx1 > this->inventory.getCols())
             {
                 throw InvalidIndexMatrixArea();
             }
@@ -77,8 +85,6 @@ void Peternak::ternak()
             {
                 if (this->inventory.getElement(idx2, idx1) != nullptr)
                 {
-                    cout << "here2" << endl;
-
                     if (this->inventory.getElement(idx2, idx1)->getTipeObject() != "HEWAN")
                     {
                         throw InvalidNotHewan();
@@ -123,7 +129,7 @@ void Peternak::ternak()
             {
                 throw InvalidIndexMatrixArea();
             }
-            else if (idx3 > this->ternakan.getRows() || idx4 > this->ternakan.getCols())
+            else if (idx4 > this->ternakan.getRows() || idx3 > this->ternakan.getCols())
             {
                 throw InvalidIndexMatrixArea();
             }
@@ -149,9 +155,21 @@ void Peternak::ternak()
     int idx3 = petak[0] - 'A' + 1;
     int idx4 = std::stoi(petak.substr(1));
 
-    Hewan *temp = static_cast<Hewan *>(this->inventory.getElement(idx2, idx1));
+    Hewan *temp = dynamic_cast<Hewan *>(this->inventory.getElement(idx2, idx1));
+
+    if (temp)
+    {
+        cout << "SUCCC" << endl;
+        cout << temp->getKode() << endl;
+    }
+    else
+    {
+        cout << "GAGGG" << endl;
+    }
+
     this->ternakan.setElement(idx4, idx3, temp);
     this->inventory.deleteElement(idx2, idx1);
+    cout << this->ternakan.getElement(idx4, idx3)->getKode() << endl;
     cout << "Berhasil diternakkan" << endl;
 }
 
@@ -164,25 +182,43 @@ void Peternak::kasihMakan()
     string slot;
     while (!isValid)
     {
-        cout << "Petak Ladang: ";
-        cin >> slot;
-        cout << endl;
-        // Validasi
-        int idx1 = slot[0] - 'A' + 1;
-        int idx2 = std::stoi(slot.substr(1));
-        if (this->ternakan.getElement(idx1 - 1, idx2 - 1) != nullptr)
+        try
         {
-            isValid = true;
+            cout << "Petak Ternakan: ";
+            cin >> slot;
+            cout << endl;
+            // Validasi
+            int idx1 = slot[0] - 'A' + 1;
+            int idx2 = std::stoi(slot.substr(1));
+            if (slot.length() < 3 || slot.length() > 3)
+            {
+                throw InvalidIndexMatrixArea();
+            }
+            else if (idx1 > this->ternakan.getRows() || idx2 > this->ternakan.getCols())
+            {
+                throw InvalidIndexMatrixArea();
+            }
+            else
+            {
+                if (this->ternakan.getElement(idx2, idx1) != nullptr)
+                {
+                    isValid = true;
+                }
+                else
+                {
+                    throw InvalidEmptySlot();
+                }
+            }
         }
-        else
+        catch (BaseException &e)
         {
-            cout << "Petak tersebut kosong" << endl;
+            cout << e.what() << endl;
         }
     }
 
     int idx1 = slot[0] - 'A' + 1;
     int idx2 = std::stoi(slot.substr(1));
-    cout << "Kamu memilih " << this->ternakan.getElement(idx1 - 1, idx2 - 1)->getName() << " untuk diberi makan" << endl;
+    cout << "Kamu memilih " << this->ternakan.getElement(idx2, idx1)->getName() << " untuk diberi makan" << endl;
     cout << "Pilih pangan untuk diberikan: " << endl;
     this->cetakPenyimpanan();
 
@@ -190,228 +226,394 @@ void Peternak::kasihMakan()
     string slot2;
     while (!isValid)
     {
-        cout << "Slot: ";
-        cin >> slot2;
-        cout << endl;
-        // Validasi
-        int idx3 = slot2[0] - 'A' + 1;
-        int idx4 = std::stoi(slot2.substr(1));
+        try
+        {
+            cout << "Slot: ";
+            cin >> slot2;
+            cout << endl;
+            // Validasi
+            int idx3 = slot2[0] - 'A' + 1;
+            int idx4 = std::stoi(slot2.substr(1));
+            if (slot2.length() < 3 || slot2.length() > 3)
+            {
+                throw InvalidIndexMatrixArea();
+            }
+            else if (idx3 > this->inventory.getRows() || idx4 > this->inventory.getCols())
+            {
+                throw InvalidIndexMatrixArea();
+            }
+            else if (this->inventory.getElement(idx4, idx3) == nullptr)
+            {
+                throw InvalidEmptySlot();
+            }
+            else if (this->inventory.getElement(idx4, idx3)->getTipeObject() != "PRODUCT")
+            {
+                throw InvalidNotProduct();
+            }
 
-        Product *temp = static_cast<Product *>(this->inventory.getElement(idx3 - 1, idx4 - 1));
-        if (temp->fromHewan())
-        {
-            isValid = true;
+            else
+            {
+                Product *temp = dynamic_cast<Product *>(this->inventory.getElement(idx4, idx3));
+                if (this->ternakan.getElement(idx2, idx1)->getType() == "CARNIVORE")
+                {
+                    if (temp->fromHewan())
+                    {
+                        isValid = true;
+                    }
+                    else
+                    {
+                        throw InvalidCarnivore();
+                    }
+                }
+
+                else if (this->ternakan.getElement(idx2, idx1)->getType() == "HERBIVORE")
+                {
+                    if (!temp->fromHewan())
+                    {
+                        isValid = true;
+                    }
+                    else
+                    {
+                        throw InvalidHerbivore();
+                    }
+                }
+
+                else
+                {
+                    isValid = true;
+                }
+            }
         }
-        else
+        catch (BaseException &e)
         {
-            cout << "Itu bukanlah pangan yang dapat diberi pada hewan" << endl;
+            cout << e.what() << endl;
         }
     }
 
     int idx3 = slot2[0] - 'A' + 1;
     int idx4 = std::stoi(slot2.substr(1));
-    Product *temp = static_cast<Product *>(this->inventory.getElement(idx3 - 1, idx4 - 1));
+    Product *temp = dynamic_cast<Product *>(this->inventory.getElement(idx4, idx3));
 
-    this->ternakan.getElement(idx1 - 1, idx2 - 1)->setWeight(this->ternakan.getElement(idx1 - 1, idx2 - 1)->getCurWeight() + temp->getAddedWeight());
-    this->inventory.deleteElement(idx3 - 1, idx4 - 1);
-    cout << this->ternakan.getElement(idx1 - 1, idx2 - 1)->getName() << " sudah diberi makan dan beratnya menjadi" << endl;
+    this->ternakan.getElement(idx2, idx1)->makan(*temp);
+    this->inventory.deleteElement(idx4, idx3);
+    cout << this->ternakan.getElement(idx2, idx1)->getName() << " sudah diberi makan dan beratnya menjadi " << this->ternakan.getElement(idx2, idx1)->getCurWeight() << endl;
 
     // Output Hasil
 }
 
 void Peternak::panenTernak()
 {
-    this->cetakTernak();
-    vector<string> ownedHew;
-    vector<string> ownedHewName;
-    vector<string> readyPanen;
-    vector<int> readyPanenAmt;
-
-    for (int i = 0; i < 8; i++)
+    if (this->ternakan.isEmpty())
     {
-        for (int j = 0; j < 8; j++)
-        {
-            if (this->ternakan.getElement(i, j)->getTipeObject() == "HEWAN")
-            {
-                auto it = find(ownedHew.begin(), ownedHew.end(), this->ternakan.getElement(i, j)->getKode());
-
-                bool found = (it != ownedHew.end());
-
-                if (found)
-                {
-                    ownedHew.push_back(this->ternakan.getElement(i, j)->getKode());
-                    ownedHewName.push_back(this->ternakan.getElement(i, j)->getName());
-                }
-            }
-        }
+        throw NoHarvestableAnimal();
     }
-
-    // Output hewan yang ada
-    for (size_t i = 0; i < ownedHew.size(); ++i)
+    try
     {
-        cout << ownedHew[i] << " " << ownedHewName[i] << endl;
-    }
-
-    // Output pilihan hewan berdasarkan siap panennnya
-    for (size_t i = 0; i < ownedHew.size(); ++i)
-    {
-        int count = 0;
-        int num = 1;
-
-        for (int j = 0; j < 8; j++)
+        if (!this->ternakan.isEmpty())
         {
-            for (int k = 0; k < 8; k++)
+            this->cetakTernak();
+            vector<string> ownedHew;
+            vector<string> ownedHewName;
+            vector<string> readyPanen;
+            vector<int> readyPanenAmt;
+
+            for (int i = 1; i < this->ternakan.getRows() + 1; i++)
             {
-                if (this->ternakan.getElement(j, k)->getKode() == ownedHew[i])
+                for (int j = 1; j < this->ternakan.getCols() + 1; j++)
                 {
-                    if (this->ternakan.getElement(j, k)->isHarvestable())
+                    if (this->ternakan.getElement(i, j) != nullptr)
                     {
-                        count += 1;
-                        auto it = find(readyPanen.begin(), readyPanen.end(), this->ternakan.getElement(j, k)->getKode());
-                        bool found = (it != readyPanen.end());
-                        if (found)
+                        cout << this->ternakan.getElement(i, j)->getKode() << endl;
+                        if (this->ternakan.getElement(i, j)->getTipeObject() == "HEWAN")
                         {
-                            readyPanen.push_back(this->ternakan.getElement(j, k)->getKode());
+                            bool found = false;
+                            int it = 0;
+                            while (it < ownedHew.size())
+                            {
+                                if (ownedHew[it] == this->ternakan.getElement(i, j)->getKode())
+                                {
+                                    found = true;
+                                    it = ownedHew.size() + 1;
+                                }
+                                it++;
+                            }
+
+                            if (!found)
+                            {
+                                string temp1 = this->ternakan.getElement(i, j)->getKode();
+                                string temp2 = this->ternakan.getElement(i, j)->getName();
+
+                                ownedHew.push_back(temp1);
+                                ownedHewName.push_back(temp2);
+                            }
                         }
                     }
                 }
             }
-        }
-        if (count > 0)
-        {
-            readyPanenAmt.push_back(count);
-        }
-        count = 0;
-    }
+            cout << " BATAS " << endl;
 
-    for (int i = 0; i < readyPanen.size(); i++)
-    {
-        cout << i + 1 << ". " << readyPanen[i] << " " << readyPanenAmt[i] << endl;
-    }
-
-    bool isValid = false;
-    int maupanen;
-
-    while (!isValid)
-    {
-        cout << "Nomor hewan yang ingin dipanen: ";
-        cin >> maupanen;
-        cout << endl;
-        // Validasi
-        if (maupanen > readyPanen.size() || maupanen < 0)
-        {
-            cout << "Nomor masukan tidak valid" << endl;
-        }
-        else
-        {
-            isValid = true;
-        }
-        // if tidak valid ada output
-    }
-
-    isValid = false;
-    int brppanen;
-    while (!isValid)
-    {
-        cout << "Berapa petak yang ingin dipanen: ";
-        cin >> brppanen;
-        cout << endl;
-        if (brppanen > this->inventory.getEmptySlot())
-        {
-            cout << "Jumlah petak pilihan melebihi slot inventory" << endl;
-        }
-        if (brppanen > readyPanenAmt[maupanen - 1])
-        {
-            cout << "Jumlah petak pilihan melebihi yang tersedia" << endl;
-        }
-        else
-        {
-            isValid = true;
-        }
-        // Validasi
-        // if tidak valid ada output
-    }
-
-    int i = 0;
-    string want;
-    vector<string> wants;
-    cout << "Pilih petak yang ingin dipanen: " << endl;
-    for (i; i < brppanen; i++)
-    {
-        isValid = false;
-        while (!isValid)
-        {
-            cout << "Petak ke-" << i + 1 << ": ";
-            cin >> want;
-            int idx1 = want[0] - 'A' + 1;
-            int idx2 = std::stoi(want.substr(1));
-            if (want.length() < 3 || want.length() > 3)
+            // Output hewan yang ada
+            for (size_t i = 0; i < ownedHew.size(); ++i)
             {
-                cout << "Pilihan slot tidak valid!" << endl;
+                cout << ownedHew[i] << " - " << ownedHewName[i] << endl;
             }
-            else
-            {
-                if (this->ternakan.getElement(idx1 - 1, idx2 - 1) != nullptr)
-                {
-                    if (this->ternakan.getElement(idx1 - 1, idx2 - 1)->getKode() != readyPanen[maupanen - 1])
-                    {
-                        cout << "Pilihan itu bukanlah tanaman yang ingin dipanen" << endl;
-                    }
-                    else
-                    {
-                        isValid = true;
-                    }
-                }
-                else
-                {
-                    cout << "Pilihan itu bukanlah tanaman yang ingin dipanen" << endl;
-                }
-            }
-            // Validasi want, kalau valid wants.push_back(want);
-        }
-        wants.push_back(want);
-    }
 
-    for (int i = 0; i < wants.size(); i++)
-    {
-        int idx1 = wants[i][0] - 'A' + 1;
-        int idx2 = std::stoi(wants[i].substr(1));
-        int j = 0;
-        int k = 0;
-        while (j < 8)
-        {
-            while (k < 8)
+            // Output pilihan hewan berdasarkan siap panennnya
+            for (size_t i = 0; i < ownedHew.size(); ++i)
             {
-                if (this->inventory.getElement(j, k) == nullptr)
+                int count = 0;
+                int num = 1;
+
+                for (int j = 1; j < this->ternakan.getRows() + 1; j++)
                 {
-                    vector<Product *> temp = this->ternakan.getElement(idx1 - 1, idx2 - 1)->hasilPanen();
-                    for (int n = 0; n < temp.size(); n++)
+                    for (int k = 1; k < this->ternakan.getCols() + 1; k++)
                     {
-                        this->inventory.setElement(j, k, temp[i]);
-                        if (n < temp.size() - 1)
+                        if (this->ternakan.getElement(j, k) != nullptr)
                         {
-                            if (k == 7)
+                            cout << j << k << endl;
+                            cout << this->ternakan.getElement(j, k)->getKode() << endl;
+                            if (this->ternakan.getElement(j, k)->getKode() == ownedHew[i])
                             {
-                                j++;
-                                k = 0;
+                                if (this->ternakan.getElement(j, k)->isHarvestable())
+                                {
+                                    count += 1;
+                                    bool found = false;
+                                    size_t it = 0;
+                                    cout << "1" << endl;
+                                    while (it < readyPanen.size())
+                                    {
+                                        cout << "2" << endl;
+                                        cout << "3" << endl;
+                                        if (readyPanen[it] == this->ternakan.getElement(j, k)->getKode())
+                                        {
+                                            found = true;
+                                            it = readyPanen.size() + 1;
+                                        }
+                                        it++;
+                                    }
+                                    if (!found)
+                                    {
+                                        string temp = this->ternakan.getElement(j, k)->getKode();
+                                        readyPanen.push_back(temp);
+                                    }
+                                    cout << "-----------------" << endl;
+                                }
+                            }
+                        }
+                    }
+                }
+                if (count > 0)
+                {
+                    readyPanenAmt.push_back(count);
+                }
+                count = 0;
+            }
+
+            for (int i = 0; i < readyPanen.size(); i++)
+            {
+                cout << i + 1 << ". " << readyPanen[i] << " (" << readyPanenAmt[i] << ")" << endl;
+            }
+
+            bool isValid = false;
+            string maupanen;
+            int maupanenint;
+
+            if (readyPanen.size() > 0)
+            {
+                while (!isValid)
+                {
+                    try
+                    {
+                        cout << "Nomor hewan yang ingin dipanen: ";
+                        cin >> maupanen;
+                        cout << endl;
+
+                        if (!isAllDigits(maupanen))
+                        {
+                            throw InvalidPanenIdx();
+                        }
+                        else
+                        {
+                            maupanenint = std::stoi(maupanen);
+
+                            if (maupanenint > readyPanen.size() || maupanenint < 0)
+                            {
+                                throw InvalidPanenIdx();
                             }
                             else
                             {
-                                k++;
+                                isValid = true;
                             }
                         }
-                        // boleh kalau j dan k udah max exception ga ada slot lagi
                     }
-
-                    this->ternakan.deleteElement(idx1 - 1, idx2 - 1);
+                    catch (BaseException &e)
+                    {
+                        cout << e.what() << endl;
+                    }
                 }
-                k++;
+
+                isValid = false;
+                string brppanen;
+                int brppanenint;
+                while (!isValid)
+                {
+                    try
+                    {
+                        cout << "Berapa petak yang ingin dipanen: ";
+                        cin >> brppanen;
+                        cout << endl;
+                        if (!isAllDigits(brppanen))
+                        {
+                            throw InvalidPanenIdx();
+                        }
+                        else
+                        {
+                            brppanenint = std::stoi(brppanen);
+                            if (brppanenint > this->inventory.getEmptySlot())
+                            {
+                                throw InvalidInventorySpace();
+                            }
+                            else if (brppanenint > readyPanenAmt[maupanenint - 1])
+                            {
+                                throw InvalidPanenAmountOver();
+                            }
+                            else if (brppanenint < 1)
+                            {
+                                throw InvalidPanenAmount();
+                            }
+                            else
+                            {
+                                isValid = true;
+                            }
+                        }
+                        // Validasi
+                        // if tidak valid ada output
+                    }
+                    catch (BaseException &e)
+                    {
+                        cout << e.what() << endl;
+                    }
+                }
+
+                int i = 0;
+                string want;
+                vector<string> wants;
+                cout << "Pilih petak yang ingin dipanen: " << endl;
+                for (i; i < brppanenint; i++)
+                {
+                    isValid = false;
+                    while (!isValid)
+                    {
+                        try
+                        {
+                            cout << "Petak ke-" << i + 1 << ": ";
+                            cin >> want;
+                            int idx1 = want[0] - 'A' + 1;
+                            int idx2 = std::stoi(want.substr(1));
+                            cout << idx2 << idx1 << endl;
+                            if (want.length() < 3 || want.length() > 3)
+                            {
+                                throw InvalidIndexMatrixArea();
+                            }
+                            else if (idx2 > this->ternakan.getRows() || idx1 > this->ternakan.getCols())
+                            {
+                                throw InvalidIndexMatrixArea();
+                            }
+                            else
+                            {
+                                if (this->ternakan.getElement(idx2, idx1) != nullptr)
+                                {
+                                    cout << "a" << endl;
+                                    cout << this->ternakan.getElement(idx2, idx1)->getKode() << endl;
+                                    if (this->ternakan.getElement(idx2, idx1)->getKode() != readyPanen[maupanenint - 1])
+                                    {
+                                        cout << "b" << endl;
+                                        throw InvalidPlantChoice();
+                                    }
+                                    else
+                                    {
+                                        cout << "c" << endl;
+                                        isValid = true;
+                                    }
+                                }
+                                else
+                                {
+                                    throw InvalidEmptySlot();
+                                }
+                            }
+                        }
+                        catch (BaseException &e)
+                        {
+                            cout << e.what() << endl;
+                        }
+                        // Validasi want, kalau valid wants.push_back(want);
+                    }
+                    wants.push_back(want);
+                }
+
+                cout << "WS" << wants.size() << endl;
+                for (int i = 0; i < wants.size(); i++)
+                {
+                    bool foundslot = false;
+                    int idx1 = wants[i][0] - 'A' + 1;
+                    int idx2 = std::stoi(wants[i].substr(1));
+                    int j = 1;
+                    int k = 1;
+                    while (j < this->inventory.getRows() + 1)
+                    {
+                        while (k < this->inventory.getCols() + 1)
+                        {
+                            if (this->inventory.getElement(j, k) == nullptr)
+                            {
+                                cout << j << k << endl;
+                                vector<Product *> temp = this->ternakan.getElement(idx2, idx1)->hasilPanen();
+                                for (int n = 0; n < temp.size(); n++)
+                                {
+                                    cout << "XXX" << endl;
+                                    this->inventory.setElement(j, k, temp[n]);
+                                    if (n < temp.size() - 1)
+                                    {
+                                        if (k == this->ternakan.getCols() && j == this->ternakan.getRows())
+                                        {
+                                            throw FullInv();
+                                        }
+                                        else if (k == this->ternakan.getCols())
+                                        {
+                                            j++;
+                                            k = 1;
+                                        }
+                                        else
+                                        {
+                                            k++;
+                                        }
+                                    }
+                                }
+                                this->ternakan.deleteElement(idx2, idx1);
+                                foundslot = true;
+                                break;
+                            }
+                            k++;
+                        }
+                        if (foundslot)
+                        {
+                            break;
+                        }
+                        j++;
+                    }
+                }
+
+                cout << "Panen Berhasil" << endl;
             }
-            j++;
+        }
+        else
+        {
+            throw NoHarvestableAnimal();
         }
     }
-
-    cout << "Panen Berhasil" << endl;
+    catch (BaseException &e)
+    {
+        cout << e.what() << endl;
+    }
 }
 
 int Peternak::calculateKKP()

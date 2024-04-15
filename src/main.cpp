@@ -52,9 +52,10 @@ int main(){
             Pemain* newPlayer1 = petani1;
             Pemain* newPlayer2 = peternak1;
             Pemain* newPlayer3 = walikota;
-            gameManager.insertNewPlayer(newPlayer1);
-            gameManager.insertNewPlayer(newPlayer2);
             gameManager.insertNewPlayer(newPlayer3);
+            gameManager.insertNewPlayer(newPlayer2);
+            gameManager.insertNewPlayer(newPlayer1);
+            
             break;
         } else if(choice == 2){
             cout<<"Membuka Save file\n";
@@ -67,13 +68,24 @@ int main(){
     cout<<"Setup permainan selesai, permainan dimulai!\n";
     string command;
     while(true){
-        //cout<<"Sekarang giliran "<<gameManager.getCurrentPlayerName()<<"!\n";
+        cout<<"Sekarang giliran "<<gameManager.getCurrentPlayerName()<<"!\n";
+        Pemain* currentPlayer = gameManager.getCurrentPlayer();
+        Petani* currentPetani = nullptr;
+        Peternak* currentPeternak = nullptr;
+        WaliKota* currentWalikota = nullptr;
 
+        if(currentPlayer->getTipe() == "petani"){ //casting berdasarkan tipe
+            currentPetani = dynamic_cast<Petani*>(currentPlayer);
+        } else if(currentPlayer->getTipe() == "peternak"){
+            currentPeternak = dynamic_cast<Peternak*>(currentPlayer);
+        } else if(currentPlayer->getTipe() == "walikota"){
+            currentWalikota = dynamic_cast<WaliKota*>(currentPlayer);
+        }
+        cout<<"Silakan input perintah:\n";
         cout<<">";
         cin>>command;
         if(command == "NEXT"){
-            cout<<"Ini command Next. Yang harus dilakukan adalah: 1. Ganti ke pemain berikutnya 2. Tambah umur SEMUA tanaman menjadi 1 satuan lebih tua\n";
-            //gameManager.Next();
+            gameManager.Next();
         } else if(command == "CETAK_PENYIMPANAN"){
             //gamaManager.getCurrentPlayer().cetakPenyimpanan();
         } else if(command == "PUNGUT_PAJAK"){

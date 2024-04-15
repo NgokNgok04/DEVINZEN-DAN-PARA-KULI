@@ -7,7 +7,7 @@ class WaliKota : public Pemain
 {
 public:
     WaliKota();
-    WaliKota(int guld, int bb, int smol, int med, int big);
+    WaliKota(string usn, int guld, int bb, int smol, int med, int big);
     WaliKota(const WaliKota &);
     ~WaliKota();
     void pungutPajak();
