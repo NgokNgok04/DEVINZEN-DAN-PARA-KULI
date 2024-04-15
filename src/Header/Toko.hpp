@@ -2,24 +2,37 @@
 #define TOKO_HPP
 #include <vector>
 #include <utility>
-#include "GameObject.hpp"
 #include "helper.hpp"
-
-// #include "./Header/Parser/ParserHewan.hpp"
-// #include "./Header/Parser/ParserTanaman.hpp"
-// #include "./Header/Parser/ParserProduk.hpp"
-// #include "./Header/Parser/ParserResep.hpp"
-// #include "./"
-
-class Toko
-{
-private:
-    vector<pair<GameObject, int>> availableGameObject;
-
-public:
-    Toko();
-    void displayAvailableItemToBuy();
-    void itemDibeli(); // handle keadaan toko setelah player membeli item
-    void itemDijual(); // handle keadaan toko setelah player menjual item
+#include "GameObject.hpp"
+#include "Hewan.hpp"
+#include "Tanaman.hpp"
+#include "Product.hpp"
+#include "Bangunan.hpp"
+#include "ParserHewan.hpp"
+#include "ParserTanaman.hpp"
+#include "ParserProduk.hpp"
+#include "ParserResep.hpp"
+using namespace std;
+class Toko {
+    public:
+        static vector<Hewan> availableHewan;
+        static vector<Tanaman> availableTanaman;
+        static vector<pair<Product,int>> availableProduct;
+        static vector<pair<Bangunan,int>> availableBangunan;
+        static void printProduct();
+        static void printBangunan();
+        static void initialize();
+        static int buyProcess();
+        static void itemDibeli(GameObject*, int); //handle keadaan toko setelah player membeli item
+        static void itemDijual(GameObject*, int); //handle keadaan toko setelah player menjual item
+        static bool isProductEmptyStock();
+        static bool isBangunanEmptyStock();
+        static void displayAvailableHewan();
+        static void displayAvailableTanaman();
+        static int displayAvailableProduct();
+        static int displayAvailableBangunan();
+        static void displayResepBangunan();
+        static int getStock(string);
+        static Bangunan getBangunan(int);
 };
 #endif

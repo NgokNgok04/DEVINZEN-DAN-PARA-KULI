@@ -1,8 +1,4 @@
 #include "../Header/GameManager.hpp"
-#include "GameManager.hpp"
-
-
-
 
 void GameManager::rotatePlayer()
 {
