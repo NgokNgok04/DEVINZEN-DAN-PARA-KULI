@@ -2,6 +2,7 @@
 #define PETANI_HPP
 
 #include "pemain.hpp"
+#define KTKP_PETANI 13
 
 class Petani : public Pemain
 {
@@ -10,7 +11,7 @@ protected:
 
 public:
     Petani();
-    Petani(string usn, int guld, int bb, int smol, int med, int big, int ladrows, int ladcols);
+    Petani(string usn, float guld, int bb, int smol, int med, int big, int ladrows, int ladcols);
     Petani(const Petani &);
     ~Petani();
     MatrixArea<Tanaman> &getLadang();
@@ -19,8 +20,8 @@ public:
     void panenTani();
     void beli();
     void jual();
-    int calculateKKP();
-    int calculateTax();
+    float calculateTax();
+    int countKekayaanLadang();
 };
 
 #endif

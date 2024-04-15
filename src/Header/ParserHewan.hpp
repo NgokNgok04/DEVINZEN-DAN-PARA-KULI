@@ -2,7 +2,7 @@
 #define PARSERHEWAN_HPP
 #include <bits/stdc++.h>
 #include "BaseParser.hpp"
-#include "Exception.hpp"
+
 #include "helper.hpp"
 using namespace std;
 //Parser khusus untuk membaca file konfigurasi hewan.

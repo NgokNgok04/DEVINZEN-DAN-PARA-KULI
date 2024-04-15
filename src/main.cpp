@@ -6,6 +6,7 @@
 #include "./Header/Product.hpp"
 #include "./Header/Bangunan.hpp"
 #include "./Header/Toko.hpp"
+
 using namespace std;
 
 int main(){
@@ -33,7 +34,7 @@ int main(){
     GameManager gameManager(PM);
 
     // gameManager.Debug();
-
+    Toko::initialize();
     cout<<"Selamat datang di permainan Mengelola Kerajaan! Silakan input pilihan angka di bawah ini untuk mulai bermain:\n";
     cout<<"1. Mulai dari permainan baru\n";
     cout<<"2. Mulai dari memuat file save\n";

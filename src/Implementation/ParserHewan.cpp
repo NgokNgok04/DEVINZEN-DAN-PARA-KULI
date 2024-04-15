@@ -1,5 +1,5 @@
 #include "../Header/ParserHewan.hpp"
-
+#include "../Header/Exception.hpp"
 vector<string> ParserHewan::validAnimalTypes = {"HERBIVORE","CARNIVORE","OMNIVORE"};
 vector<int> ParserHewan::animalID = vector<int>();
 vector<string> ParserHewan::animalCode = vector<string>();
