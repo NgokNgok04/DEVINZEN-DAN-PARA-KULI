@@ -26,7 +26,6 @@ class GameManager{
         int playerAmount;
         Pemain* Winner;
         void rotatePlayer();
-        Toko toko;
         //TODO:
         //1. ROTASI PEMAIN (done)
         //2. VOID NEXT

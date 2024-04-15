@@ -1,5 +1,4 @@
 #include "../Header/GameManager.hpp"
-#include "GameManager.hpp"
 
 #include <filesystem>
 #include <fstream>
@@ -205,15 +204,15 @@ void simpanPemain(ofstream &out,Pemain &p){
     }
 }
 
-void simpanToko(ofstream &out,Toko &toko){
-    int jmlhItem = toko.availableProduct.size()+toko.availableBangunan.size();
+void simpanToko(ofstream &out){
+    int jmlhItem = Toko::getAvailableProductSize()+Toko::getAvailableBangunanSize();
     out<<jmlhItem<<endl;
-    for(int i=0;i<toko.availableProduct.size();i++){
-        pair<Product,int> produk = toko.availableProduct[i];
+    for(int i=0;i<Toko::getAvailableProductSize();i++){
+        pair<Product,int> produk = *Toko::getPairProductInt(i);
         out<<produk.first.getName()<<" "<<produk.second<<endl;
     }
-    for(int i=0;i<toko.availableBangunan.size();i++){
-        pair<Bangunan,int> bangunan = toko.availableBangunan[i];
+    for(int i=0;i<Toko::getAvailableBangunanSize();i++){
+        pair<Bangunan,int> bangunan = *Toko::getPairBangunanInt(i);
         out<<bangunan.first.getName()<<" "<<bangunan.second<<endl;
     }
 }
@@ -237,7 +236,7 @@ void GameManager::simpan(){
                 for(int i=0;i<playerList.size();i++){
                     simpanPemain(outf,*playerList[i]);
                 }
-                simpanToko(outf,toko);
+                simpanToko(outf);
             }
         }catch(BaseException &b){
             b.what();
@@ -303,7 +302,7 @@ void muatMatrixArea(ifstream& infile,MatrixArea<Tanaman> ladang){
     }
 }
 
-void muatToko(ifstream& infile,Toko& toko){
+void muatToko(ifstream& infile){
     string fullLine;
     getline(infile,fullLine,'\n');
     int jmlhItem = stoi(fullLine);
@@ -317,11 +316,11 @@ void muatToko(ifstream& infile,Toko& toko){
                 isFromHewan = false;
             }
             Product temp(ParserProduk::convertNameToID(line[0]),isFromHewan);
-            toko.pushProduct(make_pair(temp,stoi(line[1])));
+            Toko::pushProduct(make_pair(temp,stoi(line[1])));
         }else{
             int id = ParserProduk::convertNameToID(line[0]);
             Bangunan temp(id);
-            toko.pushBangunan(make_pair(temp,stoi(line[1])));
+            Toko::pushBangunan(make_pair(temp,stoi(line[1])));
         }
     }
 }
@@ -370,6 +369,6 @@ void GameManager::muat(){
                 muatMatrixArea(infile,temp->getInventory());
             }
         }
-        muatToko(infile,toko);
+        muatToko(infile);
     }
 }

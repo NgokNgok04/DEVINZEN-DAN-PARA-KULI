@@ -74,9 +74,9 @@ void WaliKota::beli()
                         throw InvalidSubResponse();
                     }
 
-                    if (validSubResponse != Toko::availableHewan.size() + 1){
-                        if (validSubResponse >= 1 && validSubResponse <= Toko::availableHewan.size()){
-                            itemToBuy = &Toko::availableHewan[validSubResponse - 1];
+                    if (validSubResponse != Toko::getAvailableHewanSize() + 1){
+                        if (validSubResponse >= 1 && validSubResponse <= Toko::getAvailableHewanSize()){
+                            itemToBuy = Toko::getHewan(validSubResponse - 1);
                             isSubMenuCancelled = true;
                         } else {
                             throw InvalidSubResponse();
@@ -97,9 +97,9 @@ void WaliKota::beli()
                         throw InvalidSubResponse();
                     }
 
-                    if (validSubResponse != Toko::availableTanaman.size() + 1){
-                        if (validSubResponse >= 1 && validSubResponse <= Toko::availableTanaman.size()){
-                            itemToBuy = &Toko::availableTanaman[validSubResponse - 1];
+                    if (validSubResponse != Toko::getAvailableTanamanSize()+ 1){
+                        if (validSubResponse >= 1 && validSubResponse <= Toko::getAvailableTanamanSize()){
+                            itemToBuy = Toko::getTanaman(validSubResponse - 1);
                             isSubMenuCancelled = true;
                         } else {
                             throw InvalidSubResponse();
@@ -123,12 +123,12 @@ void WaliKota::beli()
                         if (validSubResponse >= 1 && validSubResponse <= counterAvailableItem){
                             int count = 0;
                             bool found = false;
-                            for (int i = 0; i < Toko::availableProduct.size(); i++){
-                                if (Toko::availableProduct[i].second != 0){
+                            for (int i = 0; i < Toko::getAvailableProductSize(); i++){
+                                if (Toko::getPairProductInt(i)->second != 0){
                                     count++;
                                 }
                                 if (validSubResponse == count && !found){
-                                    itemToBuy = &Toko::availableProduct[i].first;
+                                    itemToBuy = &Toko::getPairProductInt(i)->first;
                                     // itemToBuy = &Toko::availableProduct[count].first;
                                     found = true;
                                     isSubMenuCancelled = true;
@@ -320,12 +320,12 @@ void WaliKota::jual()
 void WaliKota::bangunBangunan()
 {
     std::cout << "Resep Bangunan yang ada sebagai berikut: " << endl;
-    for (int i = 0; i < Toko::availableBangunan.size(); i++)
+    for (int i = 0; i < Toko::getAvailableBangunanSize(); i++)
     {
         std::cout << "    ";
-        std::cout << i + 1 << ". " << Toko::availableBangunan[i].first.getName();
+        std::cout << i + 1 << ". " << Toko::getPairBangunanInt(i)->first.getName();
         std::cout << " (";
-        std::cout << Toko::availableBangunan[i].first.getPrice() << " gulden, ";
+        std::cout << Toko::getPairBangunanInt(i)->first.getPrice() << " gulden, ";
         for (int j = 0; j < ParserResep::getRecipeMaterialQuantity(i + 1).size(); i++)
         {
             std::cout << ParserResep::getRecipeMaterialQuantity(i + 1)[j].first;
@@ -345,9 +345,9 @@ void WaliKota::bangunBangunan()
 
     int idxToBuy = 0;
     bool found = false;
-    for (int i = 0; i < Toko::availableBangunan.size(); i++)
+    for (int i = 0; i < Toko::getAvailableBangunanSize(); i++)
     {
-        if (Toko::availableBangunan[i].first.getName() == bangunanToBuy)
+        if (Toko::getPairBangunanInt(i)->first.getName() == bangunanToBuy)
         {
             idxToBuy = i;
             found = true;
@@ -360,7 +360,7 @@ void WaliKota::bangunBangunan()
         {
             throw CantFindNamaBangunan();
         }
-        int idRecipe = ParserResep::convertNameToID(Toko::availableBangunan[idxToBuy].first.getName());
+        int idRecipe = ParserResep::convertNameToID(Toko::getPairBangunanInt(idxToBuy)->first.getName());
         vector<pair<string, int>> materialToBuild = ParserResep::getRecipeMaterialQuantity(idRecipe);
         string materialToFind;
         int counterMaterial;
@@ -385,8 +385,8 @@ void WaliKota::bangunBangunan()
         std::cout << endl;
     }
 
-    this->ownedBangunan.push_back(Toko::availableBangunan[idxToBuy].first);
-    std::cout << Toko::availableBangunan[idxToBuy].first.getName() << "berhasil dibangun dan telah menjadi hak milik walikota!" << endl;
+    this->ownedBangunan.push_back(Toko::getPairBangunanInt(idxToBuy)->first);
+    std::cout << Toko::getPairBangunanInt(idxToBuy)->first.getName() << "berhasil dibangun dan telah menjadi hak milik walikota!" << endl;
 }
 
 float WaliKota::calculateTax()

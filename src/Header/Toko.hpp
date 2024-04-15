@@ -34,6 +34,14 @@ class Toko {
         static int displayAvailableBangunan();
         static void displayResepBangunan();
         static int getStock(string);
+        static int getAvailableProductSize();
+        static int getAvailableBangunanSize();
+        static int getAvailableHewanSize();
+        static int getAvailableTanamanSize();
+        static Hewan* getHewan(int);
+        static Tanaman* getTanaman(int);
+        static pair<Product,int>* getPairProductInt(int);
+        static pair<Bangunan,int>* getPairBangunanInt(int);
         static void pushProduct(pair<Product,int>);
         static void pushBangunan(pair<Bangunan,int>);
 };

@@ -92,17 +92,18 @@ int Toko::buyProcess(){
 }
 
 void Toko::itemDibeli(GameObject* gameObject, int quantity){
-    bool found = false;
-    for(int i = 0; i < availableProduct.size(); i++){
-        if (gameObject == &availableProduct[i].first){
-            availableProduct[i].second -= quantity;
-            found = true;
-        };
-    };
-    if (!found){
+    if(gameObject->getTipeObject()=="PRODUCT"){
+        for(int i = 0; i < availableProduct.size(); i++){
+            if (gameObject == &availableProduct[i].first){
+                availableProduct[i].second -= quantity;
+                return;
+            }
+        }
+    }else{
         for (int i = 0; i < availableBangunan.size(); i++){
             if (gameObject == &availableBangunan[i].first){
                 availableBangunan[i].second -= quantity;
+                return;
             }
         }
     }
@@ -235,4 +236,35 @@ void Toko::pushProduct(pair<Product,int> produk){
 
 void Toko::pushBangunan(pair<Bangunan,int> bangunan){
     availableBangunan.push_back(bangunan);
+}
+
+int Toko::getAvailableProductSize(){
+    return availableProduct.size();
+}
+
+int Toko::getAvailableBangunanSize(){
+    return availableBangunan.size();
+}
+
+int Toko::getAvailableHewanSize(){
+    return availableHewan.size();
+}
+
+int Toko::getAvailableTanamanSize(){
+    return availableTanaman.size();
+}
+
+pair<Product,int>* Toko::getPairProductInt(int idx){
+    return &availableProduct[idx];
+}
+pair<Bangunan,int>* Toko::getPairBangunanInt(int idx){
+    return &availableBangunan[idx];
+}
+
+Hewan* Toko::getHewan(int idx){
+    return &availableHewan[idx];
+}
+
+Tanaman* Toko::getTanaman(int idx){
+    return &availableTanaman[idx];
 }

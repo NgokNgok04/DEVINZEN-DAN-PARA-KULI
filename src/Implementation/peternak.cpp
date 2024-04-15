@@ -82,11 +82,11 @@ void Peternak::beli()
                         throw InvalidSubResponse();
                     }
 
-                    if (validSubResponse != Toko::availableHewan.size() + 1)
+                    if (validSubResponse != Toko::getAvailableHewanSize() + 1)
                     {
-                        if (validSubResponse >= 1 && validSubResponse <= Toko::availableHewan.size())
+                        if (validSubResponse >= 1 && validSubResponse <= Toko::getAvailableHewanSize())
                         {
-                            itemToBuy = &Toko::availableHewan[validSubResponse - 1];
+                            itemToBuy = Toko::getHewan(validSubResponse - 1);
                             isSubMenuCancelled = true;
                         }
                         else
@@ -114,11 +114,11 @@ void Peternak::beli()
                         throw InvalidSubResponse();
                     }
 
-                    if (validSubResponse != Toko::availableTanaman.size() + 1)
+                    if (validSubResponse != Toko::getAvailableTanamanSize() + 1)
                     {
-                        if (validSubResponse >= 1 && validSubResponse <= Toko::availableTanaman.size())
+                        if (validSubResponse >= 1 && validSubResponse <= Toko::getAvailableTanamanSize())
                         {
-                            itemToBuy = &Toko::availableTanaman[validSubResponse - 1];
+                            itemToBuy = Toko::getTanaman(validSubResponse - 1);
                             isSubMenuCancelled = true;
                         }
                         else
@@ -152,15 +152,15 @@ void Peternak::beli()
                         {
                             int count = 0;
                             bool found = false;
-                            for (int i = 0; i < Toko::availableProduct.size(); i++)
+                            for (int i = 0; i < Toko::getAvailableProductSize(); i++)
                             {
-                                if (Toko::availableProduct[i].second != 0)
+                                if (Toko::getPairProductInt(i)->second != 0)
                                 {
                                     count++;
                                 }
                                 if (validSubResponse == count && !found)
                                 {
-                                    itemToBuy = &Toko::availableProduct[i].first;
+                                    itemToBuy = &Toko::getPairProductInt(i)->first;
                                     // itemToBuy = &Toko::availableProduct[count].first;
                                     found = true;
                                     isSubMenuCancelled = true;
@@ -198,17 +198,17 @@ void Peternak::beli()
                         {
                             int count = 0;
                             bool found = false;
-                            for (int i = 0; i < Toko::availableBangunan.size(); i++)
+                            for (int i = 0; i < Toko::getAvailableBangunanSize(); i++)
                             {
-                                if (Toko::availableBangunan[i].second != 0)
+                                if (Toko::getPairBangunanInt(i)->second != 0)
                                 {
                                     count++;
                                 }
                                 if (validSubResponse == count && !found)
                                 {
-                                    itemToBuy = &Toko::availableBangunan[i].first;
+                                    itemToBuy = &Toko::getPairBangunanInt(i)->first;
                                     // itemToBuy = &Toko::availableBangunan[count].first;
-                                    this->ownedBangunan.push_back(Toko::availableBangunan[count].first);
+                                    this->ownedBangunan.push_back(Toko::getPairBangunanInt(count)->first);
                                     found = true;
                                     isSubMenuCancelled = true;
                                 }
@@ -245,17 +245,17 @@ void Peternak::beli()
                         {
                             int count = 0;
                             bool found = false;
-                            for (int i = 0; i < Toko::availableBangunan.size(); i++)
+                            for (int i = 0; i < Toko::getAvailableBangunanSize(); i++)
                             {
-                                if (Toko::availableBangunan[i].second != 0)
+                                if (Toko::getPairBangunanInt(i)->second != 0)
                                 {
                                     count++;
                                 }
                                 if (validSubResponse == count && !found)
                                 {
-                                    itemToBuy = &Toko::availableBangunan[i].first;
+                                    itemToBuy = &Toko::getPairBangunanInt(i)->first;
                                     // itemToBuy = &Toko::availableBangunan[count].first;
-                                    this->ownedBangunan.push_back(Toko::availableBangunan[count].first);
+                                    this->ownedBangunan.push_back(Toko::getPairBangunanInt(count)->first);
                                     found = true;
                                     isSubMenuCancelled = true;
                                 }
