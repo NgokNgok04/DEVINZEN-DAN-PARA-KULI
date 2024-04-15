@@ -80,10 +80,10 @@ string Pemain::getUsername()
     return this->username;
 }
 
-bool Pemain::operator<(Pemain &other)
+bool Pemain::operator<(Pemain const &other)const
 {
-    string actualUsername1 = this->getUsername();
-    string actualUsername2 = other.getUsername();
+    string actualUsername1 = this->username;
+    string actualUsername2 = other.username;
     string lowerUsername1 = actualUsername1;
     string lowerUsername2 = actualUsername2;
     for (auto& x : lowerUsername1) { 
@@ -99,9 +99,9 @@ bool Pemain::operator<(Pemain &other)
     }
 }
 
-bool Pemain::operator==(Pemain &other)
+bool Pemain::operator==(Pemain const &other)const
 {
-    return this->getUsername() == other.getUsername();
+    return this->username == other.username;
 }
 
 void Pemain::setInv(int rows, int cols, GameObject *a)

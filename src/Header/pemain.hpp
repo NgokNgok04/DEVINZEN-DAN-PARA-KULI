@@ -38,8 +38,8 @@ public:
     // virtual void jual() = 0; // loc item yg akan dijual
     string getUsername();
     virtual int calculateTax() = 0;
-    bool operator<(Pemain &other);
-    bool operator==(Pemain &other);
+    bool operator<(Pemain const &other) const;
+    bool operator==(Pemain const &other) const;
 };
 
 #endif

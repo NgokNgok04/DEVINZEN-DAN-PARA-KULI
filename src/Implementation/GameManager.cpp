@@ -53,8 +53,6 @@ void GameManager::insertNewPlayer(Pemain * newPlayer)
             }
             i--;
         }
-        delete P1;
-        delete P2;
     }
 }
 

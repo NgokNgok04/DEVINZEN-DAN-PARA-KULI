@@ -49,13 +49,12 @@ int main(){
             Petani* petani1 = new Petani();
             Peternak* peternak1 = new Peternak();
             WaliKota* walikota = new WaliKota();
-            Pemain* newPlayer1 = petani1;
-            Pemain* newPlayer2 = peternak1;
-            Pemain* newPlayer3 = walikota;
-            gameManager.insertNewPlayer(newPlayer3);
-            gameManager.insertNewPlayer(newPlayer2);
-            gameManager.insertNewPlayer(newPlayer1);
-            
+            Pemain* P1 = petani1;
+            Pemain* P2 = peternak1;
+            Pemain* P3 = walikota;
+            gameManager.insertNewPlayer(P3);
+            gameManager.insertNewPlayer(P2);
+            gameManager.insertNewPlayer(P1);
             break;
         } else if(choice == 2){
             cout<<"Membuka Save file\n";
@@ -69,20 +68,10 @@ int main(){
     string command;
     while(true){
         cout<<"Sekarang giliran "<<gameManager.getCurrentPlayerName()<<"!\n";
-        Pemain* currentPlayer = gameManager.getCurrentPlayer();
-        Petani* currentPetani = nullptr;
-        Peternak* currentPeternak = nullptr;
-        WaliKota* currentWalikota = nullptr;
-
-        if(currentPlayer->getTipe() == "petani"){ //casting berdasarkan tipe
-            currentPetani = dynamic_cast<Petani*>(currentPlayer);
-        } else if(currentPlayer->getTipe() == "peternak"){
-            currentPeternak = dynamic_cast<Peternak*>(currentPlayer);
-        } else if(currentPlayer->getTipe() == "walikota"){
-            currentWalikota = dynamic_cast<WaliKota*>(currentPlayer);
-        }
+        
         cout<<"Silakan input perintah:\n";
-        cout<<">";
+        cout<<"> ";
+
         cin>>command;
         if(command == "NEXT"){
             gameManager.Next();
