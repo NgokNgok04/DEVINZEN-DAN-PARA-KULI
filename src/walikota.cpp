@@ -78,7 +78,7 @@ void WaliKota::beli()
                 throw InvalidSubResponse();
             }
         }
-    } else {
+    } else if (wantToBuy != 0){
         throw InvalidSubResponse();
     }
 

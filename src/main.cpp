@@ -55,8 +55,8 @@ map<int, int> ParserTanaman::IndexToIDMap = map<int, int>();
 map<int, int> ParserTanaman::IDToIndexMap = map<int, int>();
 vector<Hewan> Toko::availableHewan = vector<Hewan>();
 vector<Tanaman> Toko::availableTanaman = vector<Tanaman>();
-vector<pair<Product,int>> Toko::availableProduct = vector<pair<Product,int>>();
-vector<pair<Bangunan,int>> Toko::availableBangunan = vector<pair<Bangunan,int>>();
+vector<pair<Product, int>> Toko::availableProduct = vector<pair<Product, int>>();
+vector<pair<Bangunan, int>> Toko::availableBangunan = vector<pair<Bangunan, int>>();
 
 int main()
 {
