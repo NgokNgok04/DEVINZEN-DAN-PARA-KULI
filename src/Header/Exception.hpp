@@ -491,7 +491,7 @@ public:
     ~InvalidResponseToko(){};
     string what()
     {
-        return "Response tidak valid.";
+        return "Input tidak valid. Silahkan masukkan Input sesuai kesediaan Toko";
     }
 };
 

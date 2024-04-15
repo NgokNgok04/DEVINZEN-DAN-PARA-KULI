@@ -4,36 +4,51 @@
 #include "Toko.hpp"
 using namespace std;
 
+void Toko::printProduct(){
+    for(int i = 0; i < availableProduct.size(); i++){
+        cout << i + 1 << ". ";
+        cout << availableProduct[i].first.getName() << " " << availableProduct[i].second << endl;
+    }
+}
+
+void Toko::printBangunan(){
+    for(int i = 0; i < availableBangunan.size(); i++){
+        cout << i + 1 << ". ";
+        cout << availableBangunan[i].first.getName() << " " << availableBangunan[i].second << endl;
+    }
+}
+
 void Toko::initialize(){
     int idDummyToko;
     for(int i = 0; i < ParserHewan::getConfigSize(); i++){
-        idDummyToko = ParserHewan::getID(i);
-        Hewan hewanDummyToko(i);
+
+        idDummyToko = ParserHewan::indexToID(i);
+        Hewan hewanDummyToko(idDummyToko);
         availableHewan.push_back(hewanDummyToko);
     }
 
     for(int i = 0; i < ParserTanaman::getConfigSize(); i++){
-        idDummyToko = ParserTanaman::getID(i);
-        Tanaman tanamanDummyToko(i);
+        idDummyToko = ParserTanaman::indexToID(i);
+        Tanaman tanamanDummyToko(idDummyToko);
         availableTanaman.push_back(tanamanDummyToko);
     }
 
     for(int i = 0; i < ParserProduk::getConfigSize(); i++){
-        idDummyToko = ParserProduk::getID(i);
-        Product productDummyToko(i,ParserProduk::isAnAnimalProduct(i));
+        idDummyToko = ParserProduk::indexToID(i);
+        Product productDummyToko(idDummyToko,ParserProduk::isAnAnimalProduct(idDummyToko));
         availableProduct.push_back(make_pair(productDummyToko,0));
     }
 
     for(int i = 0; i < ParserResep::getConfigSize(); i++){
-        idDummyToko = ParserResep::getID(i);
-        Bangunan bangunanDummyToko(i);
+        idDummyToko = ParserResep::indexToID(i);
+        Bangunan bangunanDummyToko(idDummyToko);
         availableBangunan.push_back(make_pair(bangunanDummyToko,0));
     }
 };
 
 int Toko::buyProcess(){
     cout << "Selamat datang di toko!!" << endl;
-    int response;
+    string response;
     cout << "Berikut merupakan hal yang dapat anda Beli :" << endl;
     cout << "1. Hewan" << endl;
     cout << "2. Tanaman" << endl;
@@ -48,21 +63,26 @@ int Toko::buyProcess(){
     }
     i++;
     cout << i << ". Cancel Buy" << endl;
-    cout << "Masukkanlah pilihan (1-" << i << ") :";
+    cout << "Masukkanlah pilihan (1-" << i << ") : ";
     try{
         cin >> response;
-
-        if (response == i){
-            return 0;
-        } else if (response >= 1 && response < i) {
-            return response;
+        int validResponse;
+        if (isAllDigits(response)){
+            validResponse = stoi(response);
         } else {
-            InvalidResponseToko invalidResponse;
-            throw invalidResponse;
+            throw InvalidResponseToko();
+        }
+        if (validResponse == i){
+            return 0;
+        } else if (validResponse >= 1 && validResponse < i) {
+            return validResponse;
+        } else {
+            throw InvalidResponseToko();
         }
     } catch (InvalidResponseToko err) {
-        err.what();
+        cout << err.what();
         cout << endl;
+        return -1;
     }
     return 0;
 }
@@ -95,7 +115,7 @@ void Toko::itemDijual(GameObject* gameObject, int quantity){
     }
     else{
         for (int i = 0; i < availableBangunan.size(); i++){
-            if (gameObject == &availableBangunan[i].first){
+            if (*gameObject == availableBangunan[i].first){
                 availableBangunan[i].second += quantity;
                 return;
             }
@@ -123,6 +143,7 @@ bool Toko::isBangunanEmptyStock(){
 
 void Toko::displayAvailableHewan(){
     int idx = 1;
+    cout << "Pilihan Hewan yang dapat dibeli :" << endl;
     for (int i = 0; i < ParserHewan::getConfigSize(); i++){
         cout << idx << ". " << availableHewan[i].getName();
         cout << " - " << availableHewan[i].getPrice() << endl;
@@ -133,6 +154,7 @@ void Toko::displayAvailableHewan(){
 
 void Toko::displayAvailableTanaman(){
     int idx = 1;
+    cout << "Pilihan Tanaman yang dapat dibeli :" << endl;
     for (int i = 0; i < ParserTanaman::getConfigSize(); i++){
         cout << idx << ". " << availableTanaman[i].getName();
         cout << " - " << availableTanaman[i].getPrice() << endl;
@@ -143,6 +165,7 @@ void Toko::displayAvailableTanaman(){
 
 int Toko::displayAvailableProduct(){
     int idx = 1;
+    cout << "Pilihan Produk yang dapat dibeli :" << endl;
     for (int i = 0; i < ParserProduk::getConfigSize(); i++){
         if (availableProduct[i].second != 0){
             cout << idx << ". " << availableProduct[i].first.getName();
@@ -156,6 +179,7 @@ int Toko::displayAvailableProduct(){
 
 int Toko::displayAvailableBangunan(){
     int idx = 1;
+    cout << "Pilihan Bangunan yang dapat dibeli :" << endl;
     for (int i = 0; i < ParserResep::getConfigSize(); i++){
         if (availableBangunan[i].second != 0){
             cout << idx << ". " << availableBangunan[i].first.getName();

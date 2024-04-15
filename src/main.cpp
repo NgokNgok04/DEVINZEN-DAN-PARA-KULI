@@ -72,43 +72,65 @@ int main()
     PT.ParseFile(plantConfigDirectory);
     PP.ParseFile(productConfigDirectory);
     PR.ParseFile(recipeConfigDirectory);
-    // Toko::initialize();
-    // WaliKota w;
-    // Product *teak = new Product(1, false);
-    // Product *sandal = new Product(2, false);
-    // Product *aloe = new Product(3, false);
-    // Product *iron = new Product(4, false);
-    // w.setInv(1, 1, teak);
-    // for (int i = 2; i <= 10; i++)
-    // {
-    //     w.setInv(1, i, teak);
+    std::cout << PR << endl;
+    Toko::initialize();
+    std::cout << "Awal :" << endl
+              << endl;
+    Toko::printProduct();
+    Petani mahew("MAHEW", 1000, 10, 1, 1, 1, 5, 5);
+    Peternak gtg("WOIII", 10, 15, 1, 1, 1, 8, 8);
+    Product test1(1, ParserProduk::isAnAnimalProduct(1));
+    Product test2(2, ParserProduk::isAnAnimalProduct(2));
+    Product test3(3, ParserProduk::isAnAnimalProduct(3));
+    Product test4(4, ParserProduk::isAnAnimalProduct(4));
+    Product test5(5, ParserProduk::isAnAnimalProduct(5));
+    Product test6(6, ParserProduk::isAnAnimalProduct(6));
+    Product test7(7, ParserProduk::isAnAnimalProduct(7));
+    Product test8(8, ParserProduk::isAnAnimalProduct(8));
+    // Bangunan tost1(1);
+    // Bangunan tost2(2);
+    // Bangunan tost3(3);
+    // Bangunan tost4(4);
+    gtg.setInv(2, 2, &test1);
+    gtg.setInv(3, 3, &test2);
+    gtg.setInv(4, 4, &test3);
+    gtg.setInv(1, 4, &test4);
+    gtg.setInv(4, 1, &test5);
+    gtg.setInv(2, 7, &test6);
+    gtg.setInv(3, 8, &test7);
+    gtg.setInv(5, 6, &test8);
+    gtg.cetakPenyimpanan();
+    // try {
+    //     gtg.jual();
+    // } catch (ItemQuantityToSellNotEnough err){
+    //     err.what();
     // }
+    Toko::printProduct();
+    gtg.cetakPenyimpanan();
+    bool isValid = false;
+    int respon;
+    while (!isValid)
+    {
+        mahew.beli();
+        cout << endl
+             << "Masih mau beli lagi? (0/1)";
+        cin >> respon;
+        if (respon == 0)
+        {
+            isValid = true;
+            cout << "OKE";
+        }
+    }
 
-    // for (int i = 2; i <= 10; i++)
-    // {
-    //     for (int j = 1; j <= 9; j++)
-    //     {
-    //         w.setInv(i, j, sandal);
-    //     }
-    // }
-    // cout << w.getGulden() << "\n";
-    // w.cetakPenyimpanan();
-    // w.bangunBangunan();
-    // cout << w.getGulden() << "\n";
-    // w.cetakPenyimpanan();
-    // w.jual();
-    // w.cetakPenyimpanan();
-    // w.beli();
+    try
+    {
+        gtg.jual();
+    }
+    catch (ItemQuantityToSellNotEnough err)
+    {
+        err.what();
+    }
 
-    WaliKota p;
-    Product *pr = new Product();
-    Hewan h(1);
-    Bangunan *b = new Bangunan();
-    p.setInv(1, 1, &h);
-    p.setInv(2, 1, b);
-    p.setInv(3, 1, pr);
-    p.jual();
-    p.makan();
-
+    mahew.beli();
     return 0;
 }

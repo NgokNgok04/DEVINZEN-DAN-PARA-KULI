@@ -25,3 +25,14 @@ vector<string> StringToStringList(string inputString){
     return StringList;
 }
 
+bool isAllDigits(const string &str)
+{
+    for (char c : str)
+    {
+        if (!isdigit(c))
+        {
+            return false;
+        }
+    }
+    return true;
+}
