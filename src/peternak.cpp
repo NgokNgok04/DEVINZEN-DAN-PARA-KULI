@@ -3,7 +3,7 @@
 #include "peternak.hpp"
 #include "./Header/Product.hpp"
 using namespace std;
-
+// EXTRA FUNCTIONS
 Peternak::Peternak() : Pemain()
 {
     this->tipe = "peternak";
@@ -12,7 +12,7 @@ Peternak::Peternak() : Pemain()
     this->username = "Petani1";
 }
 
-Peternak::Peternak(string usn,int guld, int bb, int smol, int med, int big, int terrows, int tercols) : Pemain(usn,guld, bb, smol, med, big)
+Peternak::Peternak(string usn, int guld, int bb, int smol, int med, int big, int terrows, int tercols) : Pemain(usn, guld, bb, smol, med, big)
 {
     this->tipe = "peternak";
     MatrixArea<Hewan> n(terrows, tercols);
@@ -39,99 +39,139 @@ MatrixArea<Hewan> Peternak::getTernakan()
 
 void Peternak::beli()
 {
-    cout << endl << endl;
+    cout << endl
+         << endl;
     int wantToBuy = Toko::buyProcess();
     int subResponse;
     int counterAvailableItem;
-    GameObject* itemToBuy = nullptr;
-    if (wantToBuy == 1){
+    GameObject *itemToBuy = nullptr;
+    if (wantToBuy == 1)
+    {
         Toko::displayAvailableHewan();
         cout << "Barang yang ingin dibeli : ";
         cin >> subResponse;
-        if (subResponse != Toko::availableHewan.size() + 1){
-            if (subResponse >= 1 && subResponse<= Toko::availableHewan.size()){
+        if (subResponse != Toko::availableHewan.size() + 1)
+        {
+            if (subResponse >= 1 && subResponse <= Toko::availableHewan.size())
+            {
                 itemToBuy = &Toko::availableHewan[subResponse - 1];
-            } else {
+            }
+            else
+            {
                 throw InvalidSubResponse();
             }
         }
-    } else if (wantToBuy == 2){
+    }
+    else if (wantToBuy == 2)
+    {
         Toko::displayAvailableTanaman();
         cout << "Barang yang ingin dibeli : ";
         cin >> subResponse;
-        if (subResponse != Toko::availableTanaman.size() + 1){
-            if (subResponse >= 1 && subResponse<= Toko::availableTanaman.size()){
+        if (subResponse != Toko::availableTanaman.size() + 1)
+        {
+            if (subResponse >= 1 && subResponse <= Toko::availableTanaman.size())
+            {
                 itemToBuy = &Toko::availableTanaman[subResponse - 1];
-            } else {
+            }
+            else
+            {
                 throw InvalidSubResponse();
             }
         }
-    } else if (wantToBuy == 3 && !Toko::isProductEmptyStock()){
+    }
+    else if (wantToBuy == 3 && !Toko::isProductEmptyStock())
+    {
         counterAvailableItem = Toko::displayAvailableProduct();
         cout << "Barang yang ingin dibeli : ";
         cin >> subResponse;
-        if (subResponse != counterAvailableItem + 1){
-            if (subResponse >= 1 && subResponse <= counterAvailableItem){
+        if (subResponse != counterAvailableItem + 1)
+        {
+            if (subResponse >= 1 && subResponse <= counterAvailableItem)
+            {
                 int count = 0;
-                for(int i = 0; i < Toko::availableProduct.size(); i++){
-                    if (Toko::availableProduct[i].second != 0){
+                for (int i = 0; i < Toko::availableProduct.size(); i++)
+                {
+                    if (Toko::availableProduct[i].second != 0)
+                    {
                         count++;
                     }
-                    if (subResponse == count){
+                    if (subResponse == count)
+                    {
                         itemToBuy = &Toko::availableProduct[count].first;
                     }
                 }
-            } else {
+            }
+            else
+            {
                 throw InvalidSubResponse();
             }
         }
-    } else if (wantToBuy == 3 && !Toko::isBangunanEmptyStock() && Toko::isProductEmptyStock()){
+    }
+    else if (wantToBuy == 3 && !Toko::isBangunanEmptyStock() && Toko::isProductEmptyStock())
+    {
         counterAvailableItem = Toko::displayAvailableBangunan();
         cout << "Barang yang ingin dibeli : ";
         cin >> subResponse;
-        if (subResponse != counterAvailableItem + 1){
-            if (subResponse >= 1 && subResponse <= counterAvailableItem){
+        if (subResponse != counterAvailableItem + 1)
+        {
+            if (subResponse >= 1 && subResponse <= counterAvailableItem)
+            {
                 int count = 0;
                 bool found = false;
-                for(int i = 0; i < Toko::availableBangunan.size(); i++){
-                    if (Toko::availableBangunan[i].second != 0){
+                for (int i = 0; i < Toko::availableBangunan.size(); i++)
+                {
+                    if (Toko::availableBangunan[i].second != 0)
+                    {
                         count++;
                     }
-                    if (subResponse == count && !found){
+                    if (subResponse == count && !found)
+                    {
                         itemToBuy = &Toko::availableBangunan[count].first;
                         this->ownedBangunan.push_back(Toko::availableBangunan[count].first);
                         found = true;
                     }
                 }
-            } else {
+            }
+            else
+            {
                 throw InvalidSubResponse();
             }
         }
-    } else if (wantToBuy == 4 && !Toko::isBangunanEmptyStock){
+    }
+    else if (wantToBuy == 4 && !Toko::isBangunanEmptyStock)
+    {
         counterAvailableItem = Toko::displayAvailableBangunan();
         cout << "Barang yang ingin dibeli : ";
         cin >> subResponse;
-        if (subResponse != counterAvailableItem + 1){
-            if (subResponse >= 1 && subResponse <= counterAvailableItem){
+        if (subResponse != counterAvailableItem + 1)
+        {
+            if (subResponse >= 1 && subResponse <= counterAvailableItem)
+            {
                 int count = 0;
                 bool found = false;
-                for(int i = 0; i < Toko::availableBangunan.size(); i++){
-                    if (Toko::availableBangunan[i].second != 0){
+                for (int i = 0; i < Toko::availableBangunan.size(); i++)
+                {
+                    if (Toko::availableBangunan[i].second != 0)
+                    {
                         count++;
                     }
-                    if (subResponse == count && !found){
+                    if (subResponse == count && !found)
+                    {
                         itemToBuy = &Toko::availableBangunan[count].first;
                         this->ownedBangunan.push_back(Toko::availableBangunan[count].first);
                         found = true;
                     }
                 }
-            } else {
+            }
+            else
+            {
                 throw InvalidSubResponse();
             }
         }
     }
 
-    if (itemToBuy != nullptr){
+    if (itemToBuy != nullptr)
+    {
         cout << endl;
         cout << "Uang Anda : " << this->gulden << endl;
         this->inventory.displayRemainderSlot();
@@ -141,109 +181,173 @@ void Peternak::beli()
         cout << "Kuantitas : ";
         cin >> quantity;
 
-        this->gulden -= itemToBuy->getPrice()*quantity; 
-        try{
-            if (quantity > this->inventory.getEmptySlot()){
-                this->gulden += itemToBuy->getPrice()*quantity;
+        this->gulden -= itemToBuy->getPrice() * quantity;
+        try
+        {
+            if (quantity > this->inventory.getEmptySlot())
+            {
+                this->gulden += itemToBuy->getPrice() * quantity;
                 throw InventoryNotEnough();
             }
             int stock = Toko::getStock(itemToBuy->getName());
-            if (stock != -1 && stock < quantity){
-                this->gulden += itemToBuy->getPrice()*quantity;
+            if (stock != -1 && stock < quantity)
+            {
+                this->gulden += itemToBuy->getPrice() * quantity;
                 throw StockTokoNotEnough();
             }
-            if (this->gulden < 0){
-                this->gulden += itemToBuy->getPrice()*quantity;
+            if (this->gulden < 0)
+            {
+                this->gulden += itemToBuy->getPrice() * quantity;
                 throw NotEnoughGulden();
             }
             cout << endl;
-            cout << "Selamat Anda berhasil membeli " << quantity <<" " << itemToBuy->getName();
-            cout << ". Uang yang tersisa " << this->gulden << "." << endl << endl;
+            cout << "Selamat Anda berhasil membeli " << quantity << " " << itemToBuy->getName();
+            cout << ". Uang yang tersisa " << this->gulden << "." << endl
+                 << endl;
 
             cout << "Pilih slot untuk menyimpan barang yang anda beli!" << endl;
             this->inventory.displayObject();
             string slot;
-            for(int i = 0; i < quantity; i++){
-                cout << "Petak slot " << i + 1 <<": ";
+            for (int i = 0; i < quantity; i++)
+            {
+                cout << "Petak slot " << i + 1 << ": ";
                 cin >> slot;
-                pair<int,int> position;
-                try {
+                pair<int, int> position;
+                try
+                {
                     position = this->inventory.getPositionFromSlot(slot);
-                    if (this->inventory.getElement(position.first,position.second) != nullptr){
+                    if (this->inventory.getElement(position.first, position.second) != nullptr)
+                    {
                         throw SlotFilled();
                     }
-                    this->inventory.setElement(position.first,position.second, itemToBuy);
-                } catch (InvalidPositionMatrixArea err){
+                    this->inventory.setElement(position.first, position.second, itemToBuy);
+                }
+                catch (InvalidPositionMatrixArea err)
+                {
                     err.what();
                     cout << endl;
-                } catch (SlotFilled err){
+                }
+                catch (SlotFilled err)
+                {
                     err.what();
                     cout << endl;
                 }
             }
             cout << itemToBuy->getName() << "berhasil disimpan dalam penyimpanan!" << endl;
-            Toko::itemDibeli(itemToBuy,quantity);
-        }catch (InventoryNotEnough err){
+            Toko::itemDibeli(itemToBuy, quantity);
+        }
+        catch (InventoryNotEnough err)
+        {
             err.what();
             cout << endl;
-        }catch (StockTokoNotEnough err){
+        }
+        catch (StockTokoNotEnough err)
+        {
             err.what();
             cout << endl;
-        }catch(NotEnoughGulden err){
+        }
+        catch (NotEnoughGulden err)
+        {
             err.what();
             cout << endl;
         }
     }
-
 }
 
 void Peternak::jual()
 {
-    cout << "Berikut merupakan penyimpanan Anda" << endl;
-    this->inventory.displayObject();
-    int quantity;
-    cout << "Masukkan kuantitas barang yang ingin dijual :";
-    cin >> quantity;
-
-    if ((quantity - this->ownedBangunan.size()) > ((this->inventory.getCols() * this->inventory.getRows()) - this->inventory.getEmptySlot())){
-        throw ItemQuantityToSellNotEnough();
-    }
-
-    cout << endl << "Silahkan pilih petak yang ingin anda jual!";
-    string slot;
-    pair<int,int> position;
-    int profit = 0;
-    GameObject* itemToSell;
-
-    bool isValid;
-    for(int i = 0; i < quantity; i++){
-        isValid = false;
-        while(!isValid){
-            cout << "Petak slot " << i + 1 << ": ";
-            cin >> slot;
-
-            try{
-                position = this->inventory.getPositionFromSlot(slot);
-                itemToSell = this->inventory.getElement(position.first, position.second);
-                if (itemToSell->getTipeObject() == "BANGUNAN"){
-                    throw CantSellBangunan();
-                }
-                isValid = true;
-            } catch (InvalidPositionMatrixArea err){
-                err.what();
-                cout << endl;
-            } catch (CantSellBangunan err){
-                err.what();
-                cout << endl;
+    try
+    {
+        cout << "Berikut merupakan penyimpanan Anda" << endl;
+        this->inventory.displayObject();
+        string quantity;
+        int quantityint;
+        cout << "Masukkan kuantitas barang yang ingin dijual :";
+        cin >> quantity;
+        cout << endl;
+        if (!isAllDigits(quantity))
+        {
+            throw InvalidPanenIdx();
+        }
+        else
+        {
+            quantityint = std::stoi(quantity);
+            if ((quantityint - this->ownedBangunan.size()) > ((this->inventory.getCols() * this->inventory.getRows()) - this->inventory.getEmptySlot()))
+            {
+                throw ItemQuantityToSellNotEnough();
             }
         }
 
-            profit += itemToSell->getPrice();
-            this->inventory.deleteElement(position.first, position.second);
+        cout << endl
+             << "Silahkan pilih petak yang ingin anda jual!";
+        string slot;
+        pair<int, int> position;
+        int profit = 0;
+        GameObject *itemToSell;
+
+        bool isValid;
+        for (int i = 0; i < quantityint; i++)
+        {
+            isValid = false;
+            while (!isValid)
+            {
+                cout << "Petak slot " << i + 1 << ": ";
+                cin >> slot;
+                cout << endl;
+
+                int idx1 = slot[0] - 'A' + 1;
+                int idx2 = std::stoi(slot.substr(1));
+                try
+                {
+                    if (slot.length() != 3)
+                    {
+                        throw InvalidIndexMatrixArea();
+                    }
+                    else if (idx2 > this->inventory.getRows() || idx1 > this->inventory.getCols())
+                    {
+                        throw InvalidIndexMatrixArea();
+                    }
+                    // position = this->inventory.getPositionFromSlot(slot);
+                    // itemToSell = this->inventory.getElement(position.first, position.second);
+                    else
+                    {
+                        if (this->inventory.getElement(idx2, idx1) != nullptr)
+                        {
+                            if (this->inventory.getElement(idx2, idx1)->getTipeObject() == "BANGUNAN")
+                            {
+                                throw CantSellBangunan();
+                            }
+                            else
+                            {
+                                isValid = true;
+                            }
+                        }
+                        else
+                        {
+                            throw InvalidEmptySlot();
+                        }
+                    }
+                }
+                catch (BaseException &e)
+                {
+                    cout << e.what() << endl;
+                }
+            }
+            int idx1 = slot[0] - 'A' + 1;
+            int idx2 = std::stoi(slot.substr(1));
+            profit += this->inventory.getElement(idx2, idx1)->getPrice();
+            cout << this->inventory.getElement(idx2, idx1)->getPrice() << endl;
+            this->inventory.deleteElement(idx2, idx1);
+        }
+        this->gulden += profit;
+        cout << this->gulden << ' ' << profit << endl;
+        cout << "Barang Anda berhasil dijual! Uang Anda bertambah " << profit << " gulden!" << endl;
+        Toko::itemDijual(itemToSell, quantityint);
     }
-    this->gulden += profit;
-    cout << "Barang Anda berhasil dijual! Uang Anda bertambah " << profit << " gulden!" << endl;
-    Toko::itemDijual(itemToSell,quantity);
+    catch (BaseException &e)
+    {
+        cout << e.what() << endl;
+    }
 }
 
 void Peternak::cetakTernak()
@@ -272,7 +376,7 @@ void Peternak::ternak()
         {
             this->cetakTernak();
 
-            if (slot.length() < 3 || slot.length() > 3)
+            if (slot.length() != 3)
             {
                 throw InvalidIndexMatrixArea();
             }
@@ -324,7 +428,7 @@ void Peternak::ternak()
         int idx4 = std::stoi(petak.substr(1));
         try
         {
-            if (petak.length() < 3 || petak.length() > 3)
+            if (petak.length() != 3)
             {
                 throw InvalidIndexMatrixArea();
             }
@@ -389,7 +493,7 @@ void Peternak::kasihMakan()
             // Validasi
             int idx1 = slot[0] - 'A' + 1;
             int idx2 = std::stoi(slot.substr(1));
-            if (slot.length() < 3 || slot.length() > 3)
+            if (slot.length() != 3)
             {
                 throw InvalidIndexMatrixArea();
             }
@@ -433,7 +537,7 @@ void Peternak::kasihMakan()
             // Validasi
             int idx3 = slot2[0] - 'A' + 1;
             int idx4 = std::stoi(slot2.substr(1));
-            if (slot2.length() < 3 || slot2.length() > 3)
+            if (slot2.length() != 3)
             {
                 throw InvalidIndexMatrixArea();
             }
@@ -710,7 +814,7 @@ void Peternak::panenTernak()
                             int idx1 = want[0] - 'A' + 1;
                             int idx2 = std::stoi(want.substr(1));
                             cout << idx2 << idx1 << endl;
-                            if (want.length() < 3 || want.length() > 3)
+                            if (want.length() != 3)
                             {
                                 throw InvalidIndexMatrixArea();
                             }
@@ -816,17 +920,21 @@ void Peternak::panenTernak()
 }
 
 float Peternak::calculateTax()
-{   
-    int KKP = countKekayaanInven()+countKekayaanTernakan()-KTKP_PETERNAK;
-    return getTaxRate(KKP)*KKP;
+{
+    int KKP = countKekayaanInven() + countKekayaanTernakan() - KTKP_PETERNAK;
+    return getTaxRate(KKP) * KKP;
 }
 
-int Peternak::countKekayaanTernakan(){
-    int sum=0;
-    for(int i=0;i<ternakan.getRows();i++){
-        for(int j=0;j<ternakan.getCols();i++){
-            if(ternakan.getElement(i,j)!=0){
-                sum+=ternakan.getElement(i,j)->getPrice();
+int Peternak::countKekayaanTernakan()
+{
+    int sum = 0;
+    for (int i = 0; i < ternakan.getRows(); i++)
+    {
+        for (int j = 0; j < ternakan.getCols(); i++)
+        {
+            if (ternakan.getElement(i, j) != 0)
+            {
+                sum += ternakan.getElement(i, j)->getPrice();
             }
         }
     }
