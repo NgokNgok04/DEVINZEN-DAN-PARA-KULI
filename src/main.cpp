@@ -55,8 +55,8 @@ map<int, int> ParserTanaman::IndexToIDMap = map<int, int>();
 map<int, int> ParserTanaman::IDToIndexMap = map<int, int>();
 vector<Hewan> Toko::availableHewan = vector<Hewan>();
 vector<Tanaman> Toko::availableTanaman = vector<Tanaman>();
-vector<pair<Product,int>> Toko::availableProduct = vector<pair<Product,int>>();
-vector<pair<Bangunan,int>> Toko::availableBangunan = vector<pair<Bangunan,int>>();
+vector<pair<Product, int>> Toko::availableProduct = vector<pair<Product, int>>();
+vector<pair<Bangunan, int>> Toko::availableBangunan = vector<pair<Bangunan, int>>();
 
 int main()
 {
@@ -77,11 +77,13 @@ int main()
     PP.ParseFile(productConfigDirectory);
     PR.ParseFile(recipeConfigDirectory);
 
-    Petani p;
-    cout<<p.getGulden()<<"KONTOL"<<endl;
+    Peternak p;
+    cout << p.getGulden() << "KONTOL" << endl;
     Hewan h(1);
-    p.setInv(1,1,&h);
+    Bangunan *b = new Bangunan();
+    p.setInv(1, 1, &h);
+    p.setInv(2, 1, b);
     p.jual();
-    cout<<p.getGulden()<<endl;
+    cout << p.getGulden() << endl;
     return 0;
 }

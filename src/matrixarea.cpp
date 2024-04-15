@@ -49,11 +49,15 @@ MatrixArea<T *> &MatrixArea<T>::operator=(const MatrixArea<T *> &matrix)
 }
 
 template <class T>
-MatrixArea<T*> &MatrixArea<T>::operator+(const T* &object){
+MatrixArea<T *> &MatrixArea<T>::operator+(const T *&object)
+{
     bool found = false;
-    for (int i = 0; i < this->rows; i++){
-        for(int j = 0; j < this->cols; j++){
-            if (this->matrix[i][j] == nullptr && !found){
+    for (int i = 0; i < this->rows; i++)
+    {
+        for (int j = 0; j < this->cols; j++)
+        {
+            if (this->matrix[i][j] == nullptr && !found)
+            {
                 this->matrix[i][j] = object;
                 found = true;
             }
@@ -79,12 +83,14 @@ T *MatrixArea<T>::getElement(int row, int col)
 }
 
 template <class T>
-int MatrixArea<T>::getRows(){
+int MatrixArea<T>::getRows()
+{
     return this->rows;
 }
 
 template <class T>
-int MatrixArea<T>::getCols(){
+int MatrixArea<T>::getCols()
+{
     return this->cols;
 }
 
@@ -102,14 +108,16 @@ template <class T>
 pair<int, int> MatrixArea<T>::getPositionFromSlot(string slot)
 {
     int posCol = slot[0] - 'A' + 1;
-    if (posCol < 0 || posCol >= this->cols){
+    if (posCol < 0 || posCol >= this->cols)
+    {
         throw InvalidPositionMatrixArea();
     }
     int posRow = stoi(string(1, slot[1]) + string(1, slot[2]));
-    if (posRow < 0 || posRow >= this->rows){
+    if (posRow < 0 || posRow >= this->rows)
+    {
         throw InvalidPositionMatrixArea();
     }
-    
+
     return make_pair(posRow, posCol);
 }
 
@@ -364,12 +372,16 @@ Hewan *MatrixArea<GameObject>::convertHewan(int row, int col)
 }
 
 template <class T>
-int MatrixArea<T>::countSameName(string name){
+int MatrixArea<T>::countSameName(string name)
+{
     int count = 0;
-    for (int i = 0; i < this->rows; i++){
-        for (int j = 0; j < this->cols; j++){
-            if (this->matrix[i][j] != nullptr && this->matrix[i][j]->getName() == name){
-                count ++;
+    for (int i = 0; i < this->rows; i++)
+    {
+        for (int j = 0; j < this->cols; j++)
+        {
+            if (this->matrix[i][j] != nullptr && this->matrix[i][j]->getName() == name)
+            {
+                count++;
             }
         }
     }
