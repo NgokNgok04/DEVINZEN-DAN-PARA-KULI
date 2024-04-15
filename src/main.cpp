@@ -83,14 +83,17 @@ int main()
     }
 
     for(int i = 2; i<=10; i++){
-        for(int j = 1; j<=10; j++){
+        for(int j = 1; j<=9; j++){
             w.setInv(i,j,sandal);
         }
     }
+    cout<<w.getGulden()<<"\n";
     w.cetakPenyimpanan();
     w.bangunBangunan();
+    cout<<w.getGulden()<<"\n";
     w.cetakPenyimpanan();
-    
+    w.jual();
+    w.cetakPenyimpanan();
     // w.beli();
     return 0;
 }
