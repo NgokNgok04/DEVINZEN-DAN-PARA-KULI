@@ -286,6 +286,194 @@ public:
     }
 };
 
+class InvalidIndexMatrixArea : public BaseException
+{
+public:
+    InvalidIndexMatrixArea(){};
+    ~InvalidIndexMatrixArea(){};
+    string what()
+    {
+        return "Slot yang diakses tidak valid!";
+    }
+};
+
+class InvalidEmptySlot : public BaseException
+{
+public:
+    InvalidEmptySlot(){};
+    ~InvalidEmptySlot(){};
+    string what()
+    {
+        return "Slot yang diakses kosong!";
+    }
+};
+
+class InvalidFilledSlot : public BaseException
+{
+public:
+    InvalidFilledSlot(){};
+    ~InvalidFilledSlot(){};
+    string what()
+    {
+        return "Slot yang diakses bukanlah petak kosong!";
+    }
+};
+
+class InvalidNotTanaman : public BaseException
+{
+public:
+    InvalidNotTanaman(){};
+    ~InvalidNotTanaman(){};
+    string what()
+    {
+        return "Pilihan itu bukanlah tanaman!";
+    }
+};
+
+class InvalidNotHewan : public BaseException
+{
+public:
+    InvalidNotHewan(){};
+    ~InvalidNotHewan(){};
+    string what()
+    {
+        return "Pilihan itu bukanlah hewan!";
+    }
+};
+
+class InvalidPanenIdx : public BaseException
+{
+public:
+    InvalidPanenIdx(){};
+    ~InvalidPanenIdx(){};
+    string what()
+    {
+        return "Tidak terdapat pilihan tersebut!";
+    }
+};
+
+class InvalidPanenAmount : public BaseException
+{
+public:
+    InvalidPanenAmount(){};
+    ~InvalidPanenAmount(){};
+    string what()
+    {
+        return "Jumlah petak pilihan tidak valid!";
+    }
+};
+
+class InvalidPanenAmountOver : public BaseException
+{
+public:
+    InvalidPanenAmountOver(){};
+    ~InvalidPanenAmountOver(){};
+    string what()
+    {
+        return "Jumlah petak pilihan melebihi ketersediaan!";
+    }
+};
+
+class InvalidInventorySpace : public BaseException
+{
+public:
+    InvalidInventorySpace(){};
+    ~InvalidInventorySpace(){};
+    string what()
+    {
+        return "Jumlah petak pilihan melebihi slot inventory!";
+    }
+};
+
+class InvalidPlantChoice : public BaseException
+{
+public:
+    InvalidPlantChoice(){};
+    ~InvalidPlantChoice(){};
+    string what()
+    {
+        return "Pilihan itu bukanlah tanaman yang ingin dipanen!";
+    }
+};
+
+class InvalidAnimalChoice : public BaseException
+{
+public:
+    InvalidAnimalChoice(){};
+    ~InvalidAnimalChoice(){};
+    string what()
+    {
+        return "Pilihan itu bukanlah hewan yang ingin dipanen!";
+    }
+};
+
+class NoHarvestablePlant : public BaseException
+{
+public:
+    NoHarvestablePlant(){};
+    ~NoHarvestablePlant(){};
+    string what()
+    {
+        return "Tidak terdapat tanaman untuk dipanen!";
+    }
+};
+
+class NoHarvestableAnimal : public BaseException
+{
+public:
+    NoHarvestableAnimal(){};
+    ~NoHarvestableAnimal(){};
+    string what()
+    {
+        return "Tidak terdapat hewan untuk dipanen!";
+    }
+};
+
+class FullInv : public BaseException
+{
+public:
+    FullInv(){};
+    ~FullInv(){};
+    string what()
+    {
+        return "Slot inventory tidak mencukupi!";
+    }
+};
+
+class InvalidCarnivore : public BaseException
+{
+public:
+    InvalidCarnivore(){};
+    ~InvalidCarnivore(){};
+    string what()
+    {
+        return "Bukan bahan pangan untuk binatang karnivora!";
+    }
+};
+
+class InvalidHerbivore : public BaseException
+{
+public:
+    InvalidHerbivore(){};
+    ~InvalidHerbivore(){};
+    string what()
+    {
+        return "Bukan bahan pangan untuk binatang herbivora!";
+    }
+};
+
+class InvalidNotProduct : public BaseException
+{
+public:
+    InvalidNotProduct(){};
+    ~InvalidNotProduct(){};
+    string what()
+    {
+        return "Barang pada slot tersebut bukanlah produk!";
+    }
+};
+
+
 class InvalidPositionMatrixArea : public BaseException
 {
 public:

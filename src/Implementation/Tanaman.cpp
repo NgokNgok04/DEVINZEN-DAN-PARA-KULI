@@ -1,5 +1,16 @@
 #include "../Header/Tanaman.hpp"
 
+map<string, string> Tanaman::konversiPanen = {
+    {"TEAK_TREE", "TEAK_WOOD"},
+    {"SANDALWOOD_TREE", "SANDALWOOD_WOOD"},
+    {"ALOE_TREE", "ALOE_WOOD"},
+    {"IRONWOOD_TREE", "IRONWOOD_WOOD"},
+    {"APPLE_TREE", "APPLE"},
+    {"ORANGE_TREE", "ORANGE"},
+    {"BANANA_TREE", "BANANA"},
+    {"GUAVA_TREE", "GUAVA"},
+};
+
 Tanaman::Tanaman(int idKonfig)
 {
     setID(idKonfig);
@@ -24,9 +35,15 @@ void Tanaman::tambahUmur()
 
 Product *Tanaman::hasilPanen()
 {
-    vector<int> idProduct = ParserProduk::findOrigin(getName());
-    Product *temp = new Product(idProduct.front(), false);
-    return temp;
+    cout << "awdaADDa" << endl;
+    cout << konversiPanen[getName()] << endl;
+    int a = ParserProduk::convertNameToID(konversiPanen[getName()]);
+    cout << a << endl;
+    Product *b = new Product(a, false);
+    cout << b->getName() << endl;
+
+    // return (new Product(ParserHewan::convertNameToID(konversiPanen[getName()]), false));
+    return b;
 }
 bool Tanaman::isHarvestable()
 {

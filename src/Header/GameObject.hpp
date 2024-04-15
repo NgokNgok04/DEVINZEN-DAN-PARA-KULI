@@ -2,7 +2,6 @@
 #define GAMEOBJECT_HPP
 
 #include <iostream>
-#include <vector>
 #include <string>
 // #include "Exception.hpp"
 using namespace std;
@@ -17,6 +16,7 @@ private:
     string tipeObject;
 
 public:
+    virtual ~GameObject(){};
     int getID();
     string getKode();
     float getPrice();

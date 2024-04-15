@@ -22,6 +22,8 @@ public:
     MatrixArea(int, int);
     ~MatrixArea();
     MatrixArea(const MatrixArea<T *> &);
+    int getRows();
+    int getCols();
     MatrixArea<T *> &operator=(const MatrixArea<T *> &);
     MatrixArea<T *> &operator+(const T* &);
     void setElement(int, int, T *);
@@ -37,6 +39,8 @@ public:
     bool isEmpty();
     int getEmptySlot();
     int countSameName(string);
+    Tanaman *convertTanaman(int, int);
+    Hewan *convertHewan(int, int);
 };
 
 #endif

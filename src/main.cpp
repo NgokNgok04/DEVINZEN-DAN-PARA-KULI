@@ -3,15 +3,18 @@
 // #include <string>
 #include "pemain.cpp"
 #include "petani.cpp"
+#include "peternak.cpp"
+#include "walikota.cpp"
 #include "./Implementation/Tanaman.cpp"
+#include "./Implementation/Hewan.cpp"
 #include "./Implementation/Product.cpp"
 #include "./Implementation/ParserTanaman.cpp"
 #include "./Implementation/ParserProduk.cpp"
 #include "./Implementation/ParserHewan.cpp"
 #include "./Implementation/ParserResep.cpp"
 // #include "./Implementation/ParserMisc.cpp"
+// #include "./Implementation/ParserMisc.cpp"
 #include "./misc/helper.cpp"
-// #include "peternak.cpp"
 // #include "walikota.cpp"
 // #include "./Implementation/Hewan.cpp"
 #include <iostream>
@@ -63,44 +66,110 @@ map<int, int> ParserTanaman::IDToIndexMap = map<int, int>();
 
 int main()
 {
-    // MatrixArea<Hewan> testaja;
-    // MatrixArea<GameObject> matrix(4, 2);
-    // MatrixArea<Hewan> matrixcctor(matrix);
-    // testaja = matrix;
-    // cout << "test" << endl;
-    // Hewan anjing(1);
-    // Hewan kucing(2);
-    // Hewan monyet(3);
-    // matrix.setElement(1, 1, &anjing);
-    // matrix.setElement(1, 2, &kucing);
-    // matrix.setElement(2, 1, &monyet);
-    // matrix.displayMatrix();
-    // matrix.deleteElement(2, 1);
-    // matrix.displayMatrix();
+    ParserHewan PH;
+    // ParserMisc PM;
+    ParserTanaman PT;
+    ParserProduk PP;
+    ParserResep PR;
+    string animalConfigDirectory = "../config/animal.txt";
+    string miscConfigDirectory = "../config/misc.txt";
+    string plantConfigDirectory = "../config/plant.txt";
+    string productConfigDirectory = "../config/product.txt";
+    string recipeConfigDirectory = "../config/recipe.txt";
 
-    Petani P1;
-    Tanaman kiel;
-    cout << "helo222" << endl;
-    P1.setInv(2, 2, kiel);
-    P1.cetakPenyimpanan();
+    PH.ParseFile(animalConfigDirectory);
+    // PM.ParseFile(miscConfigDirectory);
+    PT.ParseFile(plantConfigDirectory);
+    PP.ParseFile(productConfigDirectory);
+    PR.ParseFile(recipeConfigDirectory);
 
-    // P1.cetakLadang();
-    cout << "helo" << endl;
+    // Petani P1("Jawir",69,69,69,69,69,69,69);
+    Peternak P2;
+    // WaliKota P3("jAwir",69,69,69,69,69);
+    Hewan *met = new Hewan();
+    Hewan *met2 = new Hewan();
+    Hewan *met3 = new Hewan();
+    Hewan *met4 = new Hewan();
+    Tanaman *kiel = new Tanaman();
+    Tanaman *dan = new Tanaman();
+    Tanaman *akb = new Tanaman();
 
-    // cout << "hi" << endl;
+    // P2.setInv(2, 2, kiel);
+    // P2.setInv(5, 3, dan);
+    // P2.setInv(6, 3, dan);
+    // P2.setInv(5, 2, met);
+    // P2.setInv(7, 1, met2);
+    // P2.setInv(5, 7, met3);
 
-    // P1.cetakLadang();
-    P1.tanam();
-    // cout << P1.getTipe() << endl;
+    // // P2.panenTani();
+    // P2.cetakPenyimpanan();
+    // P2.tanam();
+    // P2.tanam();
+    // P2.tanam();
+    // P2.cetakPenyimpanan();
+    // P2.cetakLadang();
 
-    // std::string str = "B07";
+    // P2.panenTani();
+    // P2.cetakPenyimpanan();
+    // cout << "==========" << endl;
+    // try
+    // {
+    //     P2.panenTani();
+    // }
+    // catch (BaseException &e)
+    // {
+    //     cout << "HAHA" << endl;
+    //     cout << e.what() << endl;
+    // }
+    // P2.cetakLadang();
+    // P2.cetakPenyimpanan();
+    // cout<<P1.getUsername()<<"\n";
+    // cout<<P2.getUsername()<<"\n";
+    // cout<<P3.getUsername()<<"\n";
 
-    // int idx1 = str[0] - 'A' + 1;
+    // if(P1<P2){
+    //     cout<<"nama P1 lebih awal dari P2\n";
+    // } else {
+    //     cout<<"nama P2 lebih akhir atau sama dengan P2\n";
+    // }
 
-    // int idx2 = std::stoi(str.substr(1));
+    // if(P1 == P2){
+    //     cout<<"Pemain sama\n";
+    // } else {
+    //     cout<<"Pemain beda\n";
+    // }
+    P2.setInv(2, 2, kiel);
+    P2.setInv(5, 3, dan);
+    P2.setInv(6, 3, dan);
+    P2.setInv(5, 2, met);
+    P2.setInv(7, 1, met2);
+    P2.setInv(5, 7, met3);
+    P2.setInv(5, 6, met4);
 
-    // std::cout << "Index 1: " << idx1 << std::endl;
-    // std::cout << "Index 2: " << idx2 << std::endl;
+    // P2.panenTani();
+    P2.cetakPenyimpanan();
+    P2.ternak();
+    P2.ternak();
+    P2.ternak();
+    P2.ternak();
+    // P2.cetakPenyimpanan();
+    // P2.cetakTernak();
+    P2.panenTernak();
+    P2.cetakPenyimpanan();
+    cout << "==========" << endl;
+    // try
+    // {
+    //     P2.panenTernak();
+    // }
+    // catch (BaseException &e)
+    // {
+    //     cout << "HAHA" << endl;
+    //     cout << e.what() << endl;
+    // }
+    P2.cetakTernak();
+    P2.cetakPenyimpanan();
+
+    P2.kasihMakan();
 
     return 0;
 }

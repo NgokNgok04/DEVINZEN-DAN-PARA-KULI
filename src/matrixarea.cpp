@@ -26,6 +26,7 @@ MatrixArea<T>::~MatrixArea()
     this->matrix.clear();
     cout << "dtor success" << endl;
 }
+
 template <class T>
 MatrixArea<T>::MatrixArea(const MatrixArea<T *> &matrix)
 {
@@ -33,6 +34,18 @@ MatrixArea<T>::MatrixArea(const MatrixArea<T *> &matrix)
     this->cols = matrix.cols;
     this->matrix = matrix.matrix;
     cout << "cctor success" << endl;
+}
+
+template <class T>
+int MatrixArea<T>::getRows()
+{
+    return this->rows;
+}
+
+template <class T>
+int MatrixArea<T>::getCols()
+{
+    return this->cols;
 }
 
 template <class T>
@@ -90,6 +103,9 @@ int MatrixArea<T>::getCols(){
 template <class T>
 void MatrixArea<T>::deleteElement(int row, int col)
 {
+    cout << "AAA" << endl;
+    // delete matrix[row - 1][col - 1];
+    cout << "BBB" << endl;
     this->matrix[row - 1][col - 1] = nullptr;
     cout << "delete Element success" << endl;
 }
@@ -344,6 +360,20 @@ int MatrixArea<T>::getEmptySlot()
         }
     }
     return count;
+}
+
+template <>
+Tanaman *MatrixArea<GameObject>::convertTanaman(int row, int col)
+{
+    Tanaman *temp = dynamic_cast<Tanaman *>(this->getElement(row, col));
+    return temp;
+}
+
+template <>
+Hewan *MatrixArea<GameObject>::convertHewan(int row, int col)
+{
+    Hewan *temp = dynamic_cast<Hewan *>(this->getElement(row, col));
+    return temp;
 }
 
 template <class T>

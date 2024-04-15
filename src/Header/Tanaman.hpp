@@ -4,19 +4,23 @@
 #include "GameObject.hpp"
 #include "Product.hpp"
 #include "ParserTanaman.hpp"
-
+#include <map>
 class Tanaman : public GameObject
 {
 private:
     string type;
     int durationHarvest;
     int age;
+    static map<string, string> konversiPanen;
 
 public:
     Tanaman()
     {
         this->setKode("KIL");
         this->setTipeObject("TANAMAN");
+        this->setName("ORANGE_TREE");
+        this->durationHarvest = 10;
+        this->age = 100;
     }
     Tanaman(int);
     void tambahUmur();

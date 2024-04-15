@@ -13,6 +13,7 @@ private:
     string origin;
 
 public:
+    Product(){};
     Product(int, bool);
     bool fromHewan();
     int getAddedWeight();

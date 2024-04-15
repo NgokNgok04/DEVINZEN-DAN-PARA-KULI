@@ -13,13 +13,14 @@ Pemain::Pemain()
     this->ownedBuild = {0, 0, 0};
 }
 
-Pemain::Pemain(int guld, int bb, int smol, int med, int big)
+Pemain::Pemain(string usn, int guld, int bb, int smol, int med, int big)
 {
     this->gulden = guld;
     this->berat_badan = bb;
     MatrixArea<GameObject> inv(8, 8);
     this->inventory = inv;
     this->ownedBuild = {smol, med, big};
+    this->username = usn;
 }
 
 Pemain::Pemain(const Pemain &other) // not sure
@@ -39,6 +40,11 @@ Pemain::~Pemain()
 string Pemain::getTipe()
 {
     return this->tipe;
+}
+
+MatrixArea<GameObject> Pemain::getInventory()
+{
+    return this->inventory;
 }
 
 void Pemain::cetakPenyimpanan()
@@ -124,6 +130,36 @@ void Pemain::makan() //butuh Catch EmptyInventory n NoFoodInInventory
     }
 }
 
-void Pemain::setInv(int rows, int cols, GameObject a){
-    this->inventory.setElement(rows, cols, &a);
+string Pemain::getUsername()
+{
+    return this->username;
+}
+
+bool Pemain::operator<(Pemain &other)
+{
+    string actualUsername1 = this->getUsername();
+    string actualUsername2 = other.getUsername();
+    string lowerUsername1 = actualUsername1;
+    string lowerUsername2 = actualUsername2;
+    for (auto& x : lowerUsername1) { 
+        x = tolower(x); 
+    } 
+    for (auto& x : lowerUsername2) { 
+        x = tolower(x); 
+    }
+    if(lowerUsername1 == lowerUsername2){
+        return actualUsername1<actualUsername2;
+    } else {
+        return lowerUsername1<lowerUsername2;
+    }
+}
+
+bool Pemain::operator==(Pemain &other)
+{
+    return this->getUsername() == other.getUsername();
+}
+
+void Pemain::setInv(int rows, int cols, GameObject *a)
+{
+    this->inventory.setElement(rows, cols, a);
 }

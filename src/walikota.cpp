@@ -7,9 +7,10 @@ using namespace std;
 WaliKota::WaliKota() : Pemain()
 {
     this->tipe = "walikota";
+    this->username = "Walikota";
 }
 
-WaliKota::WaliKota(int guld, int bb, int smol, int med, int big) : Pemain(guld, bb, smol, med, big)
+WaliKota::WaliKota(string usn, int guld, int bb, int smol, int med, int big) : Pemain(usn,guld, bb, smol, med, big)
 {
     this->tipe = "walikota";
 }

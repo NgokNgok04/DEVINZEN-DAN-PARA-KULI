@@ -5,6 +5,9 @@
 #include "Product.hpp"
 #include "ParserHewan.hpp"
 #include <vector>
+#include <map>
+#include <tuple>
+using namespace std;
 
 class Hewan : public GameObject
 {
@@ -12,12 +15,17 @@ private:
     string type;
     int weightHarvest;
     int weight;
+    static map<string, pair<string, string>> konversiPanen;
 
 public:
     Hewan()
     {
         this->setKode("MET");
         this->setTipeObject("HEWAN");
+        this->setName("DUCK");
+        this->type = "CARNIVORE";
+        this->weightHarvest = 10;
+        this->weight = 100;
     }
     Hewan(int);
     void makan(Product);
