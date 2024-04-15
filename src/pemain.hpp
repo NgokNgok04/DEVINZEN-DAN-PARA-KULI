@@ -37,6 +37,7 @@ public:
     virtual void beli() = 0; // letak and quant item, loc item akan disimpan
     virtual void jual() = 0; // loc item yg akan dijual
     string getUsername();
+    int getBeratBadan();
     virtual int calculateTax() = 0;
     bool operator<(Pemain &other);
     bool operator==(Pemain &other);
