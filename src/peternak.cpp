@@ -9,9 +9,10 @@ Peternak::Peternak() : Pemain()
     this->tipe = "peternak";
     MatrixArea<Hewan> n(8, 8);
     this->ternakan = n;
+    this->username = "Petani1";
 }
 
-Peternak::Peternak(int guld, int bb, int smol, int med, int big, int terrows, int tercols) : Pemain(guld, bb, smol, med, big)
+Peternak::Peternak(string usn,int guld, int bb, int smol, int med, int big, int terrows, int tercols) : Pemain(usn,guld, bb, smol, med, big)
 {
     this->tipe = "peternak";
     MatrixArea<Hewan> n(terrows, tercols);

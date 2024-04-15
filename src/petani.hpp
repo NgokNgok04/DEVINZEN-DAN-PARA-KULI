@@ -10,7 +10,7 @@ protected:
 
 public:
     Petani();
-    Petani(int guld, int bb, int smol, int med, int big, int ladrows, int ladcols);
+    Petani(string usn, int guld, int bb, int smol, int med, int big, int ladrows, int ladcols);
     Petani(const Petani &);
     ~Petani();
     MatrixArea<Tanaman> getLadang();

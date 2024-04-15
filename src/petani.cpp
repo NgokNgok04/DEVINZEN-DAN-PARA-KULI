@@ -8,9 +8,10 @@ Petani::Petani() : Pemain()
     this->tipe = "petani";
     MatrixArea<Tanaman> n(8, 8);
     this->ladang = n;
+    this->username = "petani1";
 }
 
-Petani::Petani(int guld, int bb, int smol, int med, int big, int ladrows, int ladcols) : Pemain(guld, bb, smol, med, big)
+Petani::Petani(string usn, int guld, int bb, int smol, int med, int big, int ladrows, int ladcols) : Pemain(usn,guld, bb, smol, med, big)
 {
     this->tipe = "petani";
     MatrixArea<Tanaman> n(ladrows, ladcols);

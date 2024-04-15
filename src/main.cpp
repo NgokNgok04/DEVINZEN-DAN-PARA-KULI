@@ -4,6 +4,7 @@
 #include "pemain.cpp"
 #include "petani.cpp"
 #include "peternak.cpp"
+#include "walikota.cpp"
 #include "./Implementation/Tanaman.cpp"
 #include "./Implementation/Hewan.cpp"
 #include "./Implementation/Product.cpp"
@@ -82,8 +83,9 @@ int main()
     PP.ParseFile(productConfigDirectory);
     PR.ParseFile(recipeConfigDirectory);
 
-    // Petani P2;
+    // Petani P1("Jawir",69,69,69,69,69,69,69);
     Peternak P2;
+    // WaliKota P3("jAwir",69,69,69,69,69);
     Hewan *met = new Hewan();
     Hewan *met2 = new Hewan();
     Hewan *met3 = new Hewan();
@@ -121,7 +123,21 @@ int main()
     // }
     // P2.cetakLadang();
     // P2.cetakPenyimpanan();
+    // cout<<P1.getUsername()<<"\n";
+    // cout<<P2.getUsername()<<"\n";
+    // cout<<P3.getUsername()<<"\n";
 
+    // if(P1<P2){
+    //     cout<<"nama P1 lebih awal dari P2\n";
+    // } else {
+    //     cout<<"nama P2 lebih akhir atau sama dengan P2\n";
+    // }
+
+    // if(P1 == P2){
+    //     cout<<"Pemain sama\n";
+    // } else {
+    //     cout<<"Pemain beda\n";
+    // }
     P2.setInv(2, 2, kiel);
     P2.setInv(5, 3, dan);
     P2.setInv(6, 3, dan);
