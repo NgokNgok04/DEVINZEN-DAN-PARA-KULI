@@ -69,6 +69,23 @@ int main(){
     while(true){
         cout<<"Sekarang giliran "<<gameManager.getCurrentPlayerName()<<"!\n";
         
+        Pemain* currentPlayer = gameManager.getCurrentPlayer();
+        Petani* currentPetani = nullptr;
+        Peternak* currentPeternak = nullptr;
+        WaliKota* currentWalikota = nullptr;
+        if(currentPlayer->getTipe() == "petani"){
+            // cout<<"Ini adalah petani\n";
+            currentPetani = dynamic_cast<Petani*>(currentPlayer);
+            // currentPetani->cetakLadang();
+        } else if(currentPlayer->getTipe() == "peternak"){
+            // cout<<"Ini adalah peternak\n";
+            currentPeternak = dynamic_cast<Peternak*>(currentPlayer);
+            // currentPeternak->cetakTernak();
+        } else if(currentPlayer->getTipe() == "walikota"){
+            // cout<<"Ini adalah peternak\n";
+            currentWalikota = dynamic_cast<WaliKota*>(currentPlayer);
+            // currentWalikota->cetakPenyimpanan();
+        }
         cout<<"Silakan input perintah:\n";
         cout<<"> ";
 
