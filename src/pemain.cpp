@@ -135,6 +135,10 @@ string Pemain::getUsername()
     return this->username;
 }
 
+int Pemain::getBeratBadan(){
+    return this->berat_badan;
+}
+
 bool Pemain::operator<(Pemain &other)
 {
     string actualUsername1 = this->getUsername();
