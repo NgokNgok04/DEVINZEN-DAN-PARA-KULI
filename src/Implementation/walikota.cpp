@@ -255,8 +255,8 @@ void WaliKota::jual()
         }
 
         std::cout << endl
-             << "Silahkan pilih petak yang ingin anda jual!"
-             << endl;
+                  << "Silahkan pilih petak yang ingin anda jual!"
+                  << endl;
         string slot;
         pair<int, int> position;
         int profit = 0;
