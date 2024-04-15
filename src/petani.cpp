@@ -135,7 +135,7 @@ void Petani::beli()
                     } else {
                         std::cout << endl; //cancel
                     }
-                } else if (wantToBuy == 3 && !Toko::isBangunanEmptyStock() && Toko::isProductEmptyStock()){
+                } else if (((wantToBuy == 3 && Toko::isProductEmptyStock()) || (wantToBuy == 4)) && !Toko::isBangunanEmptyStock()){
                     counterAvailableItem = Toko::displayAvailableBangunan();
                     std::cout << "Barang yang ingin dibeli : ";
                     std::cin >> subResponse;
@@ -167,39 +167,6 @@ void Petani::beli()
                         }
                     } else {
                         std::cout << endl; //cancel
-                    }
-                } else if (wantToBuy == 4 && !Toko::isBangunanEmptyStock){
-                    counterAvailableItem = Toko::displayAvailableBangunan();
-                    std::cout << "Barang yang ingin dibeli : ";
-                    std::cin >> subResponse;
-
-                    if (isAllDigits(subResponse)){
-                        validSubResponse = stoi(subResponse);
-                    } else {
-                        throw InvalidSubResponse();
-                    }
-
-                    if (validSubResponse != counterAvailableItem + 1){
-                        if (validSubResponse >= 1 && validSubResponse <= counterAvailableItem){
-                            int count = 0;
-                            bool found = false;
-                            for (int i = 0; i < Toko::availableBangunan.size(); i++){
-                                if (Toko::availableBangunan[i].second != 0){
-                                    count++;
-                                }
-                                if (validSubResponse == count && !found){
-                                    itemToBuy = &Toko::availableBangunan[i].first;
-                                    // itemToBuy = &Toko::availableBangunan[count].first;
-                                    this->ownedBangunan.push_back(Toko::availableBangunan[count].first);
-                                    found = true;
-                                    isSubMenuCancelled = true;
-                                }
-                            }
-                        } else {
-                            throw InvalidSubResponse();
-                        }
-                    } else {
-                        std::cout << endl;
                     }
                 }
             }
@@ -523,7 +490,7 @@ void Petani::panenTani()
         {
             throw NoHarvestablePlant();
         }
-        else if (!this->ladang.isEmpty())
+        else
         {
             bool existHarvest = false;
             for (int a = 1; a < this->ladang.getRows(); a++)
@@ -839,11 +806,6 @@ void Petani::panenTani()
                     this->cetakPenyimpanan();
                 }
             }
-        }
-
-        else
-        {
-            throw NoHarvestablePlant();
         }
     }
     catch (BaseException &e)
