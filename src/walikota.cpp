@@ -193,7 +193,7 @@ void WaliKota::bangunBangunan(){
         cout << i + 1 << ". " <<Toko::availableBangunan[i].first.getName();
         cout << " (";
         cout << Toko::availableBangunan[i].first.getPrice() << " gulden, ";
-        for(int j = 0; j < ParserResep::getRecipeMaterialQuantity(i+1).size();i++){
+        for(int j = 0; j < ParserResep::getRecipeMaterialQuantity(i+1).size();j++){
             cout << ParserResep::getRecipeMaterialQuantity(i+1)[j].first;
             cout << " ";
             cout << ParserResep::getRecipeMaterialQuantity(i+1)[j].second;
@@ -243,7 +243,7 @@ void WaliKota::bangunBangunan(){
     }
 
     this->ownedBangunan.push_back(Toko::availableBangunan[idxToBuy].first);
-    cout << Toko::availableBangunan[idxToBuy].first.getName() << "berhasil dibangun dan telah menjadi hak milik walikota!" << endl; 
+    cout << Toko::availableBangunan[idxToBuy].first.getName() << " berhasil dibangun dan telah menjadi hak milik walikota!" << endl; 
 }
 
 float WaliKota::calculateTax(){

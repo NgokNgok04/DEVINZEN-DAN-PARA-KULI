@@ -4,7 +4,7 @@
 #include "Toko.hpp"
 using namespace std;
 
-Toko::Toko(){
+void Toko::initialize(){
     int idDummyToko;
     for(int i = 0; i < ParserHewan::getConfigSize(); i++){
         idDummyToko = ParserHewan::getID(i);

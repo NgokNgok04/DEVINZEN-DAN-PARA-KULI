@@ -76,12 +76,15 @@ int main()
     PT.ParseFile(plantConfigDirectory);
     PP.ParseFile(productConfigDirectory);
     PR.ParseFile(recipeConfigDirectory);
+    cout<<PR<<endl;
+    Toko::initialize();
+    WaliKota w;
+    Product *teak = new Product(1,false);
+    Product *sandal = new Product(2,false);
+    w.setInv(1,1,teak);
+    w.setInv(1,2,sandal);
+    w.bangunBangunan();
+    w.cetakPenyimpanan();
 
-    Petani p;
-    cout<<p.getGulden()<<"KONTOL"<<endl;
-    Hewan h(1);
-    p.setInv(1,1,&h);
-    p.jual();
-    cout<<p.getGulden()<<endl;
     return 0;
 }

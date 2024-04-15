@@ -19,7 +19,7 @@ class Toko {
         static vector<Tanaman> availableTanaman;
         static vector<pair<Product,int>> availableProduct;
         static vector<pair<Bangunan,int>> availableBangunan;
-        Toko();
+        static void initialize();
         static int buyProcess();
         static void itemDibeli(GameObject*, int); //handle keadaan toko setelah player membeli item
         static void itemDijual(GameObject*, int); //handle keadaan toko setelah player menjual item
