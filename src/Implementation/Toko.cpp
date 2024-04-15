@@ -229,6 +229,10 @@ int Toko::getStock(string name){
     return 0;
 }
 
-Bangunan Toko::getBangunan(int idx){
-    return availableBangunan[idx].first;
+void Toko::pushProduct(pair<Product,int> produk){
+    availableProduct.push_back(produk);
+}
+
+void Toko::pushBangunan(pair<Bangunan,int> bangunan){
+    availableBangunan.push_back(bangunan);
 }

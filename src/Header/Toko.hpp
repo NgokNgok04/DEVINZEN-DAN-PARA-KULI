@@ -14,11 +14,12 @@
 #include "ParserResep.hpp"
 using namespace std;
 class Toko {
-    public:
+    private:
         static vector<Hewan> availableHewan;
         static vector<Tanaman> availableTanaman;
         static vector<pair<Product,int>> availableProduct;
         static vector<pair<Bangunan,int>> availableBangunan;
+    public:
         static void printProduct();
         static void printBangunan();
         static void initialize();
@@ -35,6 +36,5 @@ class Toko {
         static int getStock(string);
         static void pushProduct(pair<Product,int>);
         static void pushBangunan(pair<Bangunan,int>);
-        static Bangunan getBangunan(int);
 };
 #endif
