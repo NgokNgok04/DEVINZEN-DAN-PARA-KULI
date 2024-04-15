@@ -458,7 +458,7 @@ void Peternak::jual()
 
             profit += this->inventory.getElement(idx2, idx1)->getPrice();
             cout << this->inventory.getElement(idx2, idx1)->getPrice() << endl;
-            Toko::itemDijual(inventory.getElement(idx2, idx1), quantityint);
+            Toko::itemDijual(inventory.getElement(idx2, idx1), 1);
             this->inventory.deleteElement(idx2, idx1);
         }
         this->gulden += profit;

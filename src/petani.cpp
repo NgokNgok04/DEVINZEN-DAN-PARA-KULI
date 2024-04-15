@@ -405,7 +405,7 @@ void Petani::jual() // perlu catch ItemQuantityToSellNotEnough
             int idx2 = std::stoi(slot.substr(1));
             profit += this->inventory.getElement(idx2, idx1)->getPrice();
             cout << this->inventory.getElement(idx2, idx1)->getPrice() << endl;
-            Toko::itemDijual(this->inventory.getElement(idx2, idx1), quantityint);
+            Toko::itemDijual(this->inventory.getElement(idx2, idx1), 1);
             this->inventory.deleteElement(idx2, idx1);
         }
         this->gulden += profit;

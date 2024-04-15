@@ -93,7 +93,7 @@ void MatrixArea<T>::deleteElement(int row, int col)
 template <class T>
 pair<int, int> MatrixArea<T>::getPositionFromSlot(string slot)
 {   
-    if (slot.size() > 3){
+    if (slot.size() != 3){
         throw InvalidPositionMatrixArea();
     }
     int posCol = slot[0] - 'A' + 1;

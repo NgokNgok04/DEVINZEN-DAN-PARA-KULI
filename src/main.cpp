@@ -1,7 +1,7 @@
 // #include <iostream>
 // #include <vector>
 // #include <string>
-#include "./Implementation/GameManager.cpp"
+// #include "./Implementation/GameManager.cpp"
 #include "petani.cpp"
 #include "peternak.cpp"
 #include "walikota.cpp"
@@ -74,39 +74,43 @@ int main()
     PR.ParseFile(recipeConfigDirectory);
     std::cout << PR << endl;
     Toko::initialize();
-    std::cout << "Awal :" << endl
-              << endl;
-    Toko::printProduct();
-    Petani mahew("MAHEW", 1000, 10, 1, 1, 1, 5, 5);
-    Peternak gtg("WOIII", 10, 15, 1, 1, 1, 8, 8);
-    Product test1(1, ParserProduk::isAnAnimalProduct(1));
-    Product test2(2, ParserProduk::isAnAnimalProduct(2));
-    Product test3(3, ParserProduk::isAnAnimalProduct(3));
-    Product test4(4, ParserProduk::isAnAnimalProduct(4));
-    Product test5(5, ParserProduk::isAnAnimalProduct(5));
-    Product test6(6, ParserProduk::isAnAnimalProduct(6));
-    Product test7(7, ParserProduk::isAnAnimalProduct(7));
-    Product test8(8, ParserProduk::isAnAnimalProduct(8));
-    // Bangunan tost1(1);
-    // Bangunan tost2(2);
-    // Bangunan tost3(3);
-    // Bangunan tost4(4);
-    gtg.setInv(2, 2, &test1);
-    gtg.setInv(3, 3, &test2);
-    gtg.setInv(4, 4, &test3);
-    gtg.setInv(1, 4, &test4);
-    gtg.setInv(4, 1, &test5);
-    gtg.setInv(2, 7, &test6);
-    gtg.setInv(3, 8, &test7);
-    gtg.setInv(5, 6, &test8);
+    std::cout << "Awal :" << endl << endl;
+    Toko::printBangunan();
+    WaliKota mahew("MAHEW",1000,10,1,1,1);
+    WaliKota gtg("WOIII",10,15,1,1,1);
+    Product test1(1,ParserProduk::isAnAnimalProduct(1));
+    Product test2(2,ParserProduk::isAnAnimalProduct(2));
+    Product test3(3,ParserProduk::isAnAnimalProduct(3));
+    Product test4(4,ParserProduk::isAnAnimalProduct(4));
+    Product test5(5,ParserProduk::isAnAnimalProduct(5));
+    Product test6(6,ParserProduk::isAnAnimalProduct(6));
+    Product test7(7,ParserProduk::isAnAnimalProduct(7));
+    Product test8(8,ParserProduk::isAnAnimalProduct(8));
+    gtg.setInv(2,2,&test1);
+    gtg.setInv(3,3,&test2);
+    gtg.setInv(4,4,&test3);
+    gtg.setInv(1,4,&test4);
+    gtg.setInv(4,1,&test5);
+    gtg.setInv(2,7,&test6);
+    gtg.setInv(3,8,&test7);
+    gtg.setInv(5,6,&test8);
+    Bangunan tost1(1);
+    Bangunan tost2(2);
+    Bangunan tost3(3);
+    Bangunan tost4(4);
+    gtg.setInv(8,3,&tost1);
+    gtg.setInv(7,5,&tost2);
+    gtg.setInv(4,5,&tost3);
+    gtg.setInv(7,7,&tost4);
     gtg.cetakPenyimpanan();
-    // try {
-    //     gtg.jual();
-    // } catch (ItemQuantityToSellNotEnough err){
-    //     err.what();
-    // }
-    Toko::printProduct();
-    gtg.cetakPenyimpanan();
+    try {
+        gtg.jual();
+    } catch (ItemQuantityToSellNotEnough err){
+        err.what();
+    }
+    Toko::printBangunan();
+
+    mahew.cetakPenyimpanan();
     bool isValid = false;
     int respon;
     while (!isValid)

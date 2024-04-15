@@ -648,3 +648,14 @@ public:
         return "Tidak terdapat hewan dalam ternakan!";
     }
 };
+
+class CantBuyBangunan : public BaseException
+{
+public:
+    CantBuyBangunan(){};
+    ~CantBuyBangunan(){};
+    string what()
+    {
+        return "Walikota tidak bisa membeli bangunan!";
+    }
+};
