@@ -33,6 +33,8 @@ class Toko {
         static int displayAvailableBangunan();
         static void displayResepBangunan();
         static int getStock(string);
+        static void pushProduct(pair<Product,int>);
+        static void pushBangunan(pair<Bangunan,int>);
         static Bangunan getBangunan(int);
 };
 #endif

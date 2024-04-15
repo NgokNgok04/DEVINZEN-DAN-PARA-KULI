@@ -698,3 +698,14 @@ public:
         return "Anda bukan peternak, tidak bisa kasih makan!";
     }
 };
+
+class CantBuyBangunan : public BaseException
+{
+public:
+    CantBuyBangunan(){};
+    ~CantBuyBangunan(){};
+    string what()
+    {
+        return "Walikota tidak bisa membeli bangunan!";
+    }
+};

@@ -20,7 +20,8 @@ Pemain::Pemain(string usn, float guld, int bb, int smol, int med, int big)
 {
     this->gulden = guld;
     this->berat_badan = bb;
-    MatrixArea<GameObject> inv(8, 8);
+    pair<int,int> sizeInven = ParserMisc::getStorageSize();
+    MatrixArea<GameObject> inv(sizeInven.first, sizeInven.second);
     this->inventory = inv;
     this->ownedBuild = {smol, med, big};
     this->username = usn;
