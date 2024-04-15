@@ -94,7 +94,7 @@ int main(){
         if(command == "NEXT"){
             gameManager.Next();
         } else if(command == "CETAK_PENYIMPANAN"){
-            //currentPlayer->cetakPenyimpanan();
+            currentPlayer->cetakPenyimpanan();
         } else if(command == "PUNGUT_PAJAK"){
             //Periksa apakah pemain yang sekarang bermain walikota atau bukan
             //kalau walikota, pungut pajak
@@ -117,15 +117,15 @@ int main(){
             //kalau bukan petani
             //throw exception kayak "Anda bukan petani, tidak bisa cetak ladang!"
             //TODO: UNCOMMENT THIS BLOCK BELOW AFTER MERGING!
-            // try{
-            //     if(currentPlayer->getTipe() != "petani"){
-            //         throw CannotPrintFieldException();
-            //     }
-            // } catch(BaseException &e){
-            //     cout<<e.what()<<"\n";
-            //     continue;
-            // }
-            //currentPetani->cetakLadang();
+            try{
+                if(currentPlayer->getTipe() != "petani"){
+                    throw CannotPrintFieldException();
+                }
+            } catch(BaseException &e){
+                cout<<e.what()<<"\n";
+                continue;
+            }
+            currentPetani->cetakLadang();
         } else if(command == "CETAK_PETERNAKAN"){
             //Periksa apakah pemain yang sekarang bermain peternak atau bukan
             //kalau peternak
@@ -133,15 +133,15 @@ int main(){
             //kalau bukan peternak
             //throw exception kayak "Anda bukan peternak, tidak bisa cetak peternakan!"
             //TODO: UNCOMMENT THIS BLOCK BELOW AFTER MERGING!
-            // try{
-            //     if(currentPlayer->getTipe() != "peternak"){
-            //         throw CannotPrintFarmException();
-            //     }
-            // } catch(BaseException &e){
-            //     cout<<e.what()<<"\n";
-            //     continue;
-            // }
-            //currentPeternak->cetakTernak();
+            try{
+                if(currentPlayer->getTipe() != "peternak"){
+                    throw CannotPrintFarmException();
+                }
+            } catch(BaseException &e){
+                cout<<e.what()<<"\n";
+                continue;
+            }
+            currentPeternak->cetakTernak();
         } else if(command == "TANAM"){
             //Periksa apakah pemain yang sekarang bermain petani atau bukan
             //kalau petani
@@ -149,15 +149,15 @@ int main(){
             //kalau bukan petani
             //throw exception kayak "Anda bukan petani, tidak bisa menanam!"
             //TODO: UNCOMMENT THIS BLOCK BELOW AFTER MERGING!
-            // try{
-            //     if(currentPlayer->getTipe() != "petani"){
-            //         throw CannotPlantException();
-            //     }
-            // } catch(BaseException &e){
-            //     cout<<e.what()<<"\n";
-            //     continue;
-            // }
-            //currentPetani->Tanam();
+            try{
+                if(currentPlayer->getTipe() != "petani"){
+                    throw CannotPlantException();
+                }
+            } catch(BaseException &e){
+                cout<<e.what()<<"\n";
+                continue;
+            }
+            currentPetani->tanam();
         } else if(command == "TERNAK"){
             //Periksa apakah pemain yang sekarang bermain peternak atau bukan
             //kalau peternak
@@ -165,15 +165,15 @@ int main(){
             //kalau bukan peternak
             //throw exception kayak "Anda bukan peternak, tidak bisa beternak!"
             //TODO: UNCOMMENT THIS BLOCK BELOW AFTER MERGING!
-            // try{
-            //     if(currentPlayer->getTipe() != "peternak"){
-            //         throw CannotFarmException();
-            //     }
-            // } catch(BaseException &e){
-            //     cout<<e.what()<<"\n";
-            //     continue;
-            // }
-            //currentPeternak->Ternak();
+            try{
+                if(currentPlayer->getTipe() != "peternak"){
+                    throw CannotFarmException();
+                }
+            } catch(BaseException &e){
+                cout<<e.what()<<"\n";
+                continue;
+            }
+            currentPeternak->ternak();
         } else if(command == "BANGUN_BANGUNAN"){
             //Periksa apakah pemain yang sekarang bermain walikota atau bukan
             //kalau walikota
@@ -191,7 +191,7 @@ int main(){
             // }
             //currentWalikota->Bangun();
         } else if(command == "MAKAN"){
-            //currentPlayer->Makan();
+            currentPlayer->makan();
         } else if(command == "KASIH_MAKAN"){
             //Periksa apakah pemain yang sekarang bermain peternak atau bukan
             //kalau peternak
@@ -199,15 +199,15 @@ int main(){
             //kalau bukan peternak
             //throw exception kayak "Anda bukan peternak, tidak bisa kasih makan!"
             //TODO: UNCOMMENT THIS BLOCK BELOW AFTER MERGING!
-            // try{
-            //     if(currentPlayer->getTipe() != "peternak"){
-            //         throw CannotFeedException();
-            //     }
-            // } catch(BaseException &e){
-            //     cout<<e.what()<<"\n";
-            //     continue;
-            // }
-            //currentPeternak->KasihMakan();
+            try{
+                if(currentPlayer->getTipe() != "peternak"){
+                    throw CannotFeedException();
+                }
+            } catch(BaseException &e){
+                cout<<e.what()<<"\n";
+                continue;
+            }
+            currentPeternak->kasihMakan();
         } else if(command == "BELI"){
             //currentPlayer->Beli();
         } else if(command == "JUAL"){
