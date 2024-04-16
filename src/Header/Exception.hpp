@@ -777,3 +777,31 @@ public:
         return "Command Anda Tidak Valid!";
     }
 };
+
+class NoPlant: public BaseException{
+public:
+    NoPlant(){};
+    ~NoPlant(){};
+    string what(){
+        return "Tidak terdapat tanaman dalam inventory";
+    }
+};
+
+class NoAnimal: public BaseException{
+public:
+    NoAnimal(){};
+    ~NoAnimal(){};
+    string what(){
+        return "Tidak terdapat hewan dalam inventory";
+    }
+};
+
+class NoEmptySlot: public BaseException{
+public:
+    NoEmptySlot(){};
+    ~NoEmptySlot(){};
+    string what(){
+        return "Tidak terdapat slot kosong";
+    }
+};
+

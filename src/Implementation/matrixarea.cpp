@@ -168,7 +168,11 @@ inline void MatrixArea<GameObject>::displayMatrix()
     for (int i = 0; i < this->rows; i++)
     {
         std::cout << grid << endl;
-        std::cout << "0" << i + 1 << " ";
+        if (i < 9){
+            std::cout << "0" << i + 1 << " ";
+        } else {
+            std::cout << i + 1 << " ";
+        }
         std::cout << "|";
         for (int j = 0; j < this->cols; j++)
         {

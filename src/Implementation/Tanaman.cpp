@@ -36,14 +36,9 @@ void Tanaman::tambahUmur()
 
 Product *Tanaman::hasilPanen()
 {
-    cout << "awdaADDa" << endl;
-    cout << konversiPanen[getName()] << endl;
     int a = ParserProduk::convertNameToID(konversiPanen[getName()]);
-    cout << a << endl;
     Product *b = new Product(a, false);
-    cout << b->getName() << endl;
 
-    // return (new Product(ParserHewan::convertNameToID(konversiPanen[getName()]), false));
     return b;
 }
 bool Tanaman::isHarvestable()

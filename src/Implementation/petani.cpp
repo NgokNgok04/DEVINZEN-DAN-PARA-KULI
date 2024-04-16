@@ -393,8 +393,6 @@ void Petani::jual() // perlu catch ItemQuantityToSellNotEnough
                     {
                         throw InvalidIndexMatrixArea();
                     }
-                    // position = this->inventory.getPositionFromSlot(slot);
-                    // itemToSell = this->inventory.getElement(position.first, position.second);
                     else
                     {
                         if (this->inventory.getElement(idx2, idx1) != nullptr)
@@ -422,12 +420,10 @@ void Petani::jual() // perlu catch ItemQuantityToSellNotEnough
             int idx1 = slot[0] - 'A' + 1;
             int idx2 = std::stoi(slot.substr(1));
             profit += this->inventory.getElement(idx2, idx1)->getPrice();
-            cout << this->inventory.getElement(idx2, idx1)->getPrice() << endl;
             Toko::itemDijual(this->inventory.getElement(idx2, idx1), 1);
             this->inventory.deleteElement(idx2, idx1);
         }
         this->gulden += profit;
-        cout << this->gulden << ' ' << profit << endl;
         cout << "Barang Anda berhasil dijual! Uang Anda bertambah " << profit << " gulden!" << endl;
     }
     catch (BaseException &e)
@@ -449,6 +445,31 @@ void Petani::cetakLadang()
 
 void Petani::tanam()
 {
+    try{
+    if (this->ladang.getEmptySlot() == 0)
+    {
+        throw NoEmptySlot();
+    }
+    bool existPlant = false;
+            for (int a = 1; a < this->inventory.getRows(); a++)
+            {
+                for (int b = 1; b < this->inventory.getCols(); b++)
+                {
+                    if (this->inventory.getElement(a, b) != nullptr)
+                    {
+                        if (this->inventory.getElement(a, b)->getTipeObject() == "TANAMAN")
+                        {
+                            existPlant = true;
+                        }
+                    }
+                }
+            }
+    if (!existPlant)
+    {
+        throw NoPlant();
+    }
+    else
+    {
     std::cout << "Pilih Tanaman dari penyimpanan" << endl;
     this->cetakPenyimpanan();
     this->cetakLadang();
@@ -468,7 +489,7 @@ void Petani::tanam()
         {
             this->cetakLadang();
 
-            if (slot.length() != 3)
+            if (slot.length() != 3 && isAllDigits(slot.substr(1)))
             {
                 throw InvalidIndexMatrixArea();
             }
@@ -520,7 +541,7 @@ void Petani::tanam()
         int idx4 = std::stoi(petak.substr(1));
         try
         {
-            if (petak.length() != 3)
+            if (petak.length() != 3 && isAllDigits(petak.substr(1)))
             {
                 throw InvalidIndexMatrixArea();
             }
@@ -536,7 +557,7 @@ void Petani::tanam()
                 }
                 else
                 {
-                    InvalidFilledSlot();
+                    throw InvalidFilledSlot();
                 }
             }
         }
@@ -550,21 +571,16 @@ void Petani::tanam()
 
     Tanaman *temp = dynamic_cast<Tanaman *>(this->inventory.getElement(idx2, idx1));
 
-    if (temp)
-    {
-        std::cout << "SUCCC" << endl;
-        std::cout << temp->getKode() << endl;
-    }
-    else
-    {
-        std::cout << "GAGGG" << endl;
-    }
-
     this->ladang.setElement(idx4, idx3, temp);
     daftarTanaman.push_back(temp);
     this->inventory.deleteElement(idx2, idx1);
     std::cout << this->ladang.getElement(idx4, idx3)->getKode() << endl;
     std::cout << "Berhasil ditanam" << endl;
+    }
+    } catch (BaseException &e)
+    {
+        cout << e.what() << endl;
+    }
 }
 
 void Petani::panenTani()
@@ -612,7 +628,6 @@ void Petani::panenTani()
                     {
                         if (this->ladang.getElement(i, j) != nullptr)
                         {
-                            cout << this->ladang.getElement(i, j)->getKode() << endl;
                             if (this->ladang.getElement(i, j)->getTipeObject() == "TANAMAN")
                             {
                                 bool found = false;
@@ -643,9 +658,6 @@ void Petani::panenTani()
                         }
                     }
                 }
-                cout << " BATAS " << endl;
-                // this->cetakLadang();
-                // cout << this->ladang.getElement(5, 4)->getKode() << endl;
 
                 // Output tanaman yang ada
                 for (size_t i = 0; i < ownedTan.size(); ++i)
@@ -665,8 +677,6 @@ void Petani::panenTani()
                         {
                             if (this->ladang.getElement(j, k) != nullptr)
                             {
-                                cout << j << k << endl;
-                                cout << this->ladang.getElement(j, k)->getKode() << endl;
                                 if (this->ladang.getElement(j, k)->getKode() == ownedTan[i])
                                 {
                                     if (this->ladang.getElement(j, k)->isHarvestable())
@@ -674,13 +684,8 @@ void Petani::panenTani()
                                         count += 1;
                                         bool found = false;
                                         size_t it = 0;
-                                        cout << "1" << endl;
                                         while (it < readyPanen.size())
                                         {
-                                            cout << "2" << endl;
-                                            // readyPanen[it] == this->ladang.getElement(i, j)->getKode();
-                                            cout << "3" << endl;
-
                                             if (readyPanen[it] == this->ladang.getElement(j, k)->getKode())
                                             {
                                                 found = true;
@@ -693,7 +698,6 @@ void Petani::panenTani()
                                             string temp = this->ladang.getElement(j, k)->getKode();
                                             readyPanen.push_back(temp);
                                         }
-                                        cout << "-----------------" << endl;
                                     }
                                 }
                             }
@@ -809,8 +813,7 @@ void Petani::panenTani()
                                 cin >> want;
                                 int idx1 = want[0] - 'A' + 1;
                                 int idx2 = std::stoi(want.substr(1));
-                                cout << idx2 << idx1 << endl;
-                                if (want.length() != 3)
+                                if (want.length() != 3 && isAllDigits(want.substr(1)))
                                 {
                                     throw InvalidIndexMatrixArea();
                                 }
@@ -822,16 +825,12 @@ void Petani::panenTani()
                                 {
                                     if (this->ladang.getElement(idx2, idx1) != nullptr)
                                     {
-                                        cout << "a" << endl;
-                                        cout << this->ladang.getElement(idx2, idx1)->getKode() << endl;
                                         if (this->ladang.getElement(idx2, idx1)->getKode() != readyPanen[maupanenint - 1])
                                         {
-                                            cout << "b" << endl;
                                             throw InvalidPlantChoice();
                                         }
                                         else
                                         {
-                                            cout << "c" << endl;
                                             isValid = true;
                                         }
                                     }
@@ -850,7 +849,6 @@ void Petani::panenTani()
                         wants.push_back(want);
                     }
 
-                    cout << "WS" << wants.size() << endl;
                     for (int i = 0; i < wants.size(); i++)
                     {
 
@@ -864,15 +862,7 @@ void Petani::panenTani()
                             {
                                 if (this->inventory.getElement(j, k) == nullptr)
                                 {
-                                    cout << j << k << endl;
-                                    cout << idx2 << idx1 << endl;
-                                    // cout << this->ladang.getElement(idx2, idx1)->hasilPanen()->getName() << endl;
-                                    // cout<<"PEPEK"<<endl;
-                                    // cout << this->ladang.getElement(idx2, idx1)->hasilPanen()->getName() << endl;
                                     this->inventory.setElement(j, k, this->ladang.getElement(idx2, idx1)->hasilPanen());
-                                    // this->setInv(j, k, this->ladang.getElement(idx2, idx1)->hasilPanen());
-                                    cout << this->inventory.getElement(j, k)->getName() << endl;
-                                    cout << this->inventory.getElement(1, 1)->getName() << endl;
                                     auto it = find(daftarTanaman.begin(),daftarTanaman.end(),this->ladang.getElement(idx2,idx1));
                                     *it = nullptr;
                                     delete this->ladang.getElement(idx2, idx1);
@@ -886,11 +876,8 @@ void Petani::panenTani()
                                 break;
                             }
                         }
-                        this->cetakPenyimpanan();
                     }
-                    cout << this->inventory.getElement(1, 1)->getName() << endl;
                     cout << "Panen Berhasil" << endl;
-                    this->cetakPenyimpanan();
                 }
             }
         }
