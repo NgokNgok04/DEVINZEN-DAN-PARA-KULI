@@ -27,15 +27,19 @@ WaliKota::~WaliKota()
 
 void WaliKota::pungutPajak(vector<Pemain *> allPlayers)
 {
-    // Butuh track semua player
+    
     float gained = 0;
-    cout << allPlayers.size() << endl;
-    for (int i = 0; i < allPlayers.size(); i++)
-    {
-        if (allPlayers[i]->getTipe() == "Petani" || allPlayers[i]->getTipe() == "Peternak")
-        {
-            gained += allPlayers[i]->calculateTax();
+    int sizePlayer = allPlayers.size();
+    cout<<"Berikut adalah detil dari pemungutan pajak: "<<endl;
+    for(int i=0;i<sizePlayer;i++){
+        if(allPlayers[i]->getTipe()=="Walikota"){
+            continue;
         }
+        cout<<allPlayers[i]->getTipe();
+        cout<<allPlayers[i]->getUsername()<<" - "<<allPlayers[i]->getTipe()<<": ";
+        float paid = allPlayers[i]->calculateTax();
+        cout<<paid<<" gulden"<<endl;
+        gained += paid;
     }
     this->gulden += gained;
     cout << "Walikota sekarang mempunyai " << this->getGulden() << " gulden!" << endl;
