@@ -265,7 +265,7 @@ void simpanPemain(ofstream &out,Pemain &p){
 }
 
 void simpanToko(ofstream &out){
-    int jmlhItem = Toko::getCountBangunanProductReady();
+    int jmlhItem = Toko::getTotalReady();
     out<<jmlhItem<<endl;
     for(int i=0;i<Toko::getAvailableProductSize();i++){
         pair<Product,int> produk = *Toko::getPairProductInt(i);
@@ -368,7 +368,7 @@ void muatMatrixArea(ifstream& infile,MatrixArea<Hewan> &ternakan){
     }
 }
 
-void muatMatrixArea(ifstream& infile,MatrixArea<Tanaman> &ladang){
+void muatMatrixArea(ifstream& infile,MatrixArea<Tanaman> &ladang,vector<Tanaman*> &dt){
     string fullLine;
     getline(infile, fullLine, '\n');
     int jmlhItem = stoi(fullLine);
@@ -379,6 +379,7 @@ void muatMatrixArea(ifstream& infile,MatrixArea<Tanaman> &ladang){
         pair<int, int> coor = ladang.getPositionFromSlot(line[0]);
         Tanaman *temp = new Tanaman(ParserTanaman::convertNameToID(line[1]));
         temp->setAge(stoi(line[2]));
+        dt.push_back(temp);
         ladang.setElement(coor.first, coor.second, temp);
     }
 }
@@ -456,7 +457,7 @@ void GameManager::muat()
                 Petani* temp = new Petani(line[0],stoi(line[3]),stoi(line[2]));
                 insertNewPlayer(temp);
                 muatMatrixArea(infile,temp->getInventory());
-                muatMatrixArea(infile,temp->getLadang());
+                muatMatrixArea(infile,temp->getLadang(),temp->getDaftarTanaman());
             }else{
                 WaliKota* temp = new WaliKota(line[0],stoi(line[3]),stoi(line[2]));
                 insertNewPlayer(temp);
@@ -476,7 +477,7 @@ void GameManager::setupGame()
     string choice;
     while (true)
     {
-        cout << ">";
+        cout << "> ";
         cin >> choice;
         if (choice == "1")
         {
