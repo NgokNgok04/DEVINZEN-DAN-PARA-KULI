@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 #include "../Header/matrixarea.hpp"
-#include "pcolor.c"
+
 using namespace std;
 template <class T>
 MatrixArea<T>::MatrixArea()
@@ -187,8 +187,8 @@ inline void MatrixArea<GameObject>::displayMatrix()
     std::cout << grid << endl;
 }
 
-template <>
-inline void MatrixArea<Hewan>::displayMatrix()
+template <> inline
+void MatrixArea<Hewan>::displayMatrix()
 {
     std::cout << "    ";
     for (int i = 0; i < this->cols; i++)

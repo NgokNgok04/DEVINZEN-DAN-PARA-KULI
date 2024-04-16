@@ -429,17 +429,17 @@ void WaliKota::tambahPemain(vector<Pemain *> &allPlayers){
         }
 
         if (tipePemain == "petani"){
-            Petani * newPetani = new Petani(namaPemain,50,40);
+            Petani * newPetani = new Petani(namaPemain,50,40,0,0,0,ParserMisc::getFieldSize().first,ParserMisc::getFieldSize().second);
             allPlayers.push_back(newPetani);
         } else if (tipePemain == "peternak"){
-            Peternak * newPeternak = new Peternak(namaPemain,50,40);
+            Peternak * newPeternak = new Peternak(namaPemain,50,40,0,0,0,ParserMisc::getFarmSize().first,ParserMisc::getFarmSize().second);
             allPlayers.push_back(newPeternak);
         } else {
             throw InvalidTypePemain();
         }
 
         cout << endl << "Pemain baru ditambahkan!" << endl;
-        cout << 'Selamat datang "'<< namaPemain << '" di kota ini!' << endl; 
+        cout << "Selamat datang"<< namaPemain << "di kota ini!" << endl; 
 
     } catch (BaseException& err){
         cout << err.what();

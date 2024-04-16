@@ -8,7 +8,7 @@
 #include "Hewan.hpp"
 #include "GameObject.hpp"
 #include "ParserMisc.hpp"
-#include "pcolor.h"
+#include "pcolor.hpp"
 using namespace std;
 template <class T>
 class MatrixArea
