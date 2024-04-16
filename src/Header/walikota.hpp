@@ -18,7 +18,7 @@ public:
     void jual();
     void bangunBangunan();
     float calculateTax();
-    void tambahPemain(vector<Pemain *> &);
+    void tambahPemain(vector<Pemain *> &,int&,int&,Pemain* currentPlayer);
 
 };
 

@@ -584,7 +584,7 @@ void GameManager::prosesInput(string command){
             }
             else if ("TAMBAH_PEMAIN")
             {
-                // Tambah pemain
+                temp->tambahPemain(this->playerList,this->playerAmount,this->currentPlayerIndex,this->getCurrentPlayer());
             }
             else
             {
