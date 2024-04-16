@@ -47,7 +47,6 @@ GameManager::GameManager(ParserMisc PM)
     this->playerAmount = 0;
     this->Winner = nullptr;
     this->currentPlayerIndex = 0;
-    cout << "Data konfigurasi misc berhasil dimuat!\n";
 }
 
 void GameManager::Debug()
@@ -110,7 +109,7 @@ void GameManager::Next()
         }
     }
     this->rotatePlayer();
-    cout<<"Sekarang giliran "<<getCurrentPlayer()->getUsername()<<"!\n";
+    cout<<"Sekarang giliran "<<getCurrentPlayer()->getUsername()<<" - "<<getCurrentPlayer()->getTipe()<<"!\n";
 }
 
 Pemain *GameManager::getWinner()
@@ -530,7 +529,6 @@ void GameManager::setupGame()
 
 void GameManager::prosesInput(string command){
     Pemain* curPlayer = getCurrentPlayer();
-    // cout<<curPlayer->getUsername()<<endl;
     if(command=="NEXT"){
         Next();
     }
@@ -592,8 +590,7 @@ void GameManager::prosesInput(string command){
                     throw InvalidCommand();
                 }
             }
-            else
-            {
+            else{
                 WaliKota *temp = dynamic_cast<WaliKota *>(curPlayer);
                 if (command == "PUNGUT_PAJAK")
                 {
@@ -603,7 +600,7 @@ void GameManager::prosesInput(string command){
                 {
                     temp->bangunBangunan();
                 }
-                else if ("TAMBAH_PEMAIN")
+                else if (command == "TAMBAH_PEMAIN")
                 {
                     // Tambah pemain
                 }
