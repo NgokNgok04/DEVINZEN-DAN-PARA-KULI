@@ -46,9 +46,9 @@ int main()
     gameManager.setupGame();
     gameManager.PlayerDebug();
     cout << "Setup permainan selesai, permainan dimulai!\n";
+    cout << "Sekarang giliran "<<gameManager.getCurrentPlayer()->getUsername()<<endl;
     while (gameManager.getWinner() == nullptr)
     {
-        cout << "Sekarang giliran " << gameManager.getCurrentPlayerName() << "!\n";
         string command;
         cout << "> ";
         cin >> command;
