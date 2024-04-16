@@ -8,7 +8,7 @@ using namespace std;
 
 Petani::Petani() : Pemain()
 {
-    this->tipe = "petani";
+    this->tipe = "Petani";
     int FieldRow = ParserMisc::getFieldSize().first;
     int FieldCol = ParserMisc::getFieldSize().second;
     MatrixArea<Tanaman> n(FieldRow, FieldCol);
@@ -16,16 +16,17 @@ Petani::Petani() : Pemain()
     this->username = "Petani1";
 }
 
-Petani::Petani(string usn, float guld, int bb, int smol, int med, int big, int ladrows, int ladcols) : Pemain(usn, guld, bb, smol, med, big)
+Petani::Petani(string usn, float guld, int bb) : Pemain(usn, guld, bb)
 {
-    this->tipe = "petani";
-    MatrixArea<Tanaman> n(ladrows, ladcols);
+    this->tipe = "Petani";
+    pair<int,int> sizeLadang = ParserMisc::getFarmSize();
+    MatrixArea<Tanaman> n(sizeLadang.first, sizeLadang.second);
     this->ladang = n;
 }
 
 Petani::Petani(const Petani &other) : Pemain(other)
 {
-    this->tipe = "petani";
+    this->tipe = "Petani";
     MatrixArea<Tanaman> n(other.ladang);
     this->ladang = n;
 }
@@ -542,12 +543,11 @@ void Petani::tanam()
         std::cout << "GAGGG" << endl;
     }
 
-    this->ladang.setElement(idx4, idx3, temp); // karna tanaman
+    this->ladang.setElement(idx4, idx3, temp);
+    daftarTanaman.push_back(temp);
     this->inventory.deleteElement(idx2, idx1);
     std::cout << this->ladang.getElement(idx4, idx3)->getKode() << endl;
     std::cout << "Berhasil ditanam" << endl;
-    // this->cetakPenyimpanan();
-    // this->cetakLadang();
 }
 
 void Petani::panenTani()
@@ -856,7 +856,8 @@ void Petani::panenTani()
                                     // this->setInv(j, k, this->ladang.getElement(idx2, idx1)->hasilPanen());
                                     cout << this->inventory.getElement(j, k)->getName() << endl;
                                     cout << this->inventory.getElement(1, 1)->getName() << endl;
-
+                                    auto it = find(daftarTanaman.begin(),daftarTanaman.end(),this->ladang.getElement(idx2,idx1));
+                                    *it = nullptr;
                                     this->ladang.deleteElement(idx2, idx1);
                                     foundslot = true;
                                     break;
@@ -904,4 +905,11 @@ float Petani::calculateTax()
     int KKP = countKekayaanInven() + countKekayaanLadang() - KTKP_PETANI;
     std::cout << KKP << endl;
     return getTaxRate(KKP) * KKP;
+}
+
+void Petani::tambahUmurTanaman(){
+    int jmlhTanaman = daftarTanaman.size();
+    for(int i=0;i<jmlhTanaman;i++){
+        daftarTanaman[i]->tambahUmur();
+    }
 }

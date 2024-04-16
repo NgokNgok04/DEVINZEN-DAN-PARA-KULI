@@ -24,6 +24,7 @@
 #include <fstream>
 #include <sstream>
 #include "../Header/helper.hpp"
+
 void GameManager::rotatePlayer()
 {
     if(this->currentPlayerIndex == this->playerAmount-1){ //kembali ke awal jika sudah di ujung akhir
@@ -58,16 +59,18 @@ void GameManager::Debug()
 void GameManager::insertNewPlayer(Pemain * newPlayer)
 {
     this->playerList.push_back(newPlayer);
+
     this->playerAmount++;
 
     if(this->playerAmount > 1){ //geser pemain yang baru dimasukkan supaya terurut otomatis
         Pemain* P1 = nullptr;
         Pemain* P2 = nullptr;
         int i = this->playerAmount-1;
+        // cout<<"11"<<endl;
         while(i-1>=0){
             P1 = this->playerList[i];
             P2 = this->playerList[i-1];
-
+            // cout<<"11"<<endl;
             if(*P1<*P2){
                 this->playerList[i] = P2;
                 this->playerList[i-1] = P1;
@@ -77,6 +80,7 @@ void GameManager::insertNewPlayer(Pemain * newPlayer)
             i--;
         }
     }
+    // cout<<"22"<<endl;
 }
 
 void GameManager::PlayerDebug()
@@ -88,8 +92,17 @@ void GameManager::PlayerDebug()
 
 void GameManager::Next()
 {
+    if(checkWinner()){
+        return;
+    }
+    for(int i=0;i<playerAmount;i++){
+        if(playerList[i]->getTipe()=="Petani"){
+            Petani* temp = dynamic_cast<Petani*>(playerList[i]);
+            temp->tambahUmurTanaman();
+        }
+    }
     this->rotatePlayer();
-    //TODO: aging semua tanaman
+    cout<<"Sekarang giliran "<<getCurrentPlayer()->getUsername()<<"!\n";
 }
 
 Pemain *GameManager::getWinner()
@@ -215,25 +228,29 @@ void simpanPemain(ofstream &out,Pemain &p){
     out <<p.getUsername()<<" "<<p.getTipe()<<" "<<p.getBeratBadan()
         <<" "<<p.getGulden()<<endl;
     simpanMatrixArea(out,p.getInventory());
-    if(p.getTipe()=="petani"){
+    if(p.getTipe()=="Petani"){
         Petani& petani = dynamic_cast<Petani&>(p);
         simpanMatrixArea(out,petani.getLadang());
-    }else if(p.getTipe()=="peternak"){
+    }else if(p.getTipe()=="Peternak"){
         Peternak& peternak = dynamic_cast<Peternak&>(p);
         simpanMatrixArea(out,peternak.getTernakan());
     }
 }
 
 void simpanToko(ofstream &out){
-    int jmlhItem = Toko::getAvailableProductSize()+Toko::getAvailableBangunanSize();
+    int jmlhItem = Toko::getCountBangunanProductReady();
     out<<jmlhItem<<endl;
     for(int i=0;i<Toko::getAvailableProductSize();i++){
         pair<Product,int> produk = *Toko::getPairProductInt(i);
-        out<<produk.first.getName()<<" "<<produk.second<<endl;
+        if(produk.second!=0){
+            out<<produk.first.getName()<<" "<<produk.second<<endl;
+        }
     }
     for(int i=0;i<Toko::getAvailableBangunanSize();i++){
         pair<Bangunan,int> bangunan = *Toko::getPairBangunanInt(i);
-        out<<bangunan.first.getName()<<" "<<bangunan.second<<endl;
+        if(bangunan.second !=0){
+            out<<bangunan.first.getName()<<" "<<bangunan.second<<endl;
+        }
     }
 }
 
@@ -246,8 +263,8 @@ void GameManager::simpan(){
             cout<<"Masukkan lokasi berkas state: ";
             cin>>path;
             string dir = path.substr(0,path.find_last_of("/\\"));
-            if(fs::exists(dir) && fs::is_directory(dir)){
-                //throw exception
+            if(!fs::exists(dir) || !fs::is_directory(dir)){
+                throw InvalidDirSimpan();
             }
             isValid = true;
             ofstream outf(path);
@@ -259,28 +276,31 @@ void GameManager::simpan(){
                 simpanToko(outf);
             }
         }catch(BaseException &b){
-            b.what();
-            cout<<endl;
+            cout<<b.what()<<endl;
         }
     }
 }
 
-void muatMatrixArea(ifstream& infile,MatrixArea<GameObject> inven){
+void muatMatrixArea(ifstream& infile,MatrixArea<GameObject> &inven){
     string fullLine;
     getline(infile,fullLine,'\n');
     int jmlhItem = stoi(fullLine);
     for(int i=0;i<jmlhItem;i++){
-        getline(infile,fullLine,'\n');
-        int id = -1;
+        getline(infile,fullLine);
+        fullLine.erase(fullLine.size()-1);
+        int id;
         GameObject* temp = nullptr;
         if(ParserHewan::convertNameToID(fullLine)!=-1){
             id = ParserHewan::convertNameToID(fullLine);
+            // cout<<fullLine<<" HEWAN"<<endl;
             temp = new Hewan(id);
         }else if(ParserTanaman::convertNameToID(fullLine)!=-1){
             id = ParserTanaman::convertNameToID(fullLine);
+            // cout<<fullLine<<" TANAMAN"<<endl;
             temp = new Tanaman(id);
         }else if(ParserProduk::convertNameToID(fullLine)!=-1){
             id = ParserProduk::convertNameToID(fullLine);
+            // cout<<fullLine<<" PRODUK"<<endl;
             bool isFromHewan=true;
             if(ParserHewan::convertNameToID(ParserProduk::getOrigin(id))==-1){
                 isFromHewan = false;
@@ -288,13 +308,14 @@ void muatMatrixArea(ifstream& infile,MatrixArea<GameObject> inven){
             temp = new Product(id,isFromHewan);
         }else{
             id = ParserResep::convertNameToID(fullLine);
+            // cout<<fullLine<<" BANGUNAN"<<endl;
             temp = new Bangunan(id);
         }
         inven+temp;
     }
 }
 
-void muatMatrixArea(ifstream& infile,MatrixArea<Hewan> ternakan){
+void muatMatrixArea(ifstream& infile,MatrixArea<Hewan> &ternakan){
     string fullLine;
     getline(infile,fullLine,'\n');
     int jmlhItem = stoi(fullLine);
@@ -308,7 +329,7 @@ void muatMatrixArea(ifstream& infile,MatrixArea<Hewan> ternakan){
     }
 }
 
-void muatMatrixArea(ifstream& infile,MatrixArea<Tanaman> ladang){
+void muatMatrixArea(ifstream& infile,MatrixArea<Tanaman> &ladang){
     string fullLine;
     getline(infile,fullLine,'\n');
     int jmlhItem = stoi(fullLine);
@@ -336,11 +357,11 @@ void muatToko(ifstream& infile){
                 isFromHewan = false;
             }
             Product temp(ParserProduk::convertNameToID(line[0]),isFromHewan);
-            Toko::pushProduct(make_pair(temp,stoi(line[1])));
+            Toko::itemDijual(&temp,stoi(line[1]));
         }else{
-            int id = ParserProduk::convertNameToID(line[0]);
+            int id = ParserResep::convertNameToID(line[0]);
             Bangunan temp(id);
-            Toko::pushBangunan(make_pair(temp,stoi(line[1])));
+            Toko::itemDijual(&temp,stoi(line[1]));
         }
     }
 }
@@ -367,29 +388,27 @@ void GameManager::muat(){
         string fullLine;
         vector<string> line;
         getline(infile,fullLine,'\n');
-        cout<<fullLine<<endl;
-        playerAmount = stoi(fullLine);
-        cout<<playerAmount<<endl;
-        for(int i=0;i<playerAmount;i++){
+        // cout<<fullLine<<endl;
+        int nPlayer = stoi(fullLine);
+        // cout<<playerAmount<<endl;
+        for(int i=0;i<nPlayer;i++){
             getline(infile,fullLine);
             line = StringToStringList(fullLine);
             
-            if(line[1]=="peternak"){
-                Peternak* temp = new Peternak(line[0],stoi(line[3]),stoi(line[2]),
-                1,1,1,storageSize.first,storageSize.second);
-                playerList.push_back(temp);
+            if(line[1]=="Peternak"){
+                Peternak* temp = new Peternak(line[0],stoi(line[3]),stoi(line[2]));
+                insertNewPlayer(temp);
                 muatMatrixArea(infile,temp->getInventory());
                 muatMatrixArea(infile,temp->getTernakan());
-                cout<<temp->getUsername()<<endl;
-            }else if(line[1]=="petani"){
-                Petani* temp = new Petani(line[0],stoi(line[3]),stoi(line[2]),
-                1,1,1,storageSize.first,storageSize.second);
-                playerList.push_back(temp);
+                // cout<<temp->getUsername()<<endl;
+            }else if(line[1]=="Petani"){
+                Petani* temp = new Petani(line[0],stoi(line[3]),stoi(line[2]));
+                insertNewPlayer(temp);
                 muatMatrixArea(infile,temp->getInventory());
                 muatMatrixArea(infile,temp->getLadang());
             }else{
-                WaliKota* temp = new WaliKota(line[0],stoi(line[3]),stoi(line[2]),1,1,1);
-                playerList.push_back(temp);
+                WaliKota* temp = new WaliKota(line[0],stoi(line[3]),stoi(line[2]));
+                insertNewPlayer(temp);
                 muatMatrixArea(infile,temp->getInventory());
             }
         }
@@ -432,7 +451,7 @@ void GameManager::setupGame(){
 
 void GameManager::prosesInput(string command){
     Pemain* curPlayer = getCurrentPlayer();
-    cout<<curPlayer->getUsername()<<endl;
+    // cout<<curPlayer->getUsername()<<endl;
     if(command=="NEXT"){
         Next();
     }else if(command=="CETAK_PENYIMPANAN"){
@@ -444,9 +463,9 @@ void GameManager::prosesInput(string command){
     }else if(command=="JUAL"){
         curPlayer->jual();
     }else if(command=="SIMPAN"){
-        //simpan
+        simpan();
     }else{
-        if(curPlayer->getTipe()=="petani"){
+        if(curPlayer->getTipe()=="Petani"){
             Petani* temp = dynamic_cast<Petani*>(curPlayer);
             if(command=="CETAK_LADANG"){
                 temp->cetakLadang();
@@ -457,7 +476,7 @@ void GameManager::prosesInput(string command){
             }else{
                 // throw
             }
-        }else if(curPlayer->getTipe()=="peternak"){
+        }else if(curPlayer->getTipe()=="Peternak"){
             Peternak* temp = dynamic_cast<Peternak*>(curPlayer);
             if(command=="CETAK_PETERNAKAN"){
                 temp->cetakTernak();

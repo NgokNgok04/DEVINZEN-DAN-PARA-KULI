@@ -8,10 +8,10 @@ class Petani : public Pemain
 {
 protected:
     MatrixArea<Tanaman> ladang;
-
+    vector<Tanaman*> daftarTanaman;
 public:
     Petani();
-    Petani(string usn, float guld, int bb, int smol, int med, int big, int ladrows, int ladcols);
+    Petani(string usn, float guld, int bb);
     Petani(const Petani &);
     ~Petani();
     MatrixArea<Tanaman> &getLadang();
@@ -22,6 +22,7 @@ public:
     void jual();
     float calculateTax();
     int countKekayaanLadang();
+    void tambahUmurTanaman();
 };
 
 #endif

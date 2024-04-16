@@ -716,3 +716,10 @@ class InvalidPathMuat : public BaseException{
             return "Path yang dimasukkan tidak valid!";
         }
 };
+
+class InvalidDirSimpan : public BaseException{
+    public:
+        string what(){
+            return "Lokasi berkas directory tidak valid!";
+        }
+};

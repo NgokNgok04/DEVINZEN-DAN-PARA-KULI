@@ -9,7 +9,7 @@ private:
     map<string,int> daftarMaterial;
 public:
     WaliKota();
-    WaliKota(string usn, float guld, int bb, int smol, int med, int big);
+    WaliKota(string usn, float guld, int bb);
     WaliKota(const WaliKota &);
     ~WaliKota();
     void pungutPajak(vector<Pemain *>);

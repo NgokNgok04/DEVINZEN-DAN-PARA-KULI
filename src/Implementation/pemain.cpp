@@ -16,14 +16,13 @@ Pemain::Pemain()
     this->ownedBuild = {0, 0, 0};
 }
 
-Pemain::Pemain(string usn, float guld, int bb, int smol, int med, int big)
+Pemain::Pemain(string usn, float guld, int bb)
 {
     this->gulden = guld;
     this->berat_badan = bb;
     pair<int,int> sizeInven = ParserMisc::getStorageSize();
     MatrixArea<GameObject> inv(sizeInven.first, sizeInven.second);
     this->inventory = inv;
-    this->ownedBuild = {smol, med, big};
     this->username = usn;
 }
 

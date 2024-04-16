@@ -23,7 +23,7 @@ public:
     // MatrixArea<GameObject> inventory;
 
     Pemain();
-    Pemain(string usn, float guld, int bb, int smol, int med, int big); // : MatrixArea(rows, cols)
+    Pemain(string usn, float guld, int bb); // : MatrixArea(rows, cols)
     Pemain(const Pemain &);
     ~Pemain();
 

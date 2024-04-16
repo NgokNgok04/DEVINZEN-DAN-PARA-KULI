@@ -6,18 +6,18 @@ using namespace std;
 
 WaliKota::WaliKota() : Pemain()
 {
-    this->tipe = "walikota";
+    this->tipe = "Walikota";
     this->username = "Walikota";
 }
 
-WaliKota::WaliKota(string usn, float guld, int bb, int smol, int med, int big) : Pemain(usn, guld, bb, smol, med, big)
+WaliKota::WaliKota(string usn, float guld, int bb) : Pemain(usn, guld, bb)
 {
-    this->tipe = "walikota";
+    this->tipe = "Walikota";
 }
 
 WaliKota::WaliKota(const WaliKota &other) : Pemain(other)
 {
-    this->tipe = "walikota";
+    this->tipe = "Walikota";
 }
 
 WaliKota::~WaliKota()
@@ -31,7 +31,7 @@ void WaliKota::pungutPajak(vector<Pemain *> allPlayers)
     float gained = 0;
     for (int i = 0; i < allPlayers.size(); i++)
     {
-        if (allPlayers[i]->getTipe() == "petani" || allPlayers[i]->getTipe() == "peternak")
+        if (allPlayers[i]->getTipe() == "Petani" || allPlayers[i]->getTipe() == "Peternak")
         {
             gained += allPlayers[i]->calculateTax();
         }
@@ -50,7 +50,6 @@ void WaliKota::beli()
     int wantToBuy;
     while(!isSubMenuCancelled){
         wantToBuy = Toko::buyProcess();
-        std::cout << "WANT TO BUY : " << wantToBuy << endl;
         std::cout << endl;
         try {
             if (wantToBuy == 0){

@@ -94,14 +94,14 @@ int Toko::buyProcess(){
 void Toko::itemDibeli(GameObject* gameObject, int quantity){
     if(gameObject->getTipeObject()=="PRODUCT"){
         for(int i = 0; i < availableProduct.size(); i++){
-            if (gameObject == &availableProduct[i].first){
+            if (*gameObject == availableProduct[i].first){
                 availableProduct[i].second -= quantity;
                 return;
             }
         }
     }else{
         for (int i = 0; i < availableBangunan.size(); i++){
-            if (gameObject == &availableBangunan[i].first){
+            if (*gameObject == availableBangunan[i].first){
                 availableBangunan[i].second -= quantity;
                 return;
             }
@@ -112,7 +112,7 @@ void Toko::itemDibeli(GameObject* gameObject, int quantity){
 void Toko::itemDijual(GameObject* gameObject, int quantity){
     if(gameObject->getTipeObject()=="PRODUCT"){
         for(int i = 0; i < availableProduct.size(); i++){
-            if (gameObject == &availableProduct[i].first){
+            if (*gameObject == availableProduct[i].first){
                 availableProduct[i].second += quantity;
                 return;
             }
@@ -174,7 +174,8 @@ int Toko::displayAvailableProduct(){
     for (int i = 0; i < ParserProduk::getConfigSize(); i++){
         if (availableProduct[i].second != 0){
             cout << idx << ". " << availableProduct[i].first.getName();
-            cout << " - " << availableProduct[i].first.getPrice() << endl;
+            cout << " - " << availableProduct[i].first.getPrice() <<
+                " ("<<availableProduct[i].second<<")"<<endl;
             idx++;
         }
     }
@@ -230,14 +231,6 @@ int Toko::getStock(string name){
     return 0;
 }
 
-void Toko::pushProduct(pair<Product,int> produk){
-    availableProduct.push_back(produk);
-}
-
-void Toko::pushBangunan(pair<Bangunan,int> bangunan){
-    availableBangunan.push_back(bangunan);
-}
-
 int Toko::getAvailableProductSize(){
     return availableProduct.size();
 }
@@ -267,4 +260,19 @@ Hewan* Toko::getHewan(int idx){
 
 Tanaman* Toko::getTanaman(int idx){
     return &availableTanaman[idx];
+}
+
+int Toko::getCountBangunanProductReady(){
+    int sum = 0;
+    for(int i=0;i<getAvailableProductSize();i++){
+        if(getPairProductInt(i)->second!=0){
+            sum++;
+        }
+    }
+    for(int i=0;i<getAvailableBangunanSize();i++){
+        if(getPairBangunanInt(i)->second!=0){
+            sum++;
+        }
+    }
+    return sum;
 }

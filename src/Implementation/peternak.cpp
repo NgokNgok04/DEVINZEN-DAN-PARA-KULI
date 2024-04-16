@@ -6,7 +6,7 @@ using namespace std;
 // EXTRA FUNCTIONS
 Peternak::Peternak() : Pemain()
 {
-    this->tipe = "peternak";
+    this->tipe = "Peternak";
     int farmRow = ParserMisc::getFarmSize().first;
     int farmCol = ParserMisc::getFarmSize().second;
     MatrixArea<Hewan> n(farmRow, farmCol);
@@ -14,16 +14,17 @@ Peternak::Peternak() : Pemain()
     this->username = "Peternak1";
 }
 
-Peternak::Peternak(string usn, float guld, int bb, int smol, int med, int big, int terrows, int tercols) : Pemain(usn, guld, bb, smol, med, big)
+Peternak::Peternak(string usn, float guld, int bb) : Pemain(usn, guld, bb)
 {
-    this->tipe = "peternak";
-    MatrixArea<Hewan> n(terrows, tercols);
+    this->tipe = "Peternak";
+    pair<int,int> sizePeternakan = ParserMisc::getFieldSize();
+    MatrixArea<Hewan> n(sizePeternakan.first, sizePeternakan.second);
     this->ternakan = n;
 }
 
 Peternak::Peternak(const Peternak &other) : Pemain()
 {
-    this->tipe = "peternak";
+    this->tipe = "Peternak";
     MatrixArea<Hewan> n(other.ternakan);
     this->ternakan = n;
 }
