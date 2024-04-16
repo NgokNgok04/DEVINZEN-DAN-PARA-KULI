@@ -213,10 +213,12 @@ int Pemain::countKekayaanInven()
             GameObject *ptr = inventory.getElement(i, j);
             if (ptr != nullptr)
             {
+                // cout<<ptr->getName()<<" "<<ptr->getPrice()<<endl;
                 sum += ptr->getPrice();
             }
         }
     }
+    // cout<<"Total Inven "<<sum<<endl;
     return sum;
 }
 
@@ -244,7 +246,7 @@ float Pemain::getTaxRate(int KKP)
     }
 }
 
-int Pemain::getGulden()
+float Pemain::getGulden()
 {
     return this->gulden;
 }

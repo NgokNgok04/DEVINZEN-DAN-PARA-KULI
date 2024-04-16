@@ -38,7 +38,7 @@ public:
     virtual void jual() = 0; // loc item yg akan dijual
     string getUsername();
     int getBeratBadan();
-    int getGulden();
+    float getGulden();
     virtual float calculateTax() = 0;
     bool operator<(Pemain &other);
     bool operator==(Pemain &other);

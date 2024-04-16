@@ -1052,22 +1052,33 @@ void Peternak::panenTernak()
 
 float Peternak::calculateTax()
 {
-    int KKP = countKekayaanInven() + countKekayaanTernakan() - KTKP_PETERNAK;
-    return getTaxRate(KKP) * KKP;
+    float KKP = countKekayaanInven() + countKekayaanTernakan() - KTKP_PETERNAK;
+    // cout<<"KKP: "<<KKP<<endl;
+    float tax = getTaxRate(KKP)*KKP;
+    if(tax>this->gulden){
+        float temp = this->gulden;
+        this->gulden = 0;
+        return temp;
+    }
+    this->gulden -= tax;
+    return tax;
 }
 
 int Peternak::countKekayaanTernakan()
 {
     int sum = 0;
-    for (int i = 0; i < ternakan.getRows(); i++)
+    for (int i = 1; i <= ternakan.getRows(); i++)
     {
-        for (int j = 0; j < ternakan.getCols(); i++)
+        for (int j = 1; j <= ternakan.getCols(); j++)
         {
-            if (ternakan.getElement(i, j) != 0)
+            Hewan* ptr = ternakan.getElement(i,j);
+            if (ptr != nullptr)
             {
+                // cout<<ptr->getName()<<" "<<ptr->getPrice()<<endl;
                 sum += ternakan.getElement(i, j)->getPrice();
             }
         }
     }
+    // cout<<"Total Ternak"<<sum<<endl;
     return sum;
 }
