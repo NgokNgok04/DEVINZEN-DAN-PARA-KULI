@@ -225,7 +225,7 @@ void Peternak::beli()
                         std::cout << endl; // cancel
                     }
                 }
-                else if (wantToBuy == 4 && !Toko::isBangunanEmptyStock)
+                else if (wantToBuy == 4 && !Toko::isBangunanEmptyStock())
                 {
                     counterAvailableItem = Toko::displayAvailableBangunan();
                     std::cout << "Barang yang ingin dibeli : ";
