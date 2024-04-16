@@ -29,6 +29,7 @@ void WaliKota::pungutPajak(vector<Pemain *> allPlayers)
 {
     // Butuh track semua player
     float gained = 0;
+    cout << allPlayers.size() << endl;
     for (int i = 0; i < allPlayers.size(); i++)
     {
         if (allPlayers[i]->getTipe() == "petani" || allPlayers[i]->getTipe() == "peternak")
@@ -37,6 +38,7 @@ void WaliKota::pungutPajak(vector<Pemain *> allPlayers)
         }
     }
     this->gulden += gained;
+    cout << "Walikota sekarang mempunyai " << this->getGulden() << " gulden!" << endl;
 }
 
 void WaliKota::beli()

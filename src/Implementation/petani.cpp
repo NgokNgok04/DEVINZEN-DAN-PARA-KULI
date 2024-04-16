@@ -857,6 +857,7 @@ void Petani::panenTani()
                                     cout << this->inventory.getElement(j, k)->getName() << endl;
                                     cout << this->inventory.getElement(1, 1)->getName() << endl;
 
+                                    delete this->ladang.getElement(idx2, idx1);
                                     this->ladang.deleteElement(idx2, idx1);
                                     foundslot = true;
                                     break;

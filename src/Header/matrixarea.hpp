@@ -8,6 +8,7 @@
 #include "Hewan.hpp"
 #include "GameObject.hpp"
 #include "ParserMisc.hpp"
+#include "pcolor.h"
 using namespace std;
 template <class T>
 class MatrixArea
@@ -23,7 +24,7 @@ public:
     ~MatrixArea();
     MatrixArea(const MatrixArea<T *> &);
     MatrixArea<T *> operator=(const MatrixArea<T *> &);
-    void operator+(T* &);
+    void operator+(T *&);
     void setElement(int, int, T *);
     void deleteElement(int, int);
     T *getElement(int, int);

@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include "../Header/matrixarea.hpp"
+#include "pcolor.c"
 using namespace std;
 template <class T>
 MatrixArea<T>::MatrixArea()
@@ -45,7 +46,8 @@ MatrixArea<T *> MatrixArea<T>::operator=(const MatrixArea<T *> &matrix)
 }
 
 template <class T>
-void MatrixArea<T>::operator+(T* &object){
+void MatrixArea<T>::operator+(T *&object)
+{
     bool found = false;
     for (int i = 0; i < this->rows; i++)
     {
@@ -92,8 +94,9 @@ void MatrixArea<T>::deleteElement(int row, int col)
 
 template <class T>
 pair<int, int> MatrixArea<T>::getPositionFromSlot(string slot)
-{   
-    if (slot.size() != 3){
+{
+    if (slot.size() > 3)
+    {
         throw InvalidPositionMatrixArea();
     }
     int posCol = slot[0] - 'A' + 1;
@@ -110,8 +113,45 @@ pair<int, int> MatrixArea<T>::getPositionFromSlot(string slot)
     return make_pair(posRow, posCol);
 }
 
-template <class T>
-void MatrixArea<T>::displayMatrix()
+// template <class T>
+// void MatrixArea<T>::displayMatrix()
+// {
+//     std::cout << "    ";
+//     for (int i = 0; i < this->cols; i++)
+//     {
+//         std::cout << "  " << static_cast<char>(static_cast<int>('A') + i) << "   ";
+//     }
+//     std::cout << endl;
+//     string grid = "   +";
+//     for (int i = 0; i < this->cols; i++)
+//     {
+//         grid += "-----+";
+//     }
+
+//     for (int i = 0; i < this->rows; i++)
+//     {
+//         std::cout << grid << endl;
+//         std::cout << "0" << i + 1 << " ";
+//         std::cout << "|";
+//         for (int j = 0; j < this->cols; j++)
+//         {
+//             if (this->matrix[i][j] == nullptr)
+//             {
+//                 std::cout << "     ";
+//             }
+//             else
+//             {
+//                 std::cout << " " << this->matrix[i][j]->getKode() << " ";
+//             }
+//             std::cout << "|";
+//         }
+//         std::cout << endl;
+//     }
+//     std::cout << grid << endl;
+// }
+
+template <>
+inline void MatrixArea<GameObject>::displayMatrix()
 {
     std::cout << "    ";
     for (int i = 0; i < this->cols; i++)
@@ -147,8 +187,106 @@ void MatrixArea<T>::displayMatrix()
     std::cout << grid << endl;
 }
 
-template <> inline
-void MatrixArea<GameObject>::displayObject()
+template <>
+inline void MatrixArea<Hewan>::displayMatrix()
+{
+    std::cout << "    ";
+    for (int i = 0; i < this->cols; i++)
+    {
+        std::cout << "  " << static_cast<char>(static_cast<int>('A') + i) << "   ";
+    }
+    std::cout << endl;
+    string grid = "   +";
+    for (int i = 0; i < this->cols; i++)
+    {
+        grid += "-----+";
+    }
+
+    for (int i = 0; i < this->rows; i++)
+    {
+        std::cout << grid << endl;
+        std::cout << "0" << i + 1 << " ";
+        std::cout << "|";
+        for (int j = 0; j < this->cols; j++)
+        {
+            if (this->matrix[i][j] == nullptr)
+            {
+                std::cout << "     ";
+            }
+            else
+            {
+                std::cout << " ";
+                for (int k = 0; k < 3; k++)
+                {
+                    if (this->matrix[i][j]->isHarvestable())
+                    {
+                        print_green(this->matrix[i][j]->getKode()[k]);
+                    }
+                    else
+                    {
+                        print_red(this->matrix[i][j]->getKode()[k]);
+                    }
+                }
+                cout << " ";
+            }
+            std::cout << "|";
+        }
+        std::cout << endl;
+    }
+    std::cout << grid << endl;
+}
+
+template <>
+inline void MatrixArea<Tanaman>::displayMatrix()
+{
+    std::cout << "    ";
+    for (int i = 0; i < this->cols; i++)
+    {
+        std::cout << "  " << static_cast<char>(static_cast<int>('A') + i) << "   ";
+    }
+    std::cout << endl;
+    string grid = "   +";
+    for (int i = 0; i < this->cols; i++)
+    {
+        grid += "-----+";
+    }
+
+    for (int i = 0; i < this->rows; i++)
+    {
+        std::cout << grid << endl;
+        std::cout << "0" << i + 1 << " ";
+        std::cout << "|";
+        for (int j = 0; j < this->cols; j++)
+        {
+            if (this->matrix[i][j] == nullptr)
+            {
+                std::cout << "     ";
+            }
+            else
+            {
+                std::cout << " ";
+                for (int k = 0; k < 3; k++)
+                {
+                    if (this->matrix[i][j]->isHarvestable())
+                    {
+                        print_green(this->matrix[i][j]->getKode()[k]);
+                    }
+                    else
+                    {
+                        print_red(this->matrix[i][j]->getKode()[k]);
+                    }
+                }
+                cout << " ";
+            }
+            std::cout << "|";
+        }
+        std::cout << endl;
+    }
+    std::cout << grid << endl;
+}
+
+template <>
+inline void MatrixArea<GameObject>::displayObject()
 {
     int title = (this->cols * 6) + 4;
     std::cout << "   ";
@@ -187,8 +325,8 @@ void MatrixArea<GameObject>::displayObject()
     MatrixArea<GameObject>::displayMatrix();
 }
 
-template <> inline
-void MatrixArea<Hewan>::displayObject()
+template <>
+inline void MatrixArea<Hewan>::displayObject()
 {
     int title = (this->cols * 6) + 4;
     std::cout << "   ";
@@ -228,8 +366,8 @@ void MatrixArea<Hewan>::displayObject()
     // dummy Class di local mahew (ga dipush)
 }
 
-template <> inline
-void MatrixArea<Tanaman>::displayObject()
+template <>
+inline void MatrixArea<Tanaman>::displayObject()
 {
     int title = (this->cols * 6) + 4;
     std::cout << "   ";
@@ -346,15 +484,15 @@ int MatrixArea<T>::getEmptySlot()
     return count;
 }
 
-template <>inline
-Tanaman *MatrixArea<GameObject>::convertTanaman(int row, int col)
+template <>
+inline Tanaman *MatrixArea<GameObject>::convertTanaman(int row, int col)
 {
     Tanaman *temp = dynamic_cast<Tanaman *>(this->getElement(row, col));
     return temp;
 }
 
-template <>inline
-Hewan *MatrixArea<GameObject>::convertHewan(int row, int col)
+template <>
+inline Hewan *MatrixArea<GameObject>::convertHewan(int row, int col)
 {
     Hewan *temp = dynamic_cast<Hewan *>(this->getElement(row, col));
     return temp;
