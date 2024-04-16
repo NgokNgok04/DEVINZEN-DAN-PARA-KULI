@@ -82,7 +82,6 @@ void ParserTanaman::ParseFile(string fileDirectory)
         IndexToIDMap.insert({i, plantID[i]});
         IDToIndexMap.insert({plantID[i], i});
     }
-    cout << "Konfigurasi plant.txt berhasil!\n";
 }
 
 void ParserTanaman::ClearParserData()

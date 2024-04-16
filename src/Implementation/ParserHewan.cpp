@@ -81,7 +81,6 @@ void ParserHewan::ParseFile(string fileDirectory)
         IndexToIDMap.insert({i, animalID[i]});
         IDToIndexMap.insert({animalID[i], i});
     }
-    cout << "Konfigurasi animal.txt berhasil!\n";
 }
 
 void ParserHewan::ClearParserData()

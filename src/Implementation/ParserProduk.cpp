@@ -87,7 +87,6 @@ void ParserProduk::ParseFile(string fileDirectory)
         IndexToIDMap.insert({i, productID[i]});
         IDToIndexMap.insert({productID[i], i});
     }
-    cout << "Konfigurasi product.txt berhasil!\n";
 }
 
 void ParserProduk::ClearParserData()
