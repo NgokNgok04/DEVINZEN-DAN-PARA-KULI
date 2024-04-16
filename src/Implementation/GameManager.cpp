@@ -200,6 +200,7 @@ void simpanTanaman(ofstream &out, Tanaman &t, int row, int col)
     out << convertCoorToCode(row, col) << " " << t.getName() << " " << t.getCurAge() << endl;
 }
 
+
 void simpanMatrixArea(ofstream &out, MatrixArea<GameObject> &mtrx)
 {
     int jmlhItem = mtrx.getRows() * mtrx.getCols() - mtrx.getEmptySlot();
@@ -313,13 +314,22 @@ void GameManager::simpan()
     }
 }
 
+void removeNewline(std::string &str) {
+    size_t pos = str.find('\n');
+
+    while (pos != std::string::npos) {
+        str.erase(pos, 1);
+        pos = str.find('\n', pos);
+    }
+}
+
 void muatMatrixArea(ifstream& infile,MatrixArea<GameObject> &inven){
     string fullLine;
     getline(infile, fullLine, '\n');
     int jmlhItem = stoi(fullLine);
     for(int i=0;i<jmlhItem;i++){
         getline(infile,fullLine);
-        fullLine.erase(fullLine.size()-1);
+        removeNewline(fullLine);
         int id;
         GameObject* temp = nullptr;
         if(ParserHewan::convertNameToID(fullLine)!=-1){
