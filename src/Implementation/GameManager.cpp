@@ -332,7 +332,6 @@ void muatMatrixArea(ifstream& infile,MatrixArea<GameObject> &inven){
         removeNewline(fullLine);
         int id;
         GameObject* temp = nullptr;
-        cout<<fullLine<<" "<<fullLine.length()<<endl;
         if(ParserHewan::convertNameToID(fullLine)!=-1){
             id = ParserHewan::convertNameToID(fullLine);
             // cout<<fullLine<<" HEWAN"<<endl;

@@ -378,7 +378,7 @@ void WaliKota::bangunBangunan()
             break;
         }
     }
-
+    Bangunan *bangunan = nullptr;
     try
     {
         if (!found)
@@ -398,6 +398,23 @@ void WaliKota::bangunBangunan()
                 throw MaterialNotEnough();
             }
         }
+        bangunan = new Bangunan(idRecipe);
+        for(int i=0;i<materialToBuild.size();i++){
+            materialToFind = materialToBuild[i].first;
+            for(int j=1;j<=inventory.getRows();j++){
+                for(int k=1;k<=inventory.getCols();k++){
+                    if(inventory.getElement(j,k)==nullptr){
+                        continue;
+                    }
+                    if(inventory.getElement(j,k)->getTipeObject()=="PRODUCT"){
+                        if(inventory.getElement(j,k)->getName()==materialToFind){
+                            GameObject* temp = inventory.getElement(j,k);
+                            inventory.setElement(j,k,nullptr);
+                        }
+                    }
+                }
+            }
+        }
     }
     catch (CantFindNamaBangunan err)
     {
@@ -409,8 +426,9 @@ void WaliKota::bangunBangunan()
         std::cout <<err.what()<< endl;
         return;
     }
-
-    this->ownedBangunan.push_back(Toko::getPairBangunanInt(idxToBuy)->first);
+    this->ownedBangunan.push_back(*bangunan);
+    GameObject* temp = dynamic_cast<GameObject*>(bangunan);
+    inventory+(temp);
     std::cout << Toko::getPairBangunanInt(idxToBuy)->first.getName() << "berhasil dibangun dan telah menjadi hak milik walikota!" << endl;
 }
 
