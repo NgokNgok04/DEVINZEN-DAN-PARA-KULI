@@ -1,0 +1,48 @@
+\doxysection{Hewan.\+hpp}
+\hypertarget{_hewan_8hpp_source}{}\label{_hewan_8hpp_source}\index{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Header/Hewan.hpp@{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Header/Hewan.hpp}}
+\mbox{\hyperlink{_hewan_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ HEWAN\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ HEWAN\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_object_8hpp}{GameObject.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_product_8hpp}{Product.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_hewan_8hpp}{ParserHewan.hpp}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_hewan}{Hewan}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_game_object}{GameObject}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_hewan_a15fef8512209ea34556abf785d930ee5}{type}};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_hewan_a5269a7ff3623be7a016273be9efb8ef0}{weightHarvest}};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_hewan_aeb34c46d5753c6a45afaa498ef8a6f3c}{weight}};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{static}\ map<string,\ pair<string,\ string>>\ \mbox{\hyperlink{class_hewan_abeb7aa179a274c60b1e3ccc1ac03f7e7}{konversiPanen}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_hewan_afb07a2c2b883130e1b893e5c4f30111a}{Hewan}}()}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_game_object_ab463519e996c0d56bfffe0bb680c815d}{setKode}}(\textcolor{stringliteral}{"{}MET"{}});}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_game_object_a9574464c79ce8fa0032d98ac4795547b}{setTipeObject}}(\textcolor{stringliteral}{"{}HEWAN"{}});}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_game_object_a4f190a9192abcc7e6b77bc797e3c5bdc}{setName}}(\textcolor{stringliteral}{"{}DUCK"{}});}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ this-\/>type\ =\ \textcolor{stringliteral}{"{}CARNIVORE"{}};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ this-\/>weightHarvest\ =\ 10;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ this-\/>weight\ =\ 100;}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_hewan_afb07a2c2b883130e1b893e5c4f30111a}{Hewan}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hewan_ae3719bf11ad596f0e42b477262c70415}{makan}}(\mbox{\hyperlink{class_product}{Product}});}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hewan_a3ff8fbb1b6984bbc36edb1b8c31a665c}{setWeight}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00033\ \ \ \ \ vector<Product\ *>\ \mbox{\hyperlink{class_hewan_a167d3386e77764a22b8366608a400f0b}{hasilPanen}}();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_hewan_af3a618f3244f24f52898f63b9c9f9083}{isHarvestable}}();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_hewan_afe69789e041d4e9150ee2c25f8953123}{getType}}();}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_hewan_ae5803b1beb7312f5385210a2536b2a5a}{getWeightHarvest}}();}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_hewan_aba4ce03de38948a27621e1394b5d568e}{getCurWeight}}();}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_hewan}{Hewan}}\ \&\mbox{\hyperlink{class_hewan_ae6fca2e8de85c914a6ac040a9aea3d58}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_hewan}{Hewan}}\ \&);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_hewan_aab6fd5d4f61d0aa0ba68e1b8dcc0cbac}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_hewan}{Hewan}}\ \&);}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

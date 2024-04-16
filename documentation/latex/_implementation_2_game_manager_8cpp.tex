@@ -1,0 +1,117 @@
+\doxysection{D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/\+Implementation/\+Game\+Manager.cpp File Reference}
+\hypertarget{_implementation_2_game_manager_8cpp}{}\label{_implementation_2_game_manager_8cpp}\index{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Implementation/GameManager.cpp@{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Implementation/GameManager.cpp}}
+{\ttfamily \#include "{}../\+Header/\+Game\+Manager.\+hpp"{}}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include "{}../\+Header/helper.\+hpp"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{_implementation_2_game_manager_8cpp_ad188fc56988b3c473adffc8d65abd6e1}{int\+To\+Letter}} (int num)
+\item 
+string \mbox{\hyperlink{_implementation_2_game_manager_8cpp_aa67cf6de9146b43ede33e20965ea41da}{convert\+Coor\+To\+Code}} (int row, int col)
+\item 
+void \mbox{\hyperlink{_implementation_2_game_manager_8cpp_a3eb648a9657d764eda80e24a15ca2e20}{simpan\+Hewan}} (ofstream \&out, \mbox{\hyperlink{class_hewan}{Hewan}} \&h, int row, int col)
+\item 
+void \mbox{\hyperlink{_implementation_2_game_manager_8cpp_a639a9d2fa3557f59b34dcd981b0f6a60}{simpan\+Tanaman}} (ofstream \&out, \mbox{\hyperlink{class_tanaman}{Tanaman}} \&t, int row, int col)
+\item 
+void \mbox{\hyperlink{_implementation_2_game_manager_8cpp_a5e9a76e1a0dfa9abb1f61de069c3b098}{simpan\+Matrix\+Area}} (ofstream \&out, \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $>$ \&mtrx)
+\item 
+void \mbox{\hyperlink{_implementation_2_game_manager_8cpp_a178d49575950af07daa331904acd2acc}{simpan\+Matrix\+Area}} (ofstream \&out, \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ \mbox{\hyperlink{class_hewan}{Hewan}} $>$ \&ternakan)
+\item 
+void \mbox{\hyperlink{_implementation_2_game_manager_8cpp_a6e45dfb5f733d0338fb3bb083f4dd522}{simpan\+Matrix\+Area}} (ofstream \&out, \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ \mbox{\hyperlink{class_tanaman}{Tanaman}} $>$ \&ladang)
+\item 
+void \mbox{\hyperlink{_implementation_2_game_manager_8cpp_a55b1c2542f8c562edbc2b4900c7a766d}{simpan\+Pemain}} (ofstream \&out, \mbox{\hyperlink{class_pemain}{Pemain}} \&p)
+\item 
+void \mbox{\hyperlink{_implementation_2_game_manager_8cpp_a20579f369d251bc53c442da077c056fd}{simpan\+Toko}} (ofstream \&out)
+\item 
+void \mbox{\hyperlink{_implementation_2_game_manager_8cpp_a68868f50f3e972494e45f128359dc345}{muat\+Matrix\+Area}} (ifstream \&infile, \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $>$ \&inven)
+\item 
+void \mbox{\hyperlink{_implementation_2_game_manager_8cpp_ac24dbdf1bda6c3ec06f01fac1edfb0bd}{muat\+Matrix\+Area}} (ifstream \&infile, \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ \mbox{\hyperlink{class_hewan}{Hewan}} $>$ \&ternakan)
+\item 
+void \mbox{\hyperlink{_implementation_2_game_manager_8cpp_ad4b67f68bb24da5e0e9a905e32bc8930}{muat\+Matrix\+Area}} (ifstream \&infile, \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ \mbox{\hyperlink{class_tanaman}{Tanaman}} $>$ \&ladang, vector$<$ \mbox{\hyperlink{class_tanaman}{Tanaman}} \texorpdfstring{$\ast$}{*} $>$ \&dt)
+\item 
+void \mbox{\hyperlink{_implementation_2_game_manager_8cpp_a49edc5757ee59f899cd514d44ce0cdac}{muat\+Toko}} (ifstream \&infile)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_implementation_2_game_manager_8cpp_aa67cf6de9146b43ede33e20965ea41da}\label{_implementation_2_game_manager_8cpp_aa67cf6de9146b43ede33e20965ea41da} 
+\index{GameManager.cpp@{GameManager.cpp}!convertCoorToCode@{convertCoorToCode}}
+\index{convertCoorToCode@{convertCoorToCode}!GameManager.cpp@{GameManager.cpp}}
+\doxysubsubsection{\texorpdfstring{convertCoorToCode()}{convertCoorToCode()}}
+{\footnotesize\ttfamily string convert\+Coor\+To\+Code (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
+
+\Hypertarget{_implementation_2_game_manager_8cpp_ad188fc56988b3c473adffc8d65abd6e1}\label{_implementation_2_game_manager_8cpp_ad188fc56988b3c473adffc8d65abd6e1} 
+\index{GameManager.cpp@{GameManager.cpp}!intToLetter@{intToLetter}}
+\index{intToLetter@{intToLetter}!GameManager.cpp@{GameManager.cpp}}
+\doxysubsubsection{\texorpdfstring{intToLetter()}{intToLetter()}}
+{\footnotesize\ttfamily string int\+To\+Letter (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption})}
+
+\Hypertarget{_implementation_2_game_manager_8cpp_a68868f50f3e972494e45f128359dc345}\label{_implementation_2_game_manager_8cpp_a68868f50f3e972494e45f128359dc345} 
+\index{GameManager.cpp@{GameManager.cpp}!muatMatrixArea@{muatMatrixArea}}
+\index{muatMatrixArea@{muatMatrixArea}!GameManager.cpp@{GameManager.cpp}}
+\doxysubsubsection{\texorpdfstring{muatMatrixArea()}{muatMatrixArea()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void muat\+Matrix\+Area (\begin{DoxyParamCaption}\item[{ifstream \&}]{infile,  }\item[{\mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $>$ \&}]{inven }\end{DoxyParamCaption})}
+
+\Hypertarget{_implementation_2_game_manager_8cpp_ac24dbdf1bda6c3ec06f01fac1edfb0bd}\label{_implementation_2_game_manager_8cpp_ac24dbdf1bda6c3ec06f01fac1edfb0bd} 
+\index{GameManager.cpp@{GameManager.cpp}!muatMatrixArea@{muatMatrixArea}}
+\index{muatMatrixArea@{muatMatrixArea}!GameManager.cpp@{GameManager.cpp}}
+\doxysubsubsection{\texorpdfstring{muatMatrixArea()}{muatMatrixArea()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void muat\+Matrix\+Area (\begin{DoxyParamCaption}\item[{ifstream \&}]{infile,  }\item[{\mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ \mbox{\hyperlink{class_hewan}{Hewan}} $>$ \&}]{ternakan }\end{DoxyParamCaption})}
+
+\Hypertarget{_implementation_2_game_manager_8cpp_ad4b67f68bb24da5e0e9a905e32bc8930}\label{_implementation_2_game_manager_8cpp_ad4b67f68bb24da5e0e9a905e32bc8930} 
+\index{GameManager.cpp@{GameManager.cpp}!muatMatrixArea@{muatMatrixArea}}
+\index{muatMatrixArea@{muatMatrixArea}!GameManager.cpp@{GameManager.cpp}}
+\doxysubsubsection{\texorpdfstring{muatMatrixArea()}{muatMatrixArea()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void muat\+Matrix\+Area (\begin{DoxyParamCaption}\item[{ifstream \&}]{infile,  }\item[{\mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ \mbox{\hyperlink{class_tanaman}{Tanaman}} $>$ \&}]{ladang,  }\item[{vector$<$ \mbox{\hyperlink{class_tanaman}{Tanaman}} \texorpdfstring{$\ast$}{*} $>$ \&}]{dt }\end{DoxyParamCaption})}
+
+\Hypertarget{_implementation_2_game_manager_8cpp_a49edc5757ee59f899cd514d44ce0cdac}\label{_implementation_2_game_manager_8cpp_a49edc5757ee59f899cd514d44ce0cdac} 
+\index{GameManager.cpp@{GameManager.cpp}!muatToko@{muatToko}}
+\index{muatToko@{muatToko}!GameManager.cpp@{GameManager.cpp}}
+\doxysubsubsection{\texorpdfstring{muatToko()}{muatToko()}}
+{\footnotesize\ttfamily void muat\+Toko (\begin{DoxyParamCaption}\item[{ifstream \&}]{infile }\end{DoxyParamCaption})}
+
+\Hypertarget{_implementation_2_game_manager_8cpp_a3eb648a9657d764eda80e24a15ca2e20}\label{_implementation_2_game_manager_8cpp_a3eb648a9657d764eda80e24a15ca2e20} 
+\index{GameManager.cpp@{GameManager.cpp}!simpanHewan@{simpanHewan}}
+\index{simpanHewan@{simpanHewan}!GameManager.cpp@{GameManager.cpp}}
+\doxysubsubsection{\texorpdfstring{simpanHewan()}{simpanHewan()}}
+{\footnotesize\ttfamily void simpan\+Hewan (\begin{DoxyParamCaption}\item[{ofstream \&}]{out,  }\item[{\mbox{\hyperlink{class_hewan}{Hewan}} \&}]{h,  }\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
+
+\Hypertarget{_implementation_2_game_manager_8cpp_a5e9a76e1a0dfa9abb1f61de069c3b098}\label{_implementation_2_game_manager_8cpp_a5e9a76e1a0dfa9abb1f61de069c3b098} 
+\index{GameManager.cpp@{GameManager.cpp}!simpanMatrixArea@{simpanMatrixArea}}
+\index{simpanMatrixArea@{simpanMatrixArea}!GameManager.cpp@{GameManager.cpp}}
+\doxysubsubsection{\texorpdfstring{simpanMatrixArea()}{simpanMatrixArea()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void simpan\+Matrix\+Area (\begin{DoxyParamCaption}\item[{ofstream \&}]{out,  }\item[{\mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $>$ \&}]{mtrx }\end{DoxyParamCaption})}
+
+\Hypertarget{_implementation_2_game_manager_8cpp_a178d49575950af07daa331904acd2acc}\label{_implementation_2_game_manager_8cpp_a178d49575950af07daa331904acd2acc} 
+\index{GameManager.cpp@{GameManager.cpp}!simpanMatrixArea@{simpanMatrixArea}}
+\index{simpanMatrixArea@{simpanMatrixArea}!GameManager.cpp@{GameManager.cpp}}
+\doxysubsubsection{\texorpdfstring{simpanMatrixArea()}{simpanMatrixArea()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void simpan\+Matrix\+Area (\begin{DoxyParamCaption}\item[{ofstream \&}]{out,  }\item[{\mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ \mbox{\hyperlink{class_hewan}{Hewan}} $>$ \&}]{ternakan }\end{DoxyParamCaption})}
+
+\Hypertarget{_implementation_2_game_manager_8cpp_a6e45dfb5f733d0338fb3bb083f4dd522}\label{_implementation_2_game_manager_8cpp_a6e45dfb5f733d0338fb3bb083f4dd522} 
+\index{GameManager.cpp@{GameManager.cpp}!simpanMatrixArea@{simpanMatrixArea}}
+\index{simpanMatrixArea@{simpanMatrixArea}!GameManager.cpp@{GameManager.cpp}}
+\doxysubsubsection{\texorpdfstring{simpanMatrixArea()}{simpanMatrixArea()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void simpan\+Matrix\+Area (\begin{DoxyParamCaption}\item[{ofstream \&}]{out,  }\item[{\mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ \mbox{\hyperlink{class_tanaman}{Tanaman}} $>$ \&}]{ladang }\end{DoxyParamCaption})}
+
+\Hypertarget{_implementation_2_game_manager_8cpp_a55b1c2542f8c562edbc2b4900c7a766d}\label{_implementation_2_game_manager_8cpp_a55b1c2542f8c562edbc2b4900c7a766d} 
+\index{GameManager.cpp@{GameManager.cpp}!simpanPemain@{simpanPemain}}
+\index{simpanPemain@{simpanPemain}!GameManager.cpp@{GameManager.cpp}}
+\doxysubsubsection{\texorpdfstring{simpanPemain()}{simpanPemain()}}
+{\footnotesize\ttfamily void simpan\+Pemain (\begin{DoxyParamCaption}\item[{ofstream \&}]{out,  }\item[{\mbox{\hyperlink{class_pemain}{Pemain}} \&}]{p }\end{DoxyParamCaption})}
+
+\Hypertarget{_implementation_2_game_manager_8cpp_a639a9d2fa3557f59b34dcd981b0f6a60}\label{_implementation_2_game_manager_8cpp_a639a9d2fa3557f59b34dcd981b0f6a60} 
+\index{GameManager.cpp@{GameManager.cpp}!simpanTanaman@{simpanTanaman}}
+\index{simpanTanaman@{simpanTanaman}!GameManager.cpp@{GameManager.cpp}}
+\doxysubsubsection{\texorpdfstring{simpanTanaman()}{simpanTanaman()}}
+{\footnotesize\ttfamily void simpan\+Tanaman (\begin{DoxyParamCaption}\item[{ofstream \&}]{out,  }\item[{\mbox{\hyperlink{class_tanaman}{Tanaman}} \&}]{t,  }\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
+
+\Hypertarget{_implementation_2_game_manager_8cpp_a20579f369d251bc53c442da077c056fd}\label{_implementation_2_game_manager_8cpp_a20579f369d251bc53c442da077c056fd} 
+\index{GameManager.cpp@{GameManager.cpp}!simpanToko@{simpanToko}}
+\index{simpanToko@{simpanToko}!GameManager.cpp@{GameManager.cpp}}
+\doxysubsubsection{\texorpdfstring{simpanToko()}{simpanToko()}}
+{\footnotesize\ttfamily void simpan\+Toko (\begin{DoxyParamCaption}\item[{ofstream \&}]{out }\end{DoxyParamCaption})}
+

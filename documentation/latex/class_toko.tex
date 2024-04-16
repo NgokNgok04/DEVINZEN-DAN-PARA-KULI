@@ -1,0 +1,240 @@
+\doxysection{Toko Class Reference}
+\hypertarget{class_toko}{}\label{class_toko}\index{Toko@{Toko}}
+
+
+{\ttfamily \#include $<$Toko.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_toko_add6bbf76eb4cf8991189ccd3eebe0968}{print\+Product}} ()
+\item 
+static void \mbox{\hyperlink{class_toko_aa64c0e050e4f97517313c13a3684800b}{print\+Bangunan}} ()
+\item 
+static void \mbox{\hyperlink{class_toko_a55fce31b506fd6f3b178fc6b17aac147}{initialize}} ()
+\item 
+static int \mbox{\hyperlink{class_toko_a9705506804ae5d8f613863e063b33281}{buy\+Process}} ()
+\item 
+static void \mbox{\hyperlink{class_toko_a7bf71171d18e1eecb755d506b25eafa0}{item\+Dibeli}} (\mbox{\hyperlink{class_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*}, int)
+\item 
+static void \mbox{\hyperlink{class_toko_a467ba73fa88ad710da8e2cf9de31b783}{item\+Dijual}} (\mbox{\hyperlink{class_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*}, int)
+\item 
+static bool \mbox{\hyperlink{class_toko_a75e1d310be70df21824ee2e9efb48e81}{is\+Product\+Empty\+Stock}} ()
+\item 
+static bool \mbox{\hyperlink{class_toko_a87fa786c5e5fc137b3af277d7e8c1d93}{is\+Bangunan\+Empty\+Stock}} ()
+\item 
+static void \mbox{\hyperlink{class_toko_aa966e8e8b622474f563bc7114a31ea8c}{display\+Available\+Hewan}} ()
+\item 
+static void \mbox{\hyperlink{class_toko_a971c902adc8e8167ea1489025f5f9cc2}{display\+Available\+Tanaman}} ()
+\item 
+static int \mbox{\hyperlink{class_toko_a94a4ea3ee16b48236dc8e9be82b3a869}{display\+Available\+Product}} ()
+\item 
+static int \mbox{\hyperlink{class_toko_a5e4c8beb70f61b76aa2d007ac1e349b0}{display\+Available\+Bangunan}} ()
+\item 
+static void \mbox{\hyperlink{class_toko_abf67e755d98714085cc5aed55b240676}{display\+Resep\+Bangunan}} ()
+\item 
+static int \mbox{\hyperlink{class_toko_aae0d868d1e2cdcfe344fb734179bb32f}{get\+Stock}} (string)
+\item 
+static int \mbox{\hyperlink{class_toko_a13c3cdca186ba9402fb5bb4ab1fa506c}{get\+Available\+Product\+Size}} ()
+\item 
+static int \mbox{\hyperlink{class_toko_a1a48d71d8c7de8171bcac2553ca88489}{get\+Available\+Bangunan\+Size}} ()
+\item 
+static int \mbox{\hyperlink{class_toko_a76b5b99e0ee546cf21584b82601218dd}{get\+Available\+Hewan\+Size}} ()
+\item 
+static int \mbox{\hyperlink{class_toko_ac28a3ea6f52aca5bd4f1bea486d5f085}{get\+Available\+Tanaman\+Size}} ()
+\item 
+static \mbox{\hyperlink{class_hewan}{Hewan}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_toko_a38d5525128a517a50d61202637c1398f}{get\+Hewan}} (int)
+\item 
+static \mbox{\hyperlink{class_tanaman}{Tanaman}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_toko_aeea45e10d8287f806b8d79c13530f4d9}{get\+Tanaman}} (int)
+\item 
+static pair$<$ \mbox{\hyperlink{class_product}{Product}}, int $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_toko_a78083d9aa4c08e68f57a5cc92a648cfb}{get\+Pair\+Product\+Int}} (int)
+\item 
+static pair$<$ \mbox{\hyperlink{class_bangunan}{Bangunan}}, int $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_toko_a3c4ec74283148d42f3b522558f552543}{get\+Pair\+Bangunan\+Int}} (int)
+\item 
+static int \mbox{\hyperlink{class_toko_a7f51febd2186281fde77c7e649e9f72d}{get\+Total\+Ready}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static vector$<$ \mbox{\hyperlink{class_hewan}{Hewan}} $>$ \mbox{\hyperlink{class_toko_a1469d9cb3599cc19f10c025a5425000b}{available\+Hewan}} = vector$<$\mbox{\hyperlink{class_hewan}{Hewan}}$>$()
+\item 
+static vector$<$ \mbox{\hyperlink{class_tanaman}{Tanaman}} $>$ \mbox{\hyperlink{class_toko_a65bda761058075c9647f21566785f39a}{available\+Tanaman}} = vector$<$\mbox{\hyperlink{class_tanaman}{Tanaman}}$>$()
+\item 
+static vector$<$ pair$<$ \mbox{\hyperlink{class_product}{Product}}, int $>$ $>$ \mbox{\hyperlink{class_toko_aa4b187b1d8e8e911714126d1f071a4a6}{available\+Product}} = vector$<$pair$<$\mbox{\hyperlink{class_product}{Product}}, int$>$$>$()
+\item 
+static vector$<$ pair$<$ \mbox{\hyperlink{class_bangunan}{Bangunan}}, int $>$ $>$ \mbox{\hyperlink{class_toko_a2d15c8ac8064229ab5feb2b31e4e3b78}{available\+Bangunan}} = vector$<$pair$<$\mbox{\hyperlink{class_bangunan}{Bangunan}}, int$>$$>$()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_toko_a9705506804ae5d8f613863e063b33281}\label{class_toko_a9705506804ae5d8f613863e063b33281} 
+\index{Toko@{Toko}!buyProcess@{buyProcess}}
+\index{buyProcess@{buyProcess}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{buyProcess()}{buyProcess()}}
+{\footnotesize\ttfamily int Toko\+::buy\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_toko_a5e4c8beb70f61b76aa2d007ac1e349b0}\label{class_toko_a5e4c8beb70f61b76aa2d007ac1e349b0} 
+\index{Toko@{Toko}!displayAvailableBangunan@{displayAvailableBangunan}}
+\index{displayAvailableBangunan@{displayAvailableBangunan}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{displayAvailableBangunan()}{displayAvailableBangunan()}}
+{\footnotesize\ttfamily int Toko\+::display\+Available\+Bangunan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_toko_aa966e8e8b622474f563bc7114a31ea8c}\label{class_toko_aa966e8e8b622474f563bc7114a31ea8c} 
+\index{Toko@{Toko}!displayAvailableHewan@{displayAvailableHewan}}
+\index{displayAvailableHewan@{displayAvailableHewan}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{displayAvailableHewan()}{displayAvailableHewan()}}
+{\footnotesize\ttfamily void Toko\+::display\+Available\+Hewan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_toko_a94a4ea3ee16b48236dc8e9be82b3a869}\label{class_toko_a94a4ea3ee16b48236dc8e9be82b3a869} 
+\index{Toko@{Toko}!displayAvailableProduct@{displayAvailableProduct}}
+\index{displayAvailableProduct@{displayAvailableProduct}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{displayAvailableProduct()}{displayAvailableProduct()}}
+{\footnotesize\ttfamily int Toko\+::display\+Available\+Product (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_toko_a971c902adc8e8167ea1489025f5f9cc2}\label{class_toko_a971c902adc8e8167ea1489025f5f9cc2} 
+\index{Toko@{Toko}!displayAvailableTanaman@{displayAvailableTanaman}}
+\index{displayAvailableTanaman@{displayAvailableTanaman}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{displayAvailableTanaman()}{displayAvailableTanaman()}}
+{\footnotesize\ttfamily void Toko\+::display\+Available\+Tanaman (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_toko_abf67e755d98714085cc5aed55b240676}\label{class_toko_abf67e755d98714085cc5aed55b240676} 
+\index{Toko@{Toko}!displayResepBangunan@{displayResepBangunan}}
+\index{displayResepBangunan@{displayResepBangunan}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{displayResepBangunan()}{displayResepBangunan()}}
+{\footnotesize\ttfamily void Toko\+::display\+Resep\+Bangunan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_toko_a1a48d71d8c7de8171bcac2553ca88489}\label{class_toko_a1a48d71d8c7de8171bcac2553ca88489} 
+\index{Toko@{Toko}!getAvailableBangunanSize@{getAvailableBangunanSize}}
+\index{getAvailableBangunanSize@{getAvailableBangunanSize}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{getAvailableBangunanSize()}{getAvailableBangunanSize()}}
+{\footnotesize\ttfamily int Toko\+::get\+Available\+Bangunan\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_toko_a76b5b99e0ee546cf21584b82601218dd}\label{class_toko_a76b5b99e0ee546cf21584b82601218dd} 
+\index{Toko@{Toko}!getAvailableHewanSize@{getAvailableHewanSize}}
+\index{getAvailableHewanSize@{getAvailableHewanSize}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{getAvailableHewanSize()}{getAvailableHewanSize()}}
+{\footnotesize\ttfamily int Toko\+::get\+Available\+Hewan\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_toko_a13c3cdca186ba9402fb5bb4ab1fa506c}\label{class_toko_a13c3cdca186ba9402fb5bb4ab1fa506c} 
+\index{Toko@{Toko}!getAvailableProductSize@{getAvailableProductSize}}
+\index{getAvailableProductSize@{getAvailableProductSize}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{getAvailableProductSize()}{getAvailableProductSize()}}
+{\footnotesize\ttfamily int Toko\+::get\+Available\+Product\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_toko_ac28a3ea6f52aca5bd4f1bea486d5f085}\label{class_toko_ac28a3ea6f52aca5bd4f1bea486d5f085} 
+\index{Toko@{Toko}!getAvailableTanamanSize@{getAvailableTanamanSize}}
+\index{getAvailableTanamanSize@{getAvailableTanamanSize}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{getAvailableTanamanSize()}{getAvailableTanamanSize()}}
+{\footnotesize\ttfamily int Toko\+::get\+Available\+Tanaman\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_toko_a38d5525128a517a50d61202637c1398f}\label{class_toko_a38d5525128a517a50d61202637c1398f} 
+\index{Toko@{Toko}!getHewan@{getHewan}}
+\index{getHewan@{getHewan}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{getHewan()}{getHewan()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hewan}{Hewan}} \texorpdfstring{$\ast$}{*} Toko\+::get\+Hewan (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_toko_a3c4ec74283148d42f3b522558f552543}\label{class_toko_a3c4ec74283148d42f3b522558f552543} 
+\index{Toko@{Toko}!getPairBangunanInt@{getPairBangunanInt}}
+\index{getPairBangunanInt@{getPairBangunanInt}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{getPairBangunanInt()}{getPairBangunanInt()}}
+{\footnotesize\ttfamily pair$<$ \mbox{\hyperlink{class_bangunan}{Bangunan}}, int $>$ \texorpdfstring{$\ast$}{*} Toko\+::get\+Pair\+Bangunan\+Int (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_toko_a78083d9aa4c08e68f57a5cc92a648cfb}\label{class_toko_a78083d9aa4c08e68f57a5cc92a648cfb} 
+\index{Toko@{Toko}!getPairProductInt@{getPairProductInt}}
+\index{getPairProductInt@{getPairProductInt}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{getPairProductInt()}{getPairProductInt()}}
+{\footnotesize\ttfamily pair$<$ \mbox{\hyperlink{class_product}{Product}}, int $>$ \texorpdfstring{$\ast$}{*} Toko\+::get\+Pair\+Product\+Int (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_toko_aae0d868d1e2cdcfe344fb734179bb32f}\label{class_toko_aae0d868d1e2cdcfe344fb734179bb32f} 
+\index{Toko@{Toko}!getStock@{getStock}}
+\index{getStock@{getStock}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{getStock()}{getStock()}}
+{\footnotesize\ttfamily int Toko\+::get\+Stock (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_toko_aeea45e10d8287f806b8d79c13530f4d9}\label{class_toko_aeea45e10d8287f806b8d79c13530f4d9} 
+\index{Toko@{Toko}!getTanaman@{getTanaman}}
+\index{getTanaman@{getTanaman}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{getTanaman()}{getTanaman()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_tanaman}{Tanaman}} \texorpdfstring{$\ast$}{*} Toko\+::get\+Tanaman (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_toko_a7f51febd2186281fde77c7e649e9f72d}\label{class_toko_a7f51febd2186281fde77c7e649e9f72d} 
+\index{Toko@{Toko}!getTotalReady@{getTotalReady}}
+\index{getTotalReady@{getTotalReady}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{getTotalReady()}{getTotalReady()}}
+{\footnotesize\ttfamily int Toko\+::get\+Total\+Ready (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_toko_a55fce31b506fd6f3b178fc6b17aac147}\label{class_toko_a55fce31b506fd6f3b178fc6b17aac147} 
+\index{Toko@{Toko}!initialize@{initialize}}
+\index{initialize@{initialize}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Toko\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_toko_a87fa786c5e5fc137b3af277d7e8c1d93}\label{class_toko_a87fa786c5e5fc137b3af277d7e8c1d93} 
+\index{Toko@{Toko}!isBangunanEmptyStock@{isBangunanEmptyStock}}
+\index{isBangunanEmptyStock@{isBangunanEmptyStock}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{isBangunanEmptyStock()}{isBangunanEmptyStock()}}
+{\footnotesize\ttfamily bool Toko\+::is\+Bangunan\+Empty\+Stock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_toko_a75e1d310be70df21824ee2e9efb48e81}\label{class_toko_a75e1d310be70df21824ee2e9efb48e81} 
+\index{Toko@{Toko}!isProductEmptyStock@{isProductEmptyStock}}
+\index{isProductEmptyStock@{isProductEmptyStock}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{isProductEmptyStock()}{isProductEmptyStock()}}
+{\footnotesize\ttfamily bool Toko\+::is\+Product\+Empty\+Stock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_toko_a7bf71171d18e1eecb755d506b25eafa0}\label{class_toko_a7bf71171d18e1eecb755d506b25eafa0} 
+\index{Toko@{Toko}!itemDibeli@{itemDibeli}}
+\index{itemDibeli@{itemDibeli}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{itemDibeli()}{itemDibeli()}}
+{\footnotesize\ttfamily void Toko\+::item\+Dibeli (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*}}]{game\+Object,  }\item[{int}]{quantity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_toko_a467ba73fa88ad710da8e2cf9de31b783}\label{class_toko_a467ba73fa88ad710da8e2cf9de31b783} 
+\index{Toko@{Toko}!itemDijual@{itemDijual}}
+\index{itemDijual@{itemDijual}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{itemDijual()}{itemDijual()}}
+{\footnotesize\ttfamily void Toko\+::item\+Dijual (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*}}]{game\+Object,  }\item[{int}]{quantity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_toko_aa64c0e050e4f97517313c13a3684800b}\label{class_toko_aa64c0e050e4f97517313c13a3684800b} 
+\index{Toko@{Toko}!printBangunan@{printBangunan}}
+\index{printBangunan@{printBangunan}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{printBangunan()}{printBangunan()}}
+{\footnotesize\ttfamily void Toko\+::print\+Bangunan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_toko_add6bbf76eb4cf8991189ccd3eebe0968}\label{class_toko_add6bbf76eb4cf8991189ccd3eebe0968} 
+\index{Toko@{Toko}!printProduct@{printProduct}}
+\index{printProduct@{printProduct}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{printProduct()}{printProduct()}}
+{\footnotesize\ttfamily void Toko\+::print\+Product (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_toko_a2d15c8ac8064229ab5feb2b31e4e3b78}\label{class_toko_a2d15c8ac8064229ab5feb2b31e4e3b78} 
+\index{Toko@{Toko}!availableBangunan@{availableBangunan}}
+\index{availableBangunan@{availableBangunan}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{availableBangunan}{availableBangunan}}
+{\footnotesize\ttfamily vector$<$ pair$<$ \mbox{\hyperlink{class_bangunan}{Bangunan}}, int $>$ $>$ Toko\+::available\+Bangunan = vector$<$pair$<$\mbox{\hyperlink{class_bangunan}{Bangunan}}, int$>$$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_toko_a1469d9cb3599cc19f10c025a5425000b}\label{class_toko_a1469d9cb3599cc19f10c025a5425000b} 
+\index{Toko@{Toko}!availableHewan@{availableHewan}}
+\index{availableHewan@{availableHewan}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{availableHewan}{availableHewan}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_hewan}{Hewan}} $>$ Toko\+::available\+Hewan = vector$<$\mbox{\hyperlink{class_hewan}{Hewan}}$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_toko_aa4b187b1d8e8e911714126d1f071a4a6}\label{class_toko_aa4b187b1d8e8e911714126d1f071a4a6} 
+\index{Toko@{Toko}!availableProduct@{availableProduct}}
+\index{availableProduct@{availableProduct}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{availableProduct}{availableProduct}}
+{\footnotesize\ttfamily vector$<$ pair$<$ \mbox{\hyperlink{class_product}{Product}}, int $>$ $>$ Toko\+::available\+Product = vector$<$pair$<$\mbox{\hyperlink{class_product}{Product}}, int$>$$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_toko_a65bda761058075c9647f21566785f39a}\label{class_toko_a65bda761058075c9647f21566785f39a} 
+\index{Toko@{Toko}!availableTanaman@{availableTanaman}}
+\index{availableTanaman@{availableTanaman}!Toko@{Toko}}
+\doxysubsubsection{\texorpdfstring{availableTanaman}{availableTanaman}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_tanaman}{Tanaman}} $>$ Toko\+::available\+Tanaman = vector$<$\mbox{\hyperlink{class_tanaman}{Tanaman}}$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/\+Header/\mbox{\hyperlink{_toko_8hpp}{Toko.\+hpp}}\item 
+D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/\+Implementation/\mbox{\hyperlink{_toko_8cpp}{Toko.\+cpp}}\end{DoxyCompactItemize}

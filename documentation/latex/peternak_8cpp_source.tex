@@ -1,0 +1,1118 @@
+\doxysection{peternak.\+cpp}
+\hypertarget{peternak_8cpp_source}{}\label{peternak_8cpp_source}\index{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Implementation/peternak.cpp@{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Implementation/peternak.cpp}}
+\mbox{\hyperlink{peternak_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{peternak_8hpp}{../Header/peternak.hpp}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_product_8hpp}{../Header/Product.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ EXTRA\ FUNCTIONS}}
+\DoxyCodeLine{00007\ \mbox{\hyperlink{class_peternak_a79cf183308c0ff94fa2c1178769991b7}{Peternak::Peternak}}()\ :\ \mbox{\hyperlink{class_pemain}{Pemain}}()}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_a18ab9b7c3afd520b9dad0fd668f9948c}{tipe}}\ =\ \textcolor{stringliteral}{"{}Peternak"{}};}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{int}\ farmRow\ =\ \mbox{\hyperlink{class_parser_misc_ad1657dda6b10985fb6dddc8eb7a5779d}{ParserMisc::getFarmSize}}().first;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ farmCol\ =\ \mbox{\hyperlink{class_parser_misc_ad1657dda6b10985fb6dddc8eb7a5779d}{ParserMisc::getFarmSize}}().second;}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_matrix_area}{MatrixArea<Hewan>}}\ n(farmRow,\ farmCol);}
+\DoxyCodeLine{00013\ \ \ \ \ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}\ =\ n;}
+\DoxyCodeLine{00014\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_a81c04a010c0de44910d82488b46c5217}{username}}\ =\ \textcolor{stringliteral}{"{}Peternak1"{}};}
+\DoxyCodeLine{00015\ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \mbox{\hyperlink{class_peternak_a79cf183308c0ff94fa2c1178769991b7}{Peternak::Peternak}}(\textcolor{keywordtype}{string}\ usn,\ \textcolor{keywordtype}{float}\ guld,\ \textcolor{keywordtype}{int}\ bb)\ :\ \mbox{\hyperlink{class_pemain}{Pemain}}(usn,\ guld,\ bb)}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_a18ab9b7c3afd520b9dad0fd668f9948c}{tipe}}\ =\ \textcolor{stringliteral}{"{}Peternak"{}};}
+\DoxyCodeLine{00020\ \ \ \ \ pair<int,int>\ sizePeternakan\ =\ \mbox{\hyperlink{class_parser_misc_a351d7b7a764ef0605971433f6e8011fd}{ParserMisc::getFieldSize}}();}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_matrix_area}{MatrixArea<Hewan>}}\ n(sizePeternakan.first,\ sizePeternakan.second);}
+\DoxyCodeLine{00022\ \ \ \ \ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}\ =\ n;}
+\DoxyCodeLine{00023\ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \mbox{\hyperlink{class_peternak_a79cf183308c0ff94fa2c1178769991b7}{Peternak::Peternak}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_peternak}{Peternak}}\ \&other)\ :\ \mbox{\hyperlink{class_pemain}{Pemain}}()}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_a18ab9b7c3afd520b9dad0fd668f9948c}{tipe}}\ =\ \textcolor{stringliteral}{"{}Peternak"{}};}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_matrix_area}{MatrixArea<Hewan>}}\ n(other.\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}});}
+\DoxyCodeLine{00029\ \ \ \ \ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}\ =\ n;}
+\DoxyCodeLine{00030\ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \mbox{\hyperlink{class_peternak_a23e3698a43b762ba39c860ceaeb95ab2}{Peternak::\string~Peternak}}()}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_afca3f8410761410f274d2eec2007424c}{\string~MatrixArea}}();}
+\DoxyCodeLine{00035\ \ \ \ \ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_afca3f8410761410f274d2eec2007424c}{\string~MatrixArea}}();}
+\DoxyCodeLine{00036\ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \mbox{\hyperlink{class_matrix_area}{MatrixArea<Hewan>}}\ \&\mbox{\hyperlink{class_peternak_a2c6fce0516406dcaf7e5c2406f982ecf}{Peternak::getTernakan}}()}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}};}
+\DoxyCodeLine{00041\ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_peternak_a4bc6b43936950908c3e8167cf49bb850}{Peternak::beli}}()}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ std::cout\ <<\ endl;}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_game_object}{GameObject}}\ *itemToBuy\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ isSubMenuCancelled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ wantToBuy;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{while}\ (!isSubMenuCancelled)}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ wantToBuy\ =\ \mbox{\hyperlink{class_toko_a9705506804ae5d8f613863e063b33281}{Toko::buyProcess}}();}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ std::cout\ <<\ endl;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (wantToBuy\ ==\ 0)}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Ditunggu\ Kedatangan\ Selanjutnya!!"{}}\ <<\ endl;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isSubMenuCancelled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (wantToBuy\ ==\ -\/1)}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isSubMenuCancelled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ subResponse;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ validSubResponse;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ counterAvailableItem;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (wantToBuy\ ==\ 1)}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_toko_aa966e8e8b622474f563bc7114a31ea8c}{Toko::displayAvailableHewan}}();}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Barang\ yang\ ingin\ dibeli\ :\ "{}};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ subResponse;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_header_2helper_8hpp_abb4767fdf6dae3849141b4ad546ed529}{isAllDigits}}(subResponse))}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ validSubResponse\ =\ stoi(subResponse);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_sub_response}{InvalidSubResponse}}();}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validSubResponse\ !=\ \mbox{\hyperlink{class_toko_a76b5b99e0ee546cf21584b82601218dd}{Toko::getAvailableHewanSize}}()\ +\ 1)}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validSubResponse\ >=\ 1\ \&\&\ validSubResponse\ <=\ \mbox{\hyperlink{class_toko_a76b5b99e0ee546cf21584b82601218dd}{Toko::getAvailableHewanSize}}())}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ itemToBuy\ =\ \mbox{\hyperlink{class_toko_a38d5525128a517a50d61202637c1398f}{Toko::getHewan}}(validSubResponse\ -\/\ 1);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isSubMenuCancelled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_sub_response}{InvalidSubResponse}}();}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ endl;\ \textcolor{comment}{//\ cancel}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (wantToBuy\ ==\ 2)}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_toko_a971c902adc8e8167ea1489025f5f9cc2}{Toko::displayAvailableTanaman}}();}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Barang\ yang\ ingin\ dibeli\ :\ "{}};}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ subResponse;}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_header_2helper_8hpp_abb4767fdf6dae3849141b4ad546ed529}{isAllDigits}}(subResponse))}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ validSubResponse\ =\ stoi(subResponse);}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_sub_response}{InvalidSubResponse}}();}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validSubResponse\ !=\ \mbox{\hyperlink{class_toko_ac28a3ea6f52aca5bd4f1bea486d5f085}{Toko::getAvailableTanamanSize}}()\ +\ 1)}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validSubResponse\ >=\ 1\ \&\&\ validSubResponse\ <=\ \mbox{\hyperlink{class_toko_ac28a3ea6f52aca5bd4f1bea486d5f085}{Toko::getAvailableTanamanSize}}())}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ itemToBuy\ =\ \mbox{\hyperlink{class_toko_aeea45e10d8287f806b8d79c13530f4d9}{Toko::getTanaman}}(validSubResponse\ -\/\ 1);}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isSubMenuCancelled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_sub_response}{InvalidSubResponse}}();}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ endl;\ \textcolor{comment}{//\ cancel}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (wantToBuy\ ==\ 3\ \&\&\ !\mbox{\hyperlink{class_toko_a75e1d310be70df21824ee2e9efb48e81}{Toko::isProductEmptyStock}}())}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ counterAvailableItem\ =\ \mbox{\hyperlink{class_toko_a94a4ea3ee16b48236dc8e9be82b3a869}{Toko::displayAvailableProduct}}();}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Barang\ yang\ ingin\ dibeli\ :\ "{}};}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ subResponse;}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_header_2helper_8hpp_abb4767fdf6dae3849141b4ad546ed529}{isAllDigits}}(subResponse))}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ validSubResponse\ =\ stoi(subResponse);}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_sub_response}{InvalidSubResponse}}();}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validSubResponse\ !=\ counterAvailableItem\ +\ 1)}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validSubResponse\ >=\ 1\ \&\&\ validSubResponse\ <=\ counterAvailableItem)}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ found\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_toko_a13c3cdca186ba9402fb5bb4ab1fa506c}{Toko::getAvailableProductSize}}();\ i++)}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_toko_a78083d9aa4c08e68f57a5cc92a648cfb}{Toko::getPairProductInt}}(i)-\/>second\ !=\ 0)}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validSubResponse\ ==\ count\ \&\&\ !found)}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ itemToBuy\ =\ \&\mbox{\hyperlink{class_toko_a78083d9aa4c08e68f57a5cc92a648cfb}{Toko::getPairProductInt}}(i)-\/>first;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ itemToBuy\ =\ \&Toko::availableProduct[count].first;}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ found\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isSubMenuCancelled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_sub_response}{InvalidSubResponse}}();\ \textcolor{comment}{//\ response\ <\ 0\ atau\ >\ seharusnya}}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ endl;\ \textcolor{comment}{//\ cancel}}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (wantToBuy\ ==\ 3\ \&\&\ !\mbox{\hyperlink{class_toko_a87fa786c5e5fc137b3af277d7e8c1d93}{Toko::isBangunanEmptyStock}}()\ \&\&\ \mbox{\hyperlink{class_toko_a75e1d310be70df21824ee2e9efb48e81}{Toko::isProductEmptyStock}}())}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ counterAvailableItem\ =\ \mbox{\hyperlink{class_toko_a5e4c8beb70f61b76aa2d007ac1e349b0}{Toko::displayAvailableBangunan}}();}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Barang\ yang\ ingin\ dibeli\ :\ "{}};}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ subResponse;}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_header_2helper_8hpp_abb4767fdf6dae3849141b4ad546ed529}{isAllDigits}}(subResponse))}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ validSubResponse\ =\ stoi(subResponse);}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_sub_response}{InvalidSubResponse}}();}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validSubResponse\ !=\ counterAvailableItem\ +\ 1)}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validSubResponse\ >=\ 1\ \&\&\ validSubResponse\ <=\ counterAvailableItem)}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ found\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_toko_a1a48d71d8c7de8171bcac2553ca88489}{Toko::getAvailableBangunanSize}}();\ i++)}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_toko_a3c4ec74283148d42f3b522558f552543}{Toko::getPairBangunanInt}}(i)-\/>second\ !=\ 0)}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validSubResponse\ ==\ count\ \&\&\ !found)}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ itemToBuy\ =\ \&\mbox{\hyperlink{class_toko_a3c4ec74283148d42f3b522558f552543}{Toko::getPairBangunanInt}}(i)-\/>first;}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ itemToBuy\ =\ \&Toko::availableBangunan[count].first;}}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_a0e6c2e27686d80dcc93373108ad7dcaf}{ownedBangunan}}.push\_back(\mbox{\hyperlink{class_toko_a3c4ec74283148d42f3b522558f552543}{Toko::getPairBangunanInt}}(count)-\/>first);}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ found\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isSubMenuCancelled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_sub_response}{InvalidSubResponse}}();}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ endl;\ \textcolor{comment}{//\ cancel}}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (wantToBuy\ ==\ 4\ \&\&\ !\mbox{\hyperlink{class_toko_a87fa786c5e5fc137b3af277d7e8c1d93}{Toko::isBangunanEmptyStock}})}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ counterAvailableItem\ =\ \mbox{\hyperlink{class_toko_a5e4c8beb70f61b76aa2d007ac1e349b0}{Toko::displayAvailableBangunan}}();}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Barang\ yang\ ingin\ dibeli\ :\ "{}};}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ subResponse;}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_header_2helper_8hpp_abb4767fdf6dae3849141b4ad546ed529}{isAllDigits}}(subResponse))}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ validSubResponse\ =\ stoi(subResponse);}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_sub_response}{InvalidSubResponse}}();}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validSubResponse\ !=\ counterAvailableItem\ +\ 1)}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validSubResponse\ >=\ 1\ \&\&\ validSubResponse\ <=\ counterAvailableItem)}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ found\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_toko_a1a48d71d8c7de8171bcac2553ca88489}{Toko::getAvailableBangunanSize}}();\ i++)}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_toko_a3c4ec74283148d42f3b522558f552543}{Toko::getPairBangunanInt}}(i)-\/>second\ !=\ 0)}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validSubResponse\ ==\ count\ \&\&\ !found)}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ itemToBuy\ =\ \&\mbox{\hyperlink{class_toko_a3c4ec74283148d42f3b522558f552543}{Toko::getPairBangunanInt}}(i)-\/>first;}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ itemToBuy\ =\ \&Toko::availableBangunan[count].first;}}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_a0e6c2e27686d80dcc93373108ad7dcaf}{ownedBangunan}}.push\_back(\mbox{\hyperlink{class_toko_a3c4ec74283148d42f3b522558f552543}{Toko::getPairBangunanInt}}(count)-\/>first);}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ found\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isSubMenuCancelled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_sub_response}{InvalidSubResponse}}();}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ endl;}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_base_exception}{BaseException}}\ \&err)}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ err.\mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}();}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ endl}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ endl;}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00281\ \ \ \ \ \}}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keywordflow}{if}\ (itemToBuy\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00284\ \ \ \ \ \{}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ std::cout\ <<\ endl}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Uang\ Anda\ :\ "{}}\ <<\ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ <<\ endl;}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_a765241326032be46243cf838cd781860}{displayRemainderSlot}}();}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ std::cout\ <<\ endl;}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ quantity;}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ validQuantity;}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Kuantitas\ :\ "{}};}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ cin\ >>\ quantity;}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_header_2helper_8hpp_abb4767fdf6dae3849141b4ad546ed529}{isAllDigits}}(quantity))}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ validQuantity\ =\ stoi(quantity);}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validQuantity\ ==\ 0)}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_sub_response}{InvalidSubResponse}}();}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_sub_response}{InvalidSubResponse}}();}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ -\/=\ itemToBuy-\/>\mbox{\hyperlink{class_game_object_abd7b06f9406af998e0cdc1a9599bed0a}{getPrice}}()\ *\ validQuantity;}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validQuantity\ >\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_a7a8492105db3257599eca0fda7c6eb44}{getEmptySlot}}())}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ +=\ itemToBuy-\/>\mbox{\hyperlink{class_game_object_abd7b06f9406af998e0cdc1a9599bed0a}{getPrice}}()\ *\ validQuantity;}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_inventory_not_enough}{InventoryNotEnough}}();}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ stock\ =\ \mbox{\hyperlink{class_toko_aae0d868d1e2cdcfe344fb734179bb32f}{Toko::getStock}}(itemToBuy-\/>\mbox{\hyperlink{class_game_object_aa23844466cf7920f57db46666464b3f0}{getName}}());}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stock\ !=\ -\/1\ \&\&\ stock\ <\ validQuantity)}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ +=\ itemToBuy-\/>\mbox{\hyperlink{class_game_object_abd7b06f9406af998e0cdc1a9599bed0a}{getPrice}}()\ *\ validQuantity;}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_stock_toko_not_enough}{StockTokoNotEnough}}();}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ <\ 0)}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ +=\ itemToBuy-\/>\mbox{\hyperlink{class_game_object_abd7b06f9406af998e0cdc1a9599bed0a}{getPrice}}()\ *\ validQuantity;}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_not_enough_gulden}{NotEnoughGulden}}();}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ endl;}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Selamat\ Anda\ berhasil\ membeli\ "{}}\ <<\ validQuantity\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ itemToBuy-\/>\mbox{\hyperlink{class_game_object_aa23844466cf7920f57db46666464b3f0}{getName}}();}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}.\ Uang\ yang\ tersisa\ "{}}\ <<\ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ <<\ \textcolor{stringliteral}{"{}."{}}\ <<\ endl}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ endl;}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Pilih\ slot\ untuk\ menyimpan\ barang\ yang\ anda\ beli!"{}}\ <<\ endl;}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_ab9cfdac458284404e629f76d1d0c53bc}{displayObject}}();}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ slot;}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isValid\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ validQuantity;\ i++)}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!isValid)}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Petak\ slot\ "{}}\ <<\ i\ +\ 1\ <<\ \textcolor{stringliteral}{"{}:\ "{}};}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ slot;}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pair<int,\ int>\ position;}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ position\ =\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_ad1fc38bfe6fdb2b822cd53db1bea9dcf}{getPositionFromSlot}}(slot);}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(position.first,\ position.second)\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_slot_filled}{SlotFilled}}();}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acbbd0bda8cf554479e02d33cf2a7af56}{setElement}}(position.first,\ position.second,\ itemToBuy);}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_base_exception}{BaseException}}\ \&err)}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ err.\mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}();}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ itemToBuy-\/>\mbox{\hyperlink{class_game_object_aa23844466cf7920f57db46666464b3f0}{getName}}()\ <<\ \textcolor{stringliteral}{"{}\ berhasil\ disimpan\ dalam\ penyimpanan!"{}}\ <<\ endl;}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_toko_a7bf71171d18e1eecb755d506b25eafa0}{Toko::itemDibeli}}(itemToBuy,\ validQuantity);}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_base_exception}{BaseException}}\ \&err)}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ err.\mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}();}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ endl;}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00370\ \ \ \ \ \}}
+\DoxyCodeLine{00371\ \}}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_peternak_a2a3b15f51072634ce2720c35e2e1230d}{Peternak::jual}}()}
+\DoxyCodeLine{00374\ \{}
+\DoxyCodeLine{00375\ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00376\ \ \ \ \ \{}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Berikut\ merupakan\ penyimpanan\ Anda"{}}\ <<\ endl;}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_ab9cfdac458284404e629f76d1d0c53bc}{displayObject}}();}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ quantity;}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ quantityint;}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Masukkan\ kuantitas\ barang\ yang\ ingin\ dijual\ :\ "{}};}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ cin\ >>\ quantity;}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{_header_2helper_8hpp_abb4767fdf6dae3849141b4ad546ed529}{isAllDigits}}(quantity))}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_panen_idx}{InvalidPanenIdx}}();}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ quantityint\ =\ std::stoi(quantity);}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((quantityint\ -\/\ this-\/>\mbox{\hyperlink{class_pemain_a0e6c2e27686d80dcc93373108ad7dcaf}{ownedBangunan}}.size())\ >\ ((this-\/>inventory.getCols()\ *\ this-\/>inventory.getRows())\ -\/\ this-\/>inventory.getEmptySlot()))}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_item_quantity_to_sell_not_enough}{ItemQuantityToSellNotEnough}}();}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ cout\ <<\ endl}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Silahkan\ pilih\ petak\ yang\ ingin\ anda\ jual!"{}}}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ endl;}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ slot;}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ pair<int,\ int>\ position;}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ profit\ =\ 0;}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_object}{GameObject}}\ *itemToSell;}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ vector<GameObject\ *>\ validItemToSell;}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isValid;}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ quantityint;\ i++)}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!isValid)}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Petak\ slot\ "{}}\ <<\ i\ +\ 1\ <<\ \textcolor{stringliteral}{"{}:\ "{}};}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin\ >>\ slot;}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{00414\ }
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx1\ =\ slot[0]\ -\/\ \textcolor{charliteral}{'A'}\ +\ 1;}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx2\ =\ std::stoi(slot.substr(1));}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (slot.length()\ !=\ 3)}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_index_matrix_area}{InvalidIndexMatrixArea}}();}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (idx2\ >\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_a3f26a84d6f44c3cdb8d670a66ee37e62}{getRows}}()\ ||\ idx1\ >\ this-\/>inventory.getCols())}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_index_matrix_area}{InvalidIndexMatrixArea}}();}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ position\ =\ this-\/>inventory.getPositionFromSlot(slot);}}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1)\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1)-\/>\mbox{\hyperlink{class_game_object_a4af40450cb24b0c0b4c7c129afee3e78}{getTipeObject}}()\ ==\ \textcolor{stringliteral}{"{}BANGUNAN"{}})}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_cant_sell_bangunan}{CantSellBangunan}}();}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_empty_slot}{InvalidEmptySlot}}();}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_base_exception}{BaseException}}\ \&e)}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ e.\mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}()\ <<\ endl;}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx1\ =\ slot[0]\ -\/\ \textcolor{charliteral}{'A'}\ +\ 1;}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx2\ =\ std::stoi(slot.substr(1));}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ itemToSell\ =\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1);}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ validItemToSell.push\_back(itemToSell);}
+\DoxyCodeLine{00457\ }
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \ \ \ \ profit\ +=\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1)-\/>\mbox{\hyperlink{class_game_object_abd7b06f9406af998e0cdc1a9599bed0a}{getPrice}}();}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_toko_a467ba73fa88ad710da8e2cf9de31b783}{Toko::itemDijual}}(\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1),\ 1);}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_ac2008a4d99790a229c583c9f242c117d}{deleteElement}}(idx2,\ idx1);}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ +=\ profit;}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Barang\ Anda\ berhasil\ dijual!\ Uang\ Anda\ bertambah\ "{}}\ <<\ profit\ <<\ \textcolor{stringliteral}{"{}\ gulden!"{}}\ <<\ endl;}
+\DoxyCodeLine{00464\ \ \ \ \ \}}
+\DoxyCodeLine{00465\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_base_exception}{BaseException}}\ \&e)}
+\DoxyCodeLine{00466\ \ \ \ \ \{}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ cout\ <<\ e.\mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}()\ <<\ endl;}
+\DoxyCodeLine{00468\ \ \ \ \ \}}
+\DoxyCodeLine{00469\ \}}
+\DoxyCodeLine{00470\ }
+\DoxyCodeLine{00471\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_peternak_af56dd879370db64fc8fb17dbcf13d0a4}{Peternak::cetakTernak}}()}
+\DoxyCodeLine{00472\ \{}
+\DoxyCodeLine{00473\ \ \ \ \ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_ab9cfdac458284404e629f76d1d0c53bc}{displayObject}}();}
+\DoxyCodeLine{00474\ \ \ \ \ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_a765241326032be46243cf838cd781860}{displayRemainderSlot}}();}
+\DoxyCodeLine{00475\ \}}
+\DoxyCodeLine{00476\ }
+\DoxyCodeLine{00477\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_peternak_a89f3ad88f3ba31d76a22157654fbac89}{Peternak::ternak}}()}
+\DoxyCodeLine{00478\ \{}
+\DoxyCodeLine{00479\ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00480\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_a7a8492105db3257599eca0fda7c6eb44}{getEmptySlot}}()\ ==\ 0)}
+\DoxyCodeLine{00481\ \ \ \ \ \{}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_no_empty_slot}{NoEmptySlot}}();}
+\DoxyCodeLine{00483\ \ \ \ \ \}}
+\DoxyCodeLine{00484\ \ \ \ \ \textcolor{keywordtype}{bool}\ existAnimal\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ a\ =\ 1;\ a\ <\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_a3f26a84d6f44c3cdb8d670a66ee37e62}{getRows}}();\ a++)}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ b\ =\ 1;\ b\ <\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_ad7b2c7109515749a076d862b28d4c6d7}{getCols}}();\ b++)}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(a,\ b)\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(a,\ b)-\/>\mbox{\hyperlink{class_game_object_a4af40450cb24b0c0b4c7c129afee3e78}{getTipeObject}}()\ ==\ \textcolor{stringliteral}{"{}HEWAN"{}})}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ existAnimal\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00498\ \ \ \ \ \textcolor{keywordflow}{if}\ (!existAnimal)}
+\DoxyCodeLine{00499\ \ \ \ \ \{}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_no_animal}{NoAnimal}}();}
+\DoxyCodeLine{00501\ \ \ \ \ \}}
+\DoxyCodeLine{00502\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00503\ \ \ \ \ \{}
+\DoxyCodeLine{00504\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Pilih\ hewan\ dari\ penyimpanan"{}}\ <<\ endl;}
+\DoxyCodeLine{00505\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_a4b791497e4a80576ecba41b8a559b053}{cetakPenyimpanan}}();}
+\DoxyCodeLine{00506\ \ \ \ \ this-\/>\mbox{\hyperlink{class_peternak_af56dd879370db64fc8fb17dbcf13d0a4}{cetakTernak}}();}
+\DoxyCodeLine{00507\ }
+\DoxyCodeLine{00508\ \ \ \ \ \textcolor{keywordtype}{bool}\ isValid\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00509\ \ \ \ \ \textcolor{keywordtype}{string}\ slot;}
+\DoxyCodeLine{00510\ \ \ \ \ \textcolor{keywordflow}{while}\ (!isValid)}
+\DoxyCodeLine{00511\ \ \ \ \ \{}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Slot:\ "{}};}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ cin\ >>\ slot;}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Validasi}}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx1\ =\ slot[0]\ -\/\ \textcolor{charliteral}{'A'}\ +\ 1;}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx2\ =\ std::stoi(slot.substr(1));}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_peternak_af56dd879370db64fc8fb17dbcf13d0a4}{cetakTernak}}();}
+\DoxyCodeLine{00521\ }
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (slot.length()\ !=\ 3\ \&\&\ \mbox{\hyperlink{_header_2helper_8hpp_abb4767fdf6dae3849141b4ad546ed529}{isAllDigits}}(slot.substr(1)))}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_index_matrix_area}{InvalidIndexMatrixArea}}();}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (idx2\ >\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_a3f26a84d6f44c3cdb8d670a66ee37e62}{getRows}}()\ ||\ idx1\ >\ this-\/>inventory.getCols())}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_index_matrix_area}{InvalidIndexMatrixArea}}();}
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1)\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1)-\/>\mbox{\hyperlink{class_game_object_a4af40450cb24b0c0b4c7c129afee3e78}{getTipeObject}}()\ !=\ \textcolor{stringliteral}{"{}HEWAN"{}})}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_not_hewan}{InvalidNotHewan}}();}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_empty_slot}{InvalidEmptySlot}}();}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_base_exception}{BaseException}}\ \&e)}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ e.\mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}()\ <<\ endl;}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00553\ \ \ \ \ \}}
+\DoxyCodeLine{00554\ }
+\DoxyCodeLine{00555\ \ \ \ \ \textcolor{keywordtype}{int}\ idx1\ =\ slot[0]\ -\/\ \textcolor{charliteral}{'A'}\ +\ 1;}
+\DoxyCodeLine{00556\ \ \ \ \ \textcolor{keywordtype}{int}\ idx2\ =\ std::stoi(slot.substr(1));}
+\DoxyCodeLine{00557\ }
+\DoxyCodeLine{00558\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Kamu\ memilih\ "{}}\ <<\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1)-\/>\mbox{\hyperlink{class_game_object_aa23844466cf7920f57db46666464b3f0}{getName}}()\ <<\ endl;\ \textcolor{comment}{//\ Nama\ Objeknya}}
+\DoxyCodeLine{00559\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Pilih\ petak\ tanah\ yang\ akan\ ditinggali"{}}\ <<\ endl;}
+\DoxyCodeLine{00560\ \ \ \ \ this-\/>\mbox{\hyperlink{class_peternak_af56dd879370db64fc8fb17dbcf13d0a4}{cetakTernak}}();}
+\DoxyCodeLine{00561\ }
+\DoxyCodeLine{00562\ \ \ \ \ isValid\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00563\ \ \ \ \ \textcolor{keywordtype}{string}\ petak;}
+\DoxyCodeLine{00564\ \ \ \ \ \textcolor{keywordflow}{while}\ (!isValid)}
+\DoxyCodeLine{00565\ \ \ \ \ \{}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Petak\ Tanah:\ "{}};}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ cin\ >>\ petak;}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{00569\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Validasi}}
+\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx3\ =\ petak[0]\ -\/\ \textcolor{charliteral}{'A'}\ +\ 1;}
+\DoxyCodeLine{00571\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx4\ =\ std::stoi(petak.substr(1));}
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (petak.length()\ !=\ 3\ \&\&\ \mbox{\hyperlink{_header_2helper_8hpp_abb4767fdf6dae3849141b4ad546ed529}{isAllDigits}}(petak.substr(1)))}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_index_matrix_area}{InvalidIndexMatrixArea}}();}
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (idx4\ >\ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_a3f26a84d6f44c3cdb8d670a66ee37e62}{getRows}}()\ ||\ idx3\ >\ this-\/>ternakan.getCols())}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_index_matrix_area}{InvalidIndexMatrixArea}}();}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx4,\ idx3)\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00586\ }
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_filled_slot}{InvalidFilledSlot}}();}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_base_exception}{BaseException}}\ \&e)}
+\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ e.\mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}()\ <<\ endl;}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00599\ \ \ \ \ \}}
+\DoxyCodeLine{00600\ }
+\DoxyCodeLine{00601\ \ \ \ \ \textcolor{keywordtype}{int}\ idx3\ =\ petak[0]\ -\/\ \textcolor{charliteral}{'A'}\ +\ 1;}
+\DoxyCodeLine{00602\ \ \ \ \ \textcolor{keywordtype}{int}\ idx4\ =\ std::stoi(petak.substr(1));}
+\DoxyCodeLine{00603\ }
+\DoxyCodeLine{00604\ \ \ \ \ \mbox{\hyperlink{class_hewan}{Hewan}}\ *temp\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_hewan}{Hewan}}\ *\textcolor{keyword}{>}(this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1));}
+\DoxyCodeLine{00605\ }
+\DoxyCodeLine{00606\ \ \ \ \ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acbbd0bda8cf554479e02d33cf2a7af56}{setElement}}(idx4,\ idx3,\ temp);}
+\DoxyCodeLine{00607\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_ac2008a4d99790a229c583c9f242c117d}{deleteElement}}(idx2,\ idx1);}
+\DoxyCodeLine{00608\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Berhasil\ diternakkan"{}}\ <<\ endl;}
+\DoxyCodeLine{00609\ \ \ \ \ \}}
+\DoxyCodeLine{00610\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_base_exception}{BaseException}}\ \&e)}
+\DoxyCodeLine{00611\ \ \ \ \ \{}
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ cout\ <<\ e.\mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}()\ <<\ endl;}
+\DoxyCodeLine{00613\ \ \ \ \ \}}
+\DoxyCodeLine{00614\ \}}
+\DoxyCodeLine{00615\ }
+\DoxyCodeLine{00616\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_peternak_ac1dd0799855bf8c90c040f7b5e08e422}{Peternak::kasihMakan}}()}
+\DoxyCodeLine{00617\ \{}
+\DoxyCodeLine{00618\ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00619\ \ \ \ \ \{}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_a2c1711c89d2b58e53dacea373648ca24}{isEmpty}}())}
+\DoxyCodeLine{00621\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00622\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_no_animal_in_cage}{NoAnimalInCage}}();}
+\DoxyCodeLine{00623\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00624\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00625\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00626\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Pilih\ petak\ kandang\ yang\ akan\ diberi\ makan"{}}\ <<\ endl;}
+\DoxyCodeLine{00627\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_peternak_af56dd879370db64fc8fb17dbcf13d0a4}{cetakTernak}}();}
+\DoxyCodeLine{00628\ }
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isValid\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ slot;}
+\DoxyCodeLine{00631\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!isValid)}
+\DoxyCodeLine{00632\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00633\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00634\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00635\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Petak\ Ternakan:\ "{}};}
+\DoxyCodeLine{00636\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin\ >>\ slot;}
+\DoxyCodeLine{00637\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{00638\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Validasi}}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx1\ =\ slot[0]\ -\/\ \textcolor{charliteral}{'A'}\ +\ 1;}
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx2\ =\ std::stoi(slot.substr(1));}
+\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (slot.length()\ !=\ 3\ \&\&\ \mbox{\hyperlink{_header_2helper_8hpp_abb4767fdf6dae3849141b4ad546ed529}{isAllDigits}}(slot.substr(1)))}
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_index_matrix_area}{InvalidIndexMatrixArea}}();}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (idx1\ >\ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_a3f26a84d6f44c3cdb8d670a66ee37e62}{getRows}}()\ ||\ idx2\ >\ this-\/>ternakan.getCols())}
+\DoxyCodeLine{00646\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00647\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_index_matrix_area}{InvalidIndexMatrixArea}}();}
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00651\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1)\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00656\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00657\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_empty_slot}{InvalidEmptySlot}}();}
+\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00660\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00661\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_base_exception}{BaseException}}\ \&e)}
+\DoxyCodeLine{00662\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00663\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ e.\mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}()\ <<\ endl;}
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00665\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00666\ }
+\DoxyCodeLine{00667\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx1\ =\ slot[0]\ -\/\ \textcolor{charliteral}{'A'}\ +\ 1;}
+\DoxyCodeLine{00668\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx2\ =\ std::stoi(slot.substr(1));}
+\DoxyCodeLine{00669\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Kamu\ memilih\ "{}}\ <<\ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1)-\/>\mbox{\hyperlink{class_game_object_aa23844466cf7920f57db46666464b3f0}{getName}}()\ <<\ \textcolor{stringliteral}{"{}\ untuk\ diberi\ makan"{}}\ <<\ endl;}
+\DoxyCodeLine{00670\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Pilih\ pangan\ untuk\ diberikan:\ "{}}\ <<\ endl;}
+\DoxyCodeLine{00671\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_a4b791497e4a80576ecba41b8a559b053}{cetakPenyimpanan}}();}
+\DoxyCodeLine{00672\ }
+\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00674\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ slot2;}
+\DoxyCodeLine{00675\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!isValid)}
+\DoxyCodeLine{00676\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00677\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00678\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00679\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Slot:\ "{}};}
+\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin\ >>\ slot2;}
+\DoxyCodeLine{00681\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{00682\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Validasi}}
+\DoxyCodeLine{00683\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx3\ =\ slot2[0]\ -\/\ \textcolor{charliteral}{'A'}\ +\ 1;}
+\DoxyCodeLine{00684\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx4\ =\ std::stoi(slot2.substr(1));}
+\DoxyCodeLine{00685\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (slot2.length()\ !=\ 3\ \&\&\ \mbox{\hyperlink{_header_2helper_8hpp_abb4767fdf6dae3849141b4ad546ed529}{isAllDigits}}(slot2.substr(1)))}
+\DoxyCodeLine{00686\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00687\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_index_matrix_area}{InvalidIndexMatrixArea}}();}
+\DoxyCodeLine{00688\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (idx3\ >\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_a3f26a84d6f44c3cdb8d670a66ee37e62}{getRows}}()\ ||\ idx4\ >\ this-\/>inventory.getCols())}
+\DoxyCodeLine{00690\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00691\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_index_matrix_area}{InvalidIndexMatrixArea}}();}
+\DoxyCodeLine{00692\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx4,\ idx3)\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00695\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_empty_slot}{InvalidEmptySlot}}();}
+\DoxyCodeLine{00696\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx4,\ idx3)-\/>\mbox{\hyperlink{class_game_object_a4af40450cb24b0c0b4c7c129afee3e78}{getTipeObject}}()\ !=\ \textcolor{stringliteral}{"{}PRODUCT"{}})}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00699\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_not_product}{InvalidNotProduct}}();}
+\DoxyCodeLine{00700\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00701\ }
+\DoxyCodeLine{00702\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00703\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00704\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_product}{Product}}\ *temp\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_product}{Product}}\ *\textcolor{keyword}{>}(this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx4,\ idx3));}
+\DoxyCodeLine{00705\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1)-\/>\mbox{\hyperlink{class_hewan_afe69789e041d4e9150ee2c25f8953123}{getType}}()\ ==\ \textcolor{stringliteral}{"{}CARNIVORE"{}})}
+\DoxyCodeLine{00706\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00707\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (temp-\/>\mbox{\hyperlink{class_product_a7e844f64142fda025c26f29a94778c8d}{fromHewan}}())}
+\DoxyCodeLine{00708\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00709\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00710\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00711\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00712\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00713\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_carnivore}{InvalidCarnivore}}();}
+\DoxyCodeLine{00714\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00715\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00716\ }
+\DoxyCodeLine{00717\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1)-\/>\mbox{\hyperlink{class_hewan_afe69789e041d4e9150ee2c25f8953123}{getType}}()\ ==\ \textcolor{stringliteral}{"{}HERBIVORE"{}})}
+\DoxyCodeLine{00718\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00719\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!temp-\/>\mbox{\hyperlink{class_product_a7e844f64142fda025c26f29a94778c8d}{fromHewan}}())}
+\DoxyCodeLine{00720\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00721\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00722\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00723\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00724\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00725\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_herbivore}{InvalidHerbivore}}();}
+\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00727\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00728\ }
+\DoxyCodeLine{00729\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00730\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00731\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00732\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00733\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00734\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00735\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_base_exception}{BaseException}}\ \&e)}
+\DoxyCodeLine{00736\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00737\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ e.\mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}()\ <<\ endl;}
+\DoxyCodeLine{00738\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00739\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00740\ }
+\DoxyCodeLine{00741\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx3\ =\ slot2[0]\ -\/\ \textcolor{charliteral}{'A'}\ +\ 1;}
+\DoxyCodeLine{00742\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx4\ =\ std::stoi(slot2.substr(1));}
+\DoxyCodeLine{00743\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_product}{Product}}\ *temp\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_product}{Product}}\ *\textcolor{keyword}{>}(this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx4,\ idx3));}
+\DoxyCodeLine{00744\ }
+\DoxyCodeLine{00745\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1)-\/>\mbox{\hyperlink{class_hewan_ae3719bf11ad596f0e42b477262c70415}{makan}}(*temp);}
+\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_ac2008a4d99790a229c583c9f242c117d}{deleteElement}}(idx4,\ idx3);}
+\DoxyCodeLine{00747\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1)-\/>\mbox{\hyperlink{class_game_object_aa23844466cf7920f57db46666464b3f0}{getName}}()\ <<\ \textcolor{stringliteral}{"{}\ sudah\ diberi\ makan\ dan\ beratnya\ menjadi\ "{}}\ <<\ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1)-\/>\mbox{\hyperlink{class_hewan_aba4ce03de38948a27621e1394b5d568e}{getCurWeight}}()\ <<\ endl;}
+\DoxyCodeLine{00748\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00749\ \ \ \ \ \}}
+\DoxyCodeLine{00750\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_base_exception}{BaseException}}\ \&e)}
+\DoxyCodeLine{00751\ \ \ \ \ \{}
+\DoxyCodeLine{00752\ \ \ \ \ \ \ \ \ cout\ <<\ e.\mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}()\ <<\ endl;}
+\DoxyCodeLine{00753\ \ \ \ \ \}}
+\DoxyCodeLine{00754\ \ \ \ \ \textcolor{comment}{//\ Output\ Hasil}}
+\DoxyCodeLine{00755\ \}}
+\DoxyCodeLine{00756\ }
+\DoxyCodeLine{00757\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_peternak_afda2f21f575c5b8430d648685d770b57}{Peternak::panenTernak}}()}
+\DoxyCodeLine{00758\ \{}
+\DoxyCodeLine{00759\ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00760\ \ \ \ \ \{}
+\DoxyCodeLine{00761\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_a2c1711c89d2b58e53dacea373648ca24}{isEmpty}}())}
+\DoxyCodeLine{00762\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00763\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_no_harvestable_animal}{NoHarvestableAnimal}}();}
+\DoxyCodeLine{00764\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00765\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (!this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_a2c1711c89d2b58e53dacea373648ca24}{isEmpty}}())}
+\DoxyCodeLine{00766\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00767\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ existHarvest\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00768\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ a\ =\ 1;\ a\ <\ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_a3f26a84d6f44c3cdb8d670a66ee37e62}{getRows}}();\ a++)}
+\DoxyCodeLine{00769\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00770\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ b\ =\ 1;\ b\ <\ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_ad7b2c7109515749a076d862b28d4c6d7}{getCols}}();\ b++)}
+\DoxyCodeLine{00771\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00772\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(a,\ b)\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00773\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00774\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(a,\ b)-\/>\mbox{\hyperlink{class_game_object_a4af40450cb24b0c0b4c7c129afee3e78}{getTipeObject}}()\ ==\ \textcolor{stringliteral}{"{}HEWAN"{}})}
+\DoxyCodeLine{00775\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00776\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(a,\ b)-\/>\mbox{\hyperlink{class_hewan_af3a618f3244f24f52898f63b9c9f9083}{isHarvestable}}())}
+\DoxyCodeLine{00777\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00778\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ existHarvest\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00779\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00780\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00781\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00782\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00783\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00784\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!existHarvest)}
+\DoxyCodeLine{00785\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00786\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_no_harvestable_animal}{NoHarvestableAnimal}}();}
+\DoxyCodeLine{00787\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00788\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00789\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00790\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_peternak_af56dd879370db64fc8fb17dbcf13d0a4}{cetakTernak}}();}
+\DoxyCodeLine{00791\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<string>\ ownedHew;}
+\DoxyCodeLine{00792\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<string>\ ownedHewName;}
+\DoxyCodeLine{00793\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<string>\ readyPanen;}
+\DoxyCodeLine{00794\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<int>\ readyPanenAmt;}
+\DoxyCodeLine{00795\ }
+\DoxyCodeLine{00796\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_a3f26a84d6f44c3cdb8d670a66ee37e62}{getRows}}()\ +\ 1;\ i++)}
+\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00798\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 1;\ j\ <\ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_ad7b2c7109515749a076d862b28d4c6d7}{getCols}}()\ +\ 1;\ j++)}
+\DoxyCodeLine{00799\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00800\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(i,\ j)\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00801\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00802\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(i,\ j)-\/>\mbox{\hyperlink{class_game_object_a4af40450cb24b0c0b4c7c129afee3e78}{getTipeObject}}()\ ==\ \textcolor{stringliteral}{"{}HEWAN"{}})}
+\DoxyCodeLine{00803\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00804\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ found\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00805\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ it\ =\ 0;}
+\DoxyCodeLine{00806\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (it\ <\ ownedHew.size())}
+\DoxyCodeLine{00807\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00808\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ownedHew[it]\ ==\ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(i,\ j)-\/>\mbox{\hyperlink{class_game_object_a4b2f0ce982bac4ced5acffaaf8a1d2aa}{getKode}}())}
+\DoxyCodeLine{00809\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00810\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ found\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00811\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it\ =\ ownedHew.size()\ +\ 1;}
+\DoxyCodeLine{00812\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00813\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it++;}
+\DoxyCodeLine{00814\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00815\ }
+\DoxyCodeLine{00816\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!found)}
+\DoxyCodeLine{00817\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00818\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ temp1\ =\ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(i,\ j)-\/>\mbox{\hyperlink{class_game_object_a4b2f0ce982bac4ced5acffaaf8a1d2aa}{getKode}}();}
+\DoxyCodeLine{00819\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ temp2\ =\ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(i,\ j)-\/>\mbox{\hyperlink{class_game_object_aa23844466cf7920f57db46666464b3f0}{getName}}();}
+\DoxyCodeLine{00820\ }
+\DoxyCodeLine{00821\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ownedHew.push\_back(temp1);}
+\DoxyCodeLine{00822\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ownedHewName.push\_back(temp2);}
+\DoxyCodeLine{00823\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00824\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00825\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00826\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00827\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00828\ }
+\DoxyCodeLine{00829\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Output\ hewan\ yang\ ada}}
+\DoxyCodeLine{00830\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ ownedHew.size();\ ++i)}
+\DoxyCodeLine{00831\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00832\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ ownedHew[i]\ <<\ \textcolor{stringliteral}{"{}\ -\/\ "{}}\ <<\ ownedHewName[i]\ <<\ endl;}
+\DoxyCodeLine{00833\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00834\ }
+\DoxyCodeLine{00835\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Output\ pilihan\ hewan\ berdasarkan\ siap\ panennnya}}
+\DoxyCodeLine{00836\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ ownedHew.size();\ ++i)}
+\DoxyCodeLine{00837\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00838\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00839\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ num\ =\ 1;}
+\DoxyCodeLine{00840\ }
+\DoxyCodeLine{00841\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 1;\ j\ <\ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_a3f26a84d6f44c3cdb8d670a66ee37e62}{getRows}}()\ +\ 1;\ j++)}
+\DoxyCodeLine{00842\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00843\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 1;\ k\ <\ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_ad7b2c7109515749a076d862b28d4c6d7}{getCols}}()\ +\ 1;\ k++)}
+\DoxyCodeLine{00844\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00845\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(j,\ k)\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00846\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00847\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(j,\ k)-\/>\mbox{\hyperlink{class_game_object_a4b2f0ce982bac4ced5acffaaf8a1d2aa}{getKode}}()\ ==\ ownedHew[i])}
+\DoxyCodeLine{00848\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00849\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(j,\ k)-\/>\mbox{\hyperlink{class_hewan_af3a618f3244f24f52898f63b9c9f9083}{isHarvestable}}())}
+\DoxyCodeLine{00850\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00851\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count\ +=\ 1;}
+\DoxyCodeLine{00852\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ found\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00853\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ it\ =\ 0;}
+\DoxyCodeLine{00854\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (it\ <\ readyPanen.size())}
+\DoxyCodeLine{00855\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00856\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (readyPanen[it]\ ==\ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(j,\ k)-\/>\mbox{\hyperlink{class_game_object_a4b2f0ce982bac4ced5acffaaf8a1d2aa}{getKode}}())}
+\DoxyCodeLine{00857\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00858\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ found\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00859\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it\ =\ readyPanen.size()\ +\ 1;}
+\DoxyCodeLine{00860\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00861\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it++;}
+\DoxyCodeLine{00862\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00863\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!found)}
+\DoxyCodeLine{00864\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00865\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ temp\ =\ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(j,\ k)-\/>\mbox{\hyperlink{class_game_object_a4b2f0ce982bac4ced5acffaaf8a1d2aa}{getKode}}();}
+\DoxyCodeLine{00866\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ readyPanen.push\_back(temp);}
+\DoxyCodeLine{00867\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00868\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00869\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00870\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00871\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00872\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00873\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (count\ >\ 0)}
+\DoxyCodeLine{00874\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00875\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ readyPanenAmt.push\_back(count);}
+\DoxyCodeLine{00876\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00877\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count\ =\ 0;}
+\DoxyCodeLine{00878\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00879\ }
+\DoxyCodeLine{00880\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ readyPanen.size();\ i++)}
+\DoxyCodeLine{00881\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00882\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ i\ +\ 1\ <<\ \textcolor{stringliteral}{"{}.\ "{}}\ <<\ readyPanen[i]\ <<\ \textcolor{stringliteral}{"{}\ ("{}}\ <<\ readyPanenAmt[i]\ <<\ \textcolor{stringliteral}{"{})"{}}\ <<\ endl;}
+\DoxyCodeLine{00883\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00884\ }
+\DoxyCodeLine{00885\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isValid\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00886\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ maupanen;}
+\DoxyCodeLine{00887\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ maupanenint;}
+\DoxyCodeLine{00888\ }
+\DoxyCodeLine{00889\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (readyPanen.size()\ >\ 0)}
+\DoxyCodeLine{00890\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00891\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!isValid)}
+\DoxyCodeLine{00892\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00893\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00894\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00895\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Nomor\ hewan\ yang\ ingin\ dipanen:\ "{}};}
+\DoxyCodeLine{00896\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin\ >>\ maupanen;}
+\DoxyCodeLine{00897\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{00898\ }
+\DoxyCodeLine{00899\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{_header_2helper_8hpp_abb4767fdf6dae3849141b4ad546ed529}{isAllDigits}}(maupanen))}
+\DoxyCodeLine{00900\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00901\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_panen_idx}{InvalidPanenIdx}}();}
+\DoxyCodeLine{00902\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00903\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00904\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00905\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maupanenint\ =\ std::stoi(maupanen);}
+\DoxyCodeLine{00906\ }
+\DoxyCodeLine{00907\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (maupanenint\ >\ readyPanen.size()\ ||\ maupanenint\ <\ 0)}
+\DoxyCodeLine{00908\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00909\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_panen_idx}{InvalidPanenIdx}}();}
+\DoxyCodeLine{00910\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00911\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00912\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00913\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00914\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00915\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00916\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00917\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_base_exception}{BaseException}}\ \&e)}
+\DoxyCodeLine{00918\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00919\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ e.\mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}()\ <<\ endl;}
+\DoxyCodeLine{00920\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00921\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00922\ }
+\DoxyCodeLine{00923\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00924\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ brppanen;}
+\DoxyCodeLine{00925\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ brppanenint;}
+\DoxyCodeLine{00926\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!isValid)}
+\DoxyCodeLine{00927\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00928\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00929\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00930\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Berapa\ petak\ yang\ ingin\ dipanen:\ "{}};}
+\DoxyCodeLine{00931\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin\ >>\ brppanen;}
+\DoxyCodeLine{00932\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{00933\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{_header_2helper_8hpp_abb4767fdf6dae3849141b4ad546ed529}{isAllDigits}}(brppanen))}
+\DoxyCodeLine{00934\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00935\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_panen_idx}{InvalidPanenIdx}}();}
+\DoxyCodeLine{00936\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00937\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00938\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00939\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ brppanenint\ =\ std::stoi(brppanen);}
+\DoxyCodeLine{00940\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (brppanenint\ >\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_a7a8492105db3257599eca0fda7c6eb44}{getEmptySlot}}())}
+\DoxyCodeLine{00941\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00942\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_inventory_space}{InvalidInventorySpace}}();}
+\DoxyCodeLine{00943\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00944\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (brppanenint\ >\ readyPanenAmt[maupanenint\ -\/\ 1])}
+\DoxyCodeLine{00945\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00946\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_panen_amount_over}{InvalidPanenAmountOver}}();}
+\DoxyCodeLine{00947\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00948\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (brppanenint\ <\ 1)}
+\DoxyCodeLine{00949\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00950\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_panen_amount}{InvalidPanenAmount}}();}
+\DoxyCodeLine{00951\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00952\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00953\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00954\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00955\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00956\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00957\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Validasi}}
+\DoxyCodeLine{00958\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ tidak\ valid\ ada\ output}}
+\DoxyCodeLine{00959\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00960\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_base_exception}{BaseException}}\ \&e)}
+\DoxyCodeLine{00961\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00962\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ e.\mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}()\ <<\ endl;}
+\DoxyCodeLine{00963\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00964\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00965\ }
+\DoxyCodeLine{00966\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00967\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ want;}
+\DoxyCodeLine{00968\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<string>\ wants;}
+\DoxyCodeLine{00969\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Pilih\ petak\ yang\ ingin\ dipanen:\ "{}}\ <<\ endl;}
+\DoxyCodeLine{00970\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (i;\ i\ <\ brppanenint;\ i++)}
+\DoxyCodeLine{00971\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00972\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00973\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!isValid)}
+\DoxyCodeLine{00974\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00975\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00976\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00977\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Petak\ ke-\/"{}}\ <<\ i\ +\ 1\ <<\ \textcolor{stringliteral}{"{}:\ "{}};}
+\DoxyCodeLine{00978\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin\ >>\ want;}
+\DoxyCodeLine{00979\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx1\ =\ want[0]\ -\/\ \textcolor{charliteral}{'A'}\ +\ 1;}
+\DoxyCodeLine{00980\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx2\ =\ std::stoi(want.substr(1));}
+\DoxyCodeLine{00981\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (want.length()\ !=\ 3\ \&\&\ \mbox{\hyperlink{_header_2helper_8hpp_abb4767fdf6dae3849141b4ad546ed529}{isAllDigits}}(want.substr(1)))}
+\DoxyCodeLine{00982\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00983\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_index_matrix_area}{InvalidIndexMatrixArea}}();}
+\DoxyCodeLine{00984\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00985\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (idx2\ >\ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_a3f26a84d6f44c3cdb8d670a66ee37e62}{getRows}}()\ ||\ idx1\ >\ this-\/>ternakan.getCols())}
+\DoxyCodeLine{00986\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00987\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_index_matrix_area}{InvalidIndexMatrixArea}}();}
+\DoxyCodeLine{00988\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00989\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00990\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00991\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1)\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00992\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00993\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1)-\/>\mbox{\hyperlink{class_game_object_a4b2f0ce982bac4ced5acffaaf8a1d2aa}{getKode}}()\ !=\ readyPanen[maupanenint\ -\/\ 1])}
+\DoxyCodeLine{00994\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00995\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_plant_choice}{InvalidPlantChoice}}();}
+\DoxyCodeLine{00996\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00997\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00998\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00999\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01000\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01001\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01002\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{01003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_empty_slot}{InvalidEmptySlot}}();}
+\DoxyCodeLine{01005\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01006\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_base_exception}{BaseException}}\ \&e)}
+\DoxyCodeLine{01009\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ e.\mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}()\ <<\ endl;}
+\DoxyCodeLine{01011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Validasi\ want,\ kalau\ valid\ wants.push\_back(want);}}
+\DoxyCodeLine{01013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wants.push\_back(want);}
+\DoxyCodeLine{01015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01016\ }
+\DoxyCodeLine{01017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ wants.size();\ i++)}
+\DoxyCodeLine{01018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ foundslot\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{01020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx1\ =\ wants[i][0]\ -\/\ \textcolor{charliteral}{'A'}\ +\ 1;}
+\DoxyCodeLine{01021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx2\ =\ std::stoi(wants[i].substr(1));}
+\DoxyCodeLine{01022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ j\ =\ 1;}
+\DoxyCodeLine{01023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ k\ =\ 1;}
+\DoxyCodeLine{01024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (j\ <\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_a3f26a84d6f44c3cdb8d670a66ee37e62}{getRows}}()\ +\ 1)}
+\DoxyCodeLine{01025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (k\ <\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_ad7b2c7109515749a076d862b28d4c6d7}{getCols}}()\ +\ 1)}
+\DoxyCodeLine{01027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(j,\ k)\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{01029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<Product\ *>\ temp\ =\ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1)-\/>\mbox{\hyperlink{class_hewan_a167d3386e77764a22b8366608a400f0b}{hasilPanen}}();}
+\DoxyCodeLine{01031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ n\ =\ 0;\ n\ <\ temp.size();\ n++)}
+\DoxyCodeLine{01032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acbbd0bda8cf554479e02d33cf2a7af56}{setElement}}(j,\ k,\ temp[n]);}
+\DoxyCodeLine{01034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ <\ temp.size()\ -\/\ 1)}
+\DoxyCodeLine{01035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (k\ ==\ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_ad7b2c7109515749a076d862b28d4c6d7}{getCols}}()\ \&\&\ j\ ==\ this-\/>ternakan.getRows())}
+\DoxyCodeLine{01037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_full_inv}{FullInv}}();}
+\DoxyCodeLine{01039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (k\ ==\ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_ad7b2c7109515749a076d862b28d4c6d7}{getCols}}())}
+\DoxyCodeLine{01041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ j++;}
+\DoxyCodeLine{01043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ k\ =\ 1;}
+\DoxyCodeLine{01044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{01046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ k++;}
+\DoxyCodeLine{01048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1);}
+\DoxyCodeLine{01052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_ac2008a4d99790a229c583c9f242c117d}{deleteElement}}(idx2,\ idx1);}
+\DoxyCodeLine{01053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ foundslot\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{01055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ k++;}
+\DoxyCodeLine{01057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (foundslot)}
+\DoxyCodeLine{01059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{01061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ j++;}
+\DoxyCodeLine{01063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01065\ }
+\DoxyCodeLine{01066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Panen\ Berhasil"{}}\ <<\ endl;}
+\DoxyCodeLine{01067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{01071\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_no_harvestable_animal}{NoHarvestableAnimal}}();}
+\DoxyCodeLine{01073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01074\ \ \ \ \ \}}
+\DoxyCodeLine{01075\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_base_exception}{BaseException}}\ \&e)}
+\DoxyCodeLine{01076\ \ \ \ \ \{}
+\DoxyCodeLine{01077\ \ \ \ \ \ \ \ \ cout\ <<\ e.\mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}()\ <<\ endl;}
+\DoxyCodeLine{01078\ \ \ \ \ \}}
+\DoxyCodeLine{01079\ \}}
+\DoxyCodeLine{01080\ }
+\DoxyCodeLine{01081\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_peternak_a448a80a2382993a055d10e96971e48c7}{Peternak::calculateTax}}()}
+\DoxyCodeLine{01082\ \{}
+\DoxyCodeLine{01083\ \ \ \ \ \textcolor{keywordtype}{float}\ KKP\ =\ \mbox{\hyperlink{class_pemain_a140d89d75a81c5c692e498164a0509f2}{countKekayaanInven}}()\ +\ \mbox{\hyperlink{class_peternak_af3dc97c2a2172909c5fcdeba5a67dd3d}{countKekayaanTernakan}}()\ -\/\ \mbox{\hyperlink{peternak_8hpp_aa887da271972da08abbb108d1e2ab4ba}{KTKP\_PETERNAK}};}
+\DoxyCodeLine{01084\ \ \ \ \ \textcolor{comment}{//\ cout<<"{}KKP:\ "{}<<KKP<<endl;}}
+\DoxyCodeLine{01085\ \ \ \ \ \textcolor{keywordtype}{float}\ tax\ =\ \mbox{\hyperlink{class_pemain_abb5667913e9e943a80bad03a9ab204cc}{getTaxRate}}(KKP)*KKP;}
+\DoxyCodeLine{01086\ \ \ \ \ \textcolor{keywordflow}{if}(tax>this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}})\{}
+\DoxyCodeLine{01087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ temp\ =\ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}};}
+\DoxyCodeLine{01088\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ =\ 0;}
+\DoxyCodeLine{01089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ temp;}
+\DoxyCodeLine{01090\ \ \ \ \ \}}
+\DoxyCodeLine{01091\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ -\/=\ tax;}
+\DoxyCodeLine{01092\ \ \ \ \ \textcolor{keywordflow}{return}\ tax;}
+\DoxyCodeLine{01093\ \}}
+\DoxyCodeLine{01094\ }
+\DoxyCodeLine{01095\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_peternak_af3dc97c2a2172909c5fcdeba5a67dd3d}{Peternak::countKekayaanTernakan}}()}
+\DoxyCodeLine{01096\ \{}
+\DoxyCodeLine{01097\ \ \ \ \ \textcolor{keywordtype}{int}\ sum\ =\ 0;}
+\DoxyCodeLine{01098\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ \mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_a3f26a84d6f44c3cdb8d670a66ee37e62}{getRows}}();\ i++)}
+\DoxyCodeLine{01099\ \ \ \ \ \{}
+\DoxyCodeLine{01100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 1;\ j\ <=\ \mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_ad7b2c7109515749a076d862b28d4c6d7}{getCols}}();\ j++)}
+\DoxyCodeLine{01101\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01102\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hewan}{Hewan}}*\ ptr\ =\ \mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(i,j);}
+\DoxyCodeLine{01103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ptr\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{01104\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ cout<<ptr-\/>getName()<<"{}\ "{}<<ptr-\/>getPrice()<<endl;}}
+\DoxyCodeLine{01106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sum\ +=\ \mbox{\hyperlink{class_peternak_a08490b356bb9302c3711a83eb1e5e0db}{ternakan}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(i,\ j)-\/>\mbox{\hyperlink{class_game_object_abd7b06f9406af998e0cdc1a9599bed0a}{getPrice}}();}
+\DoxyCodeLine{01107\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01108\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01109\ \ \ \ \ \}}
+\DoxyCodeLine{01110\ \ \ \ \ \textcolor{comment}{//\ cout<<"{}Total\ Ternak"{}<<sum<<endl;}}
+\DoxyCodeLine{01111\ \ \ \ \ \textcolor{keywordflow}{return}\ sum;}
+\DoxyCodeLine{01112\ \}}
+
+\end{DoxyCode}

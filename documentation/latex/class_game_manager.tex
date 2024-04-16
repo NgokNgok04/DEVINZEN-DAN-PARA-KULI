@@ -1,0 +1,280 @@
+\doxysection{Game\+Manager Class Reference}
+\hypertarget{class_game_manager}{}\label{class_game_manager}\index{GameManager@{GameManager}}
+
+
+{\ttfamily \#include $<$Game\+Manager.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_manager_ab4377893a2ff982bd7be8524aa21ef62}{Game\+Manager}} (\mbox{\hyperlink{class_parser_misc}{Parser\+Misc}})
+\item 
+\mbox{\hyperlink{class_game_manager_aaae63e38e358379c1fe507c5197a8435}{\texorpdfstring{$\sim$}{\string~}\+Game\+Manager}} ()
+\item 
+void \mbox{\hyperlink{class_game_manager_a82b2bda94eb0febf2334a8ae53cf7440}{Debug}} ()
+\item 
+\mbox{\hyperlink{class_game_manager_ab4377893a2ff982bd7be8524aa21ef62}{Game\+Manager}} (\mbox{\hyperlink{class_parser_misc}{Parser\+Misc}})
+\item 
+\mbox{\hyperlink{class_game_manager_aaae63e38e358379c1fe507c5197a8435}{\texorpdfstring{$\sim$}{\string~}\+Game\+Manager}} ()
+\item 
+void \mbox{\hyperlink{class_game_manager_a82b2bda94eb0febf2334a8ae53cf7440}{Debug}} ()
+\item 
+void \mbox{\hyperlink{class_game_manager_a427ef53c0b786a949ba955094928c9af}{insert\+New\+Player}} (\mbox{\hyperlink{class_pemain}{Pemain}} \texorpdfstring{$\ast$}{*})
+\item 
+void \mbox{\hyperlink{class_game_manager_a35b6a1b3f07d514a4c3df4394bd6ba46}{Player\+Debug}} ()
+\item 
+void \mbox{\hyperlink{class_game_manager_a619f67ae7f831134acefe1677d56c201}{Next}} ()
+\item 
+void \mbox{\hyperlink{class_game_manager_a44ae324f1eae39de08075dfc91c2b856}{setup\+Game}} ()
+\item 
+void \mbox{\hyperlink{class_game_manager_a9de1682544087e40df12ff6dd74b85d9}{proses\+Input}} (string)
+\item 
+bool \mbox{\hyperlink{class_game_manager_ae0bb0614a3406cf09e253c09283f04ee}{check\+Winner}} ()
+\item 
+\mbox{\hyperlink{class_pemain}{Pemain}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_game_manager_a8bdd59adb76d6ea9da6f5646b848ae53}{get\+Winner}} ()
+\item 
+string \mbox{\hyperlink{class_game_manager_a72e4364402dc2bb60544e88e8af44d9f}{get\+Winner\+Name}} ()
+\item 
+\mbox{\hyperlink{class_pemain}{Pemain}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_game_manager_a010d841926713f5a8b6f240f54bd80c5}{get\+Current\+Player}} ()
+\item 
+string \mbox{\hyperlink{class_game_manager_a7bcb64cabda7e11f7cf0c022432c99d7}{get\+Current\+Player\+Name}} ()
+\item 
+void \mbox{\hyperlink{class_game_manager_a78a53a53532eb047211c5efcf2c10884}{clear\+Player\+List}} ()
+\item 
+vector$<$ \mbox{\hyperlink{class_pemain}{Pemain}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_game_manager_ad98af464b02997e3cfc0efd099dc6570}{get\+Player\+List}} ()
+\item 
+void \mbox{\hyperlink{class_game_manager_ad80e9ff17b2d785461c33d34a83764f2}{simpan}} ()
+\item 
+void \mbox{\hyperlink{class_game_manager_afc0033fbd83d71be3e04a8de19e24596}{muat}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_manager_a55dfa84c59c0a410b9ac6c08eb22b1e1}{rotate\+Player}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_game_manager_a70cce8ca92c6d0dd7eb90148e2a1f6d5}{winning\+Money}}
+\item 
+int \mbox{\hyperlink{class_game_manager_a430e805d583fe05cb1571f5f8b28d01b}{winning\+Weight}}
+\item 
+pair$<$ int, int $>$ \mbox{\hyperlink{class_game_manager_af57be768f23222b8b9492a74cc84b851}{storage\+Size}}
+\item 
+pair$<$ int, int $>$ \mbox{\hyperlink{class_game_manager_a05dd88e7be2595138ae29b8d55b1aed8}{field\+Size}}
+\item 
+pair$<$ int, int $>$ \mbox{\hyperlink{class_game_manager_a75c85e13a71c342b8659357405edd3c2}{farm\+Size}}
+\item 
+map$<$ string, vector$<$ string $>$ $>$ \mbox{\hyperlink{class_game_manager_a639dc055ab26c60c82a23d61ec5fe795}{product\+Origin\+Conversion}}
+\item 
+vector$<$ \mbox{\hyperlink{class_pemain}{Pemain}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_game_manager_a56393ba26a05d73c9aa9cfc712acca31}{player\+List}}
+\item 
+int \mbox{\hyperlink{class_game_manager_a2331697f4af41fdef78ba575f17da3f5}{current\+Player\+Index}}
+\item 
+int \mbox{\hyperlink{class_game_manager_aa23dd00eb3264b12e000a0c594e37911}{player\+Amount}}
+\item 
+\mbox{\hyperlink{class_pemain}{Pemain}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_game_manager_acaf7a13928a5cc3059323f5d93bb72e2}{Winner}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_game_manager_ab4377893a2ff982bd7be8524aa21ef62}\label{class_game_manager_ab4377893a2ff982bd7be8524aa21ef62} 
+\index{GameManager@{GameManager}!GameManager@{GameManager}}
+\index{GameManager@{GameManager}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{GameManager()}{GameManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Game\+Manager\+::\+Game\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_parser_misc}{Parser\+Misc}}}]{PM }\end{DoxyParamCaption})}
+
+\Hypertarget{class_game_manager_aaae63e38e358379c1fe507c5197a8435}\label{class_game_manager_aaae63e38e358379c1fe507c5197a8435} 
+\index{GameManager@{GameManager}!````~GameManager@{\texorpdfstring{$\sim$}{\string~}GameManager}}
+\index{````~GameManager@{\texorpdfstring{$\sim$}{\string~}GameManager}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GameManager()}{\string~GameManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Game\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Game\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_game_manager_ab4377893a2ff982bd7be8524aa21ef62}\label{class_game_manager_ab4377893a2ff982bd7be8524aa21ef62} 
+\index{GameManager@{GameManager}!GameManager@{GameManager}}
+\index{GameManager@{GameManager}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{GameManager()}{GameManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Game\+Manager\+::\+Game\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_parser_misc}{Parser\+Misc}}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_game_manager_aaae63e38e358379c1fe507c5197a8435}\label{class_game_manager_aaae63e38e358379c1fe507c5197a8435} 
+\index{GameManager@{GameManager}!````~GameManager@{\texorpdfstring{$\sim$}{\string~}GameManager}}
+\index{````~GameManager@{\texorpdfstring{$\sim$}{\string~}GameManager}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GameManager()}{\string~GameManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Game\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Game\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_game_manager_ae0bb0614a3406cf09e253c09283f04ee}\label{class_game_manager_ae0bb0614a3406cf09e253c09283f04ee} 
+\index{GameManager@{GameManager}!checkWinner@{checkWinner}}
+\index{checkWinner@{checkWinner}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{checkWinner()}{checkWinner()}}
+{\footnotesize\ttfamily bool Game\+Manager\+::check\+Winner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_game_manager_a78a53a53532eb047211c5efcf2c10884}\label{class_game_manager_a78a53a53532eb047211c5efcf2c10884} 
+\index{GameManager@{GameManager}!clearPlayerList@{clearPlayerList}}
+\index{clearPlayerList@{clearPlayerList}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{clearPlayerList()}{clearPlayerList()}}
+{\footnotesize\ttfamily void Game\+Manager\+::clear\+Player\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_game_manager_a82b2bda94eb0febf2334a8ae53cf7440}\label{class_game_manager_a82b2bda94eb0febf2334a8ae53cf7440} 
+\index{GameManager@{GameManager}!Debug@{Debug}}
+\index{Debug@{Debug}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{Debug()}{Debug()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Game\+Manager\+::\+Debug (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_game_manager_a82b2bda94eb0febf2334a8ae53cf7440}\label{class_game_manager_a82b2bda94eb0febf2334a8ae53cf7440} 
+\index{GameManager@{GameManager}!Debug@{Debug}}
+\index{Debug@{Debug}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{Debug()}{Debug()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Game\+Manager\+::\+Debug (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_game_manager_a010d841926713f5a8b6f240f54bd80c5}\label{class_game_manager_a010d841926713f5a8b6f240f54bd80c5} 
+\index{GameManager@{GameManager}!getCurrentPlayer@{getCurrentPlayer}}
+\index{getCurrentPlayer@{getCurrentPlayer}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{getCurrentPlayer()}{getCurrentPlayer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pemain}{Pemain}} \texorpdfstring{$\ast$}{*} Game\+Manager\+::get\+Current\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_game_manager_a7bcb64cabda7e11f7cf0c022432c99d7}\label{class_game_manager_a7bcb64cabda7e11f7cf0c022432c99d7} 
+\index{GameManager@{GameManager}!getCurrentPlayerName@{getCurrentPlayerName}}
+\index{getCurrentPlayerName@{getCurrentPlayerName}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{getCurrentPlayerName()}{getCurrentPlayerName()}}
+{\footnotesize\ttfamily string Game\+Manager\+::get\+Current\+Player\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_game_manager_ad98af464b02997e3cfc0efd099dc6570}\label{class_game_manager_ad98af464b02997e3cfc0efd099dc6570} 
+\index{GameManager@{GameManager}!getPlayerList@{getPlayerList}}
+\index{getPlayerList@{getPlayerList}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{getPlayerList()}{getPlayerList()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_pemain}{Pemain}} \texorpdfstring{$\ast$}{*} $>$ Game\+Manager\+::get\+Player\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_game_manager_a8bdd59adb76d6ea9da6f5646b848ae53}\label{class_game_manager_a8bdd59adb76d6ea9da6f5646b848ae53} 
+\index{GameManager@{GameManager}!getWinner@{getWinner}}
+\index{getWinner@{getWinner}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{getWinner()}{getWinner()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pemain}{Pemain}} \texorpdfstring{$\ast$}{*} Game\+Manager\+::get\+Winner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_game_manager_a72e4364402dc2bb60544e88e8af44d9f}\label{class_game_manager_a72e4364402dc2bb60544e88e8af44d9f} 
+\index{GameManager@{GameManager}!getWinnerName@{getWinnerName}}
+\index{getWinnerName@{getWinnerName}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{getWinnerName()}{getWinnerName()}}
+{\footnotesize\ttfamily string Game\+Manager\+::get\+Winner\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_game_manager_a427ef53c0b786a949ba955094928c9af}\label{class_game_manager_a427ef53c0b786a949ba955094928c9af} 
+\index{GameManager@{GameManager}!insertNewPlayer@{insertNewPlayer}}
+\index{insertNewPlayer@{insertNewPlayer}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{insertNewPlayer()}{insertNewPlayer()}}
+{\footnotesize\ttfamily void Game\+Manager\+::insert\+New\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pemain}{Pemain}} \texorpdfstring{$\ast$}{*}}]{new\+Player }\end{DoxyParamCaption})}
+
+\Hypertarget{class_game_manager_afc0033fbd83d71be3e04a8de19e24596}\label{class_game_manager_afc0033fbd83d71be3e04a8de19e24596} 
+\index{GameManager@{GameManager}!muat@{muat}}
+\index{muat@{muat}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{muat()}{muat()}}
+{\footnotesize\ttfamily void Game\+Manager\+::muat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_game_manager_a619f67ae7f831134acefe1677d56c201}\label{class_game_manager_a619f67ae7f831134acefe1677d56c201} 
+\index{GameManager@{GameManager}!Next@{Next}}
+\index{Next@{Next}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{Next()}{Next()}}
+{\footnotesize\ttfamily void Game\+Manager\+::\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_game_manager_a35b6a1b3f07d514a4c3df4394bd6ba46}\label{class_game_manager_a35b6a1b3f07d514a4c3df4394bd6ba46} 
+\index{GameManager@{GameManager}!PlayerDebug@{PlayerDebug}}
+\index{PlayerDebug@{PlayerDebug}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{PlayerDebug()}{PlayerDebug()}}
+{\footnotesize\ttfamily void Game\+Manager\+::\+Player\+Debug (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_game_manager_a9de1682544087e40df12ff6dd74b85d9}\label{class_game_manager_a9de1682544087e40df12ff6dd74b85d9} 
+\index{GameManager@{GameManager}!prosesInput@{prosesInput}}
+\index{prosesInput@{prosesInput}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{prosesInput()}{prosesInput()}}
+{\footnotesize\ttfamily void Game\+Manager\+::proses\+Input (\begin{DoxyParamCaption}\item[{string}]{command }\end{DoxyParamCaption})}
+
+\Hypertarget{class_game_manager_a55dfa84c59c0a410b9ac6c08eb22b1e1}\label{class_game_manager_a55dfa84c59c0a410b9ac6c08eb22b1e1} 
+\index{GameManager@{GameManager}!rotatePlayer@{rotatePlayer}}
+\index{rotatePlayer@{rotatePlayer}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{rotatePlayer()}{rotatePlayer()}}
+{\footnotesize\ttfamily void Game\+Manager\+::rotate\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_game_manager_a44ae324f1eae39de08075dfc91c2b856}\label{class_game_manager_a44ae324f1eae39de08075dfc91c2b856} 
+\index{GameManager@{GameManager}!setupGame@{setupGame}}
+\index{setupGame@{setupGame}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{setupGame()}{setupGame()}}
+{\footnotesize\ttfamily void Game\+Manager\+::setup\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_game_manager_ad80e9ff17b2d785461c33d34a83764f2}\label{class_game_manager_ad80e9ff17b2d785461c33d34a83764f2} 
+\index{GameManager@{GameManager}!simpan@{simpan}}
+\index{simpan@{simpan}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{simpan()}{simpan()}}
+{\footnotesize\ttfamily void Game\+Manager\+::simpan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_game_manager_a2331697f4af41fdef78ba575f17da3f5}\label{class_game_manager_a2331697f4af41fdef78ba575f17da3f5} 
+\index{GameManager@{GameManager}!currentPlayerIndex@{currentPlayerIndex}}
+\index{currentPlayerIndex@{currentPlayerIndex}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{currentPlayerIndex}{currentPlayerIndex}}
+{\footnotesize\ttfamily int Game\+Manager\+::current\+Player\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_game_manager_a75c85e13a71c342b8659357405edd3c2}\label{class_game_manager_a75c85e13a71c342b8659357405edd3c2} 
+\index{GameManager@{GameManager}!farmSize@{farmSize}}
+\index{farmSize@{farmSize}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{farmSize}{farmSize}}
+{\footnotesize\ttfamily pair$<$ int, int $>$ Game\+Manager\+::farm\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_game_manager_a05dd88e7be2595138ae29b8d55b1aed8}\label{class_game_manager_a05dd88e7be2595138ae29b8d55b1aed8} 
+\index{GameManager@{GameManager}!fieldSize@{fieldSize}}
+\index{fieldSize@{fieldSize}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{fieldSize}{fieldSize}}
+{\footnotesize\ttfamily pair$<$ int, int $>$ Game\+Manager\+::field\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_game_manager_aa23dd00eb3264b12e000a0c594e37911}\label{class_game_manager_aa23dd00eb3264b12e000a0c594e37911} 
+\index{GameManager@{GameManager}!playerAmount@{playerAmount}}
+\index{playerAmount@{playerAmount}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{playerAmount}{playerAmount}}
+{\footnotesize\ttfamily int Game\+Manager\+::player\+Amount\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_game_manager_a56393ba26a05d73c9aa9cfc712acca31}\label{class_game_manager_a56393ba26a05d73c9aa9cfc712acca31} 
+\index{GameManager@{GameManager}!playerList@{playerList}}
+\index{playerList@{playerList}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{playerList}{playerList}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_pemain}{Pemain}}\texorpdfstring{$\ast$}{*}$>$ Game\+Manager\+::player\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_game_manager_a639dc055ab26c60c82a23d61ec5fe795}\label{class_game_manager_a639dc055ab26c60c82a23d61ec5fe795} 
+\index{GameManager@{GameManager}!productOriginConversion@{productOriginConversion}}
+\index{productOriginConversion@{productOriginConversion}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{productOriginConversion}{productOriginConversion}}
+{\footnotesize\ttfamily map$<$string, vector$<$string$>$ $>$ Game\+Manager\+::product\+Origin\+Conversion\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_game_manager_af57be768f23222b8b9492a74cc84b851}\label{class_game_manager_af57be768f23222b8b9492a74cc84b851} 
+\index{GameManager@{GameManager}!storageSize@{storageSize}}
+\index{storageSize@{storageSize}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{storageSize}{storageSize}}
+{\footnotesize\ttfamily pair$<$ int, int $>$ Game\+Manager\+::storage\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_game_manager_acaf7a13928a5cc3059323f5d93bb72e2}\label{class_game_manager_acaf7a13928a5cc3059323f5d93bb72e2} 
+\index{GameManager@{GameManager}!Winner@{Winner}}
+\index{Winner@{Winner}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{Winner}{Winner}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pemain}{Pemain}}\texorpdfstring{$\ast$}{*} Game\+Manager\+::\+Winner\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_game_manager_a70cce8ca92c6d0dd7eb90148e2a1f6d5}\label{class_game_manager_a70cce8ca92c6d0dd7eb90148e2a1f6d5} 
+\index{GameManager@{GameManager}!winningMoney@{winningMoney}}
+\index{winningMoney@{winningMoney}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{winningMoney}{winningMoney}}
+{\footnotesize\ttfamily int Game\+Manager\+::winning\+Money\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_game_manager_a430e805d583fe05cb1571f5f8b28d01b}\label{class_game_manager_a430e805d583fe05cb1571f5f8b28d01b} 
+\index{GameManager@{GameManager}!winningWeight@{winningWeight}}
+\index{winningWeight@{winningWeight}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{winningWeight}{winningWeight}}
+{\footnotesize\ttfamily int Game\+Manager\+::winning\+Weight\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/gamemanager/\mbox{\hyperlink{gamemanager_2_game_manager_8hpp}{Game\+Manager.\+hpp}}\item 
+D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/\+Header/\mbox{\hyperlink{_header_2_game_manager_8hpp}{Game\+Manager.\+hpp}}\item 
+D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/gamemanager/\mbox{\hyperlink{gamemanager_2_game_manager_8cpp}{Game\+Manager.\+cpp}}\item 
+D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/\+Implementation/\mbox{\hyperlink{_implementation_2_game_manager_8cpp}{Game\+Manager.\+cpp}}\end{DoxyCompactItemize}

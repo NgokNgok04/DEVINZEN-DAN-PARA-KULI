@@ -1,0 +1,124 @@
+\doxysection{Parser\+Misc.\+cpp}
+\hypertarget{_parser_misc_8cpp_source}{}\label{_parser_misc_8cpp_source}\index{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Implementation/ParserMisc.cpp@{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Implementation/ParserMisc.cpp}}
+\mbox{\hyperlink{_parser_misc_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_misc_8hpp}{../Header/ParserMisc.hpp}}"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_header_2helper_8hpp}{../Header/helper.hpp}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}}
+\DoxyCodeLine{00004\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_misc_a44816bc969b6d8ba4677df0cd21ca9b1}{ParserMisc::winningMoney}}\ =\ 0;}
+\DoxyCodeLine{00005\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_misc_a65a9e4d057abce6e8e1ae9b3a6f101fe}{ParserMisc::winningWeight}}\ =\ 0;}
+\DoxyCodeLine{00006\ pair<int,int>\ \mbox{\hyperlink{class_parser_misc_a5f21a7c238e4c23ce036f8b8cc369280}{ParserMisc::storageSize}}\ =\ pair<int,int>();}
+\DoxyCodeLine{00007\ pair<int,int>\ \mbox{\hyperlink{class_parser_misc_affccd2ab468978667c528921c52f6578}{ParserMisc::fieldSize}}=\ pair<int,int>();}
+\DoxyCodeLine{00008\ pair<int,int>\ \mbox{\hyperlink{class_parser_misc_a61ff2374beb057aef02f6755cd52759b}{ParserMisc::farmSize}}=\ pair<int,int>();}
+\DoxyCodeLine{00009\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_parser_misc_a7d804fb5b3228486de90d69925946775}{ParserMisc::ParseFile}}(\textcolor{keywordtype}{string}\ fileDirectory)}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ ifstream\ InputFile;}
+\DoxyCodeLine{00012\ \ \ \ \ InputFile.open(fileDirectory);\ \textcolor{comment}{//\ buka\ file}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordflow}{if}\ (!InputFile.is\_open())}
+\DoxyCodeLine{00015\ \ \ \ \ \{\ \textcolor{comment}{//\ jika\ gagal\ dibuka\ lempar\ exception}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_misc_config_missing_exception}{MiscConfigMissingException}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ vector<string>\ SpaceStrippedLine;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{string}\ LineFile;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ numValue,\ curLine;}
+\DoxyCodeLine{00023\ \ \ \ \ pair<int,\ int>\ numValuePair;}
+\DoxyCodeLine{00024\ \ \ \ \ curLine\ =\ 1;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(InputFile,\ LineFile))}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ SpaceStrippedLine\ =\ \mbox{\hyperlink{_header_2helper_8hpp_a119e6cee063f87eb5afcf6a7147c1a1a}{StringToStringList}}(LineFile);\ \textcolor{comment}{//\ parse\ spasi}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (curLine\ ==\ 1)}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ numValue\ =\ stoi(SpaceStrippedLine[0]);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(numValue\ <\ 0)\{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parser_misc_a557e280d2351acdc494b44e5390c1de3}{ParserMisc::ClearParserData}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_misc_money_config_exception}{InvalidMiscMoneyConfigException}}();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parser_misc_a44816bc969b6d8ba4677df0cd21ca9b1}{ParserMisc::winningMoney}}\ =\ numValue;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(curLine\ ==2)\{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ numValue\ =\ stoi(SpaceStrippedLine[0]);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(numValue\ <\ 0)\{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parser_misc_a557e280d2351acdc494b44e5390c1de3}{ParserMisc::ClearParserData}}();}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_misc_weight_config_exception}{InvalidMiscWeightConfigException}}();}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parser_misc_a65a9e4d057abce6e8e1ae9b3a6f101fe}{ParserMisc::winningWeight}}\ =\ numValue;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(curLine\ ==\ 3)\{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ numValuePair\ =\ \{stoi(SpaceStrippedLine[0]),stoi(SpaceStrippedLine[1])\};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(numValuePair.first\ <=0\ ||\ numValuePair.second<=0)\{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parser_misc_a557e280d2351acdc494b44e5390c1de3}{ParserMisc::ClearParserData}}();}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_storage_dimension_config_exception}{InvalidStorageDimensionConfigException}}();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parser_misc_a5f21a7c238e4c23ce036f8b8cc369280}{ParserMisc::storageSize}}\ =\ numValuePair;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(curLine\ ==4)\{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ numValuePair\ =\ \{stoi(SpaceStrippedLine[0]),stoi(SpaceStrippedLine[1])\};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(numValuePair.first\ <=0\ ||\ numValuePair.second<=0)\{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parser_misc_a557e280d2351acdc494b44e5390c1de3}{ParserMisc::ClearParserData}}();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_field_dimension_config_exception}{InvalidFieldDimensionConfigException}}();}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parser_misc_affccd2ab468978667c528921c52f6578}{ParserMisc::fieldSize}}\ =\ numValuePair;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(curLine\ ==\ 5)\{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ numValuePair\ =\ \{stoi(SpaceStrippedLine[0]),stoi(SpaceStrippedLine[1])\};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(numValuePair.first\ <=0\ ||\ numValuePair.second<=0)\{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parser_misc_a557e280d2351acdc494b44e5390c1de3}{ParserMisc::ClearParserData}}();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_farm_dimension_config_exception}{InvalidFarmDimensionConfigException}}();}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parser_misc_a61ff2374beb057aef02f6755cd52759b}{ParserMisc::farmSize}}\ =\ numValuePair;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ curLine++;}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Konfigurasi\ misc.txt\ berhasil!\(\backslash\)n"{}};}
+\DoxyCodeLine{00074\ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_parser_misc_a557e280d2351acdc494b44e5390c1de3}{ParserMisc::ClearParserData}}()}
+\DoxyCodeLine{00077\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{class_parser_misc_a44816bc969b6d8ba4677df0cd21ca9b1}{ParserMisc::winningMoney}}\ =\ 0;}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{class_parser_misc_a65a9e4d057abce6e8e1ae9b3a6f101fe}{ParserMisc::winningWeight}}\ =\ 0;}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{class_parser_misc_a5f21a7c238e4c23ce036f8b8cc369280}{ParserMisc::storageSize}}\ =\ \{0,0\};}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{class_parser_misc_affccd2ab468978667c528921c52f6578}{ParserMisc::fieldSize}}\ =\ \{0,0\};}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{class_parser_misc_a61ff2374beb057aef02f6755cd52759b}{ParserMisc::farmSize}}\ =\ \{0,0\};}
+\DoxyCodeLine{00083\ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_misc_a5f172866ae5bf0abf3930b1770cdf2fd}{ParserMisc::getWinningMoney}}()}
+\DoxyCodeLine{00086\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_misc_a44816bc969b6d8ba4677df0cd21ca9b1}{ParserMisc::winningMoney}};}
+\DoxyCodeLine{00088\ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_misc_a0f56e3dfe966d81e9f23901b5059f506}{ParserMisc::getWinningWeight}}()}
+\DoxyCodeLine{00091\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_misc_a65a9e4d057abce6e8e1ae9b3a6f101fe}{ParserMisc::winningWeight}};}
+\DoxyCodeLine{00093\ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ pair<int,\ int>\ \mbox{\hyperlink{class_parser_misc_a671aef5f54ab29fba8b912c2f1ea0c22}{ParserMisc::getStorageSize}}()}
+\DoxyCodeLine{00096\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_misc_a5f21a7c238e4c23ce036f8b8cc369280}{ParserMisc::storageSize}};}
+\DoxyCodeLine{00098\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ pair<int,\ int>\ \mbox{\hyperlink{class_parser_misc_a351d7b7a764ef0605971433f6e8011fd}{ParserMisc::getFieldSize}}()}
+\DoxyCodeLine{00101\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_misc_affccd2ab468978667c528921c52f6578}{ParserMisc::fieldSize}};}
+\DoxyCodeLine{00103\ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ pair<int,\ int>\ \mbox{\hyperlink{class_parser_misc_ad1657dda6b10985fb6dddc8eb7a5779d}{ParserMisc::getFarmSize}}()}
+\DoxyCodeLine{00106\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_misc_a61ff2374beb057aef02f6755cd52759b}{ParserMisc::farmSize}};}
+\DoxyCodeLine{00108\ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ ostream\ \&\mbox{\hyperlink{_parser_misc_8cpp_a2ace161c36e68e05597679a261e64d7a}{operator<<}}(ostream\ \&os,\ \mbox{\hyperlink{class_parser_misc}{ParserMisc}}\ \&PM)}
+\DoxyCodeLine{00111\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ os\ <<\ PM.\mbox{\hyperlink{class_parser_misc_a44816bc969b6d8ba4677df0cd21ca9b1}{winningMoney}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00113\ \ \ \ \ os\ <<\ PM.\mbox{\hyperlink{class_parser_misc_a65a9e4d057abce6e8e1ae9b3a6f101fe}{winningWeight}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00114\ \ \ \ \ os\ <<\ PM.\mbox{\hyperlink{class_parser_misc_a5f21a7c238e4c23ce036f8b8cc369280}{storageSize}}.first\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ PM.\mbox{\hyperlink{class_parser_misc_a5f21a7c238e4c23ce036f8b8cc369280}{storageSize}}.second\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00115\ \ \ \ \ os\ <<\ PM.\mbox{\hyperlink{class_parser_misc_affccd2ab468978667c528921c52f6578}{fieldSize}}.first\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ PM.\mbox{\hyperlink{class_parser_misc_affccd2ab468978667c528921c52f6578}{fieldSize}}.second\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00116\ \ \ \ \ os\ <<\ PM.\mbox{\hyperlink{class_parser_misc_a61ff2374beb057aef02f6755cd52759b}{farmSize}}.first\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ PM.\mbox{\hyperlink{class_parser_misc_a61ff2374beb057aef02f6755cd52759b}{farmSize}}.second\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00118\ \}}
+
+\end{DoxyCode}

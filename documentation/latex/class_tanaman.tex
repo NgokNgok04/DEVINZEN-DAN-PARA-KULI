@@ -1,0 +1,191 @@
+\doxysection{Tanaman Class Reference}
+\hypertarget{class_tanaman}{}\label{class_tanaman}\index{Tanaman@{Tanaman}}
+
+
+{\ttfamily \#include $<$Tanaman.\+hpp$>$}
+
+Inheritance diagram for Tanaman\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_tanaman}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_tanaman_a2207af4487c98cf0dd3885586a8c4aef}{Tanaman}} (int)
+\item 
+void \mbox{\hyperlink{class_tanaman_a8bbe46b8eb9466fa52d45a7c37b557ad}{tambah\+Umur}} ()
+\item 
+\mbox{\hyperlink{class_product}{Product}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_tanaman_a73916c0eefe697e1df48c7e2ff5a7b77}{hasil\+Panen}} ()
+\item 
+bool \mbox{\hyperlink{class_tanaman_aae5e2c3ed49d96b826639acb2aa8ac15}{is\+Harvestable}} ()
+\item 
+string \mbox{\hyperlink{class_tanaman_aad638e594b6d2cdad7d94958e38cc801}{get\+Type}} ()
+\item 
+int \mbox{\hyperlink{class_tanaman_a8a0e50a946bd539bdb1269217bdec7db}{get\+Duration\+Harvest}} ()
+\item 
+int \mbox{\hyperlink{class_tanaman_a8b56558ffe7f304656ae1e960525924a}{get\+Cur\+Age}} ()
+\item 
+void \mbox{\hyperlink{class_tanaman_af718db1dd58e22c2ecc3d8689aba218c}{set\+Age}} (int)
+\item 
+\mbox{\hyperlink{class_tanaman}{Tanaman}} \& \mbox{\hyperlink{class_tanaman_a95b6e514f5d22f2c9d82465e62970d01}{operator=}} (const \mbox{\hyperlink{class_tanaman}{Tanaman}} \&)
+\item 
+bool \mbox{\hyperlink{class_tanaman_ad143576385fd0d34393947bc8e4ff8e2}{operator==}} (const \mbox{\hyperlink{class_tanaman}{Tanaman}} \&)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_game_object_a224d4f6d9dd75c8a6f9d022eaf586fd9}{\texorpdfstring{$\sim$}{\string~}\+Game\+Object}} ()
+\item 
+int \mbox{\hyperlink{class_game_object_add964e473761c04f3406efb37d23b37a}{get\+ID}} ()
+\item 
+string \mbox{\hyperlink{class_game_object_a4b2f0ce982bac4ced5acffaaf8a1d2aa}{get\+Kode}} ()
+\item 
+float \mbox{\hyperlink{class_game_object_abd7b06f9406af998e0cdc1a9599bed0a}{get\+Price}} ()
+\item 
+string \mbox{\hyperlink{class_game_object_aa23844466cf7920f57db46666464b3f0}{get\+Name}} ()
+\item 
+string \mbox{\hyperlink{class_game_object_a4af40450cb24b0c0b4c7c129afee3e78}{get\+Tipe\+Object}} ()
+\item 
+void \mbox{\hyperlink{class_game_object_a426ad06f8a727af4a0445b42add6498f}{set\+ID}} (int)
+\item 
+void \mbox{\hyperlink{class_game_object_ab463519e996c0d56bfffe0bb680c815d}{set\+Kode}} (string)
+\item 
+void \mbox{\hyperlink{class_game_object_aa8bed101451259441aa1596832b19b64}{set\+Price}} (float)
+\item 
+void \mbox{\hyperlink{class_game_object_a4f190a9192abcc7e6b77bc797e3c5bdc}{set\+Name}} (string)
+\item 
+void \mbox{\hyperlink{class_game_object_a9574464c79ce8fa0032d98ac4795547b}{set\+Tipe\+Object}} (string)
+\item 
+virtual \mbox{\hyperlink{class_game_object}{Game\+Object}} \& \mbox{\hyperlink{class_game_object_a2e1dc922ef5e0dff89e148d35ac6b002}{operator=}} (const \mbox{\hyperlink{class_game_object}{Game\+Object}} \&)
+\item 
+virtual bool \mbox{\hyperlink{class_game_object_a4ec9a10e4375b4e47d87359e74d81afb}{operator==}} (const \mbox{\hyperlink{class_game_object}{Game\+Object}} \&)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_tanaman_a3df590d359772a9744a20526b4c7c0f6}{type}}
+\item 
+int \mbox{\hyperlink{class_tanaman_a91c339ac69765f0555c87a0c18a29f26}{duration\+Harvest}}
+\item 
+int \mbox{\hyperlink{class_tanaman_af5bec4be504c299b35af3a919a8d155a}{age}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static map$<$ string, string $>$ \mbox{\hyperlink{class_tanaman_a64593fb29881c35fbfabda5a12ca4db3}{konversi\+Panen}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_tanaman_a2207af4487c98cf0dd3885586a8c4aef}\label{class_tanaman_a2207af4487c98cf0dd3885586a8c4aef} 
+\index{Tanaman@{Tanaman}!Tanaman@{Tanaman}}
+\index{Tanaman@{Tanaman}!Tanaman@{Tanaman}}
+\doxysubsubsection{\texorpdfstring{Tanaman()}{Tanaman()}}
+{\footnotesize\ttfamily Tanaman\+::\+Tanaman (\begin{DoxyParamCaption}\item[{int}]{id\+Konfig }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_tanaman_a8b56558ffe7f304656ae1e960525924a}\label{class_tanaman_a8b56558ffe7f304656ae1e960525924a} 
+\index{Tanaman@{Tanaman}!getCurAge@{getCurAge}}
+\index{getCurAge@{getCurAge}!Tanaman@{Tanaman}}
+\doxysubsubsection{\texorpdfstring{getCurAge()}{getCurAge()}}
+{\footnotesize\ttfamily int Tanaman\+::get\+Cur\+Age (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_tanaman_a8a0e50a946bd539bdb1269217bdec7db}\label{class_tanaman_a8a0e50a946bd539bdb1269217bdec7db} 
+\index{Tanaman@{Tanaman}!getDurationHarvest@{getDurationHarvest}}
+\index{getDurationHarvest@{getDurationHarvest}!Tanaman@{Tanaman}}
+\doxysubsubsection{\texorpdfstring{getDurationHarvest()}{getDurationHarvest()}}
+{\footnotesize\ttfamily int Tanaman\+::get\+Duration\+Harvest (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_tanaman_aad638e594b6d2cdad7d94958e38cc801}\label{class_tanaman_aad638e594b6d2cdad7d94958e38cc801} 
+\index{Tanaman@{Tanaman}!getType@{getType}}
+\index{getType@{getType}!Tanaman@{Tanaman}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily string Tanaman\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_tanaman_a73916c0eefe697e1df48c7e2ff5a7b77}\label{class_tanaman_a73916c0eefe697e1df48c7e2ff5a7b77} 
+\index{Tanaman@{Tanaman}!hasilPanen@{hasilPanen}}
+\index{hasilPanen@{hasilPanen}!Tanaman@{Tanaman}}
+\doxysubsubsection{\texorpdfstring{hasilPanen()}{hasilPanen()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_product}{Product}} \texorpdfstring{$\ast$}{*} Tanaman\+::hasil\+Panen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_tanaman_aae5e2c3ed49d96b826639acb2aa8ac15}\label{class_tanaman_aae5e2c3ed49d96b826639acb2aa8ac15} 
+\index{Tanaman@{Tanaman}!isHarvestable@{isHarvestable}}
+\index{isHarvestable@{isHarvestable}!Tanaman@{Tanaman}}
+\doxysubsubsection{\texorpdfstring{isHarvestable()}{isHarvestable()}}
+{\footnotesize\ttfamily bool Tanaman\+::is\+Harvestable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_tanaman_a95b6e514f5d22f2c9d82465e62970d01}\label{class_tanaman_a95b6e514f5d22f2c9d82465e62970d01} 
+\index{Tanaman@{Tanaman}!operator=@{operator=}}
+\index{operator=@{operator=}!Tanaman@{Tanaman}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_tanaman}{Tanaman}} \& Tanaman\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_tanaman}{Tanaman}} \&}]{other }\end{DoxyParamCaption})}
+
+\Hypertarget{class_tanaman_ad143576385fd0d34393947bc8e4ff8e2}\label{class_tanaman_ad143576385fd0d34393947bc8e4ff8e2} 
+\index{Tanaman@{Tanaman}!operator==@{operator==}}
+\index{operator==@{operator==}!Tanaman@{Tanaman}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Tanaman\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_tanaman}{Tanaman}} \&}]{other }\end{DoxyParamCaption})}
+
+\Hypertarget{class_tanaman_af718db1dd58e22c2ecc3d8689aba218c}\label{class_tanaman_af718db1dd58e22c2ecc3d8689aba218c} 
+\index{Tanaman@{Tanaman}!setAge@{setAge}}
+\index{setAge@{setAge}!Tanaman@{Tanaman}}
+\doxysubsubsection{\texorpdfstring{setAge()}{setAge()}}
+{\footnotesize\ttfamily void Tanaman\+::set\+Age (\begin{DoxyParamCaption}\item[{int}]{age }\end{DoxyParamCaption})}
+
+\Hypertarget{class_tanaman_a8bbe46b8eb9466fa52d45a7c37b557ad}\label{class_tanaman_a8bbe46b8eb9466fa52d45a7c37b557ad} 
+\index{Tanaman@{Tanaman}!tambahUmur@{tambahUmur}}
+\index{tambahUmur@{tambahUmur}!Tanaman@{Tanaman}}
+\doxysubsubsection{\texorpdfstring{tambahUmur()}{tambahUmur()}}
+{\footnotesize\ttfamily void Tanaman\+::tambah\+Umur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_tanaman_af5bec4be504c299b35af3a919a8d155a}\label{class_tanaman_af5bec4be504c299b35af3a919a8d155a} 
+\index{Tanaman@{Tanaman}!age@{age}}
+\index{age@{age}!Tanaman@{Tanaman}}
+\doxysubsubsection{\texorpdfstring{age}{age}}
+{\footnotesize\ttfamily int Tanaman\+::age\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_tanaman_a91c339ac69765f0555c87a0c18a29f26}\label{class_tanaman_a91c339ac69765f0555c87a0c18a29f26} 
+\index{Tanaman@{Tanaman}!durationHarvest@{durationHarvest}}
+\index{durationHarvest@{durationHarvest}!Tanaman@{Tanaman}}
+\doxysubsubsection{\texorpdfstring{durationHarvest}{durationHarvest}}
+{\footnotesize\ttfamily int Tanaman\+::duration\+Harvest\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_tanaman_a64593fb29881c35fbfabda5a12ca4db3}\label{class_tanaman_a64593fb29881c35fbfabda5a12ca4db3} 
+\index{Tanaman@{Tanaman}!konversiPanen@{konversiPanen}}
+\index{konversiPanen@{konversiPanen}!Tanaman@{Tanaman}}
+\doxysubsubsection{\texorpdfstring{konversiPanen}{konversiPanen}}
+{\footnotesize\ttfamily map$<$ string, string $>$ Tanaman\+::konversi\+Panen\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}TEAK\_TREE"{}},\ \textcolor{stringliteral}{"{}TEAK\_WOOD"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}SANDALWOOD\_TREE"{}},\ \textcolor{stringliteral}{"{}SANDALWOOD\_WOOD"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}ALOE\_TREE"{}},\ \textcolor{stringliteral}{"{}ALOE\_WOOD"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}IRONWOOD\_TREE"{}},\ \textcolor{stringliteral}{"{}IRONWOOD\_WOOD"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}APPLE\_TREE"{}},\ \textcolor{stringliteral}{"{}APPLE"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}ORANGE\_TREE"{}},\ \textcolor{stringliteral}{"{}ORANGE"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}BANANA\_TREE"{}},\ \textcolor{stringliteral}{"{}BANANA"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}GUAVA\_TREE"{}},\ \textcolor{stringliteral}{"{}GUAVA"{}}\},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{class_tanaman_a3df590d359772a9744a20526b4c7c0f6}\label{class_tanaman_a3df590d359772a9744a20526b4c7c0f6} 
+\index{Tanaman@{Tanaman}!type@{type}}
+\index{type@{type}!Tanaman@{Tanaman}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily string Tanaman\+::type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/\+Header/\mbox{\hyperlink{_tanaman_8hpp}{Tanaman.\+hpp}}\item 
+D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/\+Implementation/\mbox{\hyperlink{_tanaman_8cpp}{Tanaman.\+cpp}}\end{DoxyCompactItemize}

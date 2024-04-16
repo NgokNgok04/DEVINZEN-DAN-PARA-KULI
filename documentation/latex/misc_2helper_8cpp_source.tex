@@ -1,0 +1,44 @@
+\doxysection{helper.\+cpp}
+\hypertarget{misc_2helper_8cpp_source}{}\label{misc_2helper_8cpp_source}\index{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/misc/helper.cpp@{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/misc/helper.cpp}}
+\mbox{\hyperlink{misc_2helper_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{misc_2helper_8hpp}{helper.hpp}}"{}}}
+\DoxyCodeLine{00002\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00003\ vector<string>\ \mbox{\hyperlink{misc_2helper_8cpp_a119e6cee063f87eb5afcf6a7147c1a1a}{StringToStringList}}(\textcolor{keywordtype}{string}\ inputString)\{}
+\DoxyCodeLine{00004\ \ \ \ \ vector<string>\ StringList;}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{keywordtype}{string}\ tempString;}
+\DoxyCodeLine{00006\ \ \ \ \ tempString\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i<inputString.length();\ i++)\{}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(inputString[i]\ !=\ \textcolor{charliteral}{'\ '})\{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ tempString\ =\ tempString\ +\ inputString[i];}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tempString\ !=\ \textcolor{stringliteral}{"{}"{}})\{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StringList.push\_back(tempString);}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tempString\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{if}(tempString\ !=\ \textcolor{stringliteral}{"{}\ "{}})\{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ StringList.push\_back(tempString);}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{return}\ StringList;}
+\DoxyCodeLine{00026\ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{misc_2helper_8cpp_abb4767fdf6dae3849141b4ad546ed529}{isAllDigits}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&str)}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{char}\ c\ :\ str)}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isdigit(c))}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00038\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,211 @@
+\doxysection{Parser\+Produk.\+cpp}
+\hypertarget{_parser_produk_8cpp_source}{}\label{_parser_produk_8cpp_source}\index{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Implementation/ParserProduk.cpp@{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Implementation/ParserProduk.cpp}}
+\mbox{\hyperlink{_parser_produk_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_produk_8hpp}{../Header/ParserProduk.hpp}}"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_header_2helper_8hpp}{../Header/helper.hpp}}"{}}}
+\DoxyCodeLine{00004\ vector<int>\ \mbox{\hyperlink{class_parser_produk_a0c54b6b5adee153c32ccc25e06f43cc0}{ParserProduk::productID}}\ =\ vector<int>();}
+\DoxyCodeLine{00005\ vector<string>\ \mbox{\hyperlink{class_parser_produk_ae143f566e2e2f26ede4a5e67baa0bdaf}{ParserProduk::productCode}}\ =\ vector<string>();}
+\DoxyCodeLine{00006\ vector<string>\ \mbox{\hyperlink{class_parser_produk_accce8233c2e4e4f42129a48ca5810e52}{ParserProduk::productName}}\ =\ vector<string>();}
+\DoxyCodeLine{00007\ vector<string>\ \mbox{\hyperlink{class_parser_produk_a32f7bf4ad6d11c6b3f0421927716ed9e}{ParserProduk::productType}}\ =\ vector<string>();}
+\DoxyCodeLine{00008\ vector<string>\ \mbox{\hyperlink{class_parser_produk_a1875387c314d03c7b1585709b4afcda6}{ParserProduk::productOrigin}}\ =\ vector<string>();}
+\DoxyCodeLine{00009\ vector<int>\ \mbox{\hyperlink{class_parser_produk_a0482d3f3810e05a8d02214d9cfe2a782}{ParserProduk::addedWeight}}=\ vector<int>();}
+\DoxyCodeLine{00010\ vector<int>\ \mbox{\hyperlink{class_parser_produk_a8373a7c9763317bece82b9f1b974175c}{ParserProduk::price}}=\ vector<int>();}
+\DoxyCodeLine{00011\ vector<string>\ \mbox{\hyperlink{class_parser_produk_a4a3d95389bc963bc1d4dfdf3cb9493b0}{ParserProduk::validProductTypes}}\ =\ vector<string>();}
+\DoxyCodeLine{00012\ map<int,int>\ \mbox{\hyperlink{class_parser_produk_ac195335e9e61a2132b4914da1286ab54}{ParserProduk::IndexToIDMap}}\ =\ map<int,int>();}
+\DoxyCodeLine{00013\ map<int,int>\ \mbox{\hyperlink{class_parser_produk_a3e3ed08e7647136bbc158d4ccf227dab}{ParserProduk::IDToIndexMap}}\ =\ map<int,int>();}
+\DoxyCodeLine{00014\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_parser_produk_ab39632541f8dd555e425a9fecef2992f}{ParserProduk::ParseFile}}(\textcolor{keywordtype}{string}\ fileDirectory)}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ ifstream\ InputFile;}
+\DoxyCodeLine{00017\ \ \ \ \ InputFile.open(fileDirectory);\ \textcolor{comment}{//\ buka\ file}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (!InputFile.is\_open())}
+\DoxyCodeLine{00020\ \ \ \ \ \{\ \textcolor{comment}{//\ jika\ gagal\ dibuka\ lempar\ exception}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_product_config_missing_exception}{ProductConfigMissingException}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ vector<string>\ SpaceStrippedLine;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{string}\ LineFile;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ numValue;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ flagProductType;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(InputFile,\ LineFile))}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ flagProductType\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ SpaceStrippedLine\ =\ \mbox{\hyperlink{_header_2helper_8hpp_a119e6cee063f87eb5afcf6a7147c1a1a}{StringToStringList}}(LineFile);\ \textcolor{comment}{//\ parse\ spasi}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ validasi\ dan\ input\ data\ id\ produk}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ numValue\ =\ stoi(SpaceStrippedLine[0]);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (numValue\ <=\ 0)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \{\ \textcolor{comment}{//\ ID\ tidak\ boleh\ negatif}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_produk_a8db025f99c9e651278c77e9c850bc1ac}{ClearParserData}}();}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_product_i_d_config_exception}{InvalidProductIDConfigException}}();}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_produk_a0c54b6b5adee153c32ccc25e06f43cc0}{productID}}.push\_back(numValue);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_produk_ae143f566e2e2f26ede4a5e67baa0bdaf}{productCode}}.push\_back(SpaceStrippedLine[1]);\ \textcolor{comment}{//\ input\ code}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_produk_accce8233c2e4e4f42129a48ca5810e52}{productName}}.push\_back(SpaceStrippedLine[2]);\ \textcolor{comment}{//\ input\ nama\ produk}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ this-\/>\mbox{\hyperlink{class_parser_produk_a4a3d95389bc963bc1d4dfdf3cb9493b0}{validProductTypes}}.size();\ i++)}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \{\ \textcolor{comment}{//\ validasi\ tipe\ produk}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (SpaceStrippedLine[3]\ ==\ this-\/>\mbox{\hyperlink{class_parser_produk_a4a3d95389bc963bc1d4dfdf3cb9493b0}{validProductTypes}}[i])}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{comment}{//\ hanya\ tipe\ data\ yang\ valid\ yang\ bisa\ diinput}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flagProductType\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (flagProductType)}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_produk_a32f7bf4ad6d11c6b3f0421927716ed9e}{productType}}.push\_back(SpaceStrippedLine[3]);\ \textcolor{comment}{//\ input\ tipe\ produk}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_produk_a8db025f99c9e651278c77e9c850bc1ac}{ClearParserData}}();}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_product_type_config_exception}{InvalidProductTypeConfigException}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_produk_a1875387c314d03c7b1585709b4afcda6}{productOrigin}}.push\_back(SpaceStrippedLine[4]);\ \textcolor{comment}{//\ input\ origin}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ numValue\ =\ stoi(SpaceStrippedLine[5]);\ \textcolor{comment}{//\ VALIDASI\ DAN\ INPUT\ BERAT\ produk}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (numValue\ <\ 0)}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \{\ \textcolor{comment}{//\ berat\ tidak\ boleh\ negatif}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_produk_a8db025f99c9e651278c77e9c850bc1ac}{ClearParserData}}();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_product_weight_config_exception}{InvalidProductWeightConfigException}}();}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_produk_a0482d3f3810e05a8d02214d9cfe2a782}{addedWeight}}.push\_back(numValue);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ VALIDASI\ DAN\ INPUT\ HARGA\ produk}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ numValue\ =\ stoi(SpaceStrippedLine[6]);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (numValue\ <=\ 0)}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \{\ \textcolor{comment}{//\ harga\ tidak\ boleh\ negatif}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_produk_a8db025f99c9e651278c77e9c850bc1ac}{ClearParserData}}();}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_product_price_config_exception}{InvalidProductPriceConfigException}}();}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_produk_a8373a7c9763317bece82b9f1b974175c}{price}}.push\_back(numValue);}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_parser_produk_a0c54b6b5adee153c32ccc25e06f43cc0}{productID}}.size();\ i++)}
+\DoxyCodeLine{00086\ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parser_produk_ac195335e9e61a2132b4914da1286ab54}{IndexToIDMap}}.insert(\{i,\ \mbox{\hyperlink{class_parser_produk_a0c54b6b5adee153c32ccc25e06f43cc0}{productID}}[i]\});}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parser_produk_a3e3ed08e7647136bbc158d4ccf227dab}{IDToIndexMap}}.insert(\{\mbox{\hyperlink{class_parser_produk_a0c54b6b5adee153c32ccc25e06f43cc0}{productID}}[i],\ i\});}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Konfigurasi\ product.txt\ berhasil!\(\backslash\)n"{}};}
+\DoxyCodeLine{00091\ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_parser_produk_a8db025f99c9e651278c77e9c850bc1ac}{ParserProduk::ClearParserData}}()}
+\DoxyCodeLine{00094\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_produk_a0c54b6b5adee153c32ccc25e06f43cc0}{productID}}.clear();}
+\DoxyCodeLine{00096\ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_produk_ae143f566e2e2f26ede4a5e67baa0bdaf}{productCode}}.clear();}
+\DoxyCodeLine{00097\ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_produk_accce8233c2e4e4f42129a48ca5810e52}{productName}}.clear();}
+\DoxyCodeLine{00098\ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_produk_a32f7bf4ad6d11c6b3f0421927716ed9e}{productType}}.clear();}
+\DoxyCodeLine{00099\ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_produk_a1875387c314d03c7b1585709b4afcda6}{productOrigin}}.clear();}
+\DoxyCodeLine{00100\ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_produk_a0482d3f3810e05a8d02214d9cfe2a782}{addedWeight}}.clear();}
+\DoxyCodeLine{00101\ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_produk_a8373a7c9763317bece82b9f1b974175c}{price}}.clear();}
+\DoxyCodeLine{00102\ \}}
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_produk_afa60f7115f6c3f50cf64383996487a35}{ParserProduk::getID}}(\textcolor{keywordtype}{int}\ index)}
+\DoxyCodeLine{00104\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_produk_a0c54b6b5adee153c32ccc25e06f43cc0}{productID}}[index];}
+\DoxyCodeLine{00106\ \}}
+\DoxyCodeLine{00107\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_parser_produk_a3ebbe22ffdafe6928a44ed9ad45a4b48}{ParserProduk::getCode}}(\textcolor{keywordtype}{int}\ ID)}
+\DoxyCodeLine{00108\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ \mbox{\hyperlink{class_parser_produk_a5e6c243d5b3755c1f1bb1124dfba9348}{IDToIndex}}(ID);}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_produk_ae143f566e2e2f26ede4a5e67baa0bdaf}{productCode}}[index];}
+\DoxyCodeLine{00111\ \}}
+\DoxyCodeLine{00112\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_parser_produk_a86c36471129c66e16d2115cb1f9e3ee8}{ParserProduk::getName}}(\textcolor{keywordtype}{int}\ ID)}
+\DoxyCodeLine{00113\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ \mbox{\hyperlink{class_parser_produk_a5e6c243d5b3755c1f1bb1124dfba9348}{IDToIndex}}(ID);}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_produk_accce8233c2e4e4f42129a48ca5810e52}{productName}}[index];}
+\DoxyCodeLine{00116\ \}}
+\DoxyCodeLine{00117\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_parser_produk_a6cfb4c47d64b1b4edf76b7214429e004}{ParserProduk::getType}}(\textcolor{keywordtype}{int}\ ID)}
+\DoxyCodeLine{00118\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ \mbox{\hyperlink{class_parser_produk_a5e6c243d5b3755c1f1bb1124dfba9348}{IDToIndex}}(ID);}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_produk_a32f7bf4ad6d11c6b3f0421927716ed9e}{productType}}[index];}
+\DoxyCodeLine{00121\ \}}
+\DoxyCodeLine{00122\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_parser_produk_a5adba382b0b4a8b35bd60d816ca707fc}{ParserProduk::getOrigin}}(\textcolor{keywordtype}{int}\ ID)}
+\DoxyCodeLine{00123\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ \mbox{\hyperlink{class_parser_produk_a5e6c243d5b3755c1f1bb1124dfba9348}{IDToIndex}}(ID);}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_produk_a1875387c314d03c7b1585709b4afcda6}{productOrigin}}[index];}
+\DoxyCodeLine{00126\ \}}
+\DoxyCodeLine{00127\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_produk_ab1413f3313870db1d271db719b170bf6}{ParserProduk::getAddedWeight}}(\textcolor{keywordtype}{int}\ ID)}
+\DoxyCodeLine{00128\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ \mbox{\hyperlink{class_parser_produk_a5e6c243d5b3755c1f1bb1124dfba9348}{IDToIndex}}(ID);}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_produk_a0482d3f3810e05a8d02214d9cfe2a782}{addedWeight}}[index];}
+\DoxyCodeLine{00131\ \}}
+\DoxyCodeLine{00132\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_produk_aad5ceaf1e039d645f5b1190ec5eda890}{ParserProduk::getPrice}}(\textcolor{keywordtype}{int}\ ID)}
+\DoxyCodeLine{00133\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ \mbox{\hyperlink{class_parser_produk_a5e6c243d5b3755c1f1bb1124dfba9348}{IDToIndex}}(ID);}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_produk_a8373a7c9763317bece82b9f1b974175c}{price}}[index];}
+\DoxyCodeLine{00136\ \}}
+\DoxyCodeLine{00137\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_produk_a6d29b04e9fa76ee013a1b015005c186c}{ParserProduk::getConfigSize}}()}
+\DoxyCodeLine{00138\ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_produk_a0c54b6b5adee153c32ccc25e06f43cc0}{productID}}.size();}
+\DoxyCodeLine{00140\ \}}
+\DoxyCodeLine{00141\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_produk_a5e6c243d5b3755c1f1bb1124dfba9348}{ParserProduk::IDToIndex}}(\textcolor{keywordtype}{int}\ ID)}
+\DoxyCodeLine{00142\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_produk_a3e3ed08e7647136bbc158d4ccf227dab}{IDToIndexMap}}[ID];}
+\DoxyCodeLine{00144\ \}}
+\DoxyCodeLine{00145\ vector<int>\ \mbox{\hyperlink{class_parser_produk_a0720a89e7cdc30ee8cfe3b05ebf0553c}{ParserProduk::findOrigin}}(\textcolor{keywordtype}{string}\ OriginName)}
+\DoxyCodeLine{00146\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ vector<int>\ out;}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_parser_produk_a6d29b04e9fa76ee013a1b015005c186c}{getConfigSize}}();\ i++)}
+\DoxyCodeLine{00149\ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_parser_produk_a1875387c314d03c7b1585709b4afcda6}{productOrigin}}[i]\ ==\ OriginName)}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ out.push\_back(\mbox{\hyperlink{class_parser_produk_a0c54b6b5adee153c32ccc25e06f43cc0}{productID}}[i]);}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{00156\ \}}
+\DoxyCodeLine{00157\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_produk_a8575af6aecdadee0e83f995a900cd8a8}{ParserProduk::convertCodeToID}}(\textcolor{keywordtype}{string}\ Code)}
+\DoxyCodeLine{00158\ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_parser_produk_a6d29b04e9fa76ee013a1b015005c186c}{getConfigSize}}();\ i++)}
+\DoxyCodeLine{00160\ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_parser_produk_ae143f566e2e2f26ede4a5e67baa0bdaf}{productCode}}[i]\ ==\ Code)}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_produk_a0c54b6b5adee153c32ccc25e06f43cc0}{productID}}[i];}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00165\ \ \ \ \ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00168\ \}}
+\DoxyCodeLine{00169\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_produk_a30cf3dc665a765e47c633708b7d90906}{ParserProduk::convertNameToID}}(\textcolor{keywordtype}{string}\ Name)}
+\DoxyCodeLine{00170\ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_parser_produk_a6d29b04e9fa76ee013a1b015005c186c}{getConfigSize}}();\ i++)}
+\DoxyCodeLine{00172\ \ \ \ \ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_parser_produk_accce8233c2e4e4f42129a48ca5810e52}{productName}}[i]\ ==\ Name)}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_produk_a0c54b6b5adee153c32ccc25e06f43cc0}{productID}}[i];}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00177\ \ \ \ \ \}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00180\ \}}
+\DoxyCodeLine{00181\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_produk_a09ee7ce4272f2f68621363a749a72a06}{ParserProduk::indexToID}}(\textcolor{keywordtype}{int}\ index)}
+\DoxyCodeLine{00182\ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_produk_ac195335e9e61a2132b4914da1286ab54}{IndexToIDMap}}[index];}
+\DoxyCodeLine{00184\ \}}
+\DoxyCodeLine{00185\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_parser_produk_a2b26c1bdba3773aa76f12482f43eeb9b}{ParserProduk::isAnAnimalProduct}}(\textcolor{keywordtype}{int}\ ID)}
+\DoxyCodeLine{00186\ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ \mbox{\hyperlink{class_parser_produk_a5e6c243d5b3755c1f1bb1124dfba9348}{IDToIndex}}(ID);}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_parser_produk_a32f7bf4ad6d11c6b3f0421927716ed9e}{productType}}[index].find(\textcolor{stringliteral}{"{}ANIMAL"{}})\ !=\ string::npos)}
+\DoxyCodeLine{00189\ \ \ \ \ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00191\ \ \ \ \ \}}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00193\ \ \ \ \ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00195\ \ \ \ \ \}}
+\DoxyCodeLine{00196\ \}}
+\DoxyCodeLine{00197\ ostream\ \&\mbox{\hyperlink{_parser_produk_8cpp_ac7f59b78328e02c241ea724a7f3c9cc2}{operator<<}}(ostream\ \&os,\ \mbox{\hyperlink{class_parser_produk}{ParserProduk}}\ \&PP)}
+\DoxyCodeLine{00198\ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ PP.\mbox{\hyperlink{class_parser_produk_a0c54b6b5adee153c32ccc25e06f43cc0}{productID}}.size();\ i++)}
+\DoxyCodeLine{00200\ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ os\ <<\ PP.\mbox{\hyperlink{class_parser_produk_a0c54b6b5adee153c32ccc25e06f43cc0}{productID}}[i]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ PP.\mbox{\hyperlink{class_parser_produk_ae143f566e2e2f26ede4a5e67baa0bdaf}{productCode}}[i]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ PP.\mbox{\hyperlink{class_parser_produk_accce8233c2e4e4f42129a48ca5810e52}{productName}}[i]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ PP.\mbox{\hyperlink{class_parser_produk_a32f7bf4ad6d11c6b3f0421927716ed9e}{productType}}[i]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ PP.\mbox{\hyperlink{class_parser_produk_a1875387c314d03c7b1585709b4afcda6}{productOrigin}}[i]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ PP.\mbox{\hyperlink{class_parser_produk_a0482d3f3810e05a8d02214d9cfe2a782}{addedWeight}}[i]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ PP.\mbox{\hyperlink{class_parser_produk_a8373a7c9763317bece82b9f1b974175c}{price}}[i]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00202\ \ \ \ \ \}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00205\ \}}
+
+\end{DoxyCode}

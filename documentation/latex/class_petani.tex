@@ -1,0 +1,225 @@
+\doxysection{Petani Class Reference}
+\hypertarget{class_petani}{}\label{class_petani}\index{Petani@{Petani}}
+
+
+{\ttfamily \#include $<$petani.\+hpp$>$}
+
+Inheritance diagram for Petani\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_petani}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_petani_af66d774a497e105edf0cfeb88ec9523f}{Petani}} ()
+\item 
+\mbox{\hyperlink{class_petani_a63cb52300752215cbf7ed202ce0950f1}{Petani}} (string usn, float guld, int bb)
+\item 
+\mbox{\hyperlink{class_petani_a55036828192157ebabf2b0e36a4a13bb}{Petani}} (const \mbox{\hyperlink{class_petani}{Petani}} \&)
+\item 
+\mbox{\hyperlink{class_petani_a8ee034ac51a1a4ae98fb08403ee14757}{\texorpdfstring{$\sim$}{\string~}\+Petani}} ()
+\item 
+\mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ \mbox{\hyperlink{class_tanaman}{Tanaman}} $>$ \& \mbox{\hyperlink{class_petani_a4d87f6a4d4f6e1446b3db935e20f89f0}{get\+Ladang}} ()
+\item 
+vector$<$ \mbox{\hyperlink{class_tanaman}{Tanaman}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_petani_a7cb8fd9c5afe032954c9f3819a0d2ade}{get\+Daftar\+Tanaman}} ()
+\item 
+void \mbox{\hyperlink{class_petani_a875fe10fe28d3fb4a9896bc4d27ce2fc}{cetak\+Ladang}} ()
+\item 
+void \mbox{\hyperlink{class_petani_a0ec9c5cc7e18d441fa8958f89d75dd66}{tanam}} ()
+\item 
+void \mbox{\hyperlink{class_petani_a313a9f335dd0f29c63991420142e39ab}{panen\+Tani}} ()
+\item 
+void \mbox{\hyperlink{class_petani_a3ff133233507f7aaa2a360a9c60748a2}{beli}} ()
+\item 
+void \mbox{\hyperlink{class_petani_a5ca5ed093538fdfb56e3c1a723288866}{jual}} ()
+\item 
+float \mbox{\hyperlink{class_petani_a210398f01bbd3e62a754605d610b319d}{calculate\+Tax}} ()
+\item 
+int \mbox{\hyperlink{class_petani_af2d78c5b5b1fe320a847e1e05df84529}{count\+Kekayaan\+Ladang}} ()
+\item 
+void \mbox{\hyperlink{class_petani_a000de05fc65aa9c5c2c2f35ffb603c3d}{tambah\+Umur\+Tanaman}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_pemain}{Pemain}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pemain_a03ed776175a10f26c9ee82bf7f032bba}{Pemain}} ()
+\item 
+\mbox{\hyperlink{class_pemain_a1b78b1d416a7c91f3ce3000f4687d08c}{Pemain}} (string usn, float guld, int bb)
+\item 
+\mbox{\hyperlink{class_pemain_ac0de7eac8f47d3553a6b872b0ca206d3}{Pemain}} (const \mbox{\hyperlink{class_pemain}{Pemain}} \&)
+\item 
+\mbox{\hyperlink{class_pemain_a6b0524f9d09a677dff166ca9583218c5}{\texorpdfstring{$\sim$}{\string~}\+Pemain}} ()
+\item 
+string \mbox{\hyperlink{class_pemain_a130cc2f5466df0c4a43e680b9f8184a0}{get\+Tipe}} ()
+\item 
+\mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $>$ \& \mbox{\hyperlink{class_pemain_a9c67bb73e4e60a8abc46666b39698217}{get\+Inventory}} ()
+\item 
+void \mbox{\hyperlink{class_pemain_aea1378e80ab57a5cef372d235453f5a0}{set\+Inv}} (int, int, \mbox{\hyperlink{class_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*})
+\item 
+void \mbox{\hyperlink{class_pemain_a4b791497e4a80576ecba41b8a559b053}{cetak\+Penyimpanan}} ()
+\item 
+void \mbox{\hyperlink{class_pemain_abffc9ee96d69f6154cc0959cd75bf9d3}{makan}} ()
+\item 
+string \mbox{\hyperlink{class_pemain_add9d818b99a06b5a68f99d3315cba785}{get\+Username}} ()
+\item 
+int \mbox{\hyperlink{class_pemain_a09007a204e3a9a07099c687ec6aa9959}{get\+Berat\+Badan}} ()
+\item 
+float \mbox{\hyperlink{class_pemain_a1b06b3e401922156aece6747bfe38e4e}{get\+Gulden}} ()
+\item 
+bool \mbox{\hyperlink{class_pemain_a7ff65870b5b8f23fea65fad97301763f}{operator$<$}} (\mbox{\hyperlink{class_pemain}{Pemain}} \&other)
+\item 
+bool \mbox{\hyperlink{class_pemain_aa5b4bda4e595847a8c1c81b0b186eddd}{operator==}} (\mbox{\hyperlink{class_pemain}{Pemain}} \&other)
+\item 
+float \mbox{\hyperlink{class_pemain_abb5667913e9e943a80bad03a9ab204cc}{get\+Tax\+Rate}} (int KKP)
+\item 
+int \mbox{\hyperlink{class_pemain_a140d89d75a81c5c692e498164a0509f2}{count\+Kekayaan\+Inven}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ \mbox{\hyperlink{class_tanaman}{Tanaman}} $>$ \mbox{\hyperlink{class_petani_aedd947f0ca70eb1886132c07ce117bb8}{ladang}}
+\item 
+vector$<$ \mbox{\hyperlink{class_tanaman}{Tanaman}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_petani_a0ff1d7823123f200e8ba7efc6005ca3a}{daftar\+Tanaman}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_pemain}{Pemain}}}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}
+\item 
+int \mbox{\hyperlink{class_pemain_aedd1711ccfdf4aa8178520954033cc79}{berat\+\_\+badan}}
+\item 
+string \mbox{\hyperlink{class_pemain_a18ab9b7c3afd520b9dad0fd668f9948c}{tipe}}
+\item 
+vector$<$ int $>$ \mbox{\hyperlink{class_pemain_a746c644fcbee40e6f8a564d1ae91b7b5}{owned\+Build}}
+\item 
+vector$<$ \mbox{\hyperlink{class_bangunan}{Bangunan}} $>$ \mbox{\hyperlink{class_pemain_a0e6c2e27686d80dcc93373108ad7dcaf}{owned\+Bangunan}}
+\item 
+\mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $>$ \mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}
+\item 
+string \mbox{\hyperlink{class_pemain_a81c04a010c0de44910d82488b46c5217}{username}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_petani_af66d774a497e105edf0cfeb88ec9523f}\label{class_petani_af66d774a497e105edf0cfeb88ec9523f} 
+\index{Petani@{Petani}!Petani@{Petani}}
+\index{Petani@{Petani}!Petani@{Petani}}
+\doxysubsubsection{\texorpdfstring{Petani()}{Petani()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Petani\+::\+Petani (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_petani_a63cb52300752215cbf7ed202ce0950f1}\label{class_petani_a63cb52300752215cbf7ed202ce0950f1} 
+\index{Petani@{Petani}!Petani@{Petani}}
+\index{Petani@{Petani}!Petani@{Petani}}
+\doxysubsubsection{\texorpdfstring{Petani()}{Petani()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Petani\+::\+Petani (\begin{DoxyParamCaption}\item[{string}]{usn,  }\item[{float}]{guld,  }\item[{int}]{bb }\end{DoxyParamCaption})}
+
+\Hypertarget{class_petani_a55036828192157ebabf2b0e36a4a13bb}\label{class_petani_a55036828192157ebabf2b0e36a4a13bb} 
+\index{Petani@{Petani}!Petani@{Petani}}
+\index{Petani@{Petani}!Petani@{Petani}}
+\doxysubsubsection{\texorpdfstring{Petani()}{Petani()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Petani\+::\+Petani (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_petani}{Petani}} \&}]{other }\end{DoxyParamCaption})}
+
+\Hypertarget{class_petani_a8ee034ac51a1a4ae98fb08403ee14757}\label{class_petani_a8ee034ac51a1a4ae98fb08403ee14757} 
+\index{Petani@{Petani}!````~Petani@{\texorpdfstring{$\sim$}{\string~}Petani}}
+\index{````~Petani@{\texorpdfstring{$\sim$}{\string~}Petani}!Petani@{Petani}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Petani()}{\string~Petani()}}
+{\footnotesize\ttfamily Petani\+::\texorpdfstring{$\sim$}{\string~}\+Petani (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_petani_a3ff133233507f7aaa2a360a9c60748a2}\label{class_petani_a3ff133233507f7aaa2a360a9c60748a2} 
+\index{Petani@{Petani}!beli@{beli}}
+\index{beli@{beli}!Petani@{Petani}}
+\doxysubsubsection{\texorpdfstring{beli()}{beli()}}
+{\footnotesize\ttfamily void Petani\+::beli (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_pemain_a1bb2169d8048c901067eb197f1a3e6f0}{Pemain}}.
+
+\Hypertarget{class_petani_a210398f01bbd3e62a754605d610b319d}\label{class_petani_a210398f01bbd3e62a754605d610b319d} 
+\index{Petani@{Petani}!calculateTax@{calculateTax}}
+\index{calculateTax@{calculateTax}!Petani@{Petani}}
+\doxysubsubsection{\texorpdfstring{calculateTax()}{calculateTax()}}
+{\footnotesize\ttfamily float Petani\+::calculate\+Tax (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_pemain_a9093cf333dba8d8918809af134557d21}{Pemain}}.
+
+\Hypertarget{class_petani_a875fe10fe28d3fb4a9896bc4d27ce2fc}\label{class_petani_a875fe10fe28d3fb4a9896bc4d27ce2fc} 
+\index{Petani@{Petani}!cetakLadang@{cetakLadang}}
+\index{cetakLadang@{cetakLadang}!Petani@{Petani}}
+\doxysubsubsection{\texorpdfstring{cetakLadang()}{cetakLadang()}}
+{\footnotesize\ttfamily void Petani\+::cetak\+Ladang (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_petani_af2d78c5b5b1fe320a847e1e05df84529}\label{class_petani_af2d78c5b5b1fe320a847e1e05df84529} 
+\index{Petani@{Petani}!countKekayaanLadang@{countKekayaanLadang}}
+\index{countKekayaanLadang@{countKekayaanLadang}!Petani@{Petani}}
+\doxysubsubsection{\texorpdfstring{countKekayaanLadang()}{countKekayaanLadang()}}
+{\footnotesize\ttfamily int Petani\+::count\+Kekayaan\+Ladang (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_petani_a7cb8fd9c5afe032954c9f3819a0d2ade}\label{class_petani_a7cb8fd9c5afe032954c9f3819a0d2ade} 
+\index{Petani@{Petani}!getDaftarTanaman@{getDaftarTanaman}}
+\index{getDaftarTanaman@{getDaftarTanaman}!Petani@{Petani}}
+\doxysubsubsection{\texorpdfstring{getDaftarTanaman()}{getDaftarTanaman()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_tanaman}{Tanaman}} \texorpdfstring{$\ast$}{*} $>$ \& Petani\+::get\+Daftar\+Tanaman (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_petani_a4d87f6a4d4f6e1446b3db935e20f89f0}\label{class_petani_a4d87f6a4d4f6e1446b3db935e20f89f0} 
+\index{Petani@{Petani}!getLadang@{getLadang}}
+\index{getLadang@{getLadang}!Petani@{Petani}}
+\doxysubsubsection{\texorpdfstring{getLadang()}{getLadang()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ \mbox{\hyperlink{class_tanaman}{Tanaman}} $>$ \& Petani\+::get\+Ladang (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_petani_a5ca5ed093538fdfb56e3c1a723288866}\label{class_petani_a5ca5ed093538fdfb56e3c1a723288866} 
+\index{Petani@{Petani}!jual@{jual}}
+\index{jual@{jual}!Petani@{Petani}}
+\doxysubsubsection{\texorpdfstring{jual()}{jual()}}
+{\footnotesize\ttfamily void Petani\+::jual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_pemain_af0fe9802178ec237e636198900776398}{Pemain}}.
+
+\Hypertarget{class_petani_a313a9f335dd0f29c63991420142e39ab}\label{class_petani_a313a9f335dd0f29c63991420142e39ab} 
+\index{Petani@{Petani}!panenTani@{panenTani}}
+\index{panenTani@{panenTani}!Petani@{Petani}}
+\doxysubsubsection{\texorpdfstring{panenTani()}{panenTani()}}
+{\footnotesize\ttfamily void Petani\+::panen\+Tani (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_petani_a000de05fc65aa9c5c2c2f35ffb603c3d}\label{class_petani_a000de05fc65aa9c5c2c2f35ffb603c3d} 
+\index{Petani@{Petani}!tambahUmurTanaman@{tambahUmurTanaman}}
+\index{tambahUmurTanaman@{tambahUmurTanaman}!Petani@{Petani}}
+\doxysubsubsection{\texorpdfstring{tambahUmurTanaman()}{tambahUmurTanaman()}}
+{\footnotesize\ttfamily void Petani\+::tambah\+Umur\+Tanaman (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_petani_a0ec9c5cc7e18d441fa8958f89d75dd66}\label{class_petani_a0ec9c5cc7e18d441fa8958f89d75dd66} 
+\index{Petani@{Petani}!tanam@{tanam}}
+\index{tanam@{tanam}!Petani@{Petani}}
+\doxysubsubsection{\texorpdfstring{tanam()}{tanam()}}
+{\footnotesize\ttfamily void Petani\+::tanam (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_petani_a0ff1d7823123f200e8ba7efc6005ca3a}\label{class_petani_a0ff1d7823123f200e8ba7efc6005ca3a} 
+\index{Petani@{Petani}!daftarTanaman@{daftarTanaman}}
+\index{daftarTanaman@{daftarTanaman}!Petani@{Petani}}
+\doxysubsubsection{\texorpdfstring{daftarTanaman}{daftarTanaman}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_tanaman}{Tanaman}}\texorpdfstring{$\ast$}{*}$>$ Petani\+::daftar\+Tanaman\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_petani_aedd947f0ca70eb1886132c07ce117bb8}\label{class_petani_aedd947f0ca70eb1886132c07ce117bb8} 
+\index{Petani@{Petani}!ladang@{ladang}}
+\index{ladang@{ladang}!Petani@{Petani}}
+\doxysubsubsection{\texorpdfstring{ladang}{ladang}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$\mbox{\hyperlink{class_tanaman}{Tanaman}}$>$ Petani\+::ladang\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/\+Header/\mbox{\hyperlink{petani_8hpp}{petani.\+hpp}}\item 
+D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/\+Implementation/\mbox{\hyperlink{petani_8cpp}{petani.\+cpp}}\end{DoxyCompactItemize}

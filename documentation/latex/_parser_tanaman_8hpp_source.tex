@@ -1,0 +1,44 @@
+\doxysection{Parser\+Tanaman.\+hpp}
+\hypertarget{_parser_tanaman_8hpp_source}{}\label{_parser_tanaman_8hpp_source}\index{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Header/ParserTanaman.hpp@{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Header/ParserTanaman.hpp}}
+\mbox{\hyperlink{_parser_tanaman_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PARSERTANAMAN\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PARSERTANAMAN\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_base_parser_8hpp}{BaseParser.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00006\ \textcolor{comment}{//Parser\ khusus\ untuk\ membaca\ file\ konfigurasi\ tanaman.}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_parser_tanaman}{ParserTanaman}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_parser}{BaseParser}}\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ vector<int>\ \mbox{\hyperlink{class_parser_tanaman_a2fe8e53961d99030c9fe054a44169d63}{plantID}};}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ vector<string>\ \mbox{\hyperlink{class_parser_tanaman_a02c6d939821a6e9a1f1d361117e3c206}{plantCode}};}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ vector<string>\ \mbox{\hyperlink{class_parser_tanaman_a5d051355d0b1c14da4ea7da3ec3f7d58}{plantName}};}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ vector<string>\ \mbox{\hyperlink{class_parser_tanaman_a4aab52804d03c6da0ed74e8bdc5b60c9}{plantType}};}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ vector<int>\ \mbox{\hyperlink{class_parser_tanaman_a6c9f21a69ceab8258f2b2a0eeadbce14}{harvestDuration}};}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ vector<int>\ \mbox{\hyperlink{class_parser_tanaman_a55288518f05fb4bf159e1d133c37ae1a}{price}};}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ vector<string>\ \mbox{\hyperlink{class_parser_tanaman_ac105f9f2c38c7560a29c28a2a8440082}{validPlantTypes}};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ map<int,int>\ \mbox{\hyperlink{class_parser_tanaman_a095d89231374e277d874e75e9e33b077}{IndexToIDMap}};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ map<int,int>\ \mbox{\hyperlink{class_parser_tanaman_aae13310f0d497258c9b5e238084c8642}{IDToIndexMap}};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parser_tanaman_a7a47473fdd1baee53864707c6ee2224c}{ParserTanaman}}()\{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>validPlantTypes\ =\ \{\textcolor{stringliteral}{"{}MATERIAL\_PLANT"{}},\textcolor{stringliteral}{"{}FRUIT\_PLANT"{}}\};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parser_tanaman_a34a8f760e6626767baac2ab1541cb284}{\string~ParserTanaman}}()\{\}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_parser_tanaman_acb455ab07e372e29deed54d8118ac2af}{ParseFile}}(\textcolor{keywordtype}{string}\ fileDirectory);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_parser_tanaman_a0611b4a5a224676f5dcbc4450ebb0664}{ClearParserData}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_tanaman_a1c63807592849face1d746ec5cc057af}{getID}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_parser_tanaman_af919666b0c0b43976bd9b985109528c7}{getCode}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_parser_tanaman_af7e2a57167932bdb02439d85d0db43c5}{getName}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_parser_tanaman_adb147a7db00484a322725b73beb495bd}{getType}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_tanaman_a9692f8cf2989d675d34ff02aea4511b9}{getHarvestDuration}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_tanaman_a50036be66ab50ec7344867acf36cdbb7}{getPrice}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_tanaman_ad73600e7bd4b1b525e8d3c3058156f0f}{getConfigSize}}();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_tanaman_a4c0262bd3126c63a04465b4a36cfdc4d}{convertCodeToID}}(\textcolor{keywordtype}{string}\ Code);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_tanaman_a1b93794ae182d2c66559513a3d5ccae6}{convertNameToID}}(\textcolor{keywordtype}{string}\ Name);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_tanaman_a9be3c1bd4a24d84ecc4cb7385ca2654a}{indexToID}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_tanaman_a470394d8ebe43c98d2d884f2b606f9fe}{IDToIndex}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ ostream\ \&\mbox{\hyperlink{class_parser_tanaman_af9bf52455354985ecc26567ef3e440ca}{operator<<}}(ostream\ \&os,\ \mbox{\hyperlink{class_parser_tanaman}{ParserTanaman}}\ \&PT);\ \textcolor{comment}{//untuk\ debugging,\ pake\ aja}}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

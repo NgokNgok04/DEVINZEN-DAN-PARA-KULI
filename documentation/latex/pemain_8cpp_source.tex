@@ -1,0 +1,258 @@
+\doxysection{pemain.\+cpp}
+\hypertarget{pemain_8cpp_source}{}\label{pemain_8cpp_source}\index{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Implementation/pemain.cpp@{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Implementation/pemain.cpp}}
+\mbox{\hyperlink{pemain_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pemain_8hpp}{../Header/pemain.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_misc_8hpp}{../Header/ParserMisc.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \mbox{\hyperlink{class_pemain_a03ed776175a10f26c9ee82bf7f032bba}{Pemain::Pemain}}()}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{int}\ inventoryRows\ =\ \mbox{\hyperlink{class_parser_misc_a671aef5f54ab29fba8b912c2f1ea0c22}{ParserMisc::getStorageSize}}().first;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ inventoryCols\ =\ \mbox{\hyperlink{class_parser_misc_a671aef5f54ab29fba8b912c2f1ea0c22}{ParserMisc::getStorageSize}}().second;}
+\DoxyCodeLine{00012\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ =\ 50;}
+\DoxyCodeLine{00013\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_aedd1711ccfdf4aa8178520954033cc79}{berat\_badan}}\ =\ 40;}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_matrix_area}{MatrixArea<GameObject>}}\ inv(inventoryRows,\ inventoryCols);}
+\DoxyCodeLine{00015\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}\ =\ inv;}
+\DoxyCodeLine{00016\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_a746c644fcbee40e6f8a564d1ae91b7b5}{ownedBuild}}\ =\ \{0,\ 0,\ 0\};}
+\DoxyCodeLine{00017\ \}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \mbox{\hyperlink{class_pemain_a03ed776175a10f26c9ee82bf7f032bba}{Pemain::Pemain}}(\textcolor{keywordtype}{string}\ usn,\ \textcolor{keywordtype}{float}\ guld,\ \textcolor{keywordtype}{int}\ bb)}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ =\ guld;}
+\DoxyCodeLine{00022\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_aedd1711ccfdf4aa8178520954033cc79}{berat\_badan}}\ =\ bb;}
+\DoxyCodeLine{00023\ \ \ \ \ pair<int,\ int>\ sizeInven\ =\ \mbox{\hyperlink{class_parser_misc_a671aef5f54ab29fba8b912c2f1ea0c22}{ParserMisc::getStorageSize}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_matrix_area}{MatrixArea<GameObject>}}\ inv(sizeInven.first,\ sizeInven.second);}
+\DoxyCodeLine{00025\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}\ =\ inv;}
+\DoxyCodeLine{00026\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_a81c04a010c0de44910d82488b46c5217}{username}}\ =\ usn;}
+\DoxyCodeLine{00027\ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \mbox{\hyperlink{class_pemain_a03ed776175a10f26c9ee82bf7f032bba}{Pemain::Pemain}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_pemain}{Pemain}}\ \&other)\ \textcolor{comment}{//\ not\ sure}}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ =\ other.\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}};}
+\DoxyCodeLine{00032\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_aedd1711ccfdf4aa8178520954033cc79}{berat\_badan}}\ =\ other.\mbox{\hyperlink{class_pemain_aedd1711ccfdf4aa8178520954033cc79}{berat\_badan}};}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_matrix_area}{MatrixArea<GameObject>}}\ n(other.\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}});}
+\DoxyCodeLine{00034\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}\ =\ n;}
+\DoxyCodeLine{00035\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_a746c644fcbee40e6f8a564d1ae91b7b5}{ownedBuild}}\ =\ other.\mbox{\hyperlink{class_pemain_a746c644fcbee40e6f8a564d1ae91b7b5}{ownedBuild}};}
+\DoxyCodeLine{00036\ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \mbox{\hyperlink{class_pemain_a6b0524f9d09a677dff166ca9583218c5}{Pemain::\string~Pemain}}()}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_afca3f8410761410f274d2eec2007424c}{\string~MatrixArea}}();}
+\DoxyCodeLine{00041\ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_pemain_a130cc2f5466df0c4a43e680b9f8184a0}{Pemain::getTipe}}()}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{class_pemain_a18ab9b7c3afd520b9dad0fd668f9948c}{tipe}};}
+\DoxyCodeLine{00046\ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \mbox{\hyperlink{class_matrix_area}{MatrixArea<GameObject>}}\ \&\mbox{\hyperlink{class_pemain_a9c67bb73e4e60a8abc46666b39698217}{Pemain::getInventory}}()}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}};}
+\DoxyCodeLine{00051\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pemain_a4b791497e4a80576ecba41b8a559b053}{Pemain::cetakPenyimpanan}}()}
+\DoxyCodeLine{00054\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_ab9cfdac458284404e629f76d1d0c53bc}{displayObject}}();}
+\DoxyCodeLine{00056\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_a765241326032be46243cf838cd781860}{displayRemainderSlot}}();}
+\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pemain_abffc9ee96d69f6154cc0959cd75bf9d3}{Pemain::makan}}()\ \textcolor{comment}{//\ butuh\ Catch\ EmptyInventory\ n\ NoFoodInInventory}}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_a2c1711c89d2b58e53dacea373648ca24}{isEmpty}}())}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_empty_inventory}{EmptyInventory}}();}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ foundEatable\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_product}{Product}}\ *itemInSearch;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_a3f26a84d6f44c3cdb8d670a66ee37e62}{getRows}}();\ i++)}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_ad7b2c7109515749a076d862b28d4c6d7}{getCols}}();\ j++)}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(i\ +\ 1,\ j\ +\ 1)\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ this-\/>inventory.getElement(i\ +\ 1,\ j\ +\ 1)-\/>\mbox{\hyperlink{class_game_object_a4af40450cb24b0c0b4c7c129afee3e78}{getTipeObject}}()\ ==\ \textcolor{stringliteral}{"{}PRODUCT"{}})}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ itemInSearch\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_product}{Product}}\ *\textcolor{keyword}{>}(this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(i\ +\ 1,\ j\ +\ 1));}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (itemInSearch-\/>\mbox{\hyperlink{class_product_a091affbbb5a427cfa1461baa4496a284}{getAddedWeight}}()\ !=\ 0)}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ foundEatable\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (foundEatable)}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!foundEatable)}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_no_food_in_inventory}{NoFoodInInventory}}();}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Pilih\ makanan\ dari\ penyimpanan"{}}\ <<\ endl;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_ab9cfdac458284404e629f76d1d0c53bc}{displayObject}}();}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ slot;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ cout\ <<\ "{}Slot:\ "{};}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ cin\ >>\ slot;}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ pair<int,\ int>\ pos;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isValid\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!isValid)}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Slot:\ "{}};}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ cin\ >>\ slot;}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pos\ =\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_ad1fc38bfe6fdb2b822cd53db1bea9dcf}{getPositionFromSlot}}(slot);}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(pos.first,\ pos.second)\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_empty_food_slot}{EmptyFoodSlot}}();}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(pos.first,\ pos.second)-\/>\mbox{\hyperlink{class_game_object_a4af40450cb24b0c0b4c7c129afee3e78}{getTipeObject}}()\ !=\ \textcolor{stringliteral}{"{}PRODUCT"{}})}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_not_eatable_slot}{NotEatableSlot}}();}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_product}{Product}}\ *itemToEat\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_product}{Product}}\ *\textcolor{keyword}{>}(this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(pos.first,\ pos.second));}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (itemToEat-\/>\mbox{\hyperlink{class_product_a091affbbb5a427cfa1461baa4496a284}{getAddedWeight}}()\ ==\ 0)}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_not_eatable_slot}{NotEatableSlot}}();}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_aedd1711ccfdf4aa8178520954033cc79}{berat\_badan}}\ +=\ itemToEat-\/>\mbox{\hyperlink{class_product_a091affbbb5a427cfa1461baa4496a284}{getAddedWeight}}();}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(pos.first,\ pos.second);}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_ac2008a4d99790a229c583c9f242c117d}{deleteElement}}(pos.first,\ pos.second);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Dengan\ lahapnya,\ kamu\ memakan\ hidangan\ itu"{}}\ <<\ endl;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Alhasil,\ berat\ badan\ kamu\ naik\ menjadi\ "{}}\ <<\ this-\/>\mbox{\hyperlink{class_pemain_aedd1711ccfdf4aa8178520954033cc79}{berat\_badan}}\ <<\ endl;}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_invalid_response_toko}{InvalidResponseToko}}\ err)}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ err.\mbox{\hyperlink{class_invalid_response_toko_afb454f6d9b2d6a911b8dc51480fd6e92}{what}}();}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_empty_food_slot}{EmptyFoodSlot}}\ err)}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ endl}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Kamu\ mengambil\ harapan\ kosong\ dari\ penyimpanan."{}}\ <<\ endl;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_not_eatable_slot}{NotEatableSlot}}\ err)}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ endl}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Apa\ yang\ kamu\ lakukan?!\ Kamu\ mencoba\ untuk\ memakan\ itu?!"{}}\ <<\ endl;}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \ \ \ \ \}}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_base_exception}{BaseException}}\ \&e)}
+\DoxyCodeLine{00157\ \ \ \ \ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ cout\ <<\ e.\mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}()\ <<\ endl;}
+\DoxyCodeLine{00159\ \ \ \ \ \}}
+\DoxyCodeLine{00160\ \}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_pemain_add9d818b99a06b5a68f99d3315cba785}{Pemain::getUsername}}()}
+\DoxyCodeLine{00163\ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{class_pemain_a81c04a010c0de44910d82488b46c5217}{username}};}
+\DoxyCodeLine{00165\ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_pemain_a09007a204e3a9a07099c687ec6aa9959}{Pemain::getBeratBadan}}()}
+\DoxyCodeLine{00168\ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{class_pemain_aedd1711ccfdf4aa8178520954033cc79}{berat\_badan}};}
+\DoxyCodeLine{00170\ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_pemain_a7ff65870b5b8f23fea65fad97301763f}{Pemain::operator<}}(\mbox{\hyperlink{class_pemain}{Pemain}}\ \&other)}
+\DoxyCodeLine{00173\ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{string}\ actualUsername1\ =\ this-\/>\mbox{\hyperlink{class_pemain_add9d818b99a06b5a68f99d3315cba785}{getUsername}}();}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{string}\ actualUsername2\ =\ other.\mbox{\hyperlink{class_pemain_add9d818b99a06b5a68f99d3315cba785}{getUsername}}();}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{string}\ lowerUsername1\ =\ actualUsername1;}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{string}\ lowerUsername2\ =\ actualUsername2;}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&x\ :\ lowerUsername1)}
+\DoxyCodeLine{00179\ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ x\ =\ tolower(x);}
+\DoxyCodeLine{00181\ \ \ \ \ \}}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&x\ :\ lowerUsername2)}
+\DoxyCodeLine{00183\ \ \ \ \ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ x\ =\ tolower(x);}
+\DoxyCodeLine{00185\ \ \ \ \ \}}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordflow}{if}\ (lowerUsername1\ ==\ lowerUsername2)}
+\DoxyCodeLine{00187\ \ \ \ \ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ actualUsername1\ <\ actualUsername2;}
+\DoxyCodeLine{00189\ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00191\ \ \ \ \ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ lowerUsername1\ <\ lowerUsername2;}
+\DoxyCodeLine{00193\ \ \ \ \ \}}
+\DoxyCodeLine{00194\ \}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_pemain_aa5b4bda4e595847a8c1c81b0b186eddd}{Pemain::operator==}}(\mbox{\hyperlink{class_pemain}{Pemain}}\ \&other)}
+\DoxyCodeLine{00197\ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{class_pemain_add9d818b99a06b5a68f99d3315cba785}{getUsername}}()\ ==\ other.\mbox{\hyperlink{class_pemain_add9d818b99a06b5a68f99d3315cba785}{getUsername}}();}
+\DoxyCodeLine{00199\ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pemain_aea1378e80ab57a5cef372d235453f5a0}{Pemain::setInv}}(\textcolor{keywordtype}{int}\ rows,\ \textcolor{keywordtype}{int}\ cols,\ \mbox{\hyperlink{class_game_object}{GameObject}}\ *a)}
+\DoxyCodeLine{00202\ \{}
+\DoxyCodeLine{00203\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acbbd0bda8cf554479e02d33cf2a7af56}{setElement}}(rows,\ cols,\ a);}
+\DoxyCodeLine{00204\ \}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_pemain_a140d89d75a81c5c692e498164a0509f2}{Pemain::countKekayaanInven}}()}
+\DoxyCodeLine{00207\ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordtype}{int}\ sum\ =\ 0;}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ \mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_a3f26a84d6f44c3cdb8d670a66ee37e62}{getRows}}();\ i++)}
+\DoxyCodeLine{00210\ \ \ \ \ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 1;\ j\ <=\ \mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_ad7b2c7109515749a076d862b28d4c6d7}{getCols}}();\ j++)}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_object}{GameObject}}\ *ptr\ =\ \mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(i,\ j);}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ptr\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ cout<<ptr-\/>getName()<<"{}\ "{}<<ptr-\/>getPrice()<<endl;}}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sum\ +=\ ptr-\/>\mbox{\hyperlink{class_game_object_abd7b06f9406af998e0cdc1a9599bed0a}{getPrice}}();}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00220\ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{comment}{//\ cout<<"{}Total\ Inven\ "{}<<sum<<endl;}}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{return}\ sum;}
+\DoxyCodeLine{00223\ \}}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_pemain_abb5667913e9e943a80bad03a9ab204cc}{Pemain::getTaxRate}}(\textcolor{keywordtype}{int}\ KKP)}
+\DoxyCodeLine{00226\ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keywordflow}{if}\ (KKP\ <=\ 6)}
+\DoxyCodeLine{00228\ \ \ \ \ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.05;}
+\DoxyCodeLine{00230\ \ \ \ \ \}}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (KKP\ <=\ 25)}
+\DoxyCodeLine{00232\ \ \ \ \ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.15;}
+\DoxyCodeLine{00234\ \ \ \ \ \}}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (KKP\ <=\ 50)}
+\DoxyCodeLine{00236\ \ \ \ \ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.25;}
+\DoxyCodeLine{00238\ \ \ \ \ \}}
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (KKP\ <=\ 500)}
+\DoxyCodeLine{00240\ \ \ \ \ \{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.3;}
+\DoxyCodeLine{00242\ \ \ \ \ \}}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00244\ \ \ \ \ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.35;}
+\DoxyCodeLine{00246\ \ \ \ \ \}}
+\DoxyCodeLine{00247\ \}}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_pemain_a1b06b3e401922156aece6747bfe38e4e}{Pemain::getGulden}}()}
+\DoxyCodeLine{00250\ \{}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}};}
+\DoxyCodeLine{00252\ \}}
+
+\end{DoxyCode}

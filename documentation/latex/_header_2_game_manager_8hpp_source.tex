@@ -1,0 +1,59 @@
+\doxysection{Game\+Manager.\+hpp}
+\hypertarget{_header_2_game_manager_8hpp_source}{}\label{_header_2_game_manager_8hpp_source}\index{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Header/GameManager.hpp@{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Header/GameManager.hpp}}
+\mbox{\hyperlink{_header_2_game_manager_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GAMEMANAGER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GAMEMANAGER\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_hewan_8hpp}{ParserHewan.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_misc_8hpp}{ParserMisc.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_tanaman_8hpp}{ParserTanaman.hpp}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_produk_8hpp}{ParserProduk.hpp}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_resep_8hpp}{ParserResep.hpp}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{petani_8hpp}{petani.hpp}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{peternak_8hpp}{peternak.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{walikota_8hpp}{walikota.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_bangunan_8hpp}{Bangunan.hpp}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_toko_8hpp}{Toko.hpp}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_manager}{GameManager}}\{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_manager_a70cce8ca92c6d0dd7eb90148e2a1f6d5}{winningMoney}};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_manager_a430e805d583fe05cb1571f5f8b28d01b}{winningWeight}};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ pair<int,int>\ \mbox{\hyperlink{class_game_manager_af57be768f23222b8b9492a74cc84b851}{storageSize}};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ pair<int,int>\ \mbox{\hyperlink{class_game_manager_a05dd88e7be2595138ae29b8d55b1aed8}{fieldSize}};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ pair<int,int>\ \mbox{\hyperlink{class_game_manager_a75c85e13a71c342b8659357405edd3c2}{farmSize}};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ vector<Pemain*>\ \mbox{\hyperlink{class_game_manager_a56393ba26a05d73c9aa9cfc712acca31}{playerList}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_manager_a2331697f4af41fdef78ba575f17da3f5}{currentPlayerIndex}};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_manager_aa23dd00eb3264b12e000a0c594e37911}{playerAmount}};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pemain}{Pemain}}*\ \mbox{\hyperlink{class_game_manager_acaf7a13928a5cc3059323f5d93bb72e2}{Winner}};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_manager_a55dfa84c59c0a410b9ac6c08eb22b1e1}{rotatePlayer}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{comment}{//TODO:}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{//1.\ ROTASI\ PEMAIN\ (done)}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{comment}{//2.\ VOID\ NEXT}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//3.\ VOID\ UNTUK\ MENENTUKAN\ PEMENANG}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//4.\ LIST\ PEMAIN}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_ab4377893a2ff982bd7be8524aa21ef62}{GameManager}}(\mbox{\hyperlink{class_parser_misc}{ParserMisc}});}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_aaae63e38e358379c1fe507c5197a8435}{\string~GameManager}}()\{\}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_manager_a82b2bda94eb0febf2334a8ae53cf7440}{Debug}}();}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_manager_a427ef53c0b786a949ba955094928c9af}{insertNewPlayer}}(\mbox{\hyperlink{class_pemain}{Pemain}}*);\textcolor{comment}{//masukkan\ pemain\ baru}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_manager_a35b6a1b3f07d514a4c3df4394bd6ba46}{PlayerDebug}}();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_manager_a619f67ae7f831134acefe1677d56c201}{Next}}();}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_manager_a44ae324f1eae39de08075dfc91c2b856}{setupGame}}();}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_manager_a9de1682544087e40df12ff6dd74b85d9}{prosesInput}}(\textcolor{keywordtype}{string});}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_manager_ae0bb0614a3406cf09e253c09283f04ee}{checkWinner}}();\ \textcolor{comment}{//TODO:UNCOMMENT\ THIS\ METHOD\ AFTER\ MERGING}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pemain}{Pemain}}*\ \mbox{\hyperlink{class_game_manager_a8bdd59adb76d6ea9da6f5646b848ae53}{getWinner}}();\ \textcolor{comment}{//dapatkan\ pemenang}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_game_manager_a72e4364402dc2bb60544e88e8af44d9f}{getWinnerName}}();\ \textcolor{comment}{//dapatkan\ nama\ pemenang}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pemain}{Pemain}}*\ \mbox{\hyperlink{class_game_manager_a010d841926713f5a8b6f240f54bd80c5}{getCurrentPlayer}}();\ \textcolor{comment}{//dapatkan\ pemain\ yang\ bermain\ sekarang}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_game_manager_a7bcb64cabda7e11f7cf0c022432c99d7}{getCurrentPlayerName}}();\ \textcolor{comment}{//dapatkan\ nama\ pemain\ yang\ bermain\ sekarang}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_manager_a78a53a53532eb047211c5efcf2c10884}{clearPlayerList}}();\ \textcolor{comment}{//membebaskan\ semua\ pointer\ pemain\ di\ playerlist}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ vector<Pemain\ *>\ \mbox{\hyperlink{class_game_manager_ad98af464b02997e3cfc0efd099dc6570}{getPlayerList}}();\ \textcolor{comment}{//mendapatkan\ list\ pemain}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_manager_ad80e9ff17b2d785461c33d34a83764f2}{simpan}}();}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_manager_afc0033fbd83d71be3e04a8de19e24596}{muat}}();}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,55 @@
+\doxysection{Product.\+cpp}
+\hypertarget{_product_8cpp_source}{}\label{_product_8cpp_source}\index{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Implementation/Product.cpp@{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Implementation/Product.cpp}}
+\mbox{\hyperlink{_product_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_product_8hpp}{../Header/Product.hpp}}"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \mbox{\hyperlink{class_product_a847c1d85e67ce387166a597579a55135}{Product::Product}}(\textcolor{keywordtype}{int}\ idKonfig,\ \textcolor{keywordtype}{bool}\ fromHewan)}
+\DoxyCodeLine{00004\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \mbox{\hyperlink{class_game_object_a426ad06f8a727af4a0445b42add6498f}{setID}}(idKonfig);}
+\DoxyCodeLine{00006\ \ \ \ \ \mbox{\hyperlink{class_game_object_ab463519e996c0d56bfffe0bb680c815d}{setKode}}(\mbox{\hyperlink{class_parser_produk_a3ebbe22ffdafe6928a44ed9ad45a4b48}{ParserProduk::getCode}}(idKonfig));}
+\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{class_game_object_a4f190a9192abcc7e6b77bc797e3c5bdc}{setName}}(\mbox{\hyperlink{class_parser_produk_a86c36471129c66e16d2115cb1f9e3ee8}{ParserProduk::getName}}(idKonfig));}
+\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{class_game_object_aa8bed101451259441aa1596832b19b64}{setPrice}}(\mbox{\hyperlink{class_parser_produk_aad5ceaf1e039d645f5b1190ec5eda890}{ParserProduk::getPrice}}(idKonfig));}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_game_object_a9574464c79ce8fa0032d98ac4795547b}{setTipeObject}}(\textcolor{stringliteral}{"{}PRODUCT"{}});}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_product_ace4dcea8c2c91295212287ee5c86036a}{type}}\ =\ \mbox{\hyperlink{class_parser_produk_a6cfb4c47d64b1b4edf76b7214429e004}{ParserProduk::getType}}(idKonfig);}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_product_af6ec4798bc849e3e340d913dc80bc280}{addedWeight}}\ =\ \mbox{\hyperlink{class_parser_produk_ab1413f3313870db1d271db719b170bf6}{ParserProduk::getAddedWeight}}(idKonfig);}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_product_ae2db4706310000860da288b5e6edc5dd}{origin}}\ =\ \mbox{\hyperlink{class_parser_produk_a5adba382b0b4a8b35bd60d816ca707fc}{ParserProduk::getOrigin}}(idKonfig);}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_product_a81f05e2c0db056501d582c08a1aa0629}{isFromHewan}}\ =\ \mbox{\hyperlink{class_product_a7e844f64142fda025c26f29a94778c8d}{fromHewan}};}
+\DoxyCodeLine{00014\ \}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_product_a7e844f64142fda025c26f29a94778c8d}{Product::fromHewan}}()}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_product_a81f05e2c0db056501d582c08a1aa0629}{isFromHewan}};}
+\DoxyCodeLine{00019\ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_product_a091affbbb5a427cfa1461baa4496a284}{Product::getAddedWeight}}()}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_product_af6ec4798bc849e3e340d913dc80bc280}{addedWeight}};}
+\DoxyCodeLine{00024\ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_product_ae0be7108d303f61efb2a7907ce2fc5cb}{Product::getOrigin}}()}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_product_ae2db4706310000860da288b5e6edc5dd}{origin}};}
+\DoxyCodeLine{00029\ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_product_a2fec1e967e6a9954fcfe6c22bbcf65a3}{Product::getType}}()}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_product_ace4dcea8c2c91295212287ee5c86036a}{type}};}
+\DoxyCodeLine{00034\ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \mbox{\hyperlink{class_product}{Product}}\ \&\mbox{\hyperlink{class_product_a8fc4034b949c3a6d1dfee69775abb7b3}{Product::operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_product}{Product}}\ \&other)}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_game_object_a2e1dc922ef5e0dff89e148d35ac6b002}{GameObject::operator=}}(other);}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_product_ace4dcea8c2c91295212287ee5c86036a}{type}}\ =\ other.\mbox{\hyperlink{class_product_ace4dcea8c2c91295212287ee5c86036a}{type}};}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_product_a81f05e2c0db056501d582c08a1aa0629}{isFromHewan}}\ =\ other.\mbox{\hyperlink{class_product_a81f05e2c0db056501d582c08a1aa0629}{isFromHewan}};}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_product_af6ec4798bc849e3e340d913dc80bc280}{addedWeight}}\ =\ other.\mbox{\hyperlink{class_product_af6ec4798bc849e3e340d913dc80bc280}{addedWeight}};}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_product_ae2db4706310000860da288b5e6edc5dd}{origin}}\ =\ other.\mbox{\hyperlink{class_product_ae2db4706310000860da288b5e6edc5dd}{origin}};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00044\ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_product_a6ea9cb9cb5170f11442090ff111e3a8a}{Product::operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_product}{Product}}\ \&other)}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_game_object_a4ec9a10e4375b4e47d87359e74d81afb}{GameObject::operator==}}(other);}
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}

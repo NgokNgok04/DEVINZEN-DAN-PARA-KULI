@@ -1,0 +1,46 @@
+\doxysection{Game\+Manager.\+hpp}
+\hypertarget{gamemanager_2_game_manager_8hpp_source}{}\label{gamemanager_2_game_manager_8hpp_source}\index{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/gamemanager/GameManager.hpp@{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/gamemanager/GameManager.hpp}}
+\mbox{\hyperlink{gamemanager_2_game_manager_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GAMEMANAGER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GAMEMANAGER\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_hewan_8hpp}{ParserHewan.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_misc_8hpp}{ParserMisc.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_tanaman_8hpp}{ParserTanaman.hpp}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_produk_8hpp}{ParserProduk.hpp}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_resep_8hpp}{ParserResep.hpp}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_manager}{GameManager}}\{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_manager_a70cce8ca92c6d0dd7eb90148e2a1f6d5}{winningMoney}};}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_manager_a430e805d583fe05cb1571f5f8b28d01b}{winningWeight}};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ pair<int,int>\ \mbox{\hyperlink{class_game_manager_af57be768f23222b8b9492a74cc84b851}{storageSize}};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ pair<int,int>\ \mbox{\hyperlink{class_game_manager_a05dd88e7be2595138ae29b8d55b1aed8}{fieldSize}};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ pair<int,int>\ \mbox{\hyperlink{class_game_manager_a75c85e13a71c342b8659357405edd3c2}{farmSize}};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ map<string,\ vector<string>\ >\ \mbox{\hyperlink{class_game_manager_a639dc055ab26c60c82a23d61ec5fe795}{productOriginConversion}};\ \textcolor{comment}{//konversi\ tanaman/hewan\ menjadi\ produk}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{comment}{//queue<Pemain>\ TurnQueue;}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{//vector<Pemain>\ playerList;}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Pemain\ Winner;}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{comment}{//TODO:}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//1.\ QUEUE\ PEMAIN\ (giliran)}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//2.\ VOID\ NEXT}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{comment}{//3.\ VOID\ UNTUK\ MENENTUKAN\ PEMENANG}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//4.\ LIST\ PEMAIN}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_ab4377893a2ff982bd7be8524aa21ef62}{GameManager}}(\mbox{\hyperlink{class_parser_misc}{ParserMisc}});}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_aaae63e38e358379c1fe507c5197a8435}{\string~GameManager}}()\{\}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_manager_a82b2bda94eb0febf2334a8ae53cf7440}{Debug}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//void\ Next();}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{comment}{//bool\ isThereAWinner();}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Pemain\ getWinner();}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{comment}{//string\ getCurrentPlayerName();}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Pemain\ getCurrentPlayer();}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{comment}{//string\ getWinnerName();}}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

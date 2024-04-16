@@ -1,0 +1,243 @@
+\doxysection{Matrix\+Area\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_matrix_area}{}\label{class_matrix_area}\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+
+
+{\ttfamily \#include $<$matrixarea.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_matrix_area_aa063188c0c4c37847dc44d642348536d}{Matrix\+Area}} ()
+\item 
+\mbox{\hyperlink{class_matrix_area_acad7703f676144fa49641a8667eeef70}{Matrix\+Area}} (int, int)
+\item 
+\mbox{\hyperlink{class_matrix_area_afca3f8410761410f274d2eec2007424c}{\texorpdfstring{$\sim$}{\string~}\+Matrix\+Area}} ()
+\item 
+\mbox{\hyperlink{class_matrix_area_a9fe3ff311f81bb17d3b78bc09f03e7a8}{Matrix\+Area}} (const \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T \texorpdfstring{$\ast$}{*} $>$ \&)
+\item 
+\mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_matrix_area_ac1c404809cd9ffec716cd1a5f9cdf7cf}{operator=}} (const \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T \texorpdfstring{$\ast$}{*} $>$ \&)
+\item 
+void \mbox{\hyperlink{class_matrix_area_a90ce721c24fb1aa4bc576249f6267e61}{operator+}} (T \texorpdfstring{$\ast$}{*}\&)
+\item 
+void \mbox{\hyperlink{class_matrix_area_acbbd0bda8cf554479e02d33cf2a7af56}{set\+Element}} (int, int, T \texorpdfstring{$\ast$}{*})
+\item 
+void \mbox{\hyperlink{class_matrix_area_ac2008a4d99790a229c583c9f242c117d}{delete\+Element}} (int, int)
+\item 
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{get\+Element}} (int, int)
+\item 
+int \mbox{\hyperlink{class_matrix_area_a3f26a84d6f44c3cdb8d670a66ee37e62}{get\+Rows}} ()
+\item 
+int \mbox{\hyperlink{class_matrix_area_ad7b2c7109515749a076d862b28d4c6d7}{get\+Cols}} ()
+\item 
+pair$<$ int, int $>$ \mbox{\hyperlink{class_matrix_area_ad1fc38bfe6fdb2b822cd53db1bea9dcf}{get\+Position\+From\+Slot}} (string slot)
+\item 
+void \mbox{\hyperlink{class_matrix_area_aa161243a77b4b7cc9872f204da8019ad}{display\+Matrix}} ()
+\item 
+void \mbox{\hyperlink{class_matrix_area_ab9cfdac458284404e629f76d1d0c53bc}{display\+Object}} ()
+\item 
+void \mbox{\hyperlink{class_matrix_area_aa7554a82a81a7e6fc5795ffbb0715584}{display\+Detail}} ()
+\item 
+void \mbox{\hyperlink{class_matrix_area_a765241326032be46243cf838cd781860}{display\+Remainder\+Slot}} ()
+\item 
+bool \mbox{\hyperlink{class_matrix_area_a2c1711c89d2b58e53dacea373648ca24}{is\+Empty}} ()
+\item 
+int \mbox{\hyperlink{class_matrix_area_a7a8492105db3257599eca0fda7c6eb44}{get\+Empty\+Slot}} ()
+\item 
+int \mbox{\hyperlink{class_matrix_area_ad08452c5cd1bbc321881bb07909ba525}{count\+Same\+Name}} (string)
+\item 
+\mbox{\hyperlink{class_tanaman}{Tanaman}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_matrix_area_a99e450ac26edaa3f11eded3849d16ee5}{convert\+Tanaman}} (int, int)
+\item 
+\mbox{\hyperlink{class_hewan}{Hewan}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_matrix_area_a7225e15aee5425cfdc67cf1ee043ff99}{convert\+Hewan}} (int, int)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_matrix_area_a9c55052ac8f38680196d2dfc57a631bf}{rows}}
+\item 
+int \mbox{\hyperlink{class_matrix_area_a513684e16ed84aa8d4f88339bd6be3b5}{cols}}
+\item 
+vector$<$ vector$<$ T \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{class_matrix_area_af88bd52e721e8fa2e0d0531922640043}{matrix}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_matrix_area_aa063188c0c4c37847dc44d642348536d}\label{class_matrix_area_aa063188c0c4c37847dc44d642348536d} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!MatrixArea@{MatrixArea}}
+\index{MatrixArea@{MatrixArea}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{MatrixArea()}{MatrixArea()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\mbox{\hyperlink{class_matrix_area}{\+::\+Matrix\+Area}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_matrix_area_acad7703f676144fa49641a8667eeef70}\label{class_matrix_area_acad7703f676144fa49641a8667eeef70} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!MatrixArea@{MatrixArea}}
+\index{MatrixArea@{MatrixArea}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{MatrixArea()}{MatrixArea()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\mbox{\hyperlink{class_matrix_area}{\+::\+Matrix\+Area}} (\begin{DoxyParamCaption}\item[{int}]{rows,  }\item[{int}]{cols }\end{DoxyParamCaption})}
+
+\Hypertarget{class_matrix_area_afca3f8410761410f274d2eec2007424c}\label{class_matrix_area_afca3f8410761410f274d2eec2007424c} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!````~MatrixArea@{\texorpdfstring{$\sim$}{\string~}MatrixArea}}
+\index{````~MatrixArea@{\texorpdfstring{$\sim$}{\string~}MatrixArea}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MatrixArea()}{\string~MatrixArea()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_matrix_area}{Matrix\+Area}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_matrix_area_a9fe3ff311f81bb17d3b78bc09f03e7a8}\label{class_matrix_area_a9fe3ff311f81bb17d3b78bc09f03e7a8} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!MatrixArea@{MatrixArea}}
+\index{MatrixArea@{MatrixArea}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{MatrixArea()}{MatrixArea()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\mbox{\hyperlink{class_matrix_area}{\+::\+Matrix\+Area}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T \texorpdfstring{$\ast$}{*} $>$ \&}]{matrix }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_matrix_area_a7225e15aee5425cfdc67cf1ee043ff99}\label{class_matrix_area_a7225e15aee5425cfdc67cf1ee043ff99} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!convertHewan@{convertHewan}}
+\index{convertHewan@{convertHewan}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{convertHewan()}{convertHewan()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_hewan}{Hewan}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\+::convert\+Hewan (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_matrix_area_a99e450ac26edaa3f11eded3849d16ee5}\label{class_matrix_area_a99e450ac26edaa3f11eded3849d16ee5} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!convertTanaman@{convertTanaman}}
+\index{convertTanaman@{convertTanaman}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{convertTanaman()}{convertTanaman()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_tanaman}{Tanaman}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\+::convert\+Tanaman (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_matrix_area_ad08452c5cd1bbc321881bb07909ba525}\label{class_matrix_area_ad08452c5cd1bbc321881bb07909ba525} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!countSameName@{countSameName}}
+\index{countSameName@{countSameName}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{countSameName()}{countSameName()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\+::count\+Same\+Name (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_matrix_area_ac2008a4d99790a229c583c9f242c117d}\label{class_matrix_area_ac2008a4d99790a229c583c9f242c117d} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!deleteElement@{deleteElement}}
+\index{deleteElement@{deleteElement}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{deleteElement()}{deleteElement()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\+::delete\+Element (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
+
+\Hypertarget{class_matrix_area_aa7554a82a81a7e6fc5795ffbb0715584}\label{class_matrix_area_aa7554a82a81a7e6fc5795ffbb0715584} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!displayDetail@{displayDetail}}
+\index{displayDetail@{displayDetail}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{displayDetail()}{displayDetail()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\+::display\+Detail (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_matrix_area_aa161243a77b4b7cc9872f204da8019ad}\label{class_matrix_area_aa161243a77b4b7cc9872f204da8019ad} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!displayMatrix@{displayMatrix}}
+\index{displayMatrix@{displayMatrix}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{displayMatrix()}{displayMatrix()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\+::display\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_matrix_area_ab9cfdac458284404e629f76d1d0c53bc}\label{class_matrix_area_ab9cfdac458284404e629f76d1d0c53bc} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!displayObject@{displayObject}}
+\index{displayObject@{displayObject}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{displayObject()}{displayObject()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\+::display\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_matrix_area_a765241326032be46243cf838cd781860}\label{class_matrix_area_a765241326032be46243cf838cd781860} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!displayRemainderSlot@{displayRemainderSlot}}
+\index{displayRemainderSlot@{displayRemainderSlot}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{displayRemainderSlot()}{displayRemainderSlot()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\+::display\+Remainder\+Slot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_matrix_area_ad7b2c7109515749a076d862b28d4c6d7}\label{class_matrix_area_ad7b2c7109515749a076d862b28d4c6d7} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!getCols@{getCols}}
+\index{getCols@{getCols}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getCols()}{getCols()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\+::get\+Cols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_matrix_area_acb8b1310d3a16119919760744ca79436}\label{class_matrix_area_acb8b1310d3a16119919760744ca79436} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!getElement@{getElement}}
+\index{getElement@{getElement}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getElement()}{getElement()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\+::get\+Element (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
+
+\Hypertarget{class_matrix_area_a7a8492105db3257599eca0fda7c6eb44}\label{class_matrix_area_a7a8492105db3257599eca0fda7c6eb44} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!getEmptySlot@{getEmptySlot}}
+\index{getEmptySlot@{getEmptySlot}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getEmptySlot()}{getEmptySlot()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\+::get\+Empty\+Slot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_matrix_area_ad1fc38bfe6fdb2b822cd53db1bea9dcf}\label{class_matrix_area_ad1fc38bfe6fdb2b822cd53db1bea9dcf} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!getPositionFromSlot@{getPositionFromSlot}}
+\index{getPositionFromSlot@{getPositionFromSlot}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getPositionFromSlot()}{getPositionFromSlot()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+pair$<$ int, int $>$ \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\+::get\+Position\+From\+Slot (\begin{DoxyParamCaption}\item[{string}]{slot }\end{DoxyParamCaption})}
+
+\Hypertarget{class_matrix_area_a3f26a84d6f44c3cdb8d670a66ee37e62}\label{class_matrix_area_a3f26a84d6f44c3cdb8d670a66ee37e62} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!getRows@{getRows}}
+\index{getRows@{getRows}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getRows()}{getRows()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\+::get\+Rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_matrix_area_a2c1711c89d2b58e53dacea373648ca24}\label{class_matrix_area_a2c1711c89d2b58e53dacea373648ca24} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_matrix_area_a90ce721c24fb1aa4bc576249f6267e61}\label{class_matrix_area_a90ce721c24fb1aa4bc576249f6267e61} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\+::operator+ (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}\&}]{object }\end{DoxyParamCaption})}
+
+\Hypertarget{class_matrix_area_ac1c404809cd9ffec716cd1a5f9cdf7cf}\label{class_matrix_area_ac1c404809cd9ffec716cd1a5f9cdf7cf} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T \texorpdfstring{$\ast$}{*} $>$ \&}]{matrix }\end{DoxyParamCaption})}
+
+\Hypertarget{class_matrix_area_acbbd0bda8cf554479e02d33cf2a7af56}\label{class_matrix_area_acbbd0bda8cf554479e02d33cf2a7af56} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!setElement@{setElement}}
+\index{setElement@{setElement}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setElement()}{setElement()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\+::set\+Element (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col,  }\item[{T \texorpdfstring{$\ast$}{*}}]{object }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_matrix_area_a513684e16ed84aa8d4f88339bd6be3b5}\label{class_matrix_area_a513684e16ed84aa8d4f88339bd6be3b5} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!cols@{cols}}
+\index{cols@{cols}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{cols}{cols}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\+::cols\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_matrix_area_af88bd52e721e8fa2e0d0531922640043}\label{class_matrix_area_af88bd52e721e8fa2e0d0531922640043} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!matrix@{matrix}}
+\index{matrix@{matrix}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{matrix}{matrix}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$vector$<$T \texorpdfstring{$\ast$}{*}$>$ $>$ \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\+::matrix\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_matrix_area_a9c55052ac8f38680196d2dfc57a631bf}\label{class_matrix_area_a9c55052ac8f38680196d2dfc57a631bf} 
+\index{MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}!rows@{rows}}
+\index{rows@{rows}!MatrixArea$<$ T $>$@{MatrixArea$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{rows}{rows}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ T $>$\+::rows\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/\+Header/\mbox{\hyperlink{matrixarea_8hpp}{matrixarea.\+hpp}}\item 
+D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/\+Implementation/\mbox{\hyperlink{matrixarea_8cpp}{matrixarea.\+cpp}}\end{DoxyCompactItemize}

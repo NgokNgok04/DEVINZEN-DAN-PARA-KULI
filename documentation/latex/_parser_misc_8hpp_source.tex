@@ -1,0 +1,33 @@
+\doxysection{Parser\+Misc.\+hpp}
+\hypertarget{_parser_misc_8hpp_source}{}\label{_parser_misc_8hpp_source}\index{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Header/ParserMisc.hpp@{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Header/ParserMisc.hpp}}
+\mbox{\hyperlink{_parser_misc_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PARSERMISC\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PARSERMISC\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_base_parser_8hpp}{BaseParser.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00006\ \textcolor{comment}{//Parser\ khusus\ untuk\ membaca\ file\ konfigurasi\ misc.}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_parser_misc}{ParserMisc}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_parser}{BaseParser}}\{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_misc_a44816bc969b6d8ba4677df0cd21ca9b1}{winningMoney}};}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_misc_a65a9e4d057abce6e8e1ae9b3a6f101fe}{winningWeight}};}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ pair<int,int>\ \mbox{\hyperlink{class_parser_misc_a5f21a7c238e4c23ce036f8b8cc369280}{storageSize}};}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ pair<int,int>\ \mbox{\hyperlink{class_parser_misc_affccd2ab468978667c528921c52f6578}{fieldSize}};}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ pair<int,int>\ \mbox{\hyperlink{class_parser_misc_a61ff2374beb057aef02f6755cd52759b}{farmSize}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parser_misc_a048143cc76368576d835f6786727001f}{ParserMisc}}()\{\}}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parser_misc_a4f394d90263a038bdc844e8fd2af4f4b}{\string~ParserMisc}}()\{\}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_parser_misc_a7d804fb5b3228486de90d69925946775}{ParseFile}}(\textcolor{keywordtype}{string}\ fileDirectory);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_parser_misc_a557e280d2351acdc494b44e5390c1de3}{ClearParserData}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_misc_a5f172866ae5bf0abf3930b1770cdf2fd}{getWinningMoney}}();}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_misc_a0f56e3dfe966d81e9f23901b5059f506}{getWinningWeight}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ pair<int,int>\ \mbox{\hyperlink{class_parser_misc_a671aef5f54ab29fba8b912c2f1ea0c22}{getStorageSize}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ pair<int,int>\ \mbox{\hyperlink{class_parser_misc_a351d7b7a764ef0605971433f6e8011fd}{getFieldSize}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ pair<int,int>\ \mbox{\hyperlink{class_parser_misc_ad1657dda6b10985fb6dddc8eb7a5779d}{getFarmSize}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ ostream\ \&\mbox{\hyperlink{class_parser_misc_a2ace161c36e68e05597679a261e64d7a}{operator<<}}(ostream\ \&os,\ \mbox{\hyperlink{class_parser_misc}{ParserMisc}}\ \&PM);\ \textcolor{comment}{//untuk\ debugging,\ pake\ aja}}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,53 @@
+\doxysection{Toko.\+hpp}
+\hypertarget{_toko_8hpp_source}{}\label{_toko_8hpp_source}\index{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Header/Toko.hpp@{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Header/Toko.hpp}}
+\mbox{\hyperlink{_toko_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TOKO\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TOKO\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_header_2helper_8hpp}{helper.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_object_8hpp}{GameObject.hpp}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_hewan_8hpp}{Hewan.hpp}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_tanaman_8hpp}{Tanaman.hpp}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_product_8hpp}{Product.hpp}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_bangunan_8hpp}{Bangunan.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_hewan_8hpp}{ParserHewan.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_tanaman_8hpp}{ParserTanaman.hpp}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_produk_8hpp}{ParserProduk.hpp}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_resep_8hpp}{ParserResep.hpp}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_toko}{Toko}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ vector<Hewan>\ \mbox{\hyperlink{class_toko_a1469d9cb3599cc19f10c025a5425000b}{availableHewan}};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ vector<Tanaman>\ \mbox{\hyperlink{class_toko_a65bda761058075c9647f21566785f39a}{availableTanaman}};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ vector<pair<Product,int>>\ \mbox{\hyperlink{class_toko_aa4b187b1d8e8e911714126d1f071a4a6}{availableProduct}};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ vector<pair<Bangunan,int>>\ \mbox{\hyperlink{class_toko_a2d15c8ac8064229ab5feb2b31e4e3b78}{availableBangunan}};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_toko_add6bbf76eb4cf8991189ccd3eebe0968}{printProduct}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_toko_aa64c0e050e4f97517313c13a3684800b}{printBangunan}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_toko_a55fce31b506fd6f3b178fc6b17aac147}{initialize}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toko_a9705506804ae5d8f613863e063b33281}{buyProcess}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_toko_a7bf71171d18e1eecb755d506b25eafa0}{itemDibeli}}(\mbox{\hyperlink{class_game_object}{GameObject}}*,\ \textcolor{keywordtype}{int});\ \textcolor{comment}{//handle\ keadaan\ toko\ setelah\ player\ membeli\ item}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_toko_a467ba73fa88ad710da8e2cf9de31b783}{itemDijual}}(\mbox{\hyperlink{class_game_object}{GameObject}}*,\ \textcolor{keywordtype}{int});\ \textcolor{comment}{//handle\ keadaan\ toko\ setelah\ player\ menjual\ item}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_toko_a75e1d310be70df21824ee2e9efb48e81}{isProductEmptyStock}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_toko_a87fa786c5e5fc137b3af277d7e8c1d93}{isBangunanEmptyStock}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_toko_aa966e8e8b622474f563bc7114a31ea8c}{displayAvailableHewan}}();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_toko_a971c902adc8e8167ea1489025f5f9cc2}{displayAvailableTanaman}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toko_a94a4ea3ee16b48236dc8e9be82b3a869}{displayAvailableProduct}}();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toko_a5e4c8beb70f61b76aa2d007ac1e349b0}{displayAvailableBangunan}}();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_toko_abf67e755d98714085cc5aed55b240676}{displayResepBangunan}}();}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toko_aae0d868d1e2cdcfe344fb734179bb32f}{getStock}}(\textcolor{keywordtype}{string});}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toko_a13c3cdca186ba9402fb5bb4ab1fa506c}{getAvailableProductSize}}();}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toko_a1a48d71d8c7de8171bcac2553ca88489}{getAvailableBangunanSize}}();}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toko_a76b5b99e0ee546cf21584b82601218dd}{getAvailableHewanSize}}();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toko_ac28a3ea6f52aca5bd4f1bea486d5f085}{getAvailableTanamanSize}}();}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_hewan}{Hewan}}*\ \mbox{\hyperlink{class_toko_a38d5525128a517a50d61202637c1398f}{getHewan}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_tanaman}{Tanaman}}*\ \mbox{\hyperlink{class_toko_aeea45e10d8287f806b8d79c13530f4d9}{getTanaman}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ pair<Product,int>*\ \mbox{\hyperlink{class_toko_a78083d9aa4c08e68f57a5cc92a648cfb}{getPairProductInt}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ pair<Bangunan,int>*\ \mbox{\hyperlink{class_toko_a3c4ec74283148d42f3b522558f552543}{getPairBangunanInt}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toko_a7f51febd2186281fde77c7e649e9f72d}{getTotalReady}}();}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

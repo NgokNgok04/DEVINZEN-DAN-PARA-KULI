@@ -1,0 +1,84 @@
+\doxysection{Tanaman.\+cpp}
+\hypertarget{_tanaman_8cpp_source}{}\label{_tanaman_8cpp_source}\index{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Implementation/Tanaman.cpp@{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Implementation/Tanaman.cpp}}
+\mbox{\hyperlink{_tanaman_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_tanaman_8hpp}{../Header/Tanaman.hpp}}"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ map<string,\ string>\ \mbox{\hyperlink{class_tanaman_a64593fb29881c35fbfabda5a12ca4db3}{Tanaman::konversiPanen}}\ =\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \{\textcolor{stringliteral}{"{}TEAK\_TREE"{}},\ \textcolor{stringliteral}{"{}TEAK\_WOOD"{}}\},}
+\DoxyCodeLine{00006\ \ \ \ \ \{\textcolor{stringliteral}{"{}SANDALWOOD\_TREE"{}},\ \textcolor{stringliteral}{"{}SANDALWOOD\_WOOD"{}}\},}
+\DoxyCodeLine{00007\ \ \ \ \ \{\textcolor{stringliteral}{"{}ALOE\_TREE"{}},\ \textcolor{stringliteral}{"{}ALOE\_WOOD"{}}\},}
+\DoxyCodeLine{00008\ \ \ \ \ \{\textcolor{stringliteral}{"{}IRONWOOD\_TREE"{}},\ \textcolor{stringliteral}{"{}IRONWOOD\_WOOD"{}}\},}
+\DoxyCodeLine{00009\ \ \ \ \ \{\textcolor{stringliteral}{"{}APPLE\_TREE"{}},\ \textcolor{stringliteral}{"{}APPLE"{}}\},}
+\DoxyCodeLine{00010\ \ \ \ \ \{\textcolor{stringliteral}{"{}ORANGE\_TREE"{}},\ \textcolor{stringliteral}{"{}ORANGE"{}}\},}
+\DoxyCodeLine{00011\ \ \ \ \ \{\textcolor{stringliteral}{"{}BANANA\_TREE"{}},\ \textcolor{stringliteral}{"{}BANANA"{}}\},}
+\DoxyCodeLine{00012\ \ \ \ \ \{\textcolor{stringliteral}{"{}GUAVA\_TREE"{}},\ \textcolor{stringliteral}{"{}GUAVA"{}}\},}
+\DoxyCodeLine{00013\ \};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \mbox{\hyperlink{class_tanaman_a2207af4487c98cf0dd3885586a8c4aef}{Tanaman::Tanaman}}(\textcolor{keywordtype}{int}\ idKonfig)}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_game_object_a426ad06f8a727af4a0445b42add6498f}{setID}}(idKonfig);}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_game_object_ab463519e996c0d56bfffe0bb680c815d}{setKode}}(\mbox{\hyperlink{class_parser_tanaman_af919666b0c0b43976bd9b985109528c7}{ParserTanaman::getCode}}(idKonfig));}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_game_object_a4f190a9192abcc7e6b77bc797e3c5bdc}{setName}}(\mbox{\hyperlink{class_parser_tanaman_af7e2a57167932bdb02439d85d0db43c5}{ParserTanaman::getName}}(idKonfig));}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_game_object_aa8bed101451259441aa1596832b19b64}{setPrice}}(\mbox{\hyperlink{class_parser_tanaman_a50036be66ab50ec7344867acf36cdbb7}{ParserTanaman::getPrice}}(idKonfig));}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_game_object_ab463519e996c0d56bfffe0bb680c815d}{setKode}}(\mbox{\hyperlink{class_parser_tanaman_af919666b0c0b43976bd9b985109528c7}{ParserTanaman::getCode}}(idKonfig));}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_game_object_a4f190a9192abcc7e6b77bc797e3c5bdc}{setName}}(\mbox{\hyperlink{class_parser_tanaman_af7e2a57167932bdb02439d85d0db43c5}{ParserTanaman::getName}}(idKonfig));}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_game_object_aa8bed101451259441aa1596832b19b64}{setPrice}}(\mbox{\hyperlink{class_parser_tanaman_a50036be66ab50ec7344867acf36cdbb7}{ParserTanaman::getPrice}}(idKonfig));}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_game_object_a9574464c79ce8fa0032d98ac4795547b}{setTipeObject}}(\textcolor{stringliteral}{"{}TANAMAN"{}});}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_tanaman_a3df590d359772a9744a20526b4c7c0f6}{type}}\ =\ \mbox{\hyperlink{class_parser_tanaman_adb147a7db00484a322725b73beb495bd}{ParserTanaman::getType}}(idKonfig);}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_tanaman_a91c339ac69765f0555c87a0c18a29f26}{durationHarvest}}\ =\ \mbox{\hyperlink{class_parser_tanaman_a9692f8cf2989d675d34ff02aea4511b9}{ParserTanaman::getHarvestDuration}}(idKonfig);}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_tanaman_a3df590d359772a9744a20526b4c7c0f6}{type}}\ =\ \mbox{\hyperlink{class_parser_tanaman_adb147a7db00484a322725b73beb495bd}{ParserTanaman::getType}}(idKonfig);}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_tanaman_a91c339ac69765f0555c87a0c18a29f26}{durationHarvest}}\ =\ \mbox{\hyperlink{class_parser_tanaman_a9692f8cf2989d675d34ff02aea4511b9}{ParserTanaman::getHarvestDuration}}(idKonfig);}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_tanaman_af5bec4be504c299b35af3a919a8d155a}{age}}\ =\ 0;}
+\DoxyCodeLine{00030\ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tanaman_a8bbe46b8eb9466fa52d45a7c37b557ad}{Tanaman::tambahUmur}}()}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_tanaman_af5bec4be504c299b35af3a919a8d155a}{age}}++;}
+\DoxyCodeLine{00035\ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \mbox{\hyperlink{class_product}{Product}}\ *\mbox{\hyperlink{class_tanaman_a73916c0eefe697e1df48c7e2ff5a7b77}{Tanaman::hasilPanen}}()}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ a\ =\ \mbox{\hyperlink{class_parser_produk_a30cf3dc665a765e47c633708b7d90906}{ParserProduk::convertNameToID}}(\mbox{\hyperlink{class_tanaman_a64593fb29881c35fbfabda5a12ca4db3}{konversiPanen}}[\mbox{\hyperlink{class_game_object_aa23844466cf7920f57db46666464b3f0}{getName}}()]);}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_product}{Product}}\ *b\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_product}{Product}}(a,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{return}\ b;}
+\DoxyCodeLine{00043\ \}}
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_tanaman_aae5e2c3ed49d96b826639acb2aa8ac15}{Tanaman::isHarvestable}}()}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_tanaman_af5bec4be504c299b35af3a919a8d155a}{age}}\ >=\ \mbox{\hyperlink{class_tanaman_a91c339ac69765f0555c87a0c18a29f26}{durationHarvest}};}
+\DoxyCodeLine{00047\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_tanaman_aad638e594b6d2cdad7d94958e38cc801}{Tanaman::getType}}()}
+\DoxyCodeLine{00050\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_tanaman_a3df590d359772a9744a20526b4c7c0f6}{type}};}
+\DoxyCodeLine{00052\ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_tanaman_a8a0e50a946bd539bdb1269217bdec7db}{Tanaman::getDurationHarvest}}()}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_tanaman_a91c339ac69765f0555c87a0c18a29f26}{durationHarvest}};}
+\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_tanaman_a8b56558ffe7f304656ae1e960525924a}{Tanaman::getCurAge}}()}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_tanaman_af5bec4be504c299b35af3a919a8d155a}{age}};}
+\DoxyCodeLine{00062\ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \mbox{\hyperlink{class_tanaman}{Tanaman}}\&\ \mbox{\hyperlink{class_tanaman_a95b6e514f5d22f2c9d82465e62970d01}{Tanaman::operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_tanaman}{Tanaman}}\&\ other)\{}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{class_game_object_a2e1dc922ef5e0dff89e148d35ac6b002}{GameObject::operator=}}(other);}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{class_tanaman_a3df590d359772a9744a20526b4c7c0f6}{type}}\ =\ other.\mbox{\hyperlink{class_tanaman_a3df590d359772a9744a20526b4c7c0f6}{type}};}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_tanaman_a91c339ac69765f0555c87a0c18a29f26}{durationHarvest}}\ =\ other.\mbox{\hyperlink{class_tanaman_a91c339ac69765f0555c87a0c18a29f26}{durationHarvest}};}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_tanaman_af5bec4be504c299b35af3a919a8d155a}{age}}\ =\ other.\mbox{\hyperlink{class_tanaman_af5bec4be504c299b35af3a919a8d155a}{age}};}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_tanaman_ad143576385fd0d34393947bc8e4ff8e2}{Tanaman::operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_tanaman}{Tanaman}}\ \&other)}
+\DoxyCodeLine{00072\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_game_object_a4ec9a10e4375b4e47d87359e74d81afb}{GameObject::operator==}}(other)\ \&\&\ \mbox{\hyperlink{class_tanaman_af5bec4be504c299b35af3a919a8d155a}{age}}\ ==\ other.\mbox{\hyperlink{class_tanaman_af5bec4be504c299b35af3a919a8d155a}{age}};}
+\DoxyCodeLine{00074\ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tanaman_af718db1dd58e22c2ecc3d8689aba218c}{Tanaman::setAge}}(\textcolor{keywordtype}{int}\ age)\{}
+\DoxyCodeLine{00077\ \ \ \ \ this-\/>age\ =\ \mbox{\hyperlink{class_tanaman_af5bec4be504c299b35af3a919a8d155a}{age}};}
+\DoxyCodeLine{00078\ \}}
+
+\end{DoxyCode}

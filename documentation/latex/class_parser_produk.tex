@@ -1,0 +1,289 @@
+\doxysection{Parser\+Produk Class Reference}
+\hypertarget{class_parser_produk}{}\label{class_parser_produk}\index{ParserProduk@{ParserProduk}}
+
+
+{\ttfamily \#include $<$Parser\+Produk.\+hpp$>$}
+
+Inheritance diagram for Parser\+Produk\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_parser_produk}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_parser_produk_a277d7dacb68b33bc4deb160337542bfe}{Parser\+Produk}} ()
+\item 
+\mbox{\hyperlink{class_parser_produk_a71c099e190363e908ff4479d9bb7d09a}{\texorpdfstring{$\sim$}{\string~}\+Parser\+Produk}} ()
+\item 
+void \mbox{\hyperlink{class_parser_produk_ab39632541f8dd555e425a9fecef2992f}{Parse\+File}} (string file\+Directory)
+\item 
+void \mbox{\hyperlink{class_parser_produk_a8db025f99c9e651278c77e9c850bc1ac}{Clear\+Parser\+Data}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_base_parser}{Base\+Parser}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_base_parser_ad1b62c46a68400c305d7d4d9826787d9}{Base\+Parser}} ()
+\item 
+\mbox{\hyperlink{class_base_parser_a41509d9c82c81c6a1c22ca9b013bc8cf}{\texorpdfstring{$\sim$}{\string~}\+Base\+Parser}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_parser_produk_afa60f7115f6c3f50cf64383996487a35}{get\+ID}} (int)
+\item 
+static string \mbox{\hyperlink{class_parser_produk_a3ebbe22ffdafe6928a44ed9ad45a4b48}{get\+Code}} (int)
+\item 
+static string \mbox{\hyperlink{class_parser_produk_a86c36471129c66e16d2115cb1f9e3ee8}{get\+Name}} (int)
+\item 
+static string \mbox{\hyperlink{class_parser_produk_a6cfb4c47d64b1b4edf76b7214429e004}{get\+Type}} (int)
+\item 
+static string \mbox{\hyperlink{class_parser_produk_a5adba382b0b4a8b35bd60d816ca707fc}{get\+Origin}} (int)
+\item 
+static int \mbox{\hyperlink{class_parser_produk_ab1413f3313870db1d271db719b170bf6}{get\+Added\+Weight}} (int)
+\item 
+static int \mbox{\hyperlink{class_parser_produk_aad5ceaf1e039d645f5b1190ec5eda890}{get\+Price}} (int)
+\item 
+static int \mbox{\hyperlink{class_parser_produk_a6d29b04e9fa76ee013a1b015005c186c}{get\+Config\+Size}} ()
+\item 
+static int \mbox{\hyperlink{class_parser_produk_a8575af6aecdadee0e83f995a900cd8a8}{convert\+Code\+To\+ID}} (string Code)
+\item 
+static int \mbox{\hyperlink{class_parser_produk_a30cf3dc665a765e47c633708b7d90906}{convert\+Name\+To\+ID}} (string Name)
+\item 
+static bool \mbox{\hyperlink{class_parser_produk_a2b26c1bdba3773aa76f12482f43eeb9b}{is\+An\+Animal\+Product}} (int)
+\item 
+static int \mbox{\hyperlink{class_parser_produk_a09ee7ce4272f2f68621363a749a72a06}{index\+To\+ID}} (int)
+\item 
+static int \mbox{\hyperlink{class_parser_produk_a5e6c243d5b3755c1f1bb1124dfba9348}{IDTo\+Index}} (int)
+\item 
+static vector$<$ int $>$ \mbox{\hyperlink{class_parser_produk_a0720a89e7cdc30ee8cfe3b05ebf0553c}{find\+Origin}} (string Product\+Name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static vector$<$ int $>$ \mbox{\hyperlink{class_parser_produk_a0c54b6b5adee153c32ccc25e06f43cc0}{product\+ID}} = vector$<$int$>$()
+\item 
+static vector$<$ string $>$ \mbox{\hyperlink{class_parser_produk_ae143f566e2e2f26ede4a5e67baa0bdaf}{product\+Code}} = vector$<$string$>$()
+\item 
+static vector$<$ string $>$ \mbox{\hyperlink{class_parser_produk_accce8233c2e4e4f42129a48ca5810e52}{product\+Name}} = vector$<$string$>$()
+\item 
+static vector$<$ string $>$ \mbox{\hyperlink{class_parser_produk_a32f7bf4ad6d11c6b3f0421927716ed9e}{product\+Type}} = vector$<$string$>$()
+\item 
+static vector$<$ string $>$ \mbox{\hyperlink{class_parser_produk_a1875387c314d03c7b1585709b4afcda6}{product\+Origin}} = vector$<$string$>$()
+\item 
+static vector$<$ int $>$ \mbox{\hyperlink{class_parser_produk_a0482d3f3810e05a8d02214d9cfe2a782}{added\+Weight}} = vector$<$int$>$()
+\item 
+static vector$<$ int $>$ \mbox{\hyperlink{class_parser_produk_a8373a7c9763317bece82b9f1b974175c}{price}} = vector$<$int$>$()
+\item 
+static vector$<$ string $>$ \mbox{\hyperlink{class_parser_produk_a4a3d95389bc963bc1d4dfdf3cb9493b0}{valid\+Product\+Types}} = vector$<$string$>$()
+\item 
+static map$<$ int, int $>$ \mbox{\hyperlink{class_parser_produk_ac195335e9e61a2132b4914da1286ab54}{Index\+To\+IDMap}} = map$<$int,int$>$()
+\item 
+static map$<$ int, int $>$ \mbox{\hyperlink{class_parser_produk_a3e3ed08e7647136bbc158d4ccf227dab}{IDTo\+Index\+Map}} = map$<$int,int$>$()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{class_parser_produk_ac7f59b78328e02c241ea724a7f3c9cc2}{operator$<$$<$}} (ostream \&os, \mbox{\hyperlink{class_parser_produk}{Parser\+Produk}} \&PP)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_parser_produk_a277d7dacb68b33bc4deb160337542bfe}\label{class_parser_produk_a277d7dacb68b33bc4deb160337542bfe} 
+\index{ParserProduk@{ParserProduk}!ParserProduk@{ParserProduk}}
+\index{ParserProduk@{ParserProduk}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{ParserProduk()}{ParserProduk()}}
+{\footnotesize\ttfamily Parser\+Produk\+::\+Parser\+Produk (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_parser_produk_a71c099e190363e908ff4479d9bb7d09a}\label{class_parser_produk_a71c099e190363e908ff4479d9bb7d09a} 
+\index{ParserProduk@{ParserProduk}!````~ParserProduk@{\texorpdfstring{$\sim$}{\string~}ParserProduk}}
+\index{````~ParserProduk@{\texorpdfstring{$\sim$}{\string~}ParserProduk}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ParserProduk()}{\string~ParserProduk()}}
+{\footnotesize\ttfamily Parser\+Produk\+::\texorpdfstring{$\sim$}{\string~}\+Parser\+Produk (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_parser_produk_a8db025f99c9e651278c77e9c850bc1ac}\label{class_parser_produk_a8db025f99c9e651278c77e9c850bc1ac} 
+\index{ParserProduk@{ParserProduk}!ClearParserData@{ClearParserData}}
+\index{ClearParserData@{ClearParserData}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{ClearParserData()}{ClearParserData()}}
+{\footnotesize\ttfamily void Parser\+Produk\+::\+Clear\+Parser\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_parser_a327b12cda4458bad0b79a02fd11569b9}{Base\+Parser}}.
+
+\Hypertarget{class_parser_produk_a8575af6aecdadee0e83f995a900cd8a8}\label{class_parser_produk_a8575af6aecdadee0e83f995a900cd8a8} 
+\index{ParserProduk@{ParserProduk}!convertCodeToID@{convertCodeToID}}
+\index{convertCodeToID@{convertCodeToID}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{convertCodeToID()}{convertCodeToID()}}
+{\footnotesize\ttfamily int Parser\+Produk\+::convert\+Code\+To\+ID (\begin{DoxyParamCaption}\item[{string}]{Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_produk_a30cf3dc665a765e47c633708b7d90906}\label{class_parser_produk_a30cf3dc665a765e47c633708b7d90906} 
+\index{ParserProduk@{ParserProduk}!convertNameToID@{convertNameToID}}
+\index{convertNameToID@{convertNameToID}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{convertNameToID()}{convertNameToID()}}
+{\footnotesize\ttfamily int Parser\+Produk\+::convert\+Name\+To\+ID (\begin{DoxyParamCaption}\item[{string}]{Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_produk_a0720a89e7cdc30ee8cfe3b05ebf0553c}\label{class_parser_produk_a0720a89e7cdc30ee8cfe3b05ebf0553c} 
+\index{ParserProduk@{ParserProduk}!findOrigin@{findOrigin}}
+\index{findOrigin@{findOrigin}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{findOrigin()}{findOrigin()}}
+{\footnotesize\ttfamily vector$<$ int $>$ Parser\+Produk\+::find\+Origin (\begin{DoxyParamCaption}\item[{string}]{Product\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_produk_ab1413f3313870db1d271db719b170bf6}\label{class_parser_produk_ab1413f3313870db1d271db719b170bf6} 
+\index{ParserProduk@{ParserProduk}!getAddedWeight@{getAddedWeight}}
+\index{getAddedWeight@{getAddedWeight}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{getAddedWeight()}{getAddedWeight()}}
+{\footnotesize\ttfamily int Parser\+Produk\+::get\+Added\+Weight (\begin{DoxyParamCaption}\item[{int}]{ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_produk_a3ebbe22ffdafe6928a44ed9ad45a4b48}\label{class_parser_produk_a3ebbe22ffdafe6928a44ed9ad45a4b48} 
+\index{ParserProduk@{ParserProduk}!getCode@{getCode}}
+\index{getCode@{getCode}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{getCode()}{getCode()}}
+{\footnotesize\ttfamily string Parser\+Produk\+::get\+Code (\begin{DoxyParamCaption}\item[{int}]{ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_produk_a6d29b04e9fa76ee013a1b015005c186c}\label{class_parser_produk_a6d29b04e9fa76ee013a1b015005c186c} 
+\index{ParserProduk@{ParserProduk}!getConfigSize@{getConfigSize}}
+\index{getConfigSize@{getConfigSize}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{getConfigSize()}{getConfigSize()}}
+{\footnotesize\ttfamily int Parser\+Produk\+::get\+Config\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_produk_afa60f7115f6c3f50cf64383996487a35}\label{class_parser_produk_afa60f7115f6c3f50cf64383996487a35} 
+\index{ParserProduk@{ParserProduk}!getID@{getID}}
+\index{getID@{getID}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}}
+{\footnotesize\ttfamily int Parser\+Produk\+::get\+ID (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_produk_a86c36471129c66e16d2115cb1f9e3ee8}\label{class_parser_produk_a86c36471129c66e16d2115cb1f9e3ee8} 
+\index{ParserProduk@{ParserProduk}!getName@{getName}}
+\index{getName@{getName}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Parser\+Produk\+::get\+Name (\begin{DoxyParamCaption}\item[{int}]{ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_produk_a5adba382b0b4a8b35bd60d816ca707fc}\label{class_parser_produk_a5adba382b0b4a8b35bd60d816ca707fc} 
+\index{ParserProduk@{ParserProduk}!getOrigin@{getOrigin}}
+\index{getOrigin@{getOrigin}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{getOrigin()}{getOrigin()}}
+{\footnotesize\ttfamily string Parser\+Produk\+::get\+Origin (\begin{DoxyParamCaption}\item[{int}]{ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_produk_aad5ceaf1e039d645f5b1190ec5eda890}\label{class_parser_produk_aad5ceaf1e039d645f5b1190ec5eda890} 
+\index{ParserProduk@{ParserProduk}!getPrice@{getPrice}}
+\index{getPrice@{getPrice}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{getPrice()}{getPrice()}}
+{\footnotesize\ttfamily int Parser\+Produk\+::get\+Price (\begin{DoxyParamCaption}\item[{int}]{ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_produk_a6cfb4c47d64b1b4edf76b7214429e004}\label{class_parser_produk_a6cfb4c47d64b1b4edf76b7214429e004} 
+\index{ParserProduk@{ParserProduk}!getType@{getType}}
+\index{getType@{getType}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily string Parser\+Produk\+::get\+Type (\begin{DoxyParamCaption}\item[{int}]{ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_produk_a5e6c243d5b3755c1f1bb1124dfba9348}\label{class_parser_produk_a5e6c243d5b3755c1f1bb1124dfba9348} 
+\index{ParserProduk@{ParserProduk}!IDToIndex@{IDToIndex}}
+\index{IDToIndex@{IDToIndex}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{IDToIndex()}{IDToIndex()}}
+{\footnotesize\ttfamily int Parser\+Produk\+::\+IDTo\+Index (\begin{DoxyParamCaption}\item[{int}]{ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_produk_a09ee7ce4272f2f68621363a749a72a06}\label{class_parser_produk_a09ee7ce4272f2f68621363a749a72a06} 
+\index{ParserProduk@{ParserProduk}!indexToID@{indexToID}}
+\index{indexToID@{indexToID}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{indexToID()}{indexToID()}}
+{\footnotesize\ttfamily int Parser\+Produk\+::index\+To\+ID (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_produk_a2b26c1bdba3773aa76f12482f43eeb9b}\label{class_parser_produk_a2b26c1bdba3773aa76f12482f43eeb9b} 
+\index{ParserProduk@{ParserProduk}!isAnAnimalProduct@{isAnAnimalProduct}}
+\index{isAnAnimalProduct@{isAnAnimalProduct}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{isAnAnimalProduct()}{isAnAnimalProduct()}}
+{\footnotesize\ttfamily bool Parser\+Produk\+::is\+An\+Animal\+Product (\begin{DoxyParamCaption}\item[{int}]{ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_produk_ab39632541f8dd555e425a9fecef2992f}\label{class_parser_produk_ab39632541f8dd555e425a9fecef2992f} 
+\index{ParserProduk@{ParserProduk}!ParseFile@{ParseFile}}
+\index{ParseFile@{ParseFile}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{ParseFile()}{ParseFile()}}
+{\footnotesize\ttfamily void Parser\+Produk\+::\+Parse\+File (\begin{DoxyParamCaption}\item[{string}]{file\+Directory }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_parser_aecdd6fca3c420225bf94c498e49522bf}{Base\+Parser}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_parser_produk_ac7f59b78328e02c241ea724a7f3c9cc2}\label{class_parser_produk_ac7f59b78328e02c241ea724a7f3c9cc2} 
+\index{ParserProduk@{ParserProduk}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{\mbox{\hyperlink{class_parser_produk}{Parser\+Produk}} \&}]{PP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_parser_produk_a0482d3f3810e05a8d02214d9cfe2a782}\label{class_parser_produk_a0482d3f3810e05a8d02214d9cfe2a782} 
+\index{ParserProduk@{ParserProduk}!addedWeight@{addedWeight}}
+\index{addedWeight@{addedWeight}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{addedWeight}{addedWeight}}
+{\footnotesize\ttfamily vector$<$ int $>$ Parser\+Produk\+::added\+Weight = vector$<$int$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_parser_produk_a3e3ed08e7647136bbc158d4ccf227dab}\label{class_parser_produk_a3e3ed08e7647136bbc158d4ccf227dab} 
+\index{ParserProduk@{ParserProduk}!IDToIndexMap@{IDToIndexMap}}
+\index{IDToIndexMap@{IDToIndexMap}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{IDToIndexMap}{IDToIndexMap}}
+{\footnotesize\ttfamily map$<$ int, int $>$ Parser\+Produk\+::\+IDTo\+Index\+Map = map$<$int,int$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_parser_produk_ac195335e9e61a2132b4914da1286ab54}\label{class_parser_produk_ac195335e9e61a2132b4914da1286ab54} 
+\index{ParserProduk@{ParserProduk}!IndexToIDMap@{IndexToIDMap}}
+\index{IndexToIDMap@{IndexToIDMap}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{IndexToIDMap}{IndexToIDMap}}
+{\footnotesize\ttfamily map$<$ int, int $>$ Parser\+Produk\+::\+Index\+To\+IDMap = map$<$int,int$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_parser_produk_a8373a7c9763317bece82b9f1b974175c}\label{class_parser_produk_a8373a7c9763317bece82b9f1b974175c} 
+\index{ParserProduk@{ParserProduk}!price@{price}}
+\index{price@{price}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{price}{price}}
+{\footnotesize\ttfamily vector$<$ int $>$ Parser\+Produk\+::price = vector$<$int$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_parser_produk_ae143f566e2e2f26ede4a5e67baa0bdaf}\label{class_parser_produk_ae143f566e2e2f26ede4a5e67baa0bdaf} 
+\index{ParserProduk@{ParserProduk}!productCode@{productCode}}
+\index{productCode@{productCode}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{productCode}{productCode}}
+{\footnotesize\ttfamily vector$<$ string $>$ Parser\+Produk\+::product\+Code = vector$<$string$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_parser_produk_a0c54b6b5adee153c32ccc25e06f43cc0}\label{class_parser_produk_a0c54b6b5adee153c32ccc25e06f43cc0} 
+\index{ParserProduk@{ParserProduk}!productID@{productID}}
+\index{productID@{productID}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{productID}{productID}}
+{\footnotesize\ttfamily vector$<$ int $>$ Parser\+Produk\+::product\+ID = vector$<$int$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_parser_produk_accce8233c2e4e4f42129a48ca5810e52}\label{class_parser_produk_accce8233c2e4e4f42129a48ca5810e52} 
+\index{ParserProduk@{ParserProduk}!productName@{productName}}
+\index{productName@{productName}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{productName}{productName}}
+{\footnotesize\ttfamily vector$<$ string $>$ Parser\+Produk\+::product\+Name = vector$<$string$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_parser_produk_a1875387c314d03c7b1585709b4afcda6}\label{class_parser_produk_a1875387c314d03c7b1585709b4afcda6} 
+\index{ParserProduk@{ParserProduk}!productOrigin@{productOrigin}}
+\index{productOrigin@{productOrigin}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{productOrigin}{productOrigin}}
+{\footnotesize\ttfamily vector$<$ string $>$ Parser\+Produk\+::product\+Origin = vector$<$string$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_parser_produk_a32f7bf4ad6d11c6b3f0421927716ed9e}\label{class_parser_produk_a32f7bf4ad6d11c6b3f0421927716ed9e} 
+\index{ParserProduk@{ParserProduk}!productType@{productType}}
+\index{productType@{productType}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{productType}{productType}}
+{\footnotesize\ttfamily vector$<$ string $>$ Parser\+Produk\+::product\+Type = vector$<$string$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_parser_produk_a4a3d95389bc963bc1d4dfdf3cb9493b0}\label{class_parser_produk_a4a3d95389bc963bc1d4dfdf3cb9493b0} 
+\index{ParserProduk@{ParserProduk}!validProductTypes@{validProductTypes}}
+\index{validProductTypes@{validProductTypes}!ParserProduk@{ParserProduk}}
+\doxysubsubsection{\texorpdfstring{validProductTypes}{validProductTypes}}
+{\footnotesize\ttfamily vector$<$ string $>$ Parser\+Produk\+::valid\+Product\+Types = vector$<$string$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/\+Header/\mbox{\hyperlink{_parser_produk_8hpp}{Parser\+Produk.\+hpp}}\item 
+D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/\+Implementation/\mbox{\hyperlink{_parser_produk_8cpp}{Parser\+Produk.\+cpp}}\end{DoxyCompactItemize}
