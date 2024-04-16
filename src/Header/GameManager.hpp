@@ -37,7 +37,8 @@ class GameManager{
         void Debug();
         void insertNewPlayer(Pemain*);//masukkan pemain baru
         void PlayerDebug();
-        void Next(); //giliram selanjutnya
+        void Next();
+        void setupGame();
         // bool checkWinner(); //TODO:UNCOMMENT THIS METHOD AFTER MERGING
         Pemain* getWinner(); //dapatkan pemenang
         string getWinnerName(); //dapatkan nama pemenang

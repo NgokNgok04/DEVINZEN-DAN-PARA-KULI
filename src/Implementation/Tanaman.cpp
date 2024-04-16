@@ -46,3 +46,7 @@ Tanaman& Tanaman::operator=(const Tanaman& other){
 bool Tanaman::operator==(const Tanaman& other){
     return GameObject::operator==(other) && age==other.age;
 }
+
+void Tanaman::setAge(int age){
+    this->age = age;
+}

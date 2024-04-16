@@ -709,3 +709,10 @@ public:
         return "Walikota tidak bisa membeli bangunan!";
     }
 };
+
+class InvalidPathMuat : public BaseException{
+    public:
+        string what(){
+            return "Path yang dimasukkan tidak valid!";
+        }
+};
