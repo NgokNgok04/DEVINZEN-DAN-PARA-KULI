@@ -1,5 +1,4 @@
 #include "../Header/ParserProduk.hpp"
-// #include "../Header/Exception.hpp"
 #include <bits/stdc++.h>
 #include "../Header/helper.hpp"
 vector<int> ParserProduk::productID = vector<int>();

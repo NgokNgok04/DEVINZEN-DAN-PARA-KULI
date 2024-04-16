@@ -1,7 +1,6 @@
 #include "../Header/ParserTanaman.hpp"
 #include "../Header/helper.hpp"
 #include <bits/stdc++.h>
-#include "../Header/Exception.hpp"
 vector<int> ParserTanaman::plantID = vector<int>();
 vector<string> ParserTanaman::plantCode = vector<string>();
 vector<string> ParserTanaman::plantName= vector<string>();

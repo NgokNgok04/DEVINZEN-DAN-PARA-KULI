@@ -1,5 +1,4 @@
 #include "../Header/ParserResep.hpp"
-// #include "../Header/Exception.hpp"
 #include "../Header/helper.hpp"
 #include <bits/stdc++.h>
 vector<int> ParserResep::recipeID = vector<int>() ;
@@ -69,7 +68,6 @@ void ParserResep::ParseFile(string fileDirectory)
         IndexToIDMap.insert({i, recipeID[i]});
         IDToIndexMap.insert({recipeID[i], i});
     }
-    totalRecipe = recipeID.size();
     cout << "Konfigurasi recipe.txt berhasil!\n";
 }
 
@@ -149,6 +147,7 @@ int ParserResep::IDToIndex(int ID)
 {
     return IDToIndexMap[ID];
 }
+
 ostream &operator<<(ostream &os, ParserResep &PR)
 {
     for(int i = 0; i<PR.recipeID.size(); i++){
