@@ -1,5 +1,4 @@
 #include "../Header/ParserResep.hpp"
-// #include "../Header/Exception.hpp"
 #include "../Header/helper.hpp"
 #include <bits/stdc++.h>
 vector<int> ParserResep::recipeID = vector<int>() ;
@@ -148,6 +147,7 @@ int ParserResep::IDToIndex(int ID)
 {
     return IDToIndexMap[ID];
 }
+
 ostream &operator<<(ostream &os, ParserResep &PR)
 {
     for(int i = 0; i<PR.recipeID.size(); i++){

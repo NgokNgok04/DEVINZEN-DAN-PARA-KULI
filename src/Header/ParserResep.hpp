@@ -28,7 +28,6 @@ class ParserResep : public BaseParser{
         static int convertNameToID(string Name);
         static int indexToID(int);
         static int IDToIndex(int);
-        static int getTotalRecipe();
         friend ostream &operator<<(ostream &os, ParserResep &PR); //untuk debugging, pake aja
 };
 #endif

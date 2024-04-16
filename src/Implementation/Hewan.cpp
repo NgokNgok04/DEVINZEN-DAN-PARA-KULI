@@ -74,8 +74,3 @@ bool Hewan::operator==(const Hewan &other)
 {
     return GameObject::operator==(other) && weight == other.weight;
 }
-
-void Hewan::setWeight(int a)
-{
-    this->weight = a;
-}
