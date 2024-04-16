@@ -1,0 +1,55 @@
+\doxysection{pemain.\+hpp}
+\hypertarget{pemain_8hpp_source}{}\label{pemain_8hpp_source}\index{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Header/pemain.hpp@{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Header/pemain.hpp}}
+\mbox{\hyperlink{pemain_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PEMAIN\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PEMAIN\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{matrixarea_8cpp}{../Implementation/matrixarea.cpp}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \#include\ "{}./Header/GameObject.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_toko_8hpp}{Toko.hpp}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pemain}{Pemain}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_pemain_aedd1711ccfdf4aa8178520954033cc79}{berat\_badan}};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_pemain_a18ab9b7c3afd520b9dad0fd668f9948c}{tipe}};\ \textcolor{comment}{//\ walikota,\ peternak,\ petani,\ pemain}}
+\DoxyCodeLine{00017\ \ \ \ \ vector<int>\ \mbox{\hyperlink{class_pemain_a746c644fcbee40e6f8a564d1ae91b7b5}{ownedBuild}};}
+\DoxyCodeLine{00018\ \ \ \ \ vector<Bangunan>\ \mbox{\hyperlink{class_pemain_a0e6c2e27686d80dcc93373108ad7dcaf}{ownedBangunan}};}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_matrix_area}{MatrixArea<GameObject>}}\ \mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_pemain_a81c04a010c0de44910d82488b46c5217}{username}};\ \textcolor{comment}{//\ nama\ pemain}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ MatrixArea<GameObject>\ inventory;}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_pemain_a03ed776175a10f26c9ee82bf7f032bba}{Pemain}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_pemain_a03ed776175a10f26c9ee82bf7f032bba}{Pemain}}(\textcolor{keywordtype}{string}\ usn,\ \textcolor{keywordtype}{float}\ guld,\ \textcolor{keywordtype}{int}\ bb);\ \textcolor{comment}{//\ :\ MatrixArea(rows,\ cols)}}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_pemain_a03ed776175a10f26c9ee82bf7f032bba}{Pemain}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_pemain}{Pemain}}\ \&);}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_pemain_a6b0524f9d09a677dff166ca9583218c5}{\string~Pemain}}();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_pemain_a130cc2f5466df0c4a43e680b9f8184a0}{getTipe}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_matrix_area}{MatrixArea<GameObject>}}\&\ \mbox{\hyperlink{class_pemain_a9c67bb73e4e60a8abc46666b39698217}{getInventory}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ specifics}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pemain_aea1378e80ab57a5cef372d235453f5a0}{setInv}}(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \mbox{\hyperlink{class_game_object}{GameObject}}\ *);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pemain_a4b791497e4a80576ecba41b8a559b053}{cetakPenyimpanan}}();}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pemain_abffc9ee96d69f6154cc0959cd75bf9d3}{makan}}();\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ loc\ item\ yg\ dimakan}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pemain_a1bb2169d8048c901067eb197f1a3e6f0}{beli}}()\ =\ 0;\ \textcolor{comment}{//\ letak\ and\ quant\ item,\ loc\ item\ akan\ disimpan}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pemain_af0fe9802178ec237e636198900776398}{jual}}()\ =\ 0;\ \textcolor{comment}{//\ loc\ item\ yg\ akan\ dijual}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_pemain_add9d818b99a06b5a68f99d3315cba785}{getUsername}}();}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_pemain_a09007a204e3a9a07099c687ec6aa9959}{getBeratBadan}}();}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_pemain_a1b06b3e401922156aece6747bfe38e4e}{getGulden}}();}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_pemain_a9093cf333dba8d8918809af134557d21}{calculateTax}}()\ =\ 0;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_pemain_a7ff65870b5b8f23fea65fad97301763f}{operator<}}(\mbox{\hyperlink{class_pemain}{Pemain}}\ \&other);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_pemain_aa5b4bda4e595847a8c1c81b0b186eddd}{operator==}}(\mbox{\hyperlink{class_pemain}{Pemain}}\ \&other);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_pemain_abb5667913e9e943a80bad03a9ab204cc}{getTaxRate}}(\textcolor{keywordtype}{int}\ KKP);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_pemain_a140d89d75a81c5c692e498164a0509f2}{countKekayaanInven}}();}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

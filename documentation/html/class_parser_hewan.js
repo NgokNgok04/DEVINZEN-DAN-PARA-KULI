@@ -1,0 +1,28 @@
+var class_parser_hewan =
+[
+    [ "ParserHewan", "class_parser_hewan.html#a9174d4524648ea8d4a69663b3132594a", null ],
+    [ "~ParserHewan", "class_parser_hewan.html#a118c34862a0e69e4b51c9c70f746301e", null ],
+    [ "ClearParserData", "class_parser_hewan.html#a167ff09960f9ceeab0263c03e6d4c445", null ],
+    [ "convertCodeToID", "class_parser_hewan.html#a48016384e135391a7519580ec998f0e6", null ],
+    [ "convertNameToID", "class_parser_hewan.html#af20d4f678f3f1489dd224c781748912b", null ],
+    [ "getCode", "class_parser_hewan.html#aa62ff0f815ec8ecf44ad5b6e759a0b2f", null ],
+    [ "getConfigSize", "class_parser_hewan.html#ab4e1382a339eded152637888e83c1044", null ],
+    [ "getHarvestWeight", "class_parser_hewan.html#a94950216cf9d87140a0905aa97fa9629", null ],
+    [ "getID", "class_parser_hewan.html#a1f5b1cae3601bed36e005882dcfbd66c", null ],
+    [ "getName", "class_parser_hewan.html#abfe77cd82f6580f0fae7e2fc7f2650ca", null ],
+    [ "getPrice", "class_parser_hewan.html#af8208d9f850ebd5c55bdc2fcddec2d24", null ],
+    [ "getType", "class_parser_hewan.html#af85edbf27dbada1028015f2fd103f981", null ],
+    [ "IDToIndex", "class_parser_hewan.html#a70b9e9b39121798caff3fa8c9393488f", null ],
+    [ "indexToID", "class_parser_hewan.html#a476136a4372f2ae368a09a077dbd335c", null ],
+    [ "ParseFile", "class_parser_hewan.html#aaa9fc2f00ac0534327070d34fce224dd", null ],
+    [ "operator<<", "class_parser_hewan.html#a9d2d0536ddb748993b85c81e57907e7c", null ],
+    [ "animalCode", "class_parser_hewan.html#a7c6f1fc47fdf132b303181cb218605e3", null ],
+    [ "animalID", "class_parser_hewan.html#af5e73eb2545471f2b26cda46316f52e0", null ],
+    [ "animalName", "class_parser_hewan.html#a57f93d15af960d311c0d9bab04958e1a", null ],
+    [ "animalType", "class_parser_hewan.html#a13a3d0c110ee2934cb83699cc4bf69cd", null ],
+    [ "harvestWeight", "class_parser_hewan.html#a8f340e464a101c660943a27a59074c27", null ],
+    [ "IDToIndexMap", "class_parser_hewan.html#afb071172deedfc920250d740d65cac0e", null ],
+    [ "IndexToIDMap", "class_parser_hewan.html#a2c712e7d96e77130a99a732bf59838dd", null ],
+    [ "price", "class_parser_hewan.html#ab1c9182bbe873411c464bea5e2cf235b", null ],
+    [ "validAnimalTypes", "class_parser_hewan.html#acc49c3abd0a7dddd2d6a890024296c5c", null ]
+];

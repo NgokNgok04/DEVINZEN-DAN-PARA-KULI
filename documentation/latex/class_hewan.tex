@@ -1,0 +1,197 @@
+\doxysection{Hewan Class Reference}
+\hypertarget{class_hewan}{}\label{class_hewan}\index{Hewan@{Hewan}}
+
+
+{\ttfamily \#include $<$Hewan.\+hpp$>$}
+
+Inheritance diagram for Hewan\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_hewan}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hewan_afb07a2c2b883130e1b893e5c4f30111a}{Hewan}} ()
+\item 
+\mbox{\hyperlink{class_hewan_ae93323cd435b6389d1e7c92f4ea88330}{Hewan}} (int)
+\item 
+void \mbox{\hyperlink{class_hewan_ae3719bf11ad596f0e42b477262c70415}{makan}} (\mbox{\hyperlink{class_product}{Product}})
+\item 
+void \mbox{\hyperlink{class_hewan_a3ff8fbb1b6984bbc36edb1b8c31a665c}{set\+Weight}} (int)
+\item 
+vector$<$ \mbox{\hyperlink{class_product}{Product}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_hewan_a167d3386e77764a22b8366608a400f0b}{hasil\+Panen}} ()
+\item 
+bool \mbox{\hyperlink{class_hewan_af3a618f3244f24f52898f63b9c9f9083}{is\+Harvestable}} ()
+\item 
+string \mbox{\hyperlink{class_hewan_afe69789e041d4e9150ee2c25f8953123}{get\+Type}} ()
+\item 
+int \mbox{\hyperlink{class_hewan_ae5803b1beb7312f5385210a2536b2a5a}{get\+Weight\+Harvest}} ()
+\item 
+int \mbox{\hyperlink{class_hewan_aba4ce03de38948a27621e1394b5d568e}{get\+Cur\+Weight}} ()
+\item 
+\mbox{\hyperlink{class_hewan}{Hewan}} \& \mbox{\hyperlink{class_hewan_ae6fca2e8de85c914a6ac040a9aea3d58}{operator=}} (const \mbox{\hyperlink{class_hewan}{Hewan}} \&)
+\item 
+bool \mbox{\hyperlink{class_hewan_aab6fd5d4f61d0aa0ba68e1b8dcc0cbac}{operator==}} (const \mbox{\hyperlink{class_hewan}{Hewan}} \&)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_game_object_a224d4f6d9dd75c8a6f9d022eaf586fd9}{\texorpdfstring{$\sim$}{\string~}\+Game\+Object}} ()
+\item 
+int \mbox{\hyperlink{class_game_object_add964e473761c04f3406efb37d23b37a}{get\+ID}} ()
+\item 
+string \mbox{\hyperlink{class_game_object_a4b2f0ce982bac4ced5acffaaf8a1d2aa}{get\+Kode}} ()
+\item 
+float \mbox{\hyperlink{class_game_object_abd7b06f9406af998e0cdc1a9599bed0a}{get\+Price}} ()
+\item 
+string \mbox{\hyperlink{class_game_object_aa23844466cf7920f57db46666464b3f0}{get\+Name}} ()
+\item 
+string \mbox{\hyperlink{class_game_object_a4af40450cb24b0c0b4c7c129afee3e78}{get\+Tipe\+Object}} ()
+\item 
+void \mbox{\hyperlink{class_game_object_a426ad06f8a727af4a0445b42add6498f}{set\+ID}} (int)
+\item 
+void \mbox{\hyperlink{class_game_object_ab463519e996c0d56bfffe0bb680c815d}{set\+Kode}} (string)
+\item 
+void \mbox{\hyperlink{class_game_object_aa8bed101451259441aa1596832b19b64}{set\+Price}} (float)
+\item 
+void \mbox{\hyperlink{class_game_object_a4f190a9192abcc7e6b77bc797e3c5bdc}{set\+Name}} (string)
+\item 
+void \mbox{\hyperlink{class_game_object_a9574464c79ce8fa0032d98ac4795547b}{set\+Tipe\+Object}} (string)
+\item 
+virtual \mbox{\hyperlink{class_game_object}{Game\+Object}} \& \mbox{\hyperlink{class_game_object_a2e1dc922ef5e0dff89e148d35ac6b002}{operator=}} (const \mbox{\hyperlink{class_game_object}{Game\+Object}} \&)
+\item 
+virtual bool \mbox{\hyperlink{class_game_object_a4ec9a10e4375b4e47d87359e74d81afb}{operator==}} (const \mbox{\hyperlink{class_game_object}{Game\+Object}} \&)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_hewan_a15fef8512209ea34556abf785d930ee5}{type}}
+\item 
+int \mbox{\hyperlink{class_hewan_a5269a7ff3623be7a016273be9efb8ef0}{weight\+Harvest}}
+\item 
+int \mbox{\hyperlink{class_hewan_aeb34c46d5753c6a45afaa498ef8a6f3c}{weight}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static map$<$ string, pair$<$ string, string $>$ $>$ \mbox{\hyperlink{class_hewan_abeb7aa179a274c60b1e3ccc1ac03f7e7}{konversi\+Panen}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_hewan_afb07a2c2b883130e1b893e5c4f30111a}\label{class_hewan_afb07a2c2b883130e1b893e5c4f30111a} 
+\index{Hewan@{Hewan}!Hewan@{Hewan}}
+\index{Hewan@{Hewan}!Hewan@{Hewan}}
+\doxysubsubsection{\texorpdfstring{Hewan()}{Hewan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Hewan\+::\+Hewan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_hewan_ae93323cd435b6389d1e7c92f4ea88330}\label{class_hewan_ae93323cd435b6389d1e7c92f4ea88330} 
+\index{Hewan@{Hewan}!Hewan@{Hewan}}
+\index{Hewan@{Hewan}!Hewan@{Hewan}}
+\doxysubsubsection{\texorpdfstring{Hewan()}{Hewan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Hewan\+::\+Hewan (\begin{DoxyParamCaption}\item[{int}]{id\+Konfig }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_hewan_aba4ce03de38948a27621e1394b5d568e}\label{class_hewan_aba4ce03de38948a27621e1394b5d568e} 
+\index{Hewan@{Hewan}!getCurWeight@{getCurWeight}}
+\index{getCurWeight@{getCurWeight}!Hewan@{Hewan}}
+\doxysubsubsection{\texorpdfstring{getCurWeight()}{getCurWeight()}}
+{\footnotesize\ttfamily int Hewan\+::get\+Cur\+Weight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_hewan_afe69789e041d4e9150ee2c25f8953123}\label{class_hewan_afe69789e041d4e9150ee2c25f8953123} 
+\index{Hewan@{Hewan}!getType@{getType}}
+\index{getType@{getType}!Hewan@{Hewan}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily string Hewan\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_hewan_ae5803b1beb7312f5385210a2536b2a5a}\label{class_hewan_ae5803b1beb7312f5385210a2536b2a5a} 
+\index{Hewan@{Hewan}!getWeightHarvest@{getWeightHarvest}}
+\index{getWeightHarvest@{getWeightHarvest}!Hewan@{Hewan}}
+\doxysubsubsection{\texorpdfstring{getWeightHarvest()}{getWeightHarvest()}}
+{\footnotesize\ttfamily int Hewan\+::get\+Weight\+Harvest (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_hewan_a167d3386e77764a22b8366608a400f0b}\label{class_hewan_a167d3386e77764a22b8366608a400f0b} 
+\index{Hewan@{Hewan}!hasilPanen@{hasilPanen}}
+\index{hasilPanen@{hasilPanen}!Hewan@{Hewan}}
+\doxysubsubsection{\texorpdfstring{hasilPanen()}{hasilPanen()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_product}{Product}} \texorpdfstring{$\ast$}{*} $>$ Hewan\+::hasil\+Panen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_hewan_af3a618f3244f24f52898f63b9c9f9083}\label{class_hewan_af3a618f3244f24f52898f63b9c9f9083} 
+\index{Hewan@{Hewan}!isHarvestable@{isHarvestable}}
+\index{isHarvestable@{isHarvestable}!Hewan@{Hewan}}
+\doxysubsubsection{\texorpdfstring{isHarvestable()}{isHarvestable()}}
+{\footnotesize\ttfamily bool Hewan\+::is\+Harvestable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_hewan_ae3719bf11ad596f0e42b477262c70415}\label{class_hewan_ae3719bf11ad596f0e42b477262c70415} 
+\index{Hewan@{Hewan}!makan@{makan}}
+\index{makan@{makan}!Hewan@{Hewan}}
+\doxysubsubsection{\texorpdfstring{makan()}{makan()}}
+{\footnotesize\ttfamily void Hewan\+::makan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_product}{Product}}}]{makanan }\end{DoxyParamCaption})}
+
+\Hypertarget{class_hewan_ae6fca2e8de85c914a6ac040a9aea3d58}\label{class_hewan_ae6fca2e8de85c914a6ac040a9aea3d58} 
+\index{Hewan@{Hewan}!operator=@{operator=}}
+\index{operator=@{operator=}!Hewan@{Hewan}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hewan}{Hewan}} \& Hewan\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hewan}{Hewan}} \&}]{other }\end{DoxyParamCaption})}
+
+\Hypertarget{class_hewan_aab6fd5d4f61d0aa0ba68e1b8dcc0cbac}\label{class_hewan_aab6fd5d4f61d0aa0ba68e1b8dcc0cbac} 
+\index{Hewan@{Hewan}!operator==@{operator==}}
+\index{operator==@{operator==}!Hewan@{Hewan}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Hewan\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hewan}{Hewan}} \&}]{other }\end{DoxyParamCaption})}
+
+\Hypertarget{class_hewan_a3ff8fbb1b6984bbc36edb1b8c31a665c}\label{class_hewan_a3ff8fbb1b6984bbc36edb1b8c31a665c} 
+\index{Hewan@{Hewan}!setWeight@{setWeight}}
+\index{setWeight@{setWeight}!Hewan@{Hewan}}
+\doxysubsubsection{\texorpdfstring{setWeight()}{setWeight()}}
+{\footnotesize\ttfamily void Hewan\+::set\+Weight (\begin{DoxyParamCaption}\item[{int}]{weight }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_hewan_abeb7aa179a274c60b1e3ccc1ac03f7e7}\label{class_hewan_abeb7aa179a274c60b1e3ccc1ac03f7e7} 
+\index{Hewan@{Hewan}!konversiPanen@{konversiPanen}}
+\index{konversiPanen@{konversiPanen}!Hewan@{Hewan}}
+\doxysubsubsection{\texorpdfstring{konversiPanen}{konversiPanen}}
+{\footnotesize\ttfamily map$<$ string, pair$<$ string, string $>$ $>$ Hewan\+::konversi\+Panen\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}COW"{}},\ \{\textcolor{stringliteral}{"{}COW\_MEAT"{}},\ \textcolor{stringliteral}{"{}"{}}\}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}SHEEP"{}},\ \{\textcolor{stringliteral}{"{}SHEEP\_MEAT"{}},\ \textcolor{stringliteral}{"{}"{}}\}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}HORSE"{}},\ \{\textcolor{stringliteral}{"{}HORSE\_MEAT"{}},\ \textcolor{stringliteral}{"{}"{}}\}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}RABBIT"{}},\ \{\textcolor{stringliteral}{"{}RABBIT\_MEAT"{}},\ \textcolor{stringliteral}{"{}"{}}\}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}SNAKE"{}},\ \{\textcolor{stringliteral}{"{}SNAKE\_MEAT"{}},\ \textcolor{stringliteral}{"{}"{}}\}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}DUCK"{}},\ \{\textcolor{stringliteral}{"{}DUCK\_MEAT"{}},\ \textcolor{stringliteral}{"{}DUCK\_EGG"{}}\}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}CHICKEN"{}},\ \{\textcolor{stringliteral}{"{}CHICKEN\_MEAT"{}},\ \textcolor{stringliteral}{"{}CHICKEN\_EGG"{}}\}\}\}}
+
+\end{DoxyCode}
+\Hypertarget{class_hewan_a15fef8512209ea34556abf785d930ee5}\label{class_hewan_a15fef8512209ea34556abf785d930ee5} 
+\index{Hewan@{Hewan}!type@{type}}
+\index{type@{type}!Hewan@{Hewan}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily string Hewan\+::type\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_hewan_aeb34c46d5753c6a45afaa498ef8a6f3c}\label{class_hewan_aeb34c46d5753c6a45afaa498ef8a6f3c} 
+\index{Hewan@{Hewan}!weight@{weight}}
+\index{weight@{weight}!Hewan@{Hewan}}
+\doxysubsubsection{\texorpdfstring{weight}{weight}}
+{\footnotesize\ttfamily int Hewan\+::weight\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_hewan_a5269a7ff3623be7a016273be9efb8ef0}\label{class_hewan_a5269a7ff3623be7a016273be9efb8ef0} 
+\index{Hewan@{Hewan}!weightHarvest@{weightHarvest}}
+\index{weightHarvest@{weightHarvest}!Hewan@{Hewan}}
+\doxysubsubsection{\texorpdfstring{weightHarvest}{weightHarvest}}
+{\footnotesize\ttfamily int Hewan\+::weight\+Harvest\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/\+Header/\mbox{\hyperlink{_hewan_8hpp}{Hewan.\+hpp}}\item 
+D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/\+Implementation/\mbox{\hyperlink{_hewan_8cpp}{Hewan.\+cpp}}\end{DoxyCompactItemize}

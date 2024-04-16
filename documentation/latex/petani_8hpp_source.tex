@@ -1,0 +1,35 @@
+\doxysection{petani.\+hpp}
+\hypertarget{petani_8hpp_source}{}\label{petani_8hpp_source}\index{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Header/petani.hpp@{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Header/petani.hpp}}
+\mbox{\hyperlink{petani_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PETANI\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PETANI\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pemain_8hpp}{pemain.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ KTKP\_PETANI\ 13}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_petani}{Petani}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_pemain}{Pemain}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_matrix_area}{MatrixArea<Tanaman>}}\ \mbox{\hyperlink{class_petani_aedd947f0ca70eb1886132c07ce117bb8}{ladang}};}
+\DoxyCodeLine{00011\ \ \ \ \ vector<Tanaman*>\ \mbox{\hyperlink{class_petani_a0ff1d7823123f200e8ba7efc6005ca3a}{daftarTanaman}};}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_petani_af66d774a497e105edf0cfeb88ec9523f}{Petani}}();}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_petani_af66d774a497e105edf0cfeb88ec9523f}{Petani}}(\textcolor{keywordtype}{string}\ usn,\ \textcolor{keywordtype}{float}\ guld,\ \textcolor{keywordtype}{int}\ bb);}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_petani_af66d774a497e105edf0cfeb88ec9523f}{Petani}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_petani}{Petani}}\ \&);}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_petani_a8ee034ac51a1a4ae98fb08403ee14757}{\string~Petani}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_matrix_area}{MatrixArea<Tanaman>}}\ \&\mbox{\hyperlink{class_petani_a4d87f6a4d4f6e1446b3db935e20f89f0}{getLadang}}();}
+\DoxyCodeLine{00018\ \ \ \ \ vector<Tanaman*>\ \&\mbox{\hyperlink{class_petani_a7cb8fd9c5afe032954c9f3819a0d2ade}{getDaftarTanaman}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_petani_a875fe10fe28d3fb4a9896bc4d27ce2fc}{cetakLadang}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_petani_a0ec9c5cc7e18d441fa8958f89d75dd66}{tanam}}();\ \textcolor{comment}{//\ coords\ tanaman\ yg\ ingin\ ditanam,\ coords\ letak\ menanam\ dlm\ ladang}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_petani_a313a9f335dd0f29c63991420142e39ab}{panenTani}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_petani_a3ff133233507f7aaa2a360a9c60748a2}{beli}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_petani_a5ca5ed093538fdfb56e3c1a723288866}{jual}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_petani_a210398f01bbd3e62a754605d610b319d}{calculateTax}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_petani_af2d78c5b5b1fe320a847e1e05df84529}{countKekayaanLadang}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_petani_a000de05fc65aa9c5c2c2f35ffb603c3d}{tambahUmurTanaman}}();}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

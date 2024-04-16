@@ -1,0 +1,49 @@
+\doxysection{Parser\+Hewan.\+hpp}
+\hypertarget{_parser_hewan_8hpp_source}{}\label{_parser_hewan_8hpp_source}\index{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Header/ParserHewan.hpp@{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Header/ParserHewan.hpp}}
+\mbox{\hyperlink{_parser_hewan_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PARSERHEWAN\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PARSERHEWAN\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_base_parser_8hpp}{BaseParser.hpp}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_header_2helper_8hpp}{helper.hpp}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ Parser\ khusus\ untuk\ membaca\ file\ konfigurasi\ hewan.}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_parser_hewan}{ParserHewan}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_parser}{BaseParser}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{static}\ vector<int>\ \mbox{\hyperlink{class_parser_hewan_af5e73eb2545471f2b26cda46316f52e0}{animalID}};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{static}\ vector<string>\ \mbox{\hyperlink{class_parser_hewan_a7c6f1fc47fdf132b303181cb218605e3}{animalCode}};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{static}\ vector<string>\ \mbox{\hyperlink{class_parser_hewan_a57f93d15af960d311c0d9bab04958e1a}{animalName}};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{static}\ vector<string>\ \mbox{\hyperlink{class_parser_hewan_a13a3d0c110ee2934cb83699cc4bf69cd}{animalType}};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{static}\ vector<int>\ \mbox{\hyperlink{class_parser_hewan_a8f340e464a101c660943a27a59074c27}{harvestWeight}};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ vector<int>\ \mbox{\hyperlink{class_parser_hewan_ab1c9182bbe873411c464bea5e2cf235b}{price}};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{static}\ vector<string>\ \mbox{\hyperlink{class_parser_hewan_acc49c3abd0a7dddd2d6a890024296c5c}{validAnimalTypes}};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{static}\ map<int,\ int>\ \mbox{\hyperlink{class_parser_hewan_a2c712e7d96e77130a99a732bf59838dd}{IndexToIDMap}};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{static}\ map<int,\ int>\ \mbox{\hyperlink{class_parser_hewan_afb071172deedfc920250d740d65cac0e}{IDToIndexMap}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_parser_hewan_a9174d4524648ea8d4a69663b3132594a}{ParserHewan}}()}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ this-\/>validAnimalTypes\ =\ \{\textcolor{stringliteral}{"{}HERBIVORE"{}},\ \textcolor{stringliteral}{"{}CARNIVORE"{}},\ \textcolor{stringliteral}{"{}OMNIVORE"{}}\};}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_parser_hewan_a118c34862a0e69e4b51c9c70f746301e}{\string~ParserHewan}}()\ \{\}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_parser_hewan_aaa9fc2f00ac0534327070d34fce224dd}{ParseFile}}(\textcolor{keywordtype}{string}\ fileDirectory);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_parser_hewan_a167ff09960f9ceeab0263c03e6d4c445}{ClearParserData}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_hewan_a1f5b1cae3601bed36e005882dcfbd66c}{getID}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_parser_hewan_aa62ff0f815ec8ecf44ad5b6e759a0b2f}{getCode}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_parser_hewan_abfe77cd82f6580f0fae7e2fc7f2650ca}{getName}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_parser_hewan_af85edbf27dbada1028015f2fd103f981}{getType}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_hewan_a94950216cf9d87140a0905aa97fa9629}{getHarvestWeight}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_hewan_af8208d9f850ebd5c55bdc2fcddec2d24}{getPrice}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_hewan_ab4e1382a339eded152637888e83c1044}{getConfigSize}}();}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_hewan_a48016384e135391a7519580ec998f0e6}{convertCodeToID}}(\textcolor{keywordtype}{string}\ Code);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_hewan_af20d4f678f3f1489dd224c781748912b}{convertNameToID}}(\textcolor{keywordtype}{string}\ Name);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_hewan_a476136a4372f2ae368a09a077dbd335c}{indexToID}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_hewan_a70b9e9b39121798caff3fa8c9393488f}{IDToIndex}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{friend}\ ostream\ \&\mbox{\hyperlink{class_parser_hewan_a9d2d0536ddb748993b85c81e57907e7c}{operator<<}}(ostream\ \&os,\ \mbox{\hyperlink{class_parser_hewan}{ParserHewan}}\ \&PH);\ \textcolor{comment}{//\ untuk\ debugging,\ pake\ aja}}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

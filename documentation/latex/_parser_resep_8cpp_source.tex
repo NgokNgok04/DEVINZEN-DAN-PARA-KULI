@@ -1,0 +1,167 @@
+\doxysection{Parser\+Resep.\+cpp}
+\hypertarget{_parser_resep_8cpp_source}{}\label{_parser_resep_8cpp_source}\index{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Implementation/ParserResep.cpp@{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Implementation/ParserResep.cpp}}
+\mbox{\hyperlink{_parser_resep_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_resep_8hpp}{../Header/ParserResep.hpp}}"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_header_2helper_8hpp}{../Header/helper.hpp}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}}
+\DoxyCodeLine{00004\ vector<int>\ \mbox{\hyperlink{class_parser_resep_ae12e8dd13100973b1ba9fc96559ecf10}{ParserResep::recipeID}}\ =\ vector<int>()\ ;}
+\DoxyCodeLine{00005\ vector<string>\ \mbox{\hyperlink{class_parser_resep_ad4c7b7fdac94966dcf96fc5066b2d214}{ParserResep::recipeCode}}=\ vector<string>();}
+\DoxyCodeLine{00006\ vector<string>\ \mbox{\hyperlink{class_parser_resep_a1e59d86592faa3819fbd0b57cbd7a127}{ParserResep::recipeName}}=\ vector<string>();}
+\DoxyCodeLine{00007\ vector<int>\ \mbox{\hyperlink{class_parser_resep_acbe31bb386f655f749d0af5615e7764d}{ParserResep::recipePrice}}\ =\ vector<int>();}
+\DoxyCodeLine{00008\ vector<vector<pair<string,int>\ >\ >\ \mbox{\hyperlink{class_parser_resep_a36c403f56e680a1fdb46c1d8c80eab53}{ParserResep::recipeMaterialQuantity}}\ =\ vector<vector<pair<string,int>\ >\ >\ ();}
+\DoxyCodeLine{00009\ map<int,int>\ \mbox{\hyperlink{class_parser_resep_a75a831ac92da5bee0c939a4e57d018ab}{ParserResep::IndexToIDMap}}\ =\ map<int,int>();}
+\DoxyCodeLine{00010\ map<int,int>\ \mbox{\hyperlink{class_parser_resep_a5a5ad1e843fecf345a63c148e9f5ff40}{ParserResep::IDToIndexMap}}=\ map<int,int>();}
+\DoxyCodeLine{00011\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_parser_resep_a48ffbb643f505018b0464812af744036}{ParserResep::ParseFile}}(\textcolor{keywordtype}{string}\ fileDirectory)}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ ifstream\ InputFile;}
+\DoxyCodeLine{00014\ \ \ \ \ InputFile.open(fileDirectory);\ \textcolor{comment}{//\ buka\ file}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordflow}{if}\ (!InputFile.is\_open())}
+\DoxyCodeLine{00017\ \ \ \ \ \{\ \textcolor{comment}{//\ jika\ gagal\ dibuka\ lempar\ exception}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_recipe_config_missing_exception}{RecipeConfigMissingException}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ vector<string>\ SpaceStrippedLine;}
+\DoxyCodeLine{00023\ \ \ \ \ pair<string,\ int>\ pairTemp;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{string}\ LineFile;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ numValue;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(InputFile,\ LineFile))}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ SpaceStrippedLine\ =\ \mbox{\hyperlink{_header_2helper_8hpp_a119e6cee063f87eb5afcf6a7147c1a1a}{StringToStringList}}(LineFile);\ \textcolor{comment}{//\ parse\ spasi}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ numValue\ =\ stoi(SpaceStrippedLine[0]);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (numValue\ <=\ 0)}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \{\ \textcolor{comment}{//\ ID\ tidak\ boleh\ negatif}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_resep_a657aceabaa68d3498cc251879fd582a6}{ClearParserData}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_recipe_i_d_config_exception}{InvalidRecipeIDConfigException}}();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_resep_ae12e8dd13100973b1ba9fc96559ecf10}{recipeID}}.push\_back(numValue);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_resep_ad4c7b7fdac94966dcf96fc5066b2d214}{recipeCode}}.push\_back(SpaceStrippedLine[1]);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_resep_a1e59d86592faa3819fbd0b57cbd7a127}{recipeName}}.push\_back(SpaceStrippedLine[2]);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ numValue\ =\ stoi(SpaceStrippedLine[3]);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (numValue\ <=\ 0)}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \{\ \textcolor{comment}{//\ harga\ tidak\ boleh\ negatif\ atau\ sama\ dengan\ 0}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_resep_a657aceabaa68d3498cc251879fd582a6}{ClearParserData}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_recipe_price_config_exception}{InvalidRecipePriceConfigException}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_resep_acbe31bb386f655f749d0af5615e7764d}{recipePrice}}.push\_back(numValue);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ vector<pair<string,\ int>>\ MaterialQuantityPairList;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 4;\ i\ <\ SpaceStrippedLine.size();\ i\ +=\ 2)}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ pairTemp.first\ =\ SpaceStrippedLine[i];}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ numValue\ =\ stoi(SpaceStrippedLine[i\ +\ 1]);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (numValue\ <=\ 0)}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{comment}{//\ kuantitas\ material\ tidak\ boleh\ lebih\ kecil\ atau\ sama\ dengan\ 0}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_resep_a657aceabaa68d3498cc251879fd582a6}{ClearParserData}}();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_recipe_quantity_config_exception}{InvalidRecipeQuantityConfigException}}();}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ pairTemp.second\ =\ numValue;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ MaterialQuantityPairList.push\_back(pairTemp);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_resep_a36c403f56e680a1fdb46c1d8c80eab53}{recipeMaterialQuantity}}.push\_back(MaterialQuantityPairList);}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_parser_resep_ae12e8dd13100973b1ba9fc96559ecf10}{recipeID}}.size();\ i++)}
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parser_resep_a75a831ac92da5bee0c939a4e57d018ab}{IndexToIDMap}}.insert(\{i,\ \mbox{\hyperlink{class_parser_resep_ae12e8dd13100973b1ba9fc96559ecf10}{recipeID}}[i]\});}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parser_resep_a5a5ad1e843fecf345a63c148e9f5ff40}{IDToIndexMap}}.insert(\{\mbox{\hyperlink{class_parser_resep_ae12e8dd13100973b1ba9fc96559ecf10}{recipeID}}[i],\ i\});}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Konfigurasi\ recipe.txt\ berhasil!\(\backslash\)n"{}};}
+\DoxyCodeLine{00072\ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_parser_resep_a657aceabaa68d3498cc251879fd582a6}{ParserResep::ClearParserData}}()}
+\DoxyCodeLine{00075\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_resep_ae12e8dd13100973b1ba9fc96559ecf10}{recipeID}}.clear();}
+\DoxyCodeLine{00077\ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_resep_ad4c7b7fdac94966dcf96fc5066b2d214}{recipeCode}}.clear();}
+\DoxyCodeLine{00078\ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_resep_a1e59d86592faa3819fbd0b57cbd7a127}{recipeName}}.clear();}
+\DoxyCodeLine{00079\ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_resep_acbe31bb386f655f749d0af5615e7764d}{recipePrice}}.clear();}
+\DoxyCodeLine{00080\ \ \ \ \ this-\/>\mbox{\hyperlink{class_parser_resep_a36c403f56e680a1fdb46c1d8c80eab53}{recipeMaterialQuantity}}.clear();}
+\DoxyCodeLine{00081\ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_resep_a2e4f82a5c8ec03ac89439af12cb8ea34}{ParserResep::getID}}(\textcolor{keywordtype}{int}\ index)}
+\DoxyCodeLine{00084\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_resep_ae12e8dd13100973b1ba9fc96559ecf10}{recipeID}}[index];}
+\DoxyCodeLine{00086\ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_parser_resep_a4dd43ad33cc2656fc98151fc8f319cdb}{ParserResep::getCode}}(\textcolor{keywordtype}{int}\ ID)}
+\DoxyCodeLine{00089\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ \mbox{\hyperlink{class_parser_resep_abbeddabc69eba8bd5384e5116c6d9e3b}{IDToIndex}}(ID);}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_resep_ad4c7b7fdac94966dcf96fc5066b2d214}{recipeCode}}[index];}
+\DoxyCodeLine{00092\ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_parser_resep_a64e6b2e927ae1c67617d82a0afe7b9fb}{ParserResep::getName}}(\textcolor{keywordtype}{int}\ ID)}
+\DoxyCodeLine{00095\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ \mbox{\hyperlink{class_parser_resep_abbeddabc69eba8bd5384e5116c6d9e3b}{IDToIndex}}(ID);}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_resep_a1e59d86592faa3819fbd0b57cbd7a127}{recipeName}}[index];}
+\DoxyCodeLine{00098\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_resep_a9241bce3ff411df86cbdba1d289017fb}{ParserResep::getPrice}}(\textcolor{keywordtype}{int}\ ID)}
+\DoxyCodeLine{00101\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ \mbox{\hyperlink{class_parser_resep_abbeddabc69eba8bd5384e5116c6d9e3b}{IDToIndex}}(ID);}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_resep_acbe31bb386f655f749d0af5615e7764d}{recipePrice}}[index];}
+\DoxyCodeLine{00104\ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ vector<pair<string,\ int>>\ \mbox{\hyperlink{class_parser_resep_a6660915312cb64d00ffe4d55a09c2e55}{ParserResep::getRecipeMaterialQuantity}}(\textcolor{keywordtype}{int}\ ID)}
+\DoxyCodeLine{00107\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ \mbox{\hyperlink{class_parser_resep_abbeddabc69eba8bd5384e5116c6d9e3b}{IDToIndex}}(ID);}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_resep_a36c403f56e680a1fdb46c1d8c80eab53}{recipeMaterialQuantity}}[index];}
+\DoxyCodeLine{00110\ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_resep_a7514376603a52b47cc1649a69414a52c}{ParserResep::getConfigSize}}()}
+\DoxyCodeLine{00113\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_resep_ae12e8dd13100973b1ba9fc96559ecf10}{recipeID}}.size();}
+\DoxyCodeLine{00115\ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_resep_abfd647276da9fb188fb7a2712b3ab67c}{ParserResep::convertCodeToID}}(\textcolor{keywordtype}{string}\ Code)}
+\DoxyCodeLine{00118\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_parser_resep_a7514376603a52b47cc1649a69414a52c}{getConfigSize}}();\ i++)}
+\DoxyCodeLine{00120\ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_parser_resep_ad4c7b7fdac94966dcf96fc5066b2d214}{recipeCode}}[i]\ ==\ Code)}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_resep_ae12e8dd13100973b1ba9fc96559ecf10}{recipeID}}[i];}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00128\ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_resep_a0761cfc0660fb952cd4ac3433cdfad7a}{ParserResep::convertNameToID}}(\textcolor{keywordtype}{string}\ Name)}
+\DoxyCodeLine{00131\ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_parser_resep_a7514376603a52b47cc1649a69414a52c}{getConfigSize}}();\ i++)}
+\DoxyCodeLine{00133\ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_parser_resep_a1e59d86592faa3819fbd0b57cbd7a127}{recipeName}}[i]\ ==\ Name)}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_resep_ae12e8dd13100973b1ba9fc96559ecf10}{recipeID}}[i];}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00141\ \}}
+\DoxyCodeLine{00142\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_resep_a46a9f7bc352eaa9693dbb9a710a623c2}{ParserResep::indexToID}}(\textcolor{keywordtype}{int}\ index)}
+\DoxyCodeLine{00143\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_resep_a75a831ac92da5bee0c939a4e57d018ab}{IndexToIDMap}}[index];}
+\DoxyCodeLine{00145\ \}}
+\DoxyCodeLine{00146\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parser_resep_abbeddabc69eba8bd5384e5116c6d9e3b}{ParserResep::IDToIndex}}(\textcolor{keywordtype}{int}\ ID)}
+\DoxyCodeLine{00147\ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_parser_resep_a5a5ad1e843fecf345a63c148e9f5ff40}{IDToIndexMap}}[ID];}
+\DoxyCodeLine{00149\ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ ostream\ \&\mbox{\hyperlink{_parser_resep_8cpp_ad26afe0bbd309fbc5c03aae59decd6f2}{operator<<}}(ostream\ \&os,\ \mbox{\hyperlink{class_parser_resep}{ParserResep}}\ \&PR)}
+\DoxyCodeLine{00152\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i<PR.\mbox{\hyperlink{class_parser_resep_ae12e8dd13100973b1ba9fc96559ecf10}{recipeID}}.size();\ i++)\{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ os<<PR.\mbox{\hyperlink{class_parser_resep_ae12e8dd13100973b1ba9fc96559ecf10}{recipeID}}[i]<<\textcolor{stringliteral}{"{}\ "{}}<<PR.\mbox{\hyperlink{class_parser_resep_ad4c7b7fdac94966dcf96fc5066b2d214}{recipeCode}}[i]<<\textcolor{stringliteral}{"{}\ "{}}<<PR.\mbox{\hyperlink{class_parser_resep_a1e59d86592faa3819fbd0b57cbd7a127}{recipeName}}[i]<<\textcolor{stringliteral}{"{}\ "{}}<<PR.\mbox{\hyperlink{class_parser_resep_acbe31bb386f655f749d0af5615e7764d}{recipePrice}}[i]<<\textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;\ j<PR.\mbox{\hyperlink{class_parser_resep_a36c403f56e680a1fdb46c1d8c80eab53}{recipeMaterialQuantity}}[i].size();\ j++)\{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ os<<PR.\mbox{\hyperlink{class_parser_resep_a36c403f56e680a1fdb46c1d8c80eab53}{recipeMaterialQuantity}}[i][j].first<<\textcolor{stringliteral}{"{}\ "{}}<<PR.\mbox{\hyperlink{class_parser_resep_a36c403f56e680a1fdb46c1d8c80eab53}{recipeMaterialQuantity}}[i][j].second<<\textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ os<<\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00159\ \ \ \ \ \}}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00161\ \}}
+
+\end{DoxyCode}

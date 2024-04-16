@@ -1,0 +1,186 @@
+\doxysection{Wali\+Kota Class Reference}
+\hypertarget{class_wali_kota}{}\label{class_wali_kota}\index{WaliKota@{WaliKota}}
+
+
+{\ttfamily \#include $<$walikota.\+hpp$>$}
+
+Inheritance diagram for Wali\+Kota\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_wali_kota}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_wali_kota_a605f509a97cbdc34a63325ad90876e1d}{Wali\+Kota}} ()
+\item 
+\mbox{\hyperlink{class_wali_kota_aed238cc2137646a4289b77ec5d8f10e8}{Wali\+Kota}} (string usn, float guld, int bb)
+\item 
+\mbox{\hyperlink{class_wali_kota_a4723f156d2e19d34310dcaebed81eef5}{Wali\+Kota}} (const \mbox{\hyperlink{class_wali_kota}{Wali\+Kota}} \&)
+\item 
+\mbox{\hyperlink{class_wali_kota_add6af109c99924694ecfa61989e55f85}{\texorpdfstring{$\sim$}{\string~}\+Wali\+Kota}} ()
+\item 
+void \mbox{\hyperlink{class_wali_kota_a5d10bf96ce1ecee9b48ecc0b3f70c04b}{pungut\+Pajak}} (vector$<$ \mbox{\hyperlink{class_pemain}{Pemain}} \texorpdfstring{$\ast$}{*} $>$)
+\item 
+void \mbox{\hyperlink{class_wali_kota_a8d3b0e6c8d553c5493a8ae4d03925e13}{beli}} ()
+\item 
+void \mbox{\hyperlink{class_wali_kota_ac8cf6887413f9bc75482559c19f7db65}{jual}} ()
+\item 
+void \mbox{\hyperlink{class_wali_kota_aebc657ead88ec00a18d62754ca90f4c0}{bangun\+Bangunan}} ()
+\item 
+float \mbox{\hyperlink{class_wali_kota_a75e383a55fa5aa6cab8a0b1f0dd31701}{calculate\+Tax}} ()
+\item 
+void \mbox{\hyperlink{class_wali_kota_ab645c43b9b5557ddaabbd5fe483b0155}{tambah\+Pemain}} (vector$<$ \mbox{\hyperlink{class_pemain}{Pemain}} \texorpdfstring{$\ast$}{*} $>$ \&, int \&, int \&, \mbox{\hyperlink{class_pemain}{Pemain}} \texorpdfstring{$\ast$}{*}current\+Player)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_pemain}{Pemain}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pemain_a03ed776175a10f26c9ee82bf7f032bba}{Pemain}} ()
+\item 
+\mbox{\hyperlink{class_pemain_a1b78b1d416a7c91f3ce3000f4687d08c}{Pemain}} (string usn, float guld, int bb)
+\item 
+\mbox{\hyperlink{class_pemain_ac0de7eac8f47d3553a6b872b0ca206d3}{Pemain}} (const \mbox{\hyperlink{class_pemain}{Pemain}} \&)
+\item 
+\mbox{\hyperlink{class_pemain_a6b0524f9d09a677dff166ca9583218c5}{\texorpdfstring{$\sim$}{\string~}\+Pemain}} ()
+\item 
+string \mbox{\hyperlink{class_pemain_a130cc2f5466df0c4a43e680b9f8184a0}{get\+Tipe}} ()
+\item 
+\mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $>$ \& \mbox{\hyperlink{class_pemain_a9c67bb73e4e60a8abc46666b39698217}{get\+Inventory}} ()
+\item 
+void \mbox{\hyperlink{class_pemain_aea1378e80ab57a5cef372d235453f5a0}{set\+Inv}} (int, int, \mbox{\hyperlink{class_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*})
+\item 
+void \mbox{\hyperlink{class_pemain_a4b791497e4a80576ecba41b8a559b053}{cetak\+Penyimpanan}} ()
+\item 
+void \mbox{\hyperlink{class_pemain_abffc9ee96d69f6154cc0959cd75bf9d3}{makan}} ()
+\item 
+string \mbox{\hyperlink{class_pemain_add9d818b99a06b5a68f99d3315cba785}{get\+Username}} ()
+\item 
+int \mbox{\hyperlink{class_pemain_a09007a204e3a9a07099c687ec6aa9959}{get\+Berat\+Badan}} ()
+\item 
+float \mbox{\hyperlink{class_pemain_a1b06b3e401922156aece6747bfe38e4e}{get\+Gulden}} ()
+\item 
+bool \mbox{\hyperlink{class_pemain_a7ff65870b5b8f23fea65fad97301763f}{operator$<$}} (\mbox{\hyperlink{class_pemain}{Pemain}} \&other)
+\item 
+bool \mbox{\hyperlink{class_pemain_aa5b4bda4e595847a8c1c81b0b186eddd}{operator==}} (\mbox{\hyperlink{class_pemain}{Pemain}} \&other)
+\item 
+float \mbox{\hyperlink{class_pemain_abb5667913e9e943a80bad03a9ab204cc}{get\+Tax\+Rate}} (int KKP)
+\item 
+int \mbox{\hyperlink{class_pemain_a140d89d75a81c5c692e498164a0509f2}{count\+Kekayaan\+Inven}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ string, int $>$ \mbox{\hyperlink{class_wali_kota_a7031b0257de50617e7ce5501432715f9}{daftar\+Material}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_pemain}{Pemain}}}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}
+\item 
+int \mbox{\hyperlink{class_pemain_aedd1711ccfdf4aa8178520954033cc79}{berat\+\_\+badan}}
+\item 
+string \mbox{\hyperlink{class_pemain_a18ab9b7c3afd520b9dad0fd668f9948c}{tipe}}
+\item 
+vector$<$ int $>$ \mbox{\hyperlink{class_pemain_a746c644fcbee40e6f8a564d1ae91b7b5}{owned\+Build}}
+\item 
+vector$<$ \mbox{\hyperlink{class_bangunan}{Bangunan}} $>$ \mbox{\hyperlink{class_pemain_a0e6c2e27686d80dcc93373108ad7dcaf}{owned\+Bangunan}}
+\item 
+\mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $>$ \mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}
+\item 
+string \mbox{\hyperlink{class_pemain_a81c04a010c0de44910d82488b46c5217}{username}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_wali_kota_a605f509a97cbdc34a63325ad90876e1d}\label{class_wali_kota_a605f509a97cbdc34a63325ad90876e1d} 
+\index{WaliKota@{WaliKota}!WaliKota@{WaliKota}}
+\index{WaliKota@{WaliKota}!WaliKota@{WaliKota}}
+\doxysubsubsection{\texorpdfstring{WaliKota()}{WaliKota()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Wali\+Kota\+::\+Wali\+Kota (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_wali_kota_aed238cc2137646a4289b77ec5d8f10e8}\label{class_wali_kota_aed238cc2137646a4289b77ec5d8f10e8} 
+\index{WaliKota@{WaliKota}!WaliKota@{WaliKota}}
+\index{WaliKota@{WaliKota}!WaliKota@{WaliKota}}
+\doxysubsubsection{\texorpdfstring{WaliKota()}{WaliKota()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Wali\+Kota\+::\+Wali\+Kota (\begin{DoxyParamCaption}\item[{string}]{usn,  }\item[{float}]{guld,  }\item[{int}]{bb }\end{DoxyParamCaption})}
+
+\Hypertarget{class_wali_kota_a4723f156d2e19d34310dcaebed81eef5}\label{class_wali_kota_a4723f156d2e19d34310dcaebed81eef5} 
+\index{WaliKota@{WaliKota}!WaliKota@{WaliKota}}
+\index{WaliKota@{WaliKota}!WaliKota@{WaliKota}}
+\doxysubsubsection{\texorpdfstring{WaliKota()}{WaliKota()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Wali\+Kota\+::\+Wali\+Kota (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_wali_kota}{Wali\+Kota}} \&}]{other }\end{DoxyParamCaption})}
+
+\Hypertarget{class_wali_kota_add6af109c99924694ecfa61989e55f85}\label{class_wali_kota_add6af109c99924694ecfa61989e55f85} 
+\index{WaliKota@{WaliKota}!````~WaliKota@{\texorpdfstring{$\sim$}{\string~}WaliKota}}
+\index{````~WaliKota@{\texorpdfstring{$\sim$}{\string~}WaliKota}!WaliKota@{WaliKota}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}WaliKota()}{\string~WaliKota()}}
+{\footnotesize\ttfamily Wali\+Kota\+::\texorpdfstring{$\sim$}{\string~}\+Wali\+Kota (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_wali_kota_aebc657ead88ec00a18d62754ca90f4c0}\label{class_wali_kota_aebc657ead88ec00a18d62754ca90f4c0} 
+\index{WaliKota@{WaliKota}!bangunBangunan@{bangunBangunan}}
+\index{bangunBangunan@{bangunBangunan}!WaliKota@{WaliKota}}
+\doxysubsubsection{\texorpdfstring{bangunBangunan()}{bangunBangunan()}}
+{\footnotesize\ttfamily void Wali\+Kota\+::bangun\+Bangunan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_wali_kota_a8d3b0e6c8d553c5493a8ae4d03925e13}\label{class_wali_kota_a8d3b0e6c8d553c5493a8ae4d03925e13} 
+\index{WaliKota@{WaliKota}!beli@{beli}}
+\index{beli@{beli}!WaliKota@{WaliKota}}
+\doxysubsubsection{\texorpdfstring{beli()}{beli()}}
+{\footnotesize\ttfamily void Wali\+Kota\+::beli (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_pemain_a1bb2169d8048c901067eb197f1a3e6f0}{Pemain}}.
+
+\Hypertarget{class_wali_kota_a75e383a55fa5aa6cab8a0b1f0dd31701}\label{class_wali_kota_a75e383a55fa5aa6cab8a0b1f0dd31701} 
+\index{WaliKota@{WaliKota}!calculateTax@{calculateTax}}
+\index{calculateTax@{calculateTax}!WaliKota@{WaliKota}}
+\doxysubsubsection{\texorpdfstring{calculateTax()}{calculateTax()}}
+{\footnotesize\ttfamily float Wali\+Kota\+::calculate\+Tax (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_pemain_a9093cf333dba8d8918809af134557d21}{Pemain}}.
+
+\Hypertarget{class_wali_kota_ac8cf6887413f9bc75482559c19f7db65}\label{class_wali_kota_ac8cf6887413f9bc75482559c19f7db65} 
+\index{WaliKota@{WaliKota}!jual@{jual}}
+\index{jual@{jual}!WaliKota@{WaliKota}}
+\doxysubsubsection{\texorpdfstring{jual()}{jual()}}
+{\footnotesize\ttfamily void Wali\+Kota\+::jual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_pemain_af0fe9802178ec237e636198900776398}{Pemain}}.
+
+\Hypertarget{class_wali_kota_a5d10bf96ce1ecee9b48ecc0b3f70c04b}\label{class_wali_kota_a5d10bf96ce1ecee9b48ecc0b3f70c04b} 
+\index{WaliKota@{WaliKota}!pungutPajak@{pungutPajak}}
+\index{pungutPajak@{pungutPajak}!WaliKota@{WaliKota}}
+\doxysubsubsection{\texorpdfstring{pungutPajak()}{pungutPajak()}}
+{\footnotesize\ttfamily void Wali\+Kota\+::pungut\+Pajak (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_pemain}{Pemain}} \texorpdfstring{$\ast$}{*} $>$}]{all\+Players }\end{DoxyParamCaption})}
+
+\Hypertarget{class_wali_kota_ab645c43b9b5557ddaabbd5fe483b0155}\label{class_wali_kota_ab645c43b9b5557ddaabbd5fe483b0155} 
+\index{WaliKota@{WaliKota}!tambahPemain@{tambahPemain}}
+\index{tambahPemain@{tambahPemain}!WaliKota@{WaliKota}}
+\doxysubsubsection{\texorpdfstring{tambahPemain()}{tambahPemain()}}
+{\footnotesize\ttfamily void Wali\+Kota\+::tambah\+Pemain (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_pemain}{Pemain}} \texorpdfstring{$\ast$}{*} $>$ \&}]{all\+Players,  }\item[{int \&}]{player\+Amount,  }\item[{int \&}]{current\+Player\+Index,  }\item[{\mbox{\hyperlink{class_pemain}{Pemain}} \texorpdfstring{$\ast$}{*}}]{current\+Player }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_wali_kota_a7031b0257de50617e7ce5501432715f9}\label{class_wali_kota_a7031b0257de50617e7ce5501432715f9} 
+\index{WaliKota@{WaliKota}!daftarMaterial@{daftarMaterial}}
+\index{daftarMaterial@{daftarMaterial}!WaliKota@{WaliKota}}
+\doxysubsubsection{\texorpdfstring{daftarMaterial}{daftarMaterial}}
+{\footnotesize\ttfamily map$<$string,int$>$ Wali\+Kota\+::daftar\+Material\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/\+Header/\mbox{\hyperlink{walikota_8hpp}{walikota.\+hpp}}\item 
+D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/\+Implementation/\mbox{\hyperlink{walikota_8cpp}{walikota.\+cpp}}\end{DoxyCompactItemize}

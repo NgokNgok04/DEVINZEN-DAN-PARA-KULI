@@ -1,0 +1,253 @@
+\doxysection{Pemain Class Reference}
+\hypertarget{class_pemain}{}\label{class_pemain}\index{Pemain@{Pemain}}
+
+
+{\ttfamily \#include $<$pemain.\+hpp$>$}
+
+Inheritance diagram for Pemain\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_pemain}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pemain_a03ed776175a10f26c9ee82bf7f032bba}{Pemain}} ()
+\item 
+\mbox{\hyperlink{class_pemain_a1b78b1d416a7c91f3ce3000f4687d08c}{Pemain}} (string usn, float guld, int bb)
+\item 
+\mbox{\hyperlink{class_pemain_ac0de7eac8f47d3553a6b872b0ca206d3}{Pemain}} (const \mbox{\hyperlink{class_pemain}{Pemain}} \&)
+\item 
+\mbox{\hyperlink{class_pemain_a6b0524f9d09a677dff166ca9583218c5}{\texorpdfstring{$\sim$}{\string~}\+Pemain}} ()
+\item 
+string \mbox{\hyperlink{class_pemain_a130cc2f5466df0c4a43e680b9f8184a0}{get\+Tipe}} ()
+\item 
+\mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $>$ \& \mbox{\hyperlink{class_pemain_a9c67bb73e4e60a8abc46666b39698217}{get\+Inventory}} ()
+\item 
+void \mbox{\hyperlink{class_pemain_aea1378e80ab57a5cef372d235453f5a0}{set\+Inv}} (int, int, \mbox{\hyperlink{class_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*})
+\item 
+void \mbox{\hyperlink{class_pemain_a4b791497e4a80576ecba41b8a559b053}{cetak\+Penyimpanan}} ()
+\item 
+void \mbox{\hyperlink{class_pemain_abffc9ee96d69f6154cc0959cd75bf9d3}{makan}} ()
+\item 
+virtual void \mbox{\hyperlink{class_pemain_a1bb2169d8048c901067eb197f1a3e6f0}{beli}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_pemain_af0fe9802178ec237e636198900776398}{jual}} ()=0
+\item 
+string \mbox{\hyperlink{class_pemain_add9d818b99a06b5a68f99d3315cba785}{get\+Username}} ()
+\item 
+int \mbox{\hyperlink{class_pemain_a09007a204e3a9a07099c687ec6aa9959}{get\+Berat\+Badan}} ()
+\item 
+float \mbox{\hyperlink{class_pemain_a1b06b3e401922156aece6747bfe38e4e}{get\+Gulden}} ()
+\item 
+virtual float \mbox{\hyperlink{class_pemain_a9093cf333dba8d8918809af134557d21}{calculate\+Tax}} ()=0
+\item 
+bool \mbox{\hyperlink{class_pemain_a7ff65870b5b8f23fea65fad97301763f}{operator$<$}} (\mbox{\hyperlink{class_pemain}{Pemain}} \&other)
+\item 
+bool \mbox{\hyperlink{class_pemain_aa5b4bda4e595847a8c1c81b0b186eddd}{operator==}} (\mbox{\hyperlink{class_pemain}{Pemain}} \&other)
+\item 
+float \mbox{\hyperlink{class_pemain_abb5667913e9e943a80bad03a9ab204cc}{get\+Tax\+Rate}} (int KKP)
+\item 
+int \mbox{\hyperlink{class_pemain_a140d89d75a81c5c692e498164a0509f2}{count\+Kekayaan\+Inven}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}
+\item 
+int \mbox{\hyperlink{class_pemain_aedd1711ccfdf4aa8178520954033cc79}{berat\+\_\+badan}}
+\item 
+string \mbox{\hyperlink{class_pemain_a18ab9b7c3afd520b9dad0fd668f9948c}{tipe}}
+\item 
+vector$<$ int $>$ \mbox{\hyperlink{class_pemain_a746c644fcbee40e6f8a564d1ae91b7b5}{owned\+Build}}
+\item 
+vector$<$ \mbox{\hyperlink{class_bangunan}{Bangunan}} $>$ \mbox{\hyperlink{class_pemain_a0e6c2e27686d80dcc93373108ad7dcaf}{owned\+Bangunan}}
+\item 
+\mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $>$ \mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}
+\item 
+string \mbox{\hyperlink{class_pemain_a81c04a010c0de44910d82488b46c5217}{username}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_pemain_a03ed776175a10f26c9ee82bf7f032bba}\label{class_pemain_a03ed776175a10f26c9ee82bf7f032bba} 
+\index{Pemain@{Pemain}!Pemain@{Pemain}}
+\index{Pemain@{Pemain}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{Pemain()}{Pemain()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Pemain\+::\+Pemain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pemain_a1b78b1d416a7c91f3ce3000f4687d08c}\label{class_pemain_a1b78b1d416a7c91f3ce3000f4687d08c} 
+\index{Pemain@{Pemain}!Pemain@{Pemain}}
+\index{Pemain@{Pemain}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{Pemain()}{Pemain()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Pemain\+::\+Pemain (\begin{DoxyParamCaption}\item[{string}]{usn,  }\item[{float}]{guld,  }\item[{int}]{bb }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pemain_ac0de7eac8f47d3553a6b872b0ca206d3}\label{class_pemain_ac0de7eac8f47d3553a6b872b0ca206d3} 
+\index{Pemain@{Pemain}!Pemain@{Pemain}}
+\index{Pemain@{Pemain}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{Pemain()}{Pemain()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Pemain\+::\+Pemain (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_pemain}{Pemain}} \&}]{other }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pemain_a6b0524f9d09a677dff166ca9583218c5}\label{class_pemain_a6b0524f9d09a677dff166ca9583218c5} 
+\index{Pemain@{Pemain}!````~Pemain@{\texorpdfstring{$\sim$}{\string~}Pemain}}
+\index{````~Pemain@{\texorpdfstring{$\sim$}{\string~}Pemain}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Pemain()}{\string~Pemain()}}
+{\footnotesize\ttfamily Pemain\+::\texorpdfstring{$\sim$}{\string~}\+Pemain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_pemain_a1bb2169d8048c901067eb197f1a3e6f0}\label{class_pemain_a1bb2169d8048c901067eb197f1a3e6f0} 
+\index{Pemain@{Pemain}!beli@{beli}}
+\index{beli@{beli}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{beli()}{beli()}}
+{\footnotesize\ttfamily virtual void Pemain\+::beli (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_petani_a3ff133233507f7aaa2a360a9c60748a2}{Petani}}, \mbox{\hyperlink{class_peternak_a4bc6b43936950908c3e8167cf49bb850}{Peternak}}, and \mbox{\hyperlink{class_wali_kota_a8d3b0e6c8d553c5493a8ae4d03925e13}{Wali\+Kota}}.
+
+\Hypertarget{class_pemain_a9093cf333dba8d8918809af134557d21}\label{class_pemain_a9093cf333dba8d8918809af134557d21} 
+\index{Pemain@{Pemain}!calculateTax@{calculateTax}}
+\index{calculateTax@{calculateTax}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{calculateTax()}{calculateTax()}}
+{\footnotesize\ttfamily virtual float Pemain\+::calculate\+Tax (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_petani_a210398f01bbd3e62a754605d610b319d}{Petani}}, \mbox{\hyperlink{class_peternak_a448a80a2382993a055d10e96971e48c7}{Peternak}}, and \mbox{\hyperlink{class_wali_kota_a75e383a55fa5aa6cab8a0b1f0dd31701}{Wali\+Kota}}.
+
+\Hypertarget{class_pemain_a4b791497e4a80576ecba41b8a559b053}\label{class_pemain_a4b791497e4a80576ecba41b8a559b053} 
+\index{Pemain@{Pemain}!cetakPenyimpanan@{cetakPenyimpanan}}
+\index{cetakPenyimpanan@{cetakPenyimpanan}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{cetakPenyimpanan()}{cetakPenyimpanan()}}
+{\footnotesize\ttfamily void Pemain\+::cetak\+Penyimpanan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pemain_a140d89d75a81c5c692e498164a0509f2}\label{class_pemain_a140d89d75a81c5c692e498164a0509f2} 
+\index{Pemain@{Pemain}!countKekayaanInven@{countKekayaanInven}}
+\index{countKekayaanInven@{countKekayaanInven}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{countKekayaanInven()}{countKekayaanInven()}}
+{\footnotesize\ttfamily int Pemain\+::count\+Kekayaan\+Inven (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pemain_a09007a204e3a9a07099c687ec6aa9959}\label{class_pemain_a09007a204e3a9a07099c687ec6aa9959} 
+\index{Pemain@{Pemain}!getBeratBadan@{getBeratBadan}}
+\index{getBeratBadan@{getBeratBadan}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{getBeratBadan()}{getBeratBadan()}}
+{\footnotesize\ttfamily int Pemain\+::get\+Berat\+Badan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pemain_a1b06b3e401922156aece6747bfe38e4e}\label{class_pemain_a1b06b3e401922156aece6747bfe38e4e} 
+\index{Pemain@{Pemain}!getGulden@{getGulden}}
+\index{getGulden@{getGulden}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{getGulden()}{getGulden()}}
+{\footnotesize\ttfamily float Pemain\+::get\+Gulden (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pemain_a9c67bb73e4e60a8abc46666b39698217}\label{class_pemain_a9c67bb73e4e60a8abc46666b39698217} 
+\index{Pemain@{Pemain}!getInventory@{getInventory}}
+\index{getInventory@{getInventory}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{getInventory()}{getInventory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $>$ \& Pemain\+::get\+Inventory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pemain_abb5667913e9e943a80bad03a9ab204cc}\label{class_pemain_abb5667913e9e943a80bad03a9ab204cc} 
+\index{Pemain@{Pemain}!getTaxRate@{getTaxRate}}
+\index{getTaxRate@{getTaxRate}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{getTaxRate()}{getTaxRate()}}
+{\footnotesize\ttfamily float Pemain\+::get\+Tax\+Rate (\begin{DoxyParamCaption}\item[{int}]{KKP }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pemain_a130cc2f5466df0c4a43e680b9f8184a0}\label{class_pemain_a130cc2f5466df0c4a43e680b9f8184a0} 
+\index{Pemain@{Pemain}!getTipe@{getTipe}}
+\index{getTipe@{getTipe}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{getTipe()}{getTipe()}}
+{\footnotesize\ttfamily string Pemain\+::get\+Tipe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pemain_add9d818b99a06b5a68f99d3315cba785}\label{class_pemain_add9d818b99a06b5a68f99d3315cba785} 
+\index{Pemain@{Pemain}!getUsername@{getUsername}}
+\index{getUsername@{getUsername}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{getUsername()}{getUsername()}}
+{\footnotesize\ttfamily string Pemain\+::get\+Username (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pemain_af0fe9802178ec237e636198900776398}\label{class_pemain_af0fe9802178ec237e636198900776398} 
+\index{Pemain@{Pemain}!jual@{jual}}
+\index{jual@{jual}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{jual()}{jual()}}
+{\footnotesize\ttfamily virtual void Pemain\+::jual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_petani_a5ca5ed093538fdfb56e3c1a723288866}{Petani}}, \mbox{\hyperlink{class_peternak_a2a3b15f51072634ce2720c35e2e1230d}{Peternak}}, and \mbox{\hyperlink{class_wali_kota_ac8cf6887413f9bc75482559c19f7db65}{Wali\+Kota}}.
+
+\Hypertarget{class_pemain_abffc9ee96d69f6154cc0959cd75bf9d3}\label{class_pemain_abffc9ee96d69f6154cc0959cd75bf9d3} 
+\index{Pemain@{Pemain}!makan@{makan}}
+\index{makan@{makan}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{makan()}{makan()}}
+{\footnotesize\ttfamily void Pemain\+::makan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pemain_a7ff65870b5b8f23fea65fad97301763f}\label{class_pemain_a7ff65870b5b8f23fea65fad97301763f} 
+\index{Pemain@{Pemain}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Pemain\+::operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pemain}{Pemain}} \&}]{other }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pemain_aa5b4bda4e595847a8c1c81b0b186eddd}\label{class_pemain_aa5b4bda4e595847a8c1c81b0b186eddd} 
+\index{Pemain@{Pemain}!operator==@{operator==}}
+\index{operator==@{operator==}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Pemain\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pemain}{Pemain}} \&}]{other }\end{DoxyParamCaption})}
+
+\Hypertarget{class_pemain_aea1378e80ab57a5cef372d235453f5a0}\label{class_pemain_aea1378e80ab57a5cef372d235453f5a0} 
+\index{Pemain@{Pemain}!setInv@{setInv}}
+\index{setInv@{setInv}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{setInv()}{setInv()}}
+{\footnotesize\ttfamily void Pemain\+::set\+Inv (\begin{DoxyParamCaption}\item[{int}]{rows,  }\item[{int}]{cols,  }\item[{\mbox{\hyperlink{class_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*}}]{a }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_pemain_aedd1711ccfdf4aa8178520954033cc79}\label{class_pemain_aedd1711ccfdf4aa8178520954033cc79} 
+\index{Pemain@{Pemain}!berat\_badan@{berat\_badan}}
+\index{berat\_badan@{berat\_badan}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{berat\_badan}{berat\_badan}}
+{\footnotesize\ttfamily int Pemain\+::berat\+\_\+badan\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}\label{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064} 
+\index{Pemain@{Pemain}!gulden@{gulden}}
+\index{gulden@{gulden}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{gulden}{gulden}}
+{\footnotesize\ttfamily float Pemain\+::gulden\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_pemain_ac42b96edb770bc0e787750d8f153317c}\label{class_pemain_ac42b96edb770bc0e787750d8f153317c} 
+\index{Pemain@{Pemain}!inventory@{inventory}}
+\index{inventory@{inventory}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{inventory}{inventory}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix_area}{Matrix\+Area}}$<$\mbox{\hyperlink{class_game_object}{Game\+Object}}$>$ Pemain\+::inventory\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_pemain_a0e6c2e27686d80dcc93373108ad7dcaf}\label{class_pemain_a0e6c2e27686d80dcc93373108ad7dcaf} 
+\index{Pemain@{Pemain}!ownedBangunan@{ownedBangunan}}
+\index{ownedBangunan@{ownedBangunan}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{ownedBangunan}{ownedBangunan}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_bangunan}{Bangunan}}$>$ Pemain\+::owned\+Bangunan\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_pemain_a746c644fcbee40e6f8a564d1ae91b7b5}\label{class_pemain_a746c644fcbee40e6f8a564d1ae91b7b5} 
+\index{Pemain@{Pemain}!ownedBuild@{ownedBuild}}
+\index{ownedBuild@{ownedBuild}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{ownedBuild}{ownedBuild}}
+{\footnotesize\ttfamily vector$<$int$>$ Pemain\+::owned\+Build\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_pemain_a18ab9b7c3afd520b9dad0fd668f9948c}\label{class_pemain_a18ab9b7c3afd520b9dad0fd668f9948c} 
+\index{Pemain@{Pemain}!tipe@{tipe}}
+\index{tipe@{tipe}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{tipe}{tipe}}
+{\footnotesize\ttfamily string Pemain\+::tipe\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_pemain_a81c04a010c0de44910d82488b46c5217}\label{class_pemain_a81c04a010c0de44910d82488b46c5217} 
+\index{Pemain@{Pemain}!username@{username}}
+\index{username@{username}!Pemain@{Pemain}}
+\doxysubsubsection{\texorpdfstring{username}{username}}
+{\footnotesize\ttfamily string Pemain\+::username\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/\+Header/\mbox{\hyperlink{pemain_8hpp}{pemain.\+hpp}}\item 
+D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/\+Implementation/\mbox{\hyperlink{pemain_8cpp}{pemain.\+cpp}}\end{DoxyCompactItemize}

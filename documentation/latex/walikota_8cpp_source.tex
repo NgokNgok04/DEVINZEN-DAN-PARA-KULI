@@ -1,0 +1,510 @@
+\doxysection{walikota.\+cpp}
+\hypertarget{walikota_8cpp_source}{}\label{walikota_8cpp_source}\index{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Implementation/walikota.cpp@{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Implementation/walikota.cpp}}
+\mbox{\hyperlink{walikota_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{walikota_8hpp}{../Header/walikota.hpp}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pemain_8hpp}{../Header/pemain.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \mbox{\hyperlink{class_wali_kota_a605f509a97cbdc34a63325ad90876e1d}{WaliKota::WaliKota}}()\ :\ \mbox{\hyperlink{class_pemain}{Pemain}}()}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_a18ab9b7c3afd520b9dad0fd668f9948c}{tipe}}\ =\ \textcolor{stringliteral}{"{}Walikota"{}};}
+\DoxyCodeLine{00010\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_a81c04a010c0de44910d82488b46c5217}{username}}\ =\ \textcolor{stringliteral}{"{}Walikota"{}};}
+\DoxyCodeLine{00011\ \}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \mbox{\hyperlink{class_wali_kota_a605f509a97cbdc34a63325ad90876e1d}{WaliKota::WaliKota}}(\textcolor{keywordtype}{string}\ usn,\ \textcolor{keywordtype}{float}\ guld,\ \textcolor{keywordtype}{int}\ bb)\ :\ \mbox{\hyperlink{class_pemain}{Pemain}}(usn,\ guld,\ bb)}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_a18ab9b7c3afd520b9dad0fd668f9948c}{tipe}}\ =\ \textcolor{stringliteral}{"{}Walikota"{}};}
+\DoxyCodeLine{00016\ \}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \mbox{\hyperlink{class_wali_kota_a605f509a97cbdc34a63325ad90876e1d}{WaliKota::WaliKota}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_wali_kota}{WaliKota}}\ \&other)\ :\ \mbox{\hyperlink{class_pemain}{Pemain}}(other)}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_a18ab9b7c3afd520b9dad0fd668f9948c}{tipe}}\ =\ \textcolor{stringliteral}{"{}Walikota"{}};}
+\DoxyCodeLine{00021\ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \mbox{\hyperlink{class_wali_kota_add6af109c99924694ecfa61989e55f85}{WaliKota::\string~WaliKota}}()}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_afca3f8410761410f274d2eec2007424c}{\string~MatrixArea}}();}
+\DoxyCodeLine{00026\ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_wali_kota_a5d10bf96ce1ecee9b48ecc0b3f70c04b}{WaliKota::pungutPajak}}(vector<Pemain\ *>\ allPlayers)}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{float}\ gained\ =\ 0;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ sizePlayer\ =\ allPlayers.size();}
+\DoxyCodeLine{00033\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}Berikut\ adalah\ detil\ dari\ pemungutan\ pajak:\ "{}}<<endl;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<sizePlayer;i++)\{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(allPlayers[i]-\/>\mbox{\hyperlink{class_pemain_a130cc2f5466df0c4a43e680b9f8184a0}{getTipe}}()==\textcolor{stringliteral}{"{}Walikota"{}})\{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ cout<<allPlayers[i]-\/>getTipe();}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ cout<<allPlayers[i]-\/>getUsername()<<\textcolor{stringliteral}{"{}\ -\/\ "{}}<<allPlayers[i]-\/>getTipe()<<\textcolor{stringliteral}{"{}:\ "{}};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ paid\ =\ allPlayers[i]-\/>calculateTax();}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ cout<<paid<<\textcolor{stringliteral}{"{}\ gulden"{}}<<endl;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ gained\ +=\ paid;}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ +=\ gained;}
+\DoxyCodeLine{00045\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Walikota\ sekarang\ mempunyai\ "{}}\ <<\ this-\/>\mbox{\hyperlink{class_pemain_a1b06b3e401922156aece6747bfe38e4e}{getGulden}}()\ <<\ \textcolor{stringliteral}{"{}\ gulden!"{}}\ <<\ endl;}
+\DoxyCodeLine{00046\ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_wali_kota_a8d3b0e6c8d553c5493a8ae4d03925e13}{WaliKota::beli}}()}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ std::cout\ <<\ endl}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ <<\ endl;}
+\DoxyCodeLine{00052\ \ \ \ \ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_game_object}{GameObject}}\ *itemToBuy\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ isSubMenuCancelled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ wantToBuy;}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{while}(!isSubMenuCancelled)\{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ wantToBuy\ =\ \mbox{\hyperlink{class_toko_a9705506804ae5d8f613863e063b33281}{Toko::buyProcess}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ std::cout\ <<\ endl;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (wantToBuy\ ==\ 0)\{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Ditunggu\ Kedatangan\ Selanjutnya!!"{}}\ <<\ endl;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isSubMenuCancelled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (wantToBuy\ ==\ -\/1)\{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isSubMenuCancelled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ subResponse;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ validSubResponse;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ counterAvailableItem;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (wantToBuy\ ==\ 1)\{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}masuk\ Hewan"{}};}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_toko_aa966e8e8b622474f563bc7114a31ea8c}{Toko::displayAvailableHewan}}();}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Barang\ yang\ ingin\ dibeli\ :\ "{}};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ subResponse;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_header_2helper_8hpp_abb4767fdf6dae3849141b4ad546ed529}{isAllDigits}}(subResponse))\{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ validSubResponse\ =\ stoi(subResponse);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_sub_response}{InvalidSubResponse}}();}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validSubResponse\ !=\ \mbox{\hyperlink{class_toko_a76b5b99e0ee546cf21584b82601218dd}{Toko::getAvailableHewanSize}}()\ +\ 1)\{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validSubResponse\ >=\ 1\ \&\&\ validSubResponse\ <=\ \mbox{\hyperlink{class_toko_a76b5b99e0ee546cf21584b82601218dd}{Toko::getAvailableHewanSize}}())\{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ itemToBuy\ =\ \mbox{\hyperlink{class_toko_a38d5525128a517a50d61202637c1398f}{Toko::getHewan}}(validSubResponse\ -\/\ 1);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isSubMenuCancelled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_sub_response}{InvalidSubResponse}}();}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ endl;\ \textcolor{comment}{//cancel}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (wantToBuy\ ==\ 2)\{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Masuk\ Tanaman"{}};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_toko_a971c902adc8e8167ea1489025f5f9cc2}{Toko::displayAvailableTanaman}}();}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Barang\ yang\ ingin\ dibeli\ :\ "{}};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ subResponse;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_header_2helper_8hpp_abb4767fdf6dae3849141b4ad546ed529}{isAllDigits}}(subResponse))\{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ validSubResponse\ =\ stoi(subResponse);}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_sub_response}{InvalidSubResponse}}();}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validSubResponse\ !=\ \mbox{\hyperlink{class_toko_ac28a3ea6f52aca5bd4f1bea486d5f085}{Toko::getAvailableTanamanSize}}()+\ 1)\{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validSubResponse\ >=\ 1\ \&\&\ validSubResponse\ <=\ \mbox{\hyperlink{class_toko_ac28a3ea6f52aca5bd4f1bea486d5f085}{Toko::getAvailableTanamanSize}}())\{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ itemToBuy\ =\ \mbox{\hyperlink{class_toko_aeea45e10d8287f806b8d79c13530f4d9}{Toko::getTanaman}}(validSubResponse\ -\/\ 1);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isSubMenuCancelled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_sub_response}{InvalidSubResponse}}();}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ endl;\ \textcolor{comment}{//cancel}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (wantToBuy\ ==\ 3\ \&\&\ !\mbox{\hyperlink{class_toko_a75e1d310be70df21824ee2e9efb48e81}{Toko::isProductEmptyStock}}())\{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ counterAvailableItem\ =\ \mbox{\hyperlink{class_toko_a94a4ea3ee16b48236dc8e9be82b3a869}{Toko::displayAvailableProduct}}();}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Barang\ yang\ ingin\ dibeli\ :\ "{}};}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ subResponse;}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_header_2helper_8hpp_abb4767fdf6dae3849141b4ad546ed529}{isAllDigits}}(subResponse))\{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ validSubResponse\ =\ stoi(subResponse);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_sub_response}{InvalidSubResponse}}();}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validSubResponse\ !=\ counterAvailableItem\ +\ 1)\{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validSubResponse\ >=\ 1\ \&\&\ validSubResponse\ <=\ counterAvailableItem)\{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ found\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_toko_a13c3cdca186ba9402fb5bb4ab1fa506c}{Toko::getAvailableProductSize}}();\ i++)\{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_toko_a78083d9aa4c08e68f57a5cc92a648cfb}{Toko::getPairProductInt}}(i)-\/>second\ !=\ 0)\{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validSubResponse\ ==\ count\ \&\&\ !found)\{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ itemToBuy\ =\ \&\mbox{\hyperlink{class_toko_a78083d9aa4c08e68f57a5cc92a648cfb}{Toko::getPairProductInt}}(i)-\/>first;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ itemToBuy\ =\ \&Toko::availableProduct[count].first;}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ found\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isSubMenuCancelled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_sub_response}{InvalidSubResponse}}();\ \textcolor{comment}{//response\ <\ 0\ atau\ >\ seharusnya}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ endl;\ \textcolor{comment}{//cancel}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (wantToBuy\ ==\ 3\ \&\&\ \mbox{\hyperlink{class_toko_a75e1d310be70df21824ee2e9efb48e81}{Toko::isProductEmptyStock}}()\ \&\&\ !\mbox{\hyperlink{class_toko_a87fa786c5e5fc137b3af277d7e8c1d93}{Toko::isBangunanEmptyStock}}())\{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_cant_buy_bangunan}{CantBuyBangunan}}();}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (wantToBuy\ ==\ 4\ \&\&\ !\mbox{\hyperlink{class_toko_a87fa786c5e5fc137b3af277d7e8c1d93}{Toko::isBangunanEmptyStock}}())\{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_cant_buy_bangunan}{CantBuyBangunan}}();}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_base_exception}{BaseException}}\&\ err)\{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ err.\mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}();}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ endl\ <<\ endl;}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00159\ \ \ \ \ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordflow}{if}\ (itemToBuy\ !=\ \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ std::cout\ <<\ endl}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Uang\ Anda\ :\ "{}}\ <<\ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ <<\ endl;}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_a765241326032be46243cf838cd781860}{displayRemainderSlot}}();}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ std::cout\ <<\ endl;}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ quantity;}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ validQuantity;}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Kuantitas\ :\ "{}};}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ quantity;}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_header_2helper_8hpp_abb4767fdf6dae3849141b4ad546ed529}{isAllDigits}}(quantity))\{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ validQuantity\ =\ stoi(quantity);}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validQuantity\ ==\ 0)\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_sub_response}{InvalidSubResponse}}();}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_sub_response}{InvalidSubResponse}}();}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ -\/=\ itemToBuy-\/>\mbox{\hyperlink{class_game_object_abd7b06f9406af998e0cdc1a9599bed0a}{getPrice}}()\ *\ validQuantity;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validQuantity\ >\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_a7a8492105db3257599eca0fda7c6eb44}{getEmptySlot}}())\{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ +=\ itemToBuy-\/>\mbox{\hyperlink{class_game_object_abd7b06f9406af998e0cdc1a9599bed0a}{getPrice}}()\ *\ validQuantity;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_inventory_not_enough}{InventoryNotEnough}}();}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ stock\ =\ \mbox{\hyperlink{class_toko_aae0d868d1e2cdcfe344fb734179bb32f}{Toko::getStock}}(itemToBuy-\/>\mbox{\hyperlink{class_game_object_aa23844466cf7920f57db46666464b3f0}{getName}}());}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stock\ !=\ -\/1\ \&\&\ stock\ <\ validQuantity)\{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ +=\ itemToBuy-\/>\mbox{\hyperlink{class_game_object_abd7b06f9406af998e0cdc1a9599bed0a}{getPrice}}()\ *\ validQuantity;}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_stock_toko_not_enough}{StockTokoNotEnough}}();}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ <\ 0)\{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ +=\ itemToBuy-\/>\mbox{\hyperlink{class_game_object_abd7b06f9406af998e0cdc1a9599bed0a}{getPrice}}()\ *\ validQuantity;}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_not_enough_gulden}{NotEnoughGulden}}();}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ endl;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Selamat\ Anda\ berhasil\ membeli\ "{}}\ <<\ validQuantity\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ itemToBuy-\/>\mbox{\hyperlink{class_game_object_aa23844466cf7920f57db46666464b3f0}{getName}}();}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}.\ Uang\ yang\ tersisa\ "{}}\ <<\ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ <<\ \textcolor{stringliteral}{"{}."{}}\ <<\ endl}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ endl;}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Pilih\ slot\ untuk\ menyimpan\ barang\ yang\ anda\ beli!"{}}\ <<\ endl;}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_ab9cfdac458284404e629f76d1d0c53bc}{displayObject}}();}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ slot;}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isValid\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ validQuantity;\ i++)\{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(!isValid)\{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Petak\ slot\ "{}}\ <<\ i\ +\ 1\ <<\ \textcolor{stringliteral}{"{}:\ "{}};}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ slot;}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pair<int,\ int>\ position;}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ position\ =\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_ad1fc38bfe6fdb2b822cd53db1bea9dcf}{getPositionFromSlot}}(slot);}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(position.first,position.second)\ !=\ \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_slot_filled}{SlotFilled}}();}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acbbd0bda8cf554479e02d33cf2a7af56}{setElement}}(position.first,\ position.second,\ itemToBuy);}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_base_exception}{BaseException}}\&\ err)\{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ err.\mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}();}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ itemToBuy-\/>\mbox{\hyperlink{class_game_object_aa23844466cf7920f57db46666464b3f0}{getName}}()\ <<\ \textcolor{stringliteral}{"{}\ berhasil\ disimpan\ dalam\ penyimpanan!"{}}\ <<\ endl;}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_toko_a7bf71171d18e1eecb755d506b25eafa0}{Toko::itemDibeli}}(itemToBuy,\ validQuantity);}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_base_exception}{BaseException}}\&\ err)}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ err.\mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}();}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ endl;}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00233\ \ \ \ \ \ \}}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00235\ \ \ \ \ }
+\DoxyCodeLine{00236\ \}}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_wali_kota_ac8cf6887413f9bc75482559c19f7db65}{WaliKota::jual}}()}
+\DoxyCodeLine{00239\ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00241\ \ \ \ \ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Berikut\ merupakan\ penyimpanan\ Anda"{}}\ <<\ endl;}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_ab9cfdac458284404e629f76d1d0c53bc}{displayObject}}();}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ quantity;}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ quantityint;}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Masukkan\ kuantitas\ barang\ yang\ ingin\ dijual\ :\ "{}};}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ std::cin\ >>\ quantity;}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ std::cout\ <<\ endl;}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{_header_2helper_8hpp_abb4767fdf6dae3849141b4ad546ed529}{isAllDigits}}(quantity))}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_panen_idx}{InvalidPanenIdx}}();}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ quantityint\ =\ std::stoi(quantity);}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((quantityint\ -\/\ this-\/>\mbox{\hyperlink{class_pemain_a0e6c2e27686d80dcc93373108ad7dcaf}{ownedBangunan}}.size())\ >\ ((this-\/>inventory.getCols()\ *\ this-\/>inventory.getRows())\ -\/\ this-\/>inventory.getEmptySlot()))}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_item_quantity_to_sell_not_enough}{ItemQuantityToSellNotEnough}}();}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ std::cout\ <<\ endl}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Silahkan\ pilih\ petak\ yang\ ingin\ anda\ jual!"{}}}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ endl;}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ slot;}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ pair<int,\ int>\ position;}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ profit\ =\ 0;}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_object}{GameObject}}\ *itemToSell;}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isValid;}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ quantityint;\ i++)}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!isValid)}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Petak\ slot\ "{}}\ <<\ i\ +\ 1\ <<\ \textcolor{stringliteral}{"{}:\ "{}};}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ slot;}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ endl;}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx1\ =\ slot[0]\ -\/\ \textcolor{charliteral}{'A'}\ +\ 1;}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx2\ =\ std::stoi(slot.substr(1));}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (slot.length()\ !=\ 3)}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_index_matrix_area}{InvalidIndexMatrixArea}}();}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (idx2\ >\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_a3f26a84d6f44c3cdb8d670a66ee37e62}{getRows}}()\ ||\ idx1\ >\ this-\/>inventory.getCols())}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_index_matrix_area}{InvalidIndexMatrixArea}}();}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1)\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_empty_slot}{InvalidEmptySlot}}();}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_base_exception}{BaseException}}\ \&e)}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ e.\mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}()\ <<\ endl;}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx1\ =\ slot[0]\ -\/\ \textcolor{charliteral}{'A'}\ +\ 1;}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx2\ =\ std::stoi(slot.substr(1));}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ profit\ +=\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1)-\/>\mbox{\hyperlink{class_game_object_abd7b06f9406af998e0cdc1a9599bed0a}{getPrice}}();}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1)-\/>\mbox{\hyperlink{class_game_object_abd7b06f9406af998e0cdc1a9599bed0a}{getPrice}}()\ <<\ endl;}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_toko_a467ba73fa88ad710da8e2cf9de31b783}{Toko::itemDijual}}(this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_acb8b1310d3a16119919760744ca79436}{getElement}}(idx2,\ idx1),\ 1);}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_ac2008a4d99790a229c583c9f242c117d}{deleteElement}}(idx2,\ idx1);}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ +=\ profit;}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ cout\ <<\ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ <<\ \textcolor{charliteral}{'\ '}\ <<\ profit\ <<\ endl;}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Barang\ Anda\ berhasil\ dijual!\ Uang\ Anda\ bertambah\ "{}}\ <<\ profit\ <<\ \textcolor{stringliteral}{"{}\ gulden!"{}}\ <<\ endl;}
+\DoxyCodeLine{00318\ \ \ \ \ \}}
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_base_exception}{BaseException}}\ \&e)}
+\DoxyCodeLine{00320\ \ \ \ \ \{}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ std::cout\ <<\ e.\mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}()\ <<\ endl;}
+\DoxyCodeLine{00322\ \ \ \ \ \}}
+\DoxyCodeLine{00323\ \}}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00325\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_wali_kota_aebc657ead88ec00a18d62754ca90f4c0}{WaliKota::bangunBangunan}}()}
+\DoxyCodeLine{00326\ \{}
+\DoxyCodeLine{00327\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Resep\ Bangunan\ yang\ ada\ sebagai\ berikut:\ "{}}\ <<\ endl;}
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_toko_a1a48d71d8c7de8171bcac2553ca88489}{Toko::getAvailableBangunanSize}}();\ i++)}
+\DoxyCodeLine{00329\ \ \ \ \ \{}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ \ \ "{}};}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ std::cout\ <<\ i\ +\ 1\ <<\ \textcolor{stringliteral}{"{}.\ "{}}\ <<\ \mbox{\hyperlink{class_toko_a3c4ec74283148d42f3b522558f552543}{Toko::getPairBangunanInt}}(i)-\/>first.getName();}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ ("{}};}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ Toko::getPairBangunanInt(i)-\/>first.getPrice()\ <<\ "{}\ gulden,\ "{};}}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{class_parser_resep_a6660915312cb64d00ffe4d55a09c2e55}{ParserResep::getRecipeMaterialQuantity}}(i\ +\ 1).size();\ j++)}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{class_parser_resep_a6660915312cb64d00ffe4d55a09c2e55}{ParserResep::getRecipeMaterialQuantity}}(i\ +\ 1)[j].first;}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{class_parser_resep_a6660915312cb64d00ffe4d55a09c2e55}{ParserResep::getRecipeMaterialQuantity}}(i\ +\ 1)[j].second;}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (j\ !=\ \mbox{\hyperlink{class_parser_resep_a6660915312cb64d00ffe4d55a09c2e55}{ParserResep::getRecipeMaterialQuantity}}(i\ +\ 1).size()\ -\/\ 1)}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{})"{}}\ <<\ endl;}
+\DoxyCodeLine{00346\ \ \ \ \ \}}
+\DoxyCodeLine{00347\ \ \ \ \ \textcolor{keywordtype}{string}\ bangunanToBuy;}
+\DoxyCodeLine{00348\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Bangunan\ yang\ ingin\ dibangun:\ "{}};}
+\DoxyCodeLine{00349\ \ \ \ \ std::cin\ >>\ bangunanToBuy;}
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00351\ \ \ \ \ \textcolor{keywordtype}{int}\ idxToBuy\ =\ 0;}
+\DoxyCodeLine{00352\ \ \ \ \ \textcolor{keywordtype}{bool}\ found\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00353\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_toko_a1a48d71d8c7de8171bcac2553ca88489}{Toko::getAvailableBangunanSize}}();\ i++)}
+\DoxyCodeLine{00354\ \ \ \ \ \{}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_toko_a3c4ec74283148d42f3b522558f552543}{Toko::getPairBangunanInt}}(i)-\/>first.getName()\ ==\ bangunanToBuy)}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ idxToBuy\ =\ i;}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ found\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00361\ \ \ \ \ \}}
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00363\ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00364\ \ \ \ \ \{}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!found)}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_cant_find_nama_bangunan}{CantFindNamaBangunan}}();}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idRecipe\ =\ \mbox{\hyperlink{class_parser_resep_a0761cfc0660fb952cd4ac3433cdfad7a}{ParserResep::convertNameToID}}(\mbox{\hyperlink{class_toko_a3c4ec74283148d42f3b522558f552543}{Toko::getPairBangunanInt}}(idxToBuy)-\/>first.getName());}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ vector<pair<string,\ int>>\ materialToBuild\ =\ \mbox{\hyperlink{class_parser_resep_a6660915312cb64d00ffe4d55a09c2e55}{ParserResep::getRecipeMaterialQuantity}}(idRecipe);}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ materialToFind;}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ counterMaterial;}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ materialToBuild.size();\ i++)}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ materialToFind\ =\ materialToBuild[i].first;}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ counterMaterial\ =\ this-\/>\mbox{\hyperlink{class_pemain_ac42b96edb770bc0e787750d8f153317c}{inventory}}.\mbox{\hyperlink{class_matrix_area_ad08452c5cd1bbc321881bb07909ba525}{countSameName}}(materialToFind);}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (counterMaterial\ <\ materialToBuild[i].second)}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_material_not_enough}{MaterialNotEnough}}();}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00382\ \ \ \ \ \}}
+\DoxyCodeLine{00383\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_cant_find_nama_bangunan}{CantFindNamaBangunan}}\ err)}
+\DoxyCodeLine{00384\ \ \ \ \ \{}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ std::cout\ <<err.\mbox{\hyperlink{class_cant_find_nama_bangunan_a247d85bbd432ac8be389313c7ef46e85}{what}}()<<endl;}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00387\ \ \ \ \ \}}
+\DoxyCodeLine{00388\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_material_not_enough}{MaterialNotEnough}}\ err)}
+\DoxyCodeLine{00389\ \ \ \ \ \{}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ std::cout\ <<err.\mbox{\hyperlink{class_cant_find_nama_bangunan_a247d85bbd432ac8be389313c7ef46e85}{what}}()<<\ endl;}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00392\ \ \ \ \ \}}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00394\ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_a0e6c2e27686d80dcc93373108ad7dcaf}{ownedBangunan}}.push\_back(\mbox{\hyperlink{class_toko_a3c4ec74283148d42f3b522558f552543}{Toko::getPairBangunanInt}}(idxToBuy)-\/>first);}
+\DoxyCodeLine{00395\ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{class_toko_a3c4ec74283148d42f3b522558f552543}{Toko::getPairBangunanInt}}(idxToBuy)-\/>first.getName()\ <<\ \textcolor{stringliteral}{"{}berhasil\ dibangun\ dan\ telah\ menjadi\ hak\ milik\ walikota!"{}}\ <<\ endl;}
+\DoxyCodeLine{00396\ \}}
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00398\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_wali_kota_a75e383a55fa5aa6cab8a0b1f0dd31701}{WaliKota::calculateTax}}()}
+\DoxyCodeLine{00399\ \{}
+\DoxyCodeLine{00400\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00401\ \}}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00403\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_wali_kota_ab645c43b9b5557ddaabbd5fe483b0155}{WaliKota::tambahPemain}}(vector<Pemain\ *>\ \&allPlayers,\ \textcolor{keywordtype}{int}\ \&playerAmount,\ \textcolor{keywordtype}{int}\&\ currentPlayerIndex,\ \mbox{\hyperlink{class_pemain}{Pemain}}*\ currentPlayer)\{}
+\DoxyCodeLine{00404\ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ <\ 50)\{}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_not_enough_gulden}{NotEnoughGulden}}();}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ tipePemain;}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Masukkan\ jenis\ pemain:\ "{}};}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ cin\ >>\ tipePemain;}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tipePemain\ !=\ \textcolor{stringliteral}{"{}petani"{}}\ \&\&\ tipePemain\ !=\ \textcolor{stringliteral}{"{}peternak"{}})\{}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_type_pemain}{InvalidTypePemain}}();}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ namaPemain;}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Masukkan\ nama\ pemain:\ "{}};}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ cin\ >>\ namaPemain;}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ found\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00422\ }
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ allPlayers.size();\ i++)\{}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (namaPemain\ ==\ allPlayers[i]-\/>\mbox{\hyperlink{class_pemain_add9d818b99a06b5a68f99d3315cba785}{getUsername}}())\{}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ found\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (found)\{}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_user_name_pemain_tidak_unik}{UserNamePemainTidakUnik}}();}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00432\ }
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tipePemain\ ==\ \textcolor{stringliteral}{"{}petani"{}})\{}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_petani}{Petani}}\ *\ newPetani\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_petani}{Petani}}(namaPemain,50,40);}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ allPlayers.push\_back(newPetani);}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ playerAmount++;}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (playerAmount\ >\ 1)}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{comment}{//\ geser\ pemain\ yang\ baru\ dimasukkan\ supaya\ terurut\ otomatis}}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pemain}{Pemain}}\ *P1\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pemain}{Pemain}}\ *P2\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ playerAmount\ -\/\ 1;}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ -\/\ 1\ >=\ 0)}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ P1\ =\ allPlayers[i];}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ P2\ =\ allPlayers[i\ -\/\ 1];}
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (*P1\ <\ *P2)}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ allPlayers[i]\ =\ P2;}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ allPlayers[i\ -\/\ 1]\ =\ P1;}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i-\/-\/;}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(allPlayers[currentPlayerIndex]-\/>\mbox{\hyperlink{class_pemain_add9d818b99a06b5a68f99d3315cba785}{getUsername}}()\ !=\ currentPlayer-\/>\mbox{\hyperlink{class_pemain_add9d818b99a06b5a68f99d3315cba785}{getUsername}}())\{\ \textcolor{comment}{//kalo\ pemain\ sekarang\ bergeser\ posisinya}}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentPlayerIndex++;\ \textcolor{comment}{//pindah\ indeks\ pemain\ sekarang\ dengan\ 1}}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (tipePemain\ ==\ \textcolor{stringliteral}{"{}peternak"{}})\{}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_peternak}{Peternak}}\ *\ newPeternak\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_peternak}{Peternak}}(namaPemain,50,40);}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \ \ allPlayers.push\_back(newPeternak);}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ playerAmount++;}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (playerAmount\ >\ 1)}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{comment}{//\ geser\ pemain\ yang\ baru\ dimasukkan\ supaya\ terurut\ otomatis}}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pemain}{Pemain}}\ *P1\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pemain}{Pemain}}\ *P2\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ playerAmount\ -\/\ 1;}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ -\/\ 1\ >=\ 0)}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ P1\ =\ allPlayers[i];}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ P2\ =\ allPlayers[i\ -\/\ 1];}
+\DoxyCodeLine{00475\ }
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (*P1\ <\ *P2)}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ allPlayers[i]\ =\ P2;}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ allPlayers[i\ -\/\ 1]\ =\ P1;}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i-\/-\/;}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00488\ }
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(allPlayers[currentPlayerIndex]-\/>\mbox{\hyperlink{class_pemain_add9d818b99a06b5a68f99d3315cba785}{getUsername}}()\ !=\ currentPlayer-\/>\mbox{\hyperlink{class_pemain_add9d818b99a06b5a68f99d3315cba785}{getUsername}}())\{\ \textcolor{comment}{//kalo\ pemain\ sekarang\ bergeser\ posisinya}}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentPlayerIndex++;\ \textcolor{comment}{//pindah\ indeks\ pemain\ sekarang\ dengan\ 1}}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_invalid_type_pemain}{InvalidTypePemain}}();}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00495\ }
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_pemain_ab3b8a39b51c8b6a87b49a7941fa83064}{gulden}}\ -\/=\ 50;}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ cout\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}Pemain\ baru\ ditambahkan!"{}}\ <<\ endl;}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Selamat\ datang\ "{}}<<\ namaPemain\ <<\ \textcolor{stringliteral}{"{}\ di\ kota\ ini!"{}}\ <<\ endl;\ }
+\DoxyCodeLine{00499\ }
+\DoxyCodeLine{00500\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{class_base_exception}{BaseException}}\&\ err)\{}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ cout\ <<\ err.\mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}();}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{00503\ \ \ \ \ \}}
+\DoxyCodeLine{00504\ \}}
+
+\end{DoxyCode}

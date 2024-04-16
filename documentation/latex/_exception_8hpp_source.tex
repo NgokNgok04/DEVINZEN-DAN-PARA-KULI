@@ -1,0 +1,778 @@
+\doxysection{Exception.\+hpp}
+\hypertarget{_exception_8hpp_source}{}\label{_exception_8hpp_source}\index{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Header/Exception.hpp@{D:/Tubes OOP/DEVINZEN-\/DAN-\/PARA-\/KULI/src/Header/Exception.hpp}}
+\mbox{\hyperlink{_exception_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_base_exception_a675e42df7cdd795575bccf521f8ff930}{BaseException}}()\{\};}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_base_exception_aed58cb09c64408372719754da40022fc}{\string~BaseException}}()\{\};}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_base_exception_a04f1092138c00bb0b7152ce21a7bed37}{what}}()\ =\ 0;}
+\DoxyCodeLine{00012\ \};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_animal_config_missing_exception}{AnimalConfigMissingException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_animal_config_missing_exception_a268ff1f3ae1e34065c9335ff1e69f5fe}{AnimalConfigMissingException}}()\{\};}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_animal_config_missing_exception_a57abf3f36608e666ec9733e30daf6bb7}{\string~AnimalConfigMissingException}}()\{\};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_animal_config_missing_exception_a870ba071947b77875c060e06f94571ea}{what}}()}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}File\ config\ animal.txt\ hilang\ di\ folder\ config!"{}};}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_misc_config_missing_exception}{MiscConfigMissingException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_misc_config_missing_exception_ad3fc300f1cd1e6eac8ac8100054cdde9}{MiscConfigMissingException}}()\{\};}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_misc_config_missing_exception_ad4338b3541b129496a5c7d0962d4e825}{\string~MiscConfigMissingException}}()\{\};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_misc_config_missing_exception_ace0ef27df11e37a4eab7330a57cfa739}{what}}()}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}File\ config\ misc.txt\ hilang\ di\ folder\ config!"{}};}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_plant_config_missing_exception}{PlantConfigMissingException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_plant_config_missing_exception_a29828152d25833b6cd1b37997be03e0e}{PlantConfigMissingException}}()\{\};}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_plant_config_missing_exception_a3b00e12a67a00a2c948bde183a404a0a}{\string~PlantConfigMissingException}}()\{\};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_plant_config_missing_exception_a5d9593a7e402bf2ffd73a5e4a6d101da}{what}}()}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}File\ config\ plant.txt\ hilang\ di\ folder\ config!"{}};}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_product_config_missing_exception}{ProductConfigMissingException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_product_config_missing_exception_a3eb9715c318f467e322e6e4005fa5e35}{ProductConfigMissingException}}()\{\};}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_product_config_missing_exception_a242617a663897078d4d4aa945e0da302}{\string~ProductConfigMissingException}}()\{\};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_product_config_missing_exception_ac4428090103ece5032ebd627be9d7647}{what}}()}
+\DoxyCodeLine{00053\ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}File\ config\ product.txt\ hilang\ di\ folder\ config!"{}};}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_recipe_config_missing_exception}{RecipeConfigMissingException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00059\ \{}
+\DoxyCodeLine{00060\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{class_recipe_config_missing_exception_a4b6f7d14b210553fbea7387c6a3f42b2}{RecipeConfigMissingException}}()\{\};}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_recipe_config_missing_exception_a2bfd1aaa74b17dbf85a4877c724b49dd}{\string~RecipeConfigMissingException}}()\{\};}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_recipe_config_missing_exception_ae4d22c0f2e5d6870a06f31ddbdb4ae02}{what}}()}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}File\ config\ recipe.txt\ hilang\ di\ folder\ config!"{}};}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_animal_price_config_exception}{InvalidAnimalPriceConfigException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00070\ \{}
+\DoxyCodeLine{00071\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_invalid_animal_price_config_exception_a1df8cffb645d46de4f4d4246ee046baa}{InvalidAnimalPriceConfigException}}()\{\};}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{class_invalid_animal_price_config_exception_aa99c34b164c9f67350d3c422936a308d}{\string~InvalidAnimalPriceConfigException}}()\{\};}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_animal_price_config_exception_a870db3f7f72ab363b8738376de4f5f99}{what}}()}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Ada\ harga\ hewan\ yang\ tidak\ valid\ di\ file\ config\ animal.txt!"{}};}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_animal_i_d_config_exception}{InvalidAnimalIDConfigException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00081\ \{}
+\DoxyCodeLine{00082\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{class_invalid_animal_i_d_config_exception_a557f22152411a11bdc3cb09ecd61aca0}{InvalidAnimalIDConfigException}}()\{\};}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{class_invalid_animal_i_d_config_exception_aca1fd17696658c222e2353f50a37a4bd}{\string~InvalidAnimalIDConfigException}}()\{\};}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_animal_i_d_config_exception_a6ed960bb3945d045ef80fbf71d95c2cd}{what}}()}
+\DoxyCodeLine{00086\ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Ada\ ID\ hewan\ yang\ tidak\ valid\ di\ file\ config\ animal.txt!"{}};}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_animal_weight_config_exception}{InvalidAnimalWeightConfigException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00092\ \{}
+\DoxyCodeLine{00093\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{class_invalid_animal_weight_config_exception_a577472b75378b84fdb94569a6233d3b1}{InvalidAnimalWeightConfigException}}()\{\};}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{class_invalid_animal_weight_config_exception_a4dc2516160bfae502c9bab63126376b7}{\string~InvalidAnimalWeightConfigException}}()\{\};}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_animal_weight_config_exception_aeb0ff7364d0a4b8356fa37d40f1c3a7f}{what}}()}
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Ada\ berat\ hewan\ yang\ tidak\ valid\ di\ file\ config\ animal.txt!"{}};}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_animal_type_config_exception}{InvalidAnimalTypeConfigException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00103\ \{}
+\DoxyCodeLine{00104\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{class_invalid_animal_type_config_exception_ab5d6ecca2622cb0b03f2482151707607}{InvalidAnimalTypeConfigException}}()\{\};}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{class_invalid_animal_type_config_exception_ae98412330881993da683f269a250bc40}{\string~InvalidAnimalTypeConfigException}}()\{\};}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_animal_type_config_exception_a0cca599bd055629cf3e643a3424235a6}{what}}()}
+\DoxyCodeLine{00108\ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Ada\ tipe\ hewan\ yang\ tidak\ valid\ di\ file\ config\ animal.txt!"{}};}
+\DoxyCodeLine{00110\ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_misc_money_config_exception}{InvalidMiscMoneyConfigException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00114\ \{}
+\DoxyCodeLine{00115\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{class_invalid_misc_money_config_exception_a1835dd8aebe5042bba6d2509c923d4bd}{InvalidMiscMoneyConfigException}}()\{\};}
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{class_invalid_misc_money_config_exception_a640c557d2cf912f95e4084bae4db5df6}{\string~InvalidMiscMoneyConfigException}}()\{\};}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_misc_money_config_exception_aad23958072cc01f8a44850c98dd30954}{what}}()}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Nilai\ uang\ yang\ dibutuhkan\ untuk\ memenangkan\ permainan\ di\ misc.txt\ tidak\ valid!"{}};}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
+\DoxyCodeLine{00122\ \};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_misc_weight_config_exception}{InvalidMiscWeightConfigException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00125\ \{}
+\DoxyCodeLine{00126\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{class_invalid_misc_weight_config_exception_a8fdde5db8a991969260bf025f8dc25b8}{InvalidMiscWeightConfigException}}()\{\};}
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{class_invalid_misc_weight_config_exception_aadf3b87f984ec3253a027d215d28d3f1}{\string~InvalidMiscWeightConfigException}}()\{\};}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_misc_weight_config_exception_a355965b153859261b1e747b27adcc8bc}{what}}()}
+\DoxyCodeLine{00130\ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Nilai\ berat\ badan\ yang\ dibutuhkan\ untuk\ memenangkan\ permainan\ di\ misc.txt\ tidak\ valid!"{}};}
+\DoxyCodeLine{00132\ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_storage_dimension_config_exception}{InvalidStorageDimensionConfigException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00136\ \{}
+\DoxyCodeLine{00137\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{class_invalid_storage_dimension_config_exception_aec689144c3cd045fe00afc93dea43dbc}{InvalidStorageDimensionConfigException}}()\{\};}
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{class_invalid_storage_dimension_config_exception_a6287079ace5ee20ba5a5274062d22735}{\string~InvalidStorageDimensionConfigException}}()\{\};}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_storage_dimension_config_exception_a831fb7b1f50a299041aecb1b46486632}{what}}()}
+\DoxyCodeLine{00141\ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Dimensi\ ukuran\ penyimpanan\ di\ misc.txt\ tidak\ valid!"{}};}
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_farm_dimension_config_exception}{InvalidFarmDimensionConfigException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00147\ \{}
+\DoxyCodeLine{00148\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{class_invalid_farm_dimension_config_exception_af73e595193170b4b55805518a37a8f47}{InvalidFarmDimensionConfigException}}()\{\};}
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{class_invalid_farm_dimension_config_exception_a6a29a924ac0c00b0ae0d26fcee3ea0d1}{\string~InvalidFarmDimensionConfigException}}()\{\};}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_farm_dimension_config_exception_afb4e5a2b10d886efba1176ebcd9201b4}{what}}()}
+\DoxyCodeLine{00152\ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Dimensi\ ukuran\ peternakan\ di\ misc.txt\ tidak\ valid!"{}};}
+\DoxyCodeLine{00154\ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \};}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_field_dimension_config_exception}{InvalidFieldDimensionConfigException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00158\ \{}
+\DoxyCodeLine{00159\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{class_invalid_field_dimension_config_exception_a5f8af248f205233ec4720350c0a49e76}{InvalidFieldDimensionConfigException}}()\{\};}
+\DoxyCodeLine{00161\ \ \ \ \ \mbox{\hyperlink{class_invalid_field_dimension_config_exception_a941afff6752a3d51cff4fac30ead481d}{\string~InvalidFieldDimensionConfigException}}()\{\};}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_field_dimension_config_exception_a878c83176fb34c41782f639b4c63032a}{what}}()}
+\DoxyCodeLine{00163\ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Dimensi\ ukuran\ lahan\ di\ misc.txt\ tidak\ valid!"{}};}
+\DoxyCodeLine{00165\ \ \ \ \ \}}
+\DoxyCodeLine{00166\ \};}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_plant_i_d_config_exception}{InvalidPlantIDConfigException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00169\ \{}
+\DoxyCodeLine{00170\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{class_invalid_plant_i_d_config_exception_ad0efe70d7ad7c4fbf38afad17a3125f8}{InvalidPlantIDConfigException}}()\{\};}
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{class_invalid_plant_i_d_config_exception_ad07cb01f9ce6260a610615990ec47fee}{\string~InvalidPlantIDConfigException}}()\{\};}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_plant_i_d_config_exception_a243b925f5f1d03b0207489d84044b0fc}{what}}()}
+\DoxyCodeLine{00174\ \ \ \ \ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Ada\ ID\ tanaman\ yang\ tidak\ valid\ di\ file\ config\ plant.txt!"{}};}
+\DoxyCodeLine{00176\ \ \ \ \ \}}
+\DoxyCodeLine{00177\ \};}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_plant_type_config_exception}{InvalidPlantTypeConfigException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00180\ \{}
+\DoxyCodeLine{00181\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00182\ \ \ \ \ \mbox{\hyperlink{class_invalid_plant_type_config_exception_ae0356ec86d6952ac24894d898dd3659e}{InvalidPlantTypeConfigException}}()\{\};}
+\DoxyCodeLine{00183\ \ \ \ \ \mbox{\hyperlink{class_invalid_plant_type_config_exception_a8f407ef41fb358d59e0ae5f3950797fe}{\string~InvalidPlantTypeConfigException}}()\{\};}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_plant_type_config_exception_a48b9c7479e7d09700d612e7362903d6b}{what}}()}
+\DoxyCodeLine{00185\ \ \ \ \ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Ada\ tipe\ tanaman\ yang\ tidak\ valid\ di\ file\ config\ plant.txt!"{}};}
+\DoxyCodeLine{00187\ \ \ \ \ \}}
+\DoxyCodeLine{00188\ \};}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_plant_price_config_exception}{InvalidPlantPriceConfigException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00191\ \{}
+\DoxyCodeLine{00192\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00193\ \ \ \ \ \mbox{\hyperlink{class_invalid_plant_price_config_exception_a383ac74f90a313f7d6d17be02428f308}{InvalidPlantPriceConfigException}}()\{\};}
+\DoxyCodeLine{00194\ \ \ \ \ \mbox{\hyperlink{class_invalid_plant_price_config_exception_af4bec281da8724086a2ae0b6ae2c7cf7}{\string~InvalidPlantPriceConfigException}}()\{\};}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_plant_price_config_exception_af48a75fad6bb5e58204a62ed6b5cdad7}{what}}()}
+\DoxyCodeLine{00196\ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Ada\ harga\ tanaman\ yang\ tidak\ valid\ di\ file\ config\ plant.txt!"{}};}
+\DoxyCodeLine{00198\ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \};}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_plant_duration_config_exception}{InvalidPlantDurationConfigException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00202\ \{}
+\DoxyCodeLine{00203\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00204\ \ \ \ \ \mbox{\hyperlink{class_invalid_plant_duration_config_exception_aa2ff9bf114086572daf23627a9632bfe}{InvalidPlantDurationConfigException}}()\{\};}
+\DoxyCodeLine{00205\ \ \ \ \ \mbox{\hyperlink{class_invalid_plant_duration_config_exception_ad71d9b36e8139dac2906ed68e272329e}{\string~InvalidPlantDurationConfigException}}()\{\};}
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_plant_duration_config_exception_ad9d47a2d97246c09cb2155aea05a2b26}{what}}()}
+\DoxyCodeLine{00207\ \ \ \ \ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Ada\ durasi\ tanaman\ yang\ tidak\ valid\ di\ file\ config\ plant.txt!"{}};}
+\DoxyCodeLine{00209\ \ \ \ \ \}}
+\DoxyCodeLine{00210\ \};}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_product_i_d_config_exception}{InvalidProductIDConfigException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00213\ \{}
+\DoxyCodeLine{00214\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00215\ \ \ \ \ \mbox{\hyperlink{class_invalid_product_i_d_config_exception_aac771e0db3a3d5b75430840a5b3b0110}{InvalidProductIDConfigException}}()\{\};}
+\DoxyCodeLine{00216\ \ \ \ \ \mbox{\hyperlink{class_invalid_product_i_d_config_exception_a2fc9e73b369852d87c39effa43d151a9}{\string~InvalidProductIDConfigException}}()\{\};}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_product_i_d_config_exception_a86b3898334972eb445ee86e39794d729}{what}}()}
+\DoxyCodeLine{00218\ \ \ \ \ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Ada\ ID\ produk\ yang\ tidak\ valid\ di\ file\ config\ product.txt!"{}};}
+\DoxyCodeLine{00220\ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \};}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_product_weight_config_exception}{InvalidProductWeightConfigException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00224\ \{}
+\DoxyCodeLine{00225\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00226\ \ \ \ \ \mbox{\hyperlink{class_invalid_product_weight_config_exception_a10b6e851f46c8ea96c31fa79e1e0db4f}{InvalidProductWeightConfigException}}()\{\};}
+\DoxyCodeLine{00227\ \ \ \ \ \mbox{\hyperlink{class_invalid_product_weight_config_exception_a60c68e79f81d7c13b59894345fe6fbb0}{\string~InvalidProductWeightConfigException}}()\{\};}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_product_weight_config_exception_a4a07028bcc880dce30b338e0ef300515}{what}}()}
+\DoxyCodeLine{00229\ \ \ \ \ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Ada\ berat\ produk\ yang\ tidak\ valid\ di\ file\ config\ product.txt!"{}};}
+\DoxyCodeLine{00231\ \ \ \ \ \}}
+\DoxyCodeLine{00232\ \};}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_product_type_config_exception}{InvalidProductTypeConfigException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00235\ \{}
+\DoxyCodeLine{00236\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00237\ \ \ \ \ \mbox{\hyperlink{class_invalid_product_type_config_exception_a02a998c40d39b7913d21000f732f102e}{InvalidProductTypeConfigException}}()\{\};}
+\DoxyCodeLine{00238\ \ \ \ \ \mbox{\hyperlink{class_invalid_product_type_config_exception_a3d205307fec6d28dcc56d4b9634fe4c6}{\string~InvalidProductTypeConfigException}}()\{\};}
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_product_type_config_exception_a83c9ba89afe75e2019e4677c2e5f49d8}{what}}()}
+\DoxyCodeLine{00240\ \ \ \ \ \{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Ada\ tipe\ produk\ yang\ tidak\ valid\ di\ file\ config\ product.txt!"{}};}
+\DoxyCodeLine{00242\ \ \ \ \ \}}
+\DoxyCodeLine{00243\ \};}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_product_price_config_exception}{InvalidProductPriceConfigException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00246\ \{}
+\DoxyCodeLine{00247\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00248\ \ \ \ \ \mbox{\hyperlink{class_invalid_product_price_config_exception_a1889fe065cdf07129773856686425b49}{InvalidProductPriceConfigException}}()\{\};}
+\DoxyCodeLine{00249\ \ \ \ \ \mbox{\hyperlink{class_invalid_product_price_config_exception_a760e47fe59ed31558481ffc680fbac40}{\string~InvalidProductPriceConfigException}}()\{\};}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_product_price_config_exception_a0963f783984f47a50f6fe0179502951a}{what}}()}
+\DoxyCodeLine{00251\ \ \ \ \ \{}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Ada\ harga\ produk\ yang\ tidak\ valid\ di\ file\ config\ product.txt!"{}};}
+\DoxyCodeLine{00253\ \ \ \ \ \}}
+\DoxyCodeLine{00254\ \};}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_recipe_i_d_config_exception}{InvalidRecipeIDConfigException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00257\ \{}
+\DoxyCodeLine{00258\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00259\ \ \ \ \ \mbox{\hyperlink{class_invalid_recipe_i_d_config_exception_a9dd4e9185e4f90f0aaed385b111a2137}{InvalidRecipeIDConfigException}}()\{\};}
+\DoxyCodeLine{00260\ \ \ \ \ \mbox{\hyperlink{class_invalid_recipe_i_d_config_exception_a38dc255465916b64d054772da3d5e9d9}{\string~InvalidRecipeIDConfigException}}()\{\};}
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_recipe_i_d_config_exception_af559c52e6ecd7ccf1c83d6baad950346}{what}}()}
+\DoxyCodeLine{00262\ \ \ \ \ \{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Ada\ ID\ resep\ yang\ tidak\ valid\ di\ file\ config\ recipe.txt!"{}};}
+\DoxyCodeLine{00264\ \ \ \ \ \}}
+\DoxyCodeLine{00265\ \};}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_recipe_price_config_exception}{InvalidRecipePriceConfigException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00268\ \{}
+\DoxyCodeLine{00269\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00270\ \ \ \ \ \mbox{\hyperlink{class_invalid_recipe_price_config_exception_a27fc8fa32697c30f423a8f12477995f7}{InvalidRecipePriceConfigException}}()\{\};}
+\DoxyCodeLine{00271\ \ \ \ \ \mbox{\hyperlink{class_invalid_recipe_price_config_exception_ada0994a9aebeb6f9cc7723c4665b713b}{\string~InvalidRecipePriceConfigException}}()\{\};}
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_recipe_price_config_exception_a918fd476dcd97f63810e77e915043f7f}{what}}()}
+\DoxyCodeLine{00273\ \ \ \ \ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Ada\ harga\ resep\ yang\ tidak\ valid\ di\ file\ config\ recipe.txt!"{}};}
+\DoxyCodeLine{00275\ \ \ \ \ \}}
+\DoxyCodeLine{00276\ \};}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_recipe_quantity_config_exception}{InvalidRecipeQuantityConfigException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00279\ \{}
+\DoxyCodeLine{00280\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00281\ \ \ \ \ \mbox{\hyperlink{class_invalid_recipe_quantity_config_exception_ac22fd4060866cc2630dd9e3db0f0e3f3}{InvalidRecipeQuantityConfigException}}()\{\};}
+\DoxyCodeLine{00282\ \ \ \ \ \mbox{\hyperlink{class_invalid_recipe_quantity_config_exception_a53a7a558643f7a24400d1df1ba1fc26d}{\string~InvalidRecipeQuantityConfigException}}()\{\};}
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_recipe_quantity_config_exception_a86bd4b2da55e65db9729799e766213aa}{what}}()}
+\DoxyCodeLine{00284\ \ \ \ \ \{}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Ada\ kuantitas\ bahan\ resep\ yang\ tidak\ valid\ di\ file\ config\ recipe.txt!"{}};}
+\DoxyCodeLine{00286\ \ \ \ \ \}}
+\DoxyCodeLine{00287\ \};}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_index_matrix_area}{InvalidIndexMatrixArea}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00290\ \{}
+\DoxyCodeLine{00291\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00292\ \ \ \ \ \mbox{\hyperlink{class_invalid_index_matrix_area_a720adc7f0460407ca58e40d5ccfc611b}{InvalidIndexMatrixArea}}()\{\};}
+\DoxyCodeLine{00293\ \ \ \ \ \mbox{\hyperlink{class_invalid_index_matrix_area_afd9036e50e6dbc6a2d491055bf21062e}{\string~InvalidIndexMatrixArea}}()\{\};}
+\DoxyCodeLine{00294\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_index_matrix_area_a8ffa709cd596efed8e1475cddaa96464}{what}}()}
+\DoxyCodeLine{00295\ \ \ \ \ \{}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Slot\ yang\ diakses\ tidak\ valid!"{}};}
+\DoxyCodeLine{00297\ \ \ \ \ \}}
+\DoxyCodeLine{00298\ \};}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_empty_slot}{InvalidEmptySlot}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00301\ \{}
+\DoxyCodeLine{00302\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00303\ \ \ \ \ \mbox{\hyperlink{class_invalid_empty_slot_adfc528217eb6d2d2a79393447ed0abb7}{InvalidEmptySlot}}()\{\};}
+\DoxyCodeLine{00304\ \ \ \ \ \mbox{\hyperlink{class_invalid_empty_slot_acc8aa0c38c1aed94313b8bd3f152d460}{\string~InvalidEmptySlot}}()\{\};}
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_empty_slot_aa0208ea739074720f22ca634a9e5762e}{what}}()}
+\DoxyCodeLine{00306\ \ \ \ \ \{}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Slot\ yang\ diakses\ kosong!"{}};}
+\DoxyCodeLine{00308\ \ \ \ \ \}}
+\DoxyCodeLine{00309\ \};}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_filled_slot}{InvalidFilledSlot}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00312\ \{}
+\DoxyCodeLine{00313\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00314\ \ \ \ \ \mbox{\hyperlink{class_invalid_filled_slot_a2034dcfda1d2e03267e0de310cde8a55}{InvalidFilledSlot}}()\{\};}
+\DoxyCodeLine{00315\ \ \ \ \ \mbox{\hyperlink{class_invalid_filled_slot_af8956fbf08ba1fd8b5d34b94ab1d9157}{\string~InvalidFilledSlot}}()\{\};}
+\DoxyCodeLine{00316\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_filled_slot_a13da557f74ea2dfc3e3e93858b757e26}{what}}()}
+\DoxyCodeLine{00317\ \ \ \ \ \{}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Slot\ yang\ diakses\ bukanlah\ petak\ kosong!"{}};}
+\DoxyCodeLine{00319\ \ \ \ \ \}}
+\DoxyCodeLine{00320\ \};}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_not_tanaman}{InvalidNotTanaman}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00323\ \{}
+\DoxyCodeLine{00324\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00325\ \ \ \ \ \mbox{\hyperlink{class_invalid_not_tanaman_a4d6867ba0ab6b3bfdb2101cbb0b22524}{InvalidNotTanaman}}()\{\};}
+\DoxyCodeLine{00326\ \ \ \ \ \mbox{\hyperlink{class_invalid_not_tanaman_a1217f79816580246438f5475699ae7c8}{\string~InvalidNotTanaman}}()\{\};}
+\DoxyCodeLine{00327\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_not_tanaman_a6b02e625ee18cae5f299fc7093237e5b}{what}}()}
+\DoxyCodeLine{00328\ \ \ \ \ \{}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Pilihan\ itu\ bukanlah\ tanaman!"{}};}
+\DoxyCodeLine{00330\ \ \ \ \ \}}
+\DoxyCodeLine{00331\ \};}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00333\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_not_hewan}{InvalidNotHewan}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00334\ \{}
+\DoxyCodeLine{00335\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00336\ \ \ \ \ \mbox{\hyperlink{class_invalid_not_hewan_a1cf9103bb5a0af012403cd4f37937476}{InvalidNotHewan}}()\{\};}
+\DoxyCodeLine{00337\ \ \ \ \ \mbox{\hyperlink{class_invalid_not_hewan_a9eee8008a164eea21aba4cbd4102d8c0}{\string~InvalidNotHewan}}()\{\};}
+\DoxyCodeLine{00338\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_not_hewan_a9eeb373fa26403f56bb54b8eb248afa6}{what}}()}
+\DoxyCodeLine{00339\ \ \ \ \ \{}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Pilihan\ itu\ bukanlah\ hewan!"{}};}
+\DoxyCodeLine{00341\ \ \ \ \ \}}
+\DoxyCodeLine{00342\ \};}
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00344\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_panen_idx}{InvalidPanenIdx}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00345\ \{}
+\DoxyCodeLine{00346\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00347\ \ \ \ \ \mbox{\hyperlink{class_invalid_panen_idx_a95d9a964c3a2df5493d706de762c306d}{InvalidPanenIdx}}()\{\};}
+\DoxyCodeLine{00348\ \ \ \ \ \mbox{\hyperlink{class_invalid_panen_idx_a8f934030858bc58354125849cf7cee79}{\string~InvalidPanenIdx}}()\{\};}
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_panen_idx_a76060614bfc17e20a1597e99a33aa0be}{what}}()}
+\DoxyCodeLine{00350\ \ \ \ \ \{}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Tidak\ terdapat\ pilihan\ tersebut!"{}};}
+\DoxyCodeLine{00352\ \ \ \ \ \}}
+\DoxyCodeLine{00353\ \};}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_panen_amount}{InvalidPanenAmount}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00356\ \{}
+\DoxyCodeLine{00357\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00358\ \ \ \ \ \mbox{\hyperlink{class_invalid_panen_amount_a383fac378f7c792d92edb9a8b5bbd675}{InvalidPanenAmount}}()\{\};}
+\DoxyCodeLine{00359\ \ \ \ \ \mbox{\hyperlink{class_invalid_panen_amount_aea03e47d168ec5e23e41bd6f7cb71f1f}{\string~InvalidPanenAmount}}()\{\};}
+\DoxyCodeLine{00360\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_panen_amount_a5a7a92d8309b7d28787a666c0702bb1a}{what}}()}
+\DoxyCodeLine{00361\ \ \ \ \ \{}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Jumlah\ petak\ pilihan\ tidak\ valid!"{}};}
+\DoxyCodeLine{00363\ \ \ \ \ \}}
+\DoxyCodeLine{00364\ \};}
+\DoxyCodeLine{00365\ }
+\DoxyCodeLine{00366\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_panen_amount_over}{InvalidPanenAmountOver}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00367\ \{}
+\DoxyCodeLine{00368\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00369\ \ \ \ \ \mbox{\hyperlink{class_invalid_panen_amount_over_aa0623cc4eef3a09dc5922f12acaa3855}{InvalidPanenAmountOver}}()\{\};}
+\DoxyCodeLine{00370\ \ \ \ \ \mbox{\hyperlink{class_invalid_panen_amount_over_adbb3ce7fb3a1b2e71d13222e8af32cfe}{\string~InvalidPanenAmountOver}}()\{\};}
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_panen_amount_over_adee7cf37294bf2b8c5a5108f0b124260}{what}}()}
+\DoxyCodeLine{00372\ \ \ \ \ \{}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Jumlah\ petak\ pilihan\ melebihi\ ketersediaan!"{}};}
+\DoxyCodeLine{00374\ \ \ \ \ \}}
+\DoxyCodeLine{00375\ \};}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_inventory_space}{InvalidInventorySpace}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00378\ \{}
+\DoxyCodeLine{00379\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00380\ \ \ \ \ \mbox{\hyperlink{class_invalid_inventory_space_aef8ba2645d8ac5baccfea605d7efe85b}{InvalidInventorySpace}}()\{\};}
+\DoxyCodeLine{00381\ \ \ \ \ \mbox{\hyperlink{class_invalid_inventory_space_a503d058e7c6e2459c8ba8db017c0fe37}{\string~InvalidInventorySpace}}()\{\};}
+\DoxyCodeLine{00382\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_inventory_space_af1851408193b9e98fe354615c1201ba8}{what}}()}
+\DoxyCodeLine{00383\ \ \ \ \ \{}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Jumlah\ petak\ pilihan\ melebihi\ slot\ inventory!"{}};}
+\DoxyCodeLine{00385\ \ \ \ \ \}}
+\DoxyCodeLine{00386\ \};}
+\DoxyCodeLine{00387\ }
+\DoxyCodeLine{00388\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_plant_choice}{InvalidPlantChoice}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00389\ \{}
+\DoxyCodeLine{00390\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00391\ \ \ \ \ \mbox{\hyperlink{class_invalid_plant_choice_a0ffca8a4a14301ce57e634aab13b8bcb}{InvalidPlantChoice}}()\{\};}
+\DoxyCodeLine{00392\ \ \ \ \ \mbox{\hyperlink{class_invalid_plant_choice_af0b0a172e2944b8f14b403631148b72e}{\string~InvalidPlantChoice}}()\{\};}
+\DoxyCodeLine{00393\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_plant_choice_a1779ea1ff133876ea06f7ecb562c0f20}{what}}()}
+\DoxyCodeLine{00394\ \ \ \ \ \{}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Pilihan\ itu\ bukanlah\ tanaman\ yang\ ingin\ dipanen!"{}};}
+\DoxyCodeLine{00396\ \ \ \ \ \}}
+\DoxyCodeLine{00397\ \};}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_animal_choice}{InvalidAnimalChoice}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00400\ \{}
+\DoxyCodeLine{00401\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00402\ \ \ \ \ \mbox{\hyperlink{class_invalid_animal_choice_ad58cd5592a168fb51abf9b24642a14f4}{InvalidAnimalChoice}}()\{\};}
+\DoxyCodeLine{00403\ \ \ \ \ \mbox{\hyperlink{class_invalid_animal_choice_a8bb783c2c59a2b78d02c686df12b9c47}{\string~InvalidAnimalChoice}}()\{\};}
+\DoxyCodeLine{00404\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_animal_choice_a68c9aa94c97f8a17db10eaded3be11eb}{what}}()}
+\DoxyCodeLine{00405\ \ \ \ \ \{}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Pilihan\ itu\ bukanlah\ hewan\ yang\ ingin\ dipanen!"{}};}
+\DoxyCodeLine{00407\ \ \ \ \ \}}
+\DoxyCodeLine{00408\ \};}
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00410\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_no_harvestable_plant}{NoHarvestablePlant}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00411\ \{}
+\DoxyCodeLine{00412\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00413\ \ \ \ \ \mbox{\hyperlink{class_no_harvestable_plant_a9470f01c5fa80116035b3c3428220d91}{NoHarvestablePlant}}()\{\};}
+\DoxyCodeLine{00414\ \ \ \ \ \mbox{\hyperlink{class_no_harvestable_plant_a8690eabba589be975a9602aa5a6c84ab}{\string~NoHarvestablePlant}}()\{\};}
+\DoxyCodeLine{00415\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_no_harvestable_plant_a822bf0a933586afe4786f6211cca99d3}{what}}()}
+\DoxyCodeLine{00416\ \ \ \ \ \{}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Tidak\ terdapat\ tanaman\ untuk\ dipanen!"{}};}
+\DoxyCodeLine{00418\ \ \ \ \ \}}
+\DoxyCodeLine{00419\ \};}
+\DoxyCodeLine{00420\ }
+\DoxyCodeLine{00421\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_no_harvestable_animal}{NoHarvestableAnimal}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00422\ \{}
+\DoxyCodeLine{00423\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00424\ \ \ \ \ \mbox{\hyperlink{class_no_harvestable_animal_aa67202d4badf71ae8fa5612065d1221f}{NoHarvestableAnimal}}()\{\};}
+\DoxyCodeLine{00425\ \ \ \ \ \mbox{\hyperlink{class_no_harvestable_animal_ad1a571c260100630762bf10b9b4bd4a4}{\string~NoHarvestableAnimal}}()\{\};}
+\DoxyCodeLine{00426\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_no_harvestable_animal_a4524ef949a1e102ee9391de5eabd1ac4}{what}}()}
+\DoxyCodeLine{00427\ \ \ \ \ \{}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Tidak\ terdapat\ hewan\ untuk\ dipanen!"{}};}
+\DoxyCodeLine{00429\ \ \ \ \ \}}
+\DoxyCodeLine{00430\ \};}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_full_inv}{FullInv}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00433\ \{}
+\DoxyCodeLine{00434\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00435\ \ \ \ \ \mbox{\hyperlink{class_full_inv_ac78f2f2bf8748343f2638e6654c9f26f}{FullInv}}()\{\};}
+\DoxyCodeLine{00436\ \ \ \ \ \mbox{\hyperlink{class_full_inv_a7dac605bc48e122d99c18cba5a6675b8}{\string~FullInv}}()\{\};}
+\DoxyCodeLine{00437\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_full_inv_aec23e747c6752d5ac1b29df05abf3d97}{what}}()}
+\DoxyCodeLine{00438\ \ \ \ \ \{}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Slot\ inventory\ tidak\ mencukupi!"{}};}
+\DoxyCodeLine{00440\ \ \ \ \ \}}
+\DoxyCodeLine{00441\ \};}
+\DoxyCodeLine{00442\ }
+\DoxyCodeLine{00443\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_carnivore}{InvalidCarnivore}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00444\ \{}
+\DoxyCodeLine{00445\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00446\ \ \ \ \ \mbox{\hyperlink{class_invalid_carnivore_ac63d446bc7e0c2996b619d365f7c0032}{InvalidCarnivore}}()\{\};}
+\DoxyCodeLine{00447\ \ \ \ \ \mbox{\hyperlink{class_invalid_carnivore_a795a2ef9c160466d64c736521553ce33}{\string~InvalidCarnivore}}()\{\};}
+\DoxyCodeLine{00448\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_carnivore_a6726cfe58ec61d728f4a0b396f10f711}{what}}()}
+\DoxyCodeLine{00449\ \ \ \ \ \{}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Bukan\ bahan\ pangan\ untuk\ binatang\ karnivora!"{}};}
+\DoxyCodeLine{00451\ \ \ \ \ \}}
+\DoxyCodeLine{00452\ \};}
+\DoxyCodeLine{00453\ }
+\DoxyCodeLine{00454\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_herbivore}{InvalidHerbivore}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00455\ \{}
+\DoxyCodeLine{00456\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00457\ \ \ \ \ \mbox{\hyperlink{class_invalid_herbivore_a5484d7147e5b5ba69a92e0145b4d7a66}{InvalidHerbivore}}()\{\};}
+\DoxyCodeLine{00458\ \ \ \ \ \mbox{\hyperlink{class_invalid_herbivore_a1043fa668c26d9e307b46793d8242d7a}{\string~InvalidHerbivore}}()\{\};}
+\DoxyCodeLine{00459\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_herbivore_a87ffbd75bf610f422c8fa4097a34e2e0}{what}}()}
+\DoxyCodeLine{00460\ \ \ \ \ \{}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Bukan\ bahan\ pangan\ untuk\ binatang\ herbivora!"{}};}
+\DoxyCodeLine{00462\ \ \ \ \ \}}
+\DoxyCodeLine{00463\ \};}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00465\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_not_product}{InvalidNotProduct}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00466\ \{}
+\DoxyCodeLine{00467\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00468\ \ \ \ \ \mbox{\hyperlink{class_invalid_not_product_ad820a54aa54ab586dfc6d71f68903247}{InvalidNotProduct}}()\{\};}
+\DoxyCodeLine{00469\ \ \ \ \ \mbox{\hyperlink{class_invalid_not_product_ae2103491cae2020839344843c71b42c5}{\string~InvalidNotProduct}}()\{\};}
+\DoxyCodeLine{00470\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_not_product_a9d4162019025c41c8be403fd02eebc80}{what}}()}
+\DoxyCodeLine{00471\ \ \ \ \ \{}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Barang\ pada\ slot\ tersebut\ bukanlah\ produk!"{}};}
+\DoxyCodeLine{00473\ \ \ \ \ \}}
+\DoxyCodeLine{00474\ \};}
+\DoxyCodeLine{00475\ }
+\DoxyCodeLine{00476\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_position_matrix_area}{InvalidPositionMatrixArea}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00477\ \{}
+\DoxyCodeLine{00478\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00479\ \ \ \ \ \mbox{\hyperlink{class_invalid_position_matrix_area_ac480e790d3abc2bc1f61fcd58edd51a7}{InvalidPositionMatrixArea}}()\{\};}
+\DoxyCodeLine{00480\ \ \ \ \ \mbox{\hyperlink{class_invalid_position_matrix_area_a0022275994b12bcc7c5dd491b8dfc2f8}{\string~InvalidPositionMatrixArea}}()\{\};}
+\DoxyCodeLine{00481\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_position_matrix_area_a64419f894dc94280598f99a94f8543c3}{what}}()}
+\DoxyCodeLine{00482\ \ \ \ \ \{}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Slot\ Matrix\ tidak\ valid"{}};}
+\DoxyCodeLine{00484\ \ \ \ \ \}}
+\DoxyCodeLine{00485\ \};}
+\DoxyCodeLine{00486\ }
+\DoxyCodeLine{00487\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_response_toko}{InvalidResponseToko}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00488\ \{}
+\DoxyCodeLine{00489\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00490\ \ \ \ \ \mbox{\hyperlink{class_invalid_response_toko_a563cd449e7d660942beb10832f913907}{InvalidResponseToko}}()\{\};}
+\DoxyCodeLine{00491\ \ \ \ \ \mbox{\hyperlink{class_invalid_response_toko_a42916b8ad52caa34e3328bd9a0f275d3}{\string~InvalidResponseToko}}()\{\};}
+\DoxyCodeLine{00492\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_response_toko_afb454f6d9b2d6a911b8dc51480fd6e92}{what}}()}
+\DoxyCodeLine{00493\ \ \ \ \ \{}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Input\ tidak\ valid.\ Silahkan\ masukkan\ Input\ sesuai\ kesediaan\ Toko"{}};}
+\DoxyCodeLine{00495\ \ \ \ \ \}}
+\DoxyCodeLine{00496\ \};}
+\DoxyCodeLine{00497\ }
+\DoxyCodeLine{00498\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_not_eatable_slot}{NotEatableSlot}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00499\ \{}
+\DoxyCodeLine{00500\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00501\ \ \ \ \ \mbox{\hyperlink{class_not_eatable_slot_a900dc9b5f604da13701833d20f8a7de0}{NotEatableSlot}}()\{\};}
+\DoxyCodeLine{00502\ \ \ \ \ \mbox{\hyperlink{class_not_eatable_slot_af4dc82a54c4e6436bea25f4dd2aab56a}{\string~NotEatableSlot}}()\{\};}
+\DoxyCodeLine{00503\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_not_eatable_slot_a46b2d16ce015c751c484745668aea620}{what}}()}
+\DoxyCodeLine{00504\ \ \ \ \ \{}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Slot\ yang\ dipilih\ bukan\ Makanan"{}};}
+\DoxyCodeLine{00506\ \ \ \ \ \}}
+\DoxyCodeLine{00507\ \};}
+\DoxyCodeLine{00508\ }
+\DoxyCodeLine{00509\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_empty_food_slot}{EmptyFoodSlot}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00510\ \{}
+\DoxyCodeLine{00511\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00512\ \ \ \ \ \mbox{\hyperlink{class_empty_food_slot_a8c1c3b3fee7b770b64bbe1a456fe47c9}{EmptyFoodSlot}}()\{\};}
+\DoxyCodeLine{00513\ \ \ \ \ \mbox{\hyperlink{class_empty_food_slot_a53e74bcc7b7986c54b079a00377e020c}{\string~EmptyFoodSlot}}()\{\};}
+\DoxyCodeLine{00514\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_empty_food_slot_af65dab39598fd612abe05c9596a1d43f}{what}}()}
+\DoxyCodeLine{00515\ \ \ \ \ \{}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Slot\ yang\ dipilih\ tidak\ mempunyai\ Makanan"{}};}
+\DoxyCodeLine{00517\ \ \ \ \ \}}
+\DoxyCodeLine{00518\ \};}
+\DoxyCodeLine{00519\ }
+\DoxyCodeLine{00520\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_empty_inventory}{EmptyInventory}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00521\ \{}
+\DoxyCodeLine{00522\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00523\ \ \ \ \ \mbox{\hyperlink{class_empty_inventory_a8b8a452dbc1ce67c9dc0d511348b1992}{EmptyInventory}}()\{\};}
+\DoxyCodeLine{00524\ \ \ \ \ \mbox{\hyperlink{class_empty_inventory_a0ba262a569073a3a72fbc05a221bfc21}{\string~EmptyInventory}}()\{\};}
+\DoxyCodeLine{00525\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_empty_inventory_a68aacd102fe480f1d8f63a7e3e935bc5}{what}}()}
+\DoxyCodeLine{00526\ \ \ \ \ \{}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Inventory\ Kosong.\ Tidak\ dapat\ makan!"{}};}
+\DoxyCodeLine{00528\ \ \ \ \ \}}
+\DoxyCodeLine{00529\ \};}
+\DoxyCodeLine{00530\ }
+\DoxyCodeLine{00531\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_no_food_in_inventory}{NoFoodInInventory}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00532\ \{}
+\DoxyCodeLine{00533\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00534\ \ \ \ \ \mbox{\hyperlink{class_no_food_in_inventory_abedf554ea84c5244f4940ea42f204095}{NoFoodInInventory}}()\{\};}
+\DoxyCodeLine{00535\ \ \ \ \ \mbox{\hyperlink{class_no_food_in_inventory_a79088f5879ec2871de5b14eb4acf4ff7}{\string~NoFoodInInventory}}()\{\};}
+\DoxyCodeLine{00536\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_no_food_in_inventory_a6a303016f3b35b5471665676c8265482}{what}}()}
+\DoxyCodeLine{00537\ \ \ \ \ \{}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Tidak\ ada\ Makanan\ di\ Inventory!"{}};}
+\DoxyCodeLine{00539\ \ \ \ \ \}}
+\DoxyCodeLine{00540\ \};}
+\DoxyCodeLine{00541\ }
+\DoxyCodeLine{00542\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cant_sell_bangunan}{CantSellBangunan}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00543\ \{}
+\DoxyCodeLine{00544\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00545\ \ \ \ \ \mbox{\hyperlink{class_cant_sell_bangunan_a21cbd20d1ecabf1bf3de36cb6743ca40}{CantSellBangunan}}()\{\};}
+\DoxyCodeLine{00546\ \ \ \ \ \mbox{\hyperlink{class_cant_sell_bangunan_a53dd7c812077dfb1a03eac34a137bd62}{\string~CantSellBangunan}}()\{\};}
+\DoxyCodeLine{00547\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_cant_sell_bangunan_a8236feead1f8766986cf863fe6b00d9b}{what}}()}
+\DoxyCodeLine{00548\ \ \ \ \ \{}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Tidak\ bisa\ Menjual\ Bangunan!"{}};}
+\DoxyCodeLine{00550\ \ \ \ \ \}}
+\DoxyCodeLine{00551\ \};}
+\DoxyCodeLine{00552\ }
+\DoxyCodeLine{00553\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_item_quantity_to_sell_not_enough}{ItemQuantityToSellNotEnough}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00554\ \{}
+\DoxyCodeLine{00555\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00556\ \ \ \ \ \mbox{\hyperlink{class_item_quantity_to_sell_not_enough_a2a442f48ad1f888f95ca04f38bf4e37a}{ItemQuantityToSellNotEnough}}()\{\};}
+\DoxyCodeLine{00557\ \ \ \ \ \mbox{\hyperlink{class_item_quantity_to_sell_not_enough_a4db7ec4666e6e6a5c57e4d4f31634f3a}{\string~ItemQuantityToSellNotEnough}}()\{\};}
+\DoxyCodeLine{00558\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_item_quantity_to_sell_not_enough_a2779fbae1a036389211df4fbd255ee92}{what}}()}
+\DoxyCodeLine{00559\ \ \ \ \ \{}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Tidak\ bisa\ Menjual.\ Kuantitas\ barang\ tidak\ cukup!"{}};}
+\DoxyCodeLine{00561\ \ \ \ \ \}}
+\DoxyCodeLine{00562\ \};}
+\DoxyCodeLine{00563\ }
+\DoxyCodeLine{00564\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cant_find_nama_bangunan}{CantFindNamaBangunan}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00565\ \{}
+\DoxyCodeLine{00566\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00567\ \ \ \ \ \mbox{\hyperlink{class_cant_find_nama_bangunan_a1eb705fae6462de4212978d029e50a09}{CantFindNamaBangunan}}()\{\};}
+\DoxyCodeLine{00568\ \ \ \ \ \mbox{\hyperlink{class_cant_find_nama_bangunan_afb9ea95e12fadee8e6fee042a9bc0a9b}{\string~CantFindNamaBangunan}}()\{\};}
+\DoxyCodeLine{00569\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_cant_find_nama_bangunan_a247d85bbd432ac8be389313c7ef46e85}{what}}()}
+\DoxyCodeLine{00570\ \ \ \ \ \{}
+\DoxyCodeLine{00571\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Tidak\ ada\ Bangunan\ dengan\ nama\ tersebut!"{}};}
+\DoxyCodeLine{00572\ \ \ \ \ \}}
+\DoxyCodeLine{00573\ \};}
+\DoxyCodeLine{00574\ }
+\DoxyCodeLine{00575\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_material_not_enough}{MaterialNotEnough}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00576\ \{}
+\DoxyCodeLine{00577\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00578\ \ \ \ \ \mbox{\hyperlink{class_material_not_enough_abb3c4f70a6bef19d473815cd1301384b}{MaterialNotEnough}}()\{\};}
+\DoxyCodeLine{00579\ \ \ \ \ \mbox{\hyperlink{class_material_not_enough_a28bb8deb2c8c206ab44b5c4c4a784a31}{\string~MaterialNotEnough}}()\{\};}
+\DoxyCodeLine{00580\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_material_not_enough_aa9979bc282ce01902c6fdc991038b954}{what}}()}
+\DoxyCodeLine{00581\ \ \ \ \ \{}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Material\ tidak\ cukup!"{}};}
+\DoxyCodeLine{00583\ \ \ \ \ \}}
+\DoxyCodeLine{00584\ \};}
+\DoxyCodeLine{00585\ }
+\DoxyCodeLine{00586\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_sub_response}{InvalidSubResponse}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00587\ \{}
+\DoxyCodeLine{00588\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00589\ \ \ \ \ \mbox{\hyperlink{class_invalid_sub_response_a20b1e508f7048295a5e4a8a2781cf759}{InvalidSubResponse}}()\{\};}
+\DoxyCodeLine{00590\ \ \ \ \ \mbox{\hyperlink{class_invalid_sub_response_a6cd7b6abe4ed214b974543d429375af8}{\string~InvalidSubResponse}}()\{\};}
+\DoxyCodeLine{00591\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_sub_response_a74738df421416b7100920b164b1e081f}{what}}()}
+\DoxyCodeLine{00592\ \ \ \ \ \{}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Input\ tidak\ valid!"{}};}
+\DoxyCodeLine{00594\ \ \ \ \ \}}
+\DoxyCodeLine{00595\ \};}
+\DoxyCodeLine{00596\ }
+\DoxyCodeLine{00597\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_inventory_not_enough}{InventoryNotEnough}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00598\ \{}
+\DoxyCodeLine{00599\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00600\ \ \ \ \ \mbox{\hyperlink{class_inventory_not_enough_a798fd47dbb2c90b1e1ba813bc48632db}{InventoryNotEnough}}()\{\};}
+\DoxyCodeLine{00601\ \ \ \ \ \mbox{\hyperlink{class_inventory_not_enough_afbc26981c01524ffd8af39a552f3479b}{\string~InventoryNotEnough}}()\{\};}
+\DoxyCodeLine{00602\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_inventory_not_enough_aeb1289481135df4eb26354d8a136a3f6}{what}}()}
+\DoxyCodeLine{00603\ \ \ \ \ \{}
+\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Inventory\ yang\ tersisa\ tidak\ cukup!"{}};}
+\DoxyCodeLine{00605\ \ \ \ \ \}}
+\DoxyCodeLine{00606\ \};}
+\DoxyCodeLine{00607\ }
+\DoxyCodeLine{00608\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_stock_toko_not_enough}{StockTokoNotEnough}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00609\ \{}
+\DoxyCodeLine{00610\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00611\ \ \ \ \ \mbox{\hyperlink{class_stock_toko_not_enough_a19b488cb8c6e36333fbaf22e31356bc9}{StockTokoNotEnough}}()\{\};}
+\DoxyCodeLine{00612\ \ \ \ \ \mbox{\hyperlink{class_stock_toko_not_enough_ad0af191c0276897c96215537c534b200}{\string~StockTokoNotEnough}}()\{\};}
+\DoxyCodeLine{00613\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_stock_toko_not_enough_aeaa7e631a026ccc364bfd77a9aa349a2}{what}}()}
+\DoxyCodeLine{00614\ \ \ \ \ \{}
+\DoxyCodeLine{00615\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Stock\ Toko\ tidak\ cukup!"{}};}
+\DoxyCodeLine{00616\ \ \ \ \ \}}
+\DoxyCodeLine{00617\ \};}
+\DoxyCodeLine{00618\ }
+\DoxyCodeLine{00619\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_not_enough_gulden}{NotEnoughGulden}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00620\ \{}
+\DoxyCodeLine{00621\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00622\ \ \ \ \ \mbox{\hyperlink{class_not_enough_gulden_ad276c4777b467ed52ebed78e9793d6a8}{NotEnoughGulden}}()\{\};}
+\DoxyCodeLine{00623\ \ \ \ \ \mbox{\hyperlink{class_not_enough_gulden_ae9dd36268086c609d6591b9a9a8942ab}{\string~NotEnoughGulden}}()\{\};}
+\DoxyCodeLine{00624\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_not_enough_gulden_ade3be9ea143966017f410eabb2439ac0}{what}}()}
+\DoxyCodeLine{00625\ \ \ \ \ \{}
+\DoxyCodeLine{00626\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Gulden\ pemain\ tidak\ cukup!"{}};}
+\DoxyCodeLine{00627\ \ \ \ \ \}}
+\DoxyCodeLine{00628\ \};}
+\DoxyCodeLine{00629\ }
+\DoxyCodeLine{00630\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_slot_filled}{SlotFilled}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00631\ \{}
+\DoxyCodeLine{00632\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00633\ \ \ \ \ \mbox{\hyperlink{class_slot_filled_ac092790523228ce7a1c67f2a33f7a82c}{SlotFilled}}()\{\};}
+\DoxyCodeLine{00634\ \ \ \ \ \mbox{\hyperlink{class_slot_filled_a9636fa9ec0007791ce1187fdd5d3ee43}{\string~SlotFilled}}()\{\};}
+\DoxyCodeLine{00635\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_slot_filled_aecb47d0af688268aaa7bdb16c5196e74}{what}}()}
+\DoxyCodeLine{00636\ \ \ \ \ \{}
+\DoxyCodeLine{00637\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Slot\ Sudah\ diisi!\ Silahkan\ pilih\ slot\ lain!"{}};}
+\DoxyCodeLine{00638\ \ \ \ \ \}}
+\DoxyCodeLine{00639\ \};}
+\DoxyCodeLine{00640\ }
+\DoxyCodeLine{00641\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_no_animal_in_cage}{NoAnimalInCage}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00642\ \{}
+\DoxyCodeLine{00643\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00644\ \ \ \ \ \mbox{\hyperlink{class_no_animal_in_cage_a507fa5fb11e588e3c54e40d95d3118fd}{NoAnimalInCage}}()\{\};}
+\DoxyCodeLine{00645\ \ \ \ \ \mbox{\hyperlink{class_no_animal_in_cage_a26df985f2b480244cec6dd65f9ba79d1}{\string~NoAnimalInCage}}()\{\};}
+\DoxyCodeLine{00646\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_no_animal_in_cage_a5c178cc4cfcadeaeed32ca2254b1f619}{what}}()}
+\DoxyCodeLine{00647\ \ \ \ \ \{}
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Tidak\ terdapat\ hewan\ dalam\ ternakan!"{}};}
+\DoxyCodeLine{00649\ \ \ \ \ \}}
+\DoxyCodeLine{00650\ \};}
+\DoxyCodeLine{00651\ }
+\DoxyCodeLine{00652\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cannot_print_field_exception}{CannotPrintFieldException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}\{}
+\DoxyCodeLine{00653\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00654\ \ \ \ \ \mbox{\hyperlink{class_cannot_print_field_exception_a9e358210f6fc44911be9cf17b1b949b8}{CannotPrintFieldException}}()\{\};}
+\DoxyCodeLine{00655\ \ \ \ \ \mbox{\hyperlink{class_cannot_print_field_exception_a11184ebc8e16046aca2dc4adddc3a7ef}{\string~CannotPrintFieldException}}()\{\};}
+\DoxyCodeLine{00656\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_cannot_print_field_exception_a4cb27d83599dcd85350979aaa1abb4b9}{what}}()}
+\DoxyCodeLine{00657\ \ \ \ \ \{}
+\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Anda\ bukan\ petani,\ tidak\ bisa\ cetak\ ladang!"{}};}
+\DoxyCodeLine{00659\ \ \ \ \ \}}
+\DoxyCodeLine{00660\ \};}
+\DoxyCodeLine{00661\ }
+\DoxyCodeLine{00662\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cannot_print_farm_exception}{CannotPrintFarmException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}\{}
+\DoxyCodeLine{00663\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00664\ \ \ \ \ \mbox{\hyperlink{class_cannot_print_farm_exception_a8f08c1c6ab783aa3315f5c41f4e29921}{CannotPrintFarmException}}()\{\};}
+\DoxyCodeLine{00665\ \ \ \ \ \mbox{\hyperlink{class_cannot_print_farm_exception_a164affbd36a8bf77aa3e15a0d663f6f6}{\string~CannotPrintFarmException}}()\{\};}
+\DoxyCodeLine{00666\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_cannot_print_farm_exception_a13f1e3ba7a12e5f2f36f407497561dc9}{what}}()}
+\DoxyCodeLine{00667\ \ \ \ \ \{}
+\DoxyCodeLine{00668\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Anda\ bukan\ peternak,\ tidak\ bisa\ cetak\ peternakan!"{}};}
+\DoxyCodeLine{00669\ \ \ \ \ \}}
+\DoxyCodeLine{00670\ \};}
+\DoxyCodeLine{00671\ }
+\DoxyCodeLine{00672\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cannot_plant_exception}{CannotPlantException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}\{}
+\DoxyCodeLine{00673\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00674\ \ \ \ \ \mbox{\hyperlink{class_cannot_plant_exception_a58739d5d861ffc2d3af573737146c859}{CannotPlantException}}()\{\};}
+\DoxyCodeLine{00675\ \ \ \ \ \mbox{\hyperlink{class_cannot_plant_exception_a809452e22d79abbca2ee1d563d2d6803}{\string~CannotPlantException}}()\{\};}
+\DoxyCodeLine{00676\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_cannot_plant_exception_aeac98874a8dc8a25a316a9e212a96106}{what}}()}
+\DoxyCodeLine{00677\ \ \ \ \ \{}
+\DoxyCodeLine{00678\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Anda\ bukan\ petani,\ tidak\ bisa\ menanam!"{}};}
+\DoxyCodeLine{00679\ \ \ \ \ \}}
+\DoxyCodeLine{00680\ \};}
+\DoxyCodeLine{00681\ }
+\DoxyCodeLine{00682\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cannot_farm_exception}{CannotFarmException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}\{}
+\DoxyCodeLine{00683\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00684\ \ \ \ \ \mbox{\hyperlink{class_cannot_farm_exception_ad849d53d7595cae50c1a11d5d0adbc72}{CannotFarmException}}()\{\};}
+\DoxyCodeLine{00685\ \ \ \ \ \mbox{\hyperlink{class_cannot_farm_exception_af45634c8061c30b23bc8127ee489b5b9}{\string~CannotFarmException}}()\{\};}
+\DoxyCodeLine{00686\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_cannot_farm_exception_aa7c6d7b6cbb482667d824b72b436cd8e}{what}}()}
+\DoxyCodeLine{00687\ \ \ \ \ \{}
+\DoxyCodeLine{00688\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Anda\ bukan\ peternak,\ tidak\ bisa\ beternak!"{}};}
+\DoxyCodeLine{00689\ \ \ \ \ \}}
+\DoxyCodeLine{00690\ \};}
+\DoxyCodeLine{00691\ }
+\DoxyCodeLine{00692\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cannot_feed_exception}{CannotFeedException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}\{}
+\DoxyCodeLine{00693\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00694\ \ \ \ \ \mbox{\hyperlink{class_cannot_feed_exception_af38e68438364fe0c6ca0616c283d01c7}{CannotFeedException}}()\{\};}
+\DoxyCodeLine{00695\ \ \ \ \ \mbox{\hyperlink{class_cannot_feed_exception_af56b7fd893385e0a9c04d39897caab35}{\string~CannotFeedException}}()\{\};}
+\DoxyCodeLine{00696\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_cannot_feed_exception_a361114f7c6c54314682109ac7f00f47d}{what}}()}
+\DoxyCodeLine{00697\ \ \ \ \ \{}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Anda\ bukan\ peternak,\ tidak\ bisa\ kasih\ makan!"{}};}
+\DoxyCodeLine{00699\ \ \ \ \ \}}
+\DoxyCodeLine{00700\ \};}
+\DoxyCodeLine{00701\ }
+\DoxyCodeLine{00702\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cant_buy_bangunan}{CantBuyBangunan}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}}
+\DoxyCodeLine{00703\ \{}
+\DoxyCodeLine{00704\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00705\ \ \ \ \ \mbox{\hyperlink{class_cant_buy_bangunan_aa656c3cec0c301ad15746b977b17eb8d}{CantBuyBangunan}}()\{\};}
+\DoxyCodeLine{00706\ \ \ \ \ \mbox{\hyperlink{class_cant_buy_bangunan_a7bb01d50a0bd2a2ff3ca16761e38263a}{\string~CantBuyBangunan}}()\{\};}
+\DoxyCodeLine{00707\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_cant_buy_bangunan_a07c73da88cf3d142ba780e802d18cc03}{what}}()}
+\DoxyCodeLine{00708\ \ \ \ \ \{}
+\DoxyCodeLine{00709\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Walikota\ tidak\ bisa\ membeli\ bangunan!"{}};}
+\DoxyCodeLine{00710\ \ \ \ \ \}}
+\DoxyCodeLine{00711\ \};}
+\DoxyCodeLine{00712\ }
+\DoxyCodeLine{00713\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_path_muat}{InvalidPathMuat}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}\{}
+\DoxyCodeLine{00714\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00715\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_path_muat_a71c42c38b7584ca3eb1f21e146c842f2}{what}}()\{}
+\DoxyCodeLine{00716\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Path\ yang\ dimasukkan\ tidak\ valid!"{}};}
+\DoxyCodeLine{00717\ \ \ \ \ \}}
+\DoxyCodeLine{00718\ \};}
+\DoxyCodeLine{00719\ }
+\DoxyCodeLine{00720\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_dir_simpan}{InvalidDirSimpan}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}\{}
+\DoxyCodeLine{00721\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00722\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_dir_simpan_ad7d6c749f5f130f4045e46a37106e33b}{what}}()\{}
+\DoxyCodeLine{00723\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Lokasi\ berkas\ directory\ tidak\ valid!"{}};}
+\DoxyCodeLine{00724\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00725\ \};}
+\DoxyCodeLine{00726\ }
+\DoxyCodeLine{00727\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invalid_type_pemain}{InvalidTypePemain}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}\{}
+\DoxyCodeLine{00728\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00729\ \ \ \ \ \mbox{\hyperlink{class_invalid_type_pemain_ae21dff30a23eacfda05ff3670ebc8d71}{InvalidTypePemain}}()\{\};}
+\DoxyCodeLine{00730\ \ \ \ \ \mbox{\hyperlink{class_invalid_type_pemain_a607e252fa2895d2752ce317dd0cc7b0c}{\string~InvalidTypePemain}}()\{\};}
+\DoxyCodeLine{00731\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_invalid_type_pemain_a03da21bb767385c73407c70173704325}{what}}()\{}
+\DoxyCodeLine{00732\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Tipe\ pemain\ tidak\ valid!"{}};}
+\DoxyCodeLine{00733\ \ \ \ \ \}}
+\DoxyCodeLine{00734\ \ \ \ \ }
+\DoxyCodeLine{00735\ \};}
+\DoxyCodeLine{00736\ }
+\DoxyCodeLine{00737\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_user_name_pemain_tidak_unik}{UserNamePemainTidakUnik}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}\{}
+\DoxyCodeLine{00738\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00739\ \ \ \ \ \mbox{\hyperlink{class_user_name_pemain_tidak_unik_a9aed6f3ff68a94e30711db1c964a4e57}{UserNamePemainTidakUnik}}()\{\};}
+\DoxyCodeLine{00740\ \ \ \ \ \mbox{\hyperlink{class_user_name_pemain_tidak_unik_adcf16b4c93e943eba616c7b2e39acb99}{\string~UserNamePemainTidakUnik}}()\{\};}
+\DoxyCodeLine{00741\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_user_name_pemain_tidak_unik_acd1dd950c9fa252fb3967d02224c0e51}{what}}()\{}
+\DoxyCodeLine{00742\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Username\ sudah\ ada\ yang\ pakai!"{}};}
+\DoxyCodeLine{00743\ \ \ \ \ \}}
+\DoxyCodeLine{00744\ \};}
+\DoxyCodeLine{00745\ }
+\DoxyCodeLine{00746\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_no_plant}{NoPlant}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}\{}
+\DoxyCodeLine{00747\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00748\ \ \ \ \ \mbox{\hyperlink{class_no_plant_aa6766c463d316e35d11b4d25dc55cd01}{NoPlant}}()\{\};}
+\DoxyCodeLine{00749\ \ \ \ \ \mbox{\hyperlink{class_no_plant_aa4384850420475130c2596ca1727b418}{\string~NoPlant}}()\{\};}
+\DoxyCodeLine{00750\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_no_plant_a80007b9953474226755f720b919f626f}{what}}()\{}
+\DoxyCodeLine{00751\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Tidak\ terdapat\ tanaman\ dalam\ inventory"{}};}
+\DoxyCodeLine{00752\ \ \ \ \ \}}
+\DoxyCodeLine{00753\ \};}
+\DoxyCodeLine{00754\ }
+\DoxyCodeLine{00755\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_no_animal}{NoAnimal}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}\{}
+\DoxyCodeLine{00756\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00757\ \ \ \ \ \mbox{\hyperlink{class_no_animal_ad702b48fd9b8d74a8ddab3d8ccf2ef0f}{NoAnimal}}()\{\};}
+\DoxyCodeLine{00758\ \ \ \ \ \mbox{\hyperlink{class_no_animal_a37fa3273d18013afadbf13df19e93a9e}{\string~NoAnimal}}()\{\};}
+\DoxyCodeLine{00759\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_no_animal_a9dbea27ccb3a18ba58bd43d0195c0a05}{what}}()\{}
+\DoxyCodeLine{00760\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Tidak\ terdapat\ hewan\ dalam\ inventory"{}};}
+\DoxyCodeLine{00761\ \ \ \ \ \}}
+\DoxyCodeLine{00762\ \};}
+\DoxyCodeLine{00763\ }
+\DoxyCodeLine{00764\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_no_empty_slot}{NoEmptySlot}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_base_exception}{BaseException}}\{}
+\DoxyCodeLine{00765\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00766\ \ \ \ \ \mbox{\hyperlink{class_no_empty_slot_abae89a0b8163b854297c3364328125b8}{NoEmptySlot}}()\{\};}
+\DoxyCodeLine{00767\ \ \ \ \ \mbox{\hyperlink{class_no_empty_slot_aeffc09b8eac435fc4c5951b3cf1770fa}{\string~NoEmptySlot}}()\{\};}
+\DoxyCodeLine{00768\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_no_empty_slot_aa742a61ec6e8b5845b30e30d5a524bce}{what}}()\{}
+\DoxyCodeLine{00769\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Tidak\ terdapat\ slot\ kosong"{}};}
+\DoxyCodeLine{00770\ \ \ \ \ \}}
+\DoxyCodeLine{00771\ \};}
+\DoxyCodeLine{00772\ }
+
+\end{DoxyCode}

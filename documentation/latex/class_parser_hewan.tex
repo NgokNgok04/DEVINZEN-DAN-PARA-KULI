@@ -1,0 +1,257 @@
+\doxysection{Parser\+Hewan Class Reference}
+\hypertarget{class_parser_hewan}{}\label{class_parser_hewan}\index{ParserHewan@{ParserHewan}}
+
+
+{\ttfamily \#include $<$Parser\+Hewan.\+hpp$>$}
+
+Inheritance diagram for Parser\+Hewan\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_parser_hewan}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_parser_hewan_a9174d4524648ea8d4a69663b3132594a}{Parser\+Hewan}} ()
+\item 
+\mbox{\hyperlink{class_parser_hewan_a118c34862a0e69e4b51c9c70f746301e}{\texorpdfstring{$\sim$}{\string~}\+Parser\+Hewan}} ()
+\item 
+void \mbox{\hyperlink{class_parser_hewan_aaa9fc2f00ac0534327070d34fce224dd}{Parse\+File}} (string file\+Directory)
+\item 
+void \mbox{\hyperlink{class_parser_hewan_a167ff09960f9ceeab0263c03e6d4c445}{Clear\+Parser\+Data}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_base_parser}{Base\+Parser}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_base_parser_ad1b62c46a68400c305d7d4d9826787d9}{Base\+Parser}} ()
+\item 
+\mbox{\hyperlink{class_base_parser_a41509d9c82c81c6a1c22ca9b013bc8cf}{\texorpdfstring{$\sim$}{\string~}\+Base\+Parser}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_parser_hewan_a1f5b1cae3601bed36e005882dcfbd66c}{get\+ID}} (int)
+\item 
+static string \mbox{\hyperlink{class_parser_hewan_aa62ff0f815ec8ecf44ad5b6e759a0b2f}{get\+Code}} (int)
+\item 
+static string \mbox{\hyperlink{class_parser_hewan_abfe77cd82f6580f0fae7e2fc7f2650ca}{get\+Name}} (int)
+\item 
+static string \mbox{\hyperlink{class_parser_hewan_af85edbf27dbada1028015f2fd103f981}{get\+Type}} (int)
+\item 
+static int \mbox{\hyperlink{class_parser_hewan_a94950216cf9d87140a0905aa97fa9629}{get\+Harvest\+Weight}} (int)
+\item 
+static int \mbox{\hyperlink{class_parser_hewan_af8208d9f850ebd5c55bdc2fcddec2d24}{get\+Price}} (int)
+\item 
+static int \mbox{\hyperlink{class_parser_hewan_ab4e1382a339eded152637888e83c1044}{get\+Config\+Size}} ()
+\item 
+static int \mbox{\hyperlink{class_parser_hewan_a48016384e135391a7519580ec998f0e6}{convert\+Code\+To\+ID}} (string Code)
+\item 
+static int \mbox{\hyperlink{class_parser_hewan_af20d4f678f3f1489dd224c781748912b}{convert\+Name\+To\+ID}} (string Name)
+\item 
+static int \mbox{\hyperlink{class_parser_hewan_a476136a4372f2ae368a09a077dbd335c}{index\+To\+ID}} (int)
+\item 
+static int \mbox{\hyperlink{class_parser_hewan_a70b9e9b39121798caff3fa8c9393488f}{IDTo\+Index}} (int)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static vector$<$ int $>$ \mbox{\hyperlink{class_parser_hewan_af5e73eb2545471f2b26cda46316f52e0}{animal\+ID}} = vector$<$int$>$()
+\item 
+static vector$<$ string $>$ \mbox{\hyperlink{class_parser_hewan_a7c6f1fc47fdf132b303181cb218605e3}{animal\+Code}} = vector$<$string$>$()
+\item 
+static vector$<$ string $>$ \mbox{\hyperlink{class_parser_hewan_a57f93d15af960d311c0d9bab04958e1a}{animal\+Name}} = vector$<$string$>$()
+\item 
+static vector$<$ string $>$ \mbox{\hyperlink{class_parser_hewan_a13a3d0c110ee2934cb83699cc4bf69cd}{animal\+Type}} = vector$<$string$>$()
+\item 
+static vector$<$ int $>$ \mbox{\hyperlink{class_parser_hewan_a8f340e464a101c660943a27a59074c27}{harvest\+Weight}} = vector$<$int$>$()
+\item 
+static vector$<$ int $>$ \mbox{\hyperlink{class_parser_hewan_ab1c9182bbe873411c464bea5e2cf235b}{price}} = vector$<$int$>$()
+\item 
+static vector$<$ string $>$ \mbox{\hyperlink{class_parser_hewan_acc49c3abd0a7dddd2d6a890024296c5c}{valid\+Animal\+Types}} = \{"{}HERBIVORE"{},"{}CARNIVORE"{},"{}OMNIVORE"{}\}
+\item 
+static map$<$ int, int $>$ \mbox{\hyperlink{class_parser_hewan_a2c712e7d96e77130a99a732bf59838dd}{Index\+To\+IDMap}} = map$<$int,int$>$()
+\item 
+static map$<$ int, int $>$ \mbox{\hyperlink{class_parser_hewan_afb071172deedfc920250d740d65cac0e}{IDTo\+Index\+Map}} = map$<$int,int$>$()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{class_parser_hewan_a9d2d0536ddb748993b85c81e57907e7c}{operator$<$$<$}} (ostream \&os, \mbox{\hyperlink{class_parser_hewan}{Parser\+Hewan}} \&PH)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_parser_hewan_a9174d4524648ea8d4a69663b3132594a}\label{class_parser_hewan_a9174d4524648ea8d4a69663b3132594a} 
+\index{ParserHewan@{ParserHewan}!ParserHewan@{ParserHewan}}
+\index{ParserHewan@{ParserHewan}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{ParserHewan()}{ParserHewan()}}
+{\footnotesize\ttfamily Parser\+Hewan\+::\+Parser\+Hewan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_parser_hewan_a118c34862a0e69e4b51c9c70f746301e}\label{class_parser_hewan_a118c34862a0e69e4b51c9c70f746301e} 
+\index{ParserHewan@{ParserHewan}!````~ParserHewan@{\texorpdfstring{$\sim$}{\string~}ParserHewan}}
+\index{````~ParserHewan@{\texorpdfstring{$\sim$}{\string~}ParserHewan}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ParserHewan()}{\string~ParserHewan()}}
+{\footnotesize\ttfamily Parser\+Hewan\+::\texorpdfstring{$\sim$}{\string~}\+Parser\+Hewan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_parser_hewan_a167ff09960f9ceeab0263c03e6d4c445}\label{class_parser_hewan_a167ff09960f9ceeab0263c03e6d4c445} 
+\index{ParserHewan@{ParserHewan}!ClearParserData@{ClearParserData}}
+\index{ClearParserData@{ClearParserData}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{ClearParserData()}{ClearParserData()}}
+{\footnotesize\ttfamily void Parser\+Hewan\+::\+Clear\+Parser\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_parser_a327b12cda4458bad0b79a02fd11569b9}{Base\+Parser}}.
+
+\Hypertarget{class_parser_hewan_a48016384e135391a7519580ec998f0e6}\label{class_parser_hewan_a48016384e135391a7519580ec998f0e6} 
+\index{ParserHewan@{ParserHewan}!convertCodeToID@{convertCodeToID}}
+\index{convertCodeToID@{convertCodeToID}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{convertCodeToID()}{convertCodeToID()}}
+{\footnotesize\ttfamily int Parser\+Hewan\+::convert\+Code\+To\+ID (\begin{DoxyParamCaption}\item[{string}]{Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_hewan_af20d4f678f3f1489dd224c781748912b}\label{class_parser_hewan_af20d4f678f3f1489dd224c781748912b} 
+\index{ParserHewan@{ParserHewan}!convertNameToID@{convertNameToID}}
+\index{convertNameToID@{convertNameToID}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{convertNameToID()}{convertNameToID()}}
+{\footnotesize\ttfamily int Parser\+Hewan\+::convert\+Name\+To\+ID (\begin{DoxyParamCaption}\item[{string}]{Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_hewan_aa62ff0f815ec8ecf44ad5b6e759a0b2f}\label{class_parser_hewan_aa62ff0f815ec8ecf44ad5b6e759a0b2f} 
+\index{ParserHewan@{ParserHewan}!getCode@{getCode}}
+\index{getCode@{getCode}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{getCode()}{getCode()}}
+{\footnotesize\ttfamily string Parser\+Hewan\+::get\+Code (\begin{DoxyParamCaption}\item[{int}]{ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_hewan_ab4e1382a339eded152637888e83c1044}\label{class_parser_hewan_ab4e1382a339eded152637888e83c1044} 
+\index{ParserHewan@{ParserHewan}!getConfigSize@{getConfigSize}}
+\index{getConfigSize@{getConfigSize}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{getConfigSize()}{getConfigSize()}}
+{\footnotesize\ttfamily int Parser\+Hewan\+::get\+Config\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_hewan_a94950216cf9d87140a0905aa97fa9629}\label{class_parser_hewan_a94950216cf9d87140a0905aa97fa9629} 
+\index{ParserHewan@{ParserHewan}!getHarvestWeight@{getHarvestWeight}}
+\index{getHarvestWeight@{getHarvestWeight}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{getHarvestWeight()}{getHarvestWeight()}}
+{\footnotesize\ttfamily int Parser\+Hewan\+::get\+Harvest\+Weight (\begin{DoxyParamCaption}\item[{int}]{ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_hewan_a1f5b1cae3601bed36e005882dcfbd66c}\label{class_parser_hewan_a1f5b1cae3601bed36e005882dcfbd66c} 
+\index{ParserHewan@{ParserHewan}!getID@{getID}}
+\index{getID@{getID}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}}
+{\footnotesize\ttfamily int Parser\+Hewan\+::get\+ID (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_hewan_abfe77cd82f6580f0fae7e2fc7f2650ca}\label{class_parser_hewan_abfe77cd82f6580f0fae7e2fc7f2650ca} 
+\index{ParserHewan@{ParserHewan}!getName@{getName}}
+\index{getName@{getName}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Parser\+Hewan\+::get\+Name (\begin{DoxyParamCaption}\item[{int}]{ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_hewan_af8208d9f850ebd5c55bdc2fcddec2d24}\label{class_parser_hewan_af8208d9f850ebd5c55bdc2fcddec2d24} 
+\index{ParserHewan@{ParserHewan}!getPrice@{getPrice}}
+\index{getPrice@{getPrice}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{getPrice()}{getPrice()}}
+{\footnotesize\ttfamily int Parser\+Hewan\+::get\+Price (\begin{DoxyParamCaption}\item[{int}]{ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_hewan_af85edbf27dbada1028015f2fd103f981}\label{class_parser_hewan_af85edbf27dbada1028015f2fd103f981} 
+\index{ParserHewan@{ParserHewan}!getType@{getType}}
+\index{getType@{getType}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily string Parser\+Hewan\+::get\+Type (\begin{DoxyParamCaption}\item[{int}]{ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_hewan_a70b9e9b39121798caff3fa8c9393488f}\label{class_parser_hewan_a70b9e9b39121798caff3fa8c9393488f} 
+\index{ParserHewan@{ParserHewan}!IDToIndex@{IDToIndex}}
+\index{IDToIndex@{IDToIndex}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{IDToIndex()}{IDToIndex()}}
+{\footnotesize\ttfamily int Parser\+Hewan\+::\+IDTo\+Index (\begin{DoxyParamCaption}\item[{int}]{ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_hewan_a476136a4372f2ae368a09a077dbd335c}\label{class_parser_hewan_a476136a4372f2ae368a09a077dbd335c} 
+\index{ParserHewan@{ParserHewan}!indexToID@{indexToID}}
+\index{indexToID@{indexToID}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{indexToID()}{indexToID()}}
+{\footnotesize\ttfamily int Parser\+Hewan\+::index\+To\+ID (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_parser_hewan_aaa9fc2f00ac0534327070d34fce224dd}\label{class_parser_hewan_aaa9fc2f00ac0534327070d34fce224dd} 
+\index{ParserHewan@{ParserHewan}!ParseFile@{ParseFile}}
+\index{ParseFile@{ParseFile}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{ParseFile()}{ParseFile()}}
+{\footnotesize\ttfamily void Parser\+Hewan\+::\+Parse\+File (\begin{DoxyParamCaption}\item[{string}]{file\+Directory }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_base_parser_aecdd6fca3c420225bf94c498e49522bf}{Base\+Parser}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_parser_hewan_a9d2d0536ddb748993b85c81e57907e7c}\label{class_parser_hewan_a9d2d0536ddb748993b85c81e57907e7c} 
+\index{ParserHewan@{ParserHewan}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{\mbox{\hyperlink{class_parser_hewan}{Parser\+Hewan}} \&}]{PH }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_parser_hewan_a7c6f1fc47fdf132b303181cb218605e3}\label{class_parser_hewan_a7c6f1fc47fdf132b303181cb218605e3} 
+\index{ParserHewan@{ParserHewan}!animalCode@{animalCode}}
+\index{animalCode@{animalCode}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{animalCode}{animalCode}}
+{\footnotesize\ttfamily vector$<$ string $>$ Parser\+Hewan\+::animal\+Code = vector$<$string$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_parser_hewan_af5e73eb2545471f2b26cda46316f52e0}\label{class_parser_hewan_af5e73eb2545471f2b26cda46316f52e0} 
+\index{ParserHewan@{ParserHewan}!animalID@{animalID}}
+\index{animalID@{animalID}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{animalID}{animalID}}
+{\footnotesize\ttfamily vector$<$ int $>$ Parser\+Hewan\+::animal\+ID = vector$<$int$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_parser_hewan_a57f93d15af960d311c0d9bab04958e1a}\label{class_parser_hewan_a57f93d15af960d311c0d9bab04958e1a} 
+\index{ParserHewan@{ParserHewan}!animalName@{animalName}}
+\index{animalName@{animalName}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{animalName}{animalName}}
+{\footnotesize\ttfamily vector$<$ string $>$ Parser\+Hewan\+::animal\+Name = vector$<$string$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_parser_hewan_a13a3d0c110ee2934cb83699cc4bf69cd}\label{class_parser_hewan_a13a3d0c110ee2934cb83699cc4bf69cd} 
+\index{ParserHewan@{ParserHewan}!animalType@{animalType}}
+\index{animalType@{animalType}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{animalType}{animalType}}
+{\footnotesize\ttfamily vector$<$ string $>$ Parser\+Hewan\+::animal\+Type = vector$<$string$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_parser_hewan_a8f340e464a101c660943a27a59074c27}\label{class_parser_hewan_a8f340e464a101c660943a27a59074c27} 
+\index{ParserHewan@{ParserHewan}!harvestWeight@{harvestWeight}}
+\index{harvestWeight@{harvestWeight}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{harvestWeight}{harvestWeight}}
+{\footnotesize\ttfamily vector$<$ int $>$ Parser\+Hewan\+::harvest\+Weight = vector$<$int$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_parser_hewan_afb071172deedfc920250d740d65cac0e}\label{class_parser_hewan_afb071172deedfc920250d740d65cac0e} 
+\index{ParserHewan@{ParserHewan}!IDToIndexMap@{IDToIndexMap}}
+\index{IDToIndexMap@{IDToIndexMap}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{IDToIndexMap}{IDToIndexMap}}
+{\footnotesize\ttfamily map$<$ int, int $>$ Parser\+Hewan\+::\+IDTo\+Index\+Map = map$<$int,int$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_parser_hewan_a2c712e7d96e77130a99a732bf59838dd}\label{class_parser_hewan_a2c712e7d96e77130a99a732bf59838dd} 
+\index{ParserHewan@{ParserHewan}!IndexToIDMap@{IndexToIDMap}}
+\index{IndexToIDMap@{IndexToIDMap}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{IndexToIDMap}{IndexToIDMap}}
+{\footnotesize\ttfamily map$<$ int, int $>$ Parser\+Hewan\+::\+Index\+To\+IDMap = map$<$int,int$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_parser_hewan_ab1c9182bbe873411c464bea5e2cf235b}\label{class_parser_hewan_ab1c9182bbe873411c464bea5e2cf235b} 
+\index{ParserHewan@{ParserHewan}!price@{price}}
+\index{price@{price}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{price}{price}}
+{\footnotesize\ttfamily vector$<$ int $>$ Parser\+Hewan\+::price = vector$<$int$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_parser_hewan_acc49c3abd0a7dddd2d6a890024296c5c}\label{class_parser_hewan_acc49c3abd0a7dddd2d6a890024296c5c} 
+\index{ParserHewan@{ParserHewan}!validAnimalTypes@{validAnimalTypes}}
+\index{validAnimalTypes@{validAnimalTypes}!ParserHewan@{ParserHewan}}
+\doxysubsubsection{\texorpdfstring{validAnimalTypes}{validAnimalTypes}}
+{\footnotesize\ttfamily vector$<$ string $>$ Parser\+Hewan\+::valid\+Animal\+Types = \{"{}HERBIVORE"{},"{}CARNIVORE"{},"{}OMNIVORE"{}\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/\+Header/\mbox{\hyperlink{_parser_hewan_8hpp}{Parser\+Hewan.\+hpp}}\item 
+D\+:/\+Tubes OOP/\+DEVINZEN-\/\+DAN-\/\+PARA-\/\+KULI/src/\+Implementation/\mbox{\hyperlink{_parser_hewan_8cpp}{Parser\+Hewan.\+cpp}}\end{DoxyCompactItemize}
