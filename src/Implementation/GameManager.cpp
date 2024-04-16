@@ -470,6 +470,16 @@ void GameManager::muat()
 
 void GameManager::setupGame()
 {
+     cout << "\n▓█████▄ ▓█████ ██▒   █▓ ██▓ ███▄    █ ▒███████▒▓█████  ███▄    █" << endl;
+    cout << "▒██▀ ██▌▓█   ▀▓██░   █▒▓██▒ ██ ▀█   █ ▒ ▒ ▒ ▄▀░▓█   ▀  ██ ▀█   █" << endl;
+    cout << "░██   █▌▒███   ▓██  █▒░▒██▒▓██  ▀█ ██▒░ ▒ ▄▀▒░ ▒███   ▓██  ▀█ ██▒" << endl;
+    cout << "░▓█▄   ▌▒▓█  ▄  ▒██ █░░░██░▓██▒  ▐▌██▒  ▄▀▒   ░▒▓█  ▄ ▓██▒  ▐▌██▒" << endl;
+    cout << "░▒████▓ ░▒████▒  ▒▀█░  ░██░▒██░   ▓██░▒███████▒░▒████▒▒██░   ▓██░" << endl;
+    cout << "▒▒▓  ▒ ░░ ▒░ ░  ░ ▐░  ░▓  ░ ▒░   ▒ ▒ ░▒▒ ▓░▒░▒░░ ▒░ ░░ ▒░   ▒ ▒"  << endl;
+    cout << "░ ▒  ▒  ░ ░  ░  ░ ░░   ▒ ░░ ░░   ░ ▒░░░▒ ▒ ░ ▒ ░ ░  ░░ ░░   ░ ▒░" << endl;
+    cout << "░ ░  ░    ░       ░░   ▒ ░   ░   ░ ░ ░ ░ ░ ░ ░   ░      ░   ░ ░" << endl;
+    cout << "░       ░  ░     ░   ░           ░   ░ ░       ░  ░         ░" << endl;
+    cout << "░                 ░                  ░                        DAN PARA KULI" << endl;
     cout << "Selamat datang di permainan Mengelola Kerajaan! Silakan input pilihan angka di bawah ini untuk mulai bermain:\n";
     cout << "1. Mulai dari permainan baru\n";
     cout << "2. Mulai dari memuat file save\n";
@@ -532,64 +542,68 @@ void GameManager::prosesInput(string command){
     }else if(command=="SIMPAN"){
         simpan();
     }else{
-        if(curPlayer->getTipe()=="Petani"){
-            Petani* temp = dynamic_cast<Petani*>(curPlayer);
-            if(command=="CETAK_LADANG"){
-                temp->cetakLadang();
-            }
-            else if (command == "TANAM")
-            {
-                temp->tanam();
-            }
-            else if (command == "PANEN")
-            {
-                temp->panenTani();
-            }
-            else
-            {
-                // throw
-            }
-        }else if(curPlayer->getTipe()=="Peternak"){
-            Peternak* temp = dynamic_cast<Peternak*>(curPlayer);
-            if(command=="CETAK_PETERNAKAN"){
-                temp->cetakTernak();
-            }
-            else if (command == "TERNAK")
-            {
-                temp->ternak();
-            }
-            else if (command == "KASIH_MAKAN")
-            {
-                temp->kasihMakan();
-            }
-            else if (command == "PANEN")
-            {
-                temp->panenTernak();
-            }
-            else
-            {
-                // throw
-            }
-        }
-        else
-        {
-            WaliKota *temp = dynamic_cast<WaliKota *>(curPlayer);
-            if (command == "PUNGUT_PAJAK")
-            {
-                temp->pungutPajak(this->playerList);
-            }
-            else if (command == "BANGUN")
-            {
-                temp->bangunBangunan();
-            }
-            else if ("TAMBAH_PEMAIN")
-            {
-                // Tambah pemain
+        try{
+            if(curPlayer->getTipe()=="Petani"){
+                Petani* temp = dynamic_cast<Petani*>(curPlayer);
+                if(command=="CETAK_LADANG"){
+                    temp->cetakLadang();
+                }
+                else if (command == "TANAM")
+                {
+                    temp->tanam();
+                }
+                else if (command == "PANEN")
+                {
+                    temp->panenTani();
+                }
+                else
+                {
+                    throw InvalidCommand();
+                }
+            }else if(curPlayer->getTipe()=="Peternak"){
+                Peternak* temp = dynamic_cast<Peternak*>(curPlayer);
+                if(command=="CETAK_PETERNAKAN"){
+                    temp->cetakTernak();
+                }
+                else if (command == "TERNAK")
+                {
+                    temp->ternak();
+                }
+                else if (command == "KASIH_MAKAN")
+                {
+                    temp->kasihMakan();
+                }
+                else if (command == "PANEN")
+                {
+                    temp->panenTernak();
+                }
+                else
+                {
+                    throw InvalidCommand();
+                }
             }
             else
             {
-                // throw
+                WaliKota *temp = dynamic_cast<WaliKota *>(curPlayer);
+                if (command == "PUNGUT_PAJAK")
+                {
+                    temp->pungutPajak(this->playerList);
+                }
+                else if (command == "BANGUN")
+                {
+                    temp->bangunBangunan();
+                }
+                else if ("TAMBAH_PEMAIN")
+                {
+                    // Tambah pemain
+                }
+                else
+                {
+                    throw InvalidCommand();
+                }
             }
+        }catch(BaseException &e){
+            cout<<e.what()<<endl;
         }
     }
 }
