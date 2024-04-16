@@ -313,10 +313,10 @@ void GameManager::simpan()
     }
 }
 
-void removeNewline(std::string &str) {
+void removeNewline(string &str) {
     size_t pos = str.find('\n');
 
-    while (pos != std::string::npos) {
+    while (pos != string::npos) {
         str.erase(pos, 1);
         pos = str.find('\n', pos);
     }
@@ -324,13 +324,15 @@ void removeNewline(std::string &str) {
 
 void muatMatrixArea(ifstream& infile,MatrixArea<GameObject> &inven){
     string fullLine;
-    getline(infile, fullLine, '\n');
+    getline(infile, fullLine);
     int jmlhItem = stoi(fullLine);
     for(int i=0;i<jmlhItem;i++){
         getline(infile,fullLine);
+        fullLine.erase(fullLine.end() - 1);
         removeNewline(fullLine);
         int id;
         GameObject* temp = nullptr;
+        cout<<fullLine<<" "<<fullLine.length()<<endl;
         if(ParserHewan::convertNameToID(fullLine)!=-1){
             id = ParserHewan::convertNameToID(fullLine);
             // cout<<fullLine<<" HEWAN"<<endl;
