@@ -518,7 +518,7 @@ void GameManager::prosesInput(string command){
     {
         curPlayer->cetakPenyimpanan();
     }
-    else if (command == "MAKAN{")
+    else if (command == "MAKAN")
     {
         curPlayer->makan();
     }
