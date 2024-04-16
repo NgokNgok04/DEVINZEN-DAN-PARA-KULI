@@ -2,31 +2,33 @@
 #define GAMEOBJECT_HPP
 
 #include <iostream>
-#include <vector>
 #include <string>
-#include "Exception.hpp"
+// #include "Exception.hpp"
 using namespace std;
 
-class GameObject{
-    private:
-        int id;
-        string kode_huruf;
-        float price;
-        string name;
-        string tipeObject;
-    public:
-        int getID();
-        string getKode();
-        float getPrice();
-        string getName();
-        string getTipeObject();
-        void setID(int);
-        void setKode(string);
-        void setPrice(float);
-        void setName(string);
-        void setTipeObject(string);
-        virtual GameObject& operator=(const GameObject&);
-        virtual bool operator==(const GameObject&);
+class GameObject
+{
+private:
+    int id;
+    string kode_huruf;
+    float price;
+    string name;
+    string tipeObject;
+
+public:
+    virtual ~GameObject(){};
+    int getID();
+    string getKode();
+    float getPrice();
+    string getName();
+    string getTipeObject();
+    void setID(int);
+    void setKode(string);
+    void setPrice(float);
+    void setName(string);
+    void setTipeObject(string);
+    virtual GameObject &operator=(const GameObject &);
+    virtual bool operator==(const GameObject &);
 };
 
 #endif

@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Header/Exception.hpp"
 #include "Header/GameManager.hpp"
+#include "Header/Exception.hpp"
+#include "Header/GameManager.hpp"
 using namespace std;
 //inisialisasi atribut static di semua parser
 vector<string> ParserHewan::validAnimalTypes = {"HERBIVORE","CARNIVORE","OMNIVORE"};
@@ -60,80 +62,130 @@ int main(){
         PT.ParseFile(plantConfigDirectory);
         PP.ParseFile(productConfigDirectory);
         PR.ParseFile(recipeConfigDirectory);
-    } catch (AnimalConfigMissingException AE){
-        cout<<AE.what()<<"\n";
+    }
+    catch (AnimalConfigMissingException AE)
+    {
+        cout << AE.what() << "\n";
         return 0;
-    } catch (MiscConfigMissingException ME){
-        cout<<ME.what()<<"\n";
+    }
+    catch (MiscConfigMissingException ME)
+    {
+        cout << ME.what() << "\n";
         return 0;
-    } catch (PlantConfigMissingException TE){
-        cout<<TE.what()<<"\n";
+    }
+    catch (PlantConfigMissingException TE)
+    {
+        cout << TE.what() << "\n";
         return 0;
-    } catch (ProductConfigMissingException PE){
-        cout<<PE.what()<<"\n";
+    }
+    catch (ProductConfigMissingException PE)
+    {
+        cout << PE.what() << "\n";
         return 0;
-    } catch (RecipeConfigMissingException RE){
-        cout<<RE.what()<<"\n";
+    }
+    catch (RecipeConfigMissingException RE)
+    {
+        cout << RE.what() << "\n";
         return 0;
-    } catch (InvalidAnimalIDConfigException IAIC){
-        cout<<IAIC.what()<<"\n";
+    }
+    catch (InvalidAnimalIDConfigException IAIC)
+    {
+        cout << IAIC.what() << "\n";
         return 0;
-    } catch (InvalidAnimalWeightConfigException IAWC){
-        cout<<IAWC.what()<<"\n";
+    }
+    catch (InvalidAnimalWeightConfigException IAWC)
+    {
+        cout << IAWC.what() << "\n";
         return 0;
-    } catch(InvalidAnimalPriceConfigException IAPC){
-        cout<<IAPC.what()<<"\n";
+    }
+    catch (InvalidAnimalPriceConfigException IAPC)
+    {
+        cout << IAPC.what() << "\n";
         return 0;
-    } catch(InvalidAnimalTypeConfigException IATC){
-        cout<<IATC.what()<<"\n";
+    }
+    catch (InvalidAnimalTypeConfigException IATC)
+    {
+        cout << IATC.what() << "\n";
         return 0;
-    } catch(InvalidMiscMoneyConfigException IMMC){
-        cout<<IMMC.what()<<"\n";
+    }
+    catch (InvalidMiscMoneyConfigException IMMC)
+    {
+        cout << IMMC.what() << "\n";
         return 0;
-    } catch(InvalidMiscWeightConfigException IMWC){
-        cout<<IMWC.what()<<"\n";
+    }
+    catch (InvalidMiscWeightConfigException IMWC)
+    {
+        cout << IMWC.what() << "\n";
         return 0;
-    } catch(InvalidStorageDimensionConfigException ISDC){
-        cout<<ISDC.what()<<"\n";
+    }
+    catch (InvalidStorageDimensionConfigException ISDC)
+    {
+        cout << ISDC.what() << "\n";
         return 0;
-    } catch(InvalidFieldDimensionConfigException IFiDC){
-        cout<<IFiDC.what()<<"\n";
+    }
+    catch (InvalidFieldDimensionConfigException IFiDC)
+    {
+        cout << IFiDC.what() << "\n";
         return 0;
-    } catch(InvalidFarmDimensionConfigException IFaDC){
-        cout<<IFaDC.what()<<"\n";
+    }
+    catch (InvalidFarmDimensionConfigException IFaDC)
+    {
+        cout << IFaDC.what() << "\n";
         return 0;
-    } catch(InvalidPlantIDConfigException IPIC){
-        cout<<IPIC.what()<<"\n";
+    }
+    catch (InvalidPlantIDConfigException IPIC)
+    {
+        cout << IPIC.what() << "\n";
         return 0;
-    } catch(InvalidPlantTypeConfigException IPTC){
-        cout<<IPTC.what()<<"\n";
+    }
+    catch (InvalidPlantTypeConfigException IPTC)
+    {
+        cout << IPTC.what() << "\n";
         return 0;
-    } catch(InvalidPlantDurationConfigException IPDC){
-        cout<<IPDC.what()<<"\n";
+    }
+    catch (InvalidPlantDurationConfigException IPDC)
+    {
+        cout << IPDC.what() << "\n";
         return 0;
-    } catch(InvalidPlantPriceConfigException IPPC){
-        cout<<IPPC.what()<<"\n";
+    }
+    catch (InvalidPlantPriceConfigException IPPC)
+    {
+        cout << IPPC.what() << "\n";
         return 0;
-    } catch(InvalidProductIDConfigException IPrIC){
-        cout<<IPrIC.what()<<"\n";
+    }
+    catch (InvalidProductIDConfigException IPrIC)
+    {
+        cout << IPrIC.what() << "\n";
         return 0;
-    } catch(InvalidProductPriceConfigException IPrPC){
-        cout<<IPrPC.what()<<"\n";
+    }
+    catch (InvalidProductPriceConfigException IPrPC)
+    {
+        cout << IPrPC.what() << "\n";
         return 0;
-    } catch(InvalidProductTypeConfigException IPrTC){
-        cout<<IPrTC.what()<<"\n";
+    }
+    catch (InvalidProductTypeConfigException IPrTC)
+    {
+        cout << IPrTC.what() << "\n";
         return 0;
-    } catch(InvalidProductWeightConfigException IPrWC){
-        cout<<IPrWC.what()<<"\n";
+    }
+    catch (InvalidProductWeightConfigException IPrWC)
+    {
+        cout << IPrWC.what() << "\n";
         return 0;
-    } catch(InvalidRecipeIDConfigException IRIC){
-        cout<<IRIC.what()<<"\n";
+    }
+    catch (InvalidRecipeIDConfigException IRIC)
+    {
+        cout << IRIC.what() << "\n";
         return 0;
-    } catch(InvalidRecipePriceConfigException IRPC){
-        cout<<IRPC.what()<<"\n";
+    }
+    catch (InvalidRecipePriceConfigException IRPC)
+    {
+        cout << IRPC.what() << "\n";
         return 0;
-    } catch(InvalidRecipeQuantityConfigException IRQC){
-        cout<<IRQC.what()<<"\n";
+    }
+    catch (InvalidRecipeQuantityConfigException IRQC)
+    {
+        cout << IRQC.what() << "\n";
         return 0;
     }
     

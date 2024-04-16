@@ -10,6 +10,7 @@ Bangunan::Bangunan(int idKonfig){
 
 Bangunan& Bangunan::operator=(const Bangunan& other){
     GameObject::operator=(other);
+    return *this;
 }
 
 bool Bangunan::operator==(const Bangunan& other){

@@ -1,4 +1,38 @@
+// #include "../Header/GameManager.hpp"
+
+// GameManager::GameManager(ParserMisc PM)
+// {
+//     this->winningMoney = PM.getWinningMoney();
+//     this->winningWeight = PM.getWinningWeight();
+//     this->storageSize = PM.getStorageSize();
+//     this->farmSize = PM.getFarmSize();
+//     this->fieldSize = PM.getFieldSize();
+//     cout<<"Data konfigurasi misc berhasil dimuat!\n";
+// }
+
+// void GameManager::Debug()
+// {
+//     cout<<this->winningMoney<<"\n";
+//     cout<<this->winningWeight<<"\n";
+//     cout<<this->storageSize.first<<" "<<this->storageSize.second<<"\n";
+//     cout<<this->farmSize.first<<" "<<this->farmSize.second<<"\n";
+//     cout<<this->fieldSize.first<<" "<<this->fieldSize.second<<"\n";
+// }
+
 #include "../Header/GameManager.hpp"
+// #include "GameManager.hpp"
+
+void GameManager::rotatePlayer()
+{
+    if (this->currentPlayerIndex == this->playerAmount - 1)
+    { // kembali ke awal jika sudah di ujung akhir
+        this->currentPlayerIndex = 0;
+    }
+    else
+    {
+        this->currentPlayerIndex++;
+    }
+}
 
 #include <filesystem>
 #include <fstream>
@@ -14,7 +48,7 @@ void GameManager::rotatePlayer()
 }
 
 GameManager::GameManager(ParserMisc PM)
-{ 
+{
     this->winningMoney = PM.getWinningMoney();
     this->winningWeight = PM.getWinningWeight();
     this->storageSize = PM.getStorageSize();
@@ -28,11 +62,11 @@ GameManager::GameManager(ParserMisc PM)
 
 void GameManager::Debug()
 {
-    cout<<this->winningMoney<<"\n";
-    cout<<this->winningWeight<<"\n";
-    cout<<this->storageSize.first<<" "<<this->storageSize.second<<"\n";
-    cout<<this->farmSize.first<<" "<<this->farmSize.second<<"\n";
-    cout<<this->fieldSize.first<<" "<<this->fieldSize.second<<"\n";
+    cout << this->winningMoney << "\n";
+    cout << this->winningWeight << "\n";
+    cout << this->storageSize.first << " " << this->storageSize.second << "\n";
+    cout << this->farmSize.first << " " << this->farmSize.second << "\n";
+    cout << this->fieldSize.first << " " << this->fieldSize.second << "\n";
 }
 
 void GameManager::insertNewPlayer(Pemain * newPlayer)
