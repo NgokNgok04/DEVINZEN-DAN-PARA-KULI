@@ -404,9 +404,8 @@ void WaliKota::tambahPemain(vector<Pemain *> &allPlayers, int &playerAmount, int
     try{
         if (this->gulden < 50){
             throw NotEnoughGulden();
-        } else {
-            this->gulden -= 50;
         }
+
         string tipePemain;
         cout << "Masukkan jenis pemain: ";
         cin >> tipePemain;
@@ -494,6 +493,7 @@ void WaliKota::tambahPemain(vector<Pemain *> &allPlayers, int &playerAmount, int
             throw InvalidTypePemain();
         }
 
+        this->gulden -= 50;
         cout << endl << "Pemain baru ditambahkan!" << endl;
         cout << "Selamat datang "<< namaPemain << " di kota ini!" << endl; 
 

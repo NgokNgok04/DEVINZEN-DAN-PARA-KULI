@@ -582,7 +582,7 @@ void GameManager::prosesInput(string command){
             {
                 temp->bangunBangunan();
             }
-            else if ("TAMBAH_PEMAIN")
+            else if (command == "TAMBAH_PEMAIN")
             {
                 temp->tambahPemain(this->playerList,this->playerAmount,this->currentPlayerIndex,this->getCurrentPlayer());
             }
