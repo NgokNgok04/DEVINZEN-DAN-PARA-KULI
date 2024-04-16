@@ -66,10 +66,6 @@ int Tanaman::getCurAge()
     return age;
 }
 
-void Tanaman::setAge(int age)
-{
-    this->age = age;
-}
 Tanaman& Tanaman::operator=(const Tanaman& other){
     GameObject::operator=(other);
     type = other.type;

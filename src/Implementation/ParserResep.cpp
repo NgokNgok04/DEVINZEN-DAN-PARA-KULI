@@ -69,7 +69,6 @@ void ParserResep::ParseFile(string fileDirectory)
         IndexToIDMap.insert({i, recipeID[i]});
         IDToIndexMap.insert({recipeID[i], i});
     }
-    totalRecipe = recipeID.size();
     cout << "Konfigurasi recipe.txt berhasil!\n";
 }
 

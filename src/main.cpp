@@ -2,11 +2,6 @@
 // #include <vector>
 // #include <string>
 // #include "./Implementation/GameManager.cpp"
-#include "petani.cpp"
-#include "peternak.cpp"
-#include "walikota.cpp"
-#include "pemain.cpp"
-#include "Toko.cpp"
 // #include "./Implementation/ParserMisc.cpp"
 #include <iostream>
 
@@ -47,5 +42,13 @@ int main(){
     gameManager.setupGame();
     gameManager.PlayerDebug();
     cout<<"Setup permainan selesai, permainan dimulai!\n";
+    while(gameManager.getWinner()==nullptr){
+        string command;
+        cout<<"> ";
+        cin>>command;
+        cout<<endl;
+        gameManager.prosesInput(command);
+    }
+    cout<<"Selamat, "<<gameManager.getWinnerName()<<" Menang!"<<endl;
     return 0;
 }

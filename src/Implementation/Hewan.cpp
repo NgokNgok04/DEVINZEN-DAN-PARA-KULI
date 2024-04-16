@@ -62,10 +62,6 @@ int Hewan::getCurWeight()
     return weight;
 }
 
-void Hewan::setWeight(int a)
-{
-    this->weight = a;
-}
 Hewan& Hewan::operator=(const Hewan& other){
     GameObject::operator=(other);
     type = other.type;

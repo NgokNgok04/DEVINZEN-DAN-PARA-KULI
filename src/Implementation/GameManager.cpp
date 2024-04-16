@@ -20,20 +20,6 @@
 // }
 
 #include "../Header/GameManager.hpp"
-// #include "GameManager.hpp"
-
-void GameManager::rotatePlayer()
-{
-    if (this->currentPlayerIndex == this->playerAmount - 1)
-    { // kembali ke awal jika sudah di ujung akhir
-        this->currentPlayerIndex = 0;
-    }
-    else
-    {
-        this->currentPlayerIndex++;
-    }
-}
-
 #include <filesystem>
 #include <fstream>
 #include <sstream>
@@ -118,17 +104,17 @@ string GameManager::getWinnerName()
 }
 
 //TODO: UNCOMMENT THIS METHOD BELOW AFTER MERGING
-// bool GameManager::checkWinner()
-// {
+bool GameManager::checkWinner()
+{
 
-//     Pemain* currentPlayer = this->getCurrentPlayer();
-//     if(currentPlayer->getWeight() >= this->winningWeight && currentPlayer->getGulden() >= this->winningMoney){
-        //SYARAT MENANG: BERAT PEMAIN >= BERAT MINIMUM UNTUK MENANG DAN BANYAK GULDEN >= GULDEN UNTUK MENANG
-//         this->Winner = currentPlayer;
-//         return true;
-//     }
-//     return false;
-// }
+    Pemain* currentPlayer = this->getCurrentPlayer();
+    if(currentPlayer->getBeratBadan() >= this->winningWeight && currentPlayer->getGulden() >= this->winningMoney){
+        // SYARAT MENANG: BERAT PEMAIN >= BERAT MINIMUM UNTUK MENANG DAN BANYAK GULDEN >= GULDEN UNTUK MENANG
+        this->Winner = currentPlayer;
+        return true;
+    }
+    return false;
+}
 
 //TODO: UNCOMMENT THIS METHOD ABOVE AFTER MERGING
 
@@ -431,6 +417,7 @@ void GameManager::setupGame(){
             insertNewPlayer(P3);
             insertNewPlayer(P2);
             insertNewPlayer(P1);
+            playerAmount = 3;
             break;
         } else if(choice == "2"){
             cout<<"Membuka Save file\n";
@@ -438,6 +425,62 @@ void GameManager::setupGame(){
             break;
         } else {
             cout<<"Pilihan tidak valid! Silakan input ulang.\n";
+        }
+    }
+    currentPlayerIndex = 0;
+}
+
+void GameManager::prosesInput(string command){
+    Pemain* curPlayer = getCurrentPlayer();
+    cout<<curPlayer->getUsername()<<endl;
+    if(command=="NEXT"){
+        Next();
+    }else if(command=="CETAK_PENYIMPANAN"){
+        curPlayer->cetakPenyimpanan();
+    }else if(command=="MAKAN{"){
+        curPlayer->makan();
+    }else if(command=="BELI"){
+        curPlayer->beli();
+    }else if(command=="JUAL"){
+        curPlayer->jual();
+    }else if(command=="SIMPAN"){
+        //simpan
+    }else{
+        if(curPlayer->getTipe()=="petani"){
+            Petani* temp = dynamic_cast<Petani*>(curPlayer);
+            if(command=="CETAK_LADANG"){
+                temp->cetakLadang();
+            }else if(command=="TANAM"){
+                temp->tanam();
+            }else if(command=="PANEN"){
+                temp->panenTani();
+            }else{
+                // throw
+            }
+        }else if(curPlayer->getTipe()=="peternak"){
+            Peternak* temp = dynamic_cast<Peternak*>(curPlayer);
+            if(command=="CETAK_PETERNAKAN"){
+                temp->cetakTernak();
+            }else if(command=="TERNAK"){
+                temp->ternak();
+            }else if(command=="KASIH_MAKAN"){
+                temp->kasihMakan();
+            }else if(command=="PANEN"){
+                temp->panenTernak();
+            }else{
+                // throw
+            }
+        }else{
+            WaliKota* temp = dynamic_cast<WaliKota*>(curPlayer);
+            if(command=="PUNGUT_PAJAK"){
+                temp->pungutPajak(playerList);
+            }else if(command=="BANGUN"){
+                temp->bangunBangunan();
+            }else if("TAMBAH_PEMAIN"){
+                // Tambah pemain
+            }else{
+                // throw
+            }
         }
     }
 }

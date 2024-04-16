@@ -13,7 +13,6 @@ class ParserResep : public BaseParser{
         static vector<vector<pair<string,int> > > recipeMaterialQuantity;
         static map<int,int> IndexToIDMap;
         static map<int,int> IDToIndexMap;
-        static int totalRecipe;
     public:
         ParserResep(){}
         ~ParserResep(){}
