@@ -1,5 +1,5 @@
 #include "../Header/ParserResep.hpp"
-#include "../Header/Exception.hpp"
+// #include "../Header/Exception.hpp"
 #include "../Header/helper.hpp"
 #include <bits/stdc++.h>
 vector<int> ParserResep::recipeID = vector<int>() ;
@@ -12,22 +12,24 @@ map<int,int> ParserResep::IDToIndexMap= map<int,int>();
 void ParserResep::ParseFile(string fileDirectory)
 {
     ifstream InputFile;
-    InputFile.open(fileDirectory); //buka file
+    InputFile.open(fileDirectory); // buka file
 
-    if(!InputFile.is_open()){ //jika gagal dibuka lempar exception
+    if (!InputFile.is_open())
+    { // jika gagal dibuka lempar exception
         throw RecipeConfigMissingException();
         return;
     }
 
     vector<string> SpaceStrippedLine;
-    vector<pair<string,int> > MaterialQuantityPairList;
-    pair<string,int> pairTemp;
+    pair<string, int> pairTemp;
     string LineFile;
     int numValue;
-    while(getline(InputFile,LineFile)){
-        SpaceStrippedLine = StringToStringList(LineFile); //parse spasi
+    while (getline(InputFile, LineFile))
+    {
+        SpaceStrippedLine = StringToStringList(LineFile); // parse spasi
         numValue = stoi(SpaceStrippedLine[0]);
-        if(numValue <=0){ //ID tidak boleh negatif
+        if (numValue <= 0)
+        { // ID tidak boleh negatif
             this->ClearParserData();
             throw InvalidRecipeIDConfigException();
             return;
@@ -37,17 +39,21 @@ void ParserResep::ParseFile(string fileDirectory)
         this->recipeCode.push_back(SpaceStrippedLine[1]);
         this->recipeName.push_back(SpaceStrippedLine[2]);
         numValue = stoi(SpaceStrippedLine[3]);
-        if(numValue <=0){ //harga tidak boleh negatif atau sama dengan 0
+        if (numValue <= 0)
+        { // harga tidak boleh negatif atau sama dengan 0
             this->ClearParserData();
             throw InvalidRecipePriceConfigException();
             return;
         }
         this->recipePrice.push_back(numValue);
 
-        for(int i = 4; i<SpaceStrippedLine.size(); i+=2){
+        vector<pair<string, int>> MaterialQuantityPairList;
+        for (int i = 4; i < SpaceStrippedLine.size(); i += 2)
+        {
             pairTemp.first = SpaceStrippedLine[i];
-            numValue = stoi(SpaceStrippedLine[i+1]);
-            if(numValue <=0){ //kuantitas material tidak boleh lebih kecil atau sama dengan 0
+            numValue = stoi(SpaceStrippedLine[i + 1]);
+            if (numValue <= 0)
+            { // kuantitas material tidak boleh lebih kecil atau sama dengan 0
                 this->ClearParserData();
                 throw InvalidRecipeQuantityConfigException();
                 return;
@@ -58,20 +64,22 @@ void ParserResep::ParseFile(string fileDirectory)
 
         this->recipeMaterialQuantity.push_back(MaterialQuantityPairList);
     }
-    for(int i = 0; i<recipeID.size(); i++){
-        IndexToIDMap.insert({i,recipeID[i]});
-        IDToIndexMap.insert({recipeID[i],i});
+    for (int i = 0; i < recipeID.size(); i++)
+    {
+        IndexToIDMap.insert({i, recipeID[i]});
+        IDToIndexMap.insert({recipeID[i], i});
     }
-    cout<<"Konfigurasi recipe.txt berhasil!\n";
+    totalRecipe = recipeID.size();
+    cout << "Konfigurasi recipe.txt berhasil!\n";
 }
 
 void ParserResep::ClearParserData()
 {
-        this->recipeID.clear();
-        this->recipeCode.clear();
-        this->recipeName.clear();
-        this->recipePrice.clear();
-        this->recipeMaterialQuantity.clear();
+    this->recipeID.clear();
+    this->recipeCode.clear();
+    this->recipeName.clear();
+    this->recipePrice.clear();
+    this->recipeMaterialQuantity.clear();
 }
 
 int ParserResep::getID(int index)
@@ -110,8 +118,10 @@ int ParserResep::getConfigSize()
 
 int ParserResep::convertCodeToID(string Code)
 {
-    for(int i = 0; i<getConfigSize(); i++){
-        if(recipeCode[i] == Code){
+    for (int i = 0; i < getConfigSize(); i++)
+    {
+        if (recipeCode[i] == Code)
+        {
             return recipeID[i];
         }
     }
@@ -121,8 +131,10 @@ int ParserResep::convertCodeToID(string Code)
 
 int ParserResep::convertNameToID(string Name)
 {
-    for(int i = 0; i<getConfigSize(); i++){
-        if(recipeName[i] == Name){
+    for (int i = 0; i < getConfigSize(); i++)
+    {
+        if (recipeName[i] == Name)
+        {
             return recipeID[i];
         }
     }

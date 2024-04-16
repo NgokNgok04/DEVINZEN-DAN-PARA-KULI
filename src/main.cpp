@@ -1,3 +1,13 @@
+// #include <iostream>
+// #include <vector>
+// #include <string>
+// #include "./Implementation/GameManager.cpp"
+#include "petani.cpp"
+#include "peternak.cpp"
+#include "walikota.cpp"
+#include "pemain.cpp"
+#include "Toko.cpp"
+// #include "./Implementation/ParserMisc.cpp"
 #include <iostream>
 
 #include "./Header/GameManager.hpp"

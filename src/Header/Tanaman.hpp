@@ -4,12 +4,15 @@
 #include "GameObject.hpp"
 #include "Product.hpp"
 #include "ParserTanaman.hpp"
+#include <map>
+class Tanaman : public GameObject
+{
+private:
+    string type;
+    int durationHarvest;
+    int age;
+    static map<string, string> konversiPanen;
 
-class Tanaman: public GameObject{
-    private:
-        string type;
-        int durationHarvest;
-        int age;
     public:
         Tanaman(int);
         void tambahUmur();

@@ -1,5 +1,5 @@
 #include "../Header/ParserMisc.hpp"
-#include "../Header/Exception.hpp"
+// #include "../Header/Exception.hpp"
 #include "../Header/helper.hpp"
 #include <bits/stdc++.h>
 int ParserMisc::winningMoney = 0;
@@ -10,21 +10,24 @@ pair<int,int> ParserMisc::farmSize= pair<int,int>();
 void ParserMisc::ParseFile(string fileDirectory)
 {
     ifstream InputFile;
-    InputFile.open(fileDirectory); //buka file
+    InputFile.open(fileDirectory); // buka file
 
-    if(!InputFile.is_open()){ //jika gagal dibuka lempar exception
+    if (!InputFile.is_open())
+    { // jika gagal dibuka lempar exception
         throw MiscConfigMissingException();
         return;
     }
 
     vector<string> SpaceStrippedLine;
     string LineFile;
-    int numValue,curLine;
-    pair<int,int> numValuePair;
+    int numValue, curLine;
+    pair<int, int> numValuePair;
     curLine = 1;
-    while(getline(InputFile,LineFile)){
-        SpaceStrippedLine = StringToStringList(LineFile); //parse spasi
-        if(curLine == 1){
+    while (getline(InputFile, LineFile))
+    {
+        SpaceStrippedLine = StringToStringList(LineFile); // parse spasi
+        if (curLine == 1)
+        {
             numValue = stoi(SpaceStrippedLine[0]);
             if(numValue < 0){
                 ParserMisc::ClearParserData();
@@ -68,7 +71,7 @@ void ParserMisc::ParseFile(string fileDirectory)
         curLine++;
     }
 
-    cout<<"Konfigurasi misc.txt berhasil!\n";
+    cout << "Konfigurasi misc.txt berhasil!\n";
 }
 
 void ParserMisc::ClearParserData()
@@ -107,10 +110,10 @@ pair<int, int> ParserMisc::getFarmSize()
 
 ostream &operator<<(ostream &os, ParserMisc &PM)
 {
-    os<<PM.winningMoney<<"\n";
-    os<<PM.winningWeight<<"\n";
-    os<<PM.storageSize.first<<" "<<PM.storageSize.second<<"\n";
-    os<<PM.fieldSize.first<<" "<<PM.fieldSize.second<<"\n";
-    os<<PM.farmSize.first<<" "<<PM.farmSize.second<<"\n";
+    os << PM.winningMoney << "\n";
+    os << PM.winningWeight << "\n";
+    os << PM.storageSize.first << " " << PM.storageSize.second << "\n";
+    os << PM.fieldSize.first << " " << PM.fieldSize.second << "\n";
+    os << PM.farmSize.first << " " << PM.farmSize.second << "\n";
     return os;
 }

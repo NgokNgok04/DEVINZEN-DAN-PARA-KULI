@@ -1,41 +1,75 @@
 #include "../Header/Tanaman.hpp"
 
-Tanaman::Tanaman(int idKonfig){
+
+map<string, string> Tanaman::konversiPanen = {
+    {"TEAK_TREE", "TEAK_WOOD"},
+    {"SANDALWOOD_TREE", "SANDALWOOD_WOOD"},
+    {"ALOE_TREE", "ALOE_WOOD"},
+    {"IRONWOOD_TREE", "IRONWOOD_WOOD"},
+    {"APPLE_TREE", "APPLE"},
+    {"ORANGE_TREE", "ORANGE"},
+    {"BANANA_TREE", "BANANA"},
+    {"GUAVA_TREE", "GUAVA"},
+};
+
+Tanaman::Tanaman(int idKonfig)
+{
     setID(idKonfig);
+    setKode(ParserTanaman::getCode(idKonfig));
+    setName(ParserTanaman::getName(idKonfig));
+    setPrice(ParserTanaman::getPrice(idKonfig));
     setKode(ParserTanaman::getCode(idKonfig));
     setName(ParserTanaman::getName(idKonfig));
     setPrice(ParserTanaman::getPrice(idKonfig));
     setTipeObject("TANAMAN");
     type = ParserTanaman::getType(idKonfig);
     durationHarvest = ParserTanaman::getHarvestDuration(idKonfig);
+    type = ParserTanaman::getType(idKonfig);
+    durationHarvest = ParserTanaman::getHarvestDuration(idKonfig);
     age = 0;
 }
 
-void Tanaman::tambahUmur(){
+void Tanaman::tambahUmur()
+{
     age++;
 }
 
-Product* Tanaman::hasilPanen(){
-    vector<int> idProduct = ParserProduk::findOrigin(getName());
-    Product* temp = new Product(idProduct.front(),false);
-    return temp;
+Product *Tanaman::hasilPanen()
+{
+    cout << "awdaADDa" << endl;
+    cout << konversiPanen[getName()] << endl;
+    int a = ParserProduk::convertNameToID(konversiPanen[getName()]);
+    cout << a << endl;
+    Product *b = new Product(a, false);
+    cout << b->getName() << endl;
+
+    // return (new Product(ParserHewan::convertNameToID(konversiPanen[getName()]), false));
+    return b;
 }
-bool Tanaman::isHarvestable(){
-    return age>=durationHarvest;
+bool Tanaman::isHarvestable()
+{
+    return age >= durationHarvest;
 }
 
-string Tanaman::getType(){
+string Tanaman::getType()
+{
     return type;
 }
 
-int Tanaman::getDurationHarvest(){
+int Tanaman::getDurationHarvest()
+{
     return durationHarvest;
 }
 
-int Tanaman::getCurAge(){
+int Tanaman::getCurAge()
+{
     return age;
 }
 
+void Tanaman::setAge(int age)
+{
+    this->age = age;
+}
 Tanaman& Tanaman::operator=(const Tanaman& other){
     GameObject::operator=(other);
     type = other.type;
@@ -43,8 +77,9 @@ Tanaman& Tanaman::operator=(const Tanaman& other){
     age = other.age;
     return *this;
 }
-bool Tanaman::operator==(const Tanaman& other){
-    return GameObject::operator==(other) && age==other.age;
+bool Tanaman::operator==(const Tanaman &other)
+{
+    return GameObject::operator==(other) && age == other.age;
 }
 
 void Tanaman::setAge(int age){
