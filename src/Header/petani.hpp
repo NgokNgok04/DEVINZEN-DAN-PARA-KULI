@@ -15,6 +15,7 @@ public:
     Petani(const Petani &);
     ~Petani();
     MatrixArea<Tanaman> &getLadang();
+    vector<Tanaman*> &getDaftarTanaman();
     void cetakLadang();
     void tanam(); // coords tanaman yg ingin ditanam, coords letak menanam dlm ladang
     void panenTani();

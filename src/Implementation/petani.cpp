@@ -914,3 +914,7 @@ void Petani::tambahUmurTanaman(){
         daftarTanaman[i]->tambahUmur();
     }
 }
+
+vector<Tanaman*> &Petani::getDaftarTanaman(){
+    return daftarTanaman;
+}
