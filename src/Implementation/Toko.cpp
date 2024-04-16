@@ -94,14 +94,14 @@ int Toko::buyProcess(){
 void Toko::itemDibeli(GameObject* gameObject, int quantity){
     if(gameObject->getTipeObject()=="PRODUCT"){
         for(int i = 0; i < availableProduct.size(); i++){
-            if (gameObject == &availableProduct[i].first){
+            if (*gameObject == availableProduct[i].first){
                 availableProduct[i].second -= quantity;
                 return;
             }
         }
     }else{
         for (int i = 0; i < availableBangunan.size(); i++){
-            if (gameObject == &availableBangunan[i].first){
+            if (*gameObject == availableBangunan[i].first){
                 availableBangunan[i].second -= quantity;
                 return;
             }
@@ -112,7 +112,7 @@ void Toko::itemDibeli(GameObject* gameObject, int quantity){
 void Toko::itemDijual(GameObject* gameObject, int quantity){
     if(gameObject->getTipeObject()=="PRODUCT"){
         for(int i = 0; i < availableProduct.size(); i++){
-            if (gameObject == &availableProduct[i].first){
+            if (*gameObject == availableProduct[i].first){
                 availableProduct[i].second += quantity;
                 return;
             }

@@ -396,3 +396,53 @@ float WaliKota::calculateTax()
 {
     return 0;
 }
+
+void WaliKota::tambahPemain(vector<Pemain *> &allPlayers){
+    try{
+        if (this->gulden < 50){
+            throw NotEnoughGulden();
+        } else {
+            this->gulden -= 50;
+        }
+        string tipePemain;
+        cout << "Masukkan jenis pemain: ";
+        cin >> tipePemain;
+        
+        if (tipePemain != "petani" && tipePemain != "peternak"){
+            throw InvalidTypePemain();
+        }
+
+        string namaPemain;
+        cout << "Masukkan nama pemain: ";
+        
+        cin >> namaPemain;
+        bool found = false;
+
+        for(int i = 0; i < allPlayers.size(); i++){
+            if (namaPemain == allPlayers[i]->getUsername()){
+                found = true;
+            }
+        }
+
+        if (found){
+            throw UserNamePemainTidakUnik();
+        }
+
+        if (tipePemain == "petani"){
+            Petani * newPetani = new Petani(namaPemain,50,40);
+            allPlayers.push_back(newPetani);
+        } else if (tipePemain == "peternak"){
+            Peternak * newPeternak = new Peternak(namaPemain,50,40);
+            allPlayers.push_back(newPeternak);
+        } else {
+            throw InvalidTypePemain();
+        }
+
+        cout << endl << "Pemain baru ditambahkan!" << endl;
+        cout << 'Selamat datang "'<< namaPemain << '" di kota ini!' << endl; 
+
+    } catch (BaseException& err){
+        cout << err.what();
+        cout << endl;
+    }
+}
