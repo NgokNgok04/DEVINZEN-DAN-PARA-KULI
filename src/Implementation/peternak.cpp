@@ -344,8 +344,19 @@ void Peternak::beli()
                     {
                         std::cout << "Petak slot " << i + 1 << ": ";
                         std::cin >> slot;
-                        pair<int, int> position;
-                        position = this->inventory.getPositionFromSlot(slot);
+                        if(slot.length()!=3){
+                            throw InvalidIndexMatrixArea();
+                        }
+                        if(isAllDigits(slot.substr(0,1))){
+                            throw InvalidIndexMatrixArea();
+                        }
+                        if(!isAllDigits(slot.substr(1,2))){
+                            throw InvalidIndexMatrixArea();
+                        }
+                        pair<int, int> position=this->inventory.getPositionFromSlot(slot);
+                        if(position.first>inventory.getRows() || position.second>inventory.getCols()){
+                            throw InvalidIndexMatrixArea();
+                        }
                         if (this->inventory.getElement(position.first, position.second) != nullptr)
                         {
                             throw SlotFilled();
@@ -422,7 +433,15 @@ void Peternak::jual()
                     {
                         throw InvalidIndexMatrixArea();
                     }
-                    else if (idx2 > this->inventory.getRows() || idx1 > this->inventory.getCols())
+                    if(isAllDigits(slot.substr(0,1))){
+                        throw InvalidIndexMatrixArea();
+                    }
+                    if(!isAllDigits(slot.substr(1,2))){
+                        throw InvalidIndexMatrixArea();
+                    }
+                    int idx1 = slot[0] - 'A' + 1;
+                    int idx2 = std::stoi(slot.substr(1));
+                    if (idx2 > this->inventory.getRows() || idx1 > this->inventory.getCols())
                     {
                         throw InvalidIndexMatrixArea();
                     }
@@ -606,6 +625,12 @@ void Peternak::kasihMakan()
         {
             throw NoAnimalInCage();
         }
+        if(checkAllHerbiv() && !searchFood(false)){
+            throw AllHerbivNoFood();
+        }
+        if(checkAllCarniv()&& !searchFood(true)){
+            throw AllCarnivNoFood();
+        }
         else
         {
             cout << "Pilih petak kandang yang akan diberi makan" << endl;
@@ -652,6 +677,12 @@ void Peternak::kasihMakan()
             int idx1 = slot[0] - 'A' + 1;
             int idx2 = std::stoi(slot.substr(1));
             cout << "Kamu memilih " << this->ternakan.getElement(idx2, idx1)->getName() << " untuk diberi makan" << endl;
+            if(this->ternakan.getElement(idx2,idx1)->getType()=="CARNIVORE" && !searchFood(true)){
+                throw NoFoodForCarniv();
+            }
+            if(this->ternakan.getElement(idx2,idx1)->getType()=="HERBIVORE" && !searchFood(false)){
+                throw NoFoodForHerbiv();
+            }
             cout << "Pilih pangan untuk diberikan: " << endl;
             this->cetakPenyimpanan();
 
@@ -1110,4 +1141,45 @@ int Peternak::countKekayaanTernakan()
     }
     // cout<<"Total Ternak"<<sum<<endl;
     return sum;
+}
+
+bool Peternak::searchFood(bool animal){
+    for(int i=1;i<=inventory.getRows();i++){
+        for(int j=1;j<inventory.getCols();j++){
+            GameObject* ptr = inventory.getElement(i,j);
+            if(ptr = nullptr){
+                continue;
+            }
+            if(ptr->getTipeObject()=="PRODUCT"){
+                Product* temp = dynamic_cast<Product*>(ptr);
+                if(animal && temp->fromHewan()){
+                    return true;
+                }
+                if(!animal && temp->getType()=="PRODUCT_FRUIT_PLANT"){
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+bool Peternak::checkAllHerbiv(){
+    for(int i=1;i<ternakan.getRows();i++){
+        for(int j=1;j<ternakan.getCols();j++){
+            if(ternakan.getElement(i,j)->getType()=="CARNIVORE"){
+                return false;
+            }
+        }
+    }
+    return true;
+}
+bool Peternak::checkAllCarniv(){
+    for(int i=1;i<ternakan.getRows();i++){
+        for(int j=1;j<ternakan.getCols();j++){
+            if(ternakan.getElement(i,j)->getType()=="HERBIVORE"){
+                return false;
+            }
+        }
+    }
+    return true;
 }

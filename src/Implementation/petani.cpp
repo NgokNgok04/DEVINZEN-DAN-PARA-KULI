@@ -294,8 +294,19 @@ void Petani::beli()
                     {
                         std::cout << "Petak slot " << i + 1 << ": ";
                         std::cin >> slot;
-                        pair<int, int> position;
-                        position = this->inventory.getPositionFromSlot(slot);
+                        if(slot.length()!=3){
+                            throw InvalidIndexMatrixArea();
+                        }
+                        if(isAllDigits(slot.substr(0,1))){
+                            throw InvalidIndexMatrixArea();
+                        }
+                        if(!isAllDigits(slot.substr(1,2))){
+                            throw InvalidIndexMatrixArea();
+                        }
+                        pair<int, int> position=this->inventory.getPositionFromSlot(slot);
+                        if(position.first>inventory.getRows() || position.second>inventory.getCols()){
+                            throw InvalidIndexMatrixArea();
+                        }
                         if (this->inventory.getElement(position.first, position.second) != nullptr)
                         {
                             throw SlotFilled();
@@ -364,15 +375,21 @@ void Petani::jual() // perlu catch ItemQuantityToSellNotEnough
                 std::cin >> slot;
                 std::cout << endl;
 
-                int idx1 = slot[0] - 'A' + 1;
-                int idx2 = std::stoi(slot.substr(1));
                 try
                 {
                     if (slot.length() != 3)
                     {
                         throw InvalidIndexMatrixArea();
                     }
-                    else if (idx2 > this->inventory.getRows() || idx1 > this->inventory.getCols())
+                    if(isAllDigits(slot.substr(0,1))){
+                        throw InvalidIndexMatrixArea();
+                    }
+                    if(!isAllDigits(slot.substr(1,2))){
+                        throw InvalidIndexMatrixArea();
+                    }
+                    int idx1 = slot[0] - 'A' + 1;
+                    int idx2 = std::stoi(slot.substr(1));
+                    if (idx2 > this->inventory.getRows() || idx1 > this->inventory.getCols())
                     {
                         throw InvalidIndexMatrixArea();
                     }
