@@ -576,7 +576,7 @@ void GameManager::prosesInput(string command){
             WaliKota *temp = dynamic_cast<WaliKota *>(curPlayer);
             if (command == "PUNGUT_PAJAK")
             {
-                temp->pungutPajak(playerList);
+                temp->pungutPajak(this->playerList);
             }
             else if (command == "BANGUN")
             {
