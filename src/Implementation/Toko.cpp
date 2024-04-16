@@ -262,7 +262,7 @@ Tanaman* Toko::getTanaman(int idx){
     return &availableTanaman[idx];
 }
 
-int Toko::getCountBangunanProductReady(){
+int Toko::getTotalReady(){
     int sum = 0;
     for(int i=0;i<getAvailableProductSize();i++){
         if(getPairProductInt(i)->second!=0){

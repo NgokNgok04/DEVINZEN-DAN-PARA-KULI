@@ -42,6 +42,6 @@ class Toko {
         static Tanaman* getTanaman(int);
         static pair<Product,int>* getPairProductInt(int);
         static pair<Bangunan,int>* getPairBangunanInt(int);
-        static int getCountBangunanProductReady();
+        static int getTotalReady();
 };
 #endif
