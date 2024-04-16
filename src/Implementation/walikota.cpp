@@ -325,8 +325,8 @@ void WaliKota::bangunBangunan()
         std::cout << "    ";
         std::cout << i + 1 << ". " << Toko::getPairBangunanInt(i)->first.getName();
         std::cout << " (";
-        std::cout << Toko::getPairBangunanInt(i)->first.getPrice() << " gulden, ";
-        for (int j = 0; j < ParserResep::getRecipeMaterialQuantity(i + 1).size(); i++)
+        // std::cout << Toko::getPairBangunanInt(i)->first.getPrice() << " gulden, ";
+        for (int j = 0; j < ParserResep::getRecipeMaterialQuantity(i + 1).size(); j++)
         {
             std::cout << ParserResep::getRecipeMaterialQuantity(i + 1)[j].first;
             std::cout << " ";
@@ -351,6 +351,7 @@ void WaliKota::bangunBangunan()
         {
             idxToBuy = i;
             found = true;
+            break;
         }
     }
 
@@ -376,13 +377,13 @@ void WaliKota::bangunBangunan()
     }
     catch (CantFindNamaBangunan err)
     {
-        err.what();
-        std::cout << endl;
+        std::cout <<err.what()<<endl;
+        return;
     }
     catch (MaterialNotEnough err)
     {
-        err.what();
-        std::cout << endl;
+        std::cout <<err.what()<< endl;
+        return;
     }
 
     this->ownedBangunan.push_back(Toko::getPairBangunanInt(idxToBuy)->first);

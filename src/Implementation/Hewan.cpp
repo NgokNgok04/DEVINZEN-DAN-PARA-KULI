@@ -1,6 +1,7 @@
 #include "../Header/Hewan.hpp"
 
 
+
 map<string, pair<string, string>> Hewan::konversiPanen = {
     {"COW", {"COW_MEAT", ""}},
     {"SHEEP", {"SHEEP_MEAT", ""}},
@@ -31,6 +32,10 @@ void Hewan::makan(Product makanan)
     weight += makanan.getAddedWeight();
 }
 
+void Hewan::setWeight(int w)
+{
+    this->weight = w;
+}
 vector<Product *> Hewan::hasilPanen()
 {
     pair<string, string> productPanen = konversiPanen[getName()];
