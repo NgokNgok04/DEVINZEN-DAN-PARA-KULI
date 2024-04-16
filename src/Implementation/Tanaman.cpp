@@ -1,5 +1,6 @@
 #include "../Header/Tanaman.hpp"
 
+
 Tanaman::Tanaman(int idKonfig){
     setID(idKonfig);
     setKode(ParserTanaman::getCode(idKonfig));
@@ -36,6 +37,10 @@ int Tanaman::getCurAge(){
     return age;
 }
 
+void Tanaman::setAge(int age)
+{
+    this->age = age;
+}
 Tanaman& Tanaman::operator=(const Tanaman& other){
     GameObject::operator=(other);
     type = other.type;
