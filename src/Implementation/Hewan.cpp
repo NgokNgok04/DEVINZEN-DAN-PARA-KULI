@@ -32,10 +32,6 @@ void Hewan::makan(Product makanan)
     weight += makanan.getAddedWeight();
 }
 
-void Hewan::setWeight(int w)
-{
-    this->weight = w;
-}
 vector<Product *> Hewan::hasilPanen()
 {
     pair<string, string> productPanen = konversiPanen[getName()];
