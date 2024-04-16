@@ -428,10 +428,10 @@ void WaliKota::tambahPemain(vector<Pemain *> &allPlayers){
         }
 
         if (tipePemain == "petani"){
-            Petani * newPetani = new Petani(namaPemain,50,40,0,0,0,ParserMisc::getFieldSize().first,ParserMisc::getFieldSize().second);
+            Petani * newPetani = new Petani(namaPemain,50,40);
             allPlayers.push_back(newPetani);
         } else if (tipePemain == "peternak"){
-            Peternak * newPeternak = new Peternak(namaPemain,50,40,0,0,0,ParserMisc::getFarmSize().first,ParserMisc::getFarmSize().second);
+            Peternak * newPeternak = new Peternak(namaPemain,50,40);
             allPlayers.push_back(newPeternak);
         } else {
             throw InvalidTypePemain();
