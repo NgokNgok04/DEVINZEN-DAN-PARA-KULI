@@ -29,6 +29,7 @@ void WaliKota::pungutPajak(vector<Pemain *> allPlayers)
 {
     // Butuh track semua player
     float gained = 0;
+    cout << allPlayers.size() << endl;
     for (int i = 0; i < allPlayers.size(); i++)
     {
         if (allPlayers[i]->getTipe() == "Petani" || allPlayers[i]->getTipe() == "Peternak")
@@ -37,6 +38,7 @@ void WaliKota::pungutPajak(vector<Pemain *> allPlayers)
         }
     }
     this->gulden += gained;
+    cout << "Walikota sekarang mempunyai " << this->getGulden() << " gulden!" << endl;
 }
 
 void WaliKota::beli()
@@ -324,8 +326,8 @@ void WaliKota::bangunBangunan()
         std::cout << "    ";
         std::cout << i + 1 << ". " << Toko::getPairBangunanInt(i)->first.getName();
         std::cout << " (";
-        std::cout << Toko::getPairBangunanInt(i)->first.getPrice() << " gulden, ";
-        for (int j = 0; j < ParserResep::getRecipeMaterialQuantity(i + 1).size(); i++)
+        // std::cout << Toko::getPairBangunanInt(i)->first.getPrice() << " gulden, ";
+        for (int j = 0; j < ParserResep::getRecipeMaterialQuantity(i + 1).size(); j++)
         {
             std::cout << ParserResep::getRecipeMaterialQuantity(i + 1)[j].first;
             std::cout << " ";
@@ -350,6 +352,7 @@ void WaliKota::bangunBangunan()
         {
             idxToBuy = i;
             found = true;
+            break;
         }
     }
 
@@ -375,13 +378,13 @@ void WaliKota::bangunBangunan()
     }
     catch (CantFindNamaBangunan err)
     {
-        err.what();
-        std::cout << endl;
+        std::cout <<err.what()<<endl;
+        return;
     }
     catch (MaterialNotEnough err)
     {
-        err.what();
-        std::cout << endl;
+        std::cout <<err.what()<< endl;
+        return;
     }
 
     this->ownedBangunan.push_back(Toko::getPairBangunanInt(idxToBuy)->first);
@@ -391,4 +394,54 @@ void WaliKota::bangunBangunan()
 float WaliKota::calculateTax()
 {
     return 0;
+}
+
+void WaliKota::tambahPemain(vector<Pemain *> &allPlayers){
+    try{
+        if (this->gulden < 50){
+            throw NotEnoughGulden();
+        } else {
+            this->gulden -= 50;
+        }
+        string tipePemain;
+        cout << "Masukkan jenis pemain: ";
+        cin >> tipePemain;
+        
+        if (tipePemain != "petani" && tipePemain != "peternak"){
+            throw InvalidTypePemain();
+        }
+
+        string namaPemain;
+        cout << "Masukkan nama pemain: ";
+        
+        cin >> namaPemain;
+        bool found = false;
+
+        for(int i = 0; i < allPlayers.size(); i++){
+            if (namaPemain == allPlayers[i]->getUsername()){
+                found = true;
+            }
+        }
+
+        if (found){
+            throw UserNamePemainTidakUnik();
+        }
+
+        if (tipePemain == "petani"){
+            Petani * newPetani = new Petani(namaPemain,50,40,0,0,0,ParserMisc::getFieldSize().first,ParserMisc::getFieldSize().second);
+            allPlayers.push_back(newPetani);
+        } else if (tipePemain == "peternak"){
+            Peternak * newPeternak = new Peternak(namaPemain,50,40,0,0,0,ParserMisc::getFarmSize().first,ParserMisc::getFarmSize().second);
+            allPlayers.push_back(newPeternak);
+        } else {
+            throw InvalidTypePemain();
+        }
+
+        cout << endl << "Pemain baru ditambahkan!" << endl;
+        cout << "Selamat datang"<< namaPemain << "di kota ini!" << endl; 
+
+    } catch (BaseException& err){
+        cout << err.what();
+        cout << endl;
+    }
 }

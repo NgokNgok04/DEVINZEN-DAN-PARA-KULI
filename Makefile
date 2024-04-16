@@ -2,8 +2,8 @@ CXX = g++
 SRC = src
 IMP = Implementation
 
-final: Bangunan.o GameManager.o GameObject.o helper.o Hewan.o ParserHewan.o ParserMisc.o ParserProduk.o ParserResep.o ParserTanaman.o Product.o Tanaman.o  pemain.o petani.o peternak.o walikota.o Toko.o main.o
-	g++ Bangunan.o GameManager.o GameObject.o helper.o Hewan.o ParserHewan.o ParserMisc.o ParserProduk.o ParserResep.o ParserTanaman.o Product.o Tanaman.o pemain.o petani.o peternak.o walikota.o Toko.o  main.o -o main
+final: Bangunan.o GameManager.o GameObject.o helper.o Hewan.o ParserHewan.o ParserMisc.o ParserProduk.o ParserResep.o ParserTanaman.o Product.o Tanaman.o  pemain.o petani.o peternak.o walikota.o Toko.o pcolor.o main.o
+	g++ Bangunan.o GameManager.o GameObject.o helper.o Hewan.o ParserHewan.o ParserMisc.o ParserProduk.o ParserResep.o ParserTanaman.o Product.o Tanaman.o pemain.o petani.o peternak.o walikota.o Toko.o pcolor.o main.o -o main
 GODriver: Bangunan.o GameManager.o GameObject.o helper.o Hewan.o ParserHewan.o ParserMisc.o ParserProduk.o ParserResep.o ParserTanaman.o Product.o Tanaman.o GameObjectDriver.o
 	g++ Bangunan.o GameManager.o GameObject.o helper.o Hewan.o ParserHewan.o ParserMisc.o ParserProduk.o ParserResep.o ParserTanaman.o Product.o Tanaman.o GameObjectDriver.o -o GODriver
 	rm *.o
@@ -63,6 +63,9 @@ peternak.o: $(SRC)/$(IMP)/peternak.cpp
 
 walikota.o: $(SRC)/$(IMP)/walikota.cpp
 	g++ -c $(SRC)/$(IMP)/walikota.cpp
+
+pcolor.o: $(SRC)/$(IMP)/pcolor.cpp
+	g++ -c $(SRC)/$(IMP)/pcolor.cpp
 
 Toko.o: $(SRC)/$(IMP)/Toko.cpp
 	g++ -c $(SRC)/$(IMP)/Toko.cpp

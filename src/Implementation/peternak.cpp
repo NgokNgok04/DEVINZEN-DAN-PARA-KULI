@@ -1049,6 +1049,7 @@ void Peternak::panenTernak()
                                             }
                                         }
                                     }
+                                    delete this->ternakan.getElement(idx2, idx1);
                                     this->ternakan.deleteElement(idx2, idx1);
                                     foundslot = true;
                                     break;

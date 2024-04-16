@@ -1,8 +1,9 @@
 #ifndef WALIKOTA_HPP
 #define WALIKOTA_HPP
 
-#include "pemain.hpp"
-
+// #include "pemain.hpp"
+#include "petani.hpp"
+#include "peternak.hpp"
 class WaliKota : public Pemain
 {
 private:
@@ -17,6 +18,8 @@ public:
     void jual();
     void bangunBangunan();
     float calculateTax();
+    void tambahPemain(vector<Pemain *> &);
+
 };
 
 #endif

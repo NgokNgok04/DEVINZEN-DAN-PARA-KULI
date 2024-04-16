@@ -20,7 +20,7 @@ Pemain::Pemain(string usn, float guld, int bb)
 {
     this->gulden = guld;
     this->berat_badan = bb;
-    pair<int,int> sizeInven = ParserMisc::getStorageSize();
+    pair<int, int> sizeInven = ParserMisc::getStorageSize();
     MatrixArea<GameObject> inv(sizeInven.first, sizeInven.second);
     this->inventory = inv;
     this->username = usn;
@@ -45,7 +45,7 @@ string Pemain::getTipe()
     return this->tipe;
 }
 
-MatrixArea<GameObject>& Pemain::getInventory()
+MatrixArea<GameObject> &Pemain::getInventory()
 {
     return this->inventory;
 }
@@ -126,6 +126,7 @@ void Pemain::makan() // butuh Catch EmptyInventory n NoFoodInInventory
                     else
                     {
                         this->berat_badan += itemToEat->getAddedWeight();
+                        delete this->inventory.getElement(pos.first, pos.second);
                         this->inventory.deleteElement(pos.first, pos.second);
 
                         cout << endl;

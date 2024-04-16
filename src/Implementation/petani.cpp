@@ -858,6 +858,7 @@ void Petani::panenTani()
                                     cout << this->inventory.getElement(1, 1)->getName() << endl;
                                     auto it = find(daftarTanaman.begin(),daftarTanaman.end(),this->ladang.getElement(idx2,idx1));
                                     *it = nullptr;
+                                    delete this->ladang.getElement(idx2, idx1);
                                     this->ladang.deleteElement(idx2, idx1);
                                     foundslot = true;
                                     break;

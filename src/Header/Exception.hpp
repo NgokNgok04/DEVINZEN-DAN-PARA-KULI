@@ -711,10 +711,10 @@ public:
 };
 
 class InvalidPathMuat : public BaseException{
-    public:
-        string what(){
-            return "Path yang dimasukkan tidak valid!";
-        }
+public:
+    string what(){
+        return "Path yang dimasukkan tidak valid!";
+    }
 };
 
 class InvalidDirSimpan : public BaseException{
@@ -722,4 +722,23 @@ class InvalidDirSimpan : public BaseException{
         string what(){
             return "Lokasi berkas directory tidak valid!";
         }
+};
+
+class InvalidTypePemain : public BaseException{
+public:
+    InvalidTypePemain(){};
+    ~InvalidTypePemain(){};
+    string what(){
+        return "Tipe pemain tidak valid!";
+    }
+    
+};
+
+class UserNamePemainTidakUnik: public BaseException{
+public:
+    UserNamePemainTidakUnik(){};
+    ~UserNamePemainTidakUnik(){};
+    string what(){
+        return "Username sudah ada yang pakai!";
+    }
 };
