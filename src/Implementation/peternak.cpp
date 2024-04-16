@@ -42,9 +42,7 @@ MatrixArea<Hewan> &Peternak::getTernakan()
 
 void Peternak::beli()
 {
-    std::cout << endl
-              << endl;
-
+    std::cout << endl;
     GameObject *itemToBuy = nullptr;
     bool isSubMenuCancelled = false;
     int wantToBuy;
@@ -458,12 +456,10 @@ void Peternak::jual()
             validItemToSell.push_back(itemToSell);
 
             profit += this->inventory.getElement(idx2, idx1)->getPrice();
-            cout << this->inventory.getElement(idx2, idx1)->getPrice() << endl;
             Toko::itemDijual(inventory.getElement(idx2, idx1), 1);
             this->inventory.deleteElement(idx2, idx1);
         }
         this->gulden += profit;
-        cout << this->gulden << ' ' << profit << endl;
         cout << "Barang Anda berhasil dijual! Uang Anda bertambah " << profit << " gulden!" << endl;
     }
     catch (BaseException &e)
@@ -475,7 +471,7 @@ void Peternak::jual()
 void Peternak::cetakTernak()
 {
     this->ternakan.displayObject();
-    // this->ternakan.displayRemainderSlot();
+    this->ternakan.displayRemainderSlot();
 }
 
 void Peternak::ternak()
@@ -582,19 +578,8 @@ void Peternak::ternak()
 
     Hewan *temp = dynamic_cast<Hewan *>(this->inventory.getElement(idx2, idx1));
 
-    if (temp)
-    {
-        cout << "SUCCC" << endl;
-        cout << temp->getKode() << endl;
-    }
-    else
-    {
-        cout << "GAGGG" << endl;
-    }
-
     this->ternakan.setElement(idx4, idx3, temp);
     this->inventory.deleteElement(idx2, idx1);
-    cout << this->ternakan.getElement(idx4, idx3)->getKode() << endl;
     cout << "Berhasil diternakkan" << endl;
 }
 
@@ -784,7 +769,6 @@ void Peternak::panenTernak()
                     {
                         if (this->ternakan.getElement(i, j) != nullptr)
                         {
-                            cout << this->ternakan.getElement(i, j)->getKode() << endl;
                             if (this->ternakan.getElement(i, j)->getTipeObject() == "HEWAN")
                             {
                                 bool found = false;
@@ -831,8 +815,6 @@ void Peternak::panenTernak()
                         {
                             if (this->ternakan.getElement(j, k) != nullptr)
                             {
-                                cout << j << k << endl;
-                                cout << this->ternakan.getElement(j, k)->getKode() << endl;
                                 if (this->ternakan.getElement(j, k)->getKode() == ownedHew[i])
                                 {
                                     if (this->ternakan.getElement(j, k)->isHarvestable())
@@ -840,11 +822,8 @@ void Peternak::panenTernak()
                                         count += 1;
                                         bool found = false;
                                         size_t it = 0;
-                                        cout << "1" << endl;
                                         while (it < readyPanen.size())
                                         {
-                                            cout << "2" << endl;
-                                            cout << "3" << endl;
                                             if (readyPanen[it] == this->ternakan.getElement(j, k)->getKode())
                                             {
                                                 found = true;
@@ -857,7 +836,6 @@ void Peternak::panenTernak()
                                             string temp = this->ternakan.getElement(j, k)->getKode();
                                             readyPanen.push_back(temp);
                                         }
-                                        cout << "-----------------" << endl;
                                     }
                                 }
                             }
@@ -971,7 +949,6 @@ void Peternak::panenTernak()
                                 cin >> want;
                                 int idx1 = want[0] - 'A' + 1;
                                 int idx2 = std::stoi(want.substr(1));
-                                cout << idx2 << idx1 << endl;
                                 if (want.length() != 3)
                                 {
                                     throw InvalidIndexMatrixArea();
@@ -984,16 +961,12 @@ void Peternak::panenTernak()
                                 {
                                     if (this->ternakan.getElement(idx2, idx1) != nullptr)
                                     {
-                                        cout << "a" << endl;
-                                        cout << this->ternakan.getElement(idx2, idx1)->getKode() << endl;
                                         if (this->ternakan.getElement(idx2, idx1)->getKode() != readyPanen[maupanenint - 1])
                                         {
-                                            cout << "b" << endl;
                                             throw InvalidPlantChoice();
                                         }
                                         else
                                         {
-                                            cout << "c" << endl;
                                             isValid = true;
                                         }
                                     }
@@ -1026,11 +999,9 @@ void Peternak::panenTernak()
                             {
                                 if (this->inventory.getElement(j, k) == nullptr)
                                 {
-                                    cout << j << k << endl;
                                     vector<Product *> temp = this->ternakan.getElement(idx2, idx1)->hasilPanen();
                                     for (int n = 0; n < temp.size(); n++)
                                     {
-                                        cout << "XXX" << endl;
                                         this->inventory.setElement(j, k, temp[n]);
                                         if (n < temp.size() - 1)
                                         {
