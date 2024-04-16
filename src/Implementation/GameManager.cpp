@@ -589,27 +589,25 @@ void GameManager::prosesInput(string command){
                 {
                     throw InvalidCommand();
                 }
-            }
+            }else{
+                WaliKota *temp = dynamic_cast<WaliKota *>(curPlayer);
+                if (command == "PUNGUT_PAJAK")
+                {
+                    temp->pungutPajak(this->playerList);
+                }
+                else if (command == "BANGUN")
+                {
+                    temp->bangunBangunan();
+                }
+                else if (command == "TAMBAH_PEMAIN")
+                {
+                    temp->tambahPemain(this->playerList,this->playerAmount,this->currentPlayerIndex,this->getCurrentPlayer());
+                }
+                else
+                {
+                    throw InvalidCommand();
+                }
         }
-        else
-        {
-            WaliKota *temp = dynamic_cast<WaliKota *>(curPlayer);
-            if (command == "PUNGUT_PAJAK")
-            {
-                temp->pungutPajak(this->playerList);
-            }
-            else if (command == "BANGUN")
-            {
-                temp->bangunBangunan();
-            }
-            else if (command == "TAMBAH_PEMAIN")
-            {
-                temp->tambahPemain(this->playerList,this->playerAmount,this->currentPlayerIndex,this->getCurrentPlayer());
-            }
-            else
-            {
-                // throw
-            }
         }catch(BaseException &e){
             cout<<e.what()<<endl;
         }
