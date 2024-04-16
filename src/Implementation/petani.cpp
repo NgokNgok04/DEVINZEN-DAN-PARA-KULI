@@ -894,18 +894,27 @@ int Petani::countKekayaanLadang()
             Tanaman *ptr = ladang.getElement(i, j);
             if (ptr != nullptr)
             {
+                // cout<<ptr->getName()<<" "<<ptr->getPrice()<<endl;
                 sum += ptr->getPrice();
             }
         }
     }
+    // cout<<"Total Ladang: "<<sum<<endl;
     return sum;
 }
 
 float Petani::calculateTax()
 {
-    int KKP = countKekayaanInven() + countKekayaanLadang() - KTKP_PETANI;
-    std::cout << KKP << endl;
-    return getTaxRate(KKP) * KKP;
+    float KKP = countKekayaanInven() + countKekayaanLadang() - KTKP_PETANI;
+    // cout << "KKP: "<<KKP << endl;
+    float tax = getTaxRate(KKP)*KKP;
+    if(tax>this->gulden){
+        float temp = this->gulden;
+        this->gulden = 0;
+        return temp;
+    }
+    this->gulden -= tax;
+    return tax;
 }
 
 void Petani::tambahUmurTanaman(){
