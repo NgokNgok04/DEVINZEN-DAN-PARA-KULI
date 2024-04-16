@@ -428,6 +428,31 @@ void Petani::cetakLadang()
 
 void Petani::tanam()
 {
+    try{
+    if (this->ladang.getEmptySlot() == 0)
+    {
+        throw NoEmptySlot();
+    }
+    bool existPlant = false;
+            for (int a = 1; a < this->inventory.getRows(); a++)
+            {
+                for (int b = 1; b < this->inventory.getCols(); b++)
+                {
+                    if (this->inventory.getElement(a, b) != nullptr)
+                    {
+                        if (this->inventory.getElement(a, b)->getTipeObject() == "TANAMAN")
+                        {
+                            existPlant = true;
+                        }
+                    }
+                }
+            }
+    if (!existPlant)
+    {
+        throw NoPlant();
+    }
+    else
+    {
     std::cout << "Pilih Tanaman dari penyimpanan" << endl;
     this->cetakPenyimpanan();
     this->cetakLadang();
@@ -447,7 +472,7 @@ void Petani::tanam()
         {
             this->cetakLadang();
 
-            if (slot.length() != 3)
+            if (slot.length() != 3 && isAllDigits(slot.substr(1)))
             {
                 throw InvalidIndexMatrixArea();
             }
@@ -499,7 +524,7 @@ void Petani::tanam()
         int idx4 = std::stoi(petak.substr(1));
         try
         {
-            if (petak.length() != 3)
+            if (petak.length() != 3 && isAllDigits(petak.substr(1)))
             {
                 throw InvalidIndexMatrixArea();
             }
@@ -515,7 +540,7 @@ void Petani::tanam()
                 }
                 else
                 {
-                    InvalidFilledSlot();
+                    throw InvalidFilledSlot();
                 }
             }
         }
@@ -534,6 +559,11 @@ void Petani::tanam()
     this->inventory.deleteElement(idx2, idx1);
     std::cout << this->ladang.getElement(idx4, idx3)->getKode() << endl;
     std::cout << "Berhasil ditanam" << endl;
+    }
+    } catch (BaseException &e)
+    {
+        cout << e.what() << endl;
+    }
 }
 
 void Petani::panenTani()
@@ -651,7 +681,6 @@ void Petani::panenTani()
                                             string temp = this->ladang.getElement(j, k)->getKode();
                                             readyPanen.push_back(temp);
                                         }
-                                        cout << "-----------------" << endl;
                                     }
                                 }
                             }
@@ -767,7 +796,7 @@ void Petani::panenTani()
                                 cin >> want;
                                 int idx1 = want[0] - 'A' + 1;
                                 int idx2 = std::stoi(want.substr(1));
-                                if (want.length() != 3)
+                                if (want.length() != 3 && isAllDigits(want.substr(1)))
                                 {
                                     throw InvalidIndexMatrixArea();
                                 }

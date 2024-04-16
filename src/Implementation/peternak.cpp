@@ -476,6 +476,31 @@ void Peternak::cetakTernak()
 
 void Peternak::ternak()
 {
+    try{
+    if (this->ternakan.getEmptySlot() == 0)
+    {
+        throw NoEmptySlot();
+    }
+    bool existAnimal = false;
+            for (int a = 1; a < this->inventory.getRows(); a++)
+            {
+                for (int b = 1; b < this->inventory.getCols(); b++)
+                {
+                    if (this->inventory.getElement(a, b) != nullptr)
+                    {
+                        if (this->inventory.getElement(a, b)->getTipeObject() == "HEWAN")
+                        {
+                            existAnimal = true;
+                        }
+                    }
+                }
+            }
+    if (!existAnimal)
+    {
+        throw NoAnimal();
+    }
+    else
+    {
     cout << "Pilih hewan dari penyimpanan" << endl;
     this->cetakPenyimpanan();
     this->cetakTernak();
@@ -494,7 +519,7 @@ void Peternak::ternak()
         {
             this->cetakTernak();
 
-            if (slot.length() != 3)
+            if (slot.length() != 3 && isAllDigits(slot.substr(1)))
             {
                 throw InvalidIndexMatrixArea();
             }
@@ -546,7 +571,7 @@ void Peternak::ternak()
         int idx4 = std::stoi(petak.substr(1));
         try
         {
-            if (petak.length() != 3)
+            if (petak.length() != 3 && isAllDigits(petak.substr(1)))
             {
                 throw InvalidIndexMatrixArea();
             }
@@ -563,7 +588,7 @@ void Peternak::ternak()
                 }
                 else
                 {
-                    InvalidFilledSlot();
+                    throw InvalidFilledSlot();
                 }
             }
         }
@@ -581,6 +606,11 @@ void Peternak::ternak()
     this->ternakan.setElement(idx4, idx3, temp);
     this->inventory.deleteElement(idx2, idx1);
     cout << "Berhasil diternakkan" << endl;
+    }
+    } catch (BaseException &e)
+    {
+        cout << e.what() << endl;
+    }
 }
 
 void Peternak::kasihMakan()
@@ -608,7 +638,7 @@ void Peternak::kasihMakan()
                     // Validasi
                     int idx1 = slot[0] - 'A' + 1;
                     int idx2 = std::stoi(slot.substr(1));
-                    if (slot.length() != 3)
+                    if (slot.length() != 3 && isAllDigits(slot.substr(1)))
                     {
                         throw InvalidIndexMatrixArea();
                     }
@@ -652,7 +682,7 @@ void Peternak::kasihMakan()
                     // Validasi
                     int idx3 = slot2[0] - 'A' + 1;
                     int idx4 = std::stoi(slot2.substr(1));
-                    if (slot2.length() != 3)
+                    if (slot2.length() != 3 && isAllDigits(slot2.substr(1)))
                     {
                         throw InvalidIndexMatrixArea();
                     }
@@ -741,7 +771,7 @@ void Peternak::panenTernak()
                 {
                     if (this->ternakan.getElement(a, b) != nullptr)
                     {
-                        if (this->ternakan.getElement(a, b)->getTipeObject() == "TANAMAN")
+                        if (this->ternakan.getElement(a, b)->getTipeObject() == "HEWAN")
                         {
                             if (this->ternakan.getElement(a, b)->isHarvestable())
                             {
@@ -795,7 +825,6 @@ void Peternak::panenTernak()
                         }
                     }
                 }
-                cout << " BATAS " << endl;
 
                 // Output hewan yang ada
                 for (size_t i = 0; i < ownedHew.size(); ++i)
@@ -949,7 +978,7 @@ void Peternak::panenTernak()
                                 cin >> want;
                                 int idx1 = want[0] - 'A' + 1;
                                 int idx2 = std::stoi(want.substr(1));
-                                if (want.length() != 3)
+                                if (want.length() != 3 && isAllDigits(want.substr(1)))
                                 {
                                     throw InvalidIndexMatrixArea();
                                 }
@@ -985,7 +1014,6 @@ void Peternak::panenTernak()
                         wants.push_back(want);
                     }
 
-                    cout << "WS" << wants.size() << endl;
                     for (int i = 0; i < wants.size(); i++)
                     {
                         bool foundslot = false;
