@@ -23,6 +23,9 @@ public:
     void jual();
     int countKekayaanTernakan();
     float calculateTax();
+    bool searchFood(bool);
+    bool checkAllHerbiv();
+    bool checkAllCarniv();
 };
 
 #endif
