@@ -15,7 +15,7 @@
 using namespace std;
 
 int main()
-{
+{   
     ParserHewan PH;
     ParserMisc PM;
     ParserTanaman PT;
@@ -44,15 +44,13 @@ int main()
     Toko::initialize();
 
     gameManager.setupGame();
-    gameManager.PlayerDebug();
     cout << "Setup permainan selesai, permainan dimulai!\n";
-    cout << "Sekarang giliran "<<gameManager.getCurrentPlayer()->getUsername()<<endl;
+    cout << "Sekarang giliran "<<gameManager.getCurrentPlayer()->getUsername()<<" - "<<gameManager.getCurrentPlayer()->getTipe()<<endl;
     while (gameManager.getWinner() == nullptr)
     {
         string command;
-        cout << "> ";
+        cout << "\n> ";
         cin >> command;
-        cout << endl;
         gameManager.prosesInput(command);
     }
     cout << "Selamat, " << gameManager.getWinnerName() << " Menang!" << endl;

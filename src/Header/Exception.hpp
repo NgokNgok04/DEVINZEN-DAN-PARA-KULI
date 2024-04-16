@@ -524,7 +524,7 @@ public:
     ~EmptyInventory(){};
     string what()
     {
-        return "Inventory Kosong. Tidak dapat makan!";
+        return "Inventory Kosong!";
     }
 };
 
@@ -740,5 +740,40 @@ public:
     ~UserNamePemainTidakUnik(){};
     string what(){
         return "Username sudah ada yang pakai!";
+    }
+};
+
+class AllCarnivNoFood: public BaseException{
+public:
+    string what(){
+        return "Semua Hewan kamu karnivora dan kamu tidak ada makanan untuk mereka!";
+    }
+};
+
+class AllHerbivNoFood: public BaseException{
+public:
+    string what(){
+        return "Semua Hewan kamu herbivora dan kamu tidak ada makanan untuk mereka!";
+    }
+};
+
+class NoFoodForHerbiv: public BaseException{
+public:
+    string what(){
+        return "Hewan yang kamu pilih adalah herbivora dan tidak ada makanan untuknya!";
+    }
+};
+
+class NoFoodForCarniv: public BaseException{
+public:
+    string what(){
+        return "Hewan yang kamu pilih adalah karnivora dan tidak ada makanan untuknya!";
+    }
+};
+
+class InvalidCommand: public BaseException{
+public:
+    string what(){
+        return "Command Anda Tidak Valid!";
     }
 };
