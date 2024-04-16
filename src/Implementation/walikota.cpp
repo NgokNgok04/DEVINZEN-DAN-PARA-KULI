@@ -400,7 +400,7 @@ float WaliKota::calculateTax()
     return 0;
 }
 
-void WaliKota::tambahPemain(vector<Pemain *> &allPlayers){
+void WaliKota::tambahPemain(vector<Pemain *> &allPlayers, int &playerAmount, int& currentPlayerIndex, Pemain* currentPlayer){
     try{
         if (this->gulden < 50){
             throw NotEnoughGulden();
@@ -434,15 +434,68 @@ void WaliKota::tambahPemain(vector<Pemain *> &allPlayers){
         if (tipePemain == "petani"){
             Petani * newPetani = new Petani(namaPemain,50,40);
             allPlayers.push_back(newPetani);
+            playerAmount++;
+            if (playerAmount > 1)
+            { // geser pemain yang baru dimasukkan supaya terurut otomatis
+                Pemain *P1 = nullptr;
+                Pemain *P2 = nullptr;
+                int i = playerAmount - 1;
+                while (i - 1 >= 0)
+                {
+                    P1 = allPlayers[i];
+                    P2 = allPlayers[i - 1];
+
+                    if (*P1 < *P2)
+                    {
+                        allPlayers[i] = P2;
+                        allPlayers[i - 1] = P1;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                    i--;
+                }
+            }
+            if(allPlayers[currentPlayerIndex]->getUsername() != currentPlayer->getUsername()){ //kalo pemain sekarang bergeser posisinya
+                currentPlayerIndex++; //pindah indeks pemain sekarang dengan 1
+            }
         } else if (tipePemain == "peternak"){
             Peternak * newPeternak = new Peternak(namaPemain,50,40);
             allPlayers.push_back(newPeternak);
+            playerAmount++;
+            if (playerAmount > 1)
+            { // geser pemain yang baru dimasukkan supaya terurut otomatis
+                Pemain *P1 = nullptr;
+                Pemain *P2 = nullptr;
+                int i = playerAmount - 1;
+                while (i - 1 >= 0)
+                {
+                    P1 = allPlayers[i];
+                    P2 = allPlayers[i - 1];
+
+                    if (*P1 < *P2)
+                    {
+                        allPlayers[i] = P2;
+                        allPlayers[i - 1] = P1;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                    i--;
+                }
+            }
+
+            if(allPlayers[currentPlayerIndex]->getUsername() != currentPlayer->getUsername()){ //kalo pemain sekarang bergeser posisinya
+                currentPlayerIndex++; //pindah indeks pemain sekarang dengan 1
+            }
         } else {
             throw InvalidTypePemain();
         }
 
         cout << endl << "Pemain baru ditambahkan!" << endl;
-        cout << "Selamat datang"<< namaPemain << "di kota ini!" << endl; 
+        cout << "Selamat datang "<< namaPemain << " di kota ini!" << endl; 
 
     } catch (BaseException& err){
         cout << err.what();
