@@ -328,8 +328,8 @@ void muatMatrixArea(ifstream& infile,MatrixArea<GameObject> &inven){
     int jmlhItem = stoi(fullLine);
     for(int i=0;i<jmlhItem;i++){
         getline(infile,fullLine);
-        fullLine.erase(fullLine.end() - 1);
         removeNewline(fullLine);
+        cout<<fullLine<<" "<<fullLine.length()<<endl;
         int id;
         GameObject* temp = nullptr;
         if(ParserHewan::convertNameToID(fullLine)!=-1){

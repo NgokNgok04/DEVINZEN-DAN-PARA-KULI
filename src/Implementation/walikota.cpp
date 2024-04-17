@@ -401,6 +401,7 @@ void WaliKota::bangunBangunan()
         bangunan = new Bangunan(idRecipe);
         for(int i=0;i<materialToBuild.size();i++){
             materialToFind = materialToBuild[i].first;
+            counterMaterial = materialToBuild[i].second;
             for(int j=1;j<=inventory.getRows();j++){
                 for(int k=1;k<=inventory.getCols();k++){
                     if(inventory.getElement(j,k)==nullptr){
@@ -410,8 +411,16 @@ void WaliKota::bangunBangunan()
                         if(inventory.getElement(j,k)->getName()==materialToFind){
                             GameObject* temp = inventory.getElement(j,k);
                             inventory.setElement(j,k,nullptr);
+                            delete temp;
+                            counterMaterial--;
+                            if(counterMaterial==0){
+                                break;
+                            }
                         }
                     }
+                }
+                if(counterMaterial==0){
+                    break;
                 }
             }
         }
