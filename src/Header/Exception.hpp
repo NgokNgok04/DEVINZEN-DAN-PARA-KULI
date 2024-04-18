@@ -574,12 +574,26 @@ public:
 
 class MaterialNotEnough : public BaseException
 {
+private:
+    vector<pair<string,int>> materialKurang;
 public:
-    MaterialNotEnough(){};
+    MaterialNotEnough(vector<pair<string,int>> kurang){
+        for(int i=0;i<kurang.size();i++){
+            materialKurang.push_back(kurang[i]);
+        }
+    };
     ~MaterialNotEnough(){};
     string what()
     {
-        return "Material tidak cukup!";
+        string kalimat = "Material tidak cukup! Kurang ";
+        for(int i=0;i<materialKurang.size();i++){
+            kalimat += materialKurang[i].first +" "+to_string(materialKurang[i].second)+" buah";
+            if(i!=materialKurang.size()-1){
+                kalimat+=", ";
+            }
+        }
+        kalimat+=".";
+        return kalimat;
     }
 };
 

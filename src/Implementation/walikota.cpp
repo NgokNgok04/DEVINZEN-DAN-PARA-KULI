@@ -389,14 +389,17 @@ void WaliKota::bangunBangunan()
         vector<pair<string, int>> materialToBuild = ParserResep::getRecipeMaterialQuantity(idRecipe);
         string materialToFind;
         int counterMaterial;
+        vector<pair<string,int>> materialKurang;
         for (int i = 0; i < materialToBuild.size(); i++)
         {
             materialToFind = materialToBuild[i].first;
             counterMaterial = this->inventory.countSameName(materialToFind);
-            if (counterMaterial < materialToBuild[i].second)
-            {
-                throw MaterialNotEnough();
+            if(counterMaterial<materialToBuild[i].second){
+                materialKurang.push_back(make_pair(materialToFind,materialToBuild[i].second-counterMaterial));
             }
+        }
+        if(!materialKurang.empty()){
+            throw MaterialNotEnough(materialKurang);
         }
         bangunan = new Bangunan(idRecipe);
         for(int i=0;i<materialToBuild.size();i++){
