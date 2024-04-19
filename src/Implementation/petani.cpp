@@ -864,7 +864,7 @@ void Petani::panenTani()
                                 {
                                     this->inventory.setElement(j, k, this->ladang.getElement(idx2, idx1)->hasilPanen());
                                     auto it = find(daftarTanaman.begin(),daftarTanaman.end(),this->ladang.getElement(idx2,idx1));
-                                    *it = nullptr;
+                                    daftarTanaman.erase(it);
                                     delete this->ladang.getElement(idx2, idx1);
                                     this->ladang.deleteElement(idx2, idx1);
                                     foundslot = true;
